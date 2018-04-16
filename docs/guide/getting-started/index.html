@@ -1,0 +1,1190 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="A modular C++14 library for barebone programming">
+      
+      
+        <link rel="canonical" href="http://modm.io/guide/getting-started/">
+      
+      
+        <meta name="author" content="Niklas Hauser">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.2">
+    
+    
+      
+        <title>Getting Started - modm barebone embedded library</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.6079476c.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Ubuntu+Mono">
+        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#getting-started" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://modm.io" title="modm barebone embedded library" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                modm barebone embedded library
+              </span>
+              <span class="md-header-nav__topic">
+                Getting Started
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/modm-io/modm" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      modm-io/modm
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../.." title="Home" class="md-tabs__link">
+          Home
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../installation/" title="Guide" class="md-tabs__link md-tabs__link--active">
+          Guide
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../reference/overview/" title="Reference" class="md-tabs__link">
+          Reference
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    modm barebone embedded library
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/modm-io/modm" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      modm-io/modm
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Home
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Home
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../how-modm-works/" title="How modm works" class="md-nav__link">
+      How modm works
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../who-we-are/" title="Who we are" class="md-nav__link">
+      Who we are
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installation/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Getting Started
+      </label>
+    
+    <a href="./" title="Getting Started" class="md-nav__link md-nav__link--active">
+      Getting Started
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#your-own-project" title="Your own Project" class="md-nav__link">
+    Your own Project
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-a-board-support-package" title="Using a Board Support Package" class="md-nav__link">
+    Using a Board Support Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discovering-modm" title="Discovering modm" class="md-nav__link">
+    Discovering modm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-configuration" title="Custom Configuration" class="md-nav__link">
+    Custom Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-and-compile" title="Generate and Compile" class="md-nav__link">
+    Generate and Compile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show-me-the-basics" title="Show me the basics" class="md-nav__link">
+    Show me the basics
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gpio" title="GPIO" class="md-nav__link">
+    GPIO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffered-uart" title="Buffered UART" class="md-nav__link">
+    Buffered UART
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iostream" title="IOStream" class="md-nav__link">
+    IOStream
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software-timers" title="Software Timers" class="md-nav__link">
+    Software Timers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../qtcreator/" title="Qt Creator" class="md-nav__link">
+      Qt Creator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../testing/" title="Testing" class="md-nav__link">
+      Testing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Reference
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Reference
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/concepts/" title="Concepts" class="md-nav__link">
+      Concepts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/modules/" title="Modules" class="md-nav__link">
+      Modules
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/library-builder/" title="Library Builder" class="md-nav__link">
+      Library Builder
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/build-systems/" title="Build Systems" class="md-nav__link">
+      Build Systems
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#your-own-project" title="Your own Project" class="md-nav__link">
+    Your own Project
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-a-board-support-package" title="Using a Board Support Package" class="md-nav__link">
+    Using a Board Support Package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discovering-modm" title="Discovering modm" class="md-nav__link">
+    Discovering modm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-configuration" title="Custom Configuration" class="md-nav__link">
+    Custom Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-and-compile" title="Generate and Compile" class="md-nav__link">
+    Generate and Compile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show-me-the-basics" title="Show me the basics" class="md-nav__link">
+    Show me the basics
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gpio" title="GPIO" class="md-nav__link">
+    GPIO
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffered-uart" title="Buffered UART" class="md-nav__link">
+    Buffered UART
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iostream" title="IOStream" class="md-nav__link">
+    IOStream
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software-timers" title="Software Timers" class="md-nav__link">
+    Software Timers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <div class="admonition success">
+<p class="admonition-title">This page has been refactored and is up-to-date.</p>
+</div>
+<h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
+<p>The easiest way for you to learn about modm's APIs is to look at and 
+experiment with <a href="https://github.com/modm-io/modm/tree/develop/examples">our examples</a>, especially if you have a development 
+board that modm supports out-of-box.</p>
+<p>Here are our favorite examples for our supported development boards:</p>
+<!--checkrepourls-->
+
+<ul>
+<li>Arduino Uno:
+<a href="https://github.com/modm-io/modm/blob/develop/examples/arduino_uno/basic/blink/main.cpp">Blinky</a>,
+<a href="https://github.com/modm-io/modm/blob/develop/examples/arduino_uno/basic/digital_read_serial/main.cpp">Button &amp; Serial</a>,
+<a href="https://github.com/modm-io/modm/blob/develop/examples/arduino_uno/basic/read_analog_voltage/main.cpp">Analog &amp; Serial</a>.</li>
+<li>NUCLEO-F031K6:
+<a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f031k6/blink">Blinky &amp; Serial</a>.</li>
+<li>NUCLEO-F103RB:
+<a href="https://github.com/modm-io/modm/blob/develop/examples/nucleo_f103rb/blink/main.cpp">Blinky &amp; Serial</a>.</li>
+<li>STM32F072 Discovery:
+<a href="https://github.com/modm-io/modm/blob/develop/examples/stm32f072_discovery/blink/main.cpp">Blinky</a>,
+<a href="https://github.com/modm-io/modm/blob/develop/examples/stm32f072_discovery/can/main.cpp">CAN</a>,
+<a href="https://github.com/modm-io/modm/blob/develop/examples/stm32f072_discovery/rotation/main.cpp">Gyroscope</a>.</li>
+<li>STM32F3 Discovery:
+<a href="https://github.com/modm-io/modm/blob/develop/examples/stm32f3_discovery/blink/main.cpp">Blinky</a>,
+<a href="https://github.com/modm-io/modm/blob/develop/examples/stm32f3_discovery/can/main.cpp">CAN</a>,
+<a href="https://github.com/modm-io/modm/blob/develop/examples/stm32f3_discovery/accelerometer/main.cpp">Accelerometer</a>,
+<a href="https://github.com/modm-io/modm/blob/develop/examples/stm32f3_discovery/rotation/main.cpp">Gyroscope</a>,
+<a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f3_discovery/gdb">Debugging with GDB</a>.</li>
+<li>STM32F4 Discovery:
+<a href="https://github.com/modm-io/modm/blob/develop/examples/stm32f4_discovery/blink/main.cpp">Blinky</a>,
+<a href="https://github.com/modm-io/modm/blob/develop/examples/stm32f4_discovery/can/main.cpp">CAN</a>,
+<a href="https://github.com/modm-io/modm/blob/develop/examples/stm32f4_discovery/accelerometer/main.cpp">Accelerometer</a>,
+<a href="https://github.com/modm-io/modm/blob/develop/examples/stm32f4_discovery/timer/main.cpp">Timer &amp; LED Animations</a>,
+<a href="https://github.com/modm-io/modm/blob/develop/examples/stm32f4_discovery/hard_fault/main.cpp">Debugging hard faults</a>.</li>
+<li>STM32F469 Discovery:
+<a href="https://github.com/modm-io/modm/blob/develop/examples/stm32f469_discovery/blink/main.cpp">Blinky</a>,
+<a href="https://github.com/modm-io/modm/blob/develop/examples/stm32f469_discovery/display/main.cpp">Drawing on display</a>,
+<a href="https://github.com/modm-io/modm/blob/develop/examples/stm32f469_discovery/touchscreen/main.cpp">Touchscreen inputs</a>,
+<a href="https://github.com/modm-io/modm/blob/develop/examples/stm32f469_discovery/tlsf-allocator/main.cpp">Multi-heap with external 16MB memory</a>,
+<a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f469_discovery/game_of_life">Game of Life in Color with Multitouch</a></li>
+<li>STM32F769 Discovery:
+<a href="https://github.com/modm-io/modm/blob/develop/examples/stm32f769i_discovery/blink/main.cpp">FPU with double precision</a></li>
+</ul>
+<p>Here are some additional examples of displays and sensors we like:</p>
+<ul>
+<li><a href="https://github.com/modm-io/modm/blob/develop/examples/stm32f4_discovery/oled_display/main.cpp">SSD1306 OLED display</a>: Draws text and graphics onto I2C display.</li>
+<li><a href="https://github.com/modm-io/modm/blob/develop/examples/stm32f4_discovery/barometer_bmp085_bmp180/main.cpp">BMP085/BMP180 barometer</a>: Reads atmospheric pressure and temperature from I2C sensor.</li>
+<li><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f103c8t6_blue_pill/environment">BMP180/BME280 barometer</a>: Reads atmospheric pressure and temperature from multiple I2C sensors.</li>
+<li><a href="https://github.com/modm-io/modm/blob/develop/examples/stm32f4_discovery/distance_vl6180/main.cpp">VL6180 time-of-flight distance sensor</a>: Reads distance and ambient light from I2C sensor.</li>
+<li><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f401re/distance_vl53l0/main.cpp">VL53L0  time-of-flight distance sensor</a>: Much improved version of the VL6180 sensor.</li>
+<li><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f103c8t6_blue_pill/adns_9800/main.cpp">ADNS9800 motion sensor</a>: Reads 2D motion from SPI sensor used in gaming mice.</li>
+<li><a href="https://github.com/modm-io/modm/blob/develop/examples/stm32f4_discovery/colour_tcs3414/main.cpp">TCS3414 color sensor</a>: Reads RGB color from I2C sensor.</li>
+<li><a href="https://github.com/modm-io/modm/blob/develop/examples/stm32f4_discovery/display/hd44780/main.cpp">HD44780 over I2C-GPIO expander</a>: Draws text via native GPIO port or I2C-GPIO expander port onto character display.
+<!--/checkrepourls--></li>
+</ul>
+<p>Have a look at the <a href="../../reference/build-systems/#scons">build system references</a> to 
+see how to compile and program your targets.</p>
+<h2 id="your-own-project">Your own Project<a class="headerlink" href="#your-own-project" title="Permanent link">&para;</a></h2>
+<p>To generate a modm library for your own project, you need to define a <code>project.xml</code>
+file, which contains the path to where modm is, as well as repository and module options
+and of course which modules you want to have generated.
+modm will generate a library that is self-contained, so you don't <em>need</em> to add
+modm as a submodule or similar to your repository. However we still recommend it.</p>
+<h3 id="using-a-board-support-package">Using a Board Support Package<a class="headerlink" href="#using-a-board-support-package" title="Permanent link">&para;</a></h3>
+<p>We recommend building on a BSP, where you can just inherit from an existing
+project configuration, which contains the minimal set of modules to use the board
+as well as pre-defines several important options for this board.
+You can then add all the modules you need and configure them as you want.</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;</span>
+<span class="nt">&lt;library&gt;</span>
+  <span class="nt">&lt;extends&gt;</span>../../../src/modm/board/disco_f469ni/board.xml<span class="nt">&lt;/extends&gt;</span>
+  <span class="nt">&lt;options&gt;</span>
+    <span class="nt">&lt;option</span> <span class="na">name=</span><span class="s">&quot;:build.scons:build.path&quot;</span><span class="nt">&gt;</span>../../../build/stm32f469_discovery/blink<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;/options&gt;</span>
+  <span class="nt">&lt;modules&gt;</span>
+    <span class="nt">&lt;module&gt;</span>:build.scons<span class="nt">&lt;/module&gt;</span>
+  <span class="nt">&lt;/modules&gt;</span>
+<span class="nt">&lt;/library&gt;</span>
+</pre></div>
+
+<div class="admonition info">
+<p class="admonition-title">Chose a build system</p>
+<p>Our BSPs do not specify a build system generator, so you need to add the 
+module yourself if you want. Here we chose to use the SCons build system
+generator, but you <a href="../../reference/build-systems">can choose others as well</a>.</p>
+</div>
+<p>Our board support packages provide their configuration in the <code>Board</code> namespace,
+which you can use to initialize the target and several board subsystems.
+If a serial connection is available on the board, you can directly use the modm
+logging functions.</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;modm/board/board.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Board</span><span class="o">::</span><span class="n">initialize</span><span class="p">();</span>
+    <span class="n">Board</span><span class="o">::</span><span class="n">Leds</span><span class="o">::</span><span class="n">setOutput</span><span class="p">();</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Board</span><span class="o">::</span><span class="n">Leds</span><span class="o">::</span><span class="n">toggle</span><span class="p">();</span>
+        <span class="n">modm</span><span class="o">::</span><span class="n">delayMilliseconds</span><span class="p">(</span><span class="n">Board</span><span class="o">::</span><span class="n">Button</span><span class="o">::</span><span class="n">read</span><span class="p">()</span> <span class="o">?</span> <span class="mi">250</span> <span class="o">:</span> <span class="mi">500</span><span class="p">);</span>
+<span class="cp">#ifdef MODM_BOARD_HAS_LOGGER</span>
+        <span class="k">static</span> <span class="kt">uint32_t</span> <span class="n">counter</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+        <span class="n">MODM_LOG_INFO</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Loop counter: &quot;</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">counter</span><span class="o">++</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">modm</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="cp">#endif</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3 id="discovering-modm">Discovering modm<a class="headerlink" href="#discovering-modm" title="Permanent link">&para;</a></h3>
+<p>To generate your custom library, modm uses the <a href="https://github.com/dergraaf/library-builder">Library Builder</a>, which
+is the interface to discover available modules and their configuration options.</p>
+<p>To list all available repository options call <code>lbuild discover-repository</code>.
+This will show you how to <em>spell</em> the supported targets correctly.</p>
+<div class="codehilite"><pre><span></span> $ lbuild discover-repository
+modm:target = [at90can128, at90can32, at90can64, at90pwm1, at90pwm161, at90pwm2, at90pwm216, at90pwm3, at90pwm316,
+               at90pwm81, at90usb1286, at90usb1287, at90usb162, at90usb646, at90usb647, at90usb82, atmega128,
+...
+               stm32l4s5ziy, stm32l4s7aii, stm32l4s7vit, stm32l4s7zit, stm32l4s9aii, stm32l4s9vit, stm32l4s9zij,
+               stm32l4s9zit, stm32l4s9ziy]
+</pre></div>
+
+<p>Once you've specified this repository option, you can call <code>lbuild discover-modules</code>,
+to list all available modules for this target.</p>
+<div class="codehilite"><pre><span></span> $ lbuild discover-modules
+modm:architecture:adc
+modm:board.disco-f469ni
+...
+modm:ui:led
+modm:utils
+</pre></div>
+
+<p><code>lbuild discover-module-options</code> lists all the module options with a short
+description and </p>
+<div class="codehilite"><pre><span></span> $ lbuild discover-module-options
+...
+modm:platform:core:allocator = newlib  [block, newlib, tlsf]
+
+  Dynamic memory allocation strategy
+
+modm:platform:core:main_stack_size = 3040  [256 ... 65536]
+
+  Minimum size of the application main stack
+
+modm:platform:core:vector_table_location = fastest  [fastest, ram, rom]
+
+  Vector table location in ROM or RAM
+
+...
+modm:platform:uart:1:buffer.rx = 16  [1 ... 65534]
+modm:platform:uart:1:buffer.tx = 250  [1 ... 65534]
+</pre></div>
+
+<p>Call <code>lbuild discover-option -o &quot;modm:platform:core:main_stack_size&quot;</code> to get a
+detailed description of the option.</p>
+<div class="codehilite"><pre><span></span> $ lbuild discover-option -o &quot;modm:platform:core:main_stack_size&quot;
+modm:platform:core:main_stack_size
+==================================
+
+Current value: 3040
+Possible values: 256 ... 65536
+
+Minimum size of the application main stack
+
+The ARM Cortex-M uses a descending stack mechanism which is placed so that it
+grows towards the beginning of RAM. In case of a stack overflow the hardware
+then attempts to stack into invalid memory which triggers a HardFault. A stack
+overflow will therefore never overwrite any static or heap memory and this
+protection works without the MPU and therefore also on ARM Cortex-M0 devices.
+...
+</pre></div>
+
+<div class="admonition info">
+<p class="admonition-title">Options are checked</p>
+<p><code>lbuild</code> checks all your project options against the possible values in the
+module and outputs an error if they are incorrect.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Visualize your dependencies</p>
+<p>Create a dependency graph with <code>lbuild dependencies | dot -Tsvg -Grankdir=BT -o dependencies.svg</code>
+to help you understand what code is pulled in when you generate your library.
+<code>lbuild dependencies -m &quot;:module&quot;</code> generates a smaller graph only for that module.</p>
+</div>
+<h3 id="custom-configuration">Custom Configuration<a class="headerlink" href="#custom-configuration" title="Permanent link">&para;</a></h3>
+<p>In case modm doesn't have a BSP for your board or the BSP uses the hardware in
+way you don't like, you can define your own completely custom configuration.
+Here a completely minimal library is generated for a STM32F469NIH device only
+with the Cortex-M, GPIO and time modules and their dependencies.
+Since no build system generator module is specified, you will only get the raw
+source code.</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;</span>
+<span class="nt">&lt;library</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+         <span class="na">xsd:noNamespaceSchemaLocation=</span><span class="s">&quot;https://github.com/dergraaf/library-builder/lbuild/resources/configuration.xsd&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;repositories&gt;</span>
+    <span class="nt">&lt;repository&gt;</span>
+      <span class="nt">&lt;path&gt;</span>../../modm/repo.lb<span class="nt">&lt;/path&gt;</span>
+    <span class="nt">&lt;/repository&gt;</span>
+    <span class="nt">&lt;cache&gt;</span>.lbuild_cache<span class="nt">&lt;/cache&gt;</span>
+  <span class="nt">&lt;/repositories&gt;</span>
+
+  <span class="nt">&lt;options&gt;</span>
+    <span class="nt">&lt;option</span> <span class="na">name=</span><span class="s">&quot;modm:target&quot;</span><span class="nt">&gt;</span>stm32f469nih<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;/options&gt;</span>
+  <span class="nt">&lt;modules&gt;</span>
+    <span class="nt">&lt;module&gt;</span>modm:platform:clock<span class="nt">&lt;/module&gt;</span>
+    <span class="nt">&lt;module&gt;</span>modm:platform:core<span class="nt">&lt;/module&gt;</span>
+    <span class="nt">&lt;module&gt;</span>modm:platform:gpio<span class="nt">&lt;/module&gt;</span>
+  <span class="nt">&lt;/modules&gt;</span>
+<span class="nt">&lt;/library&gt;</span>
+</pre></div>
+
+<p>A minimal <code>main.cpp</code> for this configuration would look like this:</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;modm/platform/platform.hpp&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">GpioA0</span><span class="o">::</span><span class="n">setOutput</span><span class="p">();</span>
+    <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">GpioA0</span><span class="o">::</span><span class="n">toggle</span><span class="p">();</span>
+        <span class="n">modm</span><span class="o">::</span><span class="n">delayMilliseconds</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>We recommend to start your custom projects with a known-good configuration from
+one of our examples and then work your way into your specialization.</p>
+<h3 id="generate-and-compile">Generate and Compile<a class="headerlink" href="#generate-and-compile" title="Permanent link">&para;</a></h3>
+<p>Once you have your <code>project.xml</code> set up, you can call <code>lbuild build</code>, which 
+generates the target and configuration specific library from modm.
+This will create a number of files and folders:</p>
+<div class="codehilite"><pre><span></span> $ ls
+main.cpp    project.xml
+ $ lbuild build
+ $ ls
+SConscript      ext             main.cpp        project.xml.log src
+SConstruct      link            project.xml     scons
+</pre></div>
+
+<p>You can add these folders and files to your <code>.gitignore</code> file, however, we 
+recommend eventually committing these files (yes, <em>all</em> these files) into your
+project repository so that you don't have issues reproducing the build.</p>
+<div class="admonition tip">
+<p class="admonition-title">Generate custom documentation</p>
+<p>Include the <code>:docs</code> module (or execute <code>lbuild build --module &quot;:docs&quot;</code>), 
+then call <code>doxygen doxyfile</code> inside the generated <code>docs</code>folder.
+The documentation for your target and configuration will then be available
+in <code>docs/api/index.html</code>.</p>
+</div>
+<p>For this project we included the <code>modm:build.scons</code> generator, so we can just
+call <code>scons build size</code>, which will compile the entire source code and output
+the resource consumption:</p>
+<div class="codehilite"><pre><span></span> $ scons build size
+scons: Reading SConscript files ...
+scons: done reading SConscript files.
+scons: Building targets ...
+Compiling C++·· build/main.o
+...
+Indexing······· build/libmodm.a
+Linking········ build/project.elf
+Memory usage··· build/project.elf
+
+Program:    3612B (0.3% used)
+(.fastcode + .fastdata + .hardware_init + .reset + .rodata + .table.copy.intern +
+ .table.section_heap + .table.zero.intern + .text)
+
+Data:       3184B (1.6% used) = 144B static (0.1%) + 3040B stack (1.5%)
+(.bss + .fastdata + .stack)
+
+Heap:     197520B (98.4% available)
+(.heap0 + .heap1 + .heap2 + .heap5)
+</pre></div>
+
+<p>You can program your target by calling <code>scons program</code>.</p>
+<p>If you have any questions, <a href="https://github.com/modm-io/modm/issues">open an issue</a> or ping <a href="https://github.com/salkinium">@salkinium</a>.</p>
+<h2 id="show-me-the-basics">Show me the basics<a class="headerlink" href="#show-me-the-basics" title="Permanent link">&para;</a></h2>
+<p>All modm code is either placed in the <code>modm</code> namespace or prefixed with
+<code>modm_</code> or <code>MODM_</code> to avoid clashes with other code.
+The platform specific code is placed in the <code>modm::platform</code> namespace and
+is the only place that contains target specific code.</p>
+<p>Here are a few snippets that work the same on all targets.
+We assume <code>using namespace modm::platform;</code> to make the code more readable.</p>
+<div class="admonition tip">
+<p class="admonition-title">Check the examples</p>
+<p>Have a look at the <a href="https://github.com/modm-io/modm/tree/develop/examples"><code>modm/examples/</code> folder</a> for more advanced 
+use cases.</p>
+</div>
+<h3 id="gpio">GPIO<a class="headerlink" href="#gpio" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="k">using</span> <span class="n">Led</span> <span class="o">=</span> <span class="n">GpioOutputB0</span><span class="p">;</span>
+<span class="n">Led</span><span class="o">::</span><span class="n">setOutput</span><span class="p">();</span>
+<span class="n">Led</span><span class="o">::</span><span class="n">set</span><span class="p">();</span>    <span class="c1">// 1 instruction on AVR</span>
+<span class="n">Led</span><span class="o">::</span><span class="n">reset</span><span class="p">();</span>  <span class="c1">// 3 instructions on Cortex-M</span>
+<span class="n">Led</span><span class="o">::</span><span class="n">toggle</span><span class="p">();</span>
+
+<span class="k">using</span> <span class="n">Button</span> <span class="o">=</span> <span class="n">GpioInputB0</span><span class="p">;</span>
+<span class="n">Button</span><span class="o">::</span><span class="n">setInput</span><span class="p">(</span><span class="n">Gpio</span><span class="o">::</span><span class="n">InputType</span><span class="o">::</span><span class="n">PullUp</span><span class="p">);</span>
+<span class="kt">bool</span> <span class="n">state</span> <span class="o">=</span> <span class="n">Button</span><span class="o">::</span><span class="n">read</span><span class="p">();</span>
+</pre></div>
+
+<h3 id="buffered-uart">Buffered UART<a class="headerlink" href="#buffered-uart" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="k">using</span> <span class="n">Uart</span> <span class="o">=</span> <span class="n">Uart0</span><span class="p">;</span>
+<span class="c1">// connect both pins with a pullup on the Rx</span>
+<span class="n">Uart</span><span class="o">::</span><span class="n">connect</span><span class="o">&lt;</span><span class="n">GpioOutputD1</span><span class="o">::</span><span class="n">Tx</span><span class="p">,</span> <span class="n">GpioInputD0</span><span class="o">::</span><span class="n">Rx</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Gpio</span><span class="o">::</span><span class="n">InputType</span><span class="o">::</span><span class="n">PullUp</span><span class="p">);</span>
+<span class="c1">// initialize to 115.2kBaud from the BSP clock configuration</span>
+<span class="n">Uart</span><span class="o">::</span><span class="n">initialize</span><span class="o">&lt;</span><span class="n">Board</span><span class="o">::</span><span class="n">systemClock</span><span class="p">,</span> <span class="mi">115200</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="n">Uart</span><span class="o">::</span><span class="n">write</span><span class="p">(</span><span class="sc">&#39;H&#39;</span><span class="p">);</span>  <span class="c1">// Ohai there</span>
+<span class="n">Uart</span><span class="o">::</span><span class="n">write</span><span class="p">(</span><span class="sc">&#39;i&#39;</span><span class="p">);</span>
+
+<span class="kt">uint8_t</span> <span class="n">buffer</span><span class="p">;</span>
+<span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// create a simple loopback</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">Uart</span><span class="o">::</span><span class="n">read</span><span class="p">(</span><span class="n">buffer</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">Uart</span><span class="o">::</span><span class="n">write</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3 id="iostream">IOStream<a class="headerlink" href="#iostream" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="k">using</span> <span class="n">Uart</span> <span class="o">=</span> <span class="n">Uart0</span><span class="p">;</span>
+<span class="c1">// Create a IODevice with the Uart</span>
+<span class="n">modm</span><span class="o">::</span><span class="n">IODeviceWrapper</span><span class="o">&lt;</span><span class="n">Uart</span><span class="o">&gt;</span> <span class="n">device</span><span class="p">;</span>
+<span class="n">modm</span><span class="o">::</span><span class="n">IOStream</span> <span class="n">stream</span><span class="p">(</span><span class="n">device</span><span class="p">);</span>
+
+<span class="n">Uart</span><span class="o">::</span><span class="n">connect</span><span class="o">&lt;</span><span class="n">GpioOutputD1</span><span class="o">::</span><span class="n">Tx</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">Uart</span><span class="o">::</span><span class="n">initialize</span><span class="o">&lt;</span><span class="n">Board</span><span class="o">::</span><span class="n">systemClock</span><span class="p">,</span> <span class="mi">115200</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="c1">// similar to std::ostream but without formatting features</span>
+<span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="mi">42</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; is a nice number!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">modm</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="c1">// printf has the most common formatting features</span>
+<span class="n">stream</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d is a %s number!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="s">&quot;nice&quot;</span><span class="p">);</span>
+</pre></div>
+
+<h3 id="software-timers">Software Timers<a class="headerlink" href="#software-timers" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="k">using</span> <span class="n">Led</span> <span class="o">=</span> <span class="n">GpioOutputB0</span><span class="p">;</span>
+<span class="n">modm</span><span class="o">::</span><span class="n">Timeout</span> <span class="n">timeout</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>   <span class="c1">// 10s timeout</span>
+<span class="n">modm</span><span class="o">::</span><span class="n">PeriodicTimer</span> <span class="n">timer</span><span class="p">(</span><span class="mi">250</span><span class="p">);</span> <span class="c1">// 250ms period</span>
+
+<span class="n">Led</span><span class="o">::</span><span class="n">setOutput</span><span class="p">(</span><span class="n">modm</span><span class="o">::</span><span class="n">Gpio</span><span class="o">::</span><span class="n">High</span><span class="p">);</span>
+
+<span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">timeout</span><span class="p">.</span><span class="n">execute</span><span class="p">())</span> <span class="p">{</span>
+        <span class="c1">// executes just once</span>
+        <span class="n">timer</span><span class="p">.</span><span class="n">stop</span><span class="p">();</span>
+        <span class="n">Led</span><span class="o">::</span><span class="n">reset</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">timer</span><span class="p">.</span><span class="n">execute</span><span class="p">())</span> <span class="p">{</span>
+        <span class="c1">// executes once per period</span>
+        <span class="n">Led</span><span class="o">::</span><span class="n">toggle</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../installation/" title="Installation" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Installation
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../qtcreator/" title="Qt Creator" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Qt Creator
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy 2018 Niklas Hauser
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://github.com/modm-io" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/RCA_eV" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.b438e6c5.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
