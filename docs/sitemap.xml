@@ -5,19 +5,19 @@
         
     <url>
      <loc>http://modm.io/</loc>
-     <lastmod>2018-04-21</lastmod>
+     <lastmod>2018-05-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://modm.io/how-modm-works/</loc>
-     <lastmod>2018-04-21</lastmod>
+     <lastmod>2018-05-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://modm.io/who-we-are/</loc>
-     <lastmod>2018-04-21</lastmod>
+     <lastmod>2018-05-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -26,26 +26,26 @@
     
         
     <url>
-     <loc>http://modm.io/guide/installation/</loc>
-     <lastmod>2018-04-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
      <loc>http://modm.io/guide/getting-started/</loc>
-     <lastmod>2018-04-21</lastmod>
+     <lastmod>2018-05-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>http://modm.io/guide/qtcreator/</loc>
-     <lastmod>2018-04-21</lastmod>
+     <loc>http://modm.io/guide/installation/</loc>
+     <lastmod>2018-05-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://modm.io/guide/cookbook/</loc>
+     <lastmod>2018-05-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://modm.io/guide/testing/</loc>
-     <lastmod>2018-04-21</lastmod>
+     <lastmod>2018-05-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -54,32 +54,14 @@
     
         
     <url>
-     <loc>http://modm.io/reference/overview/</loc>
-     <lastmod>2018-04-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>http://modm.io/reference/concepts/</loc>
-     <lastmod>2018-04-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>http://modm.io/reference/modules/</loc>
-     <lastmod>2018-04-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>http://modm.io/reference/library-builder/</loc>
-     <lastmod>2018-04-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
      <loc>http://modm.io/reference/build-systems/</loc>
-     <lastmod>2018-04-21</lastmod>
+     <lastmod>2018-05-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://modm.io</loc>
+     <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
         
