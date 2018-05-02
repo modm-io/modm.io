@@ -2878,12 +2878,12 @@
 </div>
 <h1 id="modmdriverad7928">modm:driver:ad7928<a class="headerlink" href="#modmdriverad7928" title="Permanent link">&para;</a></h1>
 <h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="c1">// Struct</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">ad7928</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">ad7928</span><span class="o">::</span><span class="n">Data</span><span class="p">;</span>
-
-<span class="c1">// Class</span>
+<div class="codehilite"><pre><span></span><span class="c1">// Class</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">Ad7928</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">SpiMaster</span> <span class="p">,</span> <span class="k">typename</span> <span class="n">Cs</span>  <span class="o">&gt;</span><span class="p">;</span>
+
+<span class="c1">// Struct</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">ad7928</span><span class="o">::</span><span class="n">Data</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">ad7928</span><span class="p">;</span>
 
 <span class="c1">// Function</span>
 <span class="n">IOStream</span><span class="o">&amp;</span> <span class="n">modm</span><span class="o">::</span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">IOStream</span> <span class="o">&amp;</span><span class="n">out</span><span class="p">,</span> <span class="k">const</span> <span class="n">ad7928</span><span class="o">::</span><span class="n">Data</span> <span class="o">&amp;</span><span class="n">data</span><span class="p">);</span>

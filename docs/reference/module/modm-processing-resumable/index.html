@@ -3122,29 +3122,29 @@ on function entry and not during every polling call, so the performance
 penalty is relatively small.</p>
 </div>
 <h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="c1">// Define</span>
-<span class="cp">#define RF_BEGIN(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_BEGIN(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_END_RETURN(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_END(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_END_RETURN_CALL(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_YIELD(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_WAIT_THREAD(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_WAIT_WHILE(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_WAIT_UNTIL(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_CALL(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_CALL_BLOCKING(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_RETURN_CALL(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_RETURN(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_RETURN(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define MODM_RESUMABLE_MODULE_NAME</span>
-
-<span class="c1">// Class</span>
+<div class="codehilite"><pre><span></span><span class="c1">// Class</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">NestedResumable</span><span class="o">&lt;</span> <span class="kt">uint8_t</span> <span class="n">Levels</span><span class="o">=</span><span class="mi">1</span> <span class="o">&gt;</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">Resumable</span><span class="o">&lt;</span> <span class="kt">uint8_t</span> <span class="n">Functions</span><span class="o">=</span><span class="mi">1</span> <span class="o">&gt;</span><span class="p">;</span>
 
 <span class="c1">// Struct</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">ResumableResult</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">T</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">ResumableResult</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">T</span> <span class="o">&gt;</span><span class="p">;</span>
+
+<span class="c1">// Define</span>
+<span class="cp">#define MODM_RESUMABLE_MODULE_NAME</span>
+<span class="cp">#define RF_BEGIN</span>
+<span class="cp">#define RF_BEGIN(index)</span>
+<span class="cp">#define RF_CALL(resumable)</span>
+<span class="cp">#define RF_CALL_BLOCKING(resumable)</span>
+<span class="cp">#define RF_END</span>
+<span class="cp">#define RF_END_RETURN(result)</span>
+<span class="cp">#define RF_END_RETURN_CALL(resumable)</span>
+<span class="cp">#define RF_RETURN</span>
+<span class="cp">#define RF_RETURN(result)</span>
+<span class="cp">#define RF_RETURN_CALL(resumable)</span>
+<span class="cp">#define RF_WAIT_THREAD(child)</span>
+<span class="cp">#define RF_WAIT_UNTIL(condition)</span>
+<span class="cp">#define RF_WAIT_WHILE(condition)</span>
+<span class="cp">#define RF_YIELD</span>
 </pre></div>
 
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>

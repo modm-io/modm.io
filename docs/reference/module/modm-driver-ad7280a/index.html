@@ -2882,19 +2882,19 @@
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">Ad7280a</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">Spi</span> <span class="p">,</span> <span class="k">typename</span> <span class="n">Cs</span> <span class="p">,</span> <span class="k">typename</span> <span class="n">Cnvst</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">&gt;</span><span class="p">;</span>
 
 <span class="c1">// Struct</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">ad7280a</span><span class="o">::</span><span class="n">ConversionValue</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">ad7280a</span><span class="o">::</span><span class="n">RegisterValue</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">ad7280a</span><span class="o">::</span><span class="n">ConversionValue</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">ad7280a</span><span class="o">::</span><span class="n">RegisterValue</span><span class="p">;</span>
 
 <span class="c1">// Function</span>
-<span class="n">IOStream</span><span class="o">&amp;</span> <span class="n">modm</span><span class="o">::</span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">IOStream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">ad7280a</span><span class="o">::</span><span class="n">RegisterValue</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">);</span>
 <span class="n">IOStream</span><span class="o">&amp;</span> <span class="n">modm</span><span class="o">::</span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">IOStream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">ad7280a</span><span class="o">::</span><span class="n">ConversionValue</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">);</span>
+<span class="n">IOStream</span><span class="o">&amp;</span> <span class="n">modm</span><span class="o">::</span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">IOStream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">ad7280a</span><span class="o">::</span><span class="n">RegisterValue</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">);</span>
 
 <span class="c1">// Enum</span>
+<span class="k">enum</span> <span class="n">Average</span><span class="p">;</span>
 <span class="k">enum</span> <span class="n">Cell</span><span class="p">;</span>
 <span class="k">enum</span> <span class="n">Channel</span><span class="p">;</span>
-<span class="k">enum</span> <span class="n">Register</span><span class="p">;</span>
 <span class="k">enum</span> <span class="n">Device</span><span class="p">;</span>
-<span class="k">enum</span> <span class="n">Average</span><span class="p">;</span>
+<span class="k">enum</span> <span class="n">Register</span><span class="p">;</span>
 </pre></div>
 
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>

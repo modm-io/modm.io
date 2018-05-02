@@ -3173,15 +3173,15 @@ the <code>uint32_t modm::cortex::getMaximumStackUsage()</code> function.</p>
         LONG (__heap_extern_end)</code> ∈ <code>{ String }</code></p>
 <h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1">// Struct</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">FlashReader</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">T</span> <span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">size</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">FlashReader</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">T</span> <span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">size</span> <span class="o">&gt;</span><span class="p">;</span>
 
 <span class="c1">// Define</span>
-<span class="cp">#define FLASH_STORAGE(var, var, s, s, s, s)</span>
-<span class="cp">#define EXTERN_FLASH_STORAGE(var, var, s, s, s, s)</span>
-<span class="cp">#define FLASH_STORAGE_STRING(var, var, s, s, s, s)</span>
-<span class="cp">#define EXTERN_FLASH_STORAGE_STRING(var, var, s, s, s, s)</span>
-<span class="cp">#define INLINE_FLASH_STORAGE_STRING(var, var, s, s, s, s)</span>
-<span class="cp">#define PSTR(var, var, s, s, s, s)</span>
+<span class="cp">#define EXTERN_FLASH_STORAGE(var)</span>
+<span class="cp">#define EXTERN_FLASH_STORAGE_STRING(s)</span>
+<span class="cp">#define FLASH_STORAGE(var)</span>
+<span class="cp">#define FLASH_STORAGE_STRING(s)</span>
+<span class="cp">#define INLINE_FLASH_STORAGE_STRING(s)</span>
+<span class="cp">#define PSTR(s)</span>
 </pre></div>
 
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>

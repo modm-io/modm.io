@@ -3152,13 +3152,12 @@ one of our examples and then work your way into your specialization.</p>
 <h3 id="generate-and-compile">Generate and Compile<a class="headerlink" href="#generate-and-compile" title="Permanent link">&para;</a></h3>
 <p>Once you have your <code>project.xml</code> set up, you can call <code>lbuild build</code>, which 
 generates the target and configuration specific library from modm.
-This will create a number of files and folders:</p>
+This will create a few files and folders:</p>
 <div class="codehilite"><pre><span></span> $ ls
 main.cpp    project.xml
  $ lbuild build
  $ ls
-SConscript      ext             main.cpp        project.xml.log src
-SConstruct      link            project.xml     scons
+SConstruct      main.cpp        modm            project.xml     project.xml.log
 </pre></div>
 
 <p>You can add these folders and files to your <code>.gitignore</code> file, however, we 

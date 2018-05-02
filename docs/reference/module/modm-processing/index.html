@@ -2878,75 +2878,75 @@
 </div>
 <h1 id="modmprocessing">modm:processing<a class="headerlink" href="#modmprocessing" title="Permanent link">&para;</a></h1>
 <h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="c1">// Define</span>
-<span class="cp">#define PT_BEGIN(condition, condition, child, child, resumable)</span>
-<span class="cp">#define PT_END(condition, condition, child, child, resumable)</span>
-<span class="cp">#define PT_YIELD(condition, condition, child, child, resumable)</span>
-<span class="cp">#define PT_WAIT_WHILE(condition, condition, child, child, resumable)</span>
-<span class="cp">#define PT_WAIT_UNTIL(condition, condition, child, child, resumable)</span>
-<span class="cp">#define PT_WAIT_THREAD(condition, condition, child, child, resumable)</span>
-<span class="cp">#define PT_SPAWN(condition, condition, child, child, resumable)</span>
-<span class="cp">#define PT_CALL(condition, condition, child, child, resumable)</span>
-<span class="cp">#define PT_RESTART(condition, condition, child, child, resumable)</span>
-<span class="cp">#define PT_EXIT(condition, condition, child, child, resumable)</span>
-<span class="cp">#define TIME_LOOP(frequency)</span>
-<span class="cp">#define MILLISECONDS(frequency)</span>
-<span class="cp">#define RF_BEGIN(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_BEGIN(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_END_RETURN(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_END(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_END_RETURN_CALL(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_YIELD(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_WAIT_THREAD(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_WAIT_WHILE(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_WAIT_UNTIL(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_CALL(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_CALL_BLOCKING(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_RETURN_CALL(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_RETURN(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define RF_RETURN(index, result, resumable, child, condition, condition, resumable, resumable, resumable, result)</span>
-<span class="cp">#define MODM_RESUMABLE_MODULE_NAME</span>
-
-<span class="c1">// Class</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">pt</span><span class="o">::</span><span class="n">Protothread</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">pt</span><span class="o">::</span><span class="n">Semaphore</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">Scheduler</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">Scheduler</span><span class="o">::</span><span class="n">Task</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="c1">// Class</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">GenericPeriodicTimer</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">Clock</span><span class="p">,</span> <span class="k">typename</span> <span class="n">TimestampType</span><span class="o">=</span><span class="n">modm</span><span class="o">::</span><span class="n">Timestamp</span> <span class="o">&gt;</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">GenericTimeout</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">Clock</span><span class="p">,</span> <span class="k">class</span> <span class="nc">TimestampType</span><span class="o">=</span><span class="n">modm</span><span class="o">::</span><span class="n">Timestamp</span> <span class="o">&gt;</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">GenericTimestamp</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">T</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">NestedResumable</span><span class="o">&lt;</span> <span class="kt">uint8_t</span> <span class="n">Levels</span><span class="o">=</span><span class="mi">1</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">Resumable</span><span class="o">&lt;</span> <span class="kt">uint8_t</span> <span class="n">Functions</span><span class="o">=</span><span class="mi">1</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">Scheduler</span><span class="o">::</span><span class="n">Task</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">Scheduler</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">Task</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">pt</span><span class="o">::</span><span class="n">Protothread</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">pt</span><span class="o">::</span><span class="n">Semaphore</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">rtos</span><span class="o">::</span><span class="n">BinarySemaphore</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">rtos</span><span class="o">::</span><span class="n">Mutex</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">rtos</span><span class="o">::</span><span class="n">MutexGuard</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">rtos</span><span class="o">::</span><span class="n">Queue</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">T</span>  <span class="o">&gt;</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">rtos</span><span class="o">::</span><span class="n">QueueBase</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">rtos</span><span class="o">::</span><span class="n">Scheduler</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">rtos</span><span class="o">::</span><span class="n">BinarySemaphore</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">rtos</span><span class="o">::</span><span class="n">Semaphore</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">rtos</span><span class="o">::</span><span class="n">SemaphoreBase</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">rtos</span><span class="o">::</span><span class="n">Thread</span><span class="o">::</span><span class="n">Lock</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">rtos</span><span class="o">::</span><span class="n">Thread</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">NestedResumable</span><span class="o">&lt;</span> <span class="kt">uint8_t</span> <span class="n">Levels</span><span class="o">=</span><span class="mi">1</span> <span class="o">&gt;</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">Resumable</span><span class="o">&lt;</span> <span class="kt">uint8_t</span> <span class="n">Functions</span><span class="o">=</span><span class="mi">1</span> <span class="o">&gt;</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">Task</span><span class="p">;</span>
 
 <span class="c1">// Struct</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">Scheduler</span><span class="o">::</span><span class="n">TaskListItem</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">ResumableResult</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">T</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">ResumableResult</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">T</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">Scheduler</span><span class="o">::</span><span class="n">TaskListItem</span><span class="p">;</span>
+
+<span class="c1">// Function</span>
+<span class="n">IOStream</span><span class="o">&amp;</span> <span class="n">modm</span><span class="o">::</span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">IOStream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">GenericTimestamp</span><span class="o">&lt;</span> <span class="n">T</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">);</span>
 
 <span class="c1">// Enum</span>
 <span class="k">enum</span> <span class="k">class</span> <span class="nc">PeriodicTimerState</span><span class="p">;</span>
 <span class="k">enum</span> <span class="k">class</span> <span class="nc">TimeoutState</span><span class="p">;</span>
 
 <span class="c1">// Typedef</span>
-<span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">ShortPeriodicTimer</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GenericPeriodicTimer</span><span class="o">&lt;</span> <span class="o">::</span><span class="n">modm</span><span class="o">::</span><span class="n">Clock</span><span class="p">,</span> <span class="n">ShortTimestamp</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">PeriodicTimer</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GenericPeriodicTimer</span><span class="o">&lt;</span> <span class="o">::</span><span class="n">modm</span><span class="o">::</span><span class="n">Clock</span><span class="p">,</span> <span class="n">Timestamp</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">ShortPeriodicTimer</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GenericPeriodicTimer</span><span class="o">&lt;</span> <span class="o">::</span><span class="n">modm</span><span class="o">::</span><span class="n">Clock</span><span class="p">,</span> <span class="n">ShortTimestamp</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">ShortTimeout</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GenericTimeout</span><span class="o">&lt;</span> <span class="o">::</span><span class="n">modm</span><span class="o">::</span><span class="n">Clock</span><span class="p">,</span> <span class="n">ShortTimestamp</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">Timeout</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GenericTimeout</span><span class="o">&lt;</span> <span class="o">::</span><span class="n">modm</span><span class="o">::</span><span class="n">Clock</span><span class="p">,</span> <span class="n">Timestamp</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">ShortTimestamp</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GenericTimestamp</span><span class="o">&lt;</span><span class="kt">uint16_t</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">Timeout</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GenericTimeout</span><span class="o">&lt;</span> <span class="o">::</span><span class="n">modm</span><span class="o">::</span><span class="n">Clock</span><span class="p">,</span> <span class="n">Timestamp</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">Timestamp</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GenericTimestamp</span><span class="o">&lt;</span><span class="kt">uint32_t</span><span class="o">&gt;</span><span class="p">;</span>
 
-<span class="c1">// Function</span>
-<span class="n">IOStream</span><span class="o">&amp;</span> <span class="n">modm</span><span class="o">::</span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">IOStream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">GenericTimestamp</span><span class="o">&lt;</span> <span class="n">T</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">);</span>
+<span class="c1">// Define</span>
+<span class="cp">#define MILLISECONDS</span>
+<span class="cp">#define MODM_RESUMABLE_MODULE_NAME</span>
+<span class="cp">#define PT_BEGIN</span>
+<span class="cp">#define PT_CALL(resumable)</span>
+<span class="cp">#define PT_END</span>
+<span class="cp">#define PT_EXIT</span>
+<span class="cp">#define PT_RESTART</span>
+<span class="cp">#define PT_SPAWN(child)</span>
+<span class="cp">#define PT_WAIT_THREAD(child)</span>
+<span class="cp">#define PT_WAIT_UNTIL(condition)</span>
+<span class="cp">#define PT_WAIT_WHILE(condition)</span>
+<span class="cp">#define PT_YIELD</span>
+<span class="cp">#define RF_BEGIN</span>
+<span class="cp">#define RF_BEGIN(index)</span>
+<span class="cp">#define RF_CALL(resumable)</span>
+<span class="cp">#define RF_CALL_BLOCKING(resumable)</span>
+<span class="cp">#define RF_END</span>
+<span class="cp">#define RF_END_RETURN(result)</span>
+<span class="cp">#define RF_END_RETURN_CALL(resumable)</span>
+<span class="cp">#define RF_RETURN</span>
+<span class="cp">#define RF_RETURN(result)</span>
+<span class="cp">#define RF_RETURN_CALL(resumable)</span>
+<span class="cp">#define RF_WAIT_THREAD(child)</span>
+<span class="cp">#define RF_WAIT_UNTIL(condition)</span>
+<span class="cp">#define RF_WAIT_WHILE(condition)</span>
+<span class="cp">#define RF_YIELD</span>
+<span class="cp">#define TIME_LOOP(frequency)</span>
 </pre></div>
 
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>

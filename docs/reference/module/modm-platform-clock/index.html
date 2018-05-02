@@ -2879,22 +2879,22 @@
 <h1 id="modmplatformclock">modm:platform:clock<a class="headerlink" href="#modmplatformclock" title="Permanent link">&para;</a></h1>
 <h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1">// Class</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">ClockControl</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">cortex</span><span class="o">::</span><span class="n">SysTickTimer</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">ClockControl</span><span class="p">;</span>
+
+<span class="c1">// Function</span>
+<span class="kt">void</span> <span class="nf">_delay_ms</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">ms</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">_delay_ns</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">ns</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">_delay_us</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">us</span><span class="p">);</span>
 
 <span class="c1">// Enum</span>
 <span class="k">enum</span> <span class="k">class</span> <span class="nc">StartupError</span><span class="p">;</span>
 
 <span class="c1">// Variable</span>
-<span class="kt">uint32_t</span> <span class="n">modm_fastdata</span> <span class="n">modm</span><span class="o">::</span><span class="n">clock</span><span class="o">::</span><span class="n">fcpu</span> <span class="p">;</span>
-<span class="kt">uint32_t</span> <span class="n">modm_fastdata</span> <span class="n">modm</span><span class="o">::</span><span class="n">clock</span><span class="o">::</span><span class="n">fcpu_kHz</span> <span class="p">;</span>
 <span class="kt">uint16_t</span> <span class="n">modm_fastdata</span> <span class="n">modm</span><span class="o">::</span><span class="n">clock</span><span class="o">::</span><span class="n">fcpu_MHz</span> <span class="p">;</span>
 <span class="kt">uint16_t</span> <span class="n">modm_fastdata</span> <span class="n">modm</span><span class="o">::</span><span class="n">clock</span><span class="o">::</span><span class="n">ns_per_loop</span> <span class="p">;</span>
-
-<span class="c1">// Function</span>
-<span class="kt">void</span> <span class="nf">_delay_ns</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">ns</span><span class="p">);</span>
-<span class="kt">void</span> <span class="nf">_delay_us</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">us</span><span class="p">);</span>
-<span class="kt">void</span> <span class="nf">_delay_ms</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">ms</span><span class="p">);</span>
+<span class="kt">uint32_t</span> <span class="n">modm_fastdata</span> <span class="n">modm</span><span class="o">::</span><span class="n">clock</span><span class="o">::</span><span class="n">fcpu</span> <span class="p">;</span>
+<span class="kt">uint32_t</span> <span class="n">modm_fastdata</span> <span class="n">modm</span><span class="o">::</span><span class="n">clock</span><span class="o">::</span><span class="n">fcpu_kHz</span> <span class="p">;</span>
 
 <span class="c1">// Typedef</span>
 <span class="k">typedef</span> <span class="nf">void</span><span class="p">(</span><span class="o">*</span> <span class="n">modm</span><span class="o">::</span><span class="n">cortex</span><span class="o">::</span><span class="n">InterruptHandler</span><span class="p">)</span> <span class="p">(</span><span class="kt">void</span><span class="p">))(</span><span class="kt">void</span><span class="p">);</span>

@@ -2922,38 +2922,38 @@
 <p>Used clock for the MCP2515. The device configuration is selected according to the clock speed.: <code>16MHz</code> ∈ <code>{ 16MHz, 20MHz }</code></p>
 <h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1">// Class</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">Mcp2515</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">SPI</span> <span class="p">,</span> <span class="k">typename</span> <span class="n">CS</span> <span class="p">,</span> <span class="k">typename</span> <span class="n">INT</span>  <span class="o">&gt;</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">CanBitTimingMcp2515</span><span class="o">&lt;</span> <span class="kt">int32_t</span> <span class="n">Clk</span><span class="p">,</span> <span class="kt">int32_t</span> <span class="n">Bitrate</span> <span class="o">&gt;</span><span class="p">;</span>
-
-<span class="c1">// Define</span>
-<span class="cp">#define MCP2515_FILTER_EXTENDED(id, id, id, id)</span>
-<span class="cp">#define MCP2515_FILTER(id, id, id, id)</span>
-<span class="cp">#define MCP2515_MASK_EXTENDED(id, id, id, id)</span>
-<span class="cp">#define MCP2515_MASK(id, id, id, id)</span>
+<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">Mcp2515</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">SPI</span> <span class="p">,</span> <span class="k">typename</span> <span class="n">CS</span> <span class="p">,</span> <span class="k">typename</span> <span class="n">INT</span>  <span class="o">&gt;</span><span class="p">;</span>
 
 <span class="c1">// Struct</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">CanBitTimingMcp2515</span><span class="o">::</span><span class="n">CanBitTimingConfiguration</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">CanBitTimingMcp2515</span><span class="o">::</span><span class="n">CanBitTimingConfiguration</span><span class="p">;</span>
 
 <span class="c1">// Enum</span>
-<span class="k">enum</span> <span class="n">Register</span><span class="p">;</span>
 <span class="k">enum</span> <span class="n">BFPCTRL</span><span class="p">;</span>
-<span class="k">enum</span> <span class="n">TXRTSCTRL</span><span class="p">;</span>
-<span class="k">enum</span> <span class="n">CANSTAT</span><span class="p">;</span>
 <span class="k">enum</span> <span class="n">CANCTRL</span><span class="p">;</span>
-<span class="k">enum</span> <span class="n">CNF3</span><span class="p">;</span>
-<span class="k">enum</span> <span class="n">CNF2</span><span class="p">;</span>
-<span class="k">enum</span> <span class="n">CNF1</span><span class="p">;</span>
 <span class="k">enum</span> <span class="n">CANINTE</span><span class="p">;</span>
 <span class="k">enum</span> <span class="n">CANINTF</span><span class="p">;</span>
+<span class="k">enum</span> <span class="n">CANSTAT</span><span class="p">;</span>
+<span class="k">enum</span> <span class="n">CNF1</span><span class="p">;</span>
+<span class="k">enum</span> <span class="n">CNF2</span><span class="p">;</span>
+<span class="k">enum</span> <span class="n">CNF3</span><span class="p">;</span>
 <span class="k">enum</span> <span class="n">EFLG</span><span class="p">;</span>
-<span class="k">enum</span> <span class="n">TXBnCTRL</span><span class="p">;</span>
 <span class="k">enum</span> <span class="n">RXB0CTRL</span><span class="p">;</span>
-<span class="k">enum</span> <span class="n">TXBnSIDL</span><span class="p">;</span>
 <span class="k">enum</span> <span class="n">RXB1CTRL</span><span class="p">;</span>
-<span class="k">enum</span> <span class="n">RXBnSIDL</span><span class="p">;</span>
 <span class="k">enum</span> <span class="n">RXBnDLC</span><span class="p">;</span>
-<span class="k">enum</span> <span class="n">Status</span><span class="p">;</span>
+<span class="k">enum</span> <span class="n">RXBnSIDL</span><span class="p">;</span>
+<span class="k">enum</span> <span class="n">Register</span><span class="p">;</span>
 <span class="k">enum</span> <span class="n">RxStatus</span><span class="p">;</span>
+<span class="k">enum</span> <span class="n">Status</span><span class="p">;</span>
+<span class="k">enum</span> <span class="n">TXBnCTRL</span><span class="p">;</span>
+<span class="k">enum</span> <span class="n">TXBnSIDL</span><span class="p">;</span>
+<span class="k">enum</span> <span class="n">TXRTSCTRL</span><span class="p">;</span>
+
+<span class="c1">// Define</span>
+<span class="cp">#define MCP2515_FILTER(id)</span>
+<span class="cp">#define MCP2515_FILTER_EXTENDED(id)</span>
+<span class="cp">#define MCP2515_MASK(id)</span>
+<span class="cp">#define MCP2515_MASK_EXTENDED(id)</span>
 </pre></div>
 
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>

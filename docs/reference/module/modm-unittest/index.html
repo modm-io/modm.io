@@ -2880,20 +2880,20 @@
 <h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1">// Class</span>
 <span class="k">class</span> <span class="nc">unittest</span><span class="o">::</span><span class="n">Controller</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">unittest</span><span class="o">::</span><span class="n">CountType</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">unittest</span><span class="o">::</span><span class="n">Reporter</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">unittest</span><span class="o">::</span><span class="n">TestSuite</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">unittest</span><span class="o">::</span><span class="n">CountType</span><span class="p">;</span>
 
 <span class="c1">// Define</span>
-<span class="cp">#define TEST_FLOAT_EPISLON(expr, expr, x, y, x, y, x, y, d, value, lower, upper, array1, array2, count, start, msg)</span>
-<span class="cp">#define TEST_ASSERT_TRUE(expr, expr, x, y, x, y, x, y, d, value, lower, upper, array1, array2, count, start, msg)</span>
-<span class="cp">#define TEST_ASSERT_FALSE(expr, expr, x, y, x, y, x, y, d, value, lower, upper, array1, array2, count, start, msg)</span>
-<span class="cp">#define TEST_ASSERT_EQUALS(expr, expr, x, y, x, y, x, y, d, value, lower, upper, array1, array2, count, start, msg)</span>
-<span class="cp">#define TEST_ASSERT_EQUALS_FLOAT(expr, expr, x, y, x, y, x, y, d, value, lower, upper, array1, array2, count, start, msg)</span>
-<span class="cp">#define TEST_ASSERT_EQUALS_DELTA(expr, expr, x, y, x, y, x, y, d, value, lower, upper, array1, array2, count, start, msg)</span>
-<span class="cp">#define TEST_ASSERT_EQUALS_RANGE(expr, expr, x, y, x, y, x, y, d, value, lower, upper, array1, array2, count, start, msg)</span>
-<span class="cp">#define TEST_ASSERT_EQUALS_ARRAY(expr, expr, x, y, x, y, x, y, d, value, lower, upper, array1, array2, count, start, msg)</span>
-<span class="cp">#define TEST_FAIL(expr, expr, x, y, x, y, x, y, d, value, lower, upper, array1, array2, count, start, msg)</span>
+<span class="cp">#define TEST_ASSERT_EQUALS(x, y)</span>
+<span class="cp">#define TEST_ASSERT_EQUALS_ARRAY(array1, array2, count, start)</span>
+<span class="cp">#define TEST_ASSERT_EQUALS_DELTA(x, y, d)</span>
+<span class="cp">#define TEST_ASSERT_EQUALS_FLOAT(x, y)</span>
+<span class="cp">#define TEST_ASSERT_EQUALS_RANGE(value, lower, upper)</span>
+<span class="cp">#define TEST_ASSERT_FALSE(expr)</span>
+<span class="cp">#define TEST_ASSERT_TRUE(expr)</span>
+<span class="cp">#define TEST_FAIL(msg)</span>
+<span class="cp">#define TEST_FLOAT_EPISLON</span>
 </pre></div>
 
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
