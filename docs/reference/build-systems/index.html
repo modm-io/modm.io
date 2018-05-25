@@ -481,6 +481,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cmake" title="CMake" class="md-nav__link">
+    CMake
+  </a>
+  
+</li>
+      
       
       
       
@@ -783,6 +790,18 @@
   <li class="md-nav__item">
     <a href="../module/modm-board-disco-f469ni/" title="modm:board.disco-f469ni" class="md-nav__link">
       modm:board.disco-f469ni
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../module/modm-build-cmake/" title="modm:build.cmake" class="md-nav__link">
+      modm:build.cmake
     </a>
   </li>
 
@@ -2641,6 +2660,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../module/modm-test-platform-gpio/" title="modm:test:platform:gpio" class="md-nav__link">
+      modm:test:platform:gpio
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../module/modm-test-processing/" title="modm:test:processing" class="md-nav__link">
       modm:test:processing
     </a>
@@ -2840,6 +2871,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cmake" title="CMake" class="md-nav__link">
+    CMake
+  </a>
+  
+</li>
+      
       
       
       
@@ -2871,8 +2909,9 @@ to generate the files required for your build system.
 ## Module metadata -->
 
 <h2 id="scons">SCons<a class="headerlink" href="#scons" title="Permanent link">&para;</a></h2>
-<p>We use the <a href="http://scons.org">SCons build system</a> to generate, build and program your application.
-We've <a href="https://github.com/modm-io/scons-build-tools">extended it with many utilities</a> to allow a smooth integration of embedded tools.</p>
+<p>We use the <a href="http://scons.org">SCons build system</a> to build and program your application.
+We've <a href="https://github.com/modm-io/scons-build-tools">extended it with many utilities</a> to allow a smooth integration of embedded tools.
+Include the <a href="../module/modm-build-scons"><code>modm:build.scons</code> module</a> to enable this.</p>
 <p>You can use these command in all our examples to get a feel of how it works.</p>
 <!-- ### Common -->
 
@@ -2881,11 +2920,10 @@ We've <a href="https://github.com/modm-io/scons-build-tools">extended it with ma
  $ scons program     <span class="c1"># Writes the executable onto your target.</span>
  $ scons             <span class="c1"># maps to `scons build size`</span>
  $ scons symbols     <span class="c1"># the symbol table for your executable.</span>
+ $ scons listing     <span class="c1"># Decompiles your executable into an annotated assembly listing.</span>
  $ scons -c          <span class="c1"># removes the build files.</span>
  $ scons <span class="nv">verbose</span><span class="o">=</span><span class="m">1</span>   <span class="c1"># Makes the printout more verbose.</span>
 </pre></div>
-
-<!-- - `listing`: Decompiles your executable into an annotated assembly listing. -->
 
 <!-- - `optimization=[0,1,2,3,s]`: Forces compilation with specified optimization level. Can be used for debug builds. -->
 
@@ -2901,6 +2939,19 @@ We've <a href="https://github.com/modm-io/scons-build-tools">extended it with ma
 - `openocd-debug`: Starts the OpenOCD debug server for your target.
 - `lpclink-debug`: Starts the LPC-Link debug server for your target.
 - `lpclink-init`: Initialize the LPC-Link with its proprietary firmware. -->
+
+<h2 id="cmake">CMake<a class="headerlink" href="#cmake" title="Permanent link">&para;</a></h2>
+<p>You can also use <a href="https://cmake.org">CMake</a> to build and program your application.
+Include the <a href="../module/modm-build-cmake"><code>modm:build.cmake</code> module</a> to enable this.
+This module ships with a Makefile that wraps all of the cmake commands, so you
+can use these commands:</p>
+<div class="codehilite"><pre><span></span> $ make                <span class="c1"># Generates CMake files and compiles your program into an executable.</span>
+ $ make build-release  <span class="c1"># Compiles your program into an executable.</span>
+ $ make build-debug    <span class="c1"># Compiles your program into a debugable executable.</span>
+ $ make upload-release <span class="c1"># Writes the executable onto your target.</span>
+ $ make upload-debug   <span class="c1"># Writes the debugable executable onto your target.</span>
+ $ make gdb            <span class="c1"># starts a debug session for the debugable executable.</span>
+</pre></div>
                 
                   
                 

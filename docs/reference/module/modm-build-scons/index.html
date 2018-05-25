@@ -101,7 +101,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#modmbuildscons" tabindex="1" class="md-skip">
+      <a href="#modmbuildscons-scons-build-script-generator" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -747,6 +747,18 @@
   <li class="md-nav__item">
     <a href="../modm-board-disco-f469ni/" title="modm:board.disco-f469ni" class="md-nav__link">
       modm:board.disco-f469ni
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-build-cmake/" title="modm:build.cmake" class="md-nav__link">
+      modm:build.cmake
     </a>
   </li>
 
@@ -2726,6 +2738,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../modm-test-platform-gpio/" title="modm:test:platform:gpio" class="md-nav__link">
+      modm:test:platform:gpio
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../modm-test-processing/" title="modm:test:processing" class="md-nav__link">
       modm:test:processing
     </a>
@@ -3028,16 +3052,14 @@
                 <div class="admonition warning">
 <p class="admonition-title">These module docs are in beta and may be incomplete.</p>
 </div>
-<h1 id="modmbuildscons">modm:build.scons<a class="headerlink" href="#modmbuildscons" title="Permanent link">&para;</a></h1>
-<p>SCons Build Script Generator</p>
-<p>Generates a SConstruct file to build the modm library.</p>
+<h1 id="modmbuildscons-scons-build-script-generator">modm:build.scons: SCons Build Script Generator<a class="headerlink" href="#modmbuildscons-scons-build-script-generator" title="Permanent link">&para;</a></h1>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <h4 id="include_demo_project">include_demo_project<a class="headerlink" href="#include_demo_project" title="Permanent link">&para;</a></h4>
-<p>Include a demo main file to get a full compilable project.: <code>{ True, False }</code></p>
+<p>Include a demo main file to get a full compilable project.: <code>False</code> ∈ <code>{ True, False }</code></p>
 <h4 id="include_sconstruct">include_sconstruct<a class="headerlink" href="#include_sconstruct" title="Permanent link">&para;</a></h4>
 <p>Generate modm specific SConstruct file.: <code>True</code> ∈ <code>{ True, False }</code></p>
 <h4 id="is_unittest">is_unittest<a class="headerlink" href="#is_unittest" title="Permanent link">&para;</a></h4>
-<p>Generate SConstruct file for modm unittests.: <code>{ True, False }</code></p>
+<p>Generate SConstruct file for modm unittests.: <code>False</code> ∈ <code>{ True, False }</code></p>
 <h4 id="buildpath">build.path<a class="headerlink" href="#buildpath" title="Permanent link">&para;</a></h4>
 <p>Path to the build folder: <code>../../../build/stm32f469_discovery/blink</code> ∈ <code>{ String }</code></p>
 <h4 id="imagesource">image.source<a class="headerlink" href="#imagesource" title="Permanent link">&para;</a></h4>
@@ -3051,9 +3073,9 @@
 <h4 id="xpccnamespace">xpcc.namespace<a class="headerlink" href="#xpccnamespace" title="Permanent link">&para;</a></h4>
 <p>Namespace of the generated XPCC communications: <code>robot</code> ∈ <code>{ String }</code></p>
 <h4 id="infogit">info.git<a class="headerlink" href="#infogit" title="Permanent link">&para;</a></h4>
-<p>Generate CPP defines about the git repository state: <code>{ True, False }</code></p>
+<p>Generate CPP defines about the git repository state: <code>False</code> ∈ <code>{ True, False }</code></p>
 <h4 id="infobuild">info.build<a class="headerlink" href="#infobuild" title="Permanent link">&para;</a></h4>
-<p>Generate CPP defines about the build state: <code>{ True, False }</code></p>
+<p>Generate CPP defines about the build state: <code>False</code> ∈ <code>{ True, False }</code></p>
                 
                   
                 
@@ -3074,7 +3096,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../modm-board-disco-f469ni/" title="modm:board.disco-f469ni" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../modm-build-cmake/" title="modm:build.cmake" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -3083,7 +3105,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                modm:board.disco-f469ni
+                modm:build.cmake
               </span>
             </div>
           </a>

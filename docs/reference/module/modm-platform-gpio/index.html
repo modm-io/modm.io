@@ -757,6 +757,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../modm-build-cmake/" title="modm:build.cmake" class="md-nav__link">
+      modm:build.cmake
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../modm-build-scons/" title="modm:build.scons" class="md-nav__link">
       modm:build.scons
     </a>
@@ -2670,6 +2682,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../modm-test-platform-gpio/" title="modm:test:platform:gpio" class="md-nav__link">
+      modm:test:platform:gpio
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../modm-test-processing/" title="modm:test:processing" class="md-nav__link">
       modm:test:processing
     </a>
@@ -3082,13 +3106,72 @@
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioK5</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioK6</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioK7</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPort</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">StartPin</span> <span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">Width</span><span class="p">,</span> <span class="o">::</span><span class="n">modm</span><span class="o">::</span><span class="n">GpioPort</span><span class="o">::</span><span class="n">DataOrder</span> <span class="n">PortOrder</span><span class="o">=</span><span class="n">GpioPort</span><span class="o">::</span><span class="n">DataOrder</span><span class="o">::</span><span class="n">Normal</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPort</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">StartGpio</span> <span class="p">,</span> <span class="kt">int8_t</span> <span class="n">Width</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSet</span><span class="o">&lt;</span> <span class="n">class</span><span class="p">...</span> <span class="n">Gpios</span> <span class="o">&gt;</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioUnused</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">SoftwareGpioPort</span><span class="o">&lt;</span> <span class="k">typename</span><span class="p">...</span> <span class="n">Gpios</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">SoftwareGpioPort</span><span class="o">&lt;</span> <span class="n">class</span><span class="p">...</span> <span class="n">Gpios</span> <span class="o">&gt;</span><span class="p">;</span>
 
 <span class="c1">// Struct</span>
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">Gpio</span><span class="p">;</span>
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioConnector</span><span class="o">&lt;</span> <span class="n">Peripheral</span> <span class="n">peripheral</span><span class="p">,</span> <span class="k">template</span><span class="o">&lt;</span> <span class="n">Peripheral</span> <span class="n">_</span> <span class="o">&gt;</span> <span class="n">class</span><span class="p">...</span> <span class="n">Signals</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPortInfo</span><span class="o">&lt;</span> <span class="n">Gpio</span><span class="o">::</span><span class="n">Port</span> <span class="n">port</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPortInfo</span><span class="o">&lt;</span> <span class="n">Gpio</span><span class="o">::</span><span class="n">Port</span><span class="o">::</span><span class="n">A</span> <span class="o">&gt;::</span><span class="n">check</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPortInfo</span><span class="o">&lt;</span> <span class="n">Gpio</span><span class="o">::</span><span class="n">Port</span><span class="o">::</span><span class="n">A</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPortInfo</span><span class="o">&lt;</span> <span class="n">Gpio</span><span class="o">::</span><span class="n">Port</span><span class="o">::</span><span class="n">B</span> <span class="o">&gt;::</span><span class="n">check</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPortInfo</span><span class="o">&lt;</span> <span class="n">Gpio</span><span class="o">::</span><span class="n">Port</span><span class="o">::</span><span class="n">B</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPortInfo</span><span class="o">&lt;</span> <span class="n">Gpio</span><span class="o">::</span><span class="n">Port</span><span class="o">::</span><span class="n">C</span> <span class="o">&gt;::</span><span class="n">check</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPortInfo</span><span class="o">&lt;</span> <span class="n">Gpio</span><span class="o">::</span><span class="n">Port</span><span class="o">::</span><span class="n">C</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPortInfo</span><span class="o">&lt;</span> <span class="n">Gpio</span><span class="o">::</span><span class="n">Port</span><span class="o">::</span><span class="n">D</span> <span class="o">&gt;::</span><span class="n">check</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPortInfo</span><span class="o">&lt;</span> <span class="n">Gpio</span><span class="o">::</span><span class="n">Port</span><span class="o">::</span><span class="n">D</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPortInfo</span><span class="o">&lt;</span> <span class="n">Gpio</span><span class="o">::</span><span class="n">Port</span><span class="o">::</span><span class="n">E</span> <span class="o">&gt;::</span><span class="n">check</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPortInfo</span><span class="o">&lt;</span> <span class="n">Gpio</span><span class="o">::</span><span class="n">Port</span><span class="o">::</span><span class="n">E</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPortInfo</span><span class="o">&lt;</span> <span class="n">Gpio</span><span class="o">::</span><span class="n">Port</span><span class="o">::</span><span class="n">F</span> <span class="o">&gt;::</span><span class="n">check</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPortInfo</span><span class="o">&lt;</span> <span class="n">Gpio</span><span class="o">::</span><span class="n">Port</span><span class="o">::</span><span class="n">F</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPortInfo</span><span class="o">&lt;</span> <span class="n">Gpio</span><span class="o">::</span><span class="n">Port</span><span class="o">::</span><span class="n">G</span> <span class="o">&gt;::</span><span class="n">check</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPortInfo</span><span class="o">&lt;</span> <span class="n">Gpio</span><span class="o">::</span><span class="n">Port</span><span class="o">::</span><span class="n">G</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPortInfo</span><span class="o">&lt;</span> <span class="n">Gpio</span><span class="o">::</span><span class="n">Port</span><span class="o">::</span><span class="n">H</span> <span class="o">&gt;::</span><span class="n">check</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPortInfo</span><span class="o">&lt;</span> <span class="n">Gpio</span><span class="o">::</span><span class="n">Port</span><span class="o">::</span><span class="n">H</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPortInfo</span><span class="o">&lt;</span> <span class="n">Gpio</span><span class="o">::</span><span class="n">Port</span><span class="o">::</span><span class="n">I</span> <span class="o">&gt;::</span><span class="n">check</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPortInfo</span><span class="o">&lt;</span> <span class="n">Gpio</span><span class="o">::</span><span class="n">Port</span><span class="o">::</span><span class="n">I</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPortInfo</span><span class="o">&lt;</span> <span class="n">Gpio</span><span class="o">::</span><span class="n">Port</span><span class="o">::</span><span class="n">J</span> <span class="o">&gt;::</span><span class="n">check</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPortInfo</span><span class="o">&lt;</span> <span class="n">Gpio</span><span class="o">::</span><span class="n">Port</span><span class="o">::</span><span class="n">J</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPortInfo</span><span class="o">&lt;</span> <span class="n">Gpio</span><span class="o">::</span><span class="n">Port</span><span class="o">::</span><span class="n">K</span> <span class="o">&gt;::</span><span class="n">check</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioPortInfo</span><span class="o">&lt;</span> <span class="n">Gpio</span><span class="o">::</span><span class="n">Port</span><span class="o">::</span><span class="n">K</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="o">-</span><span class="mi">11</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="o">-</span><span class="mi">13</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="o">-</span><span class="mi">14</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="o">-</span><span class="mi">16</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="mi">0</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="mi">1</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="mi">10</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="mi">11</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="mi">12</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="mi">13</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="mi">14</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="mi">15</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="mi">16</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="mi">2</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="mi">3</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="mi">4</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="mi">5</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="mi">6</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="mi">7</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="mi">8</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="n">StartGpio</span><span class="p">,</span> <span class="mi">9</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioSetShim</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">StartGpio</span> <span class="p">,</span> <span class="kt">int8_t</span> <span class="n">Width</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioShim</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">StartGpio</span> <span class="p">,</span> <span class="kt">int8_t</span> <span class="n">offset</span> <span class="o">&gt;</span><span class="p">;</span>
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioUnused</span><span class="o">::</span><span class="n">A0</span><span class="o">&lt;</span> <span class="n">Peripheral</span> <span class="n">_</span> <span class="o">&gt;</span><span class="p">;</span>
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioUnused</span><span class="o">::</span><span class="n">A10</span><span class="o">&lt;</span> <span class="n">Peripheral</span> <span class="n">_</span> <span class="o">&gt;</span><span class="p">;</span>
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioUnused</span><span class="o">::</span><span class="n">A11</span><span class="o">&lt;</span> <span class="n">Peripheral</span> <span class="n">_</span> <span class="o">&gt;</span><span class="p">;</span>
@@ -3208,9 +3291,6 @@
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioUnused</span><span class="o">::</span><span class="n">Dp</span><span class="o">&lt;</span> <span class="n">Peripheral</span> <span class="n">_</span> <span class="o">&gt;</span><span class="p">;</span>
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioUnused</span><span class="o">::</span><span class="n">Etr</span><span class="o">&lt;</span> <span class="n">Peripheral</span> <span class="n">_</span> <span class="o">&gt;</span><span class="p">;</span>
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioUnused</span><span class="o">::</span><span class="n">ExtSd</span><span class="o">&lt;</span> <span class="n">Peripheral</span> <span class="n">_</span> <span class="o">&gt;</span><span class="p">;</span>
-<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioUnused</span><span class="o">::</span><span class="n">Exti11</span><span class="o">&lt;</span> <span class="n">Peripheral</span> <span class="n">_</span> <span class="o">&gt;</span><span class="p">;</span>
-<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioUnused</span><span class="o">::</span><span class="n">Exti15</span><span class="o">&lt;</span> <span class="n">Peripheral</span> <span class="n">_</span> <span class="o">&gt;</span><span class="p">;</span>
-<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioUnused</span><span class="o">::</span><span class="n">Exti9</span><span class="o">&lt;</span> <span class="n">Peripheral</span> <span class="n">_</span> <span class="o">&gt;</span><span class="p">;</span>
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioUnused</span><span class="o">::</span><span class="n">FsA</span><span class="o">&lt;</span> <span class="n">Peripheral</span> <span class="n">_</span> <span class="o">&gt;</span><span class="p">;</span>
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioUnused</span><span class="o">::</span><span class="n">FsB</span><span class="o">&lt;</span> <span class="n">Peripheral</span> <span class="n">_</span> <span class="o">&gt;</span><span class="p">;</span>
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">GpioUnused</span><span class="o">::</span><span class="n">G0</span><span class="o">&lt;</span> <span class="n">Peripheral</span> <span class="n">_</span> <span class="o">&gt;</span><span class="p">;</span>
@@ -3357,322 +3437,340 @@
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: modm:platform:gpio Pages: 1 -->
-<svg width="1212pt" height="230pt"
- viewBox="0.00 0.00 1211.91 230.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 226)">
+<svg width="1298pt" height="244pt"
+ viewBox="0.00 0.00 1298.12 244.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 240)">
 <title>modm:platform:gpio</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-226 1207.9053,-226 1207.9053,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-240 1294.1191,-240 1294.1191,4 -4,4"/>
 <!-- modm_platform_gpio -->
 <g id="node1" class="node">
 <title>modm_platform_gpio</title>
-<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="685.1675,-136 616.9741,-136 616.9741,-86 685.1675,-86 685.1675,-136"/>
-<text text-anchor="middle" x="651.0708" y="-120.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="651.0708" y="-106.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="651.0708" y="-92.8" font-family="Times,serif" font-size="14.00" fill="#000000">gpio</text>
+<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="730.1675,-150 661.9741,-150 661.9741,-100 730.1675,-100 730.1675,-150"/>
+<text text-anchor="middle" x="696.0708" y="-134.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="696.0708" y="-120.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="696.0708" y="-106.8" font-family="Times,serif" font-size="14.00" fill="#000000">gpio</text>
 </g>
 <!-- modm_architecture_gpio -->
 <g id="node2" class="node">
 <title>modm_architecture_gpio</title>
 <g id="a_node2"><a xlink:href="../modm-architecture-gpio" xlink:title="modm:&#10;architecture:&#10;gpio">
-<polygon fill="#d3d3d3" stroke="#000000" points="531.023,-222 445.1186,-222 445.1186,-172 531.023,-172 531.023,-222"/>
-<text text-anchor="middle" x="488.0708" y="-206.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="488.0708" y="-192.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
-<text text-anchor="middle" x="488.0708" y="-178.8" font-family="Times,serif" font-size="14.00" fill="#000000">gpio</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="576.023,-236 490.1186,-236 490.1186,-186 576.023,-186 576.023,-236"/>
+<text text-anchor="middle" x="533.0708" y="-220.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="533.0708" y="-206.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
+<text text-anchor="middle" x="533.0708" y="-192.8" font-family="Times,serif" font-size="14.00" fill="#000000">gpio</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_gpio&#45;&gt;modm_architecture_gpio -->
 <g id="edge1" class="edge">
 <title>modm_platform_gpio&#45;&gt;modm_architecture_gpio</title>
-<path fill="none" stroke="#000000" d="M616.9007,-129.0284C594.7016,-140.7408 565.3331,-156.2359 540.2433,-169.4734"/>
-<polygon fill="#000000" stroke="#000000" points="538.4258,-166.475 531.2146,-174.237 541.6923,-172.6661 538.4258,-166.475"/>
+<path fill="none" stroke="#000000" d="M661.9007,-143.0284C639.7016,-154.7408 610.3331,-170.2359 585.2433,-183.4734"/>
+<polygon fill="#000000" stroke="#000000" points="583.4258,-180.475 576.2146,-188.237 586.6923,-186.6661 583.4258,-180.475"/>
 </g>
 <!-- modm_cmsis_device -->
 <g id="node3" class="node">
 <title>modm_cmsis_device</title>
 <g id="a_node3"><a xlink:href="../modm-cmsis-device" xlink:title="modm:&#10;cmsis:&#10;device">
-<polygon fill="#d3d3d3" stroke="#000000" points="604.7407,-222 549.4009,-222 549.4009,-172 604.7407,-172 604.7407,-222"/>
-<text text-anchor="middle" x="577.0708" y="-206.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="577.0708" y="-192.8" font-family="Times,serif" font-size="14.00" fill="#000000">cmsis:</text>
-<text text-anchor="middle" x="577.0708" y="-178.8" font-family="Times,serif" font-size="14.00" fill="#000000">device</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="649.7407,-236 594.4009,-236 594.4009,-186 649.7407,-186 649.7407,-236"/>
+<text text-anchor="middle" x="622.0708" y="-220.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="622.0708" y="-206.8" font-family="Times,serif" font-size="14.00" fill="#000000">cmsis:</text>
+<text text-anchor="middle" x="622.0708" y="-192.8" font-family="Times,serif" font-size="14.00" fill="#000000">device</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_gpio&#45;&gt;modm_cmsis_device -->
 <g id="edge2" class="edge">
 <title>modm_platform_gpio&#45;&gt;modm_cmsis_device</title>
-<path fill="none" stroke="#000000" d="M629.2686,-136.3377C621.8165,-144.9983 613.3688,-154.8159 605.4739,-163.991"/>
-<polygon fill="#000000" stroke="#000000" points="602.5866,-161.9804 598.7172,-171.8434 607.8927,-166.5461 602.5866,-161.9804"/>
+<path fill="none" stroke="#000000" d="M674.2686,-150.3377C666.8165,-158.9983 658.3688,-168.8159 650.4739,-177.991"/>
+<polygon fill="#000000" stroke="#000000" points="647.5866,-175.9804 643.7172,-185.8434 652.8927,-180.5461 647.5866,-175.9804"/>
 </g>
 <!-- modm_math_utils -->
 <g id="node4" class="node">
 <title>modm_math_utils</title>
 <g id="a_node4"><a xlink:href="../modm-math-utils" xlink:title="modm:&#10;math:&#10;utils">
-<polygon fill="#d3d3d3" stroke="#000000" points="678.7407,-222 623.4009,-222 623.4009,-172 678.7407,-172 678.7407,-222"/>
-<text text-anchor="middle" x="651.0708" y="-206.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="651.0708" y="-192.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
-<text text-anchor="middle" x="651.0708" y="-178.8" font-family="Times,serif" font-size="14.00" fill="#000000">utils</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="723.7407,-236 668.4009,-236 668.4009,-186 723.7407,-186 723.7407,-236"/>
+<text text-anchor="middle" x="696.0708" y="-220.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="696.0708" y="-206.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
+<text text-anchor="middle" x="696.0708" y="-192.8" font-family="Times,serif" font-size="14.00" fill="#000000">utils</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_gpio&#45;&gt;modm_math_utils -->
 <g id="edge3" class="edge">
 <title>modm_platform_gpio&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M651.0708,-136.3377C651.0708,-144.2984 651.0708,-153.2367 651.0708,-161.7551"/>
-<polygon fill="#000000" stroke="#000000" points="647.5709,-161.8434 651.0708,-171.8434 654.5709,-161.8434 647.5709,-161.8434"/>
+<path fill="none" stroke="#000000" d="M696.0708,-150.3377C696.0708,-158.2984 696.0708,-167.2367 696.0708,-175.7551"/>
+<polygon fill="#000000" stroke="#000000" points="692.5709,-175.8434 696.0708,-185.8434 699.5709,-175.8434 692.5709,-175.8434"/>
 </g>
 <!-- modm_platform -->
 <g id="node5" class="node">
 <title>modm_platform</title>
 <g id="a_node5"><a xlink:href="../modm-platform" xlink:title="modm:&#10;platform">
-<polygon fill="#d3d3d3" stroke="#000000" points="761.2782,-215 696.8634,-215 696.8634,-179 761.2782,-179 761.2782,-215"/>
-<text text-anchor="middle" x="729.0708" y="-199.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="729.0708" y="-185.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="806.2782,-229 741.8634,-229 741.8634,-193 806.2782,-193 806.2782,-229"/>
+<text text-anchor="middle" x="774.0708" y="-213.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="774.0708" y="-199.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_gpio&#45;&gt;modm_platform -->
 <g id="edge4" class="edge">
 <title>modm_platform_gpio&#45;&gt;modm_platform</title>
-<path fill="none" stroke="#000000" d="M674.0515,-136.3377C684.0319,-147.3417 695.7063,-160.2135 705.7272,-171.2621"/>
-<polygon fill="#000000" stroke="#000000" points="703.3731,-173.8764 712.6838,-178.9323 708.5581,-169.1737 703.3731,-173.8764"/>
+<path fill="none" stroke="#000000" d="M719.0515,-150.3377C729.0319,-161.3417 740.7063,-174.2135 750.7272,-185.2621"/>
+<polygon fill="#000000" stroke="#000000" points="748.3731,-187.8764 757.6838,-192.9323 753.5581,-183.1737 748.3731,-187.8764"/>
 </g>
 <!-- modm_platform_gpio_common -->
 <g id="node6" class="node">
 <title>modm_platform_gpio_common</title>
 <g id="a_node6"><a xlink:href="../modm-platform-gpio-common" xlink:title="modm:&#10;platform:&#10;gpio.common">
-<polygon fill="#d3d3d3" stroke="#000000" points="872.9544,-222 779.1872,-222 779.1872,-172 872.9544,-172 872.9544,-222"/>
-<text text-anchor="middle" x="826.0708" y="-206.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="826.0708" y="-192.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="826.0708" y="-178.8" font-family="Times,serif" font-size="14.00" fill="#000000">gpio.common</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="917.9544,-236 824.1872,-236 824.1872,-186 917.9544,-186 917.9544,-236"/>
+<text text-anchor="middle" x="871.0708" y="-220.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="871.0708" y="-206.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="871.0708" y="-192.8" font-family="Times,serif" font-size="14.00" fill="#000000">gpio.common</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_gpio&#45;&gt;modm_platform_gpio_common -->
 <g id="edge5" class="edge">
 <title>modm_platform_gpio&#45;&gt;modm_platform_gpio_common</title>
-<path fill="none" stroke="#000000" d="M685.228,-127.7858C709.2677,-139.5996 741.994,-155.6823 769.8499,-169.3715"/>
-<polygon fill="#000000" stroke="#000000" points="768.5719,-172.6432 779.0904,-173.9125 771.6593,-166.3608 768.5719,-172.6432"/>
+<path fill="none" stroke="#000000" d="M730.228,-141.7858C754.2677,-153.5996 786.994,-169.6823 814.8499,-183.3715"/>
+<polygon fill="#000000" stroke="#000000" points="813.5719,-186.6432 824.0904,-187.9125 816.6593,-180.3608 813.5719,-186.6432"/>
 </g>
 <!-- modm_board_disco&#45;f469ni -->
 <g id="node7" class="node">
 <title>modm_board_disco&#45;f469ni</title>
 <g id="a_node7"><a xlink:href="../modm-board-disco-f469ni" xlink:title="modm:&#10;board.disco&#45;f469ni">
-<polygon fill="#d3d3d3" stroke="#000000" points="122.2125,-43 -.0709,-43 -.0709,-7 122.2125,-7 122.2125,-43"/>
-<text text-anchor="middle" x="61.0708" y="-27.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="61.0708" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">board.disco&#45;f469ni</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="122.2125,-50 -.0709,-50 -.0709,-14 122.2125,-14 122.2125,-50"/>
+<text text-anchor="middle" x="61.0708" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="61.0708" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">board.disco&#45;f469ni</text>
 </a>
 </g>
 </g>
 <!-- modm_board_disco&#45;f469ni&#45;&gt;modm_platform_gpio -->
 <g id="edge6" class="edge">
 <title>modm_board_disco&#45;f469ni&#45;&gt;modm_platform_gpio</title>
-<path fill="none" stroke="#000000" d="M106.9416,-43.0441C114.8956,-45.6925 123.1548,-48.1474 131.0708,-50 304.1066,-90.4967 516.1343,-104.7163 606.6743,-109.1752"/>
-<polygon fill="#000000" stroke="#000000" points="606.6921,-112.68 616.8474,-109.66 607.0254,-105.6879 606.6921,-112.68"/>
+<path fill="none" stroke="#000000" d="M94.7818,-50.0594C106.0347,-55.3626 118.8302,-60.6365 131.0708,-64 229.2061,-90.9658 536.1172,-114.0859 651.5653,-122.0453"/>
+<polygon fill="#000000" stroke="#000000" points="651.59,-125.5551 661.8056,-122.7461 652.068,-118.5715 651.59,-125.5551"/>
 </g>
 <!-- modm_platform_1&#45;wire_bitbang -->
 <g id="node8" class="node">
 <title>modm_platform_1&#45;wire_bitbang</title>
 <g id="a_node8"><a xlink:href="../modm-platform-1-wire-bitbang" xlink:title="modm:&#10;platform:&#10;1&#45;wire.bitbang">
-<polygon fill="#d3d3d3" stroke="#000000" points="238.1021,-50 140.0395,-50 140.0395,0 238.1021,0 238.1021,-50"/>
-<text text-anchor="middle" x="189.0708" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="189.0708" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="189.0708" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">1&#45;wire.bitbang</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="238.1021,-57 140.0395,-57 140.0395,-7 238.1021,-7 238.1021,-57"/>
+<text text-anchor="middle" x="189.0708" y="-41.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="189.0708" y="-27.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="189.0708" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">1&#45;wire.bitbang</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_1&#45;wire_bitbang&#45;&gt;modm_platform_gpio -->
 <g id="edge7" class="edge">
 <title>modm_platform_1&#45;wire_bitbang&#45;&gt;modm_platform_gpio</title>
-<path fill="none" stroke="#000000" d="M238.1164,-47.1603C241.1187,-48.1979 244.1188,-49.1562 247.0708,-50 374.7425,-86.4935 531.7177,-102.2333 606.8751,-108.0578"/>
-<polygon fill="#000000" stroke="#000000" points="606.6909,-111.5538 616.9256,-108.815 607.2168,-104.5736 606.6909,-111.5538"/>
+<path fill="none" stroke="#000000" d="M230.3705,-57.151C235.8511,-59.7787 241.5026,-62.1572 247.0708,-64 321.7412,-88.7117 553.709,-112.0363 651.6827,-121.0634"/>
+<polygon fill="#000000" stroke="#000000" points="651.5674,-124.5674 661.8446,-121.9926 652.2049,-117.5965 651.5674,-124.5674"/>
 </g>
 <!-- modm_platform_adc -->
 <g id="node9" class="node">
 <title>modm_platform_adc</title>
 <g id="a_node9"><a xlink:href="../modm-platform-adc" xlink:title="modm:&#10;platform:&#10;adc">
-<polygon fill="#d3d3d3" stroke="#000000" points="324.1675,-50 255.9741,-50 255.9741,0 324.1675,0 324.1675,-50"/>
-<text text-anchor="middle" x="290.0708" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="290.0708" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="290.0708" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">adc</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="324.1675,-57 255.9741,-57 255.9741,-7 324.1675,-7 324.1675,-57"/>
+<text text-anchor="middle" x="290.0708" y="-41.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="290.0708" y="-27.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="290.0708" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">adc</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_adc&#45;&gt;modm_platform_gpio -->
 <g id="edge8" class="edge">
 <title>modm_platform_adc&#45;&gt;modm_platform_gpio</title>
-<path fill="none" stroke="#000000" d="M324.3082,-46.242C327.2163,-47.633 330.1593,-48.9105 333.0708,-50 426.6386,-85.0136 543.5489,-100.8113 606.299,-107.1987"/>
-<polygon fill="#000000" stroke="#000000" points="606.3361,-110.7192 616.6307,-108.2147 607.0212,-103.7528 606.3361,-110.7192"/>
+<path fill="none" stroke="#000000" d="M320.4767,-57.269C324.5426,-59.8417 328.791,-62.1747 333.0708,-64 389.9222,-88.2464 568.1053,-110.6782 651.8073,-120.1948"/>
+<polygon fill="#000000" stroke="#000000" points="651.443,-123.6758 661.772,-121.3174 652.2267,-116.7198 651.443,-123.6758"/>
 </g>
 <!-- modm_platform_can -->
 <g id="node10" class="node">
 <title>modm_platform_can</title>
 <g id="a_node10"><a xlink:href="../modm-platform-can" xlink:title="modm:&#10;platform:&#10;can">
-<polygon fill="#d3d3d3" stroke="#000000" points="410.1675,-50 341.9741,-50 341.9741,0 410.1675,0 410.1675,-50"/>
-<text text-anchor="middle" x="376.0708" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="376.0708" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="376.0708" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">can</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="410.1675,-57 341.9741,-57 341.9741,-7 410.1675,-7 410.1675,-57"/>
+<text text-anchor="middle" x="376.0708" y="-41.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="376.0708" y="-27.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="376.0708" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">can</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_can&#45;&gt;modm_platform_gpio -->
 <g id="edge9" class="edge">
 <title>modm_platform_can&#45;&gt;modm_platform_gpio</title>
-<path fill="none" stroke="#000000" d="M410.3935,-46.0254C413.2824,-47.465 416.1977,-48.8127 419.0708,-50 452.9296,-63.9919 549.8265,-87.5631 607.1234,-100.9382"/>
-<polygon fill="#000000" stroke="#000000" points="606.4606,-104.3774 616.9934,-103.2329 608.0458,-97.5593 606.4606,-104.3774"/>
+<path fill="none" stroke="#000000" d="M406.5685,-57.0612C410.6186,-59.6695 414.8382,-62.0677 419.0708,-64 496.4539,-99.327 595.5335,-114.7533 651.7916,-121.0506"/>
+<polygon fill="#000000" stroke="#000000" points="651.4666,-124.5357 661.783,-122.1229 652.2137,-117.5757 651.4666,-124.5357"/>
 </g>
 <!-- modm_platform_fault_cortex -->
 <g id="node11" class="node">
 <title>modm_platform_fault_cortex</title>
 <g id="a_node11"><a xlink:href="../modm-platform-fault-cortex" xlink:title="modm:&#10;platform:&#10;fault.cortex">
-<polygon fill="#d3d3d3" stroke="#000000" points="508.2057,-50 427.9359,-50 427.9359,0 508.2057,0 508.2057,-50"/>
-<text text-anchor="middle" x="468.0708" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="468.0708" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="468.0708" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">fault.cortex</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="508.2057,-57 427.9359,-57 427.9359,-7 508.2057,-7 508.2057,-57"/>
+<text text-anchor="middle" x="468.0708" y="-41.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="468.0708" y="-27.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="468.0708" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">fault.cortex</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_fault_cortex&#45;&gt;modm_platform_gpio -->
 <g id="edge10" class="edge">
 <title>modm_platform_fault_cortex&#45;&gt;modm_platform_gpio</title>
-<path fill="none" stroke="#000000" d="M508.3764,-45.7436C511.3113,-47.1989 514.2323,-48.6306 517.0708,-50 547.1092,-64.491 581.3368,-80.0565 607.6805,-91.8369"/>
-<polygon fill="#000000" stroke="#000000" points="606.4485,-95.1197 617.0069,-95.9967 609.2999,-88.7268 606.4485,-95.1197"/>
+<path fill="none" stroke="#000000" d="M504.4116,-57.1382C508.5958,-59.6075 512.8694,-61.9524 517.0708,-64 561.1777,-85.4958 614.7909,-102.6829 651.7792,-113.2661"/>
+<polygon fill="#000000" stroke="#000000" points="651.1749,-116.732 661.7493,-116.0741 653.0726,-109.9941 651.1749,-116.732"/>
 </g>
 <!-- modm_platform_i2c -->
 <g id="node12" class="node">
 <title>modm_platform_i2c</title>
 <g id="a_node12"><a xlink:href="../modm-platform-i2c" xlink:title="modm:&#10;platform:&#10;i2c">
-<polygon fill="#d3d3d3" stroke="#000000" points="594.1675,-50 525.9741,-50 525.9741,0 594.1675,0 594.1675,-50"/>
-<text text-anchor="middle" x="560.0708" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="560.0708" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="560.0708" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">i2c</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="594.1675,-57 525.9741,-57 525.9741,-7 594.1675,-7 594.1675,-57"/>
+<text text-anchor="middle" x="560.0708" y="-41.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="560.0708" y="-27.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="560.0708" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">i2c</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_i2c&#45;&gt;modm_platform_gpio -->
 <g id="edge11" class="edge">
 <title>modm_platform_i2c&#45;&gt;modm_platform_gpio</title>
-<path fill="none" stroke="#000000" d="M586.8816,-50.3377C596.3234,-59.2607 607.0648,-69.4119 617.0234,-78.8233"/>
-<polygon fill="#000000" stroke="#000000" points="614.7797,-81.5186 624.4516,-85.8434 619.5877,-76.431 614.7797,-81.5186"/>
+<path fill="none" stroke="#000000" d="M593.2633,-57.0039C596.5581,-59.3946 599.8676,-61.7606 603.0708,-64 619.2272,-75.2955 637.2883,-87.2834 653.1652,-97.6148"/>
+<polygon fill="#000000" stroke="#000000" points="651.4399,-100.6674 661.7351,-103.1692 655.2471,-94.7933 651.4399,-100.6674"/>
 </g>
 <!-- modm_platform_i2c_bitbang -->
 <g id="node13" class="node">
 <title>modm_platform_i2c_bitbang</title>
 <g id="a_node13"><a xlink:href="../modm-platform-i2c-bitbang" xlink:title="modm:&#10;platform:&#10;i2c.bitbang">
-<polygon fill="#d3d3d3" stroke="#000000" points="690.1685,-50 611.9731,-50 611.9731,0 690.1685,0 690.1685,-50"/>
-<text text-anchor="middle" x="651.0708" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="651.0708" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="651.0708" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">i2c.bitbang</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="690.1685,-57 611.9731,-57 611.9731,-7 690.1685,-7 690.1685,-57"/>
+<text text-anchor="middle" x="651.0708" y="-41.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="651.0708" y="-27.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="651.0708" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">i2c.bitbang</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_i2c_bitbang&#45;&gt;modm_platform_gpio -->
 <g id="edge12" class="edge">
 <title>modm_platform_i2c_bitbang&#45;&gt;modm_platform_gpio</title>
-<path fill="none" stroke="#000000" d="M651.0708,-50.3377C651.0708,-58.2984 651.0708,-67.2367 651.0708,-75.7551"/>
-<polygon fill="#000000" stroke="#000000" points="647.5709,-75.8434 651.0708,-85.8434 654.5709,-75.8434 647.5709,-75.8434"/>
+<path fill="none" stroke="#000000" d="M663.3672,-57.4127C668.3685,-67.7486 674.2231,-79.848 679.5857,-90.9308"/>
+<polygon fill="#000000" stroke="#000000" points="676.4388,-92.4629 683.945,-99.9401 682.7399,-89.414 676.4388,-92.4629"/>
 </g>
 <!-- modm_platform_spi -->
 <g id="node14" class="node">
 <title>modm_platform_spi</title>
 <g id="a_node14"><a xlink:href="../modm-platform-spi" xlink:title="modm:&#10;platform:&#10;spi">
-<polygon fill="#d3d3d3" stroke="#000000" points="776.1675,-50 707.9741,-50 707.9741,0 776.1675,0 776.1675,-50"/>
-<text text-anchor="middle" x="742.0708" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="742.0708" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="742.0708" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">spi</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="776.1675,-57 707.9741,-57 707.9741,-7 776.1675,-7 776.1675,-57"/>
+<text text-anchor="middle" x="742.0708" y="-41.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="742.0708" y="-27.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="742.0708" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">spi</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_spi&#45;&gt;modm_platform_gpio -->
 <g id="edge13" class="edge">
 <title>modm_platform_spi&#45;&gt;modm_platform_gpio</title>
-<path fill="none" stroke="#000000" d="M715.26,-50.3377C705.8182,-59.2607 695.0768,-69.4119 685.1182,-78.8233"/>
-<polygon fill="#000000" stroke="#000000" points="682.5539,-76.431 677.69,-85.8434 687.3619,-81.5186 682.5539,-76.431"/>
+<path fill="none" stroke="#000000" d="M729.5011,-57.4127C724.3887,-67.7486 718.404,-79.848 712.9223,-90.9308"/>
+<polygon fill="#000000" stroke="#000000" points="709.7624,-89.4248 708.466,-99.9401 716.0369,-92.5283 709.7624,-89.4248"/>
 </g>
 <!-- modm_platform_spi_bitbang -->
 <g id="node15" class="node">
 <title>modm_platform_spi_bitbang</title>
 <g id="a_node15"><a xlink:href="../modm-platform-spi-bitbang" xlink:title="modm:&#10;platform:&#10;spi.bitbang">
-<polygon fill="#d3d3d3" stroke="#000000" points="871.902,-50 794.2396,-50 794.2396,0 871.902,0 871.902,-50"/>
-<text text-anchor="middle" x="833.0708" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="833.0708" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="833.0708" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">spi.bitbang</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="871.902,-57 794.2396,-57 794.2396,-7 871.902,-7 871.902,-57"/>
+<text text-anchor="middle" x="833.0708" y="-41.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="833.0708" y="-27.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="833.0708" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">spi.bitbang</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_spi_bitbang&#45;&gt;modm_platform_gpio -->
 <g id="edge14" class="edge">
 <title>modm_platform_spi_bitbang&#45;&gt;modm_platform_gpio</title>
-<path fill="none" stroke="#000000" d="M794.1258,-45.5035C791.0715,-47.0442 788.0267,-48.5587 785.0708,-50 755.0936,-64.617 720.8647,-80.1801 694.5052,-91.9277"/>
-<polygon fill="#000000" stroke="#000000" points="692.8898,-88.8155 685.1723,-96.0744 695.7321,-95.2125 692.8898,-88.8155"/>
+<path fill="none" stroke="#000000" d="M795.9966,-57.1671C778.4267,-69.0942 757.335,-83.4119 739.0666,-95.8131"/>
+<polygon fill="#000000" stroke="#000000" points="736.6611,-93.2157 730.3531,-101.7281 740.5926,-99.0074 736.6611,-93.2157"/>
 </g>
 <!-- modm_platform_timer -->
 <g id="node16" class="node">
 <title>modm_platform_timer</title>
 <g id="a_node16"><a xlink:href="../modm-platform-timer" xlink:title="modm:&#10;platform:&#10;timer">
-<polygon fill="#d3d3d3" stroke="#000000" points="958.1675,-50 889.9741,-50 889.9741,0 958.1675,0 958.1675,-50"/>
-<text text-anchor="middle" x="924.0708" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="924.0708" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="924.0708" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">timer</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="958.1675,-57 889.9741,-57 889.9741,-7 958.1675,-7 958.1675,-57"/>
+<text text-anchor="middle" x="924.0708" y="-41.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="924.0708" y="-27.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="924.0708" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">timer</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_timer&#45;&gt;modm_platform_gpio -->
 <g id="edge15" class="edge">
 <title>modm_platform_timer&#45;&gt;modm_platform_gpio</title>
-<path fill="none" stroke="#000000" d="M889.7453,-46.0186C886.857,-47.4597 883.9426,-48.8097 881.0708,-50 818.6737,-75.8632 742.1598,-93.5725 695.0143,-102.9934"/>
-<polygon fill="#000000" stroke="#000000" points="694.2668,-99.5732 685.1278,-104.9333 695.6146,-106.4423 694.2668,-99.5732"/>
+<path fill="none" stroke="#000000" d="M892.4053,-57.2879C888.6912,-59.7292 884.8694,-62.0266 881.0708,-64 835.4773,-87.6864 778.8446,-104.7427 740.3325,-114.6961"/>
+<polygon fill="#000000" stroke="#000000" points="739.2985,-111.3473 730.4629,-117.1939 741.016,-118.1334 739.2985,-111.3473"/>
 </g>
 <!-- modm_platform_uart -->
 <g id="node17" class="node">
 <title>modm_platform_uart</title>
 <g id="a_node17"><a xlink:href="../modm-platform-uart" xlink:title="modm:&#10;platform:&#10;uart">
-<polygon fill="#d3d3d3" stroke="#000000" points="1044.1675,-50 975.9741,-50 975.9741,0 1044.1675,0 1044.1675,-50"/>
-<text text-anchor="middle" x="1010.0708" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="1010.0708" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="1010.0708" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">uart</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="1044.1675,-57 975.9741,-57 975.9741,-7 1044.1675,-7 1044.1675,-57"/>
+<text text-anchor="middle" x="1010.0708" y="-41.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="1010.0708" y="-27.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="1010.0708" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">uart</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_uart&#45;&gt;modm_platform_gpio -->
 <g id="edge16" class="edge">
 <title>modm_platform_uart&#45;&gt;modm_platform_gpio</title>
-<path fill="none" stroke="#000000" d="M975.832,-46.2382C972.9242,-47.6301 969.9817,-48.9088 967.0708,-50 874.0909,-84.8557 757.9161,-100.7147 695.5609,-107.1544"/>
-<polygon fill="#000000" stroke="#000000" points="694.897,-103.7032 685.2942,-108.1793 695.5924,-110.6686 694.897,-103.7032"/>
+<path fill="none" stroke="#000000" d="M979.5644,-57.0421C975.5157,-59.6537 971.2989,-62.0579 967.0708,-64 891.9348,-98.5122 795.8872,-114.1575 740.6392,-120.7273"/>
+<polygon fill="#000000" stroke="#000000" points="740.0204,-117.2752 730.4821,-121.8871 740.8146,-124.23 740.0204,-117.2752"/>
 </g>
 <!-- modm_platform_uart_spi -->
 <g id="node18" class="node">
 <title>modm_platform_uart_spi</title>
 <g id="a_node18"><a xlink:href="../modm-platform-uart-spi" xlink:title="modm:&#10;platform:&#10;uart.spi">
-<polygon fill="#d3d3d3" stroke="#000000" points="1130.1675,-50 1061.9741,-50 1061.9741,0 1130.1675,0 1130.1675,-50"/>
-<text text-anchor="middle" x="1096.0708" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="1096.0708" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="1096.0708" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">uart.spi</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="1130.1675,-57 1061.9741,-57 1061.9741,-7 1130.1675,-7 1130.1675,-57"/>
+<text text-anchor="middle" x="1096.0708" y="-41.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="1096.0708" y="-27.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="1096.0708" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">uart.spi</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_uart_spi&#45;&gt;modm_platform_gpio -->
 <g id="edge17" class="edge">
 <title>modm_platform_uart_spi&#45;&gt;modm_platform_gpio</title>
-<path fill="none" stroke="#000000" d="M1061.8792,-46.368C1058.9608,-47.7308 1056.003,-48.9674 1053.0708,-50 928.2729,-93.9505 770.7222,-106.243 695.2793,-109.6749"/>
-<polygon fill="#000000" stroke="#000000" points="695.0335,-106.182 685.1908,-110.1027 695.3302,-113.1757 695.0335,-106.182"/>
+<path fill="none" stroke="#000000" d="M1065.66,-57.2576C1061.5949,-59.8323 1057.3481,-62.1688 1053.0708,-64 997.3613,-87.8498 823.1483,-110.3672 740.4707,-120.0374"/>
+<polygon fill="#000000" stroke="#000000" points="739.9116,-116.5787 730.3811,-121.2068 740.7176,-123.5321 739.9116,-116.5787"/>
 </g>
 <!-- modm_test_driver -->
 <g id="node19" class="node">
 <title>modm_test_driver</title>
 <g id="a_node19"><a xlink:href="../modm-test-driver" xlink:title="modm:&#10;test:&#10;driver">
-<polygon fill="#d3d3d3" stroke="#000000" points="1203.7407,-50 1148.4009,-50 1148.4009,0 1203.7407,0 1203.7407,-50"/>
-<text text-anchor="middle" x="1176.0708" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="1176.0708" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">test:</text>
-<text text-anchor="middle" x="1176.0708" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="1203.7407,-57 1148.4009,-57 1148.4009,-7 1203.7407,-7 1203.7407,-57"/>
+<text text-anchor="middle" x="1176.0708" y="-41.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="1176.0708" y="-27.8" font-family="Times,serif" font-size="14.00" fill="#000000">test:</text>
+<text text-anchor="middle" x="1176.0708" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver</text>
 </a>
 </g>
 </g>
 <!-- modm_test_driver&#45;&gt;modm_platform_gpio -->
 <g id="edge18" class="edge">
 <title>modm_test_driver&#45;&gt;modm_platform_gpio</title>
-<path fill="none" stroke="#000000" d="M1148.1218,-45.8021C1145.1628,-47.4131 1142.1189,-48.8552 1139.0708,-50 1058.1243,-80.4024 799.7885,-100.8814 695.4305,-108.1084"/>
-<polygon fill="#000000" stroke="#000000" points="694.9744,-104.6313 685.2367,-108.8059 695.4523,-111.615 694.9744,-104.6313"/>
+<path fill="none" stroke="#000000" d="M1150.6952,-57.107C1147.0098,-59.7779 1143.0943,-62.1793 1139.0708,-64 1068.3531,-96.0013 837.8238,-115.2276 740.2905,-122.1112"/>
+<polygon fill="#000000" stroke="#000000" points="739.906,-118.6294 730.1728,-122.8146 740.3915,-125.6126 739.906,-118.6294"/>
+</g>
+<!-- modm_test_platform_gpio -->
+<g id="node20" class="node">
+<title>modm_test_platform_gpio</title>
+<g id="a_node20"><a xlink:href="../modm-test-platform-gpio" xlink:title="modm:&#10;test:&#10;platform:&#10;gpio">
+<polygon fill="#d3d3d3" stroke="#000000" points="1290.1675,-64 1221.9741,-64 1221.9741,0 1290.1675,0 1290.1675,-64"/>
+<text text-anchor="middle" x="1256.0708" y="-48.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="1256.0708" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">test:</text>
+<text text-anchor="middle" x="1256.0708" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="1256.0708" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">gpio</text>
+</a>
+</g>
+</g>
+<!-- modm_test_platform_gpio&#45;&gt;modm_platform_gpio -->
+<g id="edge19" class="edge">
+<title>modm_test_platform_gpio&#45;&gt;modm_platform_gpio</title>
+<path fill="none" stroke="#000000" d="M1221.7772,-59.8182C1218.9281,-61.4073 1216.0106,-62.8305 1213.0708,-64 1127.3283,-98.1083 849.4273,-116.6148 740.4752,-122.7076"/>
+<polygon fill="#000000" stroke="#000000" points="739.9588,-119.2307 730.1663,-123.2751 740.3436,-126.2201 739.9588,-119.2307"/>
 </g>
 </g>
 </svg>
