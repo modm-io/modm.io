@@ -2966,27 +2966,34 @@ one of the jobs in <code>.circleci/config.yml</code>:
 lbuild as well. They are all submodules of <code>modm:test</code> and are all platform
 independent. We‘ve written a small Makefile for the most commonly used commands.</p>
 <div class="codehilite"><pre><span></span> $ <span class="nb">cd</span> tests
-   <span class="c1"># generates, compiles and executes the unit test for hosted targets</span>
- $ make test-hosted-linux
- $ make test-hosted-darwin
-   <span class="c1"># generates and compiles the unit test for embedded targets</span>
- $ make test-stm32
- $ make test-avr
+   <span class="c1"># generates, compiles and executes the unit tests for hosted targets</span>
+ $ make run-hosted-linux
+ $ make run-hosted-darwin
+   <span class="c1"># generates and compiles the unit tests for embedded targets</span>
+ $ make compile-nucleo-f411
+ $ make compile-nucleo-f103
+ $ make compile-al-avreb-can
+   <span class="c1"># executes the unit tests on the embedded targets</span>
+ $ make run-nucleo-f411
+ $ make run-nucleo-f103
+ $ make run-al-avreb-can
 </pre></div>
 
 <div class="admonition info">
-<p class="admonition-title">Adapt for your target</p>
-<p>To execute the unit tests on your embedded targets, you may have to adapt
-the project files (<code>avr.xml</code> or <code>stm32.xml</code>) as well as the hardware setup
-(like <code>modm/test/runner/stm32.cpp.in</code>) for the target you have available.</p>
+<p class="admonition-title">Monitor the serial output</p>
+<p>The embedded test targets all use the <code>modm::Board</code> interface to initialize
+the targets and output unit tests results via the default serial connection.</p>
 </div>
-<p>The unit tests use the SCons build system, since that is the most tested.
-You can simply program the unit test onto your target by calling <code>scons program</code>
-inside the build directory (<code>modm/build/unittest/{avr, stm32}</code>).
-The results will be reported on the UART output you configured.</p>
 <p>The unit test library we use is located in <code>modm/src/unittest</code> which is the
-<code>modm:unittest</code> modules. See the documentation for that modules for details on
-how to write your own unit tests.</p>
+<code>modm:unittest</code> modules. See the existing unit tests for example on how to write
+your own.</p>
+<div class="admonition bug">
+<p class="admonition-title">Running unit tests on small targets</p>
+<p>Fitting all unit tests into one executable image is not possible on smaller
+AVR and STM32 targets. For these targets only a subset of unit tests must be
+selected in the <code>project.xml</code> file and multiple images must be executed
+manually. We would like to automate this in the future.</p>
+</div>
 <h2 id="test-all-targets">Test all Targets<a class="headerlink" href="#test-all-targets" title="Permanent link">&para;</a></h2>
 <p>Apart from unit tests, we also generate the HAL (all modules in <code>modm:platform:**</code>)
 for ALL targets we support and compile it with a simple GPIO example.
