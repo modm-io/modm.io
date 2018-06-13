@@ -2948,7 +2948,7 @@ Test your new code on real hardware with the compiler toolchain we use and make
 sure to document any caveats you discover.</p>
 <p>You can compile all examples locally using our helper script.</p>
 <div class="codehilite"><pre><span></span> $ <span class="nb">cd</span> examples
- $ ../tools/scripts/examples_compile.sh
+ $ ../tools/scripts/examples_compile.py .
 </pre></div>
 
 <div class="admonition tip">
@@ -2958,7 +2958,7 @@ one of the jobs in <code>.circleci/config.yml</code>:
 <div class="codehilite"><pre><span></span>- run:
   name: Examples YOUR TARGET
   command: <span class="p">|</span>
-    <span class="o">(</span><span class="nb">cd</span> examples <span class="o">&amp;&amp;</span> ../tools/scripts/examples_compile.sh new_folder<span class="o">)</span>
+    <span class="o">(</span><span class="nb">cd</span> examples <span class="o">&amp;&amp;</span> ../tools/scripts/examples_compile.py new_folder<span class="o">)</span>
 </pre></div></p>
 </div>
 <h2 id="unit-tests">Unit Tests<a class="headerlink" href="#unit-tests" title="Permanent link">&para;</a></h2>
