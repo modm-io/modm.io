@@ -2928,8 +2928,8 @@ additional build system documentation.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Beware of AVRs</p>
-<p>We <strong>strongly discourage</strong> using AVRs for new designs, due to
-a significant lack of commitment from Atmel on keeping their AVR toolchain up-to-date.</p>
+<p>We <strong>strongly discourage</strong> using AVRs for new designs, due to a significant
+lack of commitment from Atmel on keeping their AVR toolchain up-to-date.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Check your Locale</p>
@@ -2941,8 +2941,9 @@ a significant lack of commitment from Atmel on keeping their AVR toolchain up-to
 <h2 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h2>
 <p>We will use <a href="http://brew.sh/">Homebrew</a> to install the minimal build system:</p>
 <div class="codehilite"><pre><span></span>brew install python3 scons git doxygen
-pip3 install --user git+https://github.com/dergraaf/library-builder \
+pip3 install --user git+https://github.com/modm-io/library-builder \
                     jinja2 configparser pyelftools
+pip install --user pathlib # for Python2 SCons
 </pre></div>
 
 
@@ -2959,17 +2960,18 @@ brew install openocd --HEAD
 </pre></div>
 
 
-<p>To compile modm for macOS you need to install boost:</p>
-<div class="codehilite"><pre><span></span>brew install boost
+<p>To compile modm for macOS you need to install these libraries:</p>
+<div class="codehilite"><pre><span></span>brew install boost gtkmm sdl zmqpp
 </pre></div>
 
 
 <h2 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
-<p>For Ubuntu 16.04LTS, these commands install the basic build system:</p>
+<p>For Ubuntu 18.04LTS, these commands install the basic build system:</p>
 <div class="codehilite"><pre><span></span>sudo apt-get install python3 python3-pip scons git
 sudo apt-get --no-install-recommends install doxygen
-pip3 install --user git+https://github.com/dergraaf/library-builder \
+pip3 install --user git+https://github.com/modm-io/library-builder \
                     jinja2 configparser pyelftools
+pip install --user pathlib # for Python2 SCons
 </pre></div>
 
 
@@ -2980,7 +2982,7 @@ pip3 install --user git+https://github.com/dergraaf/library-builder \
 
 <div class="admonition bug">
 <p class="admonition-title">avr-gcc on Ubuntu</p>
-<p>Ubuntu does not provide a more recent avr-gcc than v4.9, which does not support C++17 (nor even C++14).
+<p>Ubuntu does not provide a more recent avr-gcc than v4.9, which does not support C++17 (not even C++14).
 For our CI we've created a <a href="https://github.com/salkinium/docker-avr-gcc-7">precompiled version of avr-gcc 7 for Ubuntu</a>.
 Use at your own risk.</p>
 </div>
@@ -2998,8 +3000,8 @@ and manually add the <code>/bin</code> directory to your path. Use this if your 
 provide you with an up-to-date ARM toolchain.</p>
 </div>
 <p>To compile modm for Linux you need to install these packages:</p>
-<div class="codehilite"><pre><span></span>sudo apt-get install gcc build-essential libboost-thread-dev \
-                     libboost-system-dev libasio-dev
+<div class="codehilite"><pre><span></span>sudo apt-get install gcc build-essential libboost-all-dev libzmqpp-dev \
+                     libsdl1.2-dev libsdl-image1.2-dev libgtkmm-2.4-dev
 </pre></div>
 
 
@@ -3007,7 +3009,7 @@ provide you with an up-to-date ARM toolchain.</p>
 <p>We will use Anaconda to create a new Python 3 environment and install all necessary packages.</p>
 <div class="codehilite"><pre><span></span>conda create --name modm python=3
 activate modm
-conda install -c conda-forge jinja2 scons future pyelftools git git+https://github.com/dergraaf/library-builder
+conda install -c conda-forge jinja2 scons future pyelftools git git+https://github.com/modm-io/library-builder
 </pre></div>
 
 
