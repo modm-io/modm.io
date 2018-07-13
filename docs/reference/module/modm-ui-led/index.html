@@ -101,7 +101,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#modmuiled" tabindex="1" class="md-skip">
+      <a href="#modmuiled-led-animation-and-gamma-correction" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -2764,6 +2764,54 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#animating-leds" title="Animating LEDs" class="md-nav__link">
+    Animating LEDs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-gamma-correction" title="Using Gamma Correction" class="md-nav__link">
+    Using Gamma Correction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" title="Options" class="md-nav__link">
+    Options
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gamma" title="gamma" class="md-nav__link">
+    gamma
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bit" title="bit" class="md-nav__link">
+    bit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#range" title="range" class="md-nav__link">
+    range
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#content" title="Content" class="md-nav__link">
     Content
   </a>
@@ -2867,6 +2915,54 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#animating-leds" title="Animating LEDs" class="md-nav__link">
+    Animating LEDs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-gamma-correction" title="Using Gamma Correction" class="md-nav__link">
+    Using Gamma Correction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" title="Options" class="md-nav__link">
+    Options
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gamma" title="gamma" class="md-nav__link">
+    gamma
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bit" title="bit" class="md-nav__link">
+    bit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#range" title="range" class="md-nav__link">
+    range
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#content" title="Content" class="md-nav__link">
     Content
   </a>
@@ -2900,7 +2996,201 @@
                 <div class="admonition warning">
 <p class="admonition-title">These module docs are in beta and may be incomplete.</p>
 </div>
-<h1 id="modmuiled">modm:ui:led<a class="headerlink" href="#modmuiled" title="Permanent link">&para;</a></h1>
+<h1 id="modmuiled-led-animation-and-gamma-correction">modm:ui:led: LED Animation and Gamma Correction<a class="headerlink" href="#modmuiled-led-animation-and-gamma-correction" title="Permanent link">&para;</a></h1>
+<p>Header: <code>#include &lt;modm/ui/led.hpp&gt;</code></p>
+<p>This module provides abstractions for animating LEDs by wrapping the 
+<em>modm:ui:animation</em> module and providing look-up tables for performing
+gamma correction of LED brightness.</p>
+<p>The main functionality is part of the <code>modm::ui::Led</code> class, which provides
+a basic interface to fade an LED with an 8-bit value.
+Note that this class does <em>not</em> do any gamma correction on it's own, it just
+wraps an 8-bit <code>modm::ui::Animation</code> and a 8-bit value.</p>
+<p>You must provide a function handler which gets called whenever the LED value 
+needs updating, at most every 1ms, but only when the value has actually changed.
+The implementation of this function is up to you.</p>
+<!-- 
+.. compile:: 
+    :group: general
+-->
+
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">led_handler</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">brightness</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// LED control implementation = brightness</span>
+<span class="p">}</span>
+<span class="n">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">Led</span> <span class="n">led_function</span><span class="p">(</span><span class="n">led_handler</span><span class="p">);</span>
+<span class="c1">// You may also use a lambda function for brevity</span>
+<span class="n">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">Led</span> <span class="n">led_lambda</span><span class="p">([](</span><span class="kt">uint8_t</span> <span class="n">brightness</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// LED control implementation = brightness</span>
+<span class="p">});</span>
+</pre></div>
+
+<h2 id="animating-leds">Animating LEDs<a class="headerlink" href="#animating-leds" title="Permanent link">&para;</a></h2>
+<p>To animate the LED you need to call the <code>modm::ui::Led::update()</code> member 
+function regularly.
+The function updates the LED value at most every 1ms, however you may call it
+more often than that. If the function is called less regularly, it will 
+automatically catch up the skipped milliseconds, and execute the brightness 
+handler at most once if the value has changed.
+Depending on how smooth you require your animation to be, you may call the 
+update function with intervals of up to 250ms.</p>
+<p>You can also pass the <code>modm::ui::Led</code> class directly into the 
+<code>modm::ui::KeyFrameAnimation</code> class and it's derivatives, to animate it's
+brightness by interpolating between key frames.
+Note that you need to call the <code>update()</code> members of both classes!</p>
+<!-- 
+.. compile:: 
+    :group: general
+    :include: <modm/ui/animation.hpp>
+-->
+
+<div class="codehilite"><pre><span></span><span class="n">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">Led</span> <span class="n">led</span><span class="p">;</span>
+<span class="n">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">Indicator</span><span class="o">&lt;</span><span class="kt">uint8_t</span><span class="o">&gt;</span> <span class="n">indicator</span><span class="p">(</span><span class="n">led</span><span class="p">);</span>
+<span class="n">indicator</span><span class="p">.</span><span class="n">start</span><span class="p">();</span>
+
+<span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">indicator</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+    <span class="n">led</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>If you want to animate a lot of LEDs it is more efficient to execute all update
+methods inside a 1ms <code>modm::PeriodicTimer</code>:</p>
+<!-- 
+.. compile:: 
+    :group: general
+    :prefix: |
+        modm::ui::Led led1;
+        modm::ui::Led led2;
+        modm::ui::Led ledN;
+-->
+
+<div class="codehilite"><pre><span></span><span class="n">modm</span><span class="o">::</span><span class="n">PeriodicTimer</span> <span class="n">update_timer</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">update_timer</span><span class="p">.</span><span class="n">execute</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">led1</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+        <span class="n">led2</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+        <span class="c1">// ...</span>
+        <span class="n">ledN</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="using-gamma-correction">Using Gamma Correction<a class="headerlink" href="#using-gamma-correction" title="Permanent link">&para;</a></h2>
+<p>In order to map the linearly animated brightness value to a gamma-corrected
+value, this module by default generates look-up tables for a gamma value of 2.2
+mapping from a 256 input range to 7, 8, 10, 12 and 16 bit resolution output 
+ranges. The generated tables have this naming schema:
+<code>modm::ui::table{gamma}_{output_bits}_{input_range}</code>.</p>
+<p>For example, you can set up a timer to output 16-bit PWM to drive your LED, and
+use the <code>modm::ui::table22_16_256</code> table to map the linear LED animation values
+to a gamma corrected 16-bit value:</p>
+<!-- 
+.. compile:: 
+    :group: timer4
+-->
+
+<div class="codehilite"><pre><span></span><span class="n">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">Led</span> <span class="n">led_timer</span><span class="p">([](</span><span class="kt">uint8_t</span> <span class="n">brightness</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Timer4</span><span class="o">::</span><span class="n">setCompareValue</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">table22_16_256</span><span class="p">[</span><span class="n">brightness</span><span class="p">]);</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>You may also generate other tables using the module options, for example, if
+you want to map a percentage (0-100%) to LED brightness, without scaling this
+to the full 256 value range, you can also generate a 100 value look-up table:</p>
+<div class="codehilite"><pre><span></span><span class="nt">&lt;option</span> <span class="na">name=</span><span class="s">&quot;modm:ui:led:range&quot;</span><span class="nt">&gt;</span>100,256<span class="nt">&lt;/option&gt;</span>
+<span class="nt">&lt;option</span> <span class="na">name=</span><span class="s">&quot;modm:ui:led:bit&quot;</span><span class="nt">&gt;</span>8,16<span class="nt">&lt;/option&gt;</span>
+</pre></div>
+
+<p>This module generated the product of these options, in this case 4 look-up 
+tables. The linker will throw out those you don't use.</p>
+<div class="codehilite"><pre><span></span><span class="k">namespace</span> <span class="n">modm</span><span class="o">::</span><span class="n">ui</span>
+<span class="p">{</span>
+    <span class="c1">/// 2.2 gamma correction with 8-bit resolution (0 to 255) in 100 steps at 100 bytes.</span>
+    <span class="k">extern</span> <span class="n">modm</span><span class="o">::</span><span class="n">accessor</span><span class="o">::</span><span class="n">Flash</span><span class="o">&lt;</span><span class="kt">uint8_t</span><span class="o">&gt;</span> <span class="n">table22_8_100</span><span class="p">;</span>
+    <span class="c1">/// 2.2 gamma correction with 8-bit resolution (0 to 255) in 256 steps at 256 bytes.</span>
+    <span class="k">extern</span> <span class="n">modm</span><span class="o">::</span><span class="n">accessor</span><span class="o">::</span><span class="n">Flash</span><span class="o">&lt;</span><span class="kt">uint8_t</span><span class="o">&gt;</span> <span class="n">table22_8_256</span><span class="p">;</span>
+    <span class="c1">/// 2.2 gamma correction with 16-bit resolution (0 to 65535) in 100 steps at 200 bytes.</span>
+    <span class="k">extern</span> <span class="n">modm</span><span class="o">::</span><span class="n">accessor</span><span class="o">::</span><span class="n">Flash</span><span class="o">&lt;</span><span class="kt">uint16_t</span><span class="o">&gt;</span> <span class="n">table22_16_100</span><span class="p">;</span>
+    <span class="c1">/// 2.2 gamma correction with 16-bit resolution (0 to 65535) in 256 steps at 512 bytes.</span>
+    <span class="k">extern</span> <span class="n">modm</span><span class="o">::</span><span class="n">accessor</span><span class="o">::</span><span class="n">Flash</span><span class="o">&lt;</span><span class="kt">uint16_t</span><span class="o">&gt;</span> <span class="n">table22_16_256</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>You can then animate your LED in the 0-99 value range:</p>
+<!-- 
+.. compile:: 
+    :group: timer4
+-->
+
+<div class="codehilite"><pre><span></span><span class="n">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">Led</span> <span class="n">led_percentage</span><span class="p">([](</span><span class="kt">uint8_t</span> <span class="n">brightness</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">brightness</span> <span class="o">&gt;=</span> <span class="mi">100</span><span class="p">)</span> <span class="n">brightness</span> <span class="o">=</span> <span class="mi">99</span><span class="p">;</span>
+    <span class="n">Timer4</span><span class="o">::</span><span class="n">setCompareValue</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">table22_16_100</span><span class="p">[</span><span class="n">brightness</span><span class="p">]);</span>
+<span class="p">});</span>
+<span class="kt">uint8_t</span> <span class="n">percent</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
+<span class="c1">// fade to 50% brightness within 1 second</span>
+<span class="n">led_percentage</span><span class="p">.</span><span class="n">fadeTo</span><span class="p">(</span><span class="n">percent</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+</pre></div>
+
+<p>Note that you can also use the handler to animate LEDs which are connected
+externally, for example, via a WS2812 LED chain.
+Here you can use a helper function to map the values into an array which then
+transferred into the WS2812 LED chain.</p>
+<!-- 
+.. compile:: 
+    :group: general
+-->
+
+<div class="codehilite"><pre><span></span><span class="kt">uint8_t</span> <span class="n">ws2812_values</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+<span class="kt">void</span> <span class="nf">ws2812_setter</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">index</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">brightness</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="n">ws2812_values</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">table22_8_256</span><span class="p">[</span><span class="n">brightness</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="c1">// Construct an array of LED animators</span>
+<span class="n">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">Led</span> <span class="n">leds</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> 
+<span class="p">{</span>
+    <span class="p">{</span> <span class="p">[](</span><span class="kt">uint8_t</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="n">ws2812_setter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span> <span class="p">}</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="p">[](</span><span class="kt">uint8_t</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="n">ws2812_setter</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span> <span class="p">}</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="p">[](</span><span class="kt">uint8_t</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="n">ws2812_setter</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span> <span class="p">}</span> <span class="p">},</span>
+<span class="p">};</span>
+<span class="c1">// Group them together as one RGB LED</span>
+<span class="n">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">RgbLed</span> <span class="n">rgb</span><span class="p">(</span><span class="n">leds</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">leds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">leds</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+<span class="c1">// animate to orange within 2 seconds</span>
+<span class="n">rgb</span><span class="p">.</span><span class="n">fadeTo</span><span class="p">(</span><span class="n">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">Rgb</span><span class="p">(</span><span class="mi">95</span><span class="p">,</span> <span class="mi">177</span><span class="p">,</span> <span class="mi">147</span><span class="p">),</span> <span class="mi">2000</span><span class="p">);</span>
+</pre></div>
+
+<!-- 
+.. group:: 
+    :name: general
+    :target: *
+    :include: <modm/ui/led.hpp>
+    :option: <option name="modm:ui:led:range">100,256</option>
+    :option: <option name="modm:ui:led:bit">8,16</option>
+-->
+
+<!-- 
+.. group:: 
+    :name: timer4
+    :target: stm32*
+    :module: modm:platform:timer:4
+    :include: <modm/ui/led.hpp>
+    :option: <option name="modm:ui:led:range">100,256</option>
+    :option: <option name="modm:ui:led:bit">8,16</option>
+-->
+
+<h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
+<h4 id="gamma">gamma<a class="headerlink" href="#gamma" title="Permanent link">&para;</a></h4>
+<p>Gamma correction of values: <code>[2.2]</code> ∈ <code>{ 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5 }</code></p>
+<h4 id="bit">bit<a class="headerlink" href="#bit" title="Permanent link">&para;</a></h4>
+<p>Resolution of target values: <code>[7, 8, 10, 12, 16]</code> ∈ <code>{ 10, 11, 12, 13, 14, 15, 16, 4, 5, 6, 7, 8, 9 }</code></p>
+<h4 id="range">range<a class="headerlink" href="#range" title="Permanent link">&para;</a></h4>
+<p>Range of input values: <code>[256]</code> ∈ <code>{ 10, 100, 1000, 1024, 128, 16, 20, 200, 256, 32, 50, 500, 512, 64 }</code></p>
 <h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1">// Class</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">Led</span><span class="p">;</span>
