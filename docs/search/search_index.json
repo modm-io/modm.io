@@ -671,9 +671,29 @@
             "title": "Dependencies"
         },
         {
+            "location": "/reference/module/modm-board/",
+            "text": "These module docs are in beta and may be incomplete.\n\n\n\n\nmodm:board\n\u00b6\n\n\nContent\n\u00b6\n\n\n// Struct\n\n\nstruct\n \nBoard\n::\nsystemClock\n;\n\n\n\n// Function\n\n\nmodm\n::\nGraphicDisplay\n&\n \nBoard\n::\ngetDisplay\n();\n\n\nvoid\n \nBoard\n::\ninitialize\n();\n\n\nvoid\n \nBoard\n::\ninitializeDisplay\n();\n\n\nvoid\n \nBoard\n::\ninitializeTouchscreen\n();\n\n\nvoid\n \nBoard\n::\nsetDisplayBuffer\n(\nvoid\n \n*\nbuffer\n);\n\n\nvoid\n*\n \nBoard\n::\ngetDisplayBuffer\n();\n\n\n\n// Typedef\n\n\nusing\n \nBoard\n::\nA0\n \n=\n \ntypedef\n \nGpioB1\n;\n\n\nusing\n \nBoard\n::\nA1\n \n=\n \ntypedef\n \nGpioC2\n;\n\n\nusing\n \nBoard\n::\nA2\n \n=\n \ntypedef\n \nGpioC3\n;\n\n\nusing\n \nBoard\n::\nA3\n \n=\n \ntypedef\n \nGpioC4\n;\n\n\nusing\n \nBoard\n::\nA4\n \n=\n \ntypedef\n \nGpioC5\n;\n\n\nusing\n \nBoard\n::\nA5\n \n=\n \ntypedef\n \nGpioA4\n;\n\n\nusing\n \nBoard\n::\nButton\n \n=\n \ntypedef\n \nGpioInputA0\n;\n\n\nusing\n \nBoard\n::\nD0\n \n=\n \ntypedef\n \nGpioG9\n;\n\n\nusing\n \nBoard\n::\nD1\n \n=\n \ntypedef\n \nGpioG14\n;\n\n\nusing\n \nBoard\n::\nD10\n \n=\n \ntypedef\n \nGpioH6\n;\n\n\nusing\n \nBoard\n::\nD11\n \n=\n \ntypedef\n \nGpioB15\n;\n\n\nusing\n \nBoard\n::\nD12\n \n=\n \ntypedef\n \nGpioB14\n;\n\n\nusing\n \nBoard\n::\nD13\n \n=\n \ntypedef\n \nGpioD3\n;\n\n\nusing\n \nBoard\n::\nD14\n \n=\n \ntypedef\n \nGpioB9\n;\n\n\nusing\n \nBoard\n::\nD15\n \n=\n \ntypedef\n \nGpioB8\n;\n\n\nusing\n \nBoard\n::\nD2\n \n=\n \ntypedef\n \nGpioG13\n;\n\n\nusing\n \nBoard\n::\nD3\n \n=\n \ntypedef\n \nGpioA1\n;\n\n\nusing\n \nBoard\n::\nD4\n \n=\n \ntypedef\n \nGpioG12\n;\n\n\nusing\n \nBoard\n::\nD5\n \n=\n \ntypedef\n \nGpioA2\n;\n\n\nusing\n \nBoard\n::\nD6\n \n=\n \ntypedef\n \nGpioA6\n;\n\n\nusing\n \nBoard\n::\nD7\n \n=\n \ntypedef\n \nGpioG11\n;\n\n\nusing\n \nBoard\n::\nD8\n \n=\n \ntypedef\n \nGpioG10\n;\n\n\nusing\n \nBoard\n::\nD9\n \n=\n \ntypedef\n \nGpioA7\n;\n\n\nusing\n \nBoard\n::\nDisplayReset\n \n=\n \ntypedef\n \nGpioOutputH7\n;\n\n\nusing\n \nBoard\n::\nLedBlue\n \n=\n \ntypedef\n \nGpioInverted\n<\nGpioOutputK3\n>\n;\n\n\nusing\n \nBoard\n::\nLedD13\n \n=\n \ntypedef\n \nGpioOutputD3\n;\n\n\nusing\n \nBoard\n::\nLedGreen\n \n=\n \ntypedef\n \nGpioInverted\n<\nGpioOutputG6\n>\n;\n\n\nusing\n \nBoard\n::\nLedOrange\n \n=\n \ntypedef\n \nGpioInverted\n<\nGpioOutputD4\n>\n;\n\n\nusing\n \nBoard\n::\nLedRed\n \n=\n \ntypedef\n \nGpioInverted\n<\nGpioOutputD5\n>\n;\n\n\nusing\n \nBoard\n::\nLedUsb\n \n=\n \ntypedef\n \nGpioInverted\n<\nGpioOutputB7\n>\n;\n\n\nusing\n \nBoard\n::\nLeds\n \n=\n \ntypedef\n \nSoftwareGpioPort\n<\n \nLedBlue\n,\n \nLedRed\n,\n \nLedOrange\n,\n \nLedGreen\n \n>\n;\n\n\nusing\n \nBoard\n::\nLoggerDevice\n \n=\n \ntypedef\n \nmodm\n::\nIODeviceWrapper\n<\n \nstlink\n::\nUart\n,\n \nmodm\n::\nIOBuffer\n::\nBlockIfFull\n \n>\n;\n\n\nusing\n \nBoard\n::\nft6\n::\nI2cMaster\n \n=\n \ntypedef\n \nI2cMaster1\n;\n\n\nusing\n \nBoard\n::\nft6\n::\nInt\n \n=\n \ntypedef\n \nGpioInputJ5\n;\n\n\nusing\n \nBoard\n::\nft6\n::\nScl\n \n=\n \ntypedef\n \nGpioB8\n;\n\n\nusing\n \nBoard\n::\nft6\n::\nSda\n \n=\n \ntypedef\n \nGpioB9\n;\n\n\nusing\n \nBoard\n::\nft6\n::\nTouch\n \n=\n \ntypedef\n \nmodm\n::\nFt6x06\n<\n \nI2cMaster\n \n>\n;\n\n\nusing\n \nBoard\n::\nstlink\n::\nRx\n \n=\n \ntypedef\n \nGpioInputB11\n;\n\n\nusing\n \nBoard\n::\nstlink\n::\nTx\n \n=\n \ntypedef\n \nGpioOutputB10\n;\n\n\nusing\n \nBoard\n::\nstlink\n::\nUart\n \n=\n \ntypedef\n \nUsart3\n;\n\n\n\n// Define\n\n\n#define MODM_BOARD_HAS_LOGGER\n\n\n\n\n\nDependencies\n\u00b6\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmodm:board\n\n\n\n\n\n\n\n\nmodm_board\n\n\n\n\nmodm:\n\n\nboard\n\n\n\n\n\n\n\n\nmodm_board_disco-f469ni\n\n\n\n\n\n\nmodm:\n\n\nboard:\n\n\ndisco-f469ni\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_board_disco-f469ni->modm_board",
+            "title": "modm:board"
+        },
+        {
+            "location": "/reference/module/modm-board/#modmboard",
+            "text": "",
+            "title": "modm:board"
+        },
+        {
+            "location": "/reference/module/modm-board/#content",
+            "text": "// Struct  struct   Board :: systemClock ;  // Function  modm :: GraphicDisplay &   Board :: getDisplay ();  void   Board :: initialize ();  void   Board :: initializeDisplay ();  void   Board :: initializeTouchscreen ();  void   Board :: setDisplayBuffer ( void   * buffer );  void *   Board :: getDisplayBuffer ();  // Typedef  using   Board :: A0   =   typedef   GpioB1 ;  using   Board :: A1   =   typedef   GpioC2 ;  using   Board :: A2   =   typedef   GpioC3 ;  using   Board :: A3   =   typedef   GpioC4 ;  using   Board :: A4   =   typedef   GpioC5 ;  using   Board :: A5   =   typedef   GpioA4 ;  using   Board :: Button   =   typedef   GpioInputA0 ;  using   Board :: D0   =   typedef   GpioG9 ;  using   Board :: D1   =   typedef   GpioG14 ;  using   Board :: D10   =   typedef   GpioH6 ;  using   Board :: D11   =   typedef   GpioB15 ;  using   Board :: D12   =   typedef   GpioB14 ;  using   Board :: D13   =   typedef   GpioD3 ;  using   Board :: D14   =   typedef   GpioB9 ;  using   Board :: D15   =   typedef   GpioB8 ;  using   Board :: D2   =   typedef   GpioG13 ;  using   Board :: D3   =   typedef   GpioA1 ;  using   Board :: D4   =   typedef   GpioG12 ;  using   Board :: D5   =   typedef   GpioA2 ;  using   Board :: D6   =   typedef   GpioA6 ;  using   Board :: D7   =   typedef   GpioG11 ;  using   Board :: D8   =   typedef   GpioG10 ;  using   Board :: D9   =   typedef   GpioA7 ;  using   Board :: DisplayReset   =   typedef   GpioOutputH7 ;  using   Board :: LedBlue   =   typedef   GpioInverted < GpioOutputK3 > ;  using   Board :: LedD13   =   typedef   GpioOutputD3 ;  using   Board :: LedGreen   =   typedef   GpioInverted < GpioOutputG6 > ;  using   Board :: LedOrange   =   typedef   GpioInverted < GpioOutputD4 > ;  using   Board :: LedRed   =   typedef   GpioInverted < GpioOutputD5 > ;  using   Board :: LedUsb   =   typedef   GpioInverted < GpioOutputB7 > ;  using   Board :: Leds   =   typedef   SoftwareGpioPort <   LedBlue ,   LedRed ,   LedOrange ,   LedGreen   > ;  using   Board :: LoggerDevice   =   typedef   modm :: IODeviceWrapper <   stlink :: Uart ,   modm :: IOBuffer :: BlockIfFull   > ;  using   Board :: ft6 :: I2cMaster   =   typedef   I2cMaster1 ;  using   Board :: ft6 :: Int   =   typedef   GpioInputJ5 ;  using   Board :: ft6 :: Scl   =   typedef   GpioB8 ;  using   Board :: ft6 :: Sda   =   typedef   GpioB9 ;  using   Board :: ft6 :: Touch   =   typedef   modm :: Ft6x06 <   I2cMaster   > ;  using   Board :: stlink :: Rx   =   typedef   GpioInputB11 ;  using   Board :: stlink :: Tx   =   typedef   GpioOutputB10 ;  using   Board :: stlink :: Uart   =   typedef   Usart3 ;  // Define  #define MODM_BOARD_HAS_LOGGER",
+            "title": "Content"
+        },
+        {
+            "location": "/reference/module/modm-board/#dependencies",
+            "text": "modm:board     modm_board   modm:  board     modm_board_disco-f469ni    modm:  board:  disco-f469ni       modm_board_disco-f469ni->modm_board",
+            "title": "Dependencies"
+        },
+        {
             "location": "/reference/module/modm-board-disco-f469ni/",
             "text": "These module docs are in beta and may be incomplete.\n\n\n\n\nmodm:board:disco-f469ni\n\u00b6\n\n\nDiscovery kit with STM32F469NI MCU\n\n\nThis BSPs \nBoard::initialize()\n sets the board up with these settings:\n\n\n\n\n180MHz CPU clock frequency in overdrive mode.\n\n\n90MHz APB2 and 45MHz APB1 clock frequency.\n\n\nMODM_LOGGER initialized at 115.2kBaud outputting on STLink. \n\n\n16MB SDRAM initialized for heap.\n\n\nDisables the display by default.\n\n\n\n\nYou can enable and use the on-board display in two ways:\n\n\n\n\nUse the \nmodm::GraphicDisplay\n returned by \nBoard::getDisplay()\n, which\n   initializes the display on first call and allocates the framebuffer in the \n   external SDRAM. This is the simplest option.\n\n\nCall \nBoard::initializeDisplay()\n and then provide your own display buffer \n   with \nBoard::setDisplayBuffer(void*)\n.\n\n\n\n\n\n\nCaveats\n\n\nNo double-buffering is implemented, so you may notice some tearing if you\nupdate the display fast enough.\n\n\n\n\nAccess to the capacitive touchscreen is provided in the \nBoard::ft6\n namespace.\nCall \nBoard::initializeTouchscreen()\n to setup the peripherals.\n\n\nProduct Link: \nhttp://www.st.com/en/evaluation-tools/32f469idiscovery.html\n\n\nContent\n\u00b6\n\n\n// Struct\n\n\nstruct\n \nBoard\n::\nsystemClock\n;\n\n\n\n// Function\n\n\nmodm\n::\nGraphicDisplay\n&\n \nBoard\n::\ngetDisplay\n();\n\n\nvoid\n \nBoard\n::\ninitialize\n();\n\n\nvoid\n \nBoard\n::\ninitializeDisplay\n();\n\n\nvoid\n \nBoard\n::\ninitializeTouchscreen\n();\n\n\nvoid\n \nBoard\n::\nsetDisplayBuffer\n(\nvoid\n \n*\nbuffer\n);\n\n\nvoid\n*\n \nBoard\n::\ngetDisplayBuffer\n();\n\n\n\n// Typedef\n\n\nusing\n \nBoard\n::\nA0\n \n=\n \ntypedef\n \nGpioB1\n;\n\n\nusing\n \nBoard\n::\nA1\n \n=\n \ntypedef\n \nGpioC2\n;\n\n\nusing\n \nBoard\n::\nA2\n \n=\n \ntypedef\n \nGpioC3\n;\n\n\nusing\n \nBoard\n::\nA3\n \n=\n \ntypedef\n \nGpioC4\n;\n\n\nusing\n \nBoard\n::\nA4\n \n=\n \ntypedef\n \nGpioC5\n;\n\n\nusing\n \nBoard\n::\nA5\n \n=\n \ntypedef\n \nGpioA4\n;\n\n\nusing\n \nBoard\n::\nButton\n \n=\n \ntypedef\n \nGpioInputA0\n;\n\n\nusing\n \nBoard\n::\nD0\n \n=\n \ntypedef\n \nGpioG9\n;\n\n\nusing\n \nBoard\n::\nD1\n \n=\n \ntypedef\n \nGpioG14\n;\n\n\nusing\n \nBoard\n::\nD10\n \n=\n \ntypedef\n \nGpioH6\n;\n\n\nusing\n \nBoard\n::\nD11\n \n=\n \ntypedef\n \nGpioB15\n;\n\n\nusing\n \nBoard\n::\nD12\n \n=\n \ntypedef\n \nGpioB14\n;\n\n\nusing\n \nBoard\n::\nD13\n \n=\n \ntypedef\n \nGpioD3\n;\n\n\nusing\n \nBoard\n::\nD14\n \n=\n \ntypedef\n \nGpioB9\n;\n\n\nusing\n \nBoard\n::\nD15\n \n=\n \ntypedef\n \nGpioB8\n;\n\n\nusing\n \nBoard\n::\nD2\n \n=\n \ntypedef\n \nGpioG13\n;\n\n\nusing\n \nBoard\n::\nD3\n \n=\n \ntypedef\n \nGpioA1\n;\n\n\nusing\n \nBoard\n::\nD4\n \n=\n \ntypedef\n \nGpioG12\n;\n\n\nusing\n \nBoard\n::\nD5\n \n=\n \ntypedef\n \nGpioA2\n;\n\n\nusing\n \nBoard\n::\nD6\n \n=\n \ntypedef\n \nGpioA6\n;\n\n\nusing\n \nBoard\n::\nD7\n \n=\n \ntypedef\n \nGpioG11\n;\n\n\nusing\n \nBoard\n::\nD8\n \n=\n \ntypedef\n \nGpioG10\n;\n\n\nusing\n \nBoard\n::\nD9\n \n=\n \ntypedef\n \nGpioA7\n;\n\n\nusing\n \nBoard\n::\nDisplayReset\n \n=\n \ntypedef\n \nGpioOutputH7\n;\n\n\nusing\n \nBoard\n::\nLedBlue\n \n=\n \ntypedef\n \nGpioInverted\n<\nGpioOutputK3\n>\n;\n\n\nusing\n \nBoard\n::\nLedD13\n \n=\n \ntypedef\n \nGpioOutputD3\n;\n\n\nusing\n \nBoard\n::\nLedGreen\n \n=\n \ntypedef\n \nGpioInverted\n<\nGpioOutputG6\n>\n;\n\n\nusing\n \nBoard\n::\nLedOrange\n \n=\n \ntypedef\n \nGpioInverted\n<\nGpioOutputD4\n>\n;\n\n\nusing\n \nBoard\n::\nLedRed\n \n=\n \ntypedef\n \nGpioInverted\n<\nGpioOutputD5\n>\n;\n\n\nusing\n \nBoard\n::\nLedUsb\n \n=\n \ntypedef\n \nGpioInverted\n<\nGpioOutputB7\n>\n;\n\n\nusing\n \nBoard\n::\nLeds\n \n=\n \ntypedef\n \nSoftwareGpioPort\n<\n \nLedBlue\n,\n \nLedRed\n,\n \nLedOrange\n,\n \nLedGreen\n \n>\n;\n\n\nusing\n \nBoard\n::\nLoggerDevice\n \n=\n \ntypedef\n \nmodm\n::\nIODeviceWrapper\n<\n \nstlink\n::\nUart\n,\n \nmodm\n::\nIOBuffer\n::\nBlockIfFull\n \n>\n;\n\n\nusing\n \nBoard\n::\nft6\n::\nI2cMaster\n \n=\n \ntypedef\n \nI2cMaster1\n;\n\n\nusing\n \nBoard\n::\nft6\n::\nInt\n \n=\n \ntypedef\n \nGpioInputJ5\n;\n\n\nusing\n \nBoard\n::\nft6\n::\nScl\n \n=\n \ntypedef\n \nGpioB8\n;\n\n\nusing\n \nBoard\n::\nft6\n::\nSda\n \n=\n \ntypedef\n \nGpioB9\n;\n\n\nusing\n \nBoard\n::\nft6\n::\nTouch\n \n=\n \ntypedef\n \nmodm\n::\nFt6x06\n<\n \nI2cMaster\n \n>\n;\n\n\nusing\n \nBoard\n::\nstlink\n::\nRx\n \n=\n \ntypedef\n \nGpioInputB11\n;\n\n\nusing\n \nBoard\n::\nstlink\n::\nTx\n \n=\n \ntypedef\n \nGpioOutputB10\n;\n\n\nusing\n \nBoard\n::\nstlink\n::\nUart\n \n=\n \ntypedef\n \nUsart3\n;\n\n\n\n// Define\n\n\n#define MODM_BOARD_HAS_LOGGER\n\n\n\n\n\nDependencies\n\u00b6\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmodm:board:disco-f469ni\n\n\n\n\n\n\n\n\nmodm_board_disco-f469ni\n\n\n\n\nmodm:\n\n\nboard:\n\n\ndisco-f469ni\n\n\n\n\n\n\n\n\nmodm_architecture_clock\n\n\n\n\n\n\nmodm:\n\n\narchitecture:\n\n\nclock\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_board_disco-f469ni->modm_architecture_clock\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_architecture_memory\n\n\n\n\n\n\nmodm:\n\n\narchitecture:\n\n\nmemory\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_board_disco-f469ni->modm_architecture_memory\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_board\n\n\n\n\n\n\nmodm:\n\n\nboard\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_board_disco-f469ni->modm_board\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_debug\n\n\n\n\n\n\nmodm:\n\n\ndebug\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_board_disco-f469ni->modm_debug\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_driver_ft6x06\n\n\n\n\n\n\nmodm:\n\n\ndriver:\n\n\nft6x06\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_board_disco-f469ni->modm_driver_ft6x06\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_platform_clock\n\n\n\n\n\n\nmodm:\n\n\nplatform:\n\n\nclock\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_board_disco-f469ni->modm_platform_clock\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_platform_core\n\n\n\n\n\n\nmodm:\n\n\nplatform:\n\n\ncore\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_board_disco-f469ni->modm_platform_core\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_platform_gpio\n\n\n\n\n\n\nmodm:\n\n\nplatform:\n\n\ngpio\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_board_disco-f469ni->modm_platform_gpio\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_platform_i2c_1\n\n\n\n\n\n\nmodm:\n\n\nplatform:\n\n\ni2c:\n\n\n1\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_board_disco-f469ni->modm_platform_i2c_1\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_platform_uart_3\n\n\n\n\n\n\nmodm:\n\n\nplatform:\n\n\nuart:\n\n\n3\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_board_disco-f469ni->modm_platform_uart_3\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_tlsf\n\n\n\n\n\n\nmodm:\n\n\ntlsf\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_board_disco-f469ni->modm_tlsf\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_ui_display\n\n\n\n\n\n\nmodm:\n\n\nui:\n\n\ndisplay\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_board_disco-f469ni->modm_ui_display",
-            "title": "modm:board.disco-f469ni"
+            "title": "modm:board:disco-f469ni"
         },
         {
             "location": "/reference/module/modm-board-disco-f469ni/#modmboarddisco-f469ni",
@@ -691,9 +711,54 @@
             "title": "Dependencies"
         },
         {
+            "location": "/reference/module/modm-build/",
+            "text": "These module docs are in beta and may be incomplete.\n\n\n\n\nmodm:build\n\u00b6\n\n\nOptions\n\u00b6\n\n\nproject.name\n\u00b6\n\n\nProject name for executable: \nblink\n \u2208 \n{ String }\n\n\nbuild.path\n\u00b6\n\n\nPath to the build folder: \n../../../build/stm32f469_discovery/blink\n \u2208 \n{ String }\n\n\ninclude_gdbinit\n\u00b6\n\n\nGenerate a default .gdbinit file: \nTrue\n \u2208 \n{ String }\n\n\ninclude_openocd\n\u00b6\n\n\nGenerate a default openocd.cfg file: \nTrue\n \u2208 \n{ String }\n\n\nopenocd.cfg\n\u00b6\n\n\nPath to a custom OpenOCD configuration file: \n{ String }\n\n\nDependencies\n\u00b6\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmodm:build\n\n\n\n\n\n\n\n\nmodm_build\n\n\n\n\nmodm:\n\n\nbuild\n\n\n\n\n\n\n\n\nmodm_build_cmake\n\n\n\n\n\n\nmodm:\n\n\nbuild:\n\n\ncmake\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_build_cmake->modm_build\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_build_scons\n\n\n\n\n\n\nmodm:\n\n\nbuild:\n\n\nscons\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_build_scons->modm_build",
+            "title": "modm:build"
+        },
+        {
+            "location": "/reference/module/modm-build/#modmbuild",
+            "text": "",
+            "title": "modm:build"
+        },
+        {
+            "location": "/reference/module/modm-build/#options",
+            "text": "",
+            "title": "Options"
+        },
+        {
+            "location": "/reference/module/modm-build/#projectname",
+            "text": "Project name for executable:  blink  \u2208  { String }",
+            "title": "project.name"
+        },
+        {
+            "location": "/reference/module/modm-build/#buildpath",
+            "text": "Path to the build folder:  ../../../build/stm32f469_discovery/blink  \u2208  { String }",
+            "title": "build.path"
+        },
+        {
+            "location": "/reference/module/modm-build/#include_gdbinit",
+            "text": "Generate a default .gdbinit file:  True  \u2208  { String }",
+            "title": "include_gdbinit"
+        },
+        {
+            "location": "/reference/module/modm-build/#include_openocd",
+            "text": "Generate a default openocd.cfg file:  True  \u2208  { String }",
+            "title": "include_openocd"
+        },
+        {
+            "location": "/reference/module/modm-build/#openocdcfg",
+            "text": "Path to a custom OpenOCD configuration file:  { String }",
+            "title": "openocd.cfg"
+        },
+        {
+            "location": "/reference/module/modm-build/#dependencies",
+            "text": "modm:build     modm_build   modm:  build     modm_build_cmake    modm:  build:  cmake       modm_build_cmake->modm_build       modm_build_scons    modm:  build:  scons       modm_build_scons->modm_build",
+            "title": "Dependencies"
+        },
+        {
             "location": "/reference/module/modm-build-cmake/",
             "text": "These module docs are in beta and may be incomplete.\n\n\n\n\nmodm:build:cmake: CMake Build Script Generator\n\u00b6\n\n\nDependencies\n\u00b6\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmodm:build:cmake\n\n\n\n\n\n\n\n\nmodm_build_cmake\n\n\n\n\nmodm:\n\n\nbuild:\n\n\ncmake\n\n\n\n\n\n\n\n\nmodm_build\n\n\n\n\n\n\nmodm:\n\n\nbuild\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_build_cmake->modm_build",
-            "title": "modm:build.cmake"
+            "title": "modm:build:cmake"
         },
         {
             "location": "/reference/module/modm-build-cmake/#modmbuildcmake-cmake-build-script-generator",
@@ -708,7 +773,7 @@
         {
             "location": "/reference/module/modm-build-scons/",
             "text": "These module docs are in beta and may be incomplete.\n\n\n\n\nmodm:build:scons: SCons Build Script Generator\n\u00b6\n\n\nOptions\n\u00b6\n\n\ninclude_sconstruct\n\u00b6\n\n\nGenerate modm specific SConstruct file.: \nTrue\n \u2208 \n{ True, False }\n\n\nimage.source\n\u00b6\n\n\nPath to the image folder: \n{ String }\n\n\ninfo.git\n\u00b6\n\n\nGenerate CPP defines about the git repository state: \nDisabled\n \u2208 \n{ Disabled, Info, Info+Status }\n\n\ninfo.build\n\u00b6\n\n\nGenerate CPP defines about the build state: \nFalse\n \u2208 \n{ True, False }\n\n\nDependencies\n\u00b6\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmodm:build:scons\n\n\n\n\n\n\n\n\nmodm_build_scons\n\n\n\n\nmodm:\n\n\nbuild:\n\n\nscons\n\n\n\n\n\n\n\n\nmodm_build\n\n\n\n\n\n\nmodm:\n\n\nbuild\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_build_scons->modm_build",
-            "title": "modm:build.scons"
+            "title": "modm:build:scons"
         },
         {
             "location": "/reference/module/modm-build-scons/#modmbuildscons-scons-build-script-generator",
@@ -896,6 +961,26 @@
             "title": "Dependencies"
         },
         {
+            "location": "/reference/module/modm-communication-sab2/",
+            "text": "These module docs are in beta and may be incomplete.\n\n\n\n\nmodm:communication:sab2\n\u00b6\n\n\nContent\n\u00b6\n\n\n// Class\n\n\nclass\n \nmodm\n::\nsab2\n::\nInterface\n<\n \ntypename\n \nDevice\n,\n \nstd\n::\nsize_t\n \nN\n=\nmaxPayloadLength\n \n>\n;\n\n\n\n// Function\n\n\nuint16_t\n \nmodm\n::\nsab2\n::\ncrcUpdate\n(\nuint16_t\n \ncrc\n,\n \nuint8_t\n \ndata\n);\n\n\n\n// Enum\n\n\nenum\n \nError\n;\n\n\n\n// Variable\n\n\nconst\n \nuint16_t\n \nmodm\n::\nsab2\n::\ncrcInitialValue\n \n=\n \n0xffff\n;\n\n\nconst\n \nuint8_t\n \nmodm\n::\nsab2\n::\ncontrolEscapeByte\n \n=\n \n0x7d\n;\n\n\nconst\n \nuint8_t\n \nmodm\n::\nsab2\n::\nframeBounderyByte\n \n=\n \n0x7e\n;\n\n\nconst\n \nuint8_t\n \nmodm\n::\nsab2\n::\nmaxPayloadLength\n \n=\n \n32\n;\n\n\n\n\n\nDependencies\n\u00b6\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmodm:communication:sab2\n\n\n\n\n\n\n\n\nmodm_communication_sab2\n\n\n\n\nmodm:\n\n\ncommunication:\n\n\nsab2\n\n\n\n\n\n\n\n\nmodm_architecture_accessor\n\n\n\n\n\n\nmodm:\n\n\narchitecture:\n\n\naccessor\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_communication_sab2->modm_architecture_accessor\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_communication\n\n\n\n\n\n\nmodm:\n\n\ncommunication\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_communication_sab2->modm_communication\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_communication_sab\n\n\n\n\n\n\nmodm:\n\n\ncommunication:\n\n\nsab\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_communication_sab2->modm_communication_sab\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_debug\n\n\n\n\n\n\nmodm:\n\n\ndebug\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_communication_sab2->modm_debug\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_processing_timer\n\n\n\n\n\n\nmodm:\n\n\nprocessing:\n\n\ntimer\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_communication_sab2->modm_processing_timer",
+            "title": "modm:communication:sab2"
+        },
+        {
+            "location": "/reference/module/modm-communication-sab2/#modmcommunicationsab2",
+            "text": "",
+            "title": "modm:communication:sab2"
+        },
+        {
+            "location": "/reference/module/modm-communication-sab2/#content",
+            "text": "// Class  class   modm :: sab2 :: Interface <   typename   Device ,   std :: size_t   N = maxPayloadLength   > ;  // Function  uint16_t   modm :: sab2 :: crcUpdate ( uint16_t   crc ,   uint8_t   data );  // Enum  enum   Error ;  // Variable  const   uint16_t   modm :: sab2 :: crcInitialValue   =   0xffff ;  const   uint8_t   modm :: sab2 :: controlEscapeByte   =   0x7d ;  const   uint8_t   modm :: sab2 :: frameBounderyByte   =   0x7e ;  const   uint8_t   modm :: sab2 :: maxPayloadLength   =   32 ;",
+            "title": "Content"
+        },
+        {
+            "location": "/reference/module/modm-communication-sab2/#dependencies",
+            "text": "modm:communication:sab2     modm_communication_sab2   modm:  communication:  sab2     modm_architecture_accessor    modm:  architecture:  accessor       modm_communication_sab2->modm_architecture_accessor       modm_communication    modm:  communication       modm_communication_sab2->modm_communication       modm_communication_sab    modm:  communication:  sab       modm_communication_sab2->modm_communication_sab       modm_debug    modm:  debug       modm_communication_sab2->modm_debug       modm_processing_timer    modm:  processing:  timer       modm_communication_sab2->modm_processing_timer",
+            "title": "Dependencies"
+        },
+        {
             "location": "/reference/module/modm-communication-xpcc/",
             "text": "These module docs are in beta and may be incomplete.\n\n\n\n\nmodm:communication:xpcc\n\u00b6\n\n\nOptions\n\u00b6\n\n\ntimeout.acknowledge\n\u00b6\n\n\nTimeout in ms of an reception acknowledgement: \n100\n \u2208 \n{ 10 ... 10000 }\n\n\ntimeout.response\n\u00b6\n\n\nTimeout in ms of an request response: \n200\n \u2208 \n{ 10 ... 10000 }\n\n\nContent\n\u00b6\n\n\n// Class\n\n\nclass\n \nxpcc\n::\nAbstractComponent\n;\n\n\nclass\n \nxpcc\n::\nActionResult\n<\n \ntypename\n \nT\n \n=\nvoid\n \n>\n;\n\n\nclass\n \nxpcc\n::\nActionResult\n<\n \nvoid\n \n>\n;\n\n\nclass\n \nxpcc\n::\nBackendInterface\n;\n\n\nclass\n \nxpcc\n::\nCanConnector\n::\nReceiveListItem\n;\n\n\nclass\n \nxpcc\n::\nCanConnector\n::\nSendListItem\n;\n\n\nclass\n \nxpcc\n::\nCanConnector\n<\n \ntypename\n \nDriver\n  \n>\n;\n\n\nclass\n \nxpcc\n::\nCanConnectorBase\n;\n\n\nclass\n \nxpcc\n::\nCommunicatable\n;\n\n\nclass\n \nxpcc\n::\nCommunicatableTask\n;\n\n\nclass\n \nxpcc\n::\nCommunicator\n;\n\n\nclass\n \nxpcc\n::\nDispatcher\n::\nEntry\n;\n\n\nclass\n \nxpcc\n::\nDispatcher\n;\n\n\nclass\n \nxpcc\n::\nDynamicPostman\n::\nActionHandler\n;\n\n\nclass\n \nxpcc\n::\nDynamicPostman\n::\nEventListener\n;\n\n\nclass\n \nxpcc\n::\nDynamicPostman\n;\n\n\nclass\n \nxpcc\n::\nPostman\n;\n\n\nclass\n \nxpcc\n::\nResponseCallback\n;\n\n\nclass\n \nxpcc\n::\nResponseHandle\n;\n\n\n\n// Struct\n\n\nstruct\n \nxpcc\n::\nHeader\n;\n\n\n\n// Function\n\n\nmodm\n::\nIOStream\n&\n \nxpcc\n::\noperator\n<<\n(\nmodm\n::\nIOStream\n \n&\ns\n,\n \nconst\n \nHeader\n \n&\nheader\n);\n\n\n\n// Enum\n\n\nenum\n \nclass\n \nResponse\n;\n\n\n\n// Typedef\n\n\nusing\n \nxpcc\n::\nActionResponse\n \n=\n \ntypedef\n \nmodm\n::\nResumableResult\n<\n \nxpcc\n::\nActionResult\n<\n \nT\n \n>\n \n>\n;\n\n\n\n// Define\n\n\n#define XPCC_CAN_PACKET_ACKNOWLEDGE\n\n\n#define XPCC_CAN_PACKET_ACKNOWLEDGE_MASK\n\n\n#define XPCC_CAN_PACKET_DESTINATION(x)\n\n\n#define XPCC_CAN_PACKET_DESTINATION_MASK\n\n\n#define XPCC_CAN_PACKET_EVENT\n\n\n#define XPCC_CAN_PACKET_EVENT_MASK\n\n\n#define XPCC_CAN_PACKET_ID(x)\n\n\n#define XPCC_CAN_PACKET_ID_MASK\n\n\n#define XPCC_CAN_PACKET_SOURCE(x)\n\n\n#define XPCC_CAN_PACKET_SOURCE_MASK\n\n\n#define XPCC_CAN_PACKET_TYPE_MASK\n\n\n#define XPCC_CAN_PACKET_TYPE_REQUEST\n\n\n\n\n\nDependencies\n\u00b6\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmodm:communication:xpcc\n\n\n\n\n\n\n\n\nmodm_communication_xpcc\n\n\n\n\nmodm:\n\n\ncommunication:\n\n\nxpcc\n\n\n\n\n\n\n\n\nmodm_architecture_can\n\n\n\n\n\n\nmodm:\n\n\narchitecture:\n\n\ncan\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_communication_xpcc->modm_architecture_can\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_communication\n\n\n\n\n\n\nmodm:\n\n\ncommunication\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_communication_xpcc->modm_communication\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_container\n\n\n\n\n\n\nmodm:\n\n\ncontainer\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_communication_xpcc->modm_container\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_debug\n\n\n\n\n\n\nmodm:\n\n\ndebug\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_communication_xpcc->modm_debug\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_io\n\n\n\n\n\n\nmodm:\n\n\nio\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_communication_xpcc->modm_io\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_math_utils\n\n\n\n\n\n\nmodm:\n\n\nmath:\n\n\nutils\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_communication_xpcc->modm_math_utils\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_processing_resumable\n\n\n\n\n\n\nmodm:\n\n\nprocessing:\n\n\nresumable\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_communication_xpcc->modm_processing_resumable\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_processing_timer\n\n\n\n\n\n\nmodm:\n\n\nprocessing:\n\n\ntimer\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_communication_xpcc->modm_processing_timer\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_communication_xpcc_generator\n\n\n\n\n\n\nmodm:\n\n\ncommunication:\n\n\nxpcc:\n\n\ngenerator\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_communication_xpcc_generator->modm_communication_xpcc\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_test_communication\n\n\n\n\n\n\nmodm:\n\n\ntest:\n\n\ncommunication\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_test_communication->modm_communication_xpcc\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_ui_menu\n\n\n\n\n\n\nmodm:\n\n\nui:\n\n\nmenu\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_ui_menu->modm_communication_xpcc",
             "title": "modm:communication:xpcc"
@@ -928,6 +1013,46 @@
         {
             "location": "/reference/module/modm-communication-xpcc/#dependencies",
             "text": "modm:communication:xpcc     modm_communication_xpcc   modm:  communication:  xpcc     modm_architecture_can    modm:  architecture:  can       modm_communication_xpcc->modm_architecture_can       modm_communication    modm:  communication       modm_communication_xpcc->modm_communication       modm_container    modm:  container       modm_communication_xpcc->modm_container       modm_debug    modm:  debug       modm_communication_xpcc->modm_debug       modm_io    modm:  io       modm_communication_xpcc->modm_io       modm_math_utils    modm:  math:  utils       modm_communication_xpcc->modm_math_utils       modm_processing_resumable    modm:  processing:  resumable       modm_communication_xpcc->modm_processing_resumable       modm_processing_timer    modm:  processing:  timer       modm_communication_xpcc->modm_processing_timer       modm_communication_xpcc_generator    modm:  communication:  xpcc:  generator       modm_communication_xpcc_generator->modm_communication_xpcc       modm_test_communication    modm:  test:  communication       modm_test_communication->modm_communication_xpcc       modm_ui_menu    modm:  ui:  menu       modm_ui_menu->modm_communication_xpcc",
+            "title": "Dependencies"
+        },
+        {
+            "location": "/reference/module/modm-communication-xpcc-generator/",
+            "text": "These module docs are in beta and may be incomplete.\n\n\n\n\nmodm:communication:xpcc:generator\n\u00b6\n\n\nOptions\n\u00b6\n\n\nsource\n\u00b6\n\n\nPath to the XPCC source file: \n{ String }\n\n\ncontainer\n\u00b6\n\n\nName of the XPCC container to generate for: \n{ String }\n\n\npath\n\u00b6\n\n\nPath to the XPCC generated folder: \ngenerated/xpcc\n \u2208 \n{ String }\n\n\nnamespace\n\u00b6\n\n\nNamespace of the generated XPCC communications: \nrobot\n \u2208 \n{ String }\n\n\nDependencies\n\u00b6\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmodm:communication:xpcc:generator\n\n\n\n\n\n\n\n\nmodm_communication_xpcc_generator\n\n\n\n\nmodm:\n\n\ncommunication:\n\n\nxpcc:\n\n\ngenerator\n\n\n\n\n\n\n\n\nmodm_communication_xpcc\n\n\n\n\n\n\nmodm:\n\n\ncommunication:\n\n\nxpcc\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_communication_xpcc_generator->modm_communication_xpcc",
+            "title": "modm:communication:xpcc:generator"
+        },
+        {
+            "location": "/reference/module/modm-communication-xpcc-generator/#modmcommunicationxpccgenerator",
+            "text": "",
+            "title": "modm:communication:xpcc:generator"
+        },
+        {
+            "location": "/reference/module/modm-communication-xpcc-generator/#options",
+            "text": "",
+            "title": "Options"
+        },
+        {
+            "location": "/reference/module/modm-communication-xpcc-generator/#source",
+            "text": "Path to the XPCC source file:  { String }",
+            "title": "source"
+        },
+        {
+            "location": "/reference/module/modm-communication-xpcc-generator/#container",
+            "text": "Name of the XPCC container to generate for:  { String }",
+            "title": "container"
+        },
+        {
+            "location": "/reference/module/modm-communication-xpcc-generator/#path",
+            "text": "Path to the XPCC generated folder:  generated/xpcc  \u2208  { String }",
+            "title": "path"
+        },
+        {
+            "location": "/reference/module/modm-communication-xpcc-generator/#namespace",
+            "text": "Namespace of the generated XPCC communications:  robot  \u2208  { String }",
+            "title": "namespace"
+        },
+        {
+            "location": "/reference/module/modm-communication-xpcc-generator/#dependencies",
+            "text": "modm:communication:xpcc:generator     modm_communication_xpcc_generator   modm:  communication:  xpcc:  generator     modm_communication_xpcc    modm:  communication:  xpcc       modm_communication_xpcc_generator->modm_communication_xpcc",
             "title": "Dependencies"
         },
         {
@@ -1248,6 +1373,26 @@
         {
             "location": "/reference/module/modm-driver-bmp085/#dependencies",
             "text": "modm:driver:bmp085     modm_driver_bmp085   modm:  driver:  bmp085     modm_architecture_i2c_device    modm:  architecture:  i2c.device       modm_driver_bmp085->modm_architecture_i2c_device       modm_debug    modm:  debug       modm_driver_bmp085->modm_debug       modm_driver    modm:  driver       modm_driver_bmp085->modm_driver       modm_math_utils    modm:  math:  utils       modm_driver_bmp085->modm_math_utils       modm_processing_protothread    modm:  processing:  protothread       modm_driver_bmp085->modm_processing_protothread       modm_processing_timer    modm:  processing:  timer       modm_driver_bmp085->modm_processing_timer       modm_test_driver    modm:  test:  driver       modm_test_driver->modm_driver_bmp085",
+            "title": "Dependencies"
+        },
+        {
+            "location": "/reference/module/modm-driver-drv832x_spi/",
+            "text": "These module docs are in beta and may be incomplete.\n\n\n\n\nmodm:driver:drv832x_spi\n\u00b6\n\n\nContent\n\u00b6\n\n\n// Class\n\n\nclass\n \nmodm\n::\nDrv832xSpi\n<\n \nclass\n \nSpiMaster\n \n,\n \nclass\n \nCs\n  \n>\n;\n\n\n\n// Struct\n\n\nstruct\n \nmodm\n::\ndrv832xSpi\n;\n\n\n\n// Function\n\n\nIOStream\n&\n \nmodm\n::\noperator\n<<\n(\nIOStream\n \n&\nos\n,\n \nconst\n \ndrv832xSpi\n::\nCsaControl_t\n \n&\nc\n);\n\n\nIOStream\n&\n \nmodm\n::\noperator\n<<\n(\nIOStream\n \n&\nos\n,\n \nconst\n \ndrv832xSpi\n::\nDriverControl_t\n \n&\nc\n);\n\n\nIOStream\n&\n \nmodm\n::\noperator\n<<\n(\nIOStream\n \n&\nos\n,\n \nconst\n \ndrv832xSpi\n::\nFaultStatus1_t\n \n&\nc\n);\n\n\nIOStream\n&\n \nmodm\n::\noperator\n<<\n(\nIOStream\n \n&\nos\n,\n \nconst\n \ndrv832xSpi\n::\nGateDriveHS_t\n \n&\nc\n);\n\n\nIOStream\n&\n \nmodm\n::\noperator\n<<\n(\nIOStream\n \n&\nos\n,\n \nconst\n \ndrv832xSpi\n::\nGateDriveLS_t\n \n&\nc\n);\n\n\nIOStream\n&\n \nmodm\n::\noperator\n<<\n(\nIOStream\n \n&\nos\n,\n \nconst\n \ndrv832xSpi\n::\nOcpControl_t\n \n&\nc\n);\n\n\nIOStream\n&\n \nmodm\n::\noperator\n<<\n(\nIOStream\n \n&\nos\n,\n \nconst\n \ndrv832xSpi\n::\nVgsStatus2_t\n \n&\nc\n);\n\n\n\n\n\nDependencies\n\u00b6\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmodm:driver:drv832x_spi\n\n\n\n\n\n\n\n\nmodm_driver_drv832x_spi\n\n\n\n\nmodm:\n\n\ndriver:\n\n\ndrv832x_spi\n\n\n\n\n\n\n\n\nmodm_architecture_gpio\n\n\n\n\n\n\nmodm:\n\n\narchitecture:\n\n\ngpio\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_driver_drv832x_spi->modm_architecture_gpio\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_architecture_register\n\n\n\n\n\n\nmodm:\n\n\narchitecture:\n\n\nregister\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_driver_drv832x_spi->modm_architecture_register\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_architecture_spi_device\n\n\n\n\n\n\nmodm:\n\n\narchitecture:\n\n\nspi.device\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_driver_drv832x_spi->modm_architecture_spi_device\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_driver\n\n\n\n\n\n\nmodm:\n\n\ndriver\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_driver_drv832x_spi->modm_driver\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_processing_resumable\n\n\n\n\n\n\nmodm:\n\n\nprocessing:\n\n\nresumable\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_driver_drv832x_spi->modm_processing_resumable\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_test_driver\n\n\n\n\n\n\nmodm:\n\n\ntest:\n\n\ndriver\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_test_driver->modm_driver_drv832x_spi",
+            "title": "modm:driver:drv832x_spi"
+        },
+        {
+            "location": "/reference/module/modm-driver-drv832x_spi/#modmdriverdrv832x_spi",
+            "text": "",
+            "title": "modm:driver:drv832x_spi"
+        },
+        {
+            "location": "/reference/module/modm-driver-drv832x_spi/#content",
+            "text": "// Class  class   modm :: Drv832xSpi <   class   SpiMaster   ,   class   Cs    > ;  // Struct  struct   modm :: drv832xSpi ;  // Function  IOStream &   modm :: operator << ( IOStream   & os ,   const   drv832xSpi :: CsaControl_t   & c );  IOStream &   modm :: operator << ( IOStream   & os ,   const   drv832xSpi :: DriverControl_t   & c );  IOStream &   modm :: operator << ( IOStream   & os ,   const   drv832xSpi :: FaultStatus1_t   & c );  IOStream &   modm :: operator << ( IOStream   & os ,   const   drv832xSpi :: GateDriveHS_t   & c );  IOStream &   modm :: operator << ( IOStream   & os ,   const   drv832xSpi :: GateDriveLS_t   & c );  IOStream &   modm :: operator << ( IOStream   & os ,   const   drv832xSpi :: OcpControl_t   & c );  IOStream &   modm :: operator << ( IOStream   & os ,   const   drv832xSpi :: VgsStatus2_t   & c );",
+            "title": "Content"
+        },
+        {
+            "location": "/reference/module/modm-driver-drv832x_spi/#dependencies",
+            "text": "modm:driver:drv832x_spi     modm_driver_drv832x_spi   modm:  driver:  drv832x_spi     modm_architecture_gpio    modm:  architecture:  gpio       modm_driver_drv832x_spi->modm_architecture_gpio       modm_architecture_register    modm:  architecture:  register       modm_driver_drv832x_spi->modm_architecture_register       modm_architecture_spi_device    modm:  architecture:  spi.device       modm_driver_drv832x_spi->modm_architecture_spi_device       modm_driver    modm:  driver       modm_driver_drv832x_spi->modm_driver       modm_processing_resumable    modm:  processing:  resumable       modm_driver_drv832x_spi->modm_processing_resumable       modm_test_driver    modm:  test:  driver       modm_test_driver->modm_driver_drv832x_spi",
             "title": "Dependencies"
         },
         {
@@ -4133,6 +4278,21 @@
         {
             "location": "/reference/module/modm-test-platform-gpio/#dependencies",
             "text": "modm:test:platform:gpio     modm_test_platform_gpio   modm:  test:  platform:  gpio     modm_architecture_delay    modm:  architecture:  delay       modm_test_platform_gpio->modm_architecture_delay       modm_platform_gpio    modm:  platform:  gpio       modm_test_platform_gpio->modm_platform_gpio       modm_test_platform    modm:  test:  platform       modm_test_platform_gpio->modm_test_platform",
+            "title": "Dependencies"
+        },
+        {
+            "location": "/reference/module/modm-test-platform-spi/",
+            "text": "These module docs are in beta and may be incomplete.\n\n\n\n\nmodm:test:platform:spi\n\u00b6\n\n\nDependencies\n\u00b6\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmodm:test:platform:spi\n\n\n\n\n\n\n\n\nmodm_test_platform_spi\n\n\n\n\nmodm:\n\n\ntest:\n\n\nplatform:\n\n\nspi\n\n\n\n\n\n\n\n\nmodm_architecture_spi\n\n\n\n\n\n\nmodm:\n\n\narchitecture:\n\n\nspi\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_test_platform_spi->modm_architecture_spi\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_container\n\n\n\n\n\n\nmodm:\n\n\ncontainer\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_test_platform_spi->modm_container\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_test_platform\n\n\n\n\n\n\nmodm:\n\n\ntest:\n\n\nplatform\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_test_platform_spi->modm_test_platform\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_test_driver\n\n\n\n\n\n\nmodm:\n\n\ntest:\n\n\ndriver\n\n\n\n\n\n\n\n\n\n\n\n\nmodm_test_driver->modm_test_platform_spi",
+            "title": "modm:test:platform:spi"
+        },
+        {
+            "location": "/reference/module/modm-test-platform-spi/#modmtestplatformspi",
+            "text": "",
+            "title": "modm:test:platform:spi"
+        },
+        {
+            "location": "/reference/module/modm-test-platform-spi/#dependencies",
+            "text": "modm:test:platform:spi     modm_test_platform_spi   modm:  test:  platform:  spi     modm_architecture_spi    modm:  architecture:  spi       modm_test_platform_spi->modm_architecture_spi       modm_container    modm:  container       modm_test_platform_spi->modm_container       modm_test_platform    modm:  test:  platform       modm_test_platform_spi->modm_test_platform       modm_test_driver    modm:  test:  driver       modm_test_driver->modm_test_platform_spi",
             "title": "Dependencies"
         },
         {
