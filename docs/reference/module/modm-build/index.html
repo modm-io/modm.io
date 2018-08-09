@@ -101,7 +101,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#modmbuild-build-system" tabindex="1" class="md-skip">
+      <a href="#modmbuild-build-system-generators" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -813,6 +813,61 @@
   <a href="#using-avrdude" title="Using AvrDude" class="md-nav__link">
     Using AvrDude
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compiler-options" title="Compiler Options" class="md-nav__link">
+    Compiler Options
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shared-for-c-and-c" title="Shared for C and C++" class="md-nav__link">
+    Shared for C and C++
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#only-c" title="Only C" class="md-nav__link">
+    Only C
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#only-c_1" title="Only C++" class="md-nav__link">
+    Only C++
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linker" title="Linker" class="md-nav__link">
+    Linker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#only-avr" title="Only AVR" class="md-nav__link">
+    Only AVR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#only-arm-cortex-m" title="Only ARM Cortex-M" class="md-nav__link">
+    Only ARM Cortex-M
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3022,6 +3077,61 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#compiler-options" title="Compiler Options" class="md-nav__link">
+    Compiler Options
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shared-for-c-and-c" title="Shared for C and C++" class="md-nav__link">
+    Shared for C and C++
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#only-c" title="Only C" class="md-nav__link">
+    Only C
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#only-c_1" title="Only C++" class="md-nav__link">
+    Only C++
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linker" title="Linker" class="md-nav__link">
+    Linker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#only-avr" title="Only AVR" class="md-nav__link">
+    Only AVR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#only-arm-cortex-m" title="Only ARM Cortex-M" class="md-nav__link">
+    Only ARM Cortex-M
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#options" title="Options" class="md-nav__link">
     Options
   </a>
@@ -3096,9 +3206,9 @@
                 <div class="admonition warning">
 <p class="admonition-title">These module docs are in beta and may be incomplete.</p>
 </div>
-<h1 id="modmbuild-build-system">modm:build: Build System<a class="headerlink" href="#modmbuild-build-system" title="Permanent link">&para;</a></h1>
+<h1 id="modmbuild-build-system-generators">modm:build: Build System Generators<a class="headerlink" href="#modmbuild-build-system-generators" title="Permanent link">&para;</a></h1>
 <p>This parent module defines a common set of functionality that is independent of
-the specific build system implementation.
+the specific build system generator implementation.
 This includes straight-forward options like project name and build path
 but also more complicated configuration for programming your target via
 AvrDude/OpenOCD and debugging via GDB.</p>
@@ -3194,6 +3304,64 @@ milliseconds to hundreds. Make sure your hardware can handle that!</p>
 <p>Unfortunately AvrDude does not support a user configuration file like OpenOCD
 does, so there is no convenient one-line command to issue.
 You have to use the support of the specific build system.</p>
+<h2 id="compiler-options">Compiler Options<a class="headerlink" href="#compiler-options" title="Permanent link">&para;</a></h2>
+<p>We maintain a common set of compiler options for all build system generator, so 
+that they all have feature parity. We currently only support compiling modm
+with GCC for AVR, ARM Cortex-M and x86/posix with the options mentioned in the
+<a href="https://gcc.gnu.org/onlinedocs/gcc/Option-Summary.html">offical GCC options documentation</a>.</p>
+<p>You can find all compiler options inside the generated build script for your
+project, the options presented here are only the most important ones.</p>
+<h4 id="shared-for-c-and-c">Shared for C and C++<a class="headerlink" href="#shared-for-c-and-c" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>-W{all, extra}</code>: a basic set of warnings.</li>
+<li><code>-Werror={format, maybe-uninitialized, overflow, sign-compare}</code>: these warnings are treated as errors.</li>
+<li><code>-f{data, function}-sections</code>: puts data and functions into their own linker section.</li>
+<li><code>-funsigned-{char, bitfields}</code>: modm tries to use <code>stdint.h</code> types everywhere, but just in case.</li>
+</ul>
+<p>For <em>release builds</em>:</p>
+<ul>
+<li><code>-Os</code>: optimize for smaller size.</li>
+</ul>
+<p>For <em>debug builds</em>:</p>
+<ul>
+<li><code>-Og</code>: optimize for debugging experience.</li>
+</ul>
+<h4 id="only-c">Only C<a class="headerlink" href="#only-c" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>-std=gnu11</code>: use C11 with GNU extensions (for <code>asm volatile</code>).</li>
+<li><code>-Wnested-externs</code>: shouldn't use <code>extern</code> inside a function body.</li>
+</ul>
+<h4 id="only-c_1">Only C++<a class="headerlink" href="#only-c_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>-std=c++17</code>: use C++17</li>
+<li><code>-fno-exceptions</code>: no exceptions.</li>
+<li><code>-fno-rtti</code>: no run-time type information.</li>
+</ul>
+<h4 id="linker">Linker<a class="headerlink" href="#linker" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>--gc-section</code>: garbage collecting sections throws out a lot of unused data/code.</li>
+<li><code>-L{linkdir} -Tlinkerscript.ld</code>: modm uses a custom linkerscript.</li>
+</ul>
+<h3 id="only-avr">Only AVR<a class="headerlink" href="#only-avr" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>-mmcu={target}</code>: the target to compile for.</li>
+</ul>
+<h3 id="only-arm-cortex-m">Only ARM Cortex-M<a class="headerlink" href="#only-arm-cortex-m" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>-mcpu=cortex-m{type}</code>: the target to compile for.</li>
+<li><code>-mthumb</code>: only Thumb2 instruction set is supported.</li>
+<li><code>-mfloat-abi=hard</code>: if FPU available use the fastest ABI available.</li>
+<li><code>-mfpu=fpv{4, 5}-{sp}-d16</code>: single or double precision FPU.</li>
+<li><code>-fsingle-precision-constant</code>: if SP-FPU, treat all FP constants as SP.</li>
+<li><code>-Wdouble-promotion</code>: if SP-DPU, warn if FPs are promoted to doubles.</li>
+</ul>
+<p>In addition, these linker options are added:</p>
+<ul>
+<li><code>-nostartfiles</code>: modm implements its own startup script.</li>
+<li><code>--specs=nano.specs</code>: use Newlib Nano.</li>
+<li><code>--specs=nosys.specs</code>: modm does not use C stdlib features.</li>
+<li><code>-wrap,_{calloc, malloc, realloc, free}_r</code>: reimplemented Newlib with our own allocator.</li>
+</ul>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <h4 id="projectname">project.name<a class="headerlink" href="#projectname" title="Permanent link">&para;</a></h4>
 <p>Project Name: <code>blink</code> ∈ <code>{ String }</code></p>

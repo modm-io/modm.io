@@ -3041,11 +3041,40 @@
 <p class="admonition-title">These module docs are in beta and may be incomplete.</p>
 </div>
 <h1 id="modmbuildscons-scons-build-script-generator">modm:build:scons: SCons Build Script Generator<a class="headerlink" href="#modmbuildscons-scons-build-script-generator" title="Permanent link">&para;</a></h1>
+<p><a href="http://scons.org">SCons</a> is a software construction build system written in Python.
+We've extended it with a few custom build tools for a smooth integration into 
+the embedded workflow <a href="https://github.com/modm-io/scons-build-tools">from the DLR</a> as well as our own
+modm-specific build tools in this module.</p>
+<p><strong>scons</strong></p>
+<p>Compiles your application and shows static resource consumption.</p>
+<p><strong>scons build</strong></p>
+<p>Compiles your application into an executable.</p>
+<p><strong>scons size</strong></p>
+<p>Displays the static Flash and RAM consumption.</p>
+<p><strong>scons program</strong></p>
+<p>Writes the executable onto your target via Avrdude or OpenOCD.</p>
+<p><strong>scons symbols</strong></p>
+<p>Dumps the symbol table for your executable.</p>
+<p><strong>scons listing</strong></p>
+<p>Decompiles your executable into an annotated assembly listing.</p>
+<p><strong>scons -c</strong></p>
+<p>Removes the build files.</p>
+<p><strong>scons verbose=1</strong></p>
+<p>Makes the printout more verbose.</p>
+<p><strong>scons profile=debug</strong></p>
+<p>Chooses the debug profile.</p>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <h4 id="include_sconstruct">include_sconstruct<a class="headerlink" href="#include_sconstruct" title="Permanent link">&para;</a></h4>
-<p>Generate modm specific SConstruct file.: <code>True</code> ∈ <code>{ True, False }</code></p>
+<p>Generate a SConstruct file: <code>True</code> ∈ <code>{ True, False }</code></p>
+<div class="admonition warning">
+<p class="admonition-title">This overwrites any top-level <code>SConstruct</code> file!</p>
+</div>
 <h4 id="imagesource">image.source<a class="headerlink" href="#imagesource" title="Permanent link">&para;</a></h4>
-<p>Path to the image folder: <code>{ String }</code></p>
+<p>Path to directory containing .pbm files: <code>{ String }</code></p>
+<p>Use the <code>bitmap</code> tool to convert .pbm files into C++ data files.
+See the <code>GraphicsDisplay::drawImage()</code> method in the <code>modm:ui:display</code> module.
+The directory is added to the include search paths, so the generated files
+can be accessed as <code>#include &lt;image.hpp&gt;</code>.</p>
 <h4 id="infogit">info.git<a class="headerlink" href="#infogit" title="Permanent link">&para;</a></h4>
 <p>Generate CPP defines about the git repository state: <code>Disabled</code> ∈ <code>{ Disabled, Info, Info+Status }</code></p>
 <h4 id="infobuild">info.build<a class="headerlink" href="#infobuild" title="Permanent link">&para;</a></h4>
