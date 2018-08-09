@@ -101,7 +101,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#modmbuild" tabindex="1" class="md-skip">
+      <a href="#modmbuild-build-system" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -796,6 +796,27 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#using-openocd" title="Using OpenOCD" class="md-nav__link">
+    Using OpenOCD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-gdb" title="Using GDB" class="md-nav__link">
+    Using GDB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-avrdude" title="Using AvrDude" class="md-nav__link">
+    Using AvrDude
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#options" title="Options" class="md-nav__link">
     Options
   </a>
@@ -818,15 +839,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#include_gdbinit" title="include_gdbinit" class="md-nav__link">
-    include_gdbinit
+  <a href="#include_openocd" title="include_openocd" class="md-nav__link">
+    include_openocd
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#include_openocd" title="include_openocd" class="md-nav__link">
-    include_openocd
+  <a href="#include_gdbinit" title="include_gdbinit" class="md-nav__link">
+    include_gdbinit
   </a>
   
 </li>
@@ -2980,6 +3001,27 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#using-openocd" title="Using OpenOCD" class="md-nav__link">
+    Using OpenOCD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-gdb" title="Using GDB" class="md-nav__link">
+    Using GDB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-avrdude" title="Using AvrDude" class="md-nav__link">
+    Using AvrDude
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#options" title="Options" class="md-nav__link">
     Options
   </a>
@@ -3002,15 +3044,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#include_gdbinit" title="include_gdbinit" class="md-nav__link">
-    include_gdbinit
+  <a href="#include_openocd" title="include_openocd" class="md-nav__link">
+    include_openocd
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#include_openocd" title="include_openocd" class="md-nav__link">
-    include_openocd
+  <a href="#include_gdbinit" title="include_gdbinit" class="md-nav__link">
+    include_gdbinit
   </a>
   
 </li>
@@ -3054,18 +3096,134 @@
                 <div class="admonition warning">
 <p class="admonition-title">These module docs are in beta and may be incomplete.</p>
 </div>
-<h1 id="modmbuild">modm:build<a class="headerlink" href="#modmbuild" title="Permanent link">&para;</a></h1>
+<h1 id="modmbuild-build-system">modm:build: Build System<a class="headerlink" href="#modmbuild-build-system" title="Permanent link">&para;</a></h1>
+<p>This parent module defines a common set of functionality that is independent of
+the specific build system implementation.
+This includes straight-forward options like project name and build path
+but also more complicated configuration for programming your target via
+AvrDude/OpenOCD and debugging via GDB.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These are generic instruction for programming and debugging your project,
+however, you still need to choose a build system implementation to actually
+compile your project!</p>
+</div>
+<h2 id="using-openocd">Using OpenOCD<a class="headerlink" href="#using-openocd" title="Permanent link">&para;</a></h2>
+<p>For accessing your ARM Cortex-M based device, we use OpenOCD and generate a
+top-level <code>openocd.cfg</code> file with the target specific configuration:</p>
+<ul>
+<li>Search directories passed via the <code>openocd.search</code> metadata key.</li>
+<li>User configuration files passed via the <code>openocd.configfile</code> metadata key.
+  Your custom <code>modm:build:openocd.cfg</code> is added here too.</li>
+<li>Two programming commands:<ul>
+<li><code>program_release</code> for uploading the release profile.</li>
+<li><code>program_debug</code> for uploading your debug profile.</li>
+</ul>
+</li>
+</ul>
+<p>You can now upload your program in a one-line command:</p>
+<div class="codehilite"><pre><span></span>openocd -c <span class="s2">&quot;program_release&quot;</span>
+openocd -c <span class="s2">&quot;program_debug&quot;</span>
+</pre></div>
+
+<p>OpenOCD should load the <code>openocd.cfg</code> file automatically, however, if it does
+not, you need to declare it like this:</p>
+<div class="codehilite"><pre><span></span>openocd -f openocd.cfg -c <span class="s2">&quot;program_debug&quot;</span>
+</pre></div>
+
+<h2 id="using-gdb">Using GDB<a class="headerlink" href="#using-gdb" title="Permanent link">&para;</a></h2>
+<p>For debugging your program on ARM Cortex-M device, we provide a configuration
+file for the <code>arm-none-eabi-gdb</code> debugger connected to your target via OpenOCD.</p>
+<p>Four commands are provided for convenience:</p>
+<ul>
+<li><code>file_debug</code> loads the debug profile ELF file.</li>
+<li><code>file_release</code> loads the release profile ELF file.</li>
+<li><code>restart</code> resets the device and halts.</li>
+<li><code>rerun</code> resets the device and continues execution.</li>
+</ul>
+<p>GDB is configured in TUI mode and continues running the target after attaching,
+but <em>does not</em> load an ELF file! Please call <code>file_{debug, release}</code> first or
+pass the ELF file as a command line argument.</p>
+<p>You can start your debug session by launching OpenOCD and then GDB:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># Run OpenOCD without any commands in the background</span>
+openocd -f openocd.cfg
+<span class="c1"># Open another terminal</span>
+arm-none-eabi-gdb -x gdbinit
+<span class="c1"># OR optionally with your custom ELF file</span>
+arm-none-eabi-gdb -x gdbinit path/to/project.elf
+<span class="c1"># press Ctrl-C and then call the file_debug command to load the debug profile!</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span>   ┌——main.cpp———————————————————————————————————————————————————————┐
+  &gt;│194             DRAW(x+1, y+3);                                  │
+   │195             DRAW(x+2, y+3);                                  │
+   │196     #else                                                    │
+   │197             DRAW(x  , y  );                                  │
+   │198     #endif                                                   │
+   │199     #undef DRAW                                              │
+   │200     }                                                        │
+   │201                                                              │
+   │202     static inline void drawScreen(framebuffer_t before, frame│
+   └—————————————————————————————————————————————————————————————————┘
+  &gt;│0x80017a0 &lt;game_of_life()+1692&gt; strh.w r3, [r4, r12, lsl #1]     │
+   │0x80017a4 &lt;game_of_life()+1696&gt; add    r0, lr                    │
+   │0x80017a6 &lt;game_of_life()+1698&gt; ldr    r2, [r2, #0]              │
+   │0x80017a8 &lt;game_of_life()+1700&gt; strh.w r3, [r2, r0, lsl #1]      │
+   │0x80017ac &lt;game_of_life()+1704&gt; ldr    r3, [sp, #12]             │
+   │0x80017ae &lt;game_of_life()+1706&gt; ldr    r2, [sp, #0]              │
+   │0x80017b0 &lt;game_of_life()+1708&gt; add    r2, r3                    │
+   │0x80017b2 &lt;game_of_life()+1710&gt; ldrb   r3, [r7, r1]              │
+   │0x80017b4 &lt;game_of_life()+1712&gt; strb   r3, [r2, r1]              │
+   └—————————————————————————————————————————————————————————————————┘
+extended-r Remote target In: game_of_life         L194  PC: 0x80017a0
+
+Program received signal SIGINT, Interrupt.
+0x080017a0 in drawPixel (color=&lt;optimized out&gt;, y=42, x=578) at main.c
+(gdb) file_debug
+(gdb)
+</pre></div>
+
+<div class="admonition warning">
+<p class="admonition-title">Be careful attaching to a running target</p>
+<p>Due to the OpenOCD implementation, the target is halted for a very short
+period of time, while the device's debug peripheral is initialized.
+This time is dependent on the debug adapter and may range from just a few
+milliseconds to hundreds. Make sure your hardware can handle that!</p>
+</div>
+<h2 id="using-avrdude">Using AvrDude<a class="headerlink" href="#using-avrdude" title="Permanent link">&para;</a></h2>
+<p>Unfortunately AvrDude does not support a user configuration file like OpenOCD
+does, so there is no convenient one-line command to issue.
+You have to use the support of the specific build system.</p>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <h4 id="projectname">project.name<a class="headerlink" href="#projectname" title="Permanent link">&para;</a></h4>
-<p>Project name for executable: <code>blink</code> ∈ <code>{ String }</code></p>
+<p>Project Name: <code>blink</code> ∈ <code>{ String }</code></p>
+<p>The project name defaults to the folder name you're calling lbuild from.</p>
+<p>It's used by your build system to name the executable and it may also be passed
+to your application via a string constant or CPP define.</p>
 <h4 id="buildpath">build.path<a class="headerlink" href="#buildpath" title="Permanent link">&para;</a></h4>
-<p>Path to the build folder: <code>../../../build/stm32f469_discovery/blink</code> ∈ <code>{ String }</code></p>
-<h4 id="include_gdbinit">include_gdbinit<a class="headerlink" href="#include_gdbinit" title="Permanent link">&para;</a></h4>
-<p>Generate a default .gdbinit file: <code>True</code> ∈ <code>{ String }</code></p>
+<p>Build Path: <code>../../../build/stm32f469_discovery/blink</code> ∈ <code>{ String }</code></p>
+<p>The build path is defaulted to <code>build/{modm:build:project.name}</code>.</p>
+<p>If you have a lot of embedded projects, you may want to change the build path
+to a <em>common</em> directory so that you don't have <code>build/</code> folders everywhere.
+Remember to add your build path to your <code>.gitignore</code> or similar.</p>
+<p>You should use a relative path instead of an absolute one, so that this option
+still works for other developers.</p>
 <h4 id="include_openocd">include_openocd<a class="headerlink" href="#include_openocd" title="Permanent link">&para;</a></h4>
-<p>Generate a default openocd.cfg file: <code>True</code> ∈ <code>{ String }</code></p>
+<p>Generate an OpenOCD configuration file: <code>True</code> ∈ <code>{ True, False }</code></p>
+<div class="admonition warning">
+<p class="admonition-title">This overwrites any top-level <code>openocd.cfg</code> file!</p>
+</div>
+<h4 id="include_gdbinit">include_gdbinit<a class="headerlink" href="#include_gdbinit" title="Permanent link">&para;</a></h4>
+<p>Generate a GDB configuration file: <code>True</code> ∈ <code>{ True, False }</code></p>
+<div class="admonition warning">
+<p class="admonition-title">This overwrites any top-level <code>gdbinit</code> file!</p>
+</div>
 <h4 id="openocdcfg">openocd.cfg<a class="headerlink" href="#openocdcfg" title="Permanent link">&para;</a></h4>
 <p>Path to a custom OpenOCD configuration file: <code>{ String }</code></p>
+<p>If you have a custom configuration file for your target, it will get included
+by the <code>openocd.cfg</code> file generated by <code>modm:build:include_openocd</code>.</p>
+<p>This is useful for not having to duplicate your config if you have several
+projects using the same target (like small bring-up and test projects).</p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
