@@ -2904,6 +2904,7 @@
 <h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1">// Class</span>
 <span class="k">class</span> <span class="nc">ModmHardware</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">Uart</span>  <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">sab2</span><span class="o">::</span><span class="n">Interface</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">Device</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">N</span><span class="o">=</span><span class="n">maxPayloadLength</span> <span class="o">&gt;</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">sab</span><span class="o">::</span><span class="n">Interface</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">Device</span> <span class="o">&gt;</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">sab</span><span class="o">::</span><span class="n">Master</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">Interface</span> <span class="o">&gt;</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">sab</span><span class="o">::</span><span class="n">Response</span><span class="p">;</span>
@@ -2936,14 +2937,20 @@
 
 <span class="c1">// Function</span>
 <span class="n">modm</span><span class="o">::</span><span class="n">IOStream</span><span class="o">&amp;</span> <span class="n">xpcc</span><span class="o">::</span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">modm</span><span class="o">::</span><span class="n">IOStream</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">,</span> <span class="k">const</span> <span class="n">Header</span> <span class="o">&amp;</span><span class="n">header</span><span class="p">);</span>
+<span class="kt">uint16_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">sab2</span><span class="o">::</span><span class="n">crcUpdate</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">crc</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">data</span><span class="p">);</span>
 <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">sab</span><span class="o">::</span><span class="n">crcUpdate</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">crc</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">data</span><span class="p">);</span>
 
 <span class="c1">// Enum</span>
+<span class="k">enum</span> <span class="n">Error</span><span class="p">;</span>
 <span class="k">enum</span> <span class="n">Error</span><span class="p">;</span>
 <span class="k">enum</span> <span class="n">Flags</span><span class="p">;</span>
 <span class="k">enum</span> <span class="k">class</span> <span class="nc">Response</span><span class="p">;</span>
 
 <span class="c1">// Variable</span>
+<span class="k">const</span> <span class="kt">uint16_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">sab2</span><span class="o">::</span><span class="n">crcInitialValue</span> <span class="o">=</span> <span class="mh">0xffff</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">sab2</span><span class="o">::</span><span class="n">controlEscapeByte</span> <span class="o">=</span> <span class="mh">0x7d</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">sab2</span><span class="o">::</span><span class="n">frameBounderyByte</span> <span class="o">=</span> <span class="mh">0x7e</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">sab2</span><span class="o">::</span><span class="n">maxPayloadLength</span> <span class="o">=</span> <span class="mi">32</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">sab</span><span class="o">::</span><span class="n">crcInitialValue</span> <span class="o">=</span> <span class="mh">0x00</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">sab</span><span class="o">::</span><span class="n">maxPayloadLength</span> <span class="o">=</span> <span class="mi">32</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">sab</span><span class="o">::</span><span class="n">syncByte</span> <span class="o">=</span> <span class="mh">0x54</span><span class="p">;</span>
@@ -2974,17 +2981,17 @@
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: modm:communication Pages: 1 -->
-<svg width="365pt" height="130pt"
- viewBox="0.00 0.00 364.98 130.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="490pt" height="130pt"
+ viewBox="0.00 0.00 489.98 130.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 126)">
 <title>modm:communication</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-126 360.9795,-126 360.9795,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-126 485.9795,-126 485.9795,4 -4,4"/>
 <!-- modm_communication -->
 <g id="node1" class="node">
 <title>modm_communication</title>
-<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="230.0796,-122 126.8999,-122 126.8999,-86 230.0796,-86 230.0796,-122"/>
-<text text-anchor="middle" x="178.4897" y="-106.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="178.4897" y="-92.8" font-family="Times,serif" font-size="14.00" fill="#000000">communication</text>
+<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="292.0796,-122 188.8999,-122 188.8999,-86 292.0796,-86 292.0796,-122"/>
+<text text-anchor="middle" x="240.4897" y="-106.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="240.4897" y="-92.8" font-family="Times,serif" font-size="14.00" fill="#000000">communication</text>
 </g>
 <!-- modm_communication_ros -->
 <g id="node2" class="node">
@@ -3000,8 +3007,8 @@
 <!-- modm_communication_ros&#45;&gt;modm_communication -->
 <g id="edge1" class="edge">
 <title>modm_communication_ros&#45;&gt;modm_communication</title>
-<path fill="none" stroke="#000000" d="M93.3842,-50.2133C108.6744,-59.8767 126.0507,-70.8585 141.0981,-80.3685"/>
-<polygon fill="#000000" stroke="#000000" points="139.3321,-83.3927 149.6553,-85.7766 143.0719,-77.4754 139.3321,-83.3927"/>
+<path fill="none" stroke="#000000" d="M107.0764,-47.6382C132.6284,-58.4329 163.0762,-71.2959 188.4285,-82.0062"/>
+<polygon fill="#000000" stroke="#000000" points="187.3009,-85.3293 197.8747,-85.9969 190.0251,-78.8811 187.3009,-85.3293"/>
 </g>
 <!-- modm_communication_sab -->
 <g id="node3" class="node">
@@ -3017,25 +3024,42 @@
 <!-- modm_communication_sab&#45;&gt;modm_communication -->
 <g id="edge2" class="edge">
 <title>modm_communication_sab&#45;&gt;modm_communication</title>
-<path fill="none" stroke="#000000" d="M178.4897,-50.4309C178.4897,-58.4598 178.4897,-67.3807 178.4897,-75.603"/>
-<polygon fill="#000000" stroke="#000000" points="174.9898,-75.8758 178.4897,-85.8758 181.9898,-75.8758 174.9898,-75.8758"/>
+<path fill="none" stroke="#000000" d="M198.4482,-50.4309C205.3157,-59.1815 213.0149,-68.9917 219.9294,-77.8022"/>
+<polygon fill="#000000" stroke="#000000" points="217.3385,-80.17 226.2657,-85.8758 222.8452,-75.8483 217.3385,-80.17"/>
 </g>
-<!-- modm_communication_xpcc -->
+<!-- modm_communication_sab2 -->
 <g id="node4" class="node">
-<title>modm_communication_xpcc</title>
-<g id="a_node4"><a xlink:href="../modm-communication-xpcc" xlink:title="modm:&#10;communication:&#10;xpcc">
+<title>modm_communication_sab2</title>
+<g id="a_node4"><a xlink:href="../modm-communication-sab2" xlink:title="modm:&#10;communication:&#10;sab2">
 <polygon fill="#d3d3d3" stroke="#000000" points="356.9692,-50 250.0103,-50 250.0103,0 356.9692,0 356.9692,-50"/>
 <text text-anchor="middle" x="303.4897" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
 <text text-anchor="middle" x="303.4897" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">communication:</text>
-<text text-anchor="middle" x="303.4897" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">xpcc</text>
+<text text-anchor="middle" x="303.4897" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">sab2</text>
+</a>
+</g>
+</g>
+<!-- modm_communication_sab2&#45;&gt;modm_communication -->
+<g id="edge3" class="edge">
+<title>modm_communication_sab2&#45;&gt;modm_communication</title>
+<path fill="none" stroke="#000000" d="M283.2094,-50.4309C276.2311,-59.1815 268.4078,-68.9917 261.3817,-77.8022"/>
+<polygon fill="#000000" stroke="#000000" points="258.4417,-75.8752 254.9432,-85.8758 263.9146,-80.2397 258.4417,-75.8752"/>
+</g>
+<!-- modm_communication_xpcc -->
+<g id="node5" class="node">
+<title>modm_communication_xpcc</title>
+<g id="a_node5"><a xlink:href="../modm-communication-xpcc" xlink:title="modm:&#10;communication:&#10;xpcc">
+<polygon fill="#d3d3d3" stroke="#000000" points="481.9692,-50 375.0103,-50 375.0103,0 481.9692,0 481.9692,-50"/>
+<text text-anchor="middle" x="428.4897" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="428.4897" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">communication:</text>
+<text text-anchor="middle" x="428.4897" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">xpcc</text>
 </a>
 </g>
 </g>
 <!-- modm_communication_xpcc&#45;&gt;modm_communication -->
-<g id="edge3" class="edge">
+<g id="edge4" class="edge">
 <title>modm_communication_xpcc&#45;&gt;modm_communication</title>
-<path fill="none" stroke="#000000" d="M263.5953,-50.2133C248.3051,-59.8767 230.9288,-70.8585 215.8814,-80.3685"/>
-<polygon fill="#000000" stroke="#000000" points="213.9076,-77.4754 207.3242,-85.7766 217.6474,-83.3927 213.9076,-77.4754"/>
+<path fill="none" stroke="#000000" d="M374.8681,-47.5325C349.173,-58.3299 318.5081,-71.2157 292.9637,-81.9498"/>
+<polygon fill="#000000" stroke="#000000" points="291.3086,-78.8488 283.4453,-85.9495 294.0204,-85.3022 291.3086,-78.8488"/>
 </g>
 </g>
 </svg>

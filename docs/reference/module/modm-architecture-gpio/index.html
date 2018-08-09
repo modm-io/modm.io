@@ -101,7 +101,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#modmarchitecturegpio-gpio-interface" tabindex="1" class="md-skip">
+      <a href="#modmarchitecturegpio-general-purpose-inputoutput" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -626,6 +626,20 @@
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#using-gpios" title="Using GPIOs" class="md-nav__link">
+    Using GPIOs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passing-gpios-to-drivers" title="Passing GPIOs to drivers" class="md-nav__link">
+    Passing GPIOs to drivers
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#content" title="Content" class="md-nav__link">
@@ -2867,6 +2881,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#using-gpios" title="Using GPIOs" class="md-nav__link">
+    Using GPIOs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passing-gpios-to-drivers" title="Passing GPIOs to drivers" class="md-nav__link">
+    Passing GPIOs to drivers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#content" title="Content" class="md-nav__link">
     Content
   </a>
@@ -2900,31 +2928,50 @@
                 <div class="admonition warning">
 <p class="admonition-title">These module docs are in beta and may be incomplete.</p>
 </div>
-<h1 id="modmarchitecturegpio-gpio-interface">modm:architecture:gpio: GPIO Interface<a class="headerlink" href="#modmarchitecturegpio-gpio-interface" title="Permanent link">&para;</a></h1>
+<h1 id="modmarchitecturegpio-general-purpose-inputoutput">modm:architecture:gpio: General Purpose Input/Output<a class="headerlink" href="#modmarchitecturegpio-general-purpose-inputoutput" title="Permanent link">&para;</a></h1>
+<p>GPIOs are modeled as individual classes with an interface consisting out of a
+common set of static methods.</p>
+<h2 id="using-gpios">Using GPIOs<a class="headerlink" href="#using-gpios" title="Permanent link">&para;</a></h2>
 <p>These classes are used to create architecture independent
 definitions for hardware pins which then can be used as template
 parameters for miscellaneous device drivers.</p>
 <p>Example of a platform-independent blinking light:</p>
-<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;modm/platform/platform.hpp&gt;</span><span class="cp"></span>
+<!--
+.. compile::
+    :target: *
+-->
+
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;modm/platform.hpp&gt;</span><span class="cp"></span>
 
 <span class="k">using</span> <span class="n">Led</span> <span class="o">=</span> <span class="n">GpioOutputB0</span><span class="p">;</span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">Led</span><span class="o">::</span><span class="n">setOutput</span><span class="p">();</span>
-    <span class="n">Led</span><span class="o">::</span><span class="n">set</span><span class="p">();</span>
+<span class="n">Led</span><span class="o">::</span><span class="n">setOutput</span><span class="p">();</span>
+<span class="n">Led</span><span class="o">::</span><span class="n">set</span><span class="p">();</span>
 
-    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">Led</span><span class="o">::</span><span class="n">toggle</span><span class="p">();</span>
-        <span class="n">modm</span><span class="o">::</span><span class="n">delayMilliseconds</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
-    <span class="p">}</span>
+<span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Led</span><span class="o">::</span><span class="n">toggle</span><span class="p">();</span>
+    <span class="n">modm</span><span class="o">::</span><span class="n">delayMilliseconds</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 
-<p>You can use the common definitions to express your intention for setting a pin.</p>
+<p>You can use the common definitions of <code>modm::Gpio</code> to express your intention
+for setting a pin. However, you can also use anything that casts to <code>bool</code>.</p>
+<!--
+.. compile::
+    :target: *
+    :prefix: |
+        using Led = GpioOutputB0;
+-->
+
 <div class="codehilite"><pre><span></span><span class="n">Led</span><span class="o">::</span><span class="n">set</span><span class="p">(</span><span class="n">modm</span><span class="o">::</span><span class="n">Gpio</span><span class="o">::</span><span class="n">High</span><span class="p">);</span> <span class="c1">// Turns Led on</span>
 <span class="n">Led</span><span class="o">::</span><span class="n">set</span><span class="p">(</span><span class="n">modm</span><span class="o">::</span><span class="n">Gpio</span><span class="o">::</span><span class="n">Low</span><span class="p">);</span> <span class="c1">// Turns Led off</span>
+<span class="n">Led</span><span class="o">::</span><span class="n">set</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+<span class="n">Led</span><span class="o">::</span><span class="n">set</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+<span class="n">Led</span><span class="o">::</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">Led</span><span class="o">::</span><span class="n">set</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">Led</span><span class="o">::</span><span class="n">set</span><span class="p">();</span>
+<span class="n">Led</span><span class="o">::</span><span class="n">reset</span><span class="p">();</span>
 </pre></div>
 
 <div class="admonition warning">
@@ -2932,6 +2979,7 @@ parameters for miscellaneous device drivers.</p>
 <p>Call <code>Gpio::setInput()</code> or <code>Gpio::setOutput()</code> before the first use, 
 otherwise the GPIO state may be undefined!</p>
 </div>
+<h2 id="passing-gpios-to-drivers">Passing GPIOs to drivers<a class="headerlink" href="#passing-gpios-to-drivers" title="Permanent link">&para;</a></h2>
 <h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1">// Class</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">GpioExpander</span><span class="p">;</span>
