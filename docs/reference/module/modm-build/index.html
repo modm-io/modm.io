@@ -3232,15 +3232,35 @@ top-level <code>openocd.cfg</code> file with the target specific configuration:<
 </li>
 </ul>
 <p>You can now upload your program in a one-line command:</p>
-<div class="codehilite"><pre><span></span>openocd -c <span class="s2">&quot;program_release&quot;</span>
-openocd -c <span class="s2">&quot;program_debug&quot;</span>
+<p><div class="codehilite"><pre><span></span>openocd -f openocd.cfg -c <span class="s2">&quot;program_release&quot;</span>
+openocd -f openocd.cfg -c <span class="s2">&quot;program_debug&quot;</span>
 </pre></div>
-
-<p>OpenOCD should load the <code>openocd.cfg</code> file automatically, however, if it does
-not, you need to declare it like this:</p>
-<div class="codehilite"><pre><span></span>openocd -f openocd.cfg -c <span class="s2">&quot;program_debug&quot;</span>
-</pre></div>
-
+<div class="codehilite"><pre><span></span>Open On-Chip Debugger 0.10.0
+adapter speed: 2000 kHz
+adapter_nsrst_delay: 100
+none separate
+srst_only separate srst_nogate srst_open_drain connect_deassert_srst
+program_debug
+Info : clock speed 1800 kHz
+Info : STLINK v2 JTAG v28 API v2 SWIM v18 VID 0x0483 PID 0x374B
+Info : using stlink api v2
+Info : Target voltage: 3.260972
+Info : stm32f4x.cpu: hardware has 6 breakpoints, 4 watchpoints
+adapter speed: 1800 kHz
+** Programming Started **
+auto erase enabled
+Info : device id = 0x10006434
+Info : flash size = 2048kbytes
+wrote 16384 bytes from file path/to/project.elf in 0.589551s (27.139 KiB/s)
+** Programming Finished **
+** Verify Started **
+verified 13064 bytes in 0.328969s (38.781 KiB/s)
+** Verified OK **
+adapter speed: 1800 kHz
+target halted due to debug-request, current mode: Thread
+xPSR: 0x01000000 pc: 0x0800263c msp: 0x10000be0
+shutdown command invoked
+</pre></div></p>
 <h2 id="using-gdb">Using GDB<a class="headerlink" href="#using-gdb" title="Permanent link">&para;</a></h2>
 <p>For debugging your program on ARM Cortex-M device, we provide a configuration
 file for the <code>arm-none-eabi-gdb</code> debugger connected to your target via OpenOCD.</p>

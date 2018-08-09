@@ -820,6 +820,33 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#information-tool" title="Information Tool" class="md-nav__link">
+    Information Tool
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-information" title="Git Information" class="md-nav__link">
+    Git Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-information" title="Build Information" class="md-nav__link">
+    Build Information
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#options" title="Options" class="md-nav__link">
     Options
   </a>
@@ -2973,6 +3000,33 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#information-tool" title="Information Tool" class="md-nav__link">
+    Information Tool
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-information" title="Git Information" class="md-nav__link">
+    Git Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-information" title="Build Information" class="md-nav__link">
+    Build Information
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#options" title="Options" class="md-nav__link">
     Options
   </a>
@@ -3063,6 +3117,121 @@ modm-specific build tools in this module.</p>
 <p>Makes the printout more verbose.</p>
 <p><strong>scons profile=debug</strong></p>
 <p>Chooses the debug profile.</p>
+<h2 id="information-tool">Information Tool<a class="headerlink" href="#information-tool" title="Permanent link">&para;</a></h2>
+<p>Our <code>info</code> SCons tool generates a set of header files containing preprocessor
+defines with the repository state.</p>
+<p>A call to <code>env.InfoGit(with_status={True, False})</code> will generate a <code>&lt;info_git.h&gt;</code>
+header file and add these two defines to the command line CPP options:</p>
+<ul>
+<li><code>MODM_GIT_INFO</code></li>
+<li><code>MODM_GIT_STATUS</code>: defined only if called with <code>with_state=True</code>.</li>
+</ul>
+<p>You can enable this by setting the <code>modm:build:scons:info.git</code> option.</p>
+<p>A call to <code>env.InfoBuild()</code> will generate a <code>&lt;info_build.h&gt;</code> header file and add
+this define to the command line CPP options:</p>
+<ul>
+<li><code>MODM_BUILD_INFO</code></li>
+</ul>
+<p>You can enable this by setting the <code>modm:build:scons:info.build</code> option.</p>
+<div class="admonition danger">
+<p class="admonition-title">Only include in source files</p>
+<p>Since this information may change often, you must only <code>#include</code> the
+generated header files in source files, not in header files. Otherwise
+<strong>you risk a complete rebuild of your project every time this information
+changes</strong>! If you need to use the information in a header file, expose it
+as a <code>extern const char *info_git_{name};</code> and initialize it with
+the defines in a separate source file. Then only this source file needs to
+be rebuild and the project relinked, which is significantly faster:</p>
+<div class="codehilite"><pre><span></span><span class="c1">// In header file</span>
+<span class="k">extern</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">info_git_sha</span><span class="p">;</span>
+<span class="c1">// In source file</span>
+<span class="k">const</span> <span class="kt">char</span> <span class="n">info_git_sha</span><span class="p">[]</span> <span class="o">=</span> <span class="n">MODM_GIT_SHA</span><span class="p">;</span>
+</pre></div>
+
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Respect developer's privacy</p>
+<p>This information is placed into the firmware in <strong>cleartext</strong>, so it will
+be trivial to extract from a memory dump. Consider this information public
+as soon as its uploaded to your target. Make sure you only use the
+information you absolutely need!</p>
+</div>
+<h3 id="git-information">Git Information<a class="headerlink" href="#git-information" title="Permanent link">&para;</a></h3>
+<p>These are the values defines as strings in <code>&lt;info_git.h&gt;</code>:</p>
+<ul>
+<li><code>MODM_GIT_SHA</code>: commit hash: <code>%H</code>.</li>
+<li><code>MODM_GIT_SHA_ABBR</code>: short commit hash: <code>%h</code>.</li>
+<li><code>MODM_GIT_SUBJECT</code>: commit subject as text: <code>%s</code>.</li>
+<li><code>MODM_GIT_AUTHOR</code>: author name: <code>%an</code>.</li>
+<li><code>MODM_GIT_AUTHOR_EMAIL</code>: author email: <code>%ae</code>.</li>
+<li><code>MODM_GIT_AUTHOR_DATE</code>: authoring date: <code>%ad</code>.</li>
+<li><code>MODM_GIT_AUTHOR_DATE_TIMESTAMP</code>: authoring date as Unix timestamp: <code>%at</code>.</li>
+<li><code>MODM_GIT_COMMITTER</code>: committer name: <code>%cn</code>.</li>
+<li><code>MODM_GIT_COMMITTER_EMAIL</code>: committer email: <code>%ce</code>.</li>
+<li><code>MODM_GIT_COMMITTER_DATE</code>: committer date: <code>%cd</code>.</li>
+<li><code>MODM_GIT_COMMITTER_DATE_TIMESTAMP</code>: committer das as Unix timestamp: <code>%ct</code>.</li>
+<li><code>MODM_GIT_CONFIG_USER_NAME</code>: local user name: <code>user.name</code>.</li>
+<li><code>MODM_GIT_CONFIG_USER_EMAIL</code>: local user email: <code>user.email</code>.</li>
+</ul>
+<p>If called <code>with_status=True</code>, this information is added as well: </p>
+<ul>
+<li><code>MODM_GIT_MODIFIED</code>: number of modified files: <code>M</code>.</li>
+<li><code>MODM_GIT_ADDED</code>: number of added files: <code>A</code>.</li>
+<li><code>MODM_GIT_DELETED</code>: number of deleted files: <code>D</code>.</li>
+<li><code>MODM_GIT_RENAMED</code>: number of renamed files: <code>R</code>.</li>
+<li><code>MODM_GIT_COPIED</code>: number of copied files: <code>C</code>.</li>
+<li><code>MODM_GIT_UPDATED_NOT_MERGED</code>: number of updated, but not merged files: <code>U</code>.</li>
+<li><code>MODM_GIT_UNTRACKED</code>: number of untracked files: <code>?</code>.</li>
+</ul>
+<p>This is the output of the <code>example/linux/git</code> project showing an unclean
+repository state with uncommitted changes. This can give you a few hints as to
+where a firmware came from and help you pinpoint the source of a bug or feature.</p>
+<div class="codehilite"><pre><span></span>Info:    Local Git User:
+Info:    Name:  Niklas Hauser
+Info:    Email: niklas.hauser@rwth-aachen.de
+Info:    Last Commit:
+Info:    SHA:             1b5a9a642857182161a615039c92907e59881614
+Info:    Abbreviated SHA: 1b5a9a642
+Info:    Subject:         wip
+Info:
+Info:    Author:
+Info:    Name:      Niklas Hauser
+Info:    Email:     niklas.hauser@rwth-aachen.de
+Info:    Date:      Tue Jul 17 22:23:20 2018 +0200
+Info:    Timestamp: 1531859000
+Info:
+Info:    Committer:
+Info:    Name:      Niklas Hauser
+Info:    Email:     niklas.hauser@rwth-aachen.de
+Info:    Date:      Tue Jul 17 22:23:20 2018 +0200
+Info:    Timestamp: 1531859000
+Info:
+Info:    File Status:
+Info:    Modified:  10
+Info:    Added:     0
+Info:    Deleted:   0
+Info:    Renamed:   0
+Info:    Copied:    0
+Info:    Untracked: 6
+</pre></div>
+
+<h3 id="build-information">Build Information<a class="headerlink" href="#build-information" title="Permanent link">&para;</a></h3>
+<p>These are the values defines as strings in <code>&lt;info_build.h&gt;</code>:</p>
+<ul>
+<li><code>MODM_BUILD_PROJECT_NAME</code>: as defined in the <code>modm:build:project.name</code> option.</li>
+<li><code>MODM_BUILD_MACHINE</code>: machine information.</li>
+<li><code>MODM_BUILD_USER</code>: user information.</li>
+<li><code>MODM_BUILD_OS</code>: OS string.</li>
+<li><code>MODM_BUILD_COMPILER</code>: compiler information.</li>
+</ul>
+<p>The output of the <code>examples/linux/build_info</code> running on macOS:</p>
+<div class="codehilite"><pre><span></span>Info:    Project:  build_info
+Info:    Machine:  name.local
+Info:    User:     user
+Info:    Os:       Mac 10.12.6 (x86_64)
+Info:    Compiler: g++-8 (Homebrew GCC 8.1.0) 8.1.0
+</pre></div>
+
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <h4 id="include_sconstruct">include_sconstruct<a class="headerlink" href="#include_sconstruct" title="Permanent link">&para;</a></h4>
 <p>Generate a SConstruct file: <code>True</code> ∈ <code>{ True, False }</code></p>
@@ -3076,7 +3245,11 @@ See the <code>GraphicsDisplay::drawImage()</code> method in the <code>modm:ui:di
 The directory is added to the include search paths, so the generated files
 can be accessed as <code>#include &lt;image.hpp&gt;</code>.</p>
 <h4 id="infogit">info.git<a class="headerlink" href="#infogit" title="Permanent link">&para;</a></h4>
-<p>Generate CPP defines about the git repository state: <code>Disabled</code> ∈ <code>{ Disabled, Info, Info+Status }</code></p>
+<p>Generate git repository state information: <code>Disabled</code> ∈ <code>{ Disabled, Info, Info+Status }</code></p>
+<ul>
+<li><code>Info</code>: generates information about the last commit.</li>
+<li><code>Info+Status</code>: like <code>Info</code> plus git file status.</li>
+</ul>
 <h4 id="infobuild">info.build<a class="headerlink" href="#infobuild" title="Permanent link">&para;</a></h4>
 <p>Generate CPP defines about the build state: <code>False</code> ∈ <code>{ True, False }</code></p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
