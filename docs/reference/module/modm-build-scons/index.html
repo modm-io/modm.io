@@ -3370,7 +3370,6 @@ Compiling C++·· build/release/modm/src/modm/utils/dummy.o
 Create Library· build/release/modm/libmodm.a
 Indexing······· build/release/modm/libmodm.a
 Linking········ build/release/game_of_life.elf
-Ext. Listing··· build/release/game_of_life.lss
 </pre></div>
 
 <h4 id="scons-size">scons size<a class="headerlink" href="#scons-size" title="Permanent link">&para;</a></h4>
@@ -3393,8 +3392,9 @@ Heap:     16.4 MiB (4321.2% available)
 </pre></div>
 
 <h4 id="scons-program">scons program<a class="headerlink" href="#scons-program" title="Permanent link">&para;</a></h4>
-<p>Writes the executable onto your target via Avrdude or OpenOCD using the
-programming options and methods defined in the <code>modm:build</code> module.
+<p>Writes the executable onto your target via Avrdude or OpenOCD.
+This is a convenience wrapper around the programming options and methods
+defined in the <code>modm:build</code> module.
 (* <em>only AVR and STM32 targets</em>)</p>
 <p>Example for a STM32 target:</p>
 <div class="codehilite"><pre><span></span> $ scons program
@@ -3601,22 +3601,22 @@ information you absolutely need!</p>
 repository state with uncommitted changes. This can give you a few hints as to
 where a firmware came from and help you pinpoint the source of a bug or feature.</p>
 <div class="codehilite"><pre><span></span>Info:    Local Git User:
-Info:    Name:  Niklas Hauser
-Info:    Email: niklas.hauser@rwth-aachen.de
+Info:    Name:  Name Surname
+Info:    Email: name.surname@provider.com
 Info:    Last Commit:
 Info:    SHA:             1b5a9a642857182161a615039c92907e59881614
 Info:    Abbreviated SHA: 1b5a9a642
 Info:    Subject:         wip
 Info:
 Info:    Author:
-Info:    Name:      Niklas Hauser
-Info:    Email:     niklas.hauser@rwth-aachen.de
+Info:    Name:      Name Surname
+Info:    Email:     name.surname@provider.com
 Info:    Date:      Tue Jul 17 22:23:20 2018 +0200
 Info:    Timestamp: 1531859000
 Info:
 Info:    Committer:
-Info:    Name:      Niklas Hauser
-Info:    Email:     niklas.hauser@rwth-aachen.de
+Info:    Name:      Name Surname
+Info:    Email:     name.surname@provider.com
 Info:    Date:      Tue Jul 17 22:23:20 2018 +0200
 Info:    Timestamp: 1531859000
 Info:
@@ -3635,7 +3635,7 @@ Info:    Untracked: 6
 <li><code>MODM_BUILD_PROJECT_NAME</code>: as defined in the <code>modm:build:project.name</code> option.</li>
 <li><code>MODM_BUILD_MACHINE</code>: machine information.</li>
 <li><code>MODM_BUILD_USER</code>: user information.</li>
-<li><code>MODM_BUILD_OS</code>: OS string.</li>
+<li><code>MODM_BUILD_OS</code>: OS version string (best effort, may not be useful!).</li>
 <li><code>MODM_BUILD_COMPILER</code>: compiler information.</li>
 </ul>
 <p>The output of the <code>examples/linux/build_info</code> running on macOS:</p>
@@ -3671,7 +3671,7 @@ can be accessed as <code>#include &lt;image.hpp&gt;</code>.</p>
 <li><code>Info+Status</code>: like <code>Info</code> plus git file status.</li>
 </ul>
 <h4 id="infobuild">info.build<a class="headerlink" href="#infobuild" title="Permanent link">&para;</a></h4>
-<p>Generate CPP defines about the build state: <code>False</code> ∈ <code>{ True, False }</code></p>
+<p>Generate build state information: <code>False</code> ∈ <code>{ True, False }</code></p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
