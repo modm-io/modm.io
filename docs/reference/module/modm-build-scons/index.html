@@ -3322,7 +3322,7 @@ For a better embedded experience, we've extended it with a custom build tools
 <a href="https://github.com/modm-io/scons-build-tools">by the DLR</a> as well as our own modm-specific build tools.</p>
 <p>This module generates two files:</p>
 <ul>
-<li>a <code>SConscript</code> file inside <code>modm/</code>: configures all required SCons tools with
+<li>a <code>modm/SConscript</code> file: configures all required SCons tools with
   the right settings (also using information from the <code>modm:build</code> module) to
   compile the modm library.</li>
 <li>a top-level <code>SConstruct</code> file: configures additional, optional tools and sets
@@ -3335,8 +3335,8 @@ projects without clashing.</p>
 it doesn't contain a lot of logic or specific data, it is only meant for calling
 the right SCons tool with the right arguments.</p>
 <p>We do not intend to serve every possible use-case with this module.
-If you need something special, just write your own SConstruct file, maybe
-starting by modifying ours.
+<strong>If you need something special, write your own SConstruct file, maybe
+starting by modifying ours.</strong>
 Remember to set <code>modm:build:scons:include_sconstruct</code> to <code>False</code>, so that your
 custom <code>SConstruct</code> does not get overwritten.</p>
 <h2 id="scons-methods">SCons Methods<a class="headerlink" href="#scons-methods" title="Permanent link">&para;</a></h2>
