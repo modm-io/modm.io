@@ -894,20 +894,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#include_openocd" title="include_openocd" class="md-nav__link">
-    include_openocd
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#include_gdbinit" title="include_gdbinit" class="md-nav__link">
-    include_gdbinit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#openocdcfg" title="openocd.cfg" class="md-nav__link">
     openocd.cfg
   </a>
@@ -3154,20 +3140,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#include_openocd" title="include_openocd" class="md-nav__link">
-    include_openocd
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#include_gdbinit" title="include_gdbinit" class="md-nav__link">
-    include_gdbinit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#openocdcfg" title="openocd.cfg" class="md-nav__link">
     openocd.cfg
   </a>
@@ -3212,15 +3184,12 @@ the specific build system generator implementation.
 This includes straight-forward options like project name and build path
 but also more complicated configuration for programming your target via
 AvrDude/OpenOCD and debugging via GDB.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>These are generic instruction for programming and debugging your project,
-however, you still need to choose a build system implementation to actually
-compile your project!</p>
-</div>
+<p><strong>Note that this module does not compile your project, you will need to choose
+the <code>modm:build:scons</code> or <code>modm:build:cmake</code> submodule for that, or provide
+your own build system.</strong></p>
 <h2 id="using-openocd">Using OpenOCD<a class="headerlink" href="#using-openocd" title="Permanent link">&para;</a></h2>
 <p>For accessing your ARM Cortex-M based device, we use OpenOCD and generate a
-top-level <code>openocd.cfg</code> file with the target specific configuration:</p>
+<code>modm/openocd.cfg</code> file with the target specific configuration:</p>
 <ul>
 <li>Search directories passed via the <code>openocd.search</code> metadata key.</li>
 <li>User configuration files passed via the <code>openocd.configfile</code> metadata key.
@@ -3232,8 +3201,8 @@ top-level <code>openocd.cfg</code> file with the target specific configuration:<
 </li>
 </ul>
 <p>You can now upload your program in a one-line command:</p>
-<p><div class="codehilite"><pre><span></span>openocd -f openocd.cfg -c <span class="s2">&quot;program_release&quot;</span>
-openocd -f openocd.cfg -c <span class="s2">&quot;program_debug&quot;</span>
+<p><div class="codehilite"><pre><span></span>openocd -f modm/openocd.cfg -c <span class="s2">&quot;program_release&quot;</span>
+openocd -f modm/openocd.cfg -c <span class="s2">&quot;program_debug&quot;</span>
 </pre></div>
 <div class="codehilite"><pre><span></span>Open On-Chip Debugger 0.10.0
 adapter speed: 2000 kHz
@@ -3262,7 +3231,7 @@ xPSR: 0x01000000 pc: 0x0800263c msp: 0x10000be0
 shutdown command invoked
 </pre></div></p>
 <h2 id="using-gdb">Using GDB<a class="headerlink" href="#using-gdb" title="Permanent link">&para;</a></h2>
-<p>For debugging your program on ARM Cortex-M device, we provide a configuration
+<p>For debugging your program on ARM Cortex-M device, we provide the <code>modm/gdbinit</code>
 file for the <code>arm-none-eabi-gdb</code> debugger connected to your target via OpenOCD.</p>
 <p>Four commands are provided for convenience:</p>
 <ul>
@@ -3276,12 +3245,11 @@ but <em>does not</em> load an ELF file! Please call <code>file_{debug, release}<
 pass the ELF file as a command line argument.</p>
 <p>You can start your debug session by launching OpenOCD and then GDB:</p>
 <div class="codehilite"><pre><span></span><span class="c1"># Run OpenOCD without any commands in the background</span>
-openocd -f openocd.cfg
+openocd -f modm/openocd.cfg
 <span class="c1"># Open another terminal</span>
-arm-none-eabi-gdb -x gdbinit
+arm-none-eabi-gdb -x modm/gdbinit
 <span class="c1"># OR optionally with your custom ELF file</span>
-arm-none-eabi-gdb -x gdbinit path/to/project.elf
-<span class="c1"># press Ctrl-C and then call the file_debug command to load the debug profile!</span>
+arm-none-eabi-gdb -x modm/gdbinit path/to/project.elf
 </pre></div>
 
 <div class="codehilite"><pre><span></span>   ┌——main.cpp———————————————————————————————————————————————————————┐
@@ -3309,7 +3277,6 @@ extended-r Remote target In: game_of_life         L194  PC: 0x80017a0
 
 Program received signal SIGINT, Interrupt.
 0x080017a0 in drawPixel (color=&lt;optimized out&gt;, y=42, x=578) at main.c
-(gdb) file_debug
 (gdb)
 </pre></div>
 
@@ -3393,25 +3360,21 @@ to your application via a string constant or CPP define.</p>
 <p>The build path is defaulted to <code>build/{modm:build:project.name}</code>.</p>
 <p>If you have a lot of embedded projects, you may want to change the build path
 to a <em>common</em> directory so that you don't have <code>build/</code> folders everywhere.
-Remember to add your build path to your <code>.gitignore</code> or similar.</p>
+Remember to add your build path to your <code>.gitignore</code>.</p>
 <p>You should use a relative path instead of an absolute one, so that this option
 still works for other developers.</p>
-<h4 id="include_openocd">include_openocd<a class="headerlink" href="#include_openocd" title="Permanent link">&para;</a></h4>
-<p>Generate an OpenOCD configuration file: <code>True</code> ∈ <code>{ True, False }</code></p>
-<div class="admonition warning">
-<p class="admonition-title">This overwrites any top-level <code>openocd.cfg</code> file!</p>
-</div>
-<h4 id="include_gdbinit">include_gdbinit<a class="headerlink" href="#include_gdbinit" title="Permanent link">&para;</a></h4>
-<p>Generate a GDB configuration file: <code>True</code> ∈ <code>{ True, False }</code></p>
-<div class="admonition warning">
-<p class="admonition-title">This overwrites any top-level <code>gdbinit</code> file!</p>
-</div>
 <h4 id="openocdcfg">openocd.cfg<a class="headerlink" href="#openocdcfg" title="Permanent link">&para;</a></h4>
 <p>Path to a custom OpenOCD configuration file: <code>{ String }</code></p>
 <p>If you have a custom configuration file for your target, it will get included
-by the <code>openocd.cfg</code> file generated by <code>modm:build:include_openocd</code>.</p>
+by the generated <code>modm/openocd.cfg</code>.</p>
 <p>This is useful for not having to duplicate your config if you have several
 projects using the same target (like small bring-up and test projects).</p>
+<div class="admonition tip">
+<p class="admonition-title">Do not execute commands by default</p>
+<p>When providing your own config file, wrap your specific commands into functions
+and do not execute them by default. A stray <code>init</code> or similar in your script
+will mess with modm's ability to program and debug a device correctly.</p>
+</div>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
