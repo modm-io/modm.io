@@ -101,7 +101,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#modmcmsis" tabindex="1" class="md-skip">
+      <a href="#modmcmsis-arm-cmsis-support" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -2972,7 +2972,22 @@
                 <div class="admonition warning">
 <p class="admonition-title">These module docs are in beta and may be incomplete.</p>
 </div>
-<h1 id="modmcmsis">modm:cmsis<a class="headerlink" href="#modmcmsis" title="Permanent link">&para;</a></h1>
+<h1 id="modmcmsis-arm-cmsis-support">modm:cmsis: ARM CMSIS Support<a class="headerlink" href="#modmcmsis-arm-cmsis-support" title="Permanent link">&para;</a></h1>
+<p>The <a href="https://developer.arm.com/embedded/cmsis"><em>Cortex Microcontroller Software Interface Standard</em></a> is a software
+standard by ARM that defines a number of foundational interfaces for Cortex-M
+microcontrollers.</p>
+<p><center>
+<img alt="" src="https://developer.arm.com/-/media/developer/Block%20Diagrams/CMSIS%20Diagram%20v2.png" />
+</center></p>
+<p>We use only use these parts of CMSIS:</p>
+<ul>
+<li>The <code>modm:cmsis:core</code> module provides access to the ARM Cortex-M peripherals
+  via CMSIS-CORE.</li>
+<li>The <code>modm:cmsis:device</code> module provides access to the peripherals of the
+  <code>modm:target</code> devices via the vendor's CMSIS implementation.</li>
+<li>The <code>modm:cmsis:dsp</code> module provides a basic digital signal processing library
+  via CMSIS-DSP.</li>
+</ul>
 <h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1">// Define</span>
 <span class="cp">#define STM32F469xx</span>

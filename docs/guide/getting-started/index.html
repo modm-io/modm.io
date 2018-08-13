@@ -3075,25 +3075,27 @@ board that modm supports out-of-box.</p>
 <li><a href="https://github.com/modm-io/modm/blob/develop/examples/stm32f4_discovery/display/hd44780/main.cpp">HD44780 over I2C-GPIO expander</a>: Draws text via native GPIO port or I2C-GPIO expander port onto character display.
 <!--/checkrepourls--></li>
 </ul>
-<p>Have a look at the <a href="../../reference/build-systems/#scons">build system references</a> to 
+<p>Have a look at the <a href="../../reference/build-systems">build system references</a> to 
 see how to compile and program your targets.</p>
 <h2 id="your-own-project">Your own Project<a class="headerlink" href="#your-own-project" title="Permanent link">&para;</a></h2>
-<p>To generate a modm library for your own project, you need to define a <code>project.xml</code>
-file, which contains the path to where modm is, as well as repository and module options
-and of course which modules you want to have generated.
-Even though modm will generate a library that is self-contained, we still recommend adding modm as a git submodule for reproducibility.</p>
+<p>To generate a modm library for your own project, you need to define a
+<code>project.xml</code> file, which contains the path to where modm is, as well as
+repository and module options and of course which modules you want to have
+generated. Even though modm will generate a library that is self-contained, 
+we still recommend adding modm as a git submodule for reproducibility.</p>
 <h3 id="using-a-board-support-package">Using a Board Support Package<a class="headerlink" href="#using-a-board-support-package" title="Permanent link">&para;</a></h3>
-<p>To build on a BSP,  just inherit from an existing project configuration using the <code>&lt;extends&gt;</code> element.
+<p>To build on a BSP, inherit from an existing project configuration using the 
+<code>&lt;extends&gt;</code> element.
 Our BSPs declare a minimal set of modules as dependencies as well as pre-define several important options for this board.
 You can then add all the modules you need and configure them as you want.</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;</span>
 <span class="nt">&lt;library&gt;</span>
   <span class="nt">&lt;extends&gt;</span>../../../src/modm/board/disco_f469ni/board.xml<span class="nt">&lt;/extends&gt;</span>
   <span class="nt">&lt;options&gt;</span>
-    <span class="nt">&lt;option</span> <span class="na">name=</span><span class="s">&quot;:build:build.path&quot;</span><span class="nt">&gt;</span>../../../build/stm32f469_discovery/blink<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option</span> <span class="na">name=</span><span class="s">&quot;:build:project.name&quot;</span><span class="nt">&gt;</span>test<span class="nt">&lt;/option&gt;</span>
   <span class="nt">&lt;/options&gt;</span>
   <span class="nt">&lt;modules&gt;</span>
-    <span class="nt">&lt;module&gt;</span>:build.scons<span class="nt">&lt;/module&gt;</span>
+    <span class="nt">&lt;module&gt;</span>:build:scons<span class="nt">&lt;/module&gt;</span>
   <span class="nt">&lt;/modules&gt;</span>
 <span class="nt">&lt;/library&gt;</span>
 </pre></div>
@@ -3141,11 +3143,12 @@ modm:target = [at90can128, at90can32, at90can64, at90pwm1, at90pwm161, at90pwm2,
                stm32l4s9zit, stm32l4s9ziy]
 </pre></div>
 
-<p>Once you've specified this repository option (for example <code>&lt;option name=&quot;modm:target&quot;&gt;stm32f469nih&lt;/option&gt;</code>), you can call <code>lbuild discover-modules</code>
-to list all available modules for this target.</p>
+<p>Once you've specified this repository option (for example 
+<code>&lt;option name=&quot;modm:target&quot;&gt;stm32f469nih&lt;/option&gt;</code>), you can call 
+<code>lbuild discover-modules</code> to list all available modules for this target.</p>
 <div class="codehilite"><pre><span></span> $ lbuild discover-modules
 modm:architecture:adc
-modm:board.disco-f469ni
+modm:board:disco-f469ni
 ...
 modm:ui:led
 modm:utils
@@ -3166,7 +3169,6 @@ modm:platform:core:main_stack_size = 3040  [256 ... 65536]
 modm:platform:core:vector_table_location = fastest  [fastest, ram, rom]
 
   Vector table location in ROM or RAM
-
 ...
 modm:platform:uart:1:buffer.rx = 16  [1 ... 65534]
 modm:platform:uart:1:buffer.tx = 250  [1 ... 65534]
@@ -3209,8 +3211,7 @@ with the Cortex-M, GPIO and time modules and their dependencies.
 Since no build system generator module is specified, you will only get the raw
 source code.</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;</span>
-<span class="nt">&lt;library</span> <span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-         <span class="na">xsd:noNamespaceSchemaLocation=</span><span class="s">&quot;https://github.com/dergraaf/library-builder/lbuild/resources/configuration.xsd&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;library&gt;</span>
   <span class="nt">&lt;repositories&gt;</span>
     <span class="nt">&lt;repository&gt;&lt;path&gt;</span>../../modm/repo.lb<span class="nt">&lt;/path&gt;&lt;/repository&gt;</span>
   <span class="nt">&lt;/repositories&gt;</span>
@@ -3263,7 +3264,7 @@ then call <code>doxygen doxyfile</code> inside the generated <code>docs</code>fo
 The documentation for your target and configuration will then be available
 in <code>docs/api/index.html</code>.</p>
 </div>
-<p>For this project we included the <code>modm:build.scons</code> generator, so we can just
+<p>For this project we included the <code>modm:build:scons</code> generator, so we can just
 call <code>scons build size</code>, which will compile the entire source code and output
 the resource consumption:</p>
 <div class="codehilite"><pre><span></span> $ scons build size
@@ -3287,8 +3288,10 @@ Heap:     197520B (98.4% available)
 (.heap0 + .heap1 + .heap2 + .heap5)
 </pre></div>
 
-<p>You can program your target by calling <code>scons program</code>. Additional tools are documented in <a href="../../reference/build-systems">Reference/Build Systems</a>.</p>
-<p>If you have any questions, <a href="https://github.com/modm-io/modm/issues">open an issue</a> or ping <a href="https://github.com/salkinium">@salkinium</a>.</p>
+<p>You can program your target by calling <code>scons program</code>. Additional tools are 
+documented in <a href="../../reference/module/modm-build-scons">module documentation</a>.</p>
+<p>If you have any questions, <a href="https://github.com/modm-io/modm/issues">open an issue</a> or ping 
+<a href="https://github.com/salkinium">@salkinium</a>.</p>
                 
                   
                 
