@@ -3387,7 +3387,7 @@ Program:  12.8 KiB (0.6% used)
 Data:      5.8 KiB (1.5% used) = 2936 B static (0.7%) + 3040 B stack (0.8%)
 (.bss + .data + .fastdata + .stack)
 
-Heap:     16.4 MiB (4321.2% available)
+Heap:     16.4 MiB
 (.heap0 + .heap1 + .heap2 + .heap3 + .heap5 + .heap_extern)
 </pre></div>
 
@@ -3521,7 +3521,7 @@ translate the XPCC XML declarations into various language implementations.
 This module contains a SCons wrapper tool, that understands the XML dependencies
 and automatically updates the generated files when it becomes necessary.</p>
 <p>The wrapper tool is automatically used when the generator module is detected,
-and it's options are evaluated for the wrapper as follows:</p>
+and its options are evaluated for the wrapper as follows:</p>
 <div class="codehilite"><pre><span></span><span class="n">env</span><span class="o">.</span><span class="n">XpccCommunication</span><span class="p">(</span>
     <span class="n">xmlfile</span><span class="o">=</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;::xpcc:generator:source&quot;</span><span class="p">],</span>
     <span class="n">container</span><span class="o">=</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;::xpcc:generator:container&quot;</span><span class="p">],</span>

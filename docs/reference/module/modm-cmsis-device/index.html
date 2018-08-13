@@ -101,7 +101,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#modmcmsisdevice" tabindex="1" class="md-skip">
+      <a href="#modmcmsisdevice-stm32-cmsis-headers" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -854,6 +854,20 @@
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cmsis-compliance" title="CMSIS Compliance" class="md-nav__link">
+    CMSIS Compliance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-peripherals" title="Debugging Peripherals" class="md-nav__link">
+    Debugging Peripherals
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#content" title="Content" class="md-nav__link">
@@ -2939,6 +2953,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#cmsis-compliance" title="CMSIS Compliance" class="md-nav__link">
+    CMSIS Compliance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-peripherals" title="Debugging Peripherals" class="md-nav__link">
+    Debugging Peripherals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#content" title="Content" class="md-nav__link">
     Content
   </a>
@@ -2972,7 +3000,72 @@
                 <div class="admonition warning">
 <p class="admonition-title">These module docs are in beta and may be incomplete.</p>
 </div>
-<h1 id="modmcmsisdevice">modm:cmsis:device<a class="headerlink" href="#modmcmsisdevice" title="Permanent link">&para;</a></h1>
+<h1 id="modmcmsisdevice-stm32-cmsis-headers">modm:cmsis:device: STM32 CMSIS Headers<a class="headerlink" href="#modmcmsisdevice-stm32-cmsis-headers" title="Permanent link">&para;</a></h1>
+<p>This module wraps <a href="https://github.com/modm-io/cmsis-header-stm32">the CMSIS headers for STM32 devices</a> and provides the
+header file and CPP definitions for accessing the <code>modm:target</code> peripherals.
+Specifically, it copies the target header file which provides the CMSIS
+implementation of the target's language interface for its memory-mapped
+peripherals.</p>
+<div class="admonition bug">
+<p class="admonition-title">Discrepancies between documentation and headers</p>
+<p>These CMSIS headers should reflect what's written in the documentation,
+however, in our experience there may be small differences in naming,
+behavior and availability between it and this implementation.
+Since ST is not interested in addressing these issues, please contribute
+<a href="https://github.com/modm-io/cmsis-header-stm32/tree/master/patches">to our patch list</a>.</p>
+</div>
+<p>The generated header file <code>modm/platform/device.hpp</code> contains the necessary 
+target define <code>STM32{FAMILY}{NAME}xx</code> or similar and includes the
+<code>modm:target</code>-specific header.</p>
+<div class="admonition tip">
+<p class="admonition-title">Include only <code>modm/platform/device.hpp</code>!</p>
+<p>This file is only included by interface implementations inside the
+<code>modm/platform</code> folder! If you need to implement your own drivers, include
+only this file.</p>
+</div>
+<h2 id="cmsis-compliance">CMSIS Compliance<a class="headerlink" href="#cmsis-compliance" title="Permanent link">&para;</a></h2>
+<p>modm implements the target specific CMSIS functionality itself, without using
+the CMSIS interface. This is necessary to provide similar functionality on
+non-Cortex-M based targets.</p>
+<p>Specifically, these functions are not implemented:</p>
+<ul>
+<li><code>uint32_t SystemCoreClock</code> and <code>void SystemCoreClockUpdate()</code>: please use
+  <code>modm::clock::f_cpu</code> as defined in the <code>modm:architecture:clock</code> module.</li>
+<li><code>void SystemInit()</code>: modm defines its own startup architecture, see the
+  <code>modm:platform:core</code> module for details.</li>
+</ul>
+<h2 id="debugging-peripherals">Debugging Peripherals<a class="headerlink" href="#debugging-peripherals" title="Permanent link">&para;</a></h2>
+<p>When debugging with GDB, it can sometimes be difficult to access peripherals,
+due to the CMSIS implementation with CPP defines and GCC optimization flags.
+Depending on these circumstances, GDB may only "see" a peripheral in a certain
+context, which can make the debugging experience quite frustrating.</p>
+<p>To aid this, we generate a linkerscript fragment and source file, which place
+the peripherals memory as real objects in the peripheral memory space.
+You can then access these peripherals inside GDB at any time, regardless of
+context and build profile setting:</p>
+<div class="codehilite"><pre><span></span>(gdb) p/x *GPIOB
+$1 = {
+  MODER = 0xaa0280,
+  OTYPER = 0x300,
+  OSPEEDR = 0x2a00c0,
+  PUPDR = 0x400100,
+  IDR = 0xfd0,
+  ODR = 0x100,
+  BSRR = 0x0,
+  LCKR = 0x0,
+  AFR = {0x0, 0x7744}
+}
+</pre></div>
+
+<p><strong>This does not have any effect on your firmware!</strong> It is purely a debug
+helper feature and none of these definitions make it into the executable.</p>
+<div class="admonition tip">
+<p class="admonition-title">Beware read/write side-effects</p>
+<p>When debugging be aware of the side-effects that your read or write to a
+peripheral memory location can have. It's fairly obvious that a write may
+have consequences, but also reads can modify peripheral state, for example,
+a hardware FIFO buffer may pop the queue if your read the top of it.</p>
+</div>
 <h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1">// Define</span>
 <span class="cp">#define STM32F469xx</span>
