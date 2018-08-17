@@ -2982,7 +2982,8 @@
                 
                 
                 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
-<p>This is the required software for generating, compiling and programming projects with modm:</p>
+<p>This is the required software for generating, compiling and programming projects
+with modm:</p>
 <ul>
 <li><a href="http://www.python.org/">Python 3</a></li>
 <li><a href="http://www.scons.org/">Software Construct</a></li>
@@ -3013,9 +3014,8 @@ lack of commitment from Atmel on keeping their AVR toolchain up-to-date.</p>
 <h2 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h2>
 <p>We will use <a href="http://brew.sh/">Homebrew</a> to install the minimal build system:</p>
 <div class="codehilite"><pre><span></span>brew install python3 scons git doxygen
-pip3 install --user git+https://github.com/modm-io/library-builder \
-                    jinja2 pyelftools
-pip install --user pathlib pyelftools # for Python2 SCons
+pip3 install --user modm-lbuild jinja2 pyelftools
+pip install --user pathlib pyelftools
 </pre></div>
 
 
@@ -3025,7 +3025,8 @@ brew install avr-gcc
 </pre></div>
 
 
-<p>And the <a href="https://github.com/osx-cross/homebrew-arm">pre-built ARM toolchain</a> as well:</p>
+<p>And the <a href="https://github.com/osx-cross/homebrew-arm">pre-built ARM toolchain</a> as
+well:</p>
 <div class="codehilite"><pre><span></span>brew tap osx-cross/arm
 brew install arm-gcc-bin
 brew install openocd --HEAD
@@ -3033,7 +3034,7 @@ brew install openocd --HEAD
 
 
 <p>To compile modm for macOS you need to install these libraries:</p>
-<div class="codehilite"><pre><span></span>brew install boost gtkmm sdl zmqpp
+<div class="codehilite"><pre><span></span>brew install boost gtkmm sdl zmqpp gcc
 </pre></div>
 
 
@@ -3041,9 +3042,8 @@ brew install openocd --HEAD
 <p>For Ubuntu 18.04LTS, these commands install the basic build system:</p>
 <div class="codehilite"><pre><span></span>sudo apt-get install python3 python3-pip scons git
 sudo apt-get --no-install-recommends install doxygen
-pip3 install --user git+https://github.com/modm-io/library-builder \
-                    jinja2 pyelftools
-pip install --user pathlib pyelftools # for Python2 SCons
+pip3 install --user modm-lbuild jinja2 pyelftools
+pip install --user pathlib pyelftools
 </pre></div>
 
 
@@ -3054,8 +3054,9 @@ pip install --user pathlib pyelftools # for Python2 SCons
 
 <div class="admonition bug">
 <p class="admonition-title">avr-gcc on Ubuntu</p>
-<p>Ubuntu does not provide a more recent avr-gcc than v4.9, which does not support C++17 (not even C++14).
-For our CI we've created a <a href="https://github.com/salkinium/docker-avr-gcc-7">precompiled version of avr-gcc 7 for Ubuntu</a>.
+<p>Ubuntu does not provide a more recent avr-gcc than v4.9, which does not
+support C++17 (not even C++14). For our CI we've created a <a href="https://github.com/salkinium/docker-avr-gcc-7">precompiled
+version of avr-gcc 7 for Ubuntu</a>.
 Use at your own risk.</p>
 </div>
 <p>And the official ARM toolchain as well:</p>
@@ -3067,9 +3068,9 @@ sudo apt-get install gcc-arm-embedded openocd
 
 <div class="admonition tip">
 <p class="admonition-title">Manual installation on 64-bit Linux</p>
-<p>You can also download <a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads">a precompiled version of the toolchain for 64-bit Linux</a>
-and manually add the <code>/bin</code> directory to your path. Use this if your distro does not
-provide you with an up-to-date ARM toolchain.</p>
+<p>You can also download <a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads">a precompiled version of the toolchain for 64-bit
+Linux</a> and manually add the <code>/bin</code> directory to your path.
+Use this if your distro does not provide you with an up-to-date ARM toolchain.</p>
 </div>
 <p>To compile modm for Linux you need to install these packages:</p>
 <div class="codehilite"><pre><span></span>sudo apt-get install gcc build-essential libboost-all-dev libzmqpp-dev \
@@ -3078,15 +3079,18 @@ provide you with an up-to-date ARM toolchain.</p>
 
 
 <h2 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h2>
-<p>We will use Anaconda to create a new Python 3 environment and install all necessary packages.</p>
-<div class="codehilite"><pre><span></span>conda create --name modm python=3
+<p>We will use Anaconda to create a new Python 3 environment and install all
+necessary packages:</p>
+<div class="codehilite"><pre><span></span>conda create --name modm python=3 pip
 activate modm
-conda install -c conda-forge jinja2 scons future pyelftools git git+https://github.com/modm-io/library-builder
+conda install -c conda-forge git
+pip install jinja2 scons future pyelftools modm-lbuild
 </pre></div>
 
 
-<p>For ARM development install the Windows 32-bit build of the <a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads">GNU Arm Embedded Toolchain</a>.
-For programming and debugging ARM Cortex-M devices install the pre-build <a href="http://gnutoolchains.com/arm-eabi/openocd/">OpenOCD binaries</a>.
+<p>For ARM development install the Windows 32-bit build of the <a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads">GNU Arm Embedded
+Toolchain</a>. For programming and debugging ARM Cortex-M
+devices install the pre-build <a href="http://gnutoolchains.com/arm-eabi/openocd/">OpenOCD binaries</a>.
 You'll need to add both <code>/bin</code> paths to your <code>PATH</code> variable manually.</p>
 <div class="admonition warning">
 <p class="admonition-title">For non-English speakers</p>
