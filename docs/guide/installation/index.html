@@ -2987,7 +2987,7 @@ with modm:</p>
 <ul>
 <li><a href="http://www.python.org/">Python 3</a></li>
 <li><a href="http://www.scons.org/">Software Construct</a></li>
-<li><a href="https://github.com/dergraaf/library-builder">Library Builder</a></li>
+<li><a href="https://github.com/modm-io/lbuild">Library Builder</a></li>
 <li>AVR toolchain: <a href="http://www.nongnu.org/avr-libc">avr-gcc</a> and <a href="http://www.nongnu.org/avrdude">avrdude</a></li>
 <li>ARM toolchain: <a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads">gcc-arm-toolchain</a> and <a href="http://openocd.org">OpenOCD</a>.</li>
 <li><a href="http://www.stack.nl/~dimitri/doxygen">Doxygen</a></li>
@@ -3014,7 +3014,7 @@ lack of commitment from Atmel on keeping their AVR toolchain up-to-date.</p>
 <h2 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h2>
 <p>We will use <a href="http://brew.sh/">Homebrew</a> to install the minimal build system:</p>
 <div class="codehilite"><pre><span></span>brew install python3 scons git doxygen
-pip3 install --user modm-lbuild jinja2 pyelftools
+pip3 install --user lbuild jinja2 pyelftools
 pip install --user pathlib pyelftools
 </pre></div>
 
@@ -3042,7 +3042,7 @@ brew install openocd --HEAD
 <p>For Ubuntu 18.04LTS, these commands install the basic build system:</p>
 <div class="codehilite"><pre><span></span>sudo apt-get install python3 python3-pip scons git
 sudo apt-get --no-install-recommends install doxygen
-pip3 install --user modm-lbuild jinja2 pyelftools
+pip3 install --user lbuild jinja2 pyelftools
 pip install --user pathlib pyelftools
 </pre></div>
 
@@ -3084,7 +3084,7 @@ necessary packages:</p>
 <div class="codehilite"><pre><span></span>conda create --name modm python=3 pip
 activate modm
 conda install -c conda-forge git
-pip install jinja2 scons future pyelftools modm-lbuild
+pip install jinja2 scons future pyelftools lbuild
 </pre></div>
 
 

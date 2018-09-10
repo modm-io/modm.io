@@ -3029,9 +3029,9 @@
 <h1 id="modmcommunicationxpcc">modm:communication:xpcc<a class="headerlink" href="#modmcommunicationxpcc" title="Permanent link">&para;</a></h1>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <h4 id="timeoutacknowledge">timeout.acknowledge<a class="headerlink" href="#timeoutacknowledge" title="Permanent link">&para;</a></h4>
-<p>Timeout in ms of an reception acknowledgement: <code>100</code> ∈ <code>{ 10 ... 10000 }</code></p>
+<p>Timeout in ms of an reception acknowledgement: <code>100</code> ∈ <code>{ 10 .. 100 .. 10000 }</code></p>
 <h4 id="timeoutresponse">timeout.response<a class="headerlink" href="#timeoutresponse" title="Permanent link">&para;</a></h4>
-<p>Timeout in ms of an request response: <code>200</code> ∈ <code>{ 10 ... 10000 }</code></p>
+<p>Timeout in ms of an request response: <code>200</code> ∈ <code>{ 10 .. 200 .. 10000 }</code></p>
 <h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1">// Class</span>
 <span class="k">class</span> <span class="nc">xpcc</span><span class="o">::</span><span class="n">AbstractComponent</span><span class="p">;</span>
@@ -3096,10 +3096,31 @@
 <!-- modm_communication_xpcc -->
 <g id="node1" class="node">
 <title>modm_communication_xpcc</title>
+<g id="a_node1"><a xlink:href="../modm-communication-xpcc" xlink:title="modm:&#10;communication:&#10;xpcc">
 <polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="430.4556,-150 323.4966,-150 323.4966,-100 430.4556,-100 430.4556,-150"/>
 <text text-anchor="middle" x="376.9761" y="-134.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
 <text text-anchor="middle" x="376.9761" y="-120.8" font-family="Times,serif" font-size="14.00" fill="#000000">communication:</text>
 <text text-anchor="middle" x="376.9761" y="-106.8" font-family="Times,serif" font-size="14.00" fill="#000000">xpcc</text>
+</a>
+</g>
+</g>
+<!-- modm_communication_xpcc&#45;&gt;modm_communication_xpcc -->
+<g id="edge3" class="edge">
+<title>modm_communication_xpcc&#45;&gt;modm_communication_xpcc</title>
+<path fill="none" stroke="#000000" d="M430.6006,-119.8642C441.0473,-120.4606 448.4658,-122.1725 448.4658,-125 448.4658,-126.7672 445.568,-128.0986 440.8441,-128.9943"/>
+<polygon fill="#000000" stroke="#000000" points="440.1514,-125.5497 430.6006,-130.1358 440.9268,-132.5066 440.1514,-125.5497"/>
+</g>
+<!-- modm_communication_xpcc&#45;&gt;modm_communication_xpcc -->
+<g id="edge4" class="edge">
+<title>modm_communication_xpcc&#45;&gt;modm_communication_xpcc</title>
+<path fill="none" stroke="#000000" d="M430.706,-114.2664C450.3629,-113.9755 466.4658,-117.5534 466.4658,-125 466.4658,-131.1086 455.6299,-134.6138 440.8852,-135.5157"/>
+<polygon fill="#000000" stroke="#000000" points="440.6287,-132.0203 430.706,-135.7336 440.7786,-139.0187 440.6287,-132.0203"/>
+</g>
+<!-- modm_communication_xpcc&#45;&gt;modm_communication_xpcc -->
+<g id="edge11" class="edge">
+<title>modm_communication_xpcc&#45;&gt;modm_communication_xpcc</title>
+<path fill="none" stroke="#000000" d="M430.6234,-109.4901C458.8694,-106.9804 484.4658,-112.1504 484.4658,-125 484.4658,-136.2936 464.6932,-141.6549 440.7274,-141.0838"/>
+<polygon fill="#000000" stroke="#000000" points="440.8058,-137.5827 430.6234,-140.5099 440.4088,-144.5714 440.8058,-137.5827"/>
 </g>
 <!-- modm_architecture_can -->
 <g id="node2" class="node">
@@ -3145,7 +3166,7 @@
 </g>
 </g>
 <!-- modm_communication_xpcc&#45;&gt;modm_container -->
-<g id="edge3" class="edge">
+<g id="edge5" class="edge">
 <title>modm_communication_xpcc&#45;&gt;modm_container</title>
 <path fill="none" stroke="#000000" d="M342.8203,-150.1059C327.113,-161.6515 308.5558,-175.2918 292.9906,-186.7329"/>
 <polygon fill="#000000" stroke="#000000" points="290.6728,-184.0928 284.6882,-192.8355 294.8186,-189.733 290.6728,-184.0928"/>
@@ -3161,7 +3182,7 @@
 </g>
 </g>
 <!-- modm_communication_xpcc&#45;&gt;modm_debug -->
-<g id="edge4" class="edge">
+<g id="edge6" class="edge">
 <title>modm_communication_xpcc&#45;&gt;modm_debug</title>
 <path fill="none" stroke="#000000" d="M366.075,-150.3377C361.5705,-160.8075 356.3386,-172.9682 351.747,-183.6406"/>
 <polygon fill="#000000" stroke="#000000" points="348.4865,-182.3631 347.7494,-192.9323 354.9166,-185.1296 348.4865,-182.3631"/>
@@ -3177,7 +3198,7 @@
 </g>
 </g>
 <!-- modm_communication_xpcc&#45;&gt;modm_io -->
-<g id="edge5" class="edge">
+<g id="edge7" class="edge">
 <title>modm_communication_xpcc&#45;&gt;modm_io</title>
 <path fill="none" stroke="#000000" d="M387.8772,-150.3377C392.3816,-160.8075 397.6136,-172.9682 402.2052,-183.6406"/>
 <polygon fill="#000000" stroke="#000000" points="399.0355,-185.1296 406.2028,-192.9323 405.4657,-182.3631 399.0355,-185.1296"/>
@@ -3194,7 +3215,7 @@
 </g>
 </g>
 <!-- modm_communication_xpcc&#45;&gt;modm_math_utils -->
-<g id="edge6" class="edge">
+<g id="edge8" class="edge">
 <title>modm_communication_xpcc&#45;&gt;modm_math_utils</title>
 <path fill="none" stroke="#000000" d="M409.3803,-150.1059C422.7343,-160.4523 438.2596,-172.4809 451.9676,-183.1016"/>
 <polygon fill="#000000" stroke="#000000" points="450.1837,-186.147 460.2323,-189.5048 454.4709,-180.6134 450.1837,-186.147"/>
@@ -3211,7 +3232,7 @@
 </g>
 </g>
 <!-- modm_communication_xpcc&#45;&gt;modm_processing_resumable -->
-<g id="edge7" class="edge">
+<g id="edge9" class="edge">
 <title>modm_communication_xpcc&#45;&gt;modm_processing_resumable</title>
 <path fill="none" stroke="#000000" d="M430.5122,-145.8518C456.6202,-156.301 488.5896,-169.5075 524.7197,-186.0036"/>
 <polygon fill="#000000" stroke="#000000" points="523.4462,-189.2702 533.9939,-190.2687 526.371,-182.9105 523.4462,-189.2702"/>
@@ -3228,7 +3249,7 @@
 </g>
 </g>
 <!-- modm_communication_xpcc&#45;&gt;modm_processing_timer -->
-<g id="edge8" class="edge">
+<g id="edge10" class="edge">
 <title>modm_communication_xpcc&#45;&gt;modm_processing_timer</title>
 <path fill="none" stroke="#000000" d="M430.8241,-134.6585C479.2162,-144.1598 552.0793,-160.5033 622.7051,-186.2445"/>
 <polygon fill="#000000" stroke="#000000" points="621.609,-189.5709 632.202,-189.7687 624.0444,-183.0082 621.609,-189.5709"/>
@@ -3246,7 +3267,7 @@
 </g>
 </g>
 <!-- modm_communication_xpcc_generator&#45;&gt;modm_communication_xpcc -->
-<g id="edge9" class="edge">
+<g id="edge12" class="edge">
 <title>modm_communication_xpcc_generator&#45;&gt;modm_communication_xpcc</title>
 <path fill="none" stroke="#000000" d="M296.3057,-64.0053C309.0747,-73.6599 323.0688,-84.2408 335.764,-93.8396"/>
 <polygon fill="#000000" stroke="#000000" points="333.8055,-96.7467 343.893,-99.986 338.0273,-91.163 333.8055,-96.7467"/>
@@ -3263,7 +3284,7 @@
 </g>
 </g>
 <!-- modm_test_communication&#45;&gt;modm_communication_xpcc -->
-<g id="edge10" class="edge">
+<g id="edge13" class="edge">
 <title>modm_test_communication&#45;&gt;modm_communication_xpcc</title>
 <path fill="none" stroke="#000000" d="M376.9761,-57.4127C376.9761,-67.4385 376.9761,-79.1237 376.9761,-89.9306"/>
 <polygon fill="#000000" stroke="#000000" points="373.4762,-89.94 376.9761,-99.9401 380.4762,-89.9401 373.4762,-89.94"/>
@@ -3280,7 +3301,7 @@
 </g>
 </g>
 <!-- modm_ui_menu&#45;&gt;modm_communication_xpcc -->
-<g id="edge11" class="edge">
+<g id="edge14" class="edge">
 <title>modm_ui_menu&#45;&gt;modm_communication_xpcc</title>
 <path fill="none" stroke="#000000" d="M447.7265,-57.1671C436.2964,-68.1259 422.7612,-81.1029 410.6057,-92.7571"/>
 <polygon fill="#000000" stroke="#000000" points="408.0428,-90.3656 403.2467,-99.8127 412.8873,-95.4185 408.0428,-90.3656"/>
