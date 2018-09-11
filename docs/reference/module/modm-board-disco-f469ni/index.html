@@ -2978,16 +2978,16 @@
 <ul>
 <li>180MHz CPU clock frequency in overdrive mode.</li>
 <li>90MHz APB2 and 45MHz APB1 clock frequency.</li>
-<li>MODM_LOGGER initialized at 115.2kBaud outputting on STLink. </li>
+<li>MODM_LOGGER initialized at 115.2kBaud outputting on STLink.</li>
 <li>16MB SDRAM initialized for heap.</li>
 <li>Disables the display by default.</li>
 </ul>
 <p>You can enable and use the on-board display in two ways:</p>
 <ol>
 <li>Use the <code>modm::GraphicDisplay</code> returned by <code>Board::getDisplay()</code>, which
-   initializes the display on first call and allocates the framebuffer in the 
+   initializes the display on first call and allocates the framebuffer in the
    external SDRAM. This is the simplest option.</li>
-<li>Call <code>Board::initializeDisplay()</code> and then provide your own display buffer 
+<li>Call <code>Board::initializeDisplay()</code> and then provide your own display buffer
    with <code>Board::setDisplayBuffer(void*)</code>.</li>
 </ol>
 <div class="admonition warning">

@@ -3063,7 +3063,7 @@ instead of the placing everything into one big method.
 It also allows you to call and run resumable functions within your resumables,
 so you can reuse their functionality.</p>
 <p>Note that you should call resumable functions within a protothreads, with the
-<code>PT_CALL(group.resumable())</code> macro, which will return the result of the 
+<code>PT_CALL(group.resumable())</code> macro, which will return the result of the
 resumable function. To call a resumable function inside another resumable
 function, use the <code>RF_CALL(group.resumable())</code>.</p>
 <p>You may use the <code>RF_CALL_BLOCKING(group.resumable())</code> macro to execute
@@ -3075,7 +3075,7 @@ force the CPU to busy-wait until the resumable function ended.</p>
 same resumable function.</p>
 </div>
 <p>You can either run your group of resumable functions independently from each
-other, or only run one function at a time, but it may nest calls to its own 
+other, or only run one function at a time, but it may nest calls to its own
 group's functions.
 So you need to inherit your group from <code>modm::Resumable&lt;#Functions&gt;</code>, and from
 <code>modm::NestedResumable&lt;#Functions&gt;</code> respectively.</p>

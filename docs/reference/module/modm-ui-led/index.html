@@ -3070,18 +3070,18 @@
 </div>
 <h1 id="modmuiled-led-animation-and-gamma-correction">modm:ui:led: LED Animation and Gamma Correction<a class="headerlink" href="#modmuiled-led-animation-and-gamma-correction" title="Permanent link">&para;</a></h1>
 <p>Header: <code>#include &lt;modm/ui/led.hpp&gt;</code></p>
-<p>This module provides abstractions for animating LEDs by wrapping the 
+<p>This module provides abstractions for animating LEDs by wrapping the
 <em>modm:ui:animation</em> module and providing look-up tables for performing
 gamma correction of LED brightness.</p>
 <p>The main functionality is part of the <code>modm::ui::Led</code> class, which provides
 a basic interface to fade an LED with an 8-bit value.
 Note that this class does <em>not</em> do any gamma correction on it's own, it just
 wraps an 8-bit <code>modm::ui::Animation</code> and a 8-bit value.</p>
-<p>You must provide a function handler which gets called whenever the LED value 
+<p>You must provide a function handler which gets called whenever the LED value
 needs updating, at most every 1ms, but only when the value has actually changed.
 The implementation of this function is up to you.</p>
-<!-- 
-.. compile:: 
+<!--
+.. compile::
     :group: general
 -->
 
@@ -3098,20 +3098,20 @@ The implementation of this function is up to you.</p>
 </pre></div>
 
 <h2 id="animating-leds">Animating LEDs<a class="headerlink" href="#animating-leds" title="Permanent link">&para;</a></h2>
-<p>To animate the LED you need to call the <code>modm::ui::Led::update()</code> member 
+<p>To animate the LED you need to call the <code>modm::ui::Led::update()</code> member
 function regularly.
 The function updates the LED value at most every 1ms, however you may call it
-more often than that. If the function is called less regularly, it will 
-automatically catch up the skipped milliseconds, and execute the brightness 
+more often than that. If the function is called less regularly, it will
+automatically catch up the skipped milliseconds, and execute the brightness
 handler at most once if the value has changed.
-Depending on how smooth you require your animation to be, you may call the 
+Depending on how smooth you require your animation to be, you may call the
 update function with intervals of up to 250ms.</p>
-<p>You can also pass the <code>modm::ui::Led</code> class directly into the 
+<p>You can also pass the <code>modm::ui::Led</code> class directly into the
 <code>modm::ui::KeyFrameAnimation</code> class and it's derivatives, to animate it's
 brightness by interpolating between key frames.
 Note that you need to call the <code>update()</code> members of both classes!</p>
-<!-- 
-.. compile:: 
+<!--
+.. compile::
     :group: general
     :include: <modm/ui/animation.hpp>
 -->
@@ -3129,8 +3129,8 @@ Note that you need to call the <code>update()</code> members of both classes!</p
 
 <p>If you want to animate a lot of LEDs it is more efficient to execute all update
 methods inside a 1ms <code>modm::PeriodicTimer</code>:</p>
-<!-- 
-.. compile:: 
+<!--
+.. compile::
     :group: general
     :prefix: |
         modm::ui::Led led1;
@@ -3140,7 +3140,7 @@ methods inside a 1ms <code>modm::PeriodicTimer</code>:</p>
 
 <div class="codehilite"><pre><span></span><span class="n">modm</span><span class="o">::</span><span class="n">PeriodicTimer</span> <span class="n">update_timer</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 
-<span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
+<span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">update_timer</span><span class="p">.</span><span class="n">execute</span><span class="p">())</span>
     <span class="p">{</span>
@@ -3155,14 +3155,14 @@ methods inside a 1ms <code>modm::PeriodicTimer</code>:</p>
 <h2 id="using-gamma-correction">Using Gamma Correction<a class="headerlink" href="#using-gamma-correction" title="Permanent link">&para;</a></h2>
 <p>In order to map the linearly animated brightness value to a gamma-corrected
 value, this module by default generates look-up tables for a gamma value of 2.2
-mapping from a 256 input range to 7, 8, 10, 12 and 16 bit resolution output 
+mapping from a 256 input range to 7, 8, 10, 12 and 16 bit resolution output
 ranges. The generated tables have this naming schema:
 <code>modm::ui::table{gamma}_{output_bits}_{input_range}</code>.</p>
 <p>For example, you can set up a timer to output 16-bit PWM to drive your LED, and
 use the <code>modm::ui::table22_16_256</code> table to map the linear LED animation values
 to a gamma corrected 16-bit value:</p>
-<!-- 
-.. compile:: 
+<!--
+.. compile::
     :group: timer4
 -->
 
@@ -3179,7 +3179,7 @@ to the full 256 value range, you can also generate a 100 value look-up table:</p
 <span class="nt">&lt;option</span> <span class="na">name=</span><span class="s">&quot;modm:ui:led:bit&quot;</span><span class="nt">&gt;</span>8,16<span class="nt">&lt;/option&gt;</span>
 </pre></div>
 
-<p>This module generated the product of these options, in this case 4 look-up 
+<p>This module generated the product of these options, in this case 4 look-up
 tables. The linker will throw out those you don't use.</p>
 <div class="codehilite"><pre><span></span><span class="k">namespace</span> <span class="n">modm</span><span class="o">::</span><span class="n">ui</span>
 <span class="p">{</span>
@@ -3195,8 +3195,8 @@ tables. The linker will throw out those you don't use.</p>
 </pre></div>
 
 <p>You can then animate your LED in the 0-99 value range:</p>
-<!-- 
-.. compile:: 
+<!--
+.. compile::
     :group: timer4
 -->
 
@@ -3214,18 +3214,18 @@ tables. The linker will throw out those you don't use.</p>
 externally, for example, via a WS2812 LED chain.
 Here you can use a helper function to map the values into an array which then
 transferred into the WS2812 LED chain.</p>
-<!-- 
-.. compile:: 
+<!--
+.. compile::
     :group: general
 -->
 
 <div class="codehilite"><pre><span></span><span class="kt">uint8_t</span> <span class="n">ws2812_values</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
-<span class="kt">void</span> <span class="nf">ws2812_setter</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">index</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">brightness</span><span class="p">)</span> 
+<span class="kt">void</span> <span class="nf">ws2812_setter</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">index</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">brightness</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">ws2812_values</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">table22_8_256</span><span class="p">[</span><span class="n">brightness</span><span class="p">];</span>
 <span class="p">}</span>
 <span class="c1">// Construct an array of LED animators</span>
-<span class="n">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">Led</span> <span class="n">leds</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> 
+<span class="n">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">Led</span> <span class="n">leds</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span>
 <span class="p">{</span>
     <span class="p">{</span> <span class="p">[](</span><span class="kt">uint8_t</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="n">ws2812_setter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span> <span class="p">}</span> <span class="p">},</span>
     <span class="p">{</span> <span class="p">[](</span><span class="kt">uint8_t</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="n">ws2812_setter</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span> <span class="p">}</span> <span class="p">},</span>
@@ -3237,8 +3237,8 @@ transferred into the WS2812 LED chain.</p>
 <span class="n">rgb</span><span class="p">.</span><span class="n">fadeTo</span><span class="p">(</span><span class="n">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">Rgb</span><span class="p">(</span><span class="mi">95</span><span class="p">,</span> <span class="mi">177</span><span class="p">,</span> <span class="mi">147</span><span class="p">),</span> <span class="mi">2000</span><span class="p">);</span>
 </pre></div>
 
-<!-- 
-.. group:: 
+<!--
+.. group::
     :name: general
     :target: *
     :include: <modm/ui/led.hpp>
@@ -3246,8 +3246,8 @@ transferred into the WS2812 LED chain.</p>
     :option: <option name="modm:ui:led:bit">8,16</option>
 -->
 
-<!-- 
-.. group:: 
+<!--
+.. group::
     :name: timer4
     :target: stm32*
     :module: modm:platform:timer:4
