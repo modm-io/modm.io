@@ -2941,6 +2941,11 @@ scons program   # compile and upload to your development board
 scons gdb profile=debug     # launch OpenOCD and GDB for debugging
 </pre></div>
 
+<p>To generate your target specific Doxygen documentation:</p>
+<div class="codehilite"><pre><span></span>(cd modm/docs &amp;&amp; doxygen doxygen.cfg)  # may take a minute or two
+# open modm/docs/html/index.html
+</pre></div>
+
 <p>To remove it all:</p>
 <div class="codehilite"><pre><span></span>scons -c      # removes build artifacts
 lbuild clean  # removes generated files
@@ -3252,9 +3257,9 @@ project repository so that you don't have issues reproducing the build.</p>
 <div class="admonition tip">
 <p class="admonition-title">Generate custom documentation</p>
 <p>Include the <code>modm:docs</code> module (or execute <code>lbuild build --module &quot;modm:docs&quot;</code>),
-then call <code>doxygen doxyfile</code> inside the generated <code>docs</code>folder.
+then call <code>doxygen doxyfile</code> inside the generated <code>modm/docs</code>folder.
 The documentation for your target and configuration will then be available
-in <code>docs/api/index.html</code>.</p>
+in <code>modm/docs/html/index.html</code>.</p>
 </div>
 <p>For this project we included the <code>modm:build:scons</code> generator, so we can just
 call <code>scons build size</code>, which will compile the entire source code and output
