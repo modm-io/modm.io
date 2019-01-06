@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.451f80e5.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
@@ -67,6 +67,7 @@
       
     
     <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
     
       <link rel="stylesheet" href="../../../extra.css">
     
@@ -106,7 +107,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../../#modmarchitectureassert-assertions" tabindex="1" class="md-skip">
+      <a href="#modmarchitectureassert-assertions" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -701,6 +702,18 @@
   <li class="md-nav__item">
     <a href="../modm-architecture-i2c-device/" title="modm:architecture:i2c.device" class="md-nav__link">
       modm:architecture:i2c.device
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-i2c-multiplexer/" title="modm:architecture:i2c.multiplexer" class="md-nav__link">
+      modm:architecture:i2c.multiplexer
     </a>
   </li>
 
@@ -1527,6 +1540,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../modm-driver-pat9125el/" title="modm:driver:pat9125el" class="md-nav__link">
+      modm:driver:pat9125el
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../modm-driver-pca8574/" title="modm:driver:pca8574" class="md-nav__link">
       modm:driver:pca8574
     </a>
@@ -1541,6 +1566,18 @@
   <li class="md-nav__item">
     <a href="../modm-driver-pca9535/" title="modm:driver:pca9535" class="md-nav__link">
       modm:driver:pca9535
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-pca9548a/" title="modm:driver:pca9548a" class="md-nav__link">
+      modm:driver:pca9548a
     </a>
   </li>
 
@@ -2840,7 +2877,7 @@ assertion and provide custom functionality.</p>
 <p>Each assertion has the form <code>modm_assert(condition, module, location, failure)</code>,
 where the condition is a boolean and rest are strings, so that a simple
 string compare can be used to match for module, location or failure.
-For example, the identifier <code>&quot;can&quot;, &quot;init&quot;, &quot;timeout&quot;</code> describes a timeout
+For example, the identifier <code>"can", "init", "timeout"</code> describes a timeout
 failure in the CAN initializer function.
 The assert <code>modm_assert_debug(condition, module, location, failure)</code> is only
 available on debug builds and is removed from the code for a release build.</p>
@@ -2889,7 +2926,7 @@ for custom behavior like blinking an LED and printing to a serial connection.</p
 <span class="kt">void</span> <span class="nf">modm_abandon</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">module</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">location</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">failure</span><span class="p">,</span> <span class="kt">uintptr_t</span> <span class="n">context</span><span class="p">)</span> <span class="n">modm_weak</span><span class="p">;</span>
 
 <span class="c1">// Enum</span>
-<span class="k">enum</span> <span class="k">class</span> <span class="nc">Abandonment</span><span class="p">;</span>
+<span class="k">enum</span> <span class="n">Abandonment</span><span class="p">;</span>
 
 <span class="c1">// Typedef</span>
 <span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">AssertionHandler</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">Abandonment</span> <span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">module</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">location</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">failure</span><span class="p">,</span> <span class="kt">uintptr_t</span> <span class="n">context</span><span class="p">);</span>
@@ -2905,135 +2942,136 @@ for custom behavior like blinking an LED and printing to a serial connection.</p
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: modm:architecture:assert Pages: 1 -->
-<svg width="346pt" height="230pt"
- viewBox="0.00 0.00 345.93 230.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 226)">
+<svg width="410pt" height="239pt"
+ viewBox="0.00 0.00 410.00 239.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 235)">
 <title>modm:architecture:assert</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-226 341.9346,-226 341.9346,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-235 406,-235 406,4 -4,4"/>
 <!-- modm_architecture_assert -->
 <g id="node1" class="node">
 <title>modm_architecture_assert</title>
-<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="206.0039,-136 120.0996,-136 120.0996,-86 206.0039,-86 206.0039,-136"/>
-<text text-anchor="middle" x="163.0518" y="-120.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="163.0518" y="-106.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
-<text text-anchor="middle" x="163.0518" y="-92.8" font-family="Times,serif" font-size="14.00" fill="#000000">assert</text>
+<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="247.5,-142 137.5,-142 137.5,-89 247.5,-89 247.5,-142"/>
+<text text-anchor="middle" x="192.5" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="192.5" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
+<text text-anchor="middle" x="192.5" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">assert</text>
 </g>
 <!-- modm_architecture -->
 <g id="node2" class="node">
 <title>modm_architecture</title>
 <g id="a_node2"><a xlink:href="../modm-architecture" xlink:title="modm:&#10;architecture">
-<polygon fill="#d3d3d3" stroke="#000000" points="102.1143,-215 19.9892,-215 19.9892,-179 102.1143,-179 102.1143,-215"/>
-<text text-anchor="middle" x="61.0518" y="-199.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="61.0518" y="-185.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="119.5,-223.5 13.5,-223.5 13.5,-185.5 119.5,-185.5 119.5,-223.5"/>
+<text text-anchor="middle" x="66.5" y="-208.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="66.5" y="-193.3" font-family="Times,serif" font-size="14.00" fill="#000000">architecture</text>
 </a>
 </g>
 </g>
 <!-- modm_architecture_assert&#45;&gt;modm_architecture -->
 <g id="edge1" class="edge">
 <title>modm_architecture_assert&#45;&gt;modm_architecture</title>
-<path fill="none" stroke="#000000" d="M133.2749,-136.1059C119.835,-147.4377 104.0017,-160.7873 90.5902,-172.095"/>
-<polygon fill="#000000" stroke="#000000" points="87.9848,-169.7137 82.5957,-178.8355 92.497,-175.0654 87.9848,-169.7137"/>
+<path fill="none" stroke="#000000" d="M154.6958,-142.2029C137.9057,-154.0626 118.257,-167.9415 101.7723,-179.5855"/>
+<polygon fill="#000000" stroke="#000000" points="99.6208,-176.82 93.4722,-185.4482 103.6594,-182.5376 99.6208,-176.82"/>
 </g>
 <!-- modm_architecture_accessor -->
 <g id="node3" class="node">
 <title>modm_architecture_accessor</title>
 <g id="a_node3"><a xlink:href="../modm-architecture-accessor" xlink:title="modm:&#10;architecture:&#10;accessor">
-<polygon fill="#d3d3d3" stroke="#000000" points="206.0039,-222 120.0996,-222 120.0996,-172 206.0039,-172 206.0039,-222"/>
-<text text-anchor="middle" x="163.0518" y="-206.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="163.0518" y="-192.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
-<text text-anchor="middle" x="163.0518" y="-178.8" font-family="Times,serif" font-size="14.00" fill="#000000">accessor</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="247.5,-231 137.5,-231 137.5,-178 247.5,-178 247.5,-231"/>
+<text text-anchor="middle" x="192.5" y="-215.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="192.5" y="-200.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
+<text text-anchor="middle" x="192.5" y="-185.8" font-family="Times,serif" font-size="14.00" fill="#000000">accessor</text>
 </a>
 </g>
 </g>
 <!-- modm_architecture_assert&#45;&gt;modm_architecture_accessor -->
 <g id="edge2" class="edge">
 <title>modm_architecture_assert&#45;&gt;modm_architecture_accessor</title>
-<path fill="none" stroke="#000000" d="M163.0518,-136.3377C163.0518,-144.2984 163.0518,-153.2367 163.0518,-161.7551"/>
-<polygon fill="#000000" stroke="#000000" points="159.5519,-161.8434 163.0518,-171.8434 166.5519,-161.8434 159.5519,-161.8434"/>
+<path fill="none" stroke="#000000" d="M192.5,-142.2029C192.5,-150.2113 192.5,-159.1403 192.5,-167.6802"/>
+<polygon fill="#000000" stroke="#000000" points="189.0001,-167.8159 192.5,-177.8159 196.0001,-167.8159 189.0001,-167.8159"/>
 </g>
-<!-- modm_utils -->
+<!-- modm_math_utils -->
 <g id="node4" class="node">
-<title>modm_utils</title>
-<g id="a_node4"><a xlink:href="../modm-utils" xlink:title="modm:&#10;utils">
-<polygon fill="#d3d3d3" stroke="#000000" points="279.7217,-215 224.3818,-215 224.3818,-179 279.7217,-179 279.7217,-215"/>
-<text text-anchor="middle" x="252.0518" y="-199.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="252.0518" y="-185.8" font-family="Times,serif" font-size="14.00" fill="#000000">utils</text>
+<title>modm_math_utils</title>
+<g id="a_node4"><a xlink:href="../modm-math-utils" xlink:title="modm:&#10;math:&#10;utils">
+<polygon fill="#d3d3d3" stroke="#000000" points="331,-231 266,-231 266,-178 331,-178 331,-231"/>
+<text text-anchor="middle" x="298.5" y="-215.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="298.5" y="-200.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
+<text text-anchor="middle" x="298.5" y="-185.8" font-family="Times,serif" font-size="14.00" fill="#000000">utils</text>
 </a>
 </g>
 </g>
-<!-- modm_architecture_assert&#45;&gt;modm_utils -->
+<!-- modm_architecture_assert&#45;&gt;modm_math_utils -->
 <g id="edge3" class="edge">
-<title>modm_architecture_assert&#45;&gt;modm_utils</title>
-<path fill="none" stroke="#000000" d="M189.2733,-136.3377C200.8823,-147.5554 214.5,-160.7141 226.08,-171.9037"/>
-<polygon fill="#000000" stroke="#000000" points="223.7304,-174.5004 233.3538,-178.9323 228.5946,-169.4665 223.7304,-174.5004"/>
+<title>modm_architecture_assert&#45;&gt;modm_math_utils</title>
+<path fill="none" stroke="#000000" d="M224.3035,-142.2029C235.2041,-151.3553 247.5369,-161.7102 258.9733,-171.3125"/>
+<polygon fill="#000000" stroke="#000000" points="256.8099,-174.0661 266.719,-177.8159 261.311,-168.7052 256.8099,-174.0661"/>
 </g>
 <!-- modm_driver_mcp2515 -->
 <g id="node5" class="node">
 <title>modm_driver_mcp2515</title>
 <g id="a_node5"><a xlink:href="../modm-driver-mcp2515" xlink:title="modm:&#10;driver:&#10;mcp2515">
-<polygon fill="#d3d3d3" stroke="#000000" points="68.1554,-50 -.0518,-50 -.0518,0 68.1554,0 68.1554,-50"/>
-<text text-anchor="middle" x="34.0518" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="34.0518" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="34.0518" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">mcp2515</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="83,-53 0,-53 0,0 83,0 83,-53"/>
+<text text-anchor="middle" x="41.5" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="41.5" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
+<text text-anchor="middle" x="41.5" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">mcp2515</text>
 </a>
 </g>
 </g>
 <!-- modm_driver_mcp2515&#45;&gt;modm_architecture_assert -->
 <g id="edge4" class="edge">
 <title>modm_driver_mcp2515&#45;&gt;modm_architecture_assert</title>
-<path fill="none" stroke="#000000" d="M68.2827,-47.8206C83.1459,-57.7294 100.7823,-69.4871 116.7868,-80.1567"/>
-<polygon fill="#000000" stroke="#000000" points="115.2203,-83.3188 125.4823,-85.9537 119.1033,-77.4945 115.2203,-83.3188"/>
+<path fill="none" stroke="#000000" d="M83.1611,-51.0552C100.3405,-61.1808 120.4672,-73.0436 138.7373,-83.812"/>
+<polygon fill="#000000" stroke="#000000" points="137.1439,-86.9356 147.536,-88.9981 140.6983,-80.9051 137.1439,-86.9356"/>
 </g>
 <!-- modm_platform_can -->
 <g id="node6" class="node">
 <title>modm_platform_can</title>
 <g id="a_node6"><a xlink:href="../modm-platform-can" xlink:title="modm:&#10;platform:&#10;can">
-<polygon fill="#d3d3d3" stroke="#000000" points="154.1485,-50 85.955,-50 85.955,0 154.1485,0 154.1485,-50"/>
-<text text-anchor="middle" x="120.0518" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="120.0518" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="120.0518" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">can</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="184,-53 101,-53 101,0 184,0 184,-53"/>
+<text text-anchor="middle" x="142.5" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="142.5" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="142.5" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">can</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_can&#45;&gt;modm_architecture_assert -->
 <g id="edge5" class="edge">
 <title>modm_platform_can&#45;&gt;modm_architecture_assert</title>
-<path fill="none" stroke="#000000" d="M132.7206,-50.3377C136.8759,-58.6484 141.564,-68.0244 145.9897,-76.8758"/>
-<polygon fill="#000000" stroke="#000000" points="142.8708,-78.4644 150.4735,-85.8434 149.1318,-75.3339 142.8708,-78.4644"/>
+<path fill="none" stroke="#000000" d="M157.5016,-53.2029C162.2479,-61.6513 167.5698,-71.1243 172.6034,-80.0841"/>
+<polygon fill="#000000" stroke="#000000" points="169.5595,-81.8118 177.5089,-88.8159 175.6624,-78.3832 169.5595,-81.8118"/>
 </g>
 <!-- modm_platform_core -->
 <g id="node7" class="node">
 <title>modm_platform_core</title>
 <g id="a_node7"><a xlink:href="../modm-platform-core" xlink:title="modm:&#10;platform:&#10;core">
-<polygon fill="#d3d3d3" stroke="#000000" points="240.1485,-50 171.955,-50 171.955,0 240.1485,0 240.1485,-50"/>
-<text text-anchor="middle" x="206.0518" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="206.0518" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="206.0518" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">core</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="285,-53 202,-53 202,0 285,0 285,-53"/>
+<text text-anchor="middle" x="243.5" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="243.5" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="243.5" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">core</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_core&#45;&gt;modm_architecture_assert -->
 <g id="edge6" class="edge">
 <title>modm_platform_core&#45;&gt;modm_architecture_assert</title>
-<path fill="none" stroke="#000000" d="M193.3829,-50.3377C189.2276,-58.6484 184.5396,-68.0244 180.1138,-76.8758"/>
-<polygon fill="#000000" stroke="#000000" points="176.9717,-75.3339 175.6301,-85.8434 183.2327,-78.4644 176.9717,-75.3339"/>
+<path fill="none" stroke="#000000" d="M228.1983,-53.2029C223.3571,-61.6513 217.9288,-71.1243 212.7945,-80.0841"/>
+<polygon fill="#000000" stroke="#000000" points="209.7261,-78.3993 207.7909,-88.8159 215.7996,-81.8796 209.7261,-78.3993"/>
 </g>
 <!-- modm_processing_resumable -->
 <g id="node8" class="node">
 <title>modm_processing_resumable</title>
 <g id="a_node8"><a xlink:href="../modm-processing-resumable" xlink:title="modm:&#10;processing:&#10;resumable">
-<polygon fill="#d3d3d3" stroke="#000000" points="337.8177,-50 258.2858,-50 258.2858,0 337.8177,0 337.8177,-50"/>
-<text text-anchor="middle" x="298.0518" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="298.0518" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">processing:</text>
-<text text-anchor="middle" x="298.0518" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">resumable</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="402,-53 303,-53 303,0 402,0 402,-53"/>
+<text text-anchor="middle" x="352.5" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="352.5" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">processing:</text>
+<text text-anchor="middle" x="352.5" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">resumable</text>
 </a>
 </g>
 </g>
 <!-- modm_processing_resumable&#45;&gt;modm_architecture_assert -->
 <g id="edge7" class="edge">
 <title>modm_processing_resumable&#45;&gt;modm_architecture_assert</title>
-<path fill="none" stroke="#000000" d="M258.6413,-50.1059C243.8007,-59.5599 226.7554,-70.4184 211.2061,-80.3239"/>
-<polygon fill="#000000" stroke="#000000" points="209.2985,-77.3892 202.745,-85.714 213.0595,-83.293 209.2985,-77.3892"/>
+<path fill="none" stroke="#000000" d="M304.4947,-53.2029C287.0126,-62.9273 267.09,-74.0093 248.943,-84.1036"/>
+<polygon fill="#000000" stroke="#000000" points="247.2331,-81.0496 240.1955,-88.9694 250.6359,-87.1669 247.2331,-81.0496"/>
 </g>
 </g>
 </svg>
@@ -3121,7 +3159,7 @@ for custom behavior like blinking an LED and printing to a serial connection.</p
       
     </div>
     
-      <script src="../../../assets/javascripts/application.583bbe55.js"></script>
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       

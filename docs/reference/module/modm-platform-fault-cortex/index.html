@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.451f80e5.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
@@ -67,6 +67,7 @@
       
     
     <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
     
       <link rel="stylesheet" href="../../../extra.css">
     
@@ -106,7 +107,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../../#modmplatformfaultcortex-arm-cortex-m-fault-handling" tabindex="1" class="md-skip">
+      <a href="#modmplatformfaultcortex-arm-cortex-m-fault-handling" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -656,6 +657,18 @@
   <li class="md-nav__item">
     <a href="../modm-architecture-i2c-device/" title="modm:architecture:i2c.device" class="md-nav__link">
       modm:architecture:i2c.device
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-i2c-multiplexer/" title="modm:architecture:i2c.multiplexer" class="md-nav__link">
+      modm:architecture:i2c.multiplexer
     </a>
   </li>
 
@@ -1482,6 +1495,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../modm-driver-pat9125el/" title="modm:driver:pat9125el" class="md-nav__link">
+      modm:driver:pat9125el
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../modm-driver-pca8574/" title="modm:driver:pca8574" class="md-nav__link">
       modm:driver:pca8574
     </a>
@@ -1496,6 +1521,18 @@
   <li class="md-nav__item">
     <a href="../modm-driver-pca9535/" title="modm:driver:pca9535" class="md-nav__link">
       modm:driver:pca9535
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-pca9548a/" title="modm:driver:pca9548a" class="md-nav__link">
+      modm:driver:pca9548a
     </a>
   </li>
 
@@ -2863,7 +2900,7 @@
 <p>Dealing with Fault handlers.</p>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <h4 id="led">led<a class="headerlink" href="#led" title="Permanent link">&para;</a></h4>
-<p>Toggle an LED on the specified pin: <code>disabled</code> ∈ <code>{ A0, A1, A10, A11, A12, A13, A14, A15, A2, A3, A4, A5, A6, A7, A8, A9, B0, B1, B10, B11, B12, B13, B14, B15, B2, B3, B4, B5, B6, B7, B8, B9, C0, C1, C10, C11, C12, C13, C14, C15, C2, C3, C4, C5, C6, C7, C8, C9, D0, D1, D10, D11, D12, D13, D14, D15, D2, D3, D4, D5, D6, D7, D8, D9, E0, E1, E10, E11, E12, E13, E14, E15, E2, E3, E4, E5, E6, E7, E8, E9, F0, F1, F10, F11, F12, F13, F14, F15, F2, F3, F4, F5, F6, F7, F8, F9, G0, G1, G10, G11, G12, G13, G14, G15, G2, G3, G4, G5, G6, G7, G8, G9, H0, H1, H10, H11, H12, H13, H14, H15, H2, H3, H4, H5, H6, H7, H8, H9, I0, I1, I10, I11, I12, I13, I14, I15, I2, I3, I4, I5, I6, I7, I8, I9, J0, J1, J12, J13, J14, J15, J2, J3, J4, J5, K3, K4, K5, K6, K7, disabled }</code></p>
+<p>Toggle an LED on the specified pin: <code>disabled</code> ∈ <code>{ A0, A1, A10, A11, A12, A13, A14, A15, A2, A3, A4, A5, A6, A7, A8, A9, B0, B1, B10, B11, B12, B13, B14, B15, B2, B3, B4, B5, B6, B7, B8, B9, C0, C1, C10, C11, C12, C13, C14, C15, C2, C3, C4, C5, C6, C7, C8, C9, D0, D1, D10, D11, D12, D13, D14, D15, D2, D3, D4, D5, D6, D7, D8, D9, E0, E1, E10, E11, E12, E13, E14, E15, E2, E3, E4, E5, E6, E7, E8, E9, F0, F1, F10, F11, F12, F13, F14, F15, F2, F3, F4, F5, F6, F7, F8, F9, G0, G1, G10, G11, G12, G13, G14, G15, G2, G3, G4, G5, G6, G7, G8, G9, H0, H1, H10, H11, H12, H13, H14, H15, H2, H3, H4, H5, H6, H7, H8, H9, I0, I1, I10, I11, I12, I13, I14, I15, I2, I3, I4, I5, I6, I7, I8, I9, J0, J1, J12, J13, J14, J15, J2, J3, J4, J5, K3, K4, K5, K6, K7, [4mdisabled[24m[0m }</code></p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -2871,102 +2908,102 @@
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: modm:platform:fault.cortex Pages: 1 -->
-<svg width="422pt" height="144pt"
- viewBox="0.00 0.00 422.02 144.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 140)">
+<svg width="501pt" height="150pt"
+ viewBox="0.00 0.00 500.50 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 146)">
 <title>modm:platform:fault.cortex</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-140 418.0244,-140 418.0244,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-146 496.5,-146 496.5,4 -4,4"/>
 <!-- modm_platform_fault_cortex -->
 <g id="node1" class="node">
 <title>modm_platform_fault_cortex</title>
-<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="250.111,-50 169.8412,-50 169.8412,0 250.111,0 250.111,-50"/>
-<text text-anchor="middle" x="209.9761" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="209.9761" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="209.9761" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">fault.cortex</text>
+<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="301,-53 201,-53 201,0 301,0 301,-53"/>
+<text text-anchor="middle" x="251" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="251" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="251" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">fault.cortex</text>
 </g>
 <!-- modm_architecture_clock -->
 <g id="node2" class="node">
 <title>modm_architecture_clock</title>
 <g id="a_node2"><a xlink:href="../modm-architecture-clock" xlink:title="modm:&#10;architecture:&#10;clock">
-<polygon fill="#d3d3d3" stroke="#000000" points="85.9282,-136 .0239,-136 .0239,-86 85.9282,-86 85.9282,-136"/>
-<text text-anchor="middle" x="42.9761" y="-120.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="42.9761" y="-106.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
-<text text-anchor="middle" x="42.9761" y="-92.8" font-family="Times,serif" font-size="14.00" fill="#000000">clock</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="110,-142 0,-142 0,-89 110,-89 110,-142"/>
+<text text-anchor="middle" x="55" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="55" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
+<text text-anchor="middle" x="55" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">clock</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_fault_cortex&#45;&gt;modm_architecture_clock -->
 <g id="edge1" class="edge">
 <title>modm_platform_fault_cortex&#45;&gt;modm_architecture_clock</title>
-<path fill="none" stroke="#000000" d="M169.55,-45.8182C147.1238,-57.367 118.9891,-71.8555 94.9438,-84.2382"/>
-<polygon fill="#000000" stroke="#000000" points="93.2368,-81.1803 85.9488,-88.8703 96.4417,-87.4036 93.2368,-81.1803"/>
+<path fill="none" stroke="#000000" d="M200.7796,-49.3041C176.0235,-60.5454 145.8817,-74.2323 119.445,-86.2367"/>
+<polygon fill="#000000" stroke="#000000" points="117.9216,-83.0845 110.2634,-90.4059 120.8158,-89.4582 117.9216,-83.0845"/>
 </g>
 <!-- modm_cmsis_device -->
 <g id="node3" class="node">
 <title>modm_cmsis_device</title>
 <g id="a_node3"><a xlink:href="../modm-cmsis-device" xlink:title="modm:&#10;cmsis:&#10;device">
-<polygon fill="#d3d3d3" stroke="#000000" points="159.646,-136 104.3062,-136 104.3062,-86 159.646,-86 159.646,-136"/>
-<text text-anchor="middle" x="131.9761" y="-120.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="131.9761" y="-106.8" font-family="Times,serif" font-size="14.00" fill="#000000">cmsis:</text>
-<text text-anchor="middle" x="131.9761" y="-92.8" font-family="Times,serif" font-size="14.00" fill="#000000">device</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="193.5,-142 128.5,-142 128.5,-89 193.5,-89 193.5,-142"/>
+<text text-anchor="middle" x="161" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="161" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">cmsis:</text>
+<text text-anchor="middle" x="161" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">device</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_fault_cortex&#45;&gt;modm_cmsis_device -->
 <g id="edge2" class="edge">
 <title>modm_platform_fault_cortex&#45;&gt;modm_cmsis_device</title>
-<path fill="none" stroke="#000000" d="M186.9954,-50.3377C179.0611,-59.0858 170.0561,-69.0143 161.6625,-78.2688"/>
-<polygon fill="#000000" stroke="#000000" points="158.9182,-76.0848 154.7925,-85.8434 164.1032,-80.7876 158.9182,-76.0848"/>
+<path fill="none" stroke="#000000" d="M223.997,-53.2029C214.9198,-62.1793 204.6728,-72.3124 195.1214,-81.7577"/>
+<polygon fill="#000000" stroke="#000000" points="192.6334,-79.2958 187.9839,-88.8159 197.5554,-84.2731 192.6334,-79.2958"/>
 </g>
 <!-- modm_platform -->
 <g id="node4" class="node">
 <title>modm_platform</title>
 <g id="a_node4"><a xlink:href="../modm-platform" xlink:title="modm:&#10;platform">
-<polygon fill="#d3d3d3" stroke="#000000" points="242.1834,-129 177.7687,-129 177.7687,-93 242.1834,-93 242.1834,-129"/>
-<text text-anchor="middle" x="209.9761" y="-113.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="209.9761" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="290,-134.5 212,-134.5 212,-96.5 290,-96.5 290,-134.5"/>
+<text text-anchor="middle" x="251" y="-119.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="251" y="-104.3" font-family="Times,serif" font-size="14.00" fill="#000000">platform</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_fault_cortex&#45;&gt;modm_platform -->
 <g id="edge3" class="edge">
 <title>modm_platform_fault_cortex&#45;&gt;modm_platform</title>
-<path fill="none" stroke="#000000" d="M209.9761,-50.3377C209.9761,-60.487 209.9761,-72.2253 209.9761,-82.6564"/>
-<polygon fill="#000000" stroke="#000000" points="206.4762,-82.9322 209.9761,-92.9323 213.4762,-82.9323 206.4762,-82.9322"/>
+<path fill="none" stroke="#000000" d="M251,-53.2029C251,-63.6482 251,-75.6597 251,-86.3311"/>
+<polygon fill="#000000" stroke="#000000" points="247.5001,-86.4482 251,-96.4482 254.5001,-86.4483 247.5001,-86.4482"/>
 </g>
 <!-- modm_platform_clock -->
 <g id="node5" class="node">
 <title>modm_platform_clock</title>
 <g id="a_node5"><a xlink:href="../modm-platform-clock" xlink:title="modm:&#10;platform:&#10;clock">
-<polygon fill="#d3d3d3" stroke="#000000" points="328.0728,-136 259.8793,-136 259.8793,-86 328.0728,-86 328.0728,-136"/>
-<text text-anchor="middle" x="293.9761" y="-120.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="293.9761" y="-106.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="293.9761" y="-92.8" font-family="Times,serif" font-size="14.00" fill="#000000">clock</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="391.5,-142 308.5,-142 308.5,-89 391.5,-89 391.5,-142"/>
+<text text-anchor="middle" x="350" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="350" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="350" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">clock</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_fault_cortex&#45;&gt;modm_platform_clock -->
 <g id="edge4" class="edge">
 <title>modm_platform_fault_cortex&#45;&gt;modm_platform_clock</title>
-<path fill="none" stroke="#000000" d="M234.7245,-50.3377C243.3546,-59.1732 253.1609,-69.213 262.2771,-78.5463"/>
-<polygon fill="#000000" stroke="#000000" points="259.9133,-81.1352 269.4045,-85.8434 264.9209,-76.244 259.9133,-81.1352"/>
+<path fill="none" stroke="#000000" d="M280.7033,-53.2029C290.7861,-62.2673 302.181,-72.5112 312.7752,-82.0353"/>
+<polygon fill="#000000" stroke="#000000" points="310.5411,-84.7332 320.3177,-88.8159 315.2209,-79.5275 310.5411,-84.7332"/>
 </g>
 <!-- modm_platform_gpio -->
 <g id="node6" class="node">
 <title>modm_platform_gpio</title>
 <g id="a_node6"><a xlink:href="../modm-platform-gpio" xlink:title="modm:&#10;platform:&#10;gpio">
-<polygon fill="#d3d3d3" stroke="#000000" points="414.0728,-136 345.8793,-136 345.8793,-86 414.0728,-86 414.0728,-136"/>
-<text text-anchor="middle" x="379.9761" y="-120.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="379.9761" y="-106.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="379.9761" y="-92.8" font-family="Times,serif" font-size="14.00" fill="#000000">gpio</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="492.5,-142 409.5,-142 409.5,-89 492.5,-89 492.5,-142"/>
+<text text-anchor="middle" x="451" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="451" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="451" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">gpio</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_fault_cortex&#45;&gt;modm_platform_gpio -->
 <g id="edge5" class="edge">
 <title>modm_platform_fault_cortex&#45;&gt;modm_platform_gpio</title>
-<path fill="none" stroke="#000000" d="M250.1335,-43.2988C275.3226,-55.0196 308.3374,-70.8273 336.9761,-86 337.0667,-86.048 337.1574,-86.0961 337.2482,-86.1443"/>
-<polygon fill="#000000" stroke="#000000" points="335.3898,-89.1175 345.8452,-90.831 338.7404,-82.9714 335.3898,-89.1175"/>
+<path fill="none" stroke="#000000" d="M301.1653,-46.05C328.3709,-56.9619 362.672,-71.2165 400.294,-88.7933"/>
+<polygon fill="#000000" stroke="#000000" points="398.8663,-91.9897 409.4044,-93.0847 401.8492,-85.657 398.8663,-91.9897"/>
 </g>
 </g>
 </svg>
@@ -3054,7 +3091,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.583bbe55.js"></script>
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       

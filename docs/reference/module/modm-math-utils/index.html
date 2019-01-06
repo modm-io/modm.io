@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.451f80e5.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
@@ -67,6 +67,7 @@
       
     
     <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
     
       <link rel="stylesheet" href="../../../extra.css">
     
@@ -106,7 +107,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../../#modmmathutils-utilities" tabindex="1" class="md-skip">
+      <a href="#modmmathutils-utilities" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -656,6 +657,18 @@
   <li class="md-nav__item">
     <a href="../modm-architecture-i2c-device/" title="modm:architecture:i2c.device" class="md-nav__link">
       modm:architecture:i2c.device
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-i2c-multiplexer/" title="modm:architecture:i2c.multiplexer" class="md-nav__link">
+      modm:architecture:i2c.multiplexer
     </a>
   </li>
 
@@ -1482,6 +1495,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../modm-driver-pat9125el/" title="modm:driver:pat9125el" class="md-nav__link">
+      modm:driver:pat9125el
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../modm-driver-pca8574/" title="modm:driver:pca8574" class="md-nav__link">
       modm:driver:pca8574
     </a>
@@ -1496,6 +1521,18 @@
   <li class="md-nav__item">
     <a href="../modm-driver-pca9535/" title="modm:driver:pca9535" class="md-nav__link">
       modm:driver:pca9535
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-pca9548a/" title="modm:driver:pca9548a" class="md-nav__link">
+      modm:driver:pca9548a
     </a>
   </li>
 
@@ -2835,7 +2872,10 @@
 </div>
 <h1 id="modmmathutils-utilities">modm:math:utils: Utilities<a class="headerlink" href="#modmmathutils-utilities" title="Permanent link">&para;</a></h1>
 <h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="c1">// Function</span>
+<div class="codehilite"><pre><span></span><span class="c1">// Struct</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">ArithmeticTraits</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">T</span>  <span class="o">&gt;</span><span class="p">;</span>
+
+<span class="c1">// Function</span>
 <span class="kt">bool</span> <span class="n">modm</span><span class="o">::</span><span class="n">isPositive</span><span class="p">(</span><span class="k">const</span> <span class="kt">float</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
 <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">modm</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
 <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">modm</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">,</span> <span class="n">Compare</span> <span class="n">compare</span><span class="p">);</span>
@@ -2878,6 +2918,45 @@
 <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">n</span><span class="p">);</span>
 <span class="kt">void</span> <span class="n">modm</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="kt">int16_t</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="kt">int16_t</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
 <span class="kt">void</span> <span class="n">modm</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+
+<span class="c1">// Variable</span>
+<span class="k">constexpr</span> <span class="kt">uint16_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit10</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span> <span class="mi">10</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint16_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit11</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span> <span class="mi">11</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint16_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit12</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span> <span class="mi">12</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint16_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit13</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span> <span class="mi">13</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint16_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit14</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span> <span class="mi">14</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint16_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit15</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span> <span class="mi">15</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint16_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit8</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span>  <span class="mi">8</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint16_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit9</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span>  <span class="mi">9</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint32_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit16</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint32_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit17</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span> <span class="mi">17</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint32_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit18</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span> <span class="mi">18</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint32_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit19</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span> <span class="mi">19</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint32_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit20</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span> <span class="mi">20</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint32_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit21</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span> <span class="mi">21</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint32_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit22</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span> <span class="mi">22</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint32_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit23</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span> <span class="mi">23</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint32_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit24</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span> <span class="mi">24</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint32_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit25</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span> <span class="mi">25</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint32_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit26</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span> <span class="mi">26</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint32_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit27</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span> <span class="mi">27</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint32_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit28</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span> <span class="mi">28</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint32_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit29</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span> <span class="mi">29</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint32_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit30</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span> <span class="mi">30</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint32_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit31</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span> <span class="mi">31</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit0</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span>  <span class="mi">0</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span>  <span class="mi">1</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span>  <span class="mi">2</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span>  <span class="mi">3</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit4</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span>  <span class="mi">4</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit5</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span>  <span class="mi">5</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit6</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span>  <span class="mi">6</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bit7</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1ul</span> <span class="o">&lt;&lt;</span>  <span class="mi">7</span><span class="p">);</span>
+
+<span class="c1">// Typedef</span>
+<span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">SignedType</span> <span class="o">=</span> <span class="k">typedef</span> <span class="k">typename</span> <span class="n">detail</span><span class="o">::</span><span class="n">MakeSigned</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">type</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">UnsignedType</span> <span class="o">=</span> <span class="k">typedef</span> <span class="k">typename</span> <span class="n">detail</span><span class="o">::</span><span class="n">MakeUnsigned</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">type</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">WideType</span> <span class="o">=</span> <span class="k">typedef</span> <span class="k">typename</span> <span class="n">detail</span><span class="o">::</span><span class="n">WideType</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">type</span><span class="p">;</span>
 </pre></div>
 
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
@@ -2887,440 +2966,593 @@
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: modm:math:utils Pages: 1 -->
-<svg width="1942pt" height="216pt"
- viewBox="0.00 0.00 1942.07 216.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 212)">
+<svg width="3304pt" height="224pt"
+ viewBox="0.00 0.00 3304.00 224.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 220)">
 <title>modm:math:utils</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-212 1938.0674,-212 1938.0674,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-220 3300,-220 3300,4 -4,4"/>
 <!-- modm_math_utils -->
 <g id="node1" class="node">
 <title>modm_math_utils</title>
-<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="1078.5166,-136 1023.1768,-136 1023.1768,-86 1078.5166,-86 1078.5166,-136"/>
-<text text-anchor="middle" x="1050.8467" y="-120.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="1050.8467" y="-106.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
-<text text-anchor="middle" x="1050.8467" y="-92.8" font-family="Times,serif" font-size="14.00" fill="#000000">utils</text>
+<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="1807.5,-142 1742.5,-142 1742.5,-89 1807.5,-89 1807.5,-142"/>
+<text text-anchor="middle" x="1775" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="1775" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
+<text text-anchor="middle" x="1775" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">utils</text>
 </g>
 <!-- modm_architecture -->
 <g id="node2" class="node">
 <title>modm_architecture</title>
 <g id="a_node2"><a xlink:href="../modm-architecture" xlink:title="modm:&#10;architecture">
-<polygon fill="#d3d3d3" stroke="#000000" points="1048.9092,-208 966.7842,-208 966.7842,-172 1048.9092,-172 1048.9092,-208"/>
-<text text-anchor="middle" x="1007.8467" y="-192.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="1007.8467" y="-178.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="1776,-216 1670,-216 1670,-178 1776,-178 1776,-216"/>
+<text text-anchor="middle" x="1723" y="-200.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="1723" y="-185.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture</text>
 </a>
 </g>
 </g>
 <!-- modm_math_utils&#45;&gt;modm_architecture -->
 <g id="edge1" class="edge">
 <title>modm_math_utils&#45;&gt;modm_architecture</title>
-<path fill="none" stroke="#000000" d="M1037.0045,-136.4309C1032.3889,-144.9109 1027.2316,-154.3859 1022.5527,-162.9819"/>
-<polygon fill="#000000" stroke="#000000" points="1019.4184,-161.4193 1017.7117,-171.8758 1025.5667,-164.7659 1019.4184,-161.4193"/>
+<path fill="none" stroke="#000000" d="M1757.9733,-142.1861C1752.4774,-150.7999 1746.3718,-160.3692 1740.8202,-169.0703"/>
+<polygon fill="#000000" stroke="#000000" points="1737.7124,-167.4341 1735.2842,-177.7469 1743.6136,-171.1993 1737.7124,-167.4341"/>
 </g>
 <!-- modm_math -->
 <g id="node3" class="node">
 <title>modm_math</title>
 <g id="a_node3"><a xlink:href="../modm-math" xlink:title="modm:&#10;math">
-<polygon fill="#d3d3d3" stroke="#000000" points="1122.5166,-208 1067.1768,-208 1067.1768,-172 1122.5166,-172 1122.5166,-208"/>
-<text text-anchor="middle" x="1094.8467" y="-192.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="1094.8467" y="-178.8" font-family="Times,serif" font-size="14.00" fill="#000000">math</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="1859.5,-216 1794.5,-216 1794.5,-178 1859.5,-178 1859.5,-216"/>
+<text text-anchor="middle" x="1827" y="-200.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="1827" y="-185.8" font-family="Times,serif" font-size="14.00" fill="#000000">math</text>
 </a>
 </g>
 </g>
 <!-- modm_math_utils&#45;&gt;modm_math -->
 <g id="edge2" class="edge">
 <title>modm_math_utils&#45;&gt;modm_math</title>
-<path fill="none" stroke="#000000" d="M1065.0108,-136.4309C1069.7337,-144.9109 1075.011,-154.3859 1079.7986,-162.9819"/>
-<polygon fill="#000000" stroke="#000000" points="1076.8286,-164.8425 1084.7522,-171.8758 1082.9441,-161.4364 1076.8286,-164.8425"/>
+<path fill="none" stroke="#000000" d="M1792.0267,-142.1861C1797.5226,-150.7999 1803.6282,-160.3692 1809.1798,-169.0703"/>
+<polygon fill="#000000" stroke="#000000" points="1806.3864,-171.1993 1814.7158,-177.7469 1812.2876,-167.4341 1806.3864,-171.1993"/>
+</g>
+<!-- modm_architecture_assert -->
+<g id="node4" class="node">
+<title>modm_architecture_assert</title>
+<g id="a_node4"><a xlink:href="../modm-architecture-assert" xlink:title="modm:&#10;architecture:&#10;assert">
+<polygon fill="#d3d3d3" stroke="#000000" points="110,-53 0,-53 0,0 110,0 110,-53"/>
+<text text-anchor="middle" x="55" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="55" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
+<text text-anchor="middle" x="55" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">assert</text>
+</a>
+</g>
+</g>
+<!-- modm_architecture_assert&#45;&gt;modm_math_utils -->
+<g id="edge3" class="edge">
+<title>modm_architecture_assert&#45;&gt;modm_math_utils</title>
+<path fill="none" stroke="#000000" d="M110.1136,-50.7233C113.089,-51.5889 116.0628,-52.3581 119,-53 280.5856,-88.3112 1488.0771,-110.6149 1732.0876,-114.7874"/>
+<polygon fill="#000000" stroke="#000000" points="1732.2667,-118.2909 1742.3247,-114.9615 1732.3857,-111.2919 1732.2667,-118.2909"/>
 </g>
 <!-- modm_architecture_gpio_expander -->
-<g id="node4" class="node">
+<g id="node5" class="node">
 <title>modm_architecture_gpio_expander</title>
-<g id="a_node4"><a xlink:href="../modm-architecture-gpio-expander" xlink:title="modm:&#10;architecture:&#10;gpio.expander">
-<polygon fill="#d3d3d3" stroke="#000000" points="95.5405,-50 .1528,-50 .1528,0 95.5405,0 95.5405,-50"/>
-<text text-anchor="middle" x="47.8467" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="47.8467" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
-<text text-anchor="middle" x="47.8467" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">gpio.expander</text>
+<g id="a_node5"><a xlink:href="../modm-architecture-gpio-expander" xlink:title="modm:&#10;architecture:&#10;gpio.expander">
+<polygon fill="#d3d3d3" stroke="#000000" points="247.5,-53 128.5,-53 128.5,0 247.5,0 247.5,-53"/>
+<text text-anchor="middle" x="188" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="188" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
+<text text-anchor="middle" x="188" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">gpio.expander</text>
 </a>
 </g>
 </g>
 <!-- modm_architecture_gpio_expander&#45;&gt;modm_math_utils -->
-<g id="edge3" class="edge">
+<g id="edge4" class="edge">
 <title>modm_architecture_gpio_expander&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M95.6361,-47.3614C98.7156,-48.3643 101.802,-49.2586 104.8467,-50 281.499,-93.0167 857.8972,-107.2189 1012.4316,-110.3017"/>
-<polygon fill="#000000" stroke="#000000" points="1012.7512,-113.8085 1022.8177,-110.5047 1012.8881,-106.8099 1012.7512,-113.8085"/>
+<path fill="none" stroke="#000000" d="M247.7411,-51.0149C250.5101,-51.7602 253.2717,-52.4288 256,-53 403.8068,-83.9421 1501.3141,-109.5107 1732.3789,-114.5847"/>
+<polygon fill="#000000" stroke="#000000" points="1732.3381,-118.0846 1742.4123,-114.8041 1732.4912,-111.0862 1732.3381,-118.0846"/>
+</g>
+<!-- modm_architecture_i2c_multiplexer -->
+<g id="node6" class="node">
+<title>modm_architecture_i2c_multiplexer</title>
+<g id="a_node6"><a xlink:href="../modm-architecture-i2c-multiplexer" xlink:title="modm:&#10;architecture:&#10;i2c.multiplexer">
+<polygon fill="#d3d3d3" stroke="#000000" points="390.5,-53 265.5,-53 265.5,0 390.5,0 390.5,-53"/>
+<text text-anchor="middle" x="328" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="328" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
+<text text-anchor="middle" x="328" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">i2c.multiplexer</text>
+</a>
+</g>
+</g>
+<!-- modm_architecture_i2c_multiplexer&#45;&gt;modm_math_utils -->
+<g id="edge5" class="edge">
+<title>modm_architecture_i2c_multiplexer&#45;&gt;modm_math_utils</title>
+<path fill="none" stroke="#000000" d="M390.8978,-50.8913C393.9523,-51.6834 396.9969,-52.3942 400,-53 664.0696,-106.2673 1529.5507,-114.1867 1732.2529,-115.3181"/>
+<polygon fill="#000000" stroke="#000000" points="1732.4713,-118.8192 1742.4898,-115.3725 1732.5086,-111.8193 1732.4713,-118.8192"/>
 </g>
 <!-- modm_architecture_register -->
-<g id="node5" class="node">
+<g id="node7" class="node">
 <title>modm_architecture_register</title>
-<g id="a_node5"><a xlink:href="../modm-architecture-register" xlink:title="modm:&#10;architecture:&#10;register">
-<polygon fill="#d3d3d3" stroke="#000000" points="199.7988,-50 113.8945,-50 113.8945,0 199.7988,0 199.7988,-50"/>
-<text text-anchor="middle" x="156.8467" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="156.8467" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
-<text text-anchor="middle" x="156.8467" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">register</text>
+<g id="a_node7"><a xlink:href="../modm-architecture-register" xlink:title="modm:&#10;architecture:&#10;register">
+<polygon fill="#d3d3d3" stroke="#000000" points="519,-53 409,-53 409,0 519,0 519,-53"/>
+<text text-anchor="middle" x="464" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="464" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
+<text text-anchor="middle" x="464" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">register</text>
 </a>
 </g>
 </g>
 <!-- modm_architecture_register&#45;&gt;modm_math_utils -->
-<g id="edge4" class="edge">
+<g id="edge6" class="edge">
 <title>modm_architecture_register&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M200.0822,-47.2426C203.0054,-48.2915 205.9428,-49.2268 208.8467,-50 363.9438,-91.2978 869.9617,-106.5807 1012.9207,-110.1343"/>
-<polygon fill="#000000" stroke="#000000" points="1012.8776,-113.6342 1022.96,-110.3793 1013.0484,-106.6363 1012.8776,-113.6342"/>
+<path fill="none" stroke="#000000" d="M519.1234,-50.6791C522.0962,-51.5562 525.0669,-52.34 528,-53 764.7407,-106.2691 1541.2003,-114.1677 1732.245,-115.311"/>
+<polygon fill="#000000" stroke="#000000" points="1732.4253,-118.812 1742.4451,-115.3689 1732.4651,-111.8121 1732.4253,-118.812"/>
+</g>
+<!-- modm_board_disco_f469ni -->
+<g id="node8" class="node">
+<title>modm_board_disco_f469ni</title>
+<g id="a_node8"><a xlink:href="../modm-board-disco-f469ni" xlink:title="modm:&#10;board:&#10;disco&#45;f469ni">
+<polygon fill="#d3d3d3" stroke="#000000" points="641,-53 537,-53 537,0 641,0 641,-53"/>
+<text text-anchor="middle" x="589" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="589" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">board:</text>
+<text text-anchor="middle" x="589" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">disco&#45;f469ni</text>
+</a>
+</g>
+</g>
+<!-- modm_board_disco_f469ni&#45;&gt;modm_math_utils -->
+<g id="edge7" class="edge">
+<title>modm_board_disco_f469ni&#45;&gt;modm_math_utils</title>
+<path fill="none" stroke="#000000" d="M641.1663,-50.5593C644.1218,-51.4829 647.0788,-52.3078 650,-53 861.4699,-103.1087 1553.3747,-113.3174 1732.4009,-115.1397"/>
+<polygon fill="#000000" stroke="#000000" points="1732.4473,-118.6402 1742.4813,-115.2388 1732.5163,-111.6405 1732.4473,-118.6402"/>
 </g>
 <!-- modm_communication_xpcc -->
-<g id="node6" class="node">
+<g id="node9" class="node">
 <title>modm_communication_xpcc</title>
-<g id="a_node6"><a xlink:href="../modm-communication-xpcc" xlink:title="modm:&#10;communication:&#10;xpcc">
-<polygon fill="#d3d3d3" stroke="#000000" points="324.3262,-50 217.3672,-50 217.3672,0 324.3262,0 324.3262,-50"/>
-<text text-anchor="middle" x="270.8467" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="270.8467" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">communication:</text>
-<text text-anchor="middle" x="270.8467" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">xpcc</text>
+<g id="a_node9"><a xlink:href="../modm-communication-xpcc" xlink:title="modm:&#10;communication:&#10;xpcc">
+<polygon fill="#d3d3d3" stroke="#000000" points="790.5,-53 659.5,-53 659.5,0 790.5,0 790.5,-53"/>
+<text text-anchor="middle" x="725" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="725" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">communication:</text>
+<text text-anchor="middle" x="725" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">xpcc</text>
 </a>
 </g>
 </g>
 <!-- modm_communication_xpcc&#45;&gt;modm_math_utils -->
-<g id="edge5" class="edge">
+<g id="edge8" class="edge">
 <title>modm_communication_xpcc&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M324.6382,-47.7906C327.3908,-48.6096 330.1372,-49.3541 332.8467,-50 464.0831,-81.2851 883.8512,-103.154 1012.8023,-109.2658"/>
-<polygon fill="#000000" stroke="#000000" points="1012.8221,-112.7705 1022.9753,-109.7437 1013.1506,-105.7782 1012.8221,-112.7705"/>
+<path fill="none" stroke="#000000" d="M790.5594,-50.8144C793.7302,-51.6271 796.8882,-52.3633 800,-53 982.321,-90.3054 1568.4364,-109.5775 1732.1615,-114.3221"/>
+<polygon fill="#000000" stroke="#000000" points="1732.23,-117.8254 1742.3262,-114.6136 1732.4307,-110.8283 1732.23,-117.8254"/>
 </g>
 <!-- modm_driver_ad7280a -->
-<g id="node7" class="node">
+<g id="node10" class="node">
 <title>modm_driver_ad7280a</title>
-<g id="a_node7"><a xlink:href="../modm-driver-ad7280a" xlink:title="modm:&#10;driver:&#10;ad7280a">
-<polygon fill="#d3d3d3" stroke="#000000" points="405.7759,-50 341.9175,-50 341.9175,0 405.7759,0 405.7759,-50"/>
-<text text-anchor="middle" x="373.8467" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="373.8467" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="373.8467" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">ad7280a</text>
+<g id="a_node10"><a xlink:href="../modm-driver-ad7280a" xlink:title="modm:&#10;driver:&#10;ad7280a">
+<polygon fill="#d3d3d3" stroke="#000000" points="887,-53 809,-53 809,0 887,0 887,-53"/>
+<text text-anchor="middle" x="848" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="848" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
+<text text-anchor="middle" x="848" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">ad7280a</text>
 </a>
 </g>
 </g>
 <!-- modm_driver_ad7280a&#45;&gt;modm_math_utils -->
-<g id="edge6" class="edge">
+<g id="edge9" class="edge">
 <title>modm_driver_ad7280a&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M405.8661,-46.3326C408.8243,-47.7437 411.8411,-48.9987 414.8467,-50 527.088,-87.3939 893.8575,-104.8235 1013.0542,-109.5965"/>
-<polygon fill="#000000" stroke="#000000" points="1013.0263,-113.098 1023.1563,-109.9943 1013.3018,-106.1035 1013.0263,-113.098"/>
+<path fill="none" stroke="#000000" d="M887.2286,-49.876C890.1385,-51.0733 893.0791,-52.1356 896,-53 1055.539,-100.2113 1578.4915,-112.3152 1732.1679,-114.8879"/>
+<polygon fill="#000000" stroke="#000000" points="1732.1116,-118.3873 1742.1672,-115.0504 1732.2255,-111.3882 1732.1116,-118.3873"/>
 </g>
 <!-- modm_driver_adc_sampler -->
-<g id="node8" class="node">
+<g id="node11" class="node">
 <title>modm_driver_adc_sampler</title>
-<g id="a_node8"><a xlink:href="../modm-driver-adc-sampler" xlink:title="modm:&#10;driver:&#10;adc_sampler">
-<polygon fill="#d3d3d3" stroke="#000000" points="510.0922,-50 423.6012,-50 423.6012,0 510.0922,0 510.0922,-50"/>
-<text text-anchor="middle" x="466.8467" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="466.8467" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="466.8467" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">adc_sampler</text>
+<g id="a_node11"><a xlink:href="../modm-driver-adc-sampler" xlink:title="modm:&#10;driver:&#10;adc_sampler">
+<polygon fill="#d3d3d3" stroke="#000000" points="1012.5,-53 905.5,-53 905.5,0 1012.5,0 1012.5,-53"/>
+<text text-anchor="middle" x="959" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="959" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
+<text text-anchor="middle" x="959" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">adc_sampler</text>
 </a>
 </g>
 </g>
 <!-- modm_driver_adc_sampler&#45;&gt;modm_math_utils -->
-<g id="edge7" class="edge">
+<g id="edge10" class="edge">
 <title>modm_driver_adc_sampler&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M510.1215,-47.101C513.0351,-48.1845 515.9596,-49.1662 518.8467,-50 612.1052,-76.9334 907.2205,-100.5166 1012.813,-108.2932"/>
-<polygon fill="#000000" stroke="#000000" points="1012.7772,-111.7999 1023.0057,-109.038 1013.2874,-104.8185 1012.7772,-111.7999"/>
+<path fill="none" stroke="#000000" d="M1012.576,-50.3461C1015.7325,-51.3401 1018.8885,-52.2369 1022,-53 1158.4304,-86.4576 1593.6129,-107.6778 1732.1854,-113.7191"/>
+<polygon fill="#000000" stroke="#000000" points="1732.2595,-117.2255 1742.4012,-114.1604 1732.5616,-110.232 1732.2595,-117.2255"/>
 </g>
 <!-- modm_driver_amsys5915 -->
-<g id="node9" class="node">
+<g id="node12" class="node">
 <title>modm_driver_amsys5915</title>
-<g id="a_node9"><a xlink:href="../modm-driver-amsys5915" xlink:title="modm:&#10;driver:&#10;amsys5915">
-<polygon fill="#d3d3d3" stroke="#000000" points="607.3467,-50 528.3467,-50 528.3467,0 607.3467,0 607.3467,-50"/>
-<text text-anchor="middle" x="567.8467" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="567.8467" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="567.8467" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">amsys5915</text>
+<g id="a_node12"><a xlink:href="../modm-driver-amsys5915" xlink:title="modm:&#10;driver:&#10;amsys5915">
+<polygon fill="#d3d3d3" stroke="#000000" points="1129,-53 1031,-53 1031,0 1129,0 1129,-53"/>
+<text text-anchor="middle" x="1080" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="1080" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
+<text text-anchor="middle" x="1080" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">amsys5915</text>
 </a>
 </g>
 </g>
 <!-- modm_driver_amsys5915&#45;&gt;modm_math_utils -->
-<g id="edge8" class="edge">
+<g id="edge11" class="edge">
 <title>modm_driver_amsys5915&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M607.4768,-46.9315C610.2665,-48.0727 613.0726,-49.1121 615.8467,-50 757.704,-95.4014 936.309,-107.0325 1013.0162,-109.9955"/>
-<polygon fill="#000000" stroke="#000000" points="1013.0303,-113.4982 1023.1493,-110.3587 1013.2811,-106.5027 1013.0303,-113.4982"/>
+<path fill="none" stroke="#000000" d="M1129.2722,-50.3111C1132.1913,-51.314 1135.1138,-52.2224 1138,-53 1250.8574,-83.4082 1608.3847,-106.0452 1732.2556,-113.149"/>
+<polygon fill="#000000" stroke="#000000" points="1732.2967,-116.6569 1742.4793,-113.7304 1732.6941,-109.6682 1732.2967,-116.6569"/>
 </g>
 <!-- modm_driver_bme280 -->
-<g id="node10" class="node">
+<g id="node13" class="node">
 <title>modm_driver_bme280</title>
-<g id="a_node10"><a xlink:href="../modm-driver-bme280" xlink:title="modm:&#10;driver:&#10;bme280">
-<polygon fill="#d3d3d3" stroke="#000000" points="686.4503,-50 625.2431,-50 625.2431,0 686.4503,0 686.4503,-50"/>
-<text text-anchor="middle" x="655.8467" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="655.8467" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="655.8467" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">bme280</text>
+<g id="a_node13"><a xlink:href="../modm-driver-bme280" xlink:title="modm:&#10;driver:&#10;bme280">
+<polygon fill="#d3d3d3" stroke="#000000" points="1221,-53 1147,-53 1147,0 1221,0 1221,-53"/>
+<text text-anchor="middle" x="1184" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="1184" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
+<text text-anchor="middle" x="1184" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">bme280</text>
 </a>
 </g>
 </g>
 <!-- modm_driver_bme280&#45;&gt;modm_math_utils -->
-<g id="edge9" class="edge">
+<g id="edge12" class="edge">
 <title>modm_driver_bme280&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M686.7689,-46.337C689.4357,-47.7067 692.1472,-48.9534 694.8467,-50 805.2853,-92.8186 946.57,-105.6597 1013.0516,-109.4496"/>
-<polygon fill="#000000" stroke="#000000" points="1012.8908,-112.9459 1023.063,-109.9833 1013.2635,-105.9558 1012.8908,-112.9459"/>
+<path fill="none" stroke="#000000" d="M1221.0671,-49.5086C1224.0269,-50.8311 1227.0239,-52.019 1230,-53 1323.3198,-83.7612 1620.2807,-105.5388 1731.9724,-112.8298"/>
+<polygon fill="#000000" stroke="#000000" points="1731.985,-116.3378 1742.1899,-113.49 1732.4364,-109.3524 1731.985,-116.3378"/>
 </g>
 <!-- modm_driver_bmp085 -->
-<g id="node11" class="node">
+<g id="node14" class="node">
 <title>modm_driver_bmp085</title>
-<g id="a_node11"><a xlink:href="../modm-driver-bmp085" xlink:title="modm:&#10;driver:&#10;bmp085">
-<polygon fill="#d3d3d3" stroke="#000000" points="765.7364,-50 703.9569,-50 703.9569,0 765.7364,0 765.7364,-50"/>
-<text text-anchor="middle" x="734.8467" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="734.8467" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="734.8467" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">bmp085</text>
+<g id="a_node14"><a xlink:href="../modm-driver-bmp085" xlink:title="modm:&#10;driver:&#10;bmp085">
+<polygon fill="#d3d3d3" stroke="#000000" points="1314.5,-53 1239.5,-53 1239.5,0 1314.5,0 1314.5,-53"/>
+<text text-anchor="middle" x="1277" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="1277" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
+<text text-anchor="middle" x="1277" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">bmp085</text>
 </a>
 </g>
 </g>
 <!-- modm_driver_bmp085&#45;&gt;modm_math_utils -->
-<g id="edge10" class="edge">
+<g id="edge13" class="edge">
 <title>modm_driver_bmp085&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M765.7463,-45.7124C768.7534,-47.298 771.8146,-48.7605 774.8467,-50 855.9715,-83.1628 958.2323,-99.7428 1012.6561,-106.7374"/>
-<polygon fill="#000000" stroke="#000000" points="1012.5268,-110.2483 1022.8827,-108.0106 1013.3917,-103.3019 1012.5268,-110.2483"/>
+<path fill="none" stroke="#000000" d="M1314.6149,-49.666C1317.3985,-50.9133 1320.2099,-52.0442 1323,-53 1398.4725,-78.8535 1634.9728,-102.713 1732.4027,-111.713"/>
+<polygon fill="#000000" stroke="#000000" points="1732.2067,-115.2096 1742.4845,-112.637 1732.8457,-108.2388 1732.2067,-115.2096"/>
 </g>
 <!-- modm_driver_hclax -->
-<g id="node12" class="node">
+<g id="node15" class="node">
 <title>modm_driver_hclax</title>
-<g id="a_node12"><a xlink:href="../modm-driver-hclax" xlink:title="modm:&#10;driver:&#10;hclax">
-<polygon fill="#d3d3d3" stroke="#000000" points="839.5166,-50 784.1768,-50 784.1768,0 839.5166,0 839.5166,-50"/>
-<text text-anchor="middle" x="811.8467" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="811.8467" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="811.8467" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">hclax</text>
+<g id="a_node15"><a xlink:href="../modm-driver-hclax" xlink:title="modm:&#10;driver:&#10;hclax">
+<polygon fill="#d3d3d3" stroke="#000000" points="1397.5,-53 1332.5,-53 1332.5,0 1397.5,0 1397.5,-53"/>
+<text text-anchor="middle" x="1365" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="1365" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
+<text text-anchor="middle" x="1365" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">hclax</text>
 </a>
 </g>
 </g>
 <!-- modm_driver_hclax&#45;&gt;modm_math_utils -->
-<g id="edge11" class="edge">
+<g id="edge14" class="edge">
 <title>modm_driver_hclax&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M839.6297,-45.5354C842.3416,-47.1581 845.1053,-48.6776 847.8467,-50 902.5413,-76.3833 971.0708,-94.0991 1012.8739,-103.3592"/>
-<polygon fill="#000000" stroke="#000000" points="1012.3869,-106.8348 1022.9013,-105.5314 1013.869,-99.9935 1012.3869,-106.8348"/>
+<path fill="none" stroke="#000000" d="M1397.842,-48.8739C1400.8634,-50.4215 1403.9402,-51.8289 1407,-53 1519.2553,-95.966 1662.0238,-109.4806 1732.1634,-113.666"/>
+<polygon fill="#000000" stroke="#000000" points="1732.1965,-117.1733 1742.377,-114.2395 1732.589,-110.1843 1732.1965,-117.1733"/>
 </g>
 <!-- modm_driver_hmc58x -->
-<g id="node13" class="node">
+<g id="node16" class="node">
 <title>modm_driver_hmc58x</title>
-<g id="a_node13"><a xlink:href="../modm-driver-hmc58x" xlink:title="modm:&#10;driver:&#10;hmc58x">
-<polygon fill="#d3d3d3" stroke="#000000" points="918.4503,-50 857.2431,-50 857.2431,0 918.4503,0 918.4503,-50"/>
-<text text-anchor="middle" x="887.8467" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="887.8467" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="887.8467" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">hmc58x</text>
+<g id="a_node16"><a xlink:href="../modm-driver-hmc58x" xlink:title="modm:&#10;driver:&#10;hmc58x">
+<polygon fill="#d3d3d3" stroke="#000000" points="1490,-53 1416,-53 1416,0 1490,0 1490,-53"/>
+<text text-anchor="middle" x="1453" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="1453" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
+<text text-anchor="middle" x="1453" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">hmc58x</text>
 </a>
 </g>
 </g>
 <!-- modm_driver_hmc58x&#45;&gt;modm_math_utils -->
-<g id="edge12" class="edge">
+<g id="edge15" class="edge">
 <title>modm_driver_hmc58x&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M918.6753,-44.6853C921.75,-46.5224 924.8441,-48.3224 927.8467,-50 956.1366,-65.8055 989.0688,-82.0274 1013.7339,-93.7657"/>
-<polygon fill="#000000" stroke="#000000" points="1012.5528,-97.0789 1023.089,-98.1919 1015.5465,-90.7513 1012.5528,-97.0789"/>
+<path fill="none" stroke="#000000" d="M1490.197,-49.1478C1493.1268,-50.5537 1496.0815,-51.859 1499,-53 1578.311,-84.0059 1676.7481,-101.6769 1732.0543,-109.8565"/>
+<polygon fill="#000000" stroke="#000000" points="1731.7958,-113.3554 1742.1935,-111.3208 1732.7964,-106.4273 1731.7958,-113.3554"/>
 </g>
 <!-- modm_driver_hmc6343 -->
-<g id="node14" class="node">
+<g id="node17" class="node">
 <title>modm_driver_hmc6343</title>
-<g id="a_node14"><a xlink:href="../modm-driver-hmc6343" xlink:title="modm:&#10;driver:&#10;hmc6343">
-<polygon fill="#d3d3d3" stroke="#000000" points="1004.9503,-50 936.7431,-50 936.7431,0 1004.9503,0 1004.9503,-50"/>
-<text text-anchor="middle" x="970.8467" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="970.8467" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="970.8467" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">hmc6343</text>
+<g id="a_node17"><a xlink:href="../modm-driver-hmc6343" xlink:title="modm:&#10;driver:&#10;hmc6343">
+<polygon fill="#d3d3d3" stroke="#000000" points="1591.5,-53 1508.5,-53 1508.5,0 1591.5,0 1591.5,-53"/>
+<text text-anchor="middle" x="1550" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="1550" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
+<text text-anchor="middle" x="1550" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">hmc6343</text>
 </a>
 </g>
 </g>
 <!-- modm_driver_hmc6343&#45;&gt;modm_math_utils -->
-<g id="edge13" class="edge">
+<g id="edge16" class="edge">
 <title>modm_driver_hmc6343&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M994.4166,-50.3377C1002.5544,-59.0858 1011.7902,-69.0143 1020.3991,-78.2688"/>
-<polygon fill="#000000" stroke="#000000" points="1018.0715,-80.9054 1027.4452,-85.8434 1023.1968,-76.1376 1018.0715,-80.9054"/>
+<path fill="none" stroke="#000000" d="M1591.5269,-48.6568C1594.7089,-50.1762 1597.8914,-51.6414 1601,-53 1645.09,-72.2692 1697.2079,-90.4023 1732.8336,-102.1225"/>
+<polygon fill="#000000" stroke="#000000" points="1731.8317,-105.4772 1742.4242,-105.2538 1734.0043,-98.8229 1731.8317,-105.4772"/>
+</g>
+<!-- modm_driver_itg3200 -->
+<g id="node18" class="node">
+<title>modm_driver_itg3200</title>
+<g id="a_node18"><a xlink:href="../modm-driver-itg3200" xlink:title="modm:&#10;driver:&#10;itg3200">
+<polygon fill="#d3d3d3" stroke="#000000" points="1682,-53 1610,-53 1610,0 1682,0 1682,-53"/>
+<text text-anchor="middle" x="1646" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="1646" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
+<text text-anchor="middle" x="1646" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">itg3200</text>
+</a>
+</g>
+</g>
+<!-- modm_driver_itg3200&#45;&gt;modm_math_utils -->
+<g id="edge17" class="edge">
+<title>modm_driver_itg3200&#45;&gt;modm_math_utils</title>
+<path fill="none" stroke="#000000" d="M1682.277,-51.5283C1698.2688,-62.5614 1717.1439,-75.5838 1733.6761,-86.9897"/>
+<polygon fill="#000000" stroke="#000000" points="1731.8614,-89.9899 1742.0801,-92.7878 1735.8366,-84.2281 1731.8614,-89.9899"/>
 </g>
 <!-- modm_driver_l3gd20 -->
-<g id="node15" class="node">
+<g id="node19" class="node">
 <title>modm_driver_l3gd20</title>
-<g id="a_node15"><a xlink:href="../modm-driver-l3gd20" xlink:title="modm:&#10;driver:&#10;l3gd20">
-<polygon fill="#d3d3d3" stroke="#000000" points="1078.5166,-50 1023.1768,-50 1023.1768,0 1078.5166,0 1078.5166,-50"/>
-<text text-anchor="middle" x="1050.8467" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="1050.8467" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="1050.8467" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">l3gd20</text>
+<g id="a_node19"><a xlink:href="../modm-driver-l3gd20" xlink:title="modm:&#10;driver:&#10;l3gd20">
+<polygon fill="#d3d3d3" stroke="#000000" points="1766,-53 1700,-53 1700,0 1766,0 1766,-53"/>
+<text text-anchor="middle" x="1733" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="1733" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
+<text text-anchor="middle" x="1733" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">l3gd20</text>
 </a>
 </g>
 </g>
 <!-- modm_driver_l3gd20&#45;&gt;modm_math_utils -->
-<g id="edge14" class="edge">
+<g id="edge18" class="edge">
 <title>modm_driver_l3gd20&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M1050.8467,-50.3377C1050.8467,-58.2984 1050.8467,-67.2367 1050.8467,-75.7551"/>
-<polygon fill="#000000" stroke="#000000" points="1047.3468,-75.8434 1050.8467,-85.8434 1054.3468,-75.8434 1047.3468,-75.8434"/>
+<path fill="none" stroke="#000000" d="M1745.6014,-53.2029C1749.5052,-61.4753 1753.8726,-70.73 1758.0223,-79.5235"/>
+<polygon fill="#000000" stroke="#000000" points="1754.9744,-81.2661 1762.4075,-88.8159 1761.305,-78.2786 1754.9744,-81.2661"/>
 </g>
 <!-- modm_driver_lis3dsh -->
-<g id="node16" class="node">
+<g id="node20" class="node">
 <title>modm_driver_lis3dsh</title>
-<g id="a_node16"><a xlink:href="../modm-driver-lis3dsh" xlink:title="modm:&#10;driver:&#10;lis3dsh">
-<polygon fill="#d3d3d3" stroke="#000000" points="1152.5234,-50 1097.17,-50 1097.17,0 1152.5234,0 1152.5234,-50"/>
-<text text-anchor="middle" x="1124.8467" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="1124.8467" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="1124.8467" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">lis3dsh</text>
+<g id="a_node20"><a xlink:href="../modm-driver-lis3dsh" xlink:title="modm:&#10;driver:&#10;lis3dsh">
+<polygon fill="#d3d3d3" stroke="#000000" points="1852,-53 1784,-53 1784,0 1852,0 1852,-53"/>
+<text text-anchor="middle" x="1818" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="1818" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
+<text text-anchor="middle" x="1818" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">lis3dsh</text>
 </a>
 </g>
 </g>
 <!-- modm_driver_lis3dsh&#45;&gt;modm_math_utils -->
-<g id="edge15" class="edge">
+<g id="edge19" class="edge">
 <title>modm_driver_lis3dsh&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M1103.0445,-50.3377C1095.5923,-58.9983 1087.1447,-68.8159 1079.2498,-77.991"/>
-<polygon fill="#000000" stroke="#000000" points="1076.3625,-75.9804 1072.4931,-85.8434 1081.6685,-80.5461 1076.3625,-75.9804"/>
+<path fill="none" stroke="#000000" d="M1805.0986,-53.2029C1801.0593,-61.5633 1796.5352,-70.927 1792.2464,-79.8039"/>
+<polygon fill="#000000" stroke="#000000" points="1789.0912,-78.2891 1787.8923,-88.8159 1795.3941,-81.3344 1789.0912,-78.2891"/>
 </g>
 <!-- modm_driver_lsm303a -->
-<g id="node17" class="node">
+<g id="node21" class="node">
 <title>modm_driver_lsm303a</title>
-<g id="a_node17"><a xlink:href="../modm-driver-lsm303a" xlink:title="modm:&#10;driver:&#10;lsm303a">
-<polygon fill="#d3d3d3" stroke="#000000" points="1234.7896,-50 1170.9037,-50 1170.9037,0 1234.7896,0 1234.7896,-50"/>
-<text text-anchor="middle" x="1202.8467" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="1202.8467" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="1202.8467" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">lsm303a</text>
+<g id="a_node21"><a xlink:href="../modm-driver-lsm303a" xlink:title="modm:&#10;driver:&#10;lsm303a">
+<polygon fill="#d3d3d3" stroke="#000000" points="1947.5,-53 1870.5,-53 1870.5,0 1947.5,0 1947.5,-53"/>
+<text text-anchor="middle" x="1909" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="1909" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
+<text text-anchor="middle" x="1909" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">lsm303a</text>
 </a>
 </g>
 </g>
 <!-- modm_driver_lsm303a&#45;&gt;modm_math_utils -->
-<g id="edge16" class="edge">
+<g id="edge20" class="edge">
 <title>modm_driver_lsm303a&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M1170.6997,-44.7897C1167.7171,-46.569 1164.7323,-48.3285 1161.8467,-50 1137.3728,-64.1768 1109.4706,-79.5068 1087.7636,-91.2524"/>
-<polygon fill="#000000" stroke="#000000" points="1086.0061,-88.2236 1078.8679,-96.0529 1089.3305,-94.3839 1086.0061,-88.2236"/>
+<path fill="none" stroke="#000000" d="M1870.2416,-52.2425C1853.3912,-63.4342 1833.6237,-76.5634 1816.4779,-87.9512"/>
+<polygon fill="#000000" stroke="#000000" points="1814.1737,-85.2799 1807.7801,-93.7282 1818.0466,-91.111 1814.1737,-85.2799"/>
+</g>
+<!-- modm_driver_nrf24 -->
+<g id="node22" class="node">
+<title>modm_driver_nrf24</title>
+<g id="a_node22"><a xlink:href="../modm-driver-nrf24" xlink:title="modm:&#10;driver:&#10;nrf24">
+<polygon fill="#d3d3d3" stroke="#000000" points="2030.5,-53 1965.5,-53 1965.5,0 2030.5,0 2030.5,-53"/>
+<text text-anchor="middle" x="1998" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="1998" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
+<text text-anchor="middle" x="1998" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">nrf24</text>
+</a>
+</g>
+</g>
+<!-- modm_driver_nrf24&#45;&gt;modm_math_utils -->
+<g id="edge21" class="edge">
+<title>modm_driver_nrf24&#45;&gt;modm_math_utils</title>
+<path fill="none" stroke="#000000" d="M1965.2847,-48.6209C1962.5277,-50.1841 1959.7444,-51.6666 1957,-53 1910.9345,-75.3826 1854.7749,-93.3709 1817.1296,-104.2013"/>
+<polygon fill="#000000" stroke="#000000" points="1816.1674,-100.8361 1807.5014,-106.9313 1818.077,-107.5706 1816.1674,-100.8361"/>
 </g>
 <!-- modm_driver_pca9535 -->
-<g id="node18" class="node">
+<g id="node23" class="node">
 <title>modm_driver_pca9535</title>
-<g id="a_node18"><a xlink:href="../modm-driver-pca9535" xlink:title="modm:&#10;driver:&#10;pca9535">
-<polygon fill="#d3d3d3" stroke="#000000" points="1315.7759,-50 1251.9175,-50 1251.9175,0 1315.7759,0 1315.7759,-50"/>
-<text text-anchor="middle" x="1283.8467" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="1283.8467" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="1283.8467" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">pca9535</text>
+<g id="a_node23"><a xlink:href="../modm-driver-pca9535" xlink:title="modm:&#10;driver:&#10;pca9535">
+<polygon fill="#d3d3d3" stroke="#000000" points="2127,-53 2049,-53 2049,0 2127,0 2127,-53"/>
+<text text-anchor="middle" x="2088" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="2088" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
+<text text-anchor="middle" x="2088" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">pca9535</text>
 </a>
 </g>
 </g>
 <!-- modm_driver_pca9535&#45;&gt;modm_math_utils -->
-<g id="edge17" class="edge">
+<g id="edge22" class="edge">
 <title>modm_driver_pca9535&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M1251.928,-45.919C1249.2385,-47.3824 1246.5235,-48.7647 1243.8467,-50 1192.0405,-73.9077 1128.3127,-92.027 1088.6255,-102.0831"/>
-<polygon fill="#000000" stroke="#000000" points="1087.6881,-98.7096 1078.8316,-104.5244 1089.3812,-105.5017 1087.6881,-98.7096"/>
+<path fill="none" stroke="#000000" d="M2048.8592,-49.2198C2045.9038,-50.5907 2042.9309,-51.8698 2040,-53 1964.3341,-82.1765 1871.0682,-100.317 1817.7754,-109.1095"/>
+<polygon fill="#000000" stroke="#000000" points="1816.98,-105.6926 1807.6668,-110.7439 1818.0973,-112.6029 1816.98,-105.6926"/>
 </g>
 <!-- modm_driver_tmp102 -->
-<g id="node19" class="node">
+<g id="node24" class="node">
 <title>modm_driver_tmp102</title>
-<g id="a_node19"><a xlink:href="../modm-driver-tmp102" xlink:title="modm:&#10;driver:&#10;tmp102">
-<polygon fill="#d3d3d3" stroke="#000000" points="1392.1264,-50 1333.567,-50 1333.567,0 1392.1264,0 1392.1264,-50"/>
-<text text-anchor="middle" x="1362.8467" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="1362.8467" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="1362.8467" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">tmp102</text>
+<g id="a_node24"><a xlink:href="../modm-driver-tmp102" xlink:title="modm:&#10;driver:&#10;tmp102">
+<polygon fill="#d3d3d3" stroke="#000000" points="2217,-53 2145,-53 2145,0 2217,0 2217,-53"/>
+<text text-anchor="middle" x="2181" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="2181" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
+<text text-anchor="middle" x="2181" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">tmp102</text>
 </a>
 </g>
 </g>
 <!-- modm_driver_tmp102&#45;&gt;modm_math_utils -->
-<g id="edge18" class="edge">
+<g id="edge23" class="edge">
 <title>modm_driver_tmp102&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M1333.5525,-45.7296C1330.6831,-47.3115 1327.7555,-48.7685 1324.8467,-50 1244.6976,-83.9319 1143.0245,-100.2079 1088.8668,-106.9484"/>
-<polygon fill="#000000" stroke="#000000" points="1088.2001,-103.5033 1078.6893,-108.1717 1089.0356,-110.4532 1088.2001,-103.5033"/>
+<path fill="none" stroke="#000000" d="M2144.9535,-49.2045C2141.9844,-50.6166 2138.9789,-51.9065 2136,-53 2025.8189,-93.4467 1886.9134,-108.0576 1817.9396,-113.0633"/>
+<polygon fill="#000000" stroke="#000000" points="1817.6175,-109.5771 1807.8836,-113.7604 1818.1017,-116.5603 1817.6175,-109.5771"/>
 </g>
 <!-- modm_driver_vl6180 -->
-<g id="node20" class="node">
+<g id="node25" class="node">
 <title>modm_driver_vl6180</title>
-<g id="a_node20"><a xlink:href="../modm-driver-vl6180" xlink:title="modm:&#10;driver:&#10;vl6180">
-<polygon fill="#d3d3d3" stroke="#000000" points="1465.5166,-50 1410.1768,-50 1410.1768,0 1465.5166,0 1465.5166,-50"/>
-<text text-anchor="middle" x="1437.8467" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="1437.8467" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="1437.8467" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">vl6180</text>
+<g id="a_node25"><a xlink:href="../modm-driver-vl6180" xlink:title="modm:&#10;driver:&#10;vl6180">
+<polygon fill="#d3d3d3" stroke="#000000" points="2300.5,-53 2235.5,-53 2235.5,0 2300.5,0 2300.5,-53"/>
+<text text-anchor="middle" x="2268" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="2268" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
+<text text-anchor="middle" x="2268" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">vl6180</text>
 </a>
 </g>
 </g>
 <!-- modm_driver_vl6180&#45;&gt;modm_math_utils -->
-<g id="edge19" class="edge">
+<g id="edge24" class="edge">
 <title>modm_driver_vl6180&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M1409.838,-45.6488C1406.8911,-47.2908 1403.8663,-48.782 1400.8467,-50 1293.2882,-93.3827 1154.9113,-105.9451 1089.0151,-109.5577"/>
-<polygon fill="#000000" stroke="#000000" points="1088.5111,-106.0787 1078.7015,-110.0816 1088.8662,-113.0697 1088.5111,-106.0787"/>
+<path fill="none" stroke="#000000" d="M2235.1961,-48.9758C2232.1665,-50.5013 2229.0773,-51.8757 2226,-53 2151.2294,-80.3176 1914.9455,-103.3375 1817.5761,-111.9127"/>
+<polygon fill="#000000" stroke="#000000" points="1817.1581,-108.4358 1807.5003,-112.7921 1817.7667,-115.4093 1817.1581,-108.4358"/>
 </g>
 <!-- modm_io -->
-<g id="node21" class="node">
+<g id="node26" class="node">
 <title>modm_io</title>
-<g id="a_node21"><a xlink:href="../modm-io" xlink:title="modm:&#10;io">
-<polygon fill="#d3d3d3" stroke="#000000" points="1539.5166,-43 1484.1768,-43 1484.1768,-7 1539.5166,-7 1539.5166,-43"/>
-<text text-anchor="middle" x="1511.8467" y="-27.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="1511.8467" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">io</text>
+<g id="a_node26"><a xlink:href="../modm-io" xlink:title="modm:&#10;io">
+<polygon fill="#d3d3d3" stroke="#000000" points="2383.5,-45.5 2318.5,-45.5 2318.5,-7.5 2383.5,-7.5 2383.5,-45.5"/>
+<text text-anchor="middle" x="2351" y="-30.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="2351" y="-15.3" font-family="Times,serif" font-size="14.00" fill="#000000">io</text>
 </a>
 </g>
 </g>
 <!-- modm_io&#45;&gt;modm_math_utils -->
-<g id="edge20" class="edge">
+<g id="edge25" class="edge">
 <title>modm_io&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M1488.4384,-43.0774C1484.1018,-45.7563 1479.4751,-48.2125 1474.8467,-50 1404.4434,-77.1895 1179.1594,-99.6089 1088.8359,-107.7313"/>
-<polygon fill="#000000" stroke="#000000" points="1088.41,-104.2553 1078.7598,-108.6283 1089.0308,-111.2277 1088.41,-104.2553"/>
+<path fill="none" stroke="#000000" d="M2325.0202,-45.7633C2320.2194,-48.5917 2315.1046,-51.1653 2310,-53 2219.3134,-85.5951 1927.8816,-106.2166 1817.7176,-113.0172"/>
+<polygon fill="#000000" stroke="#000000" points="1817.4037,-109.5298 1807.6353,-113.6321 1817.8299,-116.5168 1817.4037,-109.5298"/>
 </g>
 <!-- modm_math_filter -->
-<g id="node22" class="node">
+<g id="node27" class="node">
 <title>modm_math_filter</title>
-<g id="a_node22"><a xlink:href="../modm-math-filter" xlink:title="modm:&#10;math:&#10;filter">
-<polygon fill="#d3d3d3" stroke="#000000" points="1613.5166,-50 1558.1768,-50 1558.1768,0 1613.5166,0 1613.5166,-50"/>
-<text text-anchor="middle" x="1585.8467" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="1585.8467" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
-<text text-anchor="middle" x="1585.8467" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">filter</text>
+<g id="a_node27"><a xlink:href="../modm-math-filter" xlink:title="modm:&#10;math:&#10;filter">
+<polygon fill="#d3d3d3" stroke="#000000" points="2466.5,-53 2401.5,-53 2401.5,0 2466.5,0 2466.5,-53"/>
+<text text-anchor="middle" x="2434" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="2434" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
+<text text-anchor="middle" x="2434" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">filter</text>
 </a>
 </g>
 </g>
 <!-- modm_math_filter&#45;&gt;modm_math_utils -->
-<g id="edge21" class="edge">
+<g id="edge26" class="edge">
 <title>modm_math_filter&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M1557.9006,-45.81C1554.9411,-47.4194 1551.8962,-48.8589 1548.8467,-50 1464.2436,-81.6565 1189.8354,-102.0585 1088.7152,-108.6628"/>
-<polygon fill="#000000" stroke="#000000" points="1088.4007,-105.1758 1078.6466,-109.3121 1088.8511,-112.1612 1088.4007,-105.1758"/>
+<path fill="none" stroke="#000000" d="M2401.1123,-49.5704C2398.4395,-50.8786 2395.7193,-52.0464 2393,-53 2286.3325,-90.4078 1939.9313,-108.4616 1817.967,-113.7737"/>
+<polygon fill="#000000" stroke="#000000" points="1817.7271,-110.2806 1807.8862,-114.2058 1818.027,-117.2742 1817.7271,-110.2806"/>
 </g>
 <!-- modm_math_geometry -->
-<g id="node23" class="node">
+<g id="node28" class="node">
 <title>modm_math_geometry</title>
-<g id="a_node23"><a xlink:href="../modm-math-geometry" xlink:title="modm:&#10;math:&#10;geometry">
-<polygon fill="#d3d3d3" stroke="#000000" points="1700.2159,-50 1631.4774,-50 1631.4774,0 1700.2159,0 1700.2159,-50"/>
-<text text-anchor="middle" x="1665.8467" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="1665.8467" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
-<text text-anchor="middle" x="1665.8467" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">geometry</text>
+<g id="a_node28"><a xlink:href="../modm-math-geometry" xlink:title="modm:&#10;math:&#10;geometry">
+<polygon fill="#d3d3d3" stroke="#000000" points="2569.5,-53 2484.5,-53 2484.5,0 2569.5,0 2569.5,-53"/>
+<text text-anchor="middle" x="2527" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="2527" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
+<text text-anchor="middle" x="2527" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">geometry</text>
 </a>
 </g>
 </g>
 <!-- modm_math_geometry&#45;&gt;modm_math_utils -->
-<g id="edge22" class="edge">
+<g id="edge27" class="edge">
 <title>modm_math_geometry&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M1631.2155,-46.733C1628.4445,-47.9745 1625.6369,-49.0864 1622.8467,-50 1522.8572,-82.7403 1199.9744,-102.9092 1088.8425,-109.0216"/>
-<polygon fill="#000000" stroke="#000000" points="1088.5588,-105.5317 1078.7635,-109.5692 1088.9386,-112.5214 1088.5588,-105.5317"/>
+<path fill="none" stroke="#000000" d="M2484.3671,-50.1439C2481.5805,-51.2217 2478.7777,-52.189 2476,-53 2351.3848,-89.383 1950.6571,-108.4283 1818.0566,-113.8507"/>
+<polygon fill="#000000" stroke="#000000" points="1817.735,-110.3608 1807.8843,-114.2614 1818.0174,-117.3551 1817.735,-110.3608"/>
+</g>
+<!-- modm_math_interpolation -->
+<g id="node29" class="node">
+<title>modm_math_interpolation</title>
+<g id="a_node29"><a xlink:href="../modm-math-interpolation" xlink:title="modm:&#10;math:&#10;interpolation">
+<polygon fill="#d3d3d3" stroke="#000000" points="2696.5,-53 2587.5,-53 2587.5,0 2696.5,0 2696.5,-53"/>
+<text text-anchor="middle" x="2642" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="2642" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
+<text text-anchor="middle" x="2642" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">interpolation</text>
+</a>
+</g>
+</g>
+<!-- modm_math_interpolation&#45;&gt;modm_math_utils -->
+<g id="edge28" class="edge">
+<title>modm_math_interpolation&#45;&gt;modm_math_utils</title>
+<path fill="none" stroke="#000000" d="M2587.3763,-50.6916C2584.57,-51.5508 2581.7676,-52.329 2579,-53 2432.322,-88.5642 1962.4252,-108.5555 1817.7827,-113.9791"/>
+<polygon fill="#000000" stroke="#000000" points="1817.4082,-110.4905 1807.5449,-114.3589 1817.6678,-117.4857 1817.4082,-110.4905"/>
+</g>
+<!-- modm_math_saturated -->
+<g id="node30" class="node">
+<title>modm_math_saturated</title>
+<g id="a_node30"><a xlink:href="../modm-math-saturated" xlink:title="modm:&#10;math:&#10;saturated">
+<polygon fill="#d3d3d3" stroke="#000000" points="2801,-53 2715,-53 2715,0 2801,0 2801,-53"/>
+<text text-anchor="middle" x="2758" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="2758" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
+<text text-anchor="middle" x="2758" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">saturated</text>
+</a>
+</g>
+</g>
+<!-- modm_math_saturated&#45;&gt;modm_math_utils -->
+<g id="edge29" class="edge">
+<title>modm_math_saturated&#45;&gt;modm_math_utils</title>
+<path fill="none" stroke="#000000" d="M2714.8262,-50.1035C2711.8879,-51.2088 2708.9303,-52.1916 2706,-53 2535.408,-100.0605 1977.8963,-112.3168 1818.14,-114.8986"/>
+<polygon fill="#000000" stroke="#000000" points="1817.7111,-111.4048 1807.7673,-115.0615 1817.8211,-118.4039 1817.7111,-111.4048"/>
 </g>
 <!-- modm_platform_gpio -->
-<g id="node24" class="node">
+<g id="node31" class="node">
 <title>modm_platform_gpio</title>
-<g id="a_node24"><a xlink:href="../modm-platform-gpio" xlink:title="modm:&#10;platform:&#10;gpio">
-<polygon fill="#d3d3d3" stroke="#000000" points="1785.9434,-50 1717.7499,-50 1717.7499,0 1785.9434,0 1785.9434,-50"/>
-<text text-anchor="middle" x="1751.8467" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="1751.8467" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="1751.8467" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">gpio</text>
+<g id="a_node31"><a xlink:href="../modm-platform-gpio" xlink:title="modm:&#10;platform:&#10;gpio">
+<polygon fill="#d3d3d3" stroke="#000000" points="2902.5,-53 2819.5,-53 2819.5,0 2902.5,0 2902.5,-53"/>
+<text text-anchor="middle" x="2861" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="2861" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="2861" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">gpio</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_gpio&#45;&gt;modm_math_utils -->
-<g id="edge23" class="edge">
+<g id="edge30" class="edge">
 <title>modm_platform_gpio&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M1717.7188,-46.5578C1714.7862,-47.878 1711.8076,-49.053 1708.8467,-50 1592.0346,-87.3581 1211.3983,-104.8629 1089.0741,-109.6191"/>
-<polygon fill="#000000" stroke="#000000" points="1088.5776,-106.1354 1078.7187,-110.015 1088.8452,-113.1303 1088.5776,-106.1354"/>
+<path fill="none" stroke="#000000" d="M2819.2601,-49.9068C2816.1825,-51.0968 2813.0775,-52.1491 2810,-53 2618.598,-105.923 1988.3491,-114.0467 1817.8502,-115.2812"/>
+<polygon fill="#000000" stroke="#000000" points="1817.7296,-111.7819 1807.7537,-115.3501 1817.7774,-118.7817 1817.7296,-111.7819"/>
+</g>
+<!-- modm_processing_timer -->
+<g id="node32" class="node">
+<title>modm_processing_timer</title>
+<g id="a_node32"><a xlink:href="../modm-processing-timer" xlink:title="modm:&#10;processing:&#10;timer">
+<polygon fill="#d3d3d3" stroke="#000000" points="3019.5,-53 2920.5,-53 2920.5,0 3019.5,0 3019.5,-53"/>
+<text text-anchor="middle" x="2970" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="2970" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">processing:</text>
+<text text-anchor="middle" x="2970" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">timer</text>
+</a>
+</g>
+</g>
+<!-- modm_processing_timer&#45;&gt;modm_math_utils -->
+<g id="edge31" class="edge">
+<title>modm_processing_timer&#45;&gt;modm_math_utils</title>
+<path fill="none" stroke="#000000" d="M2920.4408,-50.5668C2917.62,-51.4885 2914.7947,-52.3109 2912,-53 2698.6324,-105.6092 1998.343,-113.9793 1817.7792,-115.2711"/>
+<polygon fill="#000000" stroke="#000000" points="1817.5912,-111.7722 1807.6152,-115.3401 1817.6388,-118.772 1817.5912,-111.7722"/>
+</g>
+<!-- modm_ui_animation -->
+<g id="node33" class="node">
+<title>modm_ui_animation</title>
+<g id="a_node33"><a xlink:href="../modm-ui-animation" xlink:title="modm:&#10;ui:&#10;animation">
+<polygon fill="#d3d3d3" stroke="#000000" points="3126,-53 3038,-53 3038,0 3126,0 3126,-53"/>
+<text text-anchor="middle" x="3082" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="3082" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">ui:</text>
+<text text-anchor="middle" x="3082" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">animation</text>
+</a>
+</g>
+</g>
+<!-- modm_ui_animation&#45;&gt;modm_math_utils -->
+<g id="edge32" class="edge">
+<title>modm_ui_animation&#45;&gt;modm_math_utils</title>
+<path fill="none" stroke="#000000" d="M3037.9923,-50.1613C3034.9984,-51.2525 3031.9851,-52.2164 3029,-53 2909.9066,-84.264 2024.1857,-109.0274 1817.8659,-114.4108"/>
+<polygon fill="#000000" stroke="#000000" points="1817.6336,-110.9155 1807.7278,-114.6739 1817.8153,-117.9132 1817.6336,-110.9155"/>
 </g>
 <!-- modm_ui_color -->
-<g id="node25" class="node">
+<g id="node34" class="node">
 <title>modm_ui_color</title>
-<g id="a_node25"><a xlink:href="../modm-ui-color" xlink:title="modm:&#10;ui:&#10;color">
-<polygon fill="#d3d3d3" stroke="#000000" points="1859.5166,-50 1804.1768,-50 1804.1768,0 1859.5166,0 1859.5166,-50"/>
-<text text-anchor="middle" x="1831.8467" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="1831.8467" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">ui:</text>
-<text text-anchor="middle" x="1831.8467" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">color</text>
+<g id="a_node34"><a xlink:href="../modm-ui-color" xlink:title="modm:&#10;ui:&#10;color">
+<polygon fill="#d3d3d3" stroke="#000000" points="3209.5,-53 3144.5,-53 3144.5,0 3209.5,0 3209.5,-53"/>
+<text text-anchor="middle" x="3177" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="3177" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">ui:</text>
+<text text-anchor="middle" x="3177" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">color</text>
 </a>
 </g>
 </g>
 <!-- modm_ui_color&#45;&gt;modm_math_utils -->
-<g id="edge24" class="edge">
+<g id="edge33" class="edge">
 <title>modm_ui_color&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M1803.9473,-45.9385C1800.9783,-47.5219 1797.9185,-48.9203 1794.8467,-50 1662.4113,-96.551 1221.3414,-107.9986 1088.821,-110.4186"/>
-<polygon fill="#000000" stroke="#000000" points="1088.6825,-106.9204 1078.7457,-110.5959 1088.8057,-113.9193 1088.6825,-106.9204"/>
+<path fill="none" stroke="#000000" d="M3144.3013,-49.2854C3141.2488,-50.7437 3138.1257,-52.018 3135,-53 3006.8753,-93.2516 2034.3033,-111.2944 1817.6788,-114.8364"/>
+<polygon fill="#000000" stroke="#000000" points="1817.593,-111.3372 1807.651,-114.9987 1817.7064,-118.3363 1817.593,-111.3372"/>
 </g>
 <!-- modm_ui_display -->
-<g id="node26" class="node">
+<g id="node35" class="node">
 <title>modm_ui_display</title>
-<g id="a_node26"><a xlink:href="../modm-ui-display" xlink:title="modm:&#10;ui:&#10;display">
-<polygon fill="#d3d3d3" stroke="#000000" points="1934.2898,-50 1877.4035,-50 1877.4035,0 1934.2898,0 1934.2898,-50"/>
-<text text-anchor="middle" x="1905.8467" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="1905.8467" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">ui:</text>
-<text text-anchor="middle" x="1905.8467" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">display</text>
+<g id="a_node35"><a xlink:href="../modm-ui-display" xlink:title="modm:&#10;ui:&#10;display">
+<polygon fill="#d3d3d3" stroke="#000000" points="3296,-53 3228,-53 3228,0 3296,0 3296,-53"/>
+<text text-anchor="middle" x="3262" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="3262" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">ui:</text>
+<text text-anchor="middle" x="3262" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">display</text>
 </a>
 </g>
 </g>
 <!-- modm_ui_display&#45;&gt;modm_math_utils -->
-<g id="edge25" class="edge">
+<g id="edge34" class="edge">
 <title>modm_ui_display&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M1877.5306,-46.1865C1874.6932,-47.6726 1871.776,-48.9825 1868.8467,-50 1722.006,-101.0071 1230.7302,-109.3798 1089.2645,-110.7395"/>
-<polygon fill="#000000" stroke="#000000" points="1088.9008,-107.2426 1078.9326,-110.8322 1088.9636,-114.2423 1088.9008,-107.2426"/>
+<path fill="none" stroke="#000000" d="M3227.9983,-49.5231C3225.0374,-50.884 3222.0179,-52.0738 3219,-53 3082.1878,-94.9884 2042.5152,-111.7745 1817.7554,-114.9319"/>
+<polygon fill="#000000" stroke="#000000" points="1817.6258,-111.4333 1807.6754,-115.072 1817.7231,-118.4326 1817.6258,-111.4333"/>
 </g>
 </g>
 </svg>
@@ -3408,7 +3640,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.583bbe55.js"></script>
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       

@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -13,7 +13,7 @@
         <meta name="description" content="A modular C++14 library for barebone programming">
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-test-driver/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-driver-pca9548a/">
       
       
         <meta name="author" content="Niklas Hauser">
@@ -38,15 +38,15 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
-        <title>Modm test driver - modm barebone embedded library</title>
+        <title>modm:driver:pca9548a - modm barebone embedded library</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.451f80e5.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
@@ -67,6 +67,7 @@
       
     
     <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
     
       <link rel="stylesheet" href="../../../extra.css">
     
@@ -106,7 +107,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../../#modmtestdriver" tabindex="1" class="md-skip">
+      <a href="#modmdriverpca9548a" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -132,7 +133,7 @@
                 modm barebone embedded library
               </span>
               <span class="md-header-nav__topic">
-                Modm test driver
+                modm:driver:pca9548a
               </span>
             
           
@@ -204,7 +205,9 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
@@ -239,7 +242,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../build-systems/" title="Reference" class="md-tabs__link">
+        <a href="../../build-systems/" title="Reference" class="md-tabs__link md-tabs__link--active">
           Reference
         </a>
       
@@ -428,10 +431,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Reference
@@ -459,10 +464,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" checked>
     
     <label class="md-nav__link" for="nav-3-2">
       Modules
@@ -650,6 +657,18 @@
   <li class="md-nav__item">
     <a href="../modm-architecture-i2c-device/" title="modm:architecture:i2c.device" class="md-nav__link">
       modm:architecture:i2c.device
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-i2c-multiplexer/" title="modm:architecture:i2c.multiplexer" class="md-nav__link">
+      modm:architecture:i2c.multiplexer
     </a>
   </li>
 
@@ -1476,6 +1495,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../modm-driver-pat9125el/" title="modm:driver:pat9125el" class="md-nav__link">
+      modm:driver:pat9125el
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../modm-driver-pca8574/" title="modm:driver:pca8574" class="md-nav__link">
       modm:driver:pca8574
     </a>
@@ -1491,6 +1522,63 @@
     <a href="../modm-driver-pca9535/" title="modm:driver:pca9535" class="md-nav__link">
       modm:driver:pca9535
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        modm:driver:pca9548a
+      </label>
+    
+    <a href="./" title="modm:driver:pca9548a" class="md-nav__link md-nav__link--active">
+      modm:driver:pca9548a
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#content" title="Content" class="md-nav__link">
+    Content
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -2749,6 +2837,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#content" title="Content" class="md-nav__link">
+    Content
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dependencies" title="Dependencies" class="md-nav__link">
     Dependencies
   </a>
@@ -2775,229 +2870,98 @@
                 <div class="admonition warning">
 <p class="admonition-title">These module docs are in beta and may be incomplete.</p>
 </div>
-<h1 id="modmtestdriver">modm:test:driver<a class="headerlink" href="#modmtestdriver" title="Permanent link">&para;</a></h1>
+<h1 id="modmdriverpca9548a">modm:driver:pca9548a<a class="headerlink" href="#modmdriverpca9548a" title="Permanent link">&para;</a></h1>
+<h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="c1">// Class</span>
+<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">Pca9548a</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">I2cMaster</span>  <span class="o">&gt;</span><span class="p">;</span>
+</pre></div>
+
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
-<!-- Title: modm:test:driver Pages: 1 -->
-<svg width="994pt" height="158pt"
- viewBox="0.00 0.00 994.02 158.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 154)">
-<title>modm:test:driver</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-154 990.0244,-154 990.0244,4 -4,4"/>
-<!-- modm_test_driver -->
+<!-- Title: modm:driver:pca9548a Pages: 1 -->
+<svg width="462pt" height="150pt"
+ viewBox="0.00 0.00 461.50 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 146)">
+<title>modm:driver:pca9548a</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-146 457.5,-146 457.5,4 -4,4"/>
+<!-- modm_driver_pca9548a -->
 <g id="node1" class="node">
-<title>modm_test_driver</title>
-<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="532.646,-50 477.3062,-50 477.3062,0 532.646,0 532.646,-50"/>
-<text text-anchor="middle" x="504.9761" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="504.9761" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">test:</text>
-<text text-anchor="middle" x="504.9761" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver</text>
+<title>modm_driver_pca9548a</title>
+<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="290,-53 204,-53 204,0 290,0 290,-53"/>
+<text text-anchor="middle" x="247" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="247" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
+<text text-anchor="middle" x="247" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">pca9548a</text>
 </g>
-<!-- modm_architecture_clock -->
+<!-- modm_architecture_i2c_device -->
 <g id="node2" class="node">
-<title>modm_architecture_clock</title>
-<g id="a_node2"><a xlink:href="../modm-architecture-clock" xlink:title="modm:&#10;architecture:&#10;clock">
-<polygon fill="#d3d3d3" stroke="#000000" points="85.9282,-143 .0239,-143 .0239,-93 85.9282,-93 85.9282,-143"/>
-<text text-anchor="middle" x="42.9761" y="-127.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="42.9761" y="-113.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
-<text text-anchor="middle" x="42.9761" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">clock</text>
+<title>modm_architecture_i2c_device</title>
+<g id="a_node2"><a xlink:href="../modm-architecture-i2c-device" xlink:title="modm:&#10;architecture:&#10;i2c.device">
+<polygon fill="#d3d3d3" stroke="#000000" points="110,-142 0,-142 0,-89 110,-89 110,-142"/>
+<text text-anchor="middle" x="55" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="55" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
+<text text-anchor="middle" x="55" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">i2c.device</text>
 </a>
 </g>
 </g>
-<!-- modm_test_driver&#45;&gt;modm_architecture_clock -->
+<!-- modm_driver_pca9548a&#45;&gt;modm_architecture_i2c_device -->
 <g id="edge1" class="edge">
-<title>modm_test_driver&#45;&gt;modm_architecture_clock</title>
-<path fill="none" stroke="#000000" d="M477.1829,-27.665C396.9309,-35.5909 166.0501,-60.082 94.9761,-86 93.0715,-86.6945 91.1612,-87.4639 89.2568,-88.293"/>
-<polygon fill="#000000" stroke="#000000" points="87.3033,-85.3507 79.8364,-92.867 90.3608,-91.6477 87.3033,-85.3507"/>
+<title>modm_driver_pca9548a&#45;&gt;modm_architecture_i2c_device</title>
+<path fill="none" stroke="#000000" d="M203.9115,-46.4733C178.9788,-58.0307 147.1214,-72.7979 119.276,-85.7054"/>
+<polygon fill="#000000" stroke="#000000" points="117.6031,-82.623 110.0024,-90.0041 120.5471,-88.9739 117.6031,-82.623"/>
 </g>
-<!-- modm_debug -->
+<!-- modm_architecture_i2c_multiplexer -->
 <g id="node3" class="node">
-<title>modm_debug</title>
-<g id="a_node3"><a xlink:href="../modm-debug" xlink:title="modm:&#10;debug">
-<polygon fill="#d3d3d3" stroke="#000000" points="159.646,-136 104.3062,-136 104.3062,-100 159.646,-100 159.646,-136"/>
-<text text-anchor="middle" x="131.9761" y="-120.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="131.9761" y="-106.8" font-family="Times,serif" font-size="14.00" fill="#000000">debug</text>
+<title>modm_architecture_i2c_multiplexer</title>
+<g id="a_node3"><a xlink:href="../modm-architecture-i2c-multiplexer" xlink:title="modm:&#10;architecture:&#10;i2c.multiplexer">
+<polygon fill="#d3d3d3" stroke="#000000" points="253.5,-142 128.5,-142 128.5,-89 253.5,-89 253.5,-142"/>
+<text text-anchor="middle" x="191" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="191" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
+<text text-anchor="middle" x="191" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">i2c.multiplexer</text>
 </a>
 </g>
 </g>
-<!-- modm_test_driver&#45;&gt;modm_debug -->
+<!-- modm_driver_pca9548a&#45;&gt;modm_architecture_i2c_multiplexer -->
 <g id="edge2" class="edge">
-<title>modm_test_driver&#45;&gt;modm_debug</title>
-<path fill="none" stroke="#000000" d="M477.0679,-28.145C406.7223,-36.3753 223.859,-59.7368 168.9761,-86 164.8129,-87.9922 160.7499,-90.5806 156.9322,-93.4223"/>
-<polygon fill="#000000" stroke="#000000" points="154.5315,-90.8647 149.0227,-99.9148 158.9728,-96.2754 154.5315,-90.8647"/>
+<title>modm_driver_pca9548a&#45;&gt;modm_architecture_i2c_multiplexer</title>
+<path fill="none" stroke="#000000" d="M230.1982,-53.2029C224.8823,-61.6513 218.9218,-71.1243 213.2842,-80.0841"/>
+<polygon fill="#000000" stroke="#000000" points="210.1533,-78.488 207.79,-88.8159 216.078,-82.216 210.1533,-78.488"/>
 </g>
-<!-- modm_driver_ad7280a -->
+<!-- modm_driver -->
 <g id="node4" class="node">
-<title>modm_driver_ad7280a</title>
-<g id="a_node4"><a xlink:href="../modm-driver-ad7280a" xlink:title="modm:&#10;driver:&#10;ad7280a">
-<polygon fill="#d3d3d3" stroke="#000000" points="241.9053,-143 178.0469,-143 178.0469,-93 241.9053,-93 241.9053,-143"/>
-<text text-anchor="middle" x="209.9761" y="-127.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="209.9761" y="-113.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="209.9761" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ad7280a</text>
+<title>modm_driver</title>
+<g id="a_node4"><a xlink:href="../modm-driver" xlink:title="modm:&#10;driver">
+<polygon fill="#d3d3d3" stroke="#000000" points="336.5,-134.5 271.5,-134.5 271.5,-96.5 336.5,-96.5 336.5,-134.5"/>
+<text text-anchor="middle" x="304" y="-119.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="304" y="-104.3" font-family="Times,serif" font-size="14.00" fill="#000000">driver</text>
 </a>
 </g>
 </g>
-<!-- modm_test_driver&#45;&gt;modm_driver_ad7280a -->
+<!-- modm_driver_pca9548a&#45;&gt;modm_driver -->
 <g id="edge3" class="edge">
-<title>modm_test_driver&#45;&gt;modm_driver_ad7280a</title>
-<path fill="none" stroke="#000000" d="M477.2173,-27.6252C428.8814,-33.0512 327.06,-48.3095 249.9761,-86 248.9774,-86.4883 247.9809,-87.0052 246.9887,-87.5468"/>
-<polygon fill="#000000" stroke="#000000" points="244.8858,-84.7326 238.2346,-92.9795 248.5769,-90.6803 244.8858,-84.7326"/>
+<title>modm_driver_pca9548a&#45;&gt;modm_driver</title>
+<path fill="none" stroke="#000000" d="M264.1019,-53.2029C271.1399,-64.1922 279.2883,-76.9151 286.3795,-87.9872"/>
+<polygon fill="#000000" stroke="#000000" points="283.4577,-89.9149 291.7983,-96.4482 289.3524,-86.1396 283.4577,-89.9149"/>
 </g>
-<!-- modm_driver_bme280 -->
+<!-- modm_processing_resumable -->
 <g id="node5" class="node">
-<title>modm_driver_bme280</title>
-<g id="a_node5"><a xlink:href="../modm-driver-bme280" xlink:title="modm:&#10;driver:&#10;bme280">
-<polygon fill="#d3d3d3" stroke="#000000" points="320.5797,-143 259.3725,-143 259.3725,-93 320.5797,-93 320.5797,-143"/>
-<text text-anchor="middle" x="289.9761" y="-127.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="289.9761" y="-113.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="289.9761" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">bme280</text>
+<title>modm_processing_resumable</title>
+<g id="a_node5"><a xlink:href="../modm-processing-resumable" xlink:title="modm:&#10;processing:&#10;resumable">
+<polygon fill="#d3d3d3" stroke="#000000" points="453.5,-142 354.5,-142 354.5,-89 453.5,-89 453.5,-142"/>
+<text text-anchor="middle" x="404" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="404" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">processing:</text>
+<text text-anchor="middle" x="404" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">resumable</text>
 </a>
 </g>
 </g>
-<!-- modm_test_driver&#45;&gt;modm_driver_bme280 -->
+<!-- modm_driver_pca9548a&#45;&gt;modm_processing_resumable -->
 <g id="edge4" class="edge">
-<title>modm_test_driver&#45;&gt;modm_driver_bme280</title>
-<path fill="none" stroke="#000000" d="M477.175,-31.3825C441.3716,-40.3152 377.9334,-58.5909 328.9761,-86 328.3169,-86.369 327.6579,-86.7495 326.9998,-87.1402"/>
-<polygon fill="#000000" stroke="#000000" points="324.9814,-84.2786 318.5543,-92.7014 328.8311,-90.125 324.9814,-84.2786"/>
-</g>
-<!-- modm_driver_bmp085 -->
-<g id="node6" class="node">
-<title>modm_driver_bmp085</title>
-<g id="a_node6"><a xlink:href="../modm-driver-bmp085" xlink:title="modm:&#10;driver:&#10;bmp085">
-<polygon fill="#d3d3d3" stroke="#000000" points="399.8658,-143 338.0863,-143 338.0863,-93 399.8658,-93 399.8658,-143"/>
-<text text-anchor="middle" x="368.9761" y="-127.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="368.9761" y="-113.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="368.9761" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">bmp085</text>
-</a>
-</g>
-</g>
-<!-- modm_test_driver&#45;&gt;modm_driver_bmp085 -->
-<g id="edge5" class="edge">
-<title>modm_test_driver&#45;&gt;modm_driver_bmp085</title>
-<path fill="none" stroke="#000000" d="M477.1429,-41.5788C457.692,-53.4305 431.309,-70.0429 408.9761,-86 408.5962,-86.2714 408.2151,-86.5452 407.8329,-86.8211"/>
-<polygon fill="#000000" stroke="#000000" points="405.6603,-84.0751 399.7283,-92.8536 409.8399,-89.6903 405.6603,-84.0751"/>
-</g>
-<!-- modm_driver_drv832x_spi -->
-<g id="node7" class="node">
-<title>modm_driver_drv832x_spi</title>
-<g id="a_node7"><a xlink:href="../modm-driver-drv832x-spi" xlink:title="modm:&#10;driver:&#10;drv832x_spi">
-<polygon fill="#d3d3d3" stroke="#000000" points="503.9761,-143 417.9761,-143 417.9761,-93 503.9761,-93 503.9761,-143"/>
-<text text-anchor="middle" x="460.9761" y="-127.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="460.9761" y="-113.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="460.9761" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">drv832x_spi</text>
-</a>
-</g>
-</g>
-<!-- modm_test_driver&#45;&gt;modm_driver_drv832x_spi -->
-<g id="edge6" class="edge">
-<title>modm_test_driver&#45;&gt;modm_driver_drv832x_spi</title>
-<path fill="none" stroke="#000000" d="M492.9529,-50.4127C488.1117,-60.6452 482.4527,-72.6062 477.2523,-83.598"/>
-<polygon fill="#000000" stroke="#000000" points="473.9454,-82.4038 472.8324,-92.9401 480.2729,-85.3976 473.9454,-82.4038"/>
-</g>
-<!-- modm_driver_lawicel -->
-<g id="node8" class="node">
-<title>modm_driver_lawicel</title>
-<g id="a_node8"><a xlink:href="../modm-driver-lawicel" xlink:title="modm:&#10;driver:&#10;lawicel">
-<polygon fill="#d3d3d3" stroke="#000000" points="578.3986,-143 521.5536,-143 521.5536,-93 578.3986,-93 578.3986,-143"/>
-<text text-anchor="middle" x="549.9761" y="-127.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="549.9761" y="-113.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="549.9761" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">lawicel</text>
-</a>
-</g>
-</g>
-<!-- modm_test_driver&#45;&gt;modm_driver_lawicel -->
-<g id="edge7" class="edge">
-<title>modm_test_driver&#45;&gt;modm_driver_lawicel</title>
-<path fill="none" stroke="#000000" d="M517.2725,-50.4127C522.2738,-60.7486 528.1284,-72.848 533.491,-83.9308"/>
-<polygon fill="#000000" stroke="#000000" points="530.3441,-85.4629 537.8503,-92.9401 536.6452,-82.414 530.3441,-85.4629"/>
-</g>
-<!-- modm_driver_ltc2984 -->
-<g id="node9" class="node">
-<title>modm_driver_ltc2984</title>
-<g id="a_node9"><a xlink:href="../modm-driver-ltc2984" xlink:title="modm:&#10;driver:&#10;ltc2984">
-<polygon fill="#d3d3d3" stroke="#000000" points="653.9692,-143 595.9829,-143 595.9829,-93 653.9692,-93 653.9692,-143"/>
-<text text-anchor="middle" x="624.9761" y="-127.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="624.9761" y="-113.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="624.9761" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ltc2984</text>
-</a>
-</g>
-</g>
-<!-- modm_test_driver&#45;&gt;modm_driver_ltc2984 -->
-<g id="edge8" class="edge">
-<title>modm_test_driver&#45;&gt;modm_driver_ltc2984</title>
-<path fill="none" stroke="#000000" d="M532.9991,-45.2014C548.991,-56.8894 569.3099,-72.0114 586.9761,-86 587.2423,-86.2108 587.5094,-86.4227 587.7771,-86.6356"/>
-<polygon fill="#000000" stroke="#000000" points="585.6869,-89.4465 595.6625,-93.0156 590.0898,-84.0047 585.6869,-89.4465"/>
-</g>
-<!-- modm_driver_mcp2515 -->
-<g id="node10" class="node">
-<title>modm_driver_mcp2515</title>
-<g id="a_node10"><a xlink:href="../modm-driver-mcp2515" xlink:title="modm:&#10;driver:&#10;mcp2515">
-<polygon fill="#d3d3d3" stroke="#000000" points="740.0797,-143 671.8725,-143 671.8725,-93 740.0797,-93 740.0797,-143"/>
-<text text-anchor="middle" x="705.9761" y="-127.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="705.9761" y="-113.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="705.9761" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">mcp2515</text>
-</a>
-</g>
-</g>
-<!-- modm_test_driver&#45;&gt;modm_driver_mcp2515 -->
-<g id="edge9" class="edge">
-<title>modm_test_driver&#45;&gt;modm_driver_mcp2515</title>
-<path fill="none" stroke="#000000" d="M532.8172,-33.2101C565.1943,-43.3252 619.7224,-62.1392 662.9761,-86 663.796,-86.4523 664.6179,-86.9185 665.4403,-87.3967"/>
-<polygon fill="#000000" stroke="#000000" points="663.8785,-90.5488 674.2087,-92.9023 667.6009,-84.6206 663.8785,-90.5488"/>
-</g>
-<!-- modm_platform_gpio -->
-<g id="node11" class="node">
-<title>modm_platform_gpio</title>
-<g id="a_node11"><a xlink:href="../modm-platform-gpio" xlink:title="modm:&#10;platform:&#10;gpio">
-<polygon fill="#d3d3d3" stroke="#000000" points="826.0728,-143 757.8793,-143 757.8793,-93 826.0728,-93 826.0728,-143"/>
-<text text-anchor="middle" x="791.9761" y="-127.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="791.9761" y="-113.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="791.9761" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">gpio</text>
-</a>
-</g>
-</g>
-<!-- modm_test_driver&#45;&gt;modm_platform_gpio -->
-<g id="edge10" class="edge">
-<title>modm_test_driver&#45;&gt;modm_platform_gpio</title>
-<path fill="none" stroke="#000000" d="M532.8898,-28.3384C579.5165,-34.6966 675.3803,-51.1388 748.9761,-86 749.9853,-86.478 750.9943,-86.9816 752.001,-87.5071"/>
-<polygon fill="#000000" stroke="#000000" points="750.5408,-90.7079 760.9389,-92.74 754.0776,-84.6671 750.5408,-90.7079"/>
-</g>
-<!-- modm_test -->
-<g id="node12" class="node">
-<title>modm_test</title>
-<g id="a_node12"><a xlink:href="../modm-test" xlink:title="modm:&#10;test">
-<polygon fill="#d3d3d3" stroke="#000000" points="899.646,-136 844.3062,-136 844.3062,-100 899.646,-100 899.646,-136"/>
-<text text-anchor="middle" x="871.9761" y="-120.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="871.9761" y="-106.8" font-family="Times,serif" font-size="14.00" fill="#000000">test</text>
-</a>
-</g>
-</g>
-<!-- modm_test_driver&#45;&gt;modm_test -->
-<g id="edge11" class="edge">
-<title>modm_test_driver&#45;&gt;modm_test</title>
-<path fill="none" stroke="#000000" d="M532.8939,-28.2495C602.3535,-36.636 781.2143,-60.1677 834.9761,-86 839.1361,-87.9989 843.1972,-90.5911 847.014,-93.4347"/>
-<polygon fill="#000000" stroke="#000000" points="844.9732,-96.2877 854.9229,-99.9286 849.4154,-90.8777 844.9732,-96.2877"/>
-</g>
-<!-- modm_test_platform_spi -->
-<g id="node13" class="node">
-<title>modm_test_platform_spi</title>
-<g id="a_node13"><a xlink:href="../modm-test-platform-spi" xlink:title="modm:&#10;test:&#10;platform:&#10;spi">
-<polygon fill="#d3d3d3" stroke="#000000" points="986.0728,-150 917.8793,-150 917.8793,-86 986.0728,-86 986.0728,-150"/>
-<text text-anchor="middle" x="951.9761" y="-134.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="951.9761" y="-120.8" font-family="Times,serif" font-size="14.00" fill="#000000">test:</text>
-<text text-anchor="middle" x="951.9761" y="-106.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="951.9761" y="-92.8" font-family="Times,serif" font-size="14.00" fill="#000000">spi</text>
-</a>
-</g>
-</g>
-<!-- modm_test_driver&#45;&gt;modm_test_platform_spi -->
-<g id="edge12" class="edge">
-<title>modm_test_driver&#45;&gt;modm_test_platform_spi</title>
-<path fill="none" stroke="#000000" d="M532.7615,-27.4259C609.3785,-34.3816 823.0874,-55.6458 908.3786,-86.6976"/>
-<polygon fill="#000000" stroke="#000000" points="907.3018,-90.0349 917.8892,-90.4317 909.8601,-83.5191 907.3018,-90.0349"/>
+<title>modm_driver_pca9548a&#45;&gt;modm_processing_resumable</title>
+<path fill="none" stroke="#000000" d="M290.3165,-51.0552C308.2598,-61.2269 329.2952,-73.1514 348.3599,-83.9588"/>
+<polygon fill="#000000" stroke="#000000" points="346.8239,-87.1113 357.2494,-88.9981 350.276,-81.0217 346.8239,-87.1113"/>
 </g>
 </g>
 </svg>
@@ -3017,6 +2981,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../modm-driver-pca9535/" title="modm:driver:pca9535" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                modm:driver:pca9535
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../modm-driver-pca9685/" title="modm:driver:pca9685" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                modm:driver:pca9685
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -3050,7 +3049,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.583bbe55.js"></script>
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       

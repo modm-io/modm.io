@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -13,7 +13,7 @@
         <meta name="description" content="A modular C++14 library for barebone programming">
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-test-platform/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-architecture-i2c-multiplexer/">
       
       
         <meta name="author" content="Niklas Hauser">
@@ -38,15 +38,15 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
-        <title>Modm test platform - modm barebone embedded library</title>
+        <title>modm:architecture:i2c.multiplexer - modm barebone embedded library</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.451f80e5.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
@@ -67,6 +67,7 @@
       
     
     <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
     
       <link rel="stylesheet" href="../../../extra.css">
     
@@ -106,7 +107,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../../#modmtestplatform" tabindex="1" class="md-skip">
+      <a href="#modmarchitecturei2cmultiplexer-i2c-multiplexer" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -132,7 +133,7 @@
                 modm barebone embedded library
               </span>
               <span class="md-header-nav__topic">
-                Modm test platform
+                modm:architecture:i2c.multiplexer
               </span>
             
           
@@ -204,7 +205,9 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
@@ -239,7 +242,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../build-systems/" title="Reference" class="md-tabs__link">
+        <a href="../../build-systems/" title="Reference" class="md-tabs__link md-tabs__link--active">
           Reference
         </a>
       
@@ -428,10 +431,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Reference
@@ -459,10 +464,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" checked>
     
     <label class="md-nav__link" for="nav-3-2">
       Modules
@@ -651,6 +658,63 @@
     <a href="../modm-architecture-i2c-device/" title="modm:architecture:i2c.device" class="md-nav__link">
       modm:architecture:i2c.device
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        modm:architecture:i2c.multiplexer
+      </label>
+    
+    <a href="./" title="modm:architecture:i2c.multiplexer" class="md-nav__link md-nav__link--active">
+      modm:architecture:i2c.multiplexer
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#content" title="Content" class="md-nav__link">
+    Content
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1476,6 +1540,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../modm-driver-pat9125el/" title="modm:driver:pat9125el" class="md-nav__link">
+      modm:driver:pat9125el
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../modm-driver-pca8574/" title="modm:driver:pca8574" class="md-nav__link">
       modm:driver:pca8574
     </a>
@@ -1490,6 +1566,18 @@
   <li class="md-nav__item">
     <a href="../modm-driver-pca9535/" title="modm:driver:pca9535" class="md-nav__link">
       modm:driver:pca9535
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-pca9548a/" title="modm:driver:pca9548a" class="md-nav__link">
+      modm:driver:pca9548a
     </a>
   </li>
 
@@ -2749,6 +2837,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#content" title="Content" class="md-nav__link">
+    Content
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dependencies" title="Dependencies" class="md-nav__link">
     Dependencies
   </a>
@@ -2775,129 +2870,136 @@
                 <div class="admonition warning">
 <p class="admonition-title">These module docs are in beta and may be incomplete.</p>
 </div>
-<h1 id="modmtestplatform">modm:test:platform<a class="headerlink" href="#modmtestplatform" title="Permanent link">&para;</a></h1>
+<h1 id="modmarchitecturei2cmultiplexer-i2c-multiplexer">modm:architecture:i2c.multiplexer: I²C Multiplexer<a class="headerlink" href="#modmarchitecturei2cmultiplexer-i2c-multiplexer" title="Permanent link">&para;</a></h1>
+<h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="c1">// Class</span>
+<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">I2cMultiplexer</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">I2cMaster</span> <span class="p">,</span> <span class="k">class</span> <span class="nc">I2cMultiplexerDevice</span>  <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">I2cMultiplexerChannel</span><span class="o">&lt;</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">multiplexer</span><span class="p">,</span> <span class="k">typename</span> <span class="n">std</span><span class="o">::</span><span class="n">remove_reference_t</span><span class="o">&lt;</span> <span class="k">decltype</span><span class="p">(</span><span class="n">multiplexer</span><span class="p">)</span><span class="o">&gt;::</span><span class="n">Channel</span> <span class="n">channel</span> <span class="o">&gt;</span><span class="p">;</span>
+
+<span class="c1">// Struct</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">i2cMultiplexer</span><span class="p">;</span>
+</pre></div>
+
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
-<!-- Title: modm:test:platform Pages: 1 -->
-<svg width="378pt" height="244pt"
- viewBox="0.00 0.00 377.81 244.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 240)">
-<title>modm:test:platform</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-240 373.8105,-240 373.8105,4 -4,4"/>
-<!-- modm_test_platform -->
+<!-- Title: modm:architecture:i2c.multiplexer Pages: 1 -->
+<svg width="571pt" height="239pt"
+ viewBox="0.00 0.00 570.50 239.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 235)">
+<title>modm:architecture:i2c.multiplexer</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-235 566.5,-235 566.5,4 -4,4"/>
+<!-- modm_architecture_i2c_multiplexer -->
 <g id="node1" class="node">
-<title>modm_test_platform</title>
-<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="231.1834,-150 166.7687,-150 166.7687,-100 231.1834,-100 231.1834,-150"/>
-<text text-anchor="middle" x="198.9761" y="-134.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="198.9761" y="-120.8" font-family="Times,serif" font-size="14.00" fill="#000000">test:</text>
-<text text-anchor="middle" x="198.9761" y="-106.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform</text>
+<title>modm_architecture_i2c_multiplexer</title>
+<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="369.5,-142 244.5,-142 244.5,-89 369.5,-89 369.5,-142"/>
+<text text-anchor="middle" x="307" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="307" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
+<text text-anchor="middle" x="307" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">i2c.multiplexer</text>
 </g>
-<!-- modm_architecture_can -->
+<!-- modm_architecture -->
 <g id="node2" class="node">
-<title>modm_architecture_can</title>
-<g id="a_node2"><a xlink:href="../modm-architecture-can" xlink:title="modm:&#10;architecture:&#10;can">
-<polygon fill="#d3d3d3" stroke="#000000" points="85.9282,-236 .0239,-236 .0239,-186 85.9282,-186 85.9282,-236"/>
-<text text-anchor="middle" x="42.9761" y="-220.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="42.9761" y="-206.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
-<text text-anchor="middle" x="42.9761" y="-192.8" font-family="Times,serif" font-size="14.00" fill="#000000">can</text>
+<title>modm_architecture</title>
+<g id="a_node2"><a xlink:href="../modm-architecture" xlink:title="modm:&#10;architecture">
+<polygon fill="#d3d3d3" stroke="#000000" points="106,-223.5 0,-223.5 0,-185.5 106,-185.5 106,-223.5"/>
+<text text-anchor="middle" x="53" y="-208.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="53" y="-193.3" font-family="Times,serif" font-size="14.00" fill="#000000">architecture</text>
 </a>
 </g>
 </g>
-<!-- modm_test_platform&#45;&gt;modm_architecture_can -->
+<!-- modm_architecture_i2c_multiplexer&#45;&gt;modm_architecture -->
 <g id="edge1" class="edge">
-<title>modm_test_platform&#45;&gt;modm_architecture_can</title>
-<path fill="none" stroke="#000000" d="M166.6528,-142.8193C145.9985,-154.2056 118.7467,-169.229 95.082,-182.275"/>
-<polygon fill="#000000" stroke="#000000" points="93.2767,-179.2735 86.2091,-187.1664 96.6562,-185.4037 93.2767,-179.2735"/>
+<title>modm_architecture_i2c_multiplexer&#45;&gt;modm_architecture</title>
+<path fill="none" stroke="#000000" d="M244.2537,-134.3721C206.5063,-146.1091 157.6612,-161.9758 115,-178 111.9317,-179.1525 108.7928,-180.3699 105.6356,-181.6243"/>
+<polygon fill="#000000" stroke="#000000" points="104.1104,-178.466 96.161,-185.4701 106.7432,-184.952 104.1104,-178.466"/>
 </g>
-<!-- modm_architecture_clock -->
+<!-- modm_architecture_i2c -->
 <g id="node3" class="node">
-<title>modm_architecture_clock</title>
-<g id="a_node3"><a xlink:href="../modm-architecture-clock" xlink:title="modm:&#10;architecture:&#10;clock">
-<polygon fill="#d3d3d3" stroke="#000000" points="189.9282,-236 104.0239,-236 104.0239,-186 189.9282,-186 189.9282,-236"/>
-<text text-anchor="middle" x="146.9761" y="-220.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="146.9761" y="-206.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
-<text text-anchor="middle" x="146.9761" y="-192.8" font-family="Times,serif" font-size="14.00" fill="#000000">clock</text>
+<title>modm_architecture_i2c</title>
+<g id="a_node3"><a xlink:href="../modm-architecture-i2c" xlink:title="modm:&#10;architecture:&#10;i2c">
+<polygon fill="#d3d3d3" stroke="#000000" points="234,-231 124,-231 124,-178 234,-178 234,-231"/>
+<text text-anchor="middle" x="179" y="-215.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="179" y="-200.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
+<text text-anchor="middle" x="179" y="-185.8" font-family="Times,serif" font-size="14.00" fill="#000000">i2c</text>
 </a>
 </g>
 </g>
-<!-- modm_test_platform&#45;&gt;modm_architecture_clock -->
+<!-- modm_architecture_i2c_multiplexer&#45;&gt;modm_architecture_i2c -->
 <g id="edge2" class="edge">
-<title>modm_test_platform&#45;&gt;modm_architecture_clock</title>
-<path fill="none" stroke="#000000" d="M183.6556,-150.3377C178.5777,-158.7358 172.8419,-168.2219 167.4404,-177.1552"/>
-<polygon fill="#000000" stroke="#000000" points="164.3662,-175.4751 162.187,-185.8434 170.3563,-179.0971 164.3662,-175.4751"/>
+<title>modm_architecture_i2c_multiplexer&#45;&gt;modm_architecture_i2c</title>
+<path fill="none" stroke="#000000" d="M268.5958,-142.2029C255.1797,-151.5313 239.9669,-162.1089 225.9349,-171.8656"/>
+<polygon fill="#000000" stroke="#000000" points="223.5894,-169.2335 217.3771,-177.8159 227.5856,-174.9807 223.5894,-169.2335"/>
 </g>
-<!-- modm_platform_can_common -->
+<!-- modm_architecture_register -->
 <g id="node4" class="node">
-<title>modm_platform_can_common</title>
-<g id="a_node4"><a xlink:href="../modm-platform-can-common" xlink:title="modm:&#10;platform:&#10;can.common">
-<polygon fill="#d3d3d3" stroke="#000000" points="295.897,-236 208.0551,-236 208.0551,-186 295.897,-186 295.897,-236"/>
-<text text-anchor="middle" x="251.9761" y="-220.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="251.9761" y="-206.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="251.9761" y="-192.8" font-family="Times,serif" font-size="14.00" fill="#000000">can.common</text>
+<title>modm_architecture_register</title>
+<g id="a_node4"><a xlink:href="../modm-architecture-register" xlink:title="modm:&#10;architecture:&#10;register">
+<polygon fill="#d3d3d3" stroke="#000000" points="362,-231 252,-231 252,-178 362,-178 362,-231"/>
+<text text-anchor="middle" x="307" y="-215.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="307" y="-200.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
+<text text-anchor="middle" x="307" y="-185.8" font-family="Times,serif" font-size="14.00" fill="#000000">register</text>
 </a>
 </g>
 </g>
-<!-- modm_test_platform&#45;&gt;modm_platform_can_common -->
+<!-- modm_architecture_i2c_multiplexer&#45;&gt;modm_architecture_register -->
 <g id="edge3" class="edge">
-<title>modm_test_platform&#45;&gt;modm_platform_can_common</title>
-<path fill="none" stroke="#000000" d="M214.5912,-150.3377C219.7668,-158.7358 225.6128,-168.2219 231.1182,-177.1552"/>
-<polygon fill="#000000" stroke="#000000" points="228.2464,-179.1665 236.4726,-185.8434 234.2057,-175.4939 228.2464,-179.1665"/>
+<title>modm_architecture_i2c_multiplexer&#45;&gt;modm_architecture_register</title>
+<path fill="none" stroke="#000000" d="M307,-142.2029C307,-150.2113 307,-159.1403 307,-167.6802"/>
+<polygon fill="#000000" stroke="#000000" points="303.5001,-167.8159 307,-177.8159 310.5001,-167.8159 303.5001,-167.8159"/>
 </g>
-<!-- modm_test -->
+<!-- modm_math_utils -->
 <g id="node5" class="node">
-<title>modm_test</title>
-<g id="a_node5"><a xlink:href="../modm-test" xlink:title="modm:&#10;test">
-<polygon fill="#d3d3d3" stroke="#000000" points="369.646,-229 314.3062,-229 314.3062,-193 369.646,-193 369.646,-229"/>
-<text text-anchor="middle" x="341.9761" y="-213.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="341.9761" y="-199.8" font-family="Times,serif" font-size="14.00" fill="#000000">test</text>
+<title>modm_math_utils</title>
+<g id="a_node5"><a xlink:href="../modm-math-utils" xlink:title="modm:&#10;math:&#10;utils">
+<polygon fill="#d3d3d3" stroke="#000000" points="445.5,-231 380.5,-231 380.5,-178 445.5,-178 445.5,-231"/>
+<text text-anchor="middle" x="413" y="-215.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="413" y="-200.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
+<text text-anchor="middle" x="413" y="-185.8" font-family="Times,serif" font-size="14.00" fill="#000000">utils</text>
 </a>
 </g>
 </g>
-<!-- modm_test_platform&#45;&gt;modm_test -->
+<!-- modm_architecture_i2c_multiplexer&#45;&gt;modm_math_utils -->
 <g id="edge4" class="edge">
-<title>modm_test_platform&#45;&gt;modm_test</title>
-<path fill="none" stroke="#000000" d="M231.338,-142.8253C252.5151,-154.6846 280.6632,-170.8179 304.9761,-186 305.6172,-186.4004 306.2632,-186.8065 306.9127,-187.2173"/>
-<polygon fill="#000000" stroke="#000000" points="305.153,-190.2475 315.4497,-192.7431 308.9566,-184.3711 305.153,-190.2475"/>
+<title>modm_architecture_i2c_multiplexer&#45;&gt;modm_math_utils</title>
+<path fill="none" stroke="#000000" d="M338.8035,-142.2029C349.7041,-151.3553 362.0369,-161.7102 373.4733,-171.3125"/>
+<polygon fill="#000000" stroke="#000000" points="371.3099,-174.0661 381.219,-177.8159 375.811,-168.7052 371.3099,-174.0661"/>
 </g>
-<!-- modm_test_platform_gpio -->
+<!-- modm_processing_resumable -->
 <g id="node6" class="node">
-<title>modm_test_platform_gpio</title>
-<g id="a_node6"><a xlink:href="../modm-test-platform-gpio" xlink:title="modm:&#10;test:&#10;platform:&#10;gpio">
-<polygon fill="#d3d3d3" stroke="#000000" points="190.0728,-64 121.8793,-64 121.8793,0 190.0728,0 190.0728,-64"/>
-<text text-anchor="middle" x="155.9761" y="-48.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="155.9761" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">test:</text>
-<text text-anchor="middle" x="155.9761" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="155.9761" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">gpio</text>
+<title>modm_processing_resumable</title>
+<g id="a_node6"><a xlink:href="../modm-processing-resumable" xlink:title="modm:&#10;processing:&#10;resumable">
+<polygon fill="#d3d3d3" stroke="#000000" points="562.5,-231 463.5,-231 463.5,-178 562.5,-178 562.5,-231"/>
+<text text-anchor="middle" x="513" y="-215.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="513" y="-200.8" font-family="Times,serif" font-size="14.00" fill="#000000">processing:</text>
+<text text-anchor="middle" x="513" y="-185.8" font-family="Times,serif" font-size="14.00" fill="#000000">resumable</text>
 </a>
 </g>
 </g>
-<!-- modm_test_platform_gpio&#45;&gt;modm_test_platform -->
+<!-- modm_architecture_i2c_multiplexer&#45;&gt;modm_processing_resumable -->
 <g id="edge5" class="edge">
-<title>modm_test_platform_gpio&#45;&gt;modm_test_platform</title>
-<path fill="none" stroke="#000000" d="M170.7742,-64.0053C174.7705,-72.6485 179.1101,-82.034 183.1598,-90.7927"/>
-<polygon fill="#000000" stroke="#000000" points="180.0368,-92.3781 187.4104,-99.986 186.3905,-89.4403 180.0368,-92.3781"/>
+<title>modm_architecture_i2c_multiplexer&#45;&gt;modm_processing_resumable</title>
+<path fill="none" stroke="#000000" d="M369.8241,-141.5572C393.9381,-151.6708 421.8797,-163.5238 454.1511,-177.6608"/>
+<polygon fill="#000000" stroke="#000000" points="452.8052,-180.8923 463.3685,-181.7092 455.6201,-174.4833 452.8052,-180.8923"/>
 </g>
-<!-- modm_test_platform_spi -->
+<!-- modm_driver_pca9548a -->
 <g id="node7" class="node">
-<title>modm_test_platform_spi</title>
-<g id="a_node7"><a xlink:href="../modm-test-platform-spi" xlink:title="modm:&#10;test:&#10;platform:&#10;spi">
-<polygon fill="#d3d3d3" stroke="#000000" points="276.0728,-64 207.8793,-64 207.8793,0 276.0728,0 276.0728,-64"/>
-<text text-anchor="middle" x="241.9761" y="-48.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="241.9761" y="-34.8" font-family="Times,serif" font-size="14.00" fill="#000000">test:</text>
-<text text-anchor="middle" x="241.9761" y="-20.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="241.9761" y="-6.8" font-family="Times,serif" font-size="14.00" fill="#000000">spi</text>
+<title>modm_driver_pca9548a</title>
+<g id="a_node7"><a xlink:href="../modm-driver-pca9548a" xlink:title="modm:&#10;driver:&#10;pca9548a">
+<polygon fill="#d3d3d3" stroke="#000000" points="350,-53 264,-53 264,0 350,0 350,-53"/>
+<text text-anchor="middle" x="307" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="307" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
+<text text-anchor="middle" x="307" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">pca9548a</text>
 </a>
 </g>
 </g>
-<!-- modm_test_platform_spi&#45;&gt;modm_test_platform -->
+<!-- modm_driver_pca9548a&#45;&gt;modm_architecture_i2c_multiplexer -->
 <g id="edge6" class="edge">
-<title>modm_test_platform_spi&#45;&gt;modm_test_platform</title>
-<path fill="none" stroke="#000000" d="M227.1779,-64.0053C223.1816,-72.6485 218.8421,-82.034 214.7923,-90.7927"/>
-<polygon fill="#000000" stroke="#000000" points="211.5617,-89.4403 210.5417,-99.986 217.9154,-92.3781 211.5617,-89.4403"/>
+<title>modm_driver_pca9548a&#45;&gt;modm_architecture_i2c_multiplexer</title>
+<path fill="none" stroke="#000000" d="M307,-53.2029C307,-61.2113 307,-70.1403 307,-78.6802"/>
+<polygon fill="#000000" stroke="#000000" points="303.5001,-78.8159 307,-88.8159 310.5001,-78.8159 303.5001,-78.8159"/>
 </g>
 </g>
 </svg>
@@ -2917,6 +3019,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../modm-architecture-i2c-device/" title="modm:architecture:i2c.device" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                modm:architecture:i2c.device
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../modm-architecture-interrupt/" title="modm:architecture:interrupt" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                modm:architecture:interrupt
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -2950,7 +3087,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.583bbe55.js"></script>
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
