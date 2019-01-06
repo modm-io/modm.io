@@ -3075,9 +3075,9 @@ not possible.</p>
 <code>.fastcode</code> from Flash.</p>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <h4 id="stack_execution_guard">stack_execution_guard<a class="headerlink" href="#stack_execution_guard" title="Permanent link">&para;</a></h4>
-<p>Fill the stack with relative jumps to fault handler to prevent accidental execution.: <code>False</code> ∈ <code>{ True, [4mFalse[24m[0m }</code></p>
+<p>Fill the stack with relative jumps to fault handler to prevent accidental execution.: <code>False</code> ∈ <code>{ True, False }</code></p>
 <h4 id="allocator">allocator<a class="headerlink" href="#allocator" title="Permanent link">&para;</a></h4>
-<p>Dynamic memory allocation strategy: <code>newlib</code> ∈ <code>{ block, [4mnewlib[24m, tlsf[0m }</code></p>
+<p>Dynamic memory allocation strategy: <code>newlib</code> ∈ <code>{ block, newlib, tlsf }</code></p>
 <p>By default, the arm-none-eabi toolchain ships with the <code>newlib</code> libc, which uses
 <code>dlmalloc</code> as the underlying allocator algorithm and only requires the
 implementation of the <code>void * sbrk(ptrdiff_t size)</code> hook. However, this limits
@@ -3119,7 +3119,7 @@ times of O(1), but we recommend using TLSF only for devices with multiple
 memory regions.</p>
 </div>
 <h4 id="vector_table_location">vector_table_location<a class="headerlink" href="#vector_table_location" title="Permanent link">&para;</a></h4>
-<p>Vector table location in ROM or RAM: <code>rom</code> ∈ <code>{ ram, [4mrom[24m[0m }</code></p>
+<p>Vector table location in ROM or RAM: <code>rom</code> ∈ <code>{ ram, rom }</code></p>
 <p>The vector table is always stored in ROM and copied to RAM by the startup script
 if required. You can modify the RAM vector table using the CMSIS NVIC functions:</p>
 <ul>
@@ -3148,7 +3148,7 @@ slow down interrupt latency, since both I-Code and D-Code memory interface
 need to fetch from the same access port.</p>
 </div>
 <h4 id="main_stack_size">main_stack_size<a class="headerlink" href="#main_stack_size" title="Permanent link">&para;</a></h4>
-<p>Minimum size of the application main stack: <code>3040</code> ∈ <code>{ 256 .. [4m3040[24m .. 65536[0m }</code></p>
+<p>Minimum size of the application main stack: <code>3040</code> ∈ <code>{ 256 .. 3040 .. 65536 }</code></p>
 <p>The ARM Cortex-M uses a descending stack mechanism which is placed so that it
 grows towards the beginning of RAM. In case of a stack overflow the hardware
 then attempts to stack into invalid memory which triggers a HardFault. A stack
@@ -3198,15 +3198,15 @@ stack size in that case.</p>
 the <code>uint32_t modm::cortex::getMaximumStackUsage()</code> function.</p>
 </div>
 <h4 id="linkerscriptmemory">linkerscript.memory<a class="headerlink" href="#linkerscriptmemory" title="Permanent link">&para;</a></h4>
-<p>Values: <code>{ String[0m }</code></p>
+<p>Values: <code>{ String }</code></p>
 <h4 id="linkerscriptsections">linkerscript.sections<a class="headerlink" href="#linkerscriptsections" title="Permanent link">&para;</a></h4>
-<p>Values: <code>{ String[0m }</code></p>
+<p>Values: <code>{ String }</code></p>
 <h4 id="linkerscripttable_externzero">linkerscript.table_extern.zero<a class="headerlink" href="#linkerscripttable_externzero" title="Permanent link">&para;</a></h4>
-<p>Values: <code>{ String[0m }</code></p>
+<p>Values: <code>{ String }</code></p>
 <h4 id="linkerscripttable_externcopy">linkerscript.table_extern.copy<a class="headerlink" href="#linkerscripttable_externcopy" title="Permanent link">&para;</a></h4>
-<p>Values: <code>{ String[0m }</code></p>
+<p>Values: <code>{ String }</code></p>
 <h4 id="linkerscripttable_externheap">linkerscript.table_extern.heap<a class="headerlink" href="#linkerscripttable_externheap" title="Permanent link">&para;</a></h4>
-<p>Values: <code>{ String[0m }</code></p>
+<p>Values: <code>{ String }</code></p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"

@@ -3249,12 +3249,12 @@ project, the options presented here are only the most important ones.</p>
 </ul>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <h4 id="projectname">project.name<a class="headerlink" href="#projectname" title="Permanent link">&para;</a></h4>
-<p>Project Name: <code>blink</code> ∈ <code>{ String[0m }</code></p>
+<p>Project Name: <code>blink</code> ∈ <code>{ String }</code></p>
 <p>The project name defaults to the folder name you're calling lbuild from.</p>
 <p>It's used by your build system to name the executable and it may also be passed
 to your application via a string constant or CPP define.</p>
 <h4 id="buildpath">build.path<a class="headerlink" href="#buildpath" title="Permanent link">&para;</a></h4>
-<p>Build Path: <code>build/blink</code> ∈ <code>{ String: [4mbuild/blink[24m[0m }</code></p>
+<p>Build Path: <code>build/blink</code> ∈ <code>{ String: build/blink }</code></p>
 <p>The build path is defaulted to <code>build/{modm:build:project.name}</code>.</p>
 <p>If you have a lot of embedded projects, you may want to change the build path
 to a <em>common</em> directory so that you don't have <code>build/</code> folders everywhere.
@@ -3262,7 +3262,7 @@ Remember to add your build path to your <code>.gitignore</code>.</p>
 <p>You should use a relative path instead of an absolute one, so that this option
 still works for other developers.</p>
 <h4 id="openocdcfg">openocd.cfg<a class="headerlink" href="#openocdcfg" title="Permanent link">&para;</a></h4>
-<p>Path to a custom OpenOCD configuration file: <code>{ String[0m }</code></p>
+<p>Path to a custom OpenOCD configuration file: <code>{ String }</code></p>
 <p>If you have a custom configuration file for your target, it will get included
 by the generated <code>modm/openocd.cfg</code>.</p>
 <p>This is useful for not having to duplicate your config if you have several
