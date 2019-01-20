@@ -10,7 +10,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
-        <meta name="description" content="A modular C++14 library for barebone programming">
+        <meta name="description" content="A modular C++17 library generator for barebone embedded programming">
       
       
         <link rel="canonical" href="http://modm.io/guide/getting-started/">
@@ -3093,17 +3093,19 @@ You can then add all the modules you need and configure them as you want.</p>
 <div class="codehilite"><pre><span></span><span class="nt">&lt;library&gt;</span>
   <span class="nt">&lt;repositories&gt;</span>
     <span class="c">&lt;!-- path to modm repository --&gt;</span>
-    <span class="nt">&lt;repository&gt;&lt;path&gt;</span>../modm/repo.lb<span class="nt">&lt;/path&gt;&lt;repository&gt;</span>
+    <span class="nt">&lt;repository&gt;</span>
+      <span class="nt">&lt;path&gt;</span>../modm/repo.lb<span class="nt">&lt;/path&gt;</span>
+    <span class="nt">&lt;/repository&gt;</span>
   <span class="nt">&lt;/repositories&gt;</span>
   <span class="c">&lt;!-- extend this board configuration --&gt;</span>
   <span class="nt">&lt;extends&gt;</span>modm:board:disco-f469ni<span class="nt">&lt;/extends&gt;</span>
   <span class="nt">&lt;options&gt;</span>
     <span class="c">&lt;!-- give this project a custom name --&gt;</span>
-    <span class="nt">&lt;option</span> <span class="na">name=</span><span class="s">&quot;:build:project.name&quot;</span><span class="nt">&gt;</span>test<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option</span> <span class="na">name=</span><span class="s">&quot;modm:build:project.name&quot;</span><span class="nt">&gt;</span>test<span class="nt">&lt;/option&gt;</span>
   <span class="nt">&lt;/options&gt;</span>
   <span class="nt">&lt;modules&gt;</span>
     <span class="c">&lt;!-- include the SCons build module --&gt;</span>
-    <span class="nt">&lt;module&gt;</span>:build:scons<span class="nt">&lt;/module&gt;</span>
+    <span class="nt">&lt;module&gt;</span>modm:build:scons<span class="nt">&lt;/module&gt;</span>
   <span class="nt">&lt;/modules&gt;</span>
 <span class="nt">&lt;/library&gt;</span>
 </pre></div>
@@ -3381,7 +3383,7 @@ documented in <a href="../reference/module/modm-build-scons">module documentatio
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy 2018 Niklas Hauser & modm authors
+            Copyright &copy 2009-2019 Niklas Hauser & modm authors
           </div>
         
         powered by
