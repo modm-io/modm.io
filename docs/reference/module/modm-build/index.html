@@ -831,6 +831,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#using-black-magic-probe" title="Using Black Magic Probe" class="md-nav__link">
+    Using Black Magic Probe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#using-avrdude" title="Using AvrDude" class="md-nav__link">
     Using AvrDude
   </a>
@@ -2957,6 +2964,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#using-black-magic-probe" title="Using Black Magic Probe" class="md-nav__link">
+    Using Black Magic Probe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#using-avrdude" title="Using AvrDude" class="md-nav__link">
     Using AvrDude
   </a>
@@ -3084,12 +3098,12 @@
 the specific build system generator implementation.
 This includes straight-forward options like project name and build path
 but also more complicated configuration for programming your target via
-AvrDude/OpenOCD and debugging via GDB.</p>
+AvrDude/OpenOCD/Black Magic Probe and debugging via GDB.</p>
 <p><strong>Note that this module does not compile your project, you will need to choose
 the <code>modm:build:scons</code> or <code>modm:build:cmake</code> submodule for that, or provide
 your own build system.</strong></p>
 <h2 id="using-openocd">Using OpenOCD<a class="headerlink" href="#using-openocd" title="Permanent link">&para;</a></h2>
-<p>For accessing your ARM Cortex-M based device, we use OpenOCD and generate a
+<p>For accessing your ARM Cortex-M based device, we use OpenOCD by default and generate a
 <code>modm/openocd.cfg</code> file with the target specific configuration:</p>
 <ul>
 <li>Search directories passed via the <code>openocd.search</code> metadata key.</li>
@@ -3188,6 +3202,41 @@ period of time, while the device's debug peripheral is initialized.
 This time is dependent on the debug adapter and may range from just a few
 milliseconds to hundreds. Make sure your hardware can handle that!</p>
 </div>
+<h2 id="using-black-magic-probe">Using Black Magic Probe<a class="headerlink" href="#using-black-magic-probe" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/blacksphere/blackmagic">Black Magic Probe</a> is convenient tool to convert cheap USB ST-LINK V2 clones to a fully functional GDB compatible debug adaptor for ARM Cortex microcontrollers. GDB can directly communicate with the debug adaptor making debugging easy and accessible. Currently, only uploading code to the target is supported with this modm module.</p>
+<p>Black Magic Probe creates two serial devices, the first being the GDB interface and the second a plain serial adaptor for debugging purposes.</p>
+<div class="codehilite"><pre><span></span>$ ls -l /dev/tty.usb*
+crw-rw-rw-  1 root  wheel   21, 104 Feb 19 09:46 /dev/tty.usbmodemDEADBEEF
+crw-rw-rw-  1 root  wheel   21, 106 Feb 19 09:46 /dev/tty.usbmodemDEADBEF1
+</pre></div>
+
+<p>You can upload your code using a Black Magic Probe with specifying the GDB interface as <code>port</code> parameter.</p>
+<div class="codehilite"><pre><span></span>$ scons bmp port=/dev/cu.usbmodemDEADBEEF verbose=1
+scons: Reading SConscript files ...
+bmp port iss = /dev/cu.usbmodemDEADBEEF
+scons: done reading SConscript files.
+scons: Building targets ...
+arm-none-eabi-gdb -ex &quot;target extended-remote /dev/cu.usbmodemDEADBEEF&quot; -ex &quot;monitor swdp_scan&quot; -ex &quot;attach 1&quot; -ex &quot;load path/to/project.elf&quot; -ex &quot;detach&quot; -ex &quot;quit&quot;
+[...]
+Remote debugging using /dev/cu.usbmodemDEADBEEF
+Target voltage: unknown
+Available Targets:
+No. Att Driver
+ 1      STM32F1 medium density
+Attaching to Remote target
+warning: No executable has been specified and target does not support
+determining executable automatically.  Try using the &quot;file&quot; command.
+0x0800038e in ?? ()
+Loading section .vector_rom, size 0xec lma 0x8000000
+[...]
+Loading section .table.section_heap, size 0xc lma 0x80013f8
+Start address 0x8000e6c, load size 5120
+Transfer rate: 10 KB/sec, 365 bytes/write.
+Detaching from program: , Remote target
+[Inferior 1 (Remote target) detached]
+scons: done building targets.
+</pre></div>
+
 <h2 id="using-avrdude">Using AvrDude<a class="headerlink" href="#using-avrdude" title="Permanent link">&para;</a></h2>
 <p>Unfortunately AvrDude does not support a user configuration file like OpenOCD
 does, so there is no convenient one-line command to issue.
@@ -3250,6 +3299,8 @@ project, the options presented here are only the most important ones.</p>
 <li><code>--specs=nosys.specs</code>: modm does not use C stdlib features.</li>
 <li><code>-wrap,_{calloc, malloc, realloc, free}_r</code>: reimplemented Newlib with our own allocator.</li>
 </ul>
+<!--Links-->
+
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <h4 id="projectname">project.name<a class="headerlink" href="#projectname" title="Permanent link">&para;</a></h4>
 <p>Project Name: <code>blink</code> ∈ <code>{ String }</code></p>
