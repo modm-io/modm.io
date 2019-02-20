@@ -3090,8 +3090,21 @@ generated. Even though modm will generate a library that is self-contained,
 we still recommend adding modm as a git submodule for reproducibility.</p>
 <h3 id="using-a-board-support-package">Using a Board Support Package<a class="headerlink" href="#using-a-board-support-package" title="Permanent link">&para;</a></h3>
 <p>To build on a BSP, inherit from an existing project configuration using the
-<code>&lt;extends&gt;</code> element.
-Our BSPs declare a minimal set of modules as dependencies as well as pre-define several important options for this board.
+<code>&lt;extends&gt;</code> element. You can discover the available configuration aliases using
+lbuild:</p>
+<div class="codehilite"><pre><span></span> $ lbuild --repository ../modm/repo.lb discover
+Parser(lbuild)
+╰── Repository(modm @ ../modm)   modm: a barebone embedded library generator
+    ├── Configuration(modm:arduino-uno)   Arduino UNO
+    ├── Configuration(modm:blue-pill)   Blue Pill
+    ├── Configuration(modm:disco-f469ni)   STM32F469IDISCOVERY
+    ├── Configuration(modm:nucleo-f401re)   NUCLEO-F401RE
+    ├── Configuration(modm:olimexino-stm32)   Olimexino STM32
+    ╰── Configuration(modm:stm32f030_demo)   STM32F030 Demo Board
+</pre></div>
+
+<p>Our BSPs declare a minimal set of modules as dependencies as well as pre-define
+several important options for this board.
 You can then add all the modules you need and configure them as you want.</p>
 <div class="codehilite"><pre><span></span><span class="nt">&lt;library&gt;</span>
   <span class="nt">&lt;repositories&gt;</span>
@@ -3101,7 +3114,7 @@ You can then add all the modules you need and configure them as you want.</p>
     <span class="nt">&lt;/repository&gt;</span>
   <span class="nt">&lt;/repositories&gt;</span>
   <span class="c">&lt;!-- extend this board configuration --&gt;</span>
-  <span class="nt">&lt;extends&gt;</span>modm:board:disco-f469ni<span class="nt">&lt;/extends&gt;</span>
+  <span class="nt">&lt;extends&gt;</span>modm:disco-f469ni<span class="nt">&lt;/extends&gt;</span>
   <span class="nt">&lt;options&gt;</span>
     <span class="c">&lt;!-- give this project a custom name --&gt;</span>
     <span class="nt">&lt;option</span> <span class="na">name=</span><span class="s">&quot;modm:build:project.name&quot;</span><span class="nt">&gt;</span>test<span class="nt">&lt;/option&gt;</span>
