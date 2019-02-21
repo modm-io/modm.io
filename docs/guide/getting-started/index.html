@@ -3091,7 +3091,7 @@ we still recommend adding modm as a git submodule for reproducibility.</p>
 <h3 id="using-a-board-support-package">Using a Board Support Package<a class="headerlink" href="#using-a-board-support-package" title="Permanent link">&para;</a></h3>
 <p>To build on a BSP, inherit from an existing project configuration using the
 <code>&lt;extends&gt;</code> element. You can discover the available configuration aliases using
-lbuild:</p>
+<a href="https://github.com/modm-io/lbuild">lbuild</a>:</p>
 <div class="codehilite"><pre><span></span> $ lbuild --repository ../modm/repo.lb discover
 Parser(lbuild)
 ╰── Repository(modm @ ../modm)   modm: a barebone embedded library generator
@@ -3130,7 +3130,7 @@ You can then add all the modules you need and configure them as you want.</p>
 <p class="admonition-title">Choose a build system</p>
 <p>Our BSPs do not specify a build system generator, so you need to add the
 module yourself if you want. Here we use the SCons build system generator,
-but you <a href="../reference/build-systems">can choose others as well</a>.</p>
+but you <a href="../../reference/build-systems">can choose others as well</a>.</p>
 </div>
 <p>Our board support packages provide their configuration in the <code>Board</code> namespace,
 which you can use to initialize the target and several board subsystems.
@@ -3181,23 +3181,24 @@ for this specific repository option:</p>
 Parser(lbuild)
 ╰── Repository(modm @ ../modm)   modm: a barebone embedded library generator
     ├── EnumerationOption(target) = stm32f407vgt in [at90can128, at90can32, at90can64, ...]
-    ├── Module(modm:board)
-    │   ╰── Module(modm:board:disco-f407vg)
-    ├── Module(modm:build)
+    ├── Configuration(modm:disco-f407vg)   STM32F4DISCOVERY
+    ├── Module(modm:board)   Board Support Packages
+    │   ╰── Module(modm:board:disco-f407vg)   STM32F4DISCOVERY
+    ├── Module(modm:build)   Build System Generators
     │   ├── Option(build.path) = build/parent-folder in [String]
     │   ├── Option(project.name) = parent-folder in [String]
     │   ╰── Module(modm:build:scons)  SCons Build Script Generator
     │       ├── BooleanOption(info.build) = False in [True, False]
     │       ╰── EnumerationOption(info.git) = Disabled in [Disabled, Info, Info+Status]
-    ├── Module(modm:platform)
-    │   ├── Module(modm:platform:can)
-    │   │   ╰── Module(modm:platform:can:1) CAN 1 instance
+    ├── Module(modm:platform)   Platform HAL
+    │   ├── Module(modm:platform:can)   Controller Area Network (CAN)
+    │   │   ╰── Module(modm:platform:can:1) Instance 1
     │   │       ├── NumericOption(buffer.rx) = 32 in [1 .. 32 .. 65534]
     │   │       ╰── NumericOption(buffer.tx) = 32 in [1 .. 32 .. 65534]
-    │   ├── Module(modm:platform:core)
+    │   ├── Module(modm:platform:core)   ARM Cortex-M Core
     │   │   ├── EnumerationOption(allocator) = newlib in [block, newlib, tlsf]
     │   │   ├── NumericOption(main_stack_size) = 3040 in [256 .. 3040 .. 65536]
-    │   │   ╰── EnumerationOption(vector_table_location) = fastest in [fastest, ram, rom]
+    │   │   ╰── EnumerationOption(vector_table_location) = rom in [ram, rom]
 </pre></div>
 
 <p>You can now discover all module options in more detail:</p>
@@ -3217,14 +3218,15 @@ modm:build:project.name = parent-folder in [String]
 
 <p>Or check out specific module and option descriptions:</p>
 <div class="codehilite"><pre><span></span> $ lbuild -r ../modm/repo.lb -D modm:target=stm32f407vgt discover -n :build
-&gt;&gt; modm:build
+&gt;&gt; modm:build  [Module]
 
 # Build System Generators
 
 This parent module defines a common set of functionality that is independent of
 the specific build system generator implementation.
 
-&gt;&gt;&gt;&gt; modm:build:project.name
+
+&gt;&gt;&gt;&gt; modm:build:project.name  [StringOption]
 
 # Project Name
 
@@ -3233,7 +3235,8 @@ The project name defaults to the folder name you&#39;re calling lbuild from.
 Value: parent-folder
 Inputs: [String]
 
-&gt;&gt;&gt;&gt; modm:build:build.path
+
+&gt;&gt;&gt;&gt; modm:build:build.path  [StringOption]
 
 # Build Path
 
@@ -3243,7 +3246,7 @@ Value: build/parent-folder
 Inputs: [String]
 </pre></div>
 
-<p>The complete lbuild command line interface is available with <code>lbuild -h</code>.</p>
+<p>The complete <a href="https://github.com/modm-io/lbuild">lbuild command line interface</a> is available with <code>lbuild -h</code>.</p>
 <div class="admonition info">
 <p class="admonition-title">Options are checked</p>
 <p><code>lbuild</code> checks all your project options against the possible values in the
@@ -3277,6 +3280,13 @@ source code.</p>
 <span class="nt">&lt;/library&gt;</span>
 </pre></div>
 
+<div class="admonition tip">
+<p class="admonition-title">Check your repository path</p>
+<p>Make sure you've set the correct path to the modm <code>repo.lb</code> file, otherwise
+lbuild cannot help you much. <strong>This is especially important when copying
+from our examples, which have the repository path set in the inherited 
+common configuration file located in <code>modm/examples/lbuild.xml</code>!</strong></p>
+</div>
 <p>A minimal <code>main.cpp</code> for this configuration would look like this:</p>
 <div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;modm/platform.hpp&gt;</span><span class="cp"></span>
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="p">;</span>
@@ -3339,7 +3349,7 @@ Heap:     197520B (98.4% available)
 </pre></div>
 
 <p>You can program your target by calling <code>scons program</code>. Additional tools are
-documented in <a href="../reference/module/modm-build-scons">module documentation</a>.</p>
+documented in <a href="../../reference/module/modm-build-scons">SCons module documentation</a>.</p>
 <p>If you have any questions, <a href="https://github.com/modm-io/modm/issues">open an issue</a> or ping
 <a href="https://github.com/salkinium">@salkinium</a>.</p>
                 
