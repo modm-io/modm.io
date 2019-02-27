@@ -3010,7 +3010,7 @@ update function with intervals of up to 250ms.</p>
 <p>You can also pass the <code>modm::ui::Led</code> class directly into the
 <code>modm::ui::KeyFrameAnimation</code> class and it's derivatives, to animate it's
 brightness by interpolating between key frames.
-Note that you need to call the <code>update()</code> members of both classes!</p>
+Note that you only need to call the <code>update()</code> member of the animator!</p>
 <!--
 .. compile::
     :group: general
@@ -3024,7 +3024,6 @@ Note that you need to call the <code>update()</code> members of both classes!</p
 <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">indicator</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
-    <span class="n">led</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>
 
