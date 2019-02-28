@@ -716,6 +716,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>http://modm.io/reference/module/modm-platform-rcc/</loc>
+     <lastmod>2019-02-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>http://modm.io/reference/module/modm-platform-spi/</loc>
      <lastmod>2019-02-28</lastmod>
      <changefreq>daily</changefreq>

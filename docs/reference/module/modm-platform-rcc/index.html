@@ -13,7 +13,7 @@
         <meta name="description" content="A modular C++17 library generator for barebone embedded programming">
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-platform-uart-spi-3/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-platform-rcc/">
       
       
         <meta name="author" content="Niklas Hauser">
@@ -42,7 +42,7 @@
     
     
       
-        <title>modm:platform:uart.spi:3 - modm barebone embedded library</title>
+        <title>modm:platform:rcc - modm barebone embedded library</title>
       
     
     
@@ -110,7 +110,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#modmplatformuartspi3-instance-3" tabindex="1" class="md-skip">
+      <a href="#modmplatformrcc-reset-and-clock-control-rcc" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -135,7 +135,7 @@
               modm barebone embedded library
             </span>
             <span class="md-header-nav__topic">
-              modm:platform:uart.spi:3
+              modm:platform:rcc
             </span>
           
         </div>
@@ -2100,11 +2100,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../modm-platform-rcc/" title="modm:platform:rcc" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        modm:platform:rcc
+      </label>
+    
+    <a href="./" title="modm:platform:rcc" class="md-nav__link md-nav__link--active">
       modm:platform:rcc
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#content" title="Content" class="md-nav__link">
+    Content
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -2436,56 +2481,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        modm:platform:uart.spi:3
-      </label>
-    
-    <a href="./" title="modm:platform:uart.spi:3" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../modm-platform-uart-spi-3/" title="modm:platform:uart.spi:3" class="md-nav__link">
       modm:platform:uart.spi:3
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#content" title="Content" class="md-nav__link">
-    Content
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" title="Dependencies" class="md-nav__link">
-    Dependencies
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -2889,10 +2889,10 @@
                 <div class="admonition warning">
 <p class="admonition-title">These module docs are in beta and may be incomplete.</p>
 </div>
-<h1 id="modmplatformuartspi3-instance-3">modm:platform:uart.spi:3: Instance 3<a class="headerlink" href="#modmplatformuartspi3-instance-3" title="Permanent link">&para;</a></h1>
+<h1 id="modmplatformrcc-reset-and-clock-control-rcc">modm:platform:rcc: Reset and Clock Control (RCC)<a class="headerlink" href="#modmplatformrcc-reset-and-clock-control-rcc" title="Permanent link">&para;</a></h1>
 <h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1">// Class</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">UartSpiMaster3</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">Rcc</span><span class="p">;</span>
 </pre></div>
 
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
@@ -2901,55 +2901,171 @@
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
-<!-- Title: modm:platform:uart.spi:3 Pages: 1 -->
-<svg width="192pt" height="180pt"
- viewBox="0.00 0.00 192.00 180.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 176)">
-<title>modm:platform:uart.spi:3</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-176 188,-176 188,4 -4,4"/>
-<!-- modm_platform_uart_spi_3 -->
+<!-- Title: modm:platform:rcc Pages: 1 -->
+<svg width="596pt" height="239pt"
+ viewBox="0.00 0.00 596.00 239.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 235)">
+<title>modm:platform:rcc</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-235 592,-235 592,4 -4,4"/>
+<!-- modm_platform_rcc -->
 <g id="node1" class="node">
-<title>modm_platform_uart_spi_3</title>
-<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="133,-68 50,-68 50,0 133,0 133,-68"/>
-<text text-anchor="middle" x="91.5" y="-52.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="91.5" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="91.5" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">uart.spi:</text>
-<text text-anchor="middle" x="91.5" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">3</text>
+<title>modm_platform_rcc</title>
+<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="335,-142 252,-142 252,-89 335,-89 335,-142"/>
+<text text-anchor="middle" x="293.5" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="293.5" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="293.5" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">rcc</text>
 </g>
-<!-- modm_platform_uart_spi -->
+<!-- modm_cmsis_device -->
 <g id="node2" class="node">
-<title>modm_platform_uart_spi</title>
-<g id="a_node2"><a xlink:href="../modm-platform-uart-spi" xlink:title="modm:&#10;platform:&#10;uart.spi">
-<polygon fill="#d3d3d3" stroke="#000000" points="83,-164.5 0,-164.5 0,-111.5 83,-111.5 83,-164.5"/>
-<text text-anchor="middle" x="41.5" y="-149.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="41.5" y="-134.3" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="41.5" y="-119.3" font-family="Times,serif" font-size="14.00" fill="#000000">uart.spi</text>
+<title>modm_cmsis_device</title>
+<g id="a_node2"><a xlink:href="../modm-cmsis-device" xlink:title="modm:&#10;cmsis:&#10;device">
+<polygon fill="#d3d3d3" stroke="#000000" points="236,-231 171,-231 171,-178 236,-178 236,-231"/>
+<text text-anchor="middle" x="203.5" y="-215.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="203.5" y="-200.8" font-family="Times,serif" font-size="14.00" fill="#000000">cmsis:</text>
+<text text-anchor="middle" x="203.5" y="-185.8" font-family="Times,serif" font-size="14.00" fill="#000000">device</text>
 </a>
 </g>
 </g>
-<!-- modm_platform_uart_spi_3&#45;&gt;modm_platform_uart_spi -->
+<!-- modm_platform_rcc&#45;&gt;modm_cmsis_device -->
 <g id="edge1" class="edge">
-<title>modm_platform_uart_spi_3&#45;&gt;modm_platform_uart_spi</title>
-<path fill="none" stroke="#000000" d="M75.1281,-68.0535C69.8325,-79.0684 63.9482,-91.3078 58.6011,-102.4297"/>
-<polygon fill="#000000" stroke="#000000" points="55.4393,-100.9288 54.2607,-111.4578 61.748,-103.9619 55.4393,-100.9288"/>
+<title>modm_platform_rcc&#45;&gt;modm_cmsis_device</title>
+<path fill="none" stroke="#000000" d="M266.497,-142.2029C257.4198,-151.1793 247.1728,-161.3124 237.6214,-170.7577"/>
+<polygon fill="#000000" stroke="#000000" points="235.1334,-168.2958 230.4839,-177.8159 240.0554,-173.2731 235.1334,-168.2958"/>
 </g>
-<!-- modm_platform_uart_3 -->
+<!-- modm_platform -->
 <g id="node3" class="node">
-<title>modm_platform_uart_3</title>
-<g id="a_node3"><a xlink:href="../modm-platform-uart-3" xlink:title="modm:&#10;platform:&#10;uart:&#10;3">
-<polygon fill="#d3d3d3" stroke="#000000" points="184,-172 101,-172 101,-104 184,-104 184,-172"/>
-<text text-anchor="middle" x="142.5" y="-156.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="142.5" y="-141.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="142.5" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">uart:</text>
-<text text-anchor="middle" x="142.5" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">3</text>
+<title>modm_platform</title>
+<g id="a_node3"><a xlink:href="../modm-platform" xlink:title="modm:&#10;platform">
+<polygon fill="#d3d3d3" stroke="#000000" points="332.5,-223.5 254.5,-223.5 254.5,-185.5 332.5,-185.5 332.5,-223.5"/>
+<text text-anchor="middle" x="293.5" y="-208.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="293.5" y="-193.3" font-family="Times,serif" font-size="14.00" fill="#000000">platform</text>
 </a>
 </g>
 </g>
-<!-- modm_platform_uart_spi_3&#45;&gt;modm_platform_uart_3 -->
+<!-- modm_platform_rcc&#45;&gt;modm_platform -->
 <g id="edge2" class="edge">
-<title>modm_platform_uart_spi_3&#45;&gt;modm_platform_uart_3</title>
-<path fill="none" stroke="#000000" d="M108.1993,-68.0535C112.3821,-76.5831 116.925,-85.847 121.2946,-94.7576"/>
-<polygon fill="#000000" stroke="#000000" points="118.2177,-96.4325 125.7632,-103.87 124.5027,-93.3504 118.2177,-96.4325"/>
+<title>modm_platform_rcc&#45;&gt;modm_platform</title>
+<path fill="none" stroke="#000000" d="M293.5,-142.2029C293.5,-152.6482 293.5,-164.6597 293.5,-175.3311"/>
+<polygon fill="#000000" stroke="#000000" points="290.0001,-175.4482 293.5,-185.4482 297.0001,-175.4483 290.0001,-175.4482"/>
+</g>
+<!-- modm_platform_gpio -->
+<g id="node4" class="node">
+<title>modm_platform_gpio</title>
+<g id="a_node4"><a xlink:href="../modm-platform-gpio" xlink:title="modm:&#10;platform:&#10;gpio">
+<polygon fill="#d3d3d3" stroke="#000000" points="434,-231 351,-231 351,-178 434,-178 434,-231"/>
+<text text-anchor="middle" x="392.5" y="-215.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="392.5" y="-200.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="392.5" y="-185.8" font-family="Times,serif" font-size="14.00" fill="#000000">gpio</text>
+</a>
+</g>
+</g>
+<!-- modm_platform_rcc&#45;&gt;modm_platform_gpio -->
+<g id="edge3" class="edge">
+<title>modm_platform_rcc&#45;&gt;modm_platform_gpio</title>
+<path fill="none" stroke="#000000" d="M323.2033,-142.2029C333.2861,-151.2673 344.681,-161.5112 355.2752,-171.0353"/>
+<polygon fill="#000000" stroke="#000000" points="353.0411,-173.7332 362.8177,-177.8159 357.7209,-168.5275 353.0411,-173.7332"/>
+</g>
+<!-- modm_platform_clock -->
+<g id="node5" class="node">
+<title>modm_platform_clock</title>
+<g id="a_node5"><a xlink:href="../modm-platform-clock" xlink:title="modm:&#10;platform:&#10;clock">
+<polygon fill="#d3d3d3" stroke="#000000" points="83,-53 0,-53 0,0 83,0 83,-53"/>
+<text text-anchor="middle" x="41.5" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="41.5" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="41.5" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">clock</text>
+</a>
+</g>
+</g>
+<!-- modm_platform_clock&#45;&gt;modm_platform_rcc -->
+<g id="edge4" class="edge">
+<title>modm_platform_clock&#45;&gt;modm_platform_rcc</title>
+<path fill="none" stroke="#000000" d="M83.2372,-49.35C86.0076,-50.6398 88.7782,-51.8694 91.5,-53 141.2969,-73.6856 200.4525,-91.2098 241.8326,-102.3903"/>
+<polygon fill="#000000" stroke="#000000" points="241.1259,-105.8242 251.6905,-105.0247 242.9332,-99.0615 241.1259,-105.8242"/>
+</g>
+<!-- modm_platform_dma -->
+<g id="node6" class="node">
+<title>modm_platform_dma</title>
+<g id="a_node6"><a xlink:href="../modm-platform-dma" xlink:title="modm:&#10;platform:&#10;dma">
+<polygon fill="#d3d3d3" stroke="#000000" points="184,-53 101,-53 101,0 184,0 184,-53"/>
+<text text-anchor="middle" x="142.5" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="142.5" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="142.5" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">dma</text>
+</a>
+</g>
+</g>
+<!-- modm_platform_dma&#45;&gt;modm_platform_rcc -->
+<g id="edge5" class="edge">
+<title>modm_platform_dma&#45;&gt;modm_platform_rcc</title>
+<path fill="none" stroke="#000000" d="M184.1611,-51.0552C202.4808,-61.8529 224.152,-74.626 243.3494,-85.941"/>
+<polygon fill="#000000" stroke="#000000" points="241.5827,-88.9624 251.9748,-91.0249 245.1371,-82.9319 241.5827,-88.9624"/>
+</g>
+<!-- modm_platform_random -->
+<g id="node7" class="node">
+<title>modm_platform_random</title>
+<g id="a_node7"><a xlink:href="../modm-platform-random" xlink:title="modm:&#10;platform:&#10;random">
+<polygon fill="#d3d3d3" stroke="#000000" points="285,-53 202,-53 202,0 285,0 285,-53"/>
+<text text-anchor="middle" x="243.5" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="243.5" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="243.5" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">random</text>
+</a>
+</g>
+</g>
+<!-- modm_platform_random&#45;&gt;modm_platform_rcc -->
+<g id="edge6" class="edge">
+<title>modm_platform_random&#45;&gt;modm_platform_rcc</title>
+<path fill="none" stroke="#000000" d="M258.5016,-53.2029C263.2479,-61.6513 268.5698,-71.1243 273.6034,-80.0841"/>
+<polygon fill="#000000" stroke="#000000" points="270.5595,-81.8118 278.5089,-88.8159 276.6624,-78.3832 270.5595,-81.8118"/>
+</g>
+<!-- modm_platform_spi -->
+<g id="node8" class="node">
+<title>modm_platform_spi</title>
+<g id="a_node8"><a xlink:href="../modm-platform-spi" xlink:title="modm:&#10;platform:&#10;spi">
+<polygon fill="#d3d3d3" stroke="#000000" points="386,-53 303,-53 303,0 386,0 386,-53"/>
+<text text-anchor="middle" x="344.5" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="344.5" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="344.5" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">spi</text>
+</a>
+</g>
+</g>
+<!-- modm_platform_spi&#45;&gt;modm_platform_rcc -->
+<g id="edge7" class="edge">
+<title>modm_platform_spi&#45;&gt;modm_platform_rcc</title>
+<path fill="none" stroke="#000000" d="M329.1983,-53.2029C324.3571,-61.6513 318.9288,-71.1243 313.7945,-80.0841"/>
+<polygon fill="#000000" stroke="#000000" points="310.7261,-78.3993 308.7909,-88.8159 316.7996,-81.8796 310.7261,-78.3993"/>
+</g>
+<!-- modm_platform_timer -->
+<g id="node9" class="node">
+<title>modm_platform_timer</title>
+<g id="a_node9"><a xlink:href="../modm-platform-timer" xlink:title="modm:&#10;platform:&#10;timer">
+<polygon fill="#d3d3d3" stroke="#000000" points="487,-53 404,-53 404,0 487,0 487,-53"/>
+<text text-anchor="middle" x="445.5" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="445.5" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="445.5" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">timer</text>
+</a>
+</g>
+</g>
+<!-- modm_platform_timer&#45;&gt;modm_platform_rcc -->
+<g id="edge8" class="edge">
+<title>modm_platform_timer&#45;&gt;modm_platform_rcc</title>
+<path fill="none" stroke="#000000" d="M403.9653,-50.8196C385.4426,-61.6652 363.4547,-74.5397 343.9916,-85.9358"/>
+<polygon fill="#000000" stroke="#000000" points="342.1093,-82.9821 335.2483,-91.0553 345.6464,-89.0227 342.1093,-82.9821"/>
+</g>
+<!-- modm_platform_uart -->
+<g id="node10" class="node">
+<title>modm_platform_uart</title>
+<g id="a_node10"><a xlink:href="../modm-platform-uart" xlink:title="modm:&#10;platform:&#10;uart">
+<polygon fill="#d3d3d3" stroke="#000000" points="588,-53 505,-53 505,0 588,0 588,-53"/>
+<text text-anchor="middle" x="546.5" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="546.5" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="546.5" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">uart</text>
+</a>
+</g>
+</g>
+<!-- modm_platform_uart&#45;&gt;modm_platform_rcc -->
+<g id="edge9" class="edge">
+<title>modm_platform_uart&#45;&gt;modm_platform_rcc</title>
+<path fill="none" stroke="#000000" d="M504.7647,-49.3544C501.9937,-50.6431 499.2226,-51.8713 496.5,-53 446.3063,-73.8095 386.6401,-91.37 345.0352,-102.5274"/>
+<polygon fill="#000000" stroke="#000000" points="343.8964,-99.2083 335.1278,-105.1549 345.6909,-105.9744 343.8964,-99.2083"/>
 </g>
 </g>
 </svg>
@@ -2973,7 +3089,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../modm-platform-uart-spi-2/" title="modm:platform:uart.spi:2" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../modm-platform-random/" title="modm:platform:random" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2982,19 +3098,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                modm:platform:uart.spi:2
+                modm:platform:random
               </span>
             </div>
           </a>
         
         
-          <a href="../modm-platform-uart-spi-6/" title="modm:platform:uart.spi:6" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../modm-platform-spi/" title="modm:platform:spi" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                modm:platform:uart.spi:6
+                modm:platform:spi
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
