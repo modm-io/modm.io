@@ -1955,18 +1955,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../modm-platform-clock-cortex/" title="modm:platform:clock.cortex" class="md-nav__link">
-      modm:platform:clock.cortex
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../modm-platform-core/" title="modm:platform:core" class="md-nav__link">
       modm:platform:core
     </a>
@@ -2245,6 +2233,18 @@
   <li class="md-nav__item">
     <a href="../modm-platform-spi-6/" title="modm:platform:spi:6" class="md-nav__link">
       modm:platform:spi:6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-systick/" title="modm:platform:systick" class="md-nav__link">
+      modm:platform:systick
     </a>
   </li>
 
@@ -2892,7 +2892,7 @@
 <h1 id="modmboard-board-support-packages">modm:board: Board Support Packages<a class="headerlink" href="#modmboard-board-support-packages" title="Permanent link">&para;</a></h1>
 <h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1">// Struct</span>
-<span class="k">struct</span> <span class="n">Board</span><span class="o">::</span><span class="n">systemClock</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">Board</span><span class="o">::</span><span class="n">SystemClock</span><span class="p">;</span>
 
 <span class="c1">// Function</span>
 <span class="n">modm</span><span class="o">::</span><span class="n">GraphicDisplay</span><span class="o">&amp;</span> <span class="n">Board</span><span class="o">::</span><span class="n">getDisplay</span><span class="p">();</span>
@@ -2940,6 +2940,7 @@
 <span class="k">using</span> <span class="n">Board</span><span class="o">::</span><span class="n">ft6</span><span class="o">::</span><span class="n">Scl</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GpioB8</span><span class="p">;</span>
 <span class="k">using</span> <span class="n">Board</span><span class="o">::</span><span class="n">ft6</span><span class="o">::</span><span class="n">Sda</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GpioB9</span><span class="p">;</span>
 <span class="k">using</span> <span class="n">Board</span><span class="o">::</span><span class="n">ft6</span><span class="o">::</span><span class="n">Touch</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">modm</span><span class="o">::</span><span class="n">Ft6x06</span><span class="o">&lt;</span> <span class="n">I2cMaster</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">Board</span><span class="o">::</span><span class="n">instead</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">SystemClock</span><span class="p">;</span>
 <span class="k">using</span> <span class="n">Board</span><span class="o">::</span><span class="n">stlink</span><span class="o">::</span><span class="n">Rx</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GpioInputB11</span><span class="p">;</span>
 <span class="k">using</span> <span class="n">Board</span><span class="o">::</span><span class="n">stlink</span><span class="o">::</span><span class="n">Tx</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GpioOutputB10</span><span class="p">;</span>
 <span class="k">using</span> <span class="n">Board</span><span class="o">::</span><span class="n">stlink</span><span class="o">::</span><span class="n">Uart</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">Usart3</span><span class="p">;</span>

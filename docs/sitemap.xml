@@ -636,11 +636,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://modm.io/reference/module/modm-platform-clock-cortex/</loc>
-     <lastmod>2019-03-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>http://modm.io/reference/module/modm-platform-core/</loc>
      <lastmod>2019-03-06</lastmod>
      <changefreq>daily</changefreq>
@@ -757,6 +752,11 @@
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-spi-6/</loc>
+     <lastmod>2019-03-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://modm.io/reference/module/modm-platform-systick/</loc>
      <lastmod>2019-03-06</lastmod>
      <changefreq>daily</changefreq>
     </url>

@@ -1974,18 +1974,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../reference/module/modm-platform-clock-cortex/" title="modm:platform:clock.cortex" class="md-nav__link">
-      modm:platform:clock.cortex
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../reference/module/modm-platform-core/" title="modm:platform:core" class="md-nav__link">
       modm:platform:core
     </a>
@@ -2264,6 +2252,18 @@
   <li class="md-nav__item">
     <a href="../reference/module/modm-platform-spi-6/" title="modm:platform:spi:6" class="md-nav__link">
       modm:platform:spi:6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../reference/module/modm-platform-systick/" title="modm:platform:systick" class="md-nav__link">
+      modm:platform:systick
     </a>
   </li>
 
@@ -3150,8 +3150,8 @@ In addition the executable now only contains prescaler values which are written
 directly to the hardware without any computation required. This is very helpful
 for keeping code size in check on very resource constrained targets, like the AVRs.</p>
 <div class="codehilite"><pre><span></span><span class="n">Uart4</span><span class="o">::</span><span class="n">connect</span><span class="o">&lt;</span><span class="n">GpioA0</span><span class="o">::</span><span class="n">Tx</span><span class="p">,</span> <span class="n">GpioA1</span><span class="o">::</span><span class="n">Rx</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Gpio</span><span class="o">::</span><span class="n">InputType</span><span class="o">::</span><span class="n">PullUp</span><span class="p">);</span> <span class="c1">// pull-up in RX pin</span>
-<span class="n">Uart4</span><span class="o">::</span><span class="n">initialize</span><span class="o">&lt;</span><span class="n">Board</span><span class="o">::</span><span class="n">systemClock</span><span class="p">,</span> <span class="mi">115</span><span class="err">&#39;</span><span class="mi">200</span><span class="o">&gt;</span><span class="p">();</span> <span class="c1">// Within 1% default tolerance</span>
-<span class="n">Uart4</span><span class="o">::</span><span class="n">initialize</span><span class="o">&lt;</span><span class="n">Board</span><span class="o">::</span><span class="n">systemClock</span><span class="p">,</span> <span class="mi">115</span><span class="err">&#39;</span><span class="mi">200</span><span class="p">,</span> <span class="n">Tolerance</span><span class="o">::</span><span class="n">Exact</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">Uart4</span><span class="o">::</span><span class="n">initialize</span><span class="o">&lt;</span><span class="n">Board</span><span class="o">::</span><span class="n">SystemClock</span><span class="p">,</span> <span class="mi">115</span><span class="err">&#39;</span><span class="mi">200</span><span class="n">_Bd</span><span class="o">&gt;</span><span class="p">();</span> <span class="c1">// Within 1% default tolerance</span>
+<span class="n">Uart4</span><span class="o">::</span><span class="n">initialize</span><span class="o">&lt;</span><span class="n">Board</span><span class="o">::</span><span class="n">SystemClock</span><span class="p">,</span> <span class="mi">115</span><span class="err">&#39;</span><span class="mi">200</span><span class="n">_Bd</span><span class="o">&gt;</span> <span class="n">Tolerance</span><span class="o">::</span><span class="n">Exact</span><span class="o">&gt;</span><span class="p">();</span>
 <span class="c1">// error: The closest available baudrate exceeds the tolerance of the requested baudrate!</span>
 </pre></div>
 
@@ -3202,7 +3202,7 @@ peripherals and still maintain access speed without sacrificing usability:</p>
 <span class="n">GpioExpander</span> <span class="n">expander</span><span class="p">;</span>
 <span class="c1">// Connect and initialize the peripherals</span>
 <span class="n">SpiMaster1</span><span class="o">::</span><span class="n">connect</span><span class="o">&lt;</span><span class="n">GpioA0</span><span class="o">::</span><span class="n">Sck</span><span class="p">,</span> <span class="n">GpioA1</span><span class="o">::</span><span class="n">Mosi</span><span class="p">,</span> <span class="n">GpioA2</span><span class="o">::</span><span class="n">Miso</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">SpiMaster1</span><span class="o">::</span><span class="n">initialize</span><span class="o">&lt;</span><span class="n">Board</span><span class="o">::</span><span class="n">systemClock</span><span class="p">,</span> <span class="mi">1</span><span class="n">MHz</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">SpiMaster1</span><span class="o">::</span><span class="n">initialize</span><span class="o">&lt;</span><span class="n">Board</span><span class="o">::</span><span class="n">SystemClock</span><span class="p">,</span> <span class="mi">1</span><span class="n">MHz</span><span class="o">&gt;</span><span class="p">();</span>
 <span class="n">expander</span><span class="p">.</span><span class="n">initialize</span><span class="p">();</span>
 <span class="c1">// Bind the expander pins to a simpler name</span>
 <span class="k">using</span> <span class="n">Pin0</span> <span class="o">=</span> <span class="n">GpioExpander</span><span class="o">::</span><span class="n">P0</span><span class="o">&lt;</span> <span class="n">expander</span> <span class="o">&gt;</span><span class="p">;</span>

@@ -1967,18 +1967,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../reference/module/modm-platform-clock-cortex/" title="modm:platform:clock.cortex" class="md-nav__link">
-      modm:platform:clock.cortex
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../reference/module/modm-platform-core/" title="modm:platform:core" class="md-nav__link">
       modm:platform:core
     </a>
@@ -2257,6 +2245,18 @@
   <li class="md-nav__item">
     <a href="../../reference/module/modm-platform-spi-6/" title="modm:platform:spi:6" class="md-nav__link">
       modm:platform:spi:6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/module/modm-platform-systick/" title="modm:platform:systick" class="md-nav__link">
+      modm:platform:systick
     </a>
   </li>
 
@@ -2941,7 +2941,7 @@ use cases.</p>
 <span class="c1">// connect both pins with a pullup on the Rx</span>
 <span class="n">Uart</span><span class="o">::</span><span class="n">connect</span><span class="o">&lt;</span><span class="n">GpioOutputD1</span><span class="o">::</span><span class="n">Tx</span><span class="p">,</span> <span class="n">GpioInputD0</span><span class="o">::</span><span class="n">Rx</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Gpio</span><span class="o">::</span><span class="n">InputType</span><span class="o">::</span><span class="n">PullUp</span><span class="p">);</span>
 <span class="c1">// initialize to 115.2kBaud from the BSP clock configuration</span>
-<span class="n">Uart</span><span class="o">::</span><span class="n">initialize</span><span class="o">&lt;</span><span class="n">Board</span><span class="o">::</span><span class="n">systemClock</span><span class="p">,</span> <span class="mi">115200</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">Uart</span><span class="o">::</span><span class="n">initialize</span><span class="o">&lt;</span><span class="n">Board</span><span class="o">::</span><span class="n">SystemClock</span><span class="p">,</span> <span class="mi">115200</span><span class="n">_Bd</span><span class="o">&gt;</span><span class="p">();</span>
 
 <span class="n">Uart</span><span class="o">::</span><span class="n">write</span><span class="p">(</span><span class="sc">&#39;H&#39;</span><span class="p">);</span>  <span class="c1">// Ohai there</span>
 <span class="n">Uart</span><span class="o">::</span><span class="n">write</span><span class="p">(</span><span class="sc">&#39;i&#39;</span><span class="p">);</span>
@@ -2962,7 +2962,7 @@ use cases.</p>
 <span class="n">modm</span><span class="o">::</span><span class="n">IOStream</span> <span class="n">stream</span><span class="p">(</span><span class="n">device</span><span class="p">);</span>
 
 <span class="n">Uart</span><span class="o">::</span><span class="n">connect</span><span class="o">&lt;</span><span class="n">GpioOutputD1</span><span class="o">::</span><span class="n">Tx</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">Uart</span><span class="o">::</span><span class="n">initialize</span><span class="o">&lt;</span><span class="n">Board</span><span class="o">::</span><span class="n">systemClock</span><span class="p">,</span> <span class="mi">115200</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">Uart</span><span class="o">::</span><span class="n">initialize</span><span class="o">&lt;</span><span class="n">Board</span><span class="o">::</span><span class="n">SystemClock</span><span class="p">,</span> <span class="mi">115200</span><span class="n">_Bd</span><span class="o">&gt;</span><span class="p">();</span>
 
 <span class="c1">// similar to std::ostream but without formatting features</span>
 <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="mi">42</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; is a nice number!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">modm</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>

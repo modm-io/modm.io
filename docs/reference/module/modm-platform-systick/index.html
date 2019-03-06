@@ -13,7 +13,7 @@
         <meta name="description" content="A modular C++17 library generator for barebone embedded programming">
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-platform-clock-cortex/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-platform-systick/">
       
       
         <meta name="author" content="Niklas Hauser">
@@ -42,7 +42,7 @@
     
     
       
-        <title>modm:platform:clock.cortex - modm barebone embedded library</title>
+        <title>modm:platform:systick - modm barebone embedded library</title>
       
     
     
@@ -110,7 +110,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#modmplatformclockcortex-arm-cortex-m-systick" tabindex="1" class="md-skip">
+      <a href="#modmplatformsystick-arm-cortex-m-systick" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -135,7 +135,7 @@
               modm barebone embedded library
             </span>
             <span class="md-header-nav__topic">
-              modm:platform:clock.cortex
+              modm:platform:systick
             </span>
           
         </div>
@@ -1908,63 +1908,6 @@
           
           
 
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        modm:platform:clock.cortex
-      </label>
-    
-    <a href="./" title="modm:platform:clock.cortex" class="md-nav__link md-nav__link--active">
-      modm:platform:clock.cortex
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#content" title="Content" class="md-nav__link">
-    Content
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" title="Dependencies" class="md-nav__link">
-    Dependencies
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
-  </li>
-
-        
-          
-          
-          
-
 
   <li class="md-nav__item">
     <a href="../modm-platform-core/" title="modm:platform:core" class="md-nav__link">
@@ -2246,6 +2189,63 @@
     <a href="../modm-platform-spi-6/" title="modm:platform:spi:6" class="md-nav__link">
       modm:platform:spi:6
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        modm:platform:systick
+      </label>
+    
+    <a href="./" title="modm:platform:systick" class="md-nav__link md-nav__link--active">
+      modm:platform:systick
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#content" title="Content" class="md-nav__link">
+    Content
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -2889,21 +2889,14 @@
                 <div class="admonition warning">
 <p class="admonition-title">These module docs are in beta and may be incomplete.</p>
 </div>
-<h1 id="modmplatformclockcortex-arm-cortex-m-systick">modm:platform:clock.cortex: ARM Cortex-M SysTick<a class="headerlink" href="#modmplatformclockcortex-arm-cortex-m-systick" title="Permanent link">&para;</a></h1>
+<h1 id="modmplatformsystick-arm-cortex-m-systick">modm:platform:systick: ARM Cortex-M SysTick<a class="headerlink" href="#modmplatformsystick-arm-cortex-m-systick" title="Permanent link">&para;</a></h1>
 <h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1">// Class</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">cortex</span><span class="o">::</span><span class="n">SysTickTimer</span><span class="p">;</span>
-
-<span class="c1">// Function</span>
-<span class="kt">void</span> <span class="nf">_delay_ms</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">ms</span><span class="p">);</span>
-<span class="kt">void</span> <span class="nf">_delay_ns</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">ns</span><span class="p">);</span>
-<span class="kt">void</span> <span class="nf">_delay_us</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">us</span><span class="p">);</span>
-
-<span class="c1">// Enum</span>
-<span class="k">enum</span> <span class="n">StartupError</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">SysTickTimer</span><span class="p">;</span>
 
 <span class="c1">// Typedef</span>
-<span class="k">typedef</span> <span class="nf">void</span><span class="p">(</span><span class="o">*</span> <span class="n">modm</span><span class="o">::</span><span class="n">cortex</span><span class="o">::</span><span class="n">InterruptHandler</span><span class="p">)</span> <span class="p">(</span><span class="kt">void</span><span class="p">))(</span><span class="kt">void</span><span class="p">);</span>
+<span class="k">typedef</span> <span class="nf">void</span><span class="p">(</span><span class="o">*</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">InterruptHandler</span><span class="p">)</span> <span class="p">(</span><span class="kt">void</span><span class="p">))(</span><span class="kt">void</span><span class="p">);</span>
+<span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">cortex</span><span class="o">::</span><span class="n">instead</span> <span class="o">=</span> <span class="k">typedef</span> <span class="o">::</span><span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">SysTickTimer</span><span class="p">;</span>
 </pre></div>
 
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
@@ -2912,19 +2905,19 @@
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
-<!-- Title: modm:platform:clock.cortex Pages: 1 -->
-<svg width="426pt" height="239pt"
- viewBox="0.00 0.00 426.00 239.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Title: modm:platform:systick Pages: 1 -->
+<svg width="298pt" height="239pt"
+ viewBox="0.00 0.00 298.00 239.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 235)">
-<title>modm:platform:clock.cortex</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-235 422,-235 422,4 -4,4"/>
-<!-- modm_platform_clock_cortex -->
+<title>modm:platform:systick</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-235 294,-235 294,4 -4,4"/>
+<!-- modm_platform_systick -->
 <g id="node1" class="node">
-<title>modm_platform_clock_cortex</title>
-<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="288.5,-142 183.5,-142 183.5,-89 288.5,-89 288.5,-142"/>
-<text text-anchor="middle" x="236" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="236" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="236" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">clock.cortex</text>
+<title>modm_platform_systick</title>
+<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="202.5,-142 119.5,-142 119.5,-89 202.5,-89 202.5,-142"/>
+<text text-anchor="middle" x="161" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="161" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="161" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">systick</text>
 </g>
 <!-- modm_architecture_clock -->
 <g id="node2" class="node">
@@ -2937,95 +2930,61 @@
 </a>
 </g>
 </g>
-<!-- modm_platform_clock_cortex&#45;&gt;modm_architecture_clock -->
+<!-- modm_platform_systick&#45;&gt;modm_architecture_clock -->
 <g id="edge1" class="edge">
-<title>modm_platform_clock_cortex&#45;&gt;modm_architecture_clock</title>
-<path fill="none" stroke="#000000" d="M183.1607,-141.4817C162.8913,-151.4485 139.5542,-162.9236 118.3949,-173.3279"/>
-<polygon fill="#000000" stroke="#000000" points="116.5907,-170.3148 109.1613,-177.8682 119.6796,-176.5964 116.5907,-170.3148"/>
-</g>
-<!-- modm_architecture_delay -->
-<g id="node3" class="node">
-<title>modm_architecture_delay</title>
-<g id="a_node3"><a xlink:href="../modm-architecture-delay" xlink:title="modm:&#10;architecture:&#10;delay">
-<polygon fill="#d3d3d3" stroke="#000000" points="238,-231 128,-231 128,-178 238,-178 238,-231"/>
-<text text-anchor="middle" x="183" y="-215.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="183" y="-200.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
-<text text-anchor="middle" x="183" y="-185.8" font-family="Times,serif" font-size="14.00" fill="#000000">delay</text>
-</a>
-</g>
-</g>
-<!-- modm_platform_clock_cortex&#45;&gt;modm_architecture_delay -->
-<g id="edge2" class="edge">
-<title>modm_platform_clock_cortex&#45;&gt;modm_architecture_delay</title>
-<path fill="none" stroke="#000000" d="M220.0983,-142.2029C215.0672,-150.6513 209.426,-160.1243 204.0904,-169.0841"/>
-<polygon fill="#000000" stroke="#000000" points="200.9999,-167.4332 198.8905,-177.8159 207.0143,-171.0148 200.9999,-167.4332"/>
+<title>modm_platform_systick&#45;&gt;modm_architecture_clock</title>
+<path fill="none" stroke="#000000" d="M129.1965,-142.2029C118.2959,-151.3553 105.9631,-161.7102 94.5267,-171.3125"/>
+<polygon fill="#000000" stroke="#000000" points="92.189,-168.7052 86.781,-177.8159 96.6901,-174.0661 92.189,-168.7052"/>
 </g>
 <!-- modm_cmsis_device -->
-<g id="node4" class="node">
+<g id="node3" class="node">
 <title>modm_cmsis_device</title>
-<g id="a_node4"><a xlink:href="../modm-cmsis-device" xlink:title="modm:&#10;cmsis:&#10;device">
-<polygon fill="#d3d3d3" stroke="#000000" points="321.5,-231 256.5,-231 256.5,-178 321.5,-178 321.5,-231"/>
-<text text-anchor="middle" x="289" y="-215.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="289" y="-200.8" font-family="Times,serif" font-size="14.00" fill="#000000">cmsis:</text>
-<text text-anchor="middle" x="289" y="-185.8" font-family="Times,serif" font-size="14.00" fill="#000000">device</text>
+<g id="a_node3"><a xlink:href="../modm-cmsis-device" xlink:title="modm:&#10;cmsis:&#10;device">
+<polygon fill="#d3d3d3" stroke="#000000" points="193.5,-231 128.5,-231 128.5,-178 193.5,-178 193.5,-231"/>
+<text text-anchor="middle" x="161" y="-215.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="161" y="-200.8" font-family="Times,serif" font-size="14.00" fill="#000000">cmsis:</text>
+<text text-anchor="middle" x="161" y="-185.8" font-family="Times,serif" font-size="14.00" fill="#000000">device</text>
 </a>
 </g>
 </g>
-<!-- modm_platform_clock_cortex&#45;&gt;modm_cmsis_device -->
-<g id="edge3" class="edge">
-<title>modm_platform_clock_cortex&#45;&gt;modm_cmsis_device</title>
-<path fill="none" stroke="#000000" d="M251.9017,-142.2029C256.9328,-150.6513 262.574,-160.1243 267.9096,-169.0841"/>
-<polygon fill="#000000" stroke="#000000" points="264.9857,-171.0148 273.1095,-177.8159 271.0001,-167.4332 264.9857,-171.0148"/>
+<!-- modm_platform_systick&#45;&gt;modm_cmsis_device -->
+<g id="edge2" class="edge">
+<title>modm_platform_systick&#45;&gt;modm_cmsis_device</title>
+<path fill="none" stroke="#000000" d="M161,-142.2029C161,-150.2113 161,-159.1403 161,-167.6802"/>
+<polygon fill="#000000" stroke="#000000" points="157.5001,-167.8159 161,-177.8159 164.5001,-167.8159 157.5001,-167.8159"/>
 </g>
 <!-- modm_platform -->
-<g id="node5" class="node">
+<g id="node4" class="node">
 <title>modm_platform</title>
-<g id="a_node5"><a xlink:href="../modm-platform" xlink:title="modm:&#10;platform">
-<polygon fill="#d3d3d3" stroke="#000000" points="418,-223.5 340,-223.5 340,-185.5 418,-185.5 418,-223.5"/>
-<text text-anchor="middle" x="379" y="-208.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="379" y="-193.3" font-family="Times,serif" font-size="14.00" fill="#000000">platform</text>
+<g id="a_node4"><a xlink:href="../modm-platform" xlink:title="modm:&#10;platform">
+<polygon fill="#d3d3d3" stroke="#000000" points="290,-223.5 212,-223.5 212,-185.5 290,-185.5 290,-223.5"/>
+<text text-anchor="middle" x="251" y="-208.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="251" y="-193.3" font-family="Times,serif" font-size="14.00" fill="#000000">platform</text>
 </a>
 </g>
 </g>
-<!-- modm_platform_clock_cortex&#45;&gt;modm_platform -->
+<!-- modm_platform_systick&#45;&gt;modm_platform -->
+<g id="edge3" class="edge">
+<title>modm_platform_systick&#45;&gt;modm_platform</title>
+<path fill="none" stroke="#000000" d="M188.003,-142.2029C199.5558,-153.6274 213.0034,-166.9256 224.5003,-178.2947"/>
+<polygon fill="#000000" stroke="#000000" points="222.1627,-180.9054 231.7342,-185.4482 227.0847,-175.9281 222.1627,-180.9054"/>
+</g>
+<!-- modm_platform_core -->
+<g id="node5" class="node">
+<title>modm_platform_core</title>
+<g id="a_node5"><a xlink:href="../modm-platform-core" xlink:title="modm:&#10;platform:&#10;core">
+<polygon fill="#d3d3d3" stroke="#000000" points="202.5,-53 119.5,-53 119.5,0 202.5,0 202.5,-53"/>
+<text text-anchor="middle" x="161" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="161" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="161" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">core</text>
+</a>
+</g>
+</g>
+<!-- modm_platform_core&#45;&gt;modm_platform_systick -->
 <g id="edge4" class="edge">
-<title>modm_platform_clock_cortex&#45;&gt;modm_platform</title>
-<path fill="none" stroke="#000000" d="M278.9047,-142.2029C298.2224,-154.2258 320.8743,-168.3239 339.7391,-180.0649"/>
-<polygon fill="#000000" stroke="#000000" points="338.0493,-183.1357 348.3887,-185.4482 341.7481,-177.1927 338.0493,-183.1357"/>
-</g>
-<!-- modm_platform_clock -->
-<g id="node6" class="node">
-<title>modm_platform_clock</title>
-<g id="a_node6"><a xlink:href="../modm-platform-clock" xlink:title="modm:&#10;platform:&#10;clock">
-<polygon fill="#d3d3d3" stroke="#000000" points="227.5,-53 144.5,-53 144.5,0 227.5,0 227.5,-53"/>
-<text text-anchor="middle" x="186" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="186" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="186" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">clock</text>
-</a>
-</g>
-</g>
-<!-- modm_platform_clock&#45;&gt;modm_platform_clock_cortex -->
-<g id="edge5" class="edge">
-<title>modm_platform_clock&#45;&gt;modm_platform_clock_cortex</title>
-<path fill="none" stroke="#000000" d="M201.0016,-53.2029C205.7479,-61.6513 211.0698,-71.1243 216.1034,-80.0841"/>
-<polygon fill="#000000" stroke="#000000" points="213.0595,-81.8118 221.0089,-88.8159 219.1624,-78.3832 213.0595,-81.8118"/>
-</g>
-<!-- modm_platform_cortex_m -->
-<g id="node7" class="node">
-<title>modm_platform_cortex_m</title>
-<g id="a_node7"><a xlink:href="../modm-platform-cortex-m" xlink:title="modm:&#10;platform:&#10;cortex&#45;m">
-<polygon fill="#d3d3d3" stroke="#000000" points="328.5,-53 245.5,-53 245.5,0 328.5,0 328.5,-53"/>
-<text text-anchor="middle" x="287" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="287" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="287" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">cortex&#45;m</text>
-</a>
-</g>
-</g>
-<!-- modm_platform_cortex_m&#45;&gt;modm_platform_clock_cortex -->
-<g id="edge6" class="edge">
-<title>modm_platform_cortex_m&#45;&gt;modm_platform_clock_cortex</title>
-<path fill="none" stroke="#000000" d="M271.6983,-53.2029C266.8571,-61.6513 261.4288,-71.1243 256.2945,-80.0841"/>
-<polygon fill="#000000" stroke="#000000" points="253.2261,-78.3993 251.2909,-88.8159 259.2996,-81.8796 253.2261,-78.3993"/>
+<title>modm_platform_core&#45;&gt;modm_platform_systick</title>
+<path fill="none" stroke="#000000" d="M161,-53.2029C161,-61.2113 161,-70.1403 161,-78.6802"/>
+<polygon fill="#000000" stroke="#000000" points="157.5001,-78.8159 161,-88.8159 164.5001,-78.8159 157.5001,-78.8159"/>
 </g>
 </g>
 </svg>
@@ -3049,7 +3008,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../modm-platform-clock/" title="modm:platform:clock" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../modm-platform-spi-6/" title="modm:platform:spi:6" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -3058,19 +3017,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                modm:platform:clock
+                modm:platform:spi:6
               </span>
             </div>
           </a>
         
         
-          <a href="../modm-platform-core/" title="modm:platform:core" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../modm-platform-timer/" title="modm:platform:timer" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                modm:platform:core
+                modm:platform:timer
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
