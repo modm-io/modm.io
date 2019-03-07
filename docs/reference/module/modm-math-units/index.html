@@ -13,7 +13,7 @@
         <meta name="description" content="A modular C++17 library generator for barebone embedded programming">
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-processing/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-math-units/">
       
       
         <meta name="author" content="Niklas Hauser">
@@ -42,7 +42,7 @@
     
     
       
-        <title>modm:processing - modm barebone embedded library</title>
+        <title>modm:math:units - modm barebone embedded library</title>
       
     
     
@@ -110,7 +110,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#modmprocessing-processing" tabindex="1" class="md-skip">
+      <a href="#modmmathunits-si-units" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -135,7 +135,7 @@
               modm barebone embedded library
             </span>
             <span class="md-header-nav__topic">
-              modm:processing
+              modm:math:units
             </span>
           
         </div>
@@ -1764,11 +1764,63 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../modm-math-units/" title="modm:math:units" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        modm:math:units
+      </label>
+    
+    <a href="./" title="modm:math:units" class="md-nav__link md-nav__link--active">
       modm:math:units
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#integral-percentages" title="Integral Percentages" class="md-nav__link">
+    Integral Percentages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content" title="Content" class="md-nav__link">
+    Content
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -2568,56 +2620,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        modm:processing
-      </label>
-    
-    <a href="./" title="modm:processing" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../modm-processing/" title="modm:processing" class="md-nav__link">
       modm:processing
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#content" title="Content" class="md-nav__link">
-    Content
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" title="Dependencies" class="md-nav__link">
-    Dependencies
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -2868,6 +2875,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#integral-percentages" title="Integral Percentages" class="md-nav__link">
+    Integral Percentages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#content" title="Content" class="md-nav__link">
     Content
   </a>
@@ -2901,79 +2915,80 @@
                 <div class="admonition warning">
 <p class="admonition-title">These module docs are in beta and may be incomplete.</p>
 </div>
-<h1 id="modmprocessing-processing">modm:processing: Processing<a class="headerlink" href="#modmprocessing-processing" title="Permanent link">&para;</a></h1>
-<p>Constructs to influence program flow execution, timing, synchronization
-and delegation.</p>
+<h1 id="modmmathunits-si-units">modm:math:units: SI Units<a class="headerlink" href="#modmmathunits-si-units" title="Permanent link">&para;</a></h1>
+<p>modm uses a couple of common SI units for configuration of peripherals:</p>
+<ul>
+<li><code>frequency_t</code> in Hertz: <code>Hz</code>, <code>kHz</code> and <code>MHz</code>.</li>
+<li><code>baudrate_t</code> in Baud: <code>Bd</code>, <code>kBd</code>, <code>MBd</code>.</li>
+<li><code>bitrate_t</code> in bit/s, <code>bps</code>.</li>
+</ul>
+<p>These are integral units, so 1 Hz/Bd/bps cannot be split further, and are cast
+directly to <code>uint32_t</code> type, so they can be used as a non-type template argument.</p>
+<p>Conversion can be done via constexpr functions from <em>any</em> numerical type:</p>
+<ul>
+<li><code>modm::Hz(T value)</code>, <code>modm::kHz(T value)</code>, <code>modm::MHz(T value)</code>.</li>
+<li><code>modm::Bd(T value)</code>, <code>modm::kBd(T value)</code>, <code>modm::MBd(T value)</code>.</li>
+<li><code>modm::bps(T value)</code>, <code>modm::kbps(T value)</code>, <code>modm::Mbps(T value)</code>.</li>
+</ul>
+<p>In addition, user-defined literals are provided in the <code>modm::literals</code> namespace:</p>
+<div class="codehilite"><pre><span></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">modm</span><span class="o">::</span><span class="n">literals</span><span class="p">;</span>
+
+<span class="n">frequency_t</span> <span class="n">frequency</span> <span class="o">=</span> <span class="n">modm</span><span class="o">::</span><span class="n">Mhz</span><span class="p">(</span><span class="mf">10.5</span><span class="p">);</span>
+            <span class="n">frequency</span> <span class="o">=</span> <span class="mf">10.5</span><span class="n">_MHz</span><span class="p">;</span>
+<span class="n">baudrate_t</span> <span class="n">baudrate</span> <span class="o">=</span> <span class="mf">115.2</span><span class="n">_kBd</span><span class="p">;</span>
+           <span class="n">baudrate</span> <span class="o">=</span> <span class="n">modm</span><span class="o">::</span><span class="n">kBd</span><span class="p">(</span><span class="mf">115.2</span><span class="p">);</span>
+<span class="n">bitrate_t</span> <span class="n">bitrate</span> <span class="o">=</span> <span class="n">modm</span><span class="o">::</span><span class="n">kbps</span><span class="p">(</span><span class="mi">125</span><span class="p">);</span>
+          <span class="n">bitrate</span> <span class="o">=</span> <span class="mi">125</span><span class="n">_kbps</span><span class="p">;</span>
+
+<span class="n">frequency</span> <span class="o">=</span> <span class="mi">4295</span><span class="n">_MHz</span><span class="p">;</span> <span class="c1">// OVERFLOW at 2^32 units!</span>
+</pre></div>
+
+<h2 id="integral-percentages">Integral Percentages<a class="headerlink" href="#integral-percentages" title="Permanent link">&para;</a></h2>
+<p>Since <code>float</code> cannot be used as a non-type template argument, an integer type
+for providing tolerances in <code>percent_t</code> is available.
+Note that <code>percent_t</code> is implemented as an enum class, which prevents implicit
+conversions, since the base for this is not 1.
+You must therefore use the <code>modm::pct(T value)</code> or <code>_pct</code> constructors.</p>
+<div class="codehilite"><pre><span></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">modm</span><span class="o">::</span><span class="n">literals</span><span class="p">;</span>
+
+<span class="n">percent_t</span> <span class="n">tolerance</span> <span class="o">=</span> <span class="n">modm</span><span class="o">::</span><span class="n">pct</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+          <span class="n">tolerance</span> <span class="o">=</span> <span class="mi">10</span><span class="n">_pct</span><span class="p">;</span>
+
+<span class="c1">// convert back to float. *internal use only*</span>
+<span class="kt">float</span> <span class="n">percent</span> <span class="o">=</span> <span class="n">modm</span><span class="o">::</span><span class="n">pct2f</span><span class="p">(</span><span class="n">tolerance</span><span class="p">);</span>
+</pre></div>
+
+<div class="admonition warning">
+<p class="admonition-title">This type is not guaranteed to hold more than 100 percent!</p>
+</div>
 <h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="c1">// Class</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">GenericPeriodicTimer</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">Clock</span><span class="p">,</span> <span class="k">typename</span> <span class="n">TimestampType</span><span class="o">=</span><span class="n">modm</span><span class="o">::</span><span class="n">Timestamp</span> <span class="o">&gt;</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">GenericTimeout</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">Clock</span><span class="p">,</span> <span class="k">class</span> <span class="nc">TimestampType</span><span class="o">=</span><span class="n">modm</span><span class="o">::</span><span class="n">Timestamp</span> <span class="o">&gt;</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">GenericTimestamp</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">T</span> <span class="o">&gt;</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">NestedResumable</span><span class="o">&lt;</span> <span class="kt">uint8_t</span> <span class="n">Levels</span><span class="o">=</span><span class="mi">1</span> <span class="o">&gt;</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">Resumable</span><span class="o">&lt;</span> <span class="kt">uint8_t</span> <span class="n">Functions</span><span class="o">=</span><span class="mi">1</span> <span class="o">&gt;</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">Scheduler</span><span class="o">::</span><span class="n">Task</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">Scheduler</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">Task</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">pt</span><span class="o">::</span><span class="n">Protothread</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">pt</span><span class="o">::</span><span class="n">Semaphore</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">rtos</span><span class="o">::</span><span class="n">BinarySemaphore</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">rtos</span><span class="o">::</span><span class="n">Mutex</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">rtos</span><span class="o">::</span><span class="n">MutexGuard</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">rtos</span><span class="o">::</span><span class="n">Queue</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">T</span>  <span class="o">&gt;</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">rtos</span><span class="o">::</span><span class="n">QueueBase</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">rtos</span><span class="o">::</span><span class="n">Scheduler</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">rtos</span><span class="o">::</span><span class="n">Semaphore</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">rtos</span><span class="o">::</span><span class="n">SemaphoreBase</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">rtos</span><span class="o">::</span><span class="n">Thread</span><span class="o">::</span><span class="n">Lock</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">rtos</span><span class="o">::</span><span class="n">Thread</span><span class="p">;</span>
-
-<span class="c1">// Struct</span>
-<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">ResumableResult</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">T</span> <span class="o">&gt;</span><span class="p">;</span>
-<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">Scheduler</span><span class="o">::</span><span class="n">TaskListItem</span><span class="p">;</span>
-
-<span class="c1">// Function</span>
-<span class="n">IOStream</span><span class="o">&amp;</span> <span class="n">modm</span><span class="o">::</span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">IOStream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">GenericTimestamp</span><span class="o">&lt;</span> <span class="n">T</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">);</span>
-
-<span class="c1">// Enum</span>
-<span class="k">enum</span> <span class="n">PeriodicTimerState</span><span class="p">;</span>
-<span class="k">enum</span> <span class="n">TimeoutState</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="c1">// Function</span>
+<span class="k">constexpr</span> <span class="n">baudrate_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bd</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">baudrate_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">MBd</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">baudrate_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">kBd</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">bitrate_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Mbps</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">bitrate_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">bps</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">bitrate_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">kbps</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">frequency_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Hz</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">frequency_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">MHz</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">frequency_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">kHz</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">modm</span><span class="o">::</span><span class="n">literals</span><span class="o">::</span><span class="k">operator</span><span class="s">&quot;&quot;</span><span class="n">_Bd</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">modm</span><span class="o">::</span><span class="n">literals</span><span class="o">::</span><span class="k">operator</span><span class="s">&quot;&quot;</span><span class="n">_Hz</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="kt">int</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">modm</span><span class="o">::</span><span class="n">literals</span><span class="o">::</span><span class="k">operator</span><span class="s">&quot;&quot;</span><span class="n">_MBd</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">modm</span><span class="o">::</span><span class="n">literals</span><span class="o">::</span><span class="k">operator</span><span class="s">&quot;&quot;</span><span class="n">_MHz</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">modm</span><span class="o">::</span><span class="n">literals</span><span class="o">::</span><span class="k">operator</span><span class="s">&quot;&quot;</span><span class="n">_Mbps</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">modm</span><span class="o">::</span><span class="n">literals</span><span class="o">::</span><span class="k">operator</span><span class="s">&quot;&quot;</span><span class="n">_bps</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">modm</span><span class="o">::</span><span class="n">literals</span><span class="o">::</span><span class="k">operator</span><span class="s">&quot;&quot;</span><span class="n">_kBd</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">modm</span><span class="o">::</span><span class="n">literals</span><span class="o">::</span><span class="k">operator</span><span class="s">&quot;&quot;</span><span class="n">_kHz</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">modm</span><span class="o">::</span><span class="n">literals</span><span class="o">::</span><span class="k">operator</span><span class="s">&quot;&quot;</span><span class="n">_kbps</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">modm</span><span class="o">::</span><span class="n">literals</span><span class="o">::</span><span class="k">operator</span><span class="s">&quot;&quot;</span><span class="n">_pct</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">percent_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">pct</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
 
 <span class="c1">// Typedef</span>
-<span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">PeriodicTimer</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GenericPeriodicTimer</span><span class="o">&lt;</span> <span class="o">::</span><span class="n">modm</span><span class="o">::</span><span class="n">Clock</span><span class="p">,</span> <span class="n">Timestamp</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">ShortPeriodicTimer</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GenericPeriodicTimer</span><span class="o">&lt;</span> <span class="o">::</span><span class="n">modm</span><span class="o">::</span><span class="n">Clock</span><span class="p">,</span> <span class="n">ShortTimestamp</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">ShortTimeout</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GenericTimeout</span><span class="o">&lt;</span> <span class="o">::</span><span class="n">modm</span><span class="o">::</span><span class="n">Clock</span><span class="p">,</span> <span class="n">ShortTimestamp</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">ShortTimestamp</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GenericTimestamp</span><span class="o">&lt;</span><span class="kt">uint16_t</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">Timeout</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GenericTimeout</span><span class="o">&lt;</span> <span class="o">::</span><span class="n">modm</span><span class="o">::</span><span class="n">Clock</span><span class="p">,</span> <span class="n">Timestamp</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">Timestamp</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GenericTimestamp</span><span class="o">&lt;</span><span class="kt">uint32_t</span><span class="o">&gt;</span><span class="p">;</span>
-
-<span class="c1">// Define</span>
-<span class="cp">#define MILLISECONDS</span>
-<span class="cp">#define MODM_RESUMABLE_MODULE_NAME</span>
-<span class="cp">#define PT_BEGIN</span>
-<span class="cp">#define PT_CALL(resumable)</span>
-<span class="cp">#define PT_END</span>
-<span class="cp">#define PT_EXIT</span>
-<span class="cp">#define PT_RESTART</span>
-<span class="cp">#define PT_SPAWN(child)</span>
-<span class="cp">#define PT_WAIT_THREAD(child)</span>
-<span class="cp">#define PT_WAIT_UNTIL(condition)</span>
-<span class="cp">#define PT_WAIT_WHILE(condition)</span>
-<span class="cp">#define PT_YIELD</span>
-<span class="cp">#define RF_BEGIN</span>
-<span class="cp">#define RF_BEGIN(index)</span>
-<span class="cp">#define RF_CALL(resumable)</span>
-<span class="cp">#define RF_CALL_BLOCKING(resumable)</span>
-<span class="cp">#define RF_END</span>
-<span class="cp">#define RF_END_RETURN(result)</span>
-<span class="cp">#define RF_END_RETURN_CALL(resumable)</span>
-<span class="cp">#define RF_RETURN</span>
-<span class="cp">#define RF_RETURN(result)</span>
-<span class="cp">#define RF_RETURN_CALL(resumable)</span>
-<span class="cp">#define RF_WAIT_THREAD(child)</span>
-<span class="cp">#define RF_WAIT_UNTIL(condition)</span>
-<span class="cp">#define RF_WAIT_WHILE(condition)</span>
-<span class="cp">#define RF_YIELD</span>
-<span class="cp">#define TIME_LOOP(frequency)</span>
+<span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">baudrate_t</span> <span class="o">=</span> <span class="k">typedef</span> <span class="kt">uint32_t</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">bitrate_t</span> <span class="o">=</span> <span class="k">typedef</span> <span class="kt">uint32_t</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">frequency_t</span> <span class="o">=</span> <span class="k">typedef</span> <span class="kt">uint32_t</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">percent_t</span> <span class="o">=</span> <span class="k">typedef</span> <span class="kt">uint16_t</span><span class="p">;</span>
 </pre></div>
 
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
@@ -2982,103 +2997,63 @@ and delegation.</p>
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
-<!-- Title: modm:processing Pages: 1 -->
-<svg width="579pt" height="135pt"
- viewBox="0.00 0.00 578.50 135.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Title: modm:math:units Pages: 1 -->
+<svg width="198pt" height="135pt"
+ viewBox="0.00 0.00 197.50 135.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 131)">
-<title>modm:processing</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-131 574.5,-131 574.5,4 -4,4"/>
-<!-- modm_processing -->
+<title>modm:math:units</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-131 193.5,-131 193.5,4 -4,4"/>
+<!-- modm_math_units -->
 <g id="node1" class="node">
-<title>modm_processing</title>
-<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="334.5,-127 239.5,-127 239.5,-89 334.5,-89 334.5,-127"/>
-<text text-anchor="middle" x="287" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="287" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">processing</text>
+<title>modm_math_units</title>
+<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="137.5,-53 72.5,-53 72.5,0 137.5,0 137.5,-53"/>
+<text text-anchor="middle" x="105" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="105" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
+<text text-anchor="middle" x="105" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">units</text>
 </g>
-<!-- modm_processing_protothread -->
+<!-- modm_architecture -->
 <g id="node2" class="node">
-<title>modm_processing_protothread</title>
-<g id="a_node2"><a xlink:href="../modm-processing-protothread" xlink:title="modm:&#10;processing:&#10;protothread">
-<polygon fill="#d3d3d3" stroke="#000000" points="102,-53 0,-53 0,0 102,0 102,-53"/>
-<text text-anchor="middle" x="51" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="51" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">processing:</text>
-<text text-anchor="middle" x="51" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">protothread</text>
+<title>modm_architecture</title>
+<g id="a_node2"><a xlink:href="../modm-architecture" xlink:title="modm:&#10;architecture">
+<polygon fill="#d3d3d3" stroke="#000000" points="106,-127 0,-127 0,-89 106,-89 106,-127"/>
+<text text-anchor="middle" x="53" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="53" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture</text>
 </a>
 </g>
 </g>
-<!-- modm_processing_protothread&#45;&gt;modm_processing -->
+<!-- modm_math_units&#45;&gt;modm_architecture -->
 <g id="edge1" class="edge">
-<title>modm_processing_protothread&#45;&gt;modm_processing</title>
-<path fill="none" stroke="#000000" d="M102.2293,-49.582C105.1834,-50.7706 108.1218,-51.9186 111,-53 150.0034,-67.654 194.8397,-81.6239 229.4964,-91.8175"/>
-<polygon fill="#000000" stroke="#000000" points="228.8664,-95.2797 239.4466,-94.7229 230.8285,-88.5603 228.8664,-95.2797"/>
+<title>modm_math_units&#45;&gt;modm_architecture</title>
+<path fill="none" stroke="#000000" d="M81.594,-53.1861C75.6892,-61.7092 69.6282,-71.1679 64.5384,-79.7952"/>
+<polygon fill="#000000" stroke="#000000" points="61.349,-78.3237 59.45,-88.7469 67.4346,-81.7829 61.349,-78.3237"/>
 </g>
-<!-- modm_processing_resumable -->
+<!-- modm_math -->
 <g id="node3" class="node">
-<title>modm_processing_resumable</title>
-<g id="a_node3"><a xlink:href="../modm-processing-resumable" xlink:title="modm:&#10;processing:&#10;resumable">
-<polygon fill="#d3d3d3" stroke="#000000" points="219.5,-53 120.5,-53 120.5,0 219.5,0 219.5,-53"/>
-<text text-anchor="middle" x="170" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="170" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">processing:</text>
-<text text-anchor="middle" x="170" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">resumable</text>
+<title>modm_math</title>
+<g id="a_node3"><a xlink:href="../modm-math" xlink:title="modm:&#10;math">
+<polygon fill="#d3d3d3" stroke="#000000" points="189.5,-127 124.5,-127 124.5,-89 189.5,-89 189.5,-127"/>
+<text text-anchor="middle" x="157" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="157" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">math</text>
 </a>
 </g>
 </g>
-<!-- modm_processing_resumable&#45;&gt;modm_processing -->
+<!-- modm_math_units&#45;&gt;modm_math -->
 <g id="edge2" class="edge">
-<title>modm_processing_resumable&#45;&gt;modm_processing</title>
-<path fill="none" stroke="#000000" d="M208.3102,-53.1861C221.9776,-62.7066 237.3208,-73.3944 250.8046,-82.787"/>
-<polygon fill="#000000" stroke="#000000" points="249.1546,-85.903 259.3606,-88.7469 253.1557,-80.1592 249.1546,-85.903"/>
+<title>modm_math_units&#45;&gt;modm_math</title>
+<path fill="none" stroke="#000000" d="M115.6475,-53.1861C120.7245,-61.8906 126.8838,-71.5708 132.9247,-80.3447"/>
+<polygon fill="#000000" stroke="#000000" points="130.2427,-82.6134 138.8817,-88.7469 135.9532,-78.5648 130.2427,-82.6134"/>
 </g>
-<!-- modm_processing_rtos -->
-<g id="node4" class="node">
-<title>modm_processing_rtos</title>
-<g id="a_node4"><a xlink:href="../modm-processing-rtos" xlink:title="modm:&#10;processing:&#10;rtos">
-<polygon fill="#d3d3d3" stroke="#000000" points="336.5,-53 237.5,-53 237.5,0 336.5,0 336.5,-53"/>
-<text text-anchor="middle" x="287" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="287" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">processing:</text>
-<text text-anchor="middle" x="287" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">rtos</text>
-</a>
-</g>
-</g>
-<!-- modm_processing_rtos&#45;&gt;modm_processing -->
+<!-- modm_architecture&#45;&gt;modm_math_units -->
 <g id="edge3" class="edge">
-<title>modm_processing_rtos&#45;&gt;modm_processing</title>
-<path fill="none" stroke="#000000" d="M287,-53.1861C287,-61.3465 287,-70.3646 287,-78.6895"/>
-<polygon fill="#000000" stroke="#000000" points="283.5001,-78.7469 287,-88.7469 290.5001,-78.747 283.5001,-78.7469"/>
+<title>modm_architecture&#45;&gt;modm_math_units</title>
+<path fill="none" stroke="#000000" d="M71.1183,-88.7469C77.0075,-80.7033 83.4263,-71.094 89.136,-61.8604"/>
+<polygon fill="#000000" stroke="#000000" points="92.1982,-63.5597 94.3525,-53.1861 86.1994,-59.9521 92.1982,-63.5597"/>
 </g>
-<!-- modm_processing_scheduler -->
-<g id="node5" class="node">
-<title>modm_processing_scheduler</title>
-<g id="a_node5"><a xlink:href="../modm-processing-scheduler" xlink:title="modm:&#10;processing:&#10;scheduler">
-<polygon fill="#d3d3d3" stroke="#000000" points="453.5,-53 354.5,-53 354.5,0 453.5,0 453.5,-53"/>
-<text text-anchor="middle" x="404" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="404" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">processing:</text>
-<text text-anchor="middle" x="404" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">scheduler</text>
-</a>
-</g>
-</g>
-<!-- modm_processing_scheduler&#45;&gt;modm_processing -->
+<!-- modm_math&#45;&gt;modm_math_units -->
 <g id="edge4" class="edge">
-<title>modm_processing_scheduler&#45;&gt;modm_processing</title>
-<path fill="none" stroke="#000000" d="M365.6898,-53.1861C352.0224,-62.7066 336.6792,-73.3944 323.1954,-82.787"/>
-<polygon fill="#000000" stroke="#000000" points="320.8443,-80.1592 314.6394,-88.7469 324.8454,-85.903 320.8443,-80.1592"/>
-</g>
-<!-- modm_processing_timer -->
-<g id="node6" class="node">
-<title>modm_processing_timer</title>
-<g id="a_node6"><a xlink:href="../modm-processing-timer" xlink:title="modm:&#10;processing:&#10;timer">
-<polygon fill="#d3d3d3" stroke="#000000" points="570.5,-53 471.5,-53 471.5,0 570.5,0 570.5,-53"/>
-<text text-anchor="middle" x="521" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="521" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">processing:</text>
-<text text-anchor="middle" x="521" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">timer</text>
-</a>
-</g>
-</g>
-<!-- modm_processing_timer&#45;&gt;modm_processing -->
-<g id="edge5" class="edge">
-<title>modm_processing_timer&#45;&gt;modm_processing</title>
-<path fill="none" stroke="#000000" d="M471.1825,-49.7427C468.4283,-50.877 465.688,-51.9706 463,-53 424.0902,-67.9008 379.2523,-81.8666 344.5714,-91.9965"/>
-<polygon fill="#000000" stroke="#000000" points="343.2446,-88.7369 334.6135,-94.8814 345.1925,-95.4604 343.2446,-88.7369"/>
+<title>modm_math&#45;&gt;modm_math_units</title>
+<path fill="none" stroke="#000000" d="M150.55,-88.7469C146.1299,-80.6204 140.2109,-70.8957 134.0706,-61.575"/>
+<polygon fill="#000000" stroke="#000000" points="136.9028,-59.515 128.406,-53.1861 131.1016,-63.4323 136.9028,-59.515"/>
 </g>
 </g>
 </svg>
@@ -3102,7 +3077,7 @@ and delegation.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../modm-platform-uart-8/" title="modm:platform:uart:8" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../modm-math-saturated/" title="modm:math:saturated" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -3111,19 +3086,19 @@ and delegation.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                modm:platform:uart:8
+                modm:math:saturated
               </span>
             </div>
           </a>
         
         
-          <a href="../modm-processing-protothread/" title="modm:processing:protothread" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../modm-math-utils/" title="modm:math:utils" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                modm:processing:protothread
+                modm:math:utils
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

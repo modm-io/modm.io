@@ -1811,6 +1811,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../modm-math-units/" title="modm:math:units" class="md-nav__link">
+      modm:math:units
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../modm-math-utils/" title="modm:math:utils" class="md-nav__link">
       modm:math:utils
     </a>
@@ -2898,16 +2910,15 @@ to use these delay functions.</p>
 <p>The only guarantee given to you is to delay for <em>at least</em> the specified time.
 Note that invocation of interrupts during spinning may add delay too.</p>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-</div>
+<p class="admonition-title">No real-time guarantees!</p>
 <p>You must not rely on delay functions for ANY time-keeping!</p>
+</div>
 <p>Delay functions work at any CPU clock speed, even if changed dynamically and
 are available very early in the startup process at hardware-init time.</p>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<p class="admonition-title">Use the largest time unit possible!</p>
+<p>Correct behavior is not guaranteed for delays over 1000ns, us or ms!</p>
 </div>
-<p>Correct behavior is not guaranteed for delays over 1000ns, us or ms!
-   Make sure to use the largest time unit possible.</p>
 <h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1">// Function</span>
 <span class="kt">void</span> <span class="n">modm</span><span class="o">::</span><span class="n">delayMicroseconds</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">us</span><span class="p">);</span>

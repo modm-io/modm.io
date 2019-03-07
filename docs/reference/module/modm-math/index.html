@@ -1811,6 +1811,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../modm-math-units/" title="modm:math:units" class="md-nav__link">
+      modm:math:units
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../modm-math-utils/" title="modm:math:utils" class="md-nav__link">
       modm:math:utils
     </a>
@@ -2962,10 +2974,29 @@
 <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">modm</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
 <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">modm</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">,</span> <span class="n">Compare</span> <span class="n">compare</span><span class="p">);</span>
 <span class="k">constexpr</span> <span class="n">T</span> <span class="n">modm</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span> <span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span> <span class="n">b</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span> <span class="n">c</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">baudrate_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Bd</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">baudrate_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">MBd</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">baudrate_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">kBd</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">bitrate_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Mbps</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">bitrate_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">bps</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">bitrate_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">kbps</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
 <span class="k">constexpr</span> <span class="kt">bool</span> <span class="n">modm</span><span class="o">::</span><span class="n">isBigEndian</span><span class="p">();</span>
 <span class="k">constexpr</span> <span class="kt">bool</span> <span class="n">modm</span><span class="o">::</span><span class="n">isLittleEndian</span><span class="p">();</span>
+<span class="k">constexpr</span> <span class="n">frequency_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Hz</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">frequency_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">MHz</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">frequency_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">kHz</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
 <span class="k">constexpr</span> <span class="kt">int8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">leftmostBit</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">value</span><span class="p">);</span>
-<span class="k">constexpr</span> <span class="kt">uint16_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">literals</span><span class="o">::</span><span class="k">operator</span><span class="s">&quot;&quot;</span> <span class="n">_percent</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span> <span class="n">percent</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">modm</span><span class="o">::</span><span class="n">literals</span><span class="o">::</span><span class="k">operator</span><span class="s">&quot;&quot;</span><span class="n">_Bd</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">modm</span><span class="o">::</span><span class="n">literals</span><span class="o">::</span><span class="k">operator</span><span class="s">&quot;&quot;</span><span class="n">_Hz</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="kt">int</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">modm</span><span class="o">::</span><span class="n">literals</span><span class="o">::</span><span class="k">operator</span><span class="s">&quot;&quot;</span><span class="n">_MBd</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">modm</span><span class="o">::</span><span class="n">literals</span><span class="o">::</span><span class="k">operator</span><span class="s">&quot;&quot;</span><span class="n">_MHz</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">modm</span><span class="o">::</span><span class="n">literals</span><span class="o">::</span><span class="k">operator</span><span class="s">&quot;&quot;</span><span class="n">_Mbps</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">modm</span><span class="o">::</span><span class="n">literals</span><span class="o">::</span><span class="k">operator</span><span class="s">&quot;&quot;</span><span class="n">_bps</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">modm</span><span class="o">::</span><span class="n">literals</span><span class="o">::</span><span class="k">operator</span><span class="s">&quot;&quot;</span><span class="n">_kBd</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">modm</span><span class="o">::</span><span class="n">literals</span><span class="o">::</span><span class="k">operator</span><span class="s">&quot;&quot;</span><span class="n">_kHz</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">modm</span><span class="o">::</span><span class="n">literals</span><span class="o">::</span><span class="k">operator</span><span class="s">&quot;&quot;</span><span class="n">_kbps</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">modm</span><span class="o">::</span><span class="n">literals</span><span class="o">::</span><span class="k">operator</span><span class="s">&quot;&quot;</span><span class="n">_pct</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
+<span class="k">constexpr</span> <span class="n">percent_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">pct</span><span class="p">(</span><span class="n">T</span> <span class="n">value</span><span class="p">);</span>
 <span class="k">constexpr</span> <span class="kt">uint32_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">pow</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">base</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">exponent</span><span class="p">);</span>
 <span class="kt">int16_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">fromBigEndian</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">value</span><span class="p">);</span>
 <span class="kt">int16_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">fromLittleEndian</span><span class="p">(</span><span class="kt">int16_t</span> <span class="n">value</span><span class="p">);</span>
@@ -3060,6 +3091,10 @@
 <span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">SignedType</span> <span class="o">=</span> <span class="k">typedef</span> <span class="k">typename</span> <span class="n">detail</span><span class="o">::</span><span class="n">MakeSigned</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">type</span><span class="p">;</span>
 <span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">UnsignedType</span> <span class="o">=</span> <span class="k">typedef</span> <span class="k">typename</span> <span class="n">detail</span><span class="o">::</span><span class="n">MakeUnsigned</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">type</span><span class="p">;</span>
 <span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">WideType</span> <span class="o">=</span> <span class="k">typedef</span> <span class="k">typename</span> <span class="n">detail</span><span class="o">::</span><span class="n">WideType</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">type</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">baudrate_t</span> <span class="o">=</span> <span class="k">typedef</span> <span class="kt">uint32_t</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">bitrate_t</span> <span class="o">=</span> <span class="k">typedef</span> <span class="kt">uint32_t</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">frequency_t</span> <span class="o">=</span> <span class="k">typedef</span> <span class="kt">uint32_t</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">percent_t</span> <span class="o">=</span> <span class="k">typedef</span> <span class="kt">uint16_t</span><span class="p">;</span>
 
 <span class="c1">// Define</span>
 <span class="cp">#define IMPLEMENT_VECTOR_ACCESSOR2(a, b)</span>
@@ -3081,135 +3116,142 @@
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: modm:math Pages: 1 -->
-<svg width="699pt" height="135pt"
- viewBox="0.00 0.00 698.50 135.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 131)">
+<svg width="574pt" height="224pt"
+ viewBox="0.00 0.00 574.00 224.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 220)">
 <title>modm:math</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-131 694.5,-131 694.5,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-220 570,-220 570,4 -4,4"/>
 <!-- modm_math -->
 <g id="node1" class="node">
 <title>modm_math</title>
-<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="397.5,-127 332.5,-127 332.5,-89 397.5,-89 397.5,-127"/>
-<text text-anchor="middle" x="365" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="365" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">math</text>
+<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="325,-127 260,-127 260,-89 325,-89 325,-127"/>
+<text text-anchor="middle" x="292.5" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="292.5" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">math</text>
 </g>
-<!-- modm_architecture -->
+<!-- modm_math_units -->
 <g id="node2" class="node">
-<title>modm_architecture</title>
-<g id="a_node2"><a xlink:href="../modm-architecture" xlink:title="modm:&#10;architecture">
-<polygon fill="#d3d3d3" stroke="#000000" points="106,-45.5 0,-45.5 0,-7.5 106,-7.5 106,-45.5"/>
-<text text-anchor="middle" x="53" y="-30.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="53" y="-15.3" font-family="Times,serif" font-size="14.00" fill="#000000">architecture</text>
+<title>modm_math_units</title>
+<g id="a_node2"><a xlink:href="../modm-math-units" xlink:title="modm:&#10;math:&#10;units">
+<polygon fill="#d3d3d3" stroke="#000000" points="325,-216 260,-216 260,-163 325,-163 325,-216"/>
+<text text-anchor="middle" x="292.5" y="-200.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="292.5" y="-185.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
+<text text-anchor="middle" x="292.5" y="-170.8" font-family="Times,serif" font-size="14.00" fill="#000000">units</text>
 </a>
 </g>
 </g>
-<!-- modm_architecture&#45;&gt;modm_math -->
+<!-- modm_math&#45;&gt;modm_math_units -->
 <g id="edge1" class="edge">
-<title>modm_architecture&#45;&gt;modm_math</title>
-<path fill="none" stroke="#000000" d="M94.6176,-45.5447C101.3529,-48.2611 108.3118,-50.8558 115,-53 186.2649,-75.8465 271.9501,-92.4349 322.2471,-101.1125"/>
-<polygon fill="#000000" stroke="#000000" points="321.6769,-104.5657 332.1223,-102.7928 322.8511,-97.6649 321.6769,-104.5657"/>
+<title>modm_math&#45;&gt;modm_math_units</title>
+<path fill="none" stroke="#000000" d="M286.6601,-127.3144C285.9434,-134.9606 285.65,-144.0143 285.7799,-152.8129"/>
+<polygon fill="#000000" stroke="#000000" points="282.2859,-153.0508 286.1269,-162.9249 289.2818,-152.8107 282.2859,-153.0508"/>
+</g>
+<!-- modm_math_units&#45;&gt;modm_math -->
+<g id="edge7" class="edge">
+<title>modm_math_units&#45;&gt;modm_math</title>
+<path fill="none" stroke="#000000" d="M298.8731,-162.9249C299.3243,-154.762 299.3704,-145.7322 299.0114,-137.3922"/>
+<polygon fill="#000000" stroke="#000000" points="302.497,-137.0595 298.3399,-127.3144 295.5125,-137.5249 302.497,-137.0595"/>
 </g>
 <!-- modm_math_filter -->
 <g id="node3" class="node">
 <title>modm_math_filter</title>
 <g id="a_node3"><a xlink:href="../modm-math-filter" xlink:title="modm:&#10;math:&#10;filter">
-<polygon fill="#d3d3d3" stroke="#000000" points="189.5,-53 124.5,-53 124.5,0 189.5,0 189.5,-53"/>
-<text text-anchor="middle" x="157" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="157" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
-<text text-anchor="middle" x="157" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">filter</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="65,-53 0,-53 0,0 65,0 65,-53"/>
+<text text-anchor="middle" x="32.5" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="32.5" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
+<text text-anchor="middle" x="32.5" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">filter</text>
 </a>
 </g>
 </g>
 <!-- modm_math_filter&#45;&gt;modm_math -->
 <g id="edge2" class="edge">
 <title>modm_math_filter&#45;&gt;modm_math</title>
-<path fill="none" stroke="#000000" d="M189.6968,-48.6594C192.458,-50.2139 195.2473,-51.6839 198,-53 238.7308,-72.4735 288.1393,-87.8037 322.6037,-97.2783"/>
-<polygon fill="#000000" stroke="#000000" points="321.7835,-100.6821 332.3503,-99.9113 323.6091,-93.9244 321.7835,-100.6821"/>
+<path fill="none" stroke="#000000" d="M65.0957,-48.8811C67.8795,-50.3859 70.7016,-51.784 73.5,-53 132.0389,-78.4377 204.7018,-93.766 249.8437,-101.5546"/>
+<polygon fill="#000000" stroke="#000000" points="249.4304,-105.0341 259.872,-103.2386 250.5897,-98.1308 249.4304,-105.0341"/>
 </g>
 <!-- modm_math_geometry -->
 <g id="node4" class="node">
 <title>modm_math_geometry</title>
 <g id="a_node4"><a xlink:href="../modm-math-geometry" xlink:title="modm:&#10;math:&#10;geometry">
-<polygon fill="#d3d3d3" stroke="#000000" points="292.5,-53 207.5,-53 207.5,0 292.5,0 292.5,-53"/>
-<text text-anchor="middle" x="250" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="250" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
-<text text-anchor="middle" x="250" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">geometry</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="168,-53 83,-53 83,0 168,0 168,-53"/>
+<text text-anchor="middle" x="125.5" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="125.5" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
+<text text-anchor="middle" x="125.5" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">geometry</text>
 </a>
 </g>
 </g>
 <!-- modm_math_geometry&#45;&gt;modm_math -->
 <g id="edge3" class="edge">
 <title>modm_math_geometry&#45;&gt;modm_math</title>
-<path fill="none" stroke="#000000" d="M287.6553,-53.1861C301.0891,-62.7066 316.17,-73.3944 329.4234,-82.787"/>
-<polygon fill="#000000" stroke="#000000" points="327.6505,-85.8204 337.8331,-88.7469 331.698,-80.1091 327.6505,-85.8204"/>
+<path fill="none" stroke="#000000" d="M168.0175,-48.7397C170.8824,-50.1928 173.7297,-51.6241 176.5,-53 200.9528,-65.1449 228.5648,-78.2605 250.7135,-88.6369"/>
+<polygon fill="#000000" stroke="#000000" points="249.3049,-91.8419 259.8462,-92.9054 252.2689,-85.5003 249.3049,-91.8419"/>
 </g>
 <!-- modm_math_interpolation -->
 <g id="node5" class="node">
 <title>modm_math_interpolation</title>
 <g id="a_node5"><a xlink:href="../modm-math-interpolation" xlink:title="modm:&#10;math:&#10;interpolation">
-<polygon fill="#d3d3d3" stroke="#000000" points="419.5,-53 310.5,-53 310.5,0 419.5,0 419.5,-53"/>
-<text text-anchor="middle" x="365" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="365" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
-<text text-anchor="middle" x="365" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">interpolation</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="295,-53 186,-53 186,0 295,0 295,-53"/>
+<text text-anchor="middle" x="240.5" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="240.5" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
+<text text-anchor="middle" x="240.5" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">interpolation</text>
 </a>
 </g>
 </g>
 <!-- modm_math_interpolation&#45;&gt;modm_math -->
 <g id="edge4" class="edge">
 <title>modm_math_interpolation&#45;&gt;modm_math</title>
-<path fill="none" stroke="#000000" d="M365,-53.1861C365,-61.3465 365,-70.3646 365,-78.6895"/>
-<polygon fill="#000000" stroke="#000000" points="361.5001,-78.7469 365,-88.7469 368.5001,-78.747 361.5001,-78.7469"/>
+<path fill="none" stroke="#000000" d="M257.5267,-53.1861C263.0226,-61.7999 269.1282,-71.3692 274.6798,-80.0703"/>
+<polygon fill="#000000" stroke="#000000" points="271.8864,-82.1993 280.2158,-88.7469 277.7876,-78.4341 271.8864,-82.1993"/>
 </g>
 <!-- modm_math_matrix -->
 <g id="node6" class="node">
 <title>modm_math_matrix</title>
 <g id="a_node6"><a xlink:href="../modm-math-matrix" xlink:title="modm:&#10;math:&#10;matrix">
-<polygon fill="#d3d3d3" stroke="#000000" points="502.5,-53 437.5,-53 437.5,0 502.5,0 502.5,-53"/>
-<text text-anchor="middle" x="470" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="470" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
-<text text-anchor="middle" x="470" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">matrix</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="378,-53 313,-53 313,0 378,0 378,-53"/>
+<text text-anchor="middle" x="345.5" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="345.5" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
+<text text-anchor="middle" x="345.5" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">matrix</text>
 </a>
 </g>
 </g>
 <!-- modm_math_matrix&#45;&gt;modm_math -->
 <g id="edge5" class="edge">
 <title>modm_math_matrix&#45;&gt;modm_math</title>
-<path fill="none" stroke="#000000" d="M437.3529,-51.8404C424.7107,-61.6531 410.2672,-72.864 397.6269,-82.6753"/>
-<polygon fill="#000000" stroke="#000000" points="395.3714,-79.9954 389.6178,-88.8919 399.6635,-85.5251 395.3714,-79.9954"/>
+<path fill="none" stroke="#000000" d="M328.1458,-53.1861C322.4853,-61.8906 316.1902,-71.5708 310.4844,-80.3447"/>
+<polygon fill="#000000" stroke="#000000" points="307.538,-78.4556 305.0204,-88.7469 313.4063,-82.2718 307.538,-78.4556"/>
 </g>
 <!-- modm_math_saturated -->
 <g id="node7" class="node">
 <title>modm_math_saturated</title>
 <g id="a_node7"><a xlink:href="../modm-math-saturated" xlink:title="modm:&#10;math:&#10;saturated">
-<polygon fill="#d3d3d3" stroke="#000000" points="607,-53 521,-53 521,0 607,0 607,-53"/>
-<text text-anchor="middle" x="564" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="564" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
-<text text-anchor="middle" x="564" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">saturated</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="482.5,-53 396.5,-53 396.5,0 482.5,0 482.5,-53"/>
+<text text-anchor="middle" x="439.5" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="439.5" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
+<text text-anchor="middle" x="439.5" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">saturated</text>
 </a>
 </g>
 </g>
 <!-- modm_math_saturated&#45;&gt;modm_math -->
 <g id="edge6" class="edge">
 <title>modm_math_saturated&#45;&gt;modm_math</title>
-<path fill="none" stroke="#000000" d="M520.7652,-48.9957C517.816,-50.3869 514.8749,-51.7345 512,-53 477.27,-68.2879 436.8259,-83.2183 407.1612,-93.6563"/>
-<polygon fill="#000000" stroke="#000000" points="405.8244,-90.4159 397.5381,-97.018 408.1329,-97.0243 405.8244,-90.4159"/>
+<path fill="none" stroke="#000000" d="M396.1902,-50.5119C376.5964,-61.3751 353.5379,-74.1593 334.1468,-84.9101"/>
+<polygon fill="#000000" stroke="#000000" points="332.2869,-81.9393 325.2382,-89.8492 335.6811,-88.0614 332.2869,-81.9393"/>
 </g>
 <!-- modm_math_utils -->
 <g id="node8" class="node">
 <title>modm_math_utils</title>
 <g id="a_node8"><a xlink:href="../modm-math-utils" xlink:title="modm:&#10;math:&#10;utils">
-<polygon fill="#d3d3d3" stroke="#000000" points="690.5,-53 625.5,-53 625.5,0 690.5,0 690.5,-53"/>
-<text text-anchor="middle" x="658" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="658" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
-<text text-anchor="middle" x="658" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">utils</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="566,-53 501,-53 501,0 566,0 566,-53"/>
+<text text-anchor="middle" x="533.5" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="533.5" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
+<text text-anchor="middle" x="533.5" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">utils</text>
 </a>
 </g>
 </g>
 <!-- modm_math_utils&#45;&gt;modm_math -->
-<g id="edge7" class="edge">
+<g id="edge8" class="edge">
 <title>modm_math_utils&#45;&gt;modm_math</title>
-<path fill="none" stroke="#000000" d="M625.0957,-48.7166C622.0878,-50.2984 619.0311,-51.7565 616,-53 546.1117,-81.67 458.86,-96.476 407.7936,-103.215"/>
-<polygon fill="#000000" stroke="#000000" points="407.2479,-99.7562 397.7719,-104.4949 408.1347,-106.6998 407.2479,-99.7562"/>
+<path fill="none" stroke="#000000" d="M500.9923,-48.2831C497.8481,-49.9999 494.6542,-51.6055 491.5,-53 439.8206,-75.8471 376.3291,-91.4119 335.1692,-99.9996"/>
+<polygon fill="#000000" stroke="#000000" points="334.3049,-96.6038 325.2068,-102.0328 335.7047,-103.4624 334.3049,-96.6038"/>
 </g>
 </g>
 </svg>
