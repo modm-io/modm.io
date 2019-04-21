@@ -3014,7 +3014,6 @@
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">fat</span><span class="o">::</span><span class="n">FileInfo</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">fat</span><span class="o">::</span><span class="n">FileSystem</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">fat</span><span class="o">::</span><span class="n">PhysicalVolume</span><span class="p">;</span>
-
 <span class="c1">// Struct</span>
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">BdSpiFlash</span><span class="o">::</span><span class="n">JedecId</span><span class="p">;</span>
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">CanBitTimingMcp2515</span><span class="o">::</span><span class="n">CanBitTimingConfiguration</span><span class="p">;</span>
@@ -3090,7 +3089,6 @@
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">vl53l0</span><span class="p">;</span>
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">vl6180</span><span class="o">::</span><span class="n">Data</span><span class="p">;</span>
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">vl6180</span><span class="p">;</span>
-
 <span class="c1">// Function</span>
 <span class="n">IOStream</span><span class="o">&amp;</span> <span class="n">modm</span><span class="o">::</span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">IOStream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">ad7280a</span><span class="o">::</span><span class="n">ConversionValue</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">);</span>
 <span class="n">IOStream</span><span class="o">&amp;</span> <span class="n">modm</span><span class="o">::</span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">IOStream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">ad7280a</span><span class="o">::</span><span class="n">RegisterValue</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">);</span>
@@ -3107,7 +3105,6 @@
 <span class="n">IOStream</span><span class="o">&amp;</span> <span class="n">modm</span><span class="o">::</span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">IOStream</span> <span class="o">&amp;</span><span class="n">out</span><span class="p">,</span> <span class="k">const</span> <span class="n">ad7928</span><span class="o">::</span><span class="n">Data</span> <span class="o">&amp;</span><span class="n">data</span><span class="p">);</span>
 <span class="n">ltc2984</span><span class="o">::</span><span class="n">CommandStatus</span> <span class="n">modm</span><span class="o">::</span><span class="k">operator</span><span class="o">|</span><span class="p">(</span><span class="n">ltc2984</span><span class="o">::</span><span class="n">CommandStatus</span> <span class="n">r</span><span class="p">,</span> <span class="n">ltc2984</span><span class="o">::</span><span class="n">Channel</span> <span class="n">c</span><span class="p">);</span>
 <span class="n">ltc2984</span><span class="o">::</span><span class="n">Register</span> <span class="n">modm</span><span class="o">::</span><span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="n">ltc2984</span><span class="o">::</span><span class="n">Register</span> <span class="n">r</span><span class="p">,</span> <span class="n">ltc2984</span><span class="o">::</span><span class="n">Channel</span> <span class="n">c</span><span class="p">);</span>
-
 <span class="c1">// Enum</span>
 <span class="k">enum</span> <span class="n">Average</span><span class="p">;</span>
 <span class="k">enum</span> <span class="n">BFPCTRL</span><span class="p">;</span>
@@ -3139,7 +3136,6 @@
 <span class="k">enum</span> <span class="n">TXBnSIDL</span><span class="p">;</span>
 <span class="k">enum</span> <span class="n">TXRTSCTRL</span><span class="p">;</span>
 <span class="k">enum</span> <span class="n">Time</span><span class="p">;</span>
-
 <span class="c1">// Variable</span>
 <span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">max6966</span><span class="o">::</span><span class="n">READ</span> <span class="o">=</span> <span class="mh">0x80</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">max6966</span><span class="o">::</span><span class="n">WRITE</span> <span class="o">=</span> <span class="mh">0x00</span><span class="p">;</span>
@@ -3152,11 +3148,9 @@
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">Tcs3472</span><span class="o">::</span><span class="n">Data</span><span class="o">::</span><span class="err">@</span><span class="mi">2</span> <span class="n">modm</span><span class="o">::</span><span class="n">Tcs3472</span><span class="o">&lt;</span> <span class="n">I2cMaster</span> <span class="o">&gt;::</span><span class="n">Data</span><span class="o">::</span><span class="err">@</span><span class="mi">3</span> <span class="p">;</span>
 <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Tcs3414</span><span class="o">&lt;</span> <span class="n">I2cMaster</span> <span class="o">&gt;::</span><span class="n">Data</span><span class="o">::</span><span class="n">dataBytes</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span><span class="mi">4</span><span class="p">]</span> <span class="p">;</span>
 <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">Tcs3472</span><span class="o">&lt;</span> <span class="n">I2cMaster</span> <span class="o">&gt;::</span><span class="n">Data</span><span class="o">::</span><span class="n">dataBytes</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span><span class="mi">4</span><span class="p">]</span> <span class="p">;</span>
-
 <span class="c1">// Typedef</span>
 <span class="k">typedef</span> <span class="n">DRESULT</span> <span class="n">modm</span><span class="o">::</span><span class="n">fat</span><span class="o">::</span><span class="n">Result</span><span class="p">;</span>
 <span class="k">typedef</span> <span class="n">DSTATUS</span> <span class="n">modm</span><span class="o">::</span><span class="n">fat</span><span class="o">::</span><span class="n">Status</span><span class="p">;</span>
-
 <span class="c1">// Define</span>
 <span class="cp">#define MCP2515_FILTER(id)</span>
 <span class="cp">#define MCP2515_FILTER_EXTENDED(id)</span>

@@ -2942,7 +2942,6 @@ Call <code>Board::initializeTouchscreen()</code> to setup the peripherals.</p>
 <h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1">// Struct</span>
 <span class="k">struct</span> <span class="n">Board</span><span class="o">::</span><span class="n">SystemClock</span><span class="p">;</span>
-
 <span class="c1">// Function</span>
 <span class="n">modm</span><span class="o">::</span><span class="n">GraphicDisplay</span><span class="o">&amp;</span> <span class="n">Board</span><span class="o">::</span><span class="n">getDisplay</span><span class="p">();</span>
 <span class="kt">void</span> <span class="n">Board</span><span class="o">::</span><span class="n">initialize</span><span class="p">();</span>
@@ -2950,7 +2949,6 @@ Call <code>Board::initializeTouchscreen()</code> to setup the peripherals.</p>
 <span class="kt">void</span> <span class="n">Board</span><span class="o">::</span><span class="n">initializeTouchscreen</span><span class="p">();</span>
 <span class="kt">void</span> <span class="n">Board</span><span class="o">::</span><span class="n">setDisplayBuffer</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">buffer</span><span class="p">);</span>
 <span class="kt">void</span><span class="o">*</span> <span class="n">Board</span><span class="o">::</span><span class="n">getDisplayBuffer</span><span class="p">();</span>
-
 <span class="c1">// Typedef</span>
 <span class="k">using</span> <span class="n">Board</span><span class="o">::</span><span class="n">A0</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GpioB1</span><span class="p">;</span>
 <span class="k">using</span> <span class="n">Board</span><span class="o">::</span><span class="n">A1</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GpioC2</span><span class="p">;</span>
@@ -2992,7 +2990,6 @@ Call <code>Board::initializeTouchscreen()</code> to setup the peripherals.</p>
 <span class="k">using</span> <span class="n">Board</span><span class="o">::</span><span class="n">stlink</span><span class="o">::</span><span class="n">Rx</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GpioInputB11</span><span class="p">;</span>
 <span class="k">using</span> <span class="n">Board</span><span class="o">::</span><span class="n">stlink</span><span class="o">::</span><span class="n">Tx</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GpioOutputB10</span><span class="p">;</span>
 <span class="k">using</span> <span class="n">Board</span><span class="o">::</span><span class="n">stlink</span><span class="o">::</span><span class="n">Uart</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">Usart3</span><span class="p">;</span>
-
 <span class="c1">// Define</span>
 <span class="cp">#define MODM_BOARD_HAS_LOGGER</span>
 </pre></div>

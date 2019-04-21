@@ -3052,20 +3052,16 @@ or may not use them (if the slave provides them).</p>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">sab</span><span class="o">::</span><span class="n">Response</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">sab</span><span class="o">::</span><span class="n">Slave</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">Interface</span>  <span class="o">&gt;</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">sab</span><span class="o">::</span><span class="n">Transmitter</span><span class="p">;</span>
-
 <span class="c1">// Struct</span>
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">sab</span><span class="o">::</span><span class="n">Action</span><span class="p">;</span>
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">sab</span><span class="o">::</span><span class="n">Callable</span><span class="p">;</span>
-
 <span class="c1">// Function</span>
 <span class="kt">uint16_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">sab2</span><span class="o">::</span><span class="n">crcUpdate</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">crc</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">data</span><span class="p">);</span>
 <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">sab</span><span class="o">::</span><span class="n">crcUpdate</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">crc</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">data</span><span class="p">);</span>
-
 <span class="c1">// Enum</span>
 <span class="k">enum</span> <span class="n">Error</span><span class="p">;</span>
 <span class="k">enum</span> <span class="n">Error</span><span class="p">;</span>
 <span class="k">enum</span> <span class="n">Flags</span><span class="p">;</span>
-
 <span class="c1">// Variable</span>
 <span class="k">const</span> <span class="kt">uint16_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">sab2</span><span class="o">::</span><span class="n">crcInitialValue</span> <span class="o">=</span> <span class="mh">0xffff</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">sab2</span><span class="o">::</span><span class="n">controlEscapeByte</span> <span class="o">=</span> <span class="mh">0x7d</span><span class="p">;</span>
@@ -3074,7 +3070,6 @@ or may not use them (if the slave provides them).</p>
 <span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">sab</span><span class="o">::</span><span class="n">crcInitialValue</span> <span class="o">=</span> <span class="mh">0x00</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">sab</span><span class="o">::</span><span class="n">maxPayloadLength</span> <span class="o">=</span> <span class="mi">32</span><span class="p">;</span>
 <span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">modm</span><span class="o">::</span><span class="n">sab</span><span class="o">::</span><span class="n">syncByte</span> <span class="o">=</span> <span class="mh">0x54</span><span class="p">;</span>
-
 <span class="c1">// Define</span>
 <span class="cp">#define SAB_ACTION(command, object, function, length)</span>
 </pre></div>

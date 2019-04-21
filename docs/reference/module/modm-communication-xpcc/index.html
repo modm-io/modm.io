@@ -2994,19 +2994,14 @@
 <span class="k">class</span> <span class="nc">xpcc</span><span class="o">::</span><span class="n">Postman</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">xpcc</span><span class="o">::</span><span class="n">ResponseCallback</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">xpcc</span><span class="o">::</span><span class="n">ResponseHandle</span><span class="p">;</span>
-
 <span class="c1">// Struct</span>
 <span class="k">struct</span> <span class="n">xpcc</span><span class="o">::</span><span class="n">Header</span><span class="p">;</span>
-
 <span class="c1">// Function</span>
 <span class="n">modm</span><span class="o">::</span><span class="n">IOStream</span><span class="o">&amp;</span> <span class="n">xpcc</span><span class="o">::</span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">modm</span><span class="o">::</span><span class="n">IOStream</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">,</span> <span class="k">const</span> <span class="n">Header</span> <span class="o">&amp;</span><span class="n">header</span><span class="p">);</span>
-
 <span class="c1">// Enum</span>
 <span class="k">enum</span> <span class="n">Response</span><span class="p">;</span>
-
 <span class="c1">// Typedef</span>
 <span class="k">using</span> <span class="n">xpcc</span><span class="o">::</span><span class="n">ActionResponse</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">modm</span><span class="o">::</span><span class="n">ResumableResult</span><span class="o">&lt;</span> <span class="n">xpcc</span><span class="o">::</span><span class="n">ActionResult</span><span class="o">&lt;</span> <span class="n">T</span> <span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">;</span>
-
 <span class="c1">// Define</span>
 <span class="cp">#define XPCC_CAN_PACKET_ACKNOWLEDGE</span>
 <span class="cp">#define XPCC_CAN_PACKET_ACKNOWLEDGE_MASK</span>

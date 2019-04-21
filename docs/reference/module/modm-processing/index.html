@@ -2938,18 +2938,14 @@ and delegation.</p>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">rtos</span><span class="o">::</span><span class="n">SemaphoreBase</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">rtos</span><span class="o">::</span><span class="n">Thread</span><span class="o">::</span><span class="n">Lock</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">rtos</span><span class="o">::</span><span class="n">Thread</span><span class="p">;</span>
-
 <span class="c1">// Struct</span>
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">ResumableResult</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">T</span> <span class="o">&gt;</span><span class="p">;</span>
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">Scheduler</span><span class="o">::</span><span class="n">TaskListItem</span><span class="p">;</span>
-
 <span class="c1">// Function</span>
 <span class="n">IOStream</span><span class="o">&amp;</span> <span class="n">modm</span><span class="o">::</span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">IOStream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">GenericTimestamp</span><span class="o">&lt;</span> <span class="n">T</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">);</span>
-
 <span class="c1">// Enum</span>
 <span class="k">enum</span> <span class="n">PeriodicTimerState</span><span class="p">;</span>
 <span class="k">enum</span> <span class="n">TimeoutState</span><span class="p">;</span>
-
 <span class="c1">// Typedef</span>
 <span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">PeriodicTimer</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GenericPeriodicTimer</span><span class="o">&lt;</span> <span class="o">::</span><span class="n">modm</span><span class="o">::</span><span class="n">Clock</span><span class="p">,</span> <span class="n">Timestamp</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">ShortPeriodicTimer</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GenericPeriodicTimer</span><span class="o">&lt;</span> <span class="o">::</span><span class="n">modm</span><span class="o">::</span><span class="n">Clock</span><span class="p">,</span> <span class="n">ShortTimestamp</span><span class="o">&gt;</span><span class="p">;</span>
@@ -2957,7 +2953,6 @@ and delegation.</p>
 <span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">ShortTimestamp</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GenericTimestamp</span><span class="o">&lt;</span><span class="kt">uint16_t</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">Timeout</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GenericTimeout</span><span class="o">&lt;</span> <span class="o">::</span><span class="n">modm</span><span class="o">::</span><span class="n">Clock</span><span class="p">,</span> <span class="n">Timestamp</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="k">using</span> <span class="n">modm</span><span class="o">::</span><span class="n">Timestamp</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">GenericTimestamp</span><span class="o">&lt;</span><span class="kt">uint32_t</span><span class="o">&gt;</span><span class="p">;</span>
-
 <span class="c1">// Define</span>
 <span class="cp">#define MILLISECONDS</span>
 <span class="cp">#define MODM_RESUMABLE_MODULE_NAME</span>

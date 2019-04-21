@@ -2968,7 +2968,6 @@ Contains code for Graphics, Buttons, LEDs, Animations, Menu Structures.</p>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">Pulse</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">T</span> <span class="o">=</span><span class="kt">uint8_t</span> <span class="o">&gt;</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">RgbLed</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">Strobe</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">T</span> <span class="o">=</span><span class="kt">uint8_t</span> <span class="o">&gt;</span><span class="p">;</span>
-
 <span class="c1">// Struct</span>
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">MenuEntry</span><span class="p">;</span>
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">gui</span><span class="o">::</span><span class="n">Dimension</span><span class="p">;</span>
@@ -2977,15 +2976,12 @@ Contains code for Graphics, Buttons, LEDs, Animations, Menu Structures.</p>
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">FastRamp</span><span class="o">::</span><span class="n">Computations</span><span class="o">&lt;</span> <span class="n">Type</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">&gt;</span><span class="p">;</span>
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">FastRamp</span><span class="o">::</span><span class="n">Computations</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">Type</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Unsigned</span> <span class="o">&gt;</span><span class="p">;</span>
 <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">KeyFrame</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">T</span><span class="o">=</span><span class="kt">uint8_t</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">N</span><span class="o">=</span><span class="mi">1</span> <span class="o">&gt;</span><span class="p">;</span>
-
 <span class="c1">// Function</span>
 <span class="n">IOStream</span><span class="o">&amp;</span> <span class="n">modm</span><span class="o">::</span><span class="n">color</span><span class="o">::</span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">IOStream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">color</span><span class="o">::</span><span class="n">RgbT</span><span class="o">&lt;</span> <span class="n">UnderlyingType</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">color</span><span class="p">);</span>
-
 <span class="c1">// Enum</span>
 <span class="k">enum</span> <span class="n">Button</span><span class="p">;</span>
 <span class="k">enum</span> <span class="n">Color</span><span class="p">;</span>
 <span class="k">enum</span> <span class="n">KeyFrameAnimationMode</span><span class="p">;</span>
-
 <span class="c1">// Variable</span>
 <span class="n">ColorPalette</span> <span class="n">modm</span><span class="o">::</span><span class="n">gui</span><span class="o">::</span><span class="n">DefaultColorPalette</span> <span class="p">;</span>
 <span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">bitmap</span><span class="o">::</span><span class="n">home_16x16</span><span class="p">[]</span> <span class="p">;</span>
@@ -3007,7 +3003,6 @@ Contains code for Graphics, Buttons, LEDs, Animations, Menu Structures.</p>
 <span class="n">modm</span><span class="o">::</span><span class="n">accessor</span><span class="o">::</span><span class="n">Flash</span><span class="o">&lt;</span><span class="kt">uint16_t</span><span class="o">&gt;</span> <span class="n">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">table22_16_256</span> <span class="p">;</span>
 <span class="n">modm</span><span class="o">::</span><span class="n">accessor</span><span class="o">::</span><span class="n">Flash</span><span class="o">&lt;</span><span class="kt">uint8_t</span><span class="o">&gt;</span> <span class="n">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">table22_7_256</span> <span class="p">;</span>
 <span class="n">modm</span><span class="o">::</span><span class="n">accessor</span><span class="o">::</span><span class="n">Flash</span><span class="o">&lt;</span><span class="kt">uint8_t</span><span class="o">&gt;</span> <span class="n">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">table22_8_256</span> <span class="p">;</span>
-
 <span class="c1">// Typedef</span>
 <span class="k">typedef</span> <span class="n">HsvT</span> <span class="n">modm</span><span class="o">::</span><span class="n">color</span><span class="o">::</span><span class="n">Hsv</span><span class="p">;</span>
 <span class="k">typedef</span> <span class="n">NumberField</span><span class="o">&lt;</span><span class="kt">int16_t</span><span class="o">&gt;</span> <span class="n">modm</span><span class="o">::</span><span class="n">gui</span><span class="o">::</span><span class="n">IntegerField</span><span class="p">;</span>
@@ -3022,7 +3017,6 @@ Contains code for Graphics, Buttons, LEDs, Animations, Menu Structures.</p>
 <span class="k">typedef</span> <span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">gui</span><span class="o">::</span><span class="n">Dimension</span>  <span class="n">modm</span><span class="o">::</span><span class="n">gui</span><span class="o">::</span><span class="n">Dimension</span><span class="p">;</span>
 <span class="k">typedef</span> <span class="nf">void</span><span class="p">(</span><span class="o">*</span> <span class="n">modm</span><span class="o">::</span><span class="n">gui</span><span class="o">::</span><span class="n">eventCallback</span><span class="p">)</span> <span class="p">(</span><span class="k">const</span> <span class="n">InputEvent</span> <span class="o">&amp;</span><span class="p">,</span> <span class="n">Widget</span> <span class="o">*</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="p">))(</span><span class="k">const</span> <span class="n">InputEvent</span> <span class="o">&amp;</span><span class="p">,</span> <span class="n">Widget</span> <span class="o">*</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="p">);</span>
 <span class="k">typedef</span> <span class="nf">void</span><span class="p">(</span><span class="o">*</span> <span class="n">modm</span><span class="o">::</span><span class="n">gui</span><span class="o">::</span><span class="n">genericCallback</span><span class="p">)</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">))(</span><span class="kt">void</span> <span class="o">*</span><span class="p">);</span>
-
 <span class="c1">// Define</span>
 <span class="cp">#define NULL</span>
 </pre></div>
