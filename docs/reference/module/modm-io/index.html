@@ -1725,6 +1725,60 @@
     Using printf
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format-specifiers" title="Format Specifiers" class="md-nav__link">
+    Format Specifiers
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-types" title="Supported Types" class="md-nav__link">
+    Supported Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-flags" title="Supported Flags" class="md-nav__link">
+    Supported Flags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-width" title="Supported Width" class="md-nav__link">
+    Supported Width
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-precision" title="Supported Precision" class="md-nav__link">
+    Supported Precision
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-length" title="Supported Length" class="md-nav__link">
+    Supported Length
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2939,6 +2993,60 @@
     Using printf
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format-specifiers" title="Format Specifiers" class="md-nav__link">
+    Format Specifiers
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-types" title="Supported Types" class="md-nav__link">
+    Supported Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-flags" title="Supported Flags" class="md-nav__link">
+    Supported Flags
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-width" title="Supported Width" class="md-nav__link">
+    Supported Width
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-precision" title="Supported Precision" class="md-nav__link">
+    Supported Precision
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-length" title="Supported Length" class="md-nav__link">
+    Supported Length
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3034,83 +3142,200 @@ implementing a reasonably large subset of <code>printf</code>.</p>
 <span class="n">stream</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;format number 8: %u or as signed -100: %d&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">);</span>
 </pre></div>
 
+<div class="admonition warning">
+<p class="admonition-title">AVR supported features</p>
+<p>All expensive features incl. printf are disabled by default! Check the options.</p>
+</div>
 <h2 id="using-printf">Using printf<a class="headerlink" href="#using-printf" title="Permanent link">&para;</a></h2>
-<p>The format string is composed of zero or more directives: ordinary
-characters (not %), which are copied unchanged to the output stream;
-and conversion specifications, each of which results in fetching zero
-or more subsequent arguments. Each conversion specification is
-introduced by the % character. The arguments must properly correspond
-(after type promotion) with the conversion specifier. After the %,
-the following appear in sequence:</p>
-<p>Zero or more of the following flags:</p>
-<ul>
-<li><code>-</code> A negative field width flag; the converted value is to be
-  left adjusted on the field boundary. The converted value is
-  padded on the right with blanks, rather than on the left with
-  blanks.</li>
-<li><code>' '</code> (space) A blank should be left before a positive number
-  produced by a signed conversion (d).</li>
-<li><code>+</code> A sign must always be placed before a number produced by a
-  signed conversion. A <code>+</code> overrides a space if both are used.</li>
-<li>An optional decimal digit string specifying a minimum field width.
-  If the converted value has fewer characters than the field width,
-  it will be padded with spaces on the left (or right, if the
-  left-adjustment flag has been given) to fill out the field width.</li>
-<li>An optional <code>h</code>, <code>l</code> or <code>ll</code> length modifier, that specifies that the argument
-  for the <code>d</code>, <code>u</code>, or <code>x</code> conversion is a 8-bit ("h"), 32-bit ("l") or
-  64-bit ("ll") rather than 16-bit.</li>
-</ul>
-<p>The conversion specifiers and their meanings are:</p>
-<ul>
-<li><code>c</code>: char (8-bit)</li>
-<li><code>s</code>: string (<code>char *</code>)</li>
-<li><code>p</code>: pointer (<code>void *</code>)</li>
-<li><code>d</code>: signed  decimal</li>
-<li><code>u</code>: unsigned decimal</li>
-<li><code>x</code>: hex</li>
-<li><code>f</code>: float</li>
-<li><code>%</code>: %</li>
-</ul>
-<p>Combined with the length modifiers you get:</p>
-<ul>
-<li><code>d</code>:    signed 16-bit</li>
-<li><code>ld</code>:   signed 32-bit</li>
-<li><code>lld</code>:  signed 64-bit (not yet)</li>
-<li><code>u</code>:    unsigned 16-bit</li>
-<li><code>lu</code>:   unsigned 32-bit</li>
-<li><code>llu</code>:  unsigned 64-bit (not yet)</li>
-<li><code>hx</code>:    8-bit hex</li>
-<li><code>x</code>:    16-bit hex</li>
-<li><code>lx</code>:   32-bit hex</li>
-<li><code>llx</code>:  64-bit hex (not yet)</li>
-</ul>
-<p>Examples, given <code>-100</code> as argument in the right type:</p>
-<div class="codehilite"><pre><span></span>%c:
-%s:
-%p:  0x0100
-%d:  -100
-%ld: -100
-%u:  65436
-%lu:
-%hx: 0x9c
-%x:  0xff9c
-%lx: 0xffffff9c
-</pre></div>
-
-<ul>
-<li><code>s</code>: The "char *" argument is expected to be a pointer to an array
-  of character type (pointer to a string). Characters from the array
-  are written up to (but not including) a terminating NULL character;
-  if a precision is specified, no more than the number specified are
-  written. If a precision is given, no null character need be present;
-  if the precision is not specified, or is greater than the size of
-  the array, the array must contain a terminating NULL character.</li>
-<li><code>%</code>: A <code>%</code> is written. No argument is converted. The complete conversion
-  specification is <code>%%</code>.</li>
-</ul>
-<p>In no case does a non-existent or small field width cause truncation
-of a numeric field; if the result of a conversion is wider than the
-field width, the field is expanded to contain the conversion result.</p>
+<p>This module uses the printf implementation from <a href="https://github.com/mpaland/printf"><code>mpaland/printf</code></a>.</p>
+<h3 id="format-specifiers">Format Specifiers<a class="headerlink" href="#format-specifiers" title="Permanent link">&para;</a></h3>
+<p>A format specifier follows this prototype: <code>%[flags][width][.precision][length]type</code>
+The following format specifiers are supported:</p>
+<h4 id="supported-types">Supported Types<a class="headerlink" href="#supported-types" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>d or i</td>
+<td>Signed decimal integer</td>
+</tr>
+<tr>
+<td>u</td>
+<td>Unsigned decimal integer</td>
+</tr>
+<tr>
+<td>b</td>
+<td>Unsigned binary</td>
+</tr>
+<tr>
+<td>o</td>
+<td>Unsigned octal</td>
+</tr>
+<tr>
+<td>x</td>
+<td>Unsigned hexadecimal integer (lowercase)</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Unsigned hexadecimal integer (uppercase)</td>
+</tr>
+<tr>
+<td>f or F</td>
+<td>Decimal floating point (<code>with_float</code> option)</td>
+</tr>
+<tr>
+<td>e or E</td>
+<td>Scientific-notation (exponential) floating point (<code>with_float</code> option)</td>
+</tr>
+<tr>
+<td>g or G</td>
+<td>Scientific or decimal floating point (<code>with_float</code> option)</td>
+</tr>
+<tr>
+<td>c</td>
+<td>Single character</td>
+</tr>
+<tr>
+<td>s</td>
+<td>String of characters</td>
+</tr>
+<tr>
+<td>p</td>
+<td>Pointer address</td>
+</tr>
+<tr>
+<td>%</td>
+<td>A % followed by another % character will write a single %</td>
+</tr>
+</tbody>
+</table>
+<h4 id="supported-flags">Supported Flags<a class="headerlink" href="#supported-flags" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-</td>
+<td>Left-justify within the given field width; Right justification is the default.</td>
+</tr>
+<tr>
+<td>+</td>
+<td>Forces to precede the result with a plus or minus sign (+ or -) even for positive numbers.<br>By default, only negative numbers are preceded with a - sign.</td>
+</tr>
+<tr>
+<td>(space)</td>
+<td>If no sign is going to be written, a blank space is inserted before the value.</td>
+</tr>
+<tr>
+<td>#</td>
+<td>Used with o, b, x or X specifiers the value is preceded with 0, 0b, 0x or 0X respectively for values different than zero.<br>Used with f, F it forces the written output to contain a decimal point even if no more digits follow. By default, if no digits follow, no decimal point is written.</td>
+</tr>
+<tr>
+<td>0</td>
+<td>Left-pads the number with zeros (0) instead of spaces when padding is specified (see width sub-specifier).</td>
+</tr>
+</tbody>
+</table>
+<h4 id="supported-width">Supported Width<a class="headerlink" href="#supported-width" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Width</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(number)</td>
+<td>Minimum number of characters to be printed. If the value to be printed is shorter than this number, the result is padded with blank spaces. The value is not truncated even if the result is larger.</td>
+</tr>
+<tr>
+<td>*</td>
+<td>The width is not specified in the format string, but as an additional integer value argument preceding the argument that has to be formatted.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="supported-precision">Supported Precision<a class="headerlink" href="#supported-precision" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Precision</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.number</td>
+<td>For integer specifiers (d, i, o, u, x, X): precision specifies the minimum number of digits to be written. If the value to be written is shorter than this number, the result is padded with leading zeros. The value is not truncated even if the result is longer. A precision of 0 means that no character is written for the value 0.<br>For f and F specifiers: this is the number of digits to be printed after the decimal point. <strong>By default, this is 6, maximum is 9</strong>.<br>For s: this is the maximum number of characters to be printed. By default all characters are printed until the ending null character is encountered.<br>If the period is specified without an explicit value for precision, 0 is assumed.</td>
+</tr>
+<tr>
+<td>.*</td>
+<td>The precision is not specified in the format string, but as an additional integer value argument preceding the argument that has to be formatted.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="supported-length">Supported Length<a class="headerlink" href="#supported-length" title="Permanent link">&para;</a></h4>
+<p>The length sub-specifier modifies the length of the data type.</p>
+<table>
+<thead>
+<tr>
+<th>Length</th>
+<th>d i</th>
+<th>u o x X</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(none)</td>
+<td>int</td>
+<td>unsigned int</td>
+</tr>
+<tr>
+<td>hh</td>
+<td>char</td>
+<td>unsigned char</td>
+</tr>
+<tr>
+<td>h</td>
+<td>short int</td>
+<td>unsigned short int</td>
+</tr>
+<tr>
+<td>l</td>
+<td>long int</td>
+<td>unsigned long int</td>
+</tr>
+<tr>
+<td>ll</td>
+<td>long long int</td>
+<td>unsigned long long int (<code>with_long_long</code> option)</td>
+</tr>
+<tr>
+<td>j</td>
+<td>intmax_t</td>
+<td>uintmax_t</td>
+</tr>
+<tr>
+<td>z</td>
+<td>size_t</td>
+<td>size_t</td>
+</tr>
+<tr>
+<td>t</td>
+<td>ptrdiff_t</td>
+<td>ptrdiff_t (<code>with_ptrdiff</code> option)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="redirecting-iostreams">Redirecting IOStreams<a class="headerlink" href="#redirecting-iostreams" title="Permanent link">&para;</a></h2>
 <p>The <code>modm::IODeviceWrapper</code> transforms any peripheral device that provides static
 <code>write()</code> and <code>read()</code> functions into an <code>IODevice</code>.</p>
@@ -3156,6 +3381,8 @@ a conscious decision and be aware of this behavior.</p>
 <p>Support for 64-bit integer formatting: <code>True</code> ∈ <code>{ True, False }</code></p>
 <h4 id="with_float">with_float<a class="headerlink" href="#with_float" title="Permanent link">&para;</a></h4>
 <p>Support for floating point formatting: <code>True</code> ∈ <code>{ True, False }</code></p>
+<p>On AVRs floating point values can be printed, however, the formatting cannot be
+specified and all values are printed as <em>scientific-notation exponential floating point</em></p>
 <h4 id="with_ptrdiff">with_ptrdiff<a class="headerlink" href="#with_ptrdiff" title="Permanent link">&para;</a></h4>
 <p>Support for pointer difference formatting: <code>True</code> ∈ <code>{ True, False }</code></p>
 <h4 id="with_printf">with_printf<a class="headerlink" href="#with_printf" title="Permanent link">&para;</a></h4>
