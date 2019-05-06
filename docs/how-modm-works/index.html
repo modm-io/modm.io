@@ -2987,8 +2987,8 @@ its dependencies and then which files it wants to generate where to using the
 data from modm-devices, by just setting the <code>env.substitutions</code> to the device's
 properties and calling <code>env.template</code> with the input and output file names.</p>
 <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="n">module</span><span class="p">):</span>
-    <span class="n">module</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;uart&quot;</span>
-    <span class="n">module</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="s2">&quot;platform&quot;</span>
+    <span class="n">module</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;:platform:uart&quot;</span>
+    <span class="n">module</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;UART driver&quot;</span>
 
 <span class="k">def</span> <span class="nf">prepare</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
     <span class="n">module</span><span class="o">.</span><span class="n">depends</span><span class="p">(</span><span class="s2">&quot;:architecture:interrupt&quot;</span><span class="p">,</span> <span class="s2">&quot;:architecture:register&quot;</span><span class="p">,</span>
