@@ -3146,6 +3146,11 @@ implementing a reasonably large subset of <code>printf</code>.</p>
 <p class="admonition-title">AVR supported features</p>
 <p>All expensive features incl. printf are disabled by default! Check the options.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title"><code>modm::endl</code> does implicitly flush!</p>
+<p>Flushing is <em>extremely expensive</em> on embedded systems, therefore <code>modm::endl</code>
+does not implicitly flush the stream. Please call <code>modm::flush</code> explicitly.</p>
+</div>
 <h2 id="using-printf">Using printf<a class="headerlink" href="#using-printf" title="Permanent link">&para;</a></h2>
 <p>This module uses the printf implementation from <a href="https://github.com/mpaland/printf"><code>mpaland/printf</code></a>.</p>
 <h3 id="format-specifiers">Format Specifiers<a class="headerlink" href="#format-specifiers" title="Permanent link">&para;</a></h3>
