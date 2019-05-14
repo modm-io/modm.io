@@ -13,7 +13,7 @@
         <meta name="description" content="A modular C++17 library generator for barebone embedded programming">
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-platform-fault-cortex/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-platform-fault/">
       
       
         <meta name="author" content="Niklas Hauser">
@@ -42,7 +42,7 @@
     
     
       
-        <title>modm:platform:fault.cortex - modm barebone embedded library</title>
+        <title>modm:platform:fault - modm barebone embedded library</title>
       
     
     
@@ -110,7 +110,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#modmplatformfaultcortex-arm-cortex-m-fault-handling" tabindex="1" class="md-skip">
+      <a href="#modmplatformfault-arm-cortex-m-fault-reporters" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -135,7 +135,7 @@
               modm barebone embedded library
             </span>
             <span class="md-header-nav__topic">
-              modm:platform:fault.cortex
+              modm:platform:fault
             </span>
           
         </div>
@@ -940,6 +940,18 @@
   <li class="md-nav__item">
     <a href="../modm-container/" title="modm:container" class="md-nav__link">
       modm:container
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-crashcatcher/" title="modm:crashcatcher" class="md-nav__link">
+      modm:crashcatcher
     </a>
   </li>
 
@@ -2003,11 +2015,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        modm:platform:fault.cortex
+        modm:platform:fault
       </label>
     
-    <a href="./" title="modm:platform:fault.cortex" class="md-nav__link md-nav__link--active">
-      modm:platform:fault.cortex
+    <a href="./" title="modm:platform:fault" class="md-nav__link md-nav__link--active">
+      modm:platform:fault
     </a>
     
       
@@ -2021,6 +2033,40 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#restrictions-on-hardfault-entry" title="Restrictions on HardFault Entry" class="md-nav__link">
+    Restrictions on HardFault Entry
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reporting-the-fault" title="Reporting the Fault" class="md-nav__link">
+    Reporting the Fault
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-fault-report" title="Using the Fault Report" class="md-nav__link">
+    Using the Fault Report
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-mortem-debugging-with-scons" title="Post-Mortem Debugging with SCons" class="md-nav__link">
+    Post-Mortem Debugging with SCons
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#options" title="Options" class="md-nav__link">
     Options
   </a>
@@ -2029,14 +2075,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#led" title="led" class="md-nav__link">
-    led
+  <a href="#report_level" title="report_level" class="md-nav__link">
+    report_level
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content" title="Content" class="md-nav__link">
+    Content
+  </a>
   
 </li>
       
@@ -2893,6 +2946,40 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#restrictions-on-hardfault-entry" title="Restrictions on HardFault Entry" class="md-nav__link">
+    Restrictions on HardFault Entry
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reporting-the-fault" title="Reporting the Fault" class="md-nav__link">
+    Reporting the Fault
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-fault-report" title="Using the Fault Report" class="md-nav__link">
+    Using the Fault Report
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-mortem-debugging-with-scons" title="Post-Mortem Debugging with SCons" class="md-nav__link">
+    Post-Mortem Debugging with SCons
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#options" title="Options" class="md-nav__link">
     Options
   </a>
@@ -2901,14 +2988,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#led" title="led" class="md-nav__link">
-    led
+  <a href="#report_level" title="report_level" class="md-nav__link">
+    report_level
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content" title="Content" class="md-nav__link">
+    Content
+  </a>
   
 </li>
       
@@ -2939,114 +3033,265 @@
                 <div class="admonition warning">
 <p class="admonition-title">These module docs are in beta and may be incomplete.</p>
 </div>
-<h1 id="modmplatformfaultcortex-arm-cortex-m-fault-handling">modm:platform:fault.cortex: ARM Cortex-M Fault Handling<a class="headerlink" href="#modmplatformfaultcortex-arm-cortex-m-fault-handling" title="Permanent link">&para;</a></h1>
-<p>Dealing with Fault handlers.</p>
+<h1 id="modmplatformfault-arm-cortex-m-fault-reporters">modm:platform:fault: ARM Cortex-M Fault Reporters<a class="headerlink" href="#modmplatformfault-arm-cortex-m-fault-reporters" title="Permanent link">&para;</a></h1>
+<p>This module manages data storage for core dumps provided by the <code>:crashcatcher</code>
+module to investigate HardFault events via offline post-mortem debugging.
+The data is stored in the volatile memory designated for the heap.</p>
+<p>This works as follows:</p>
+<ol>
+<li>A HardFault occurs and is intercepted by CrashCatcher.</li>
+<li>CrashCatcher calls into this module to store the core dump in the heap as
+   defined by the linkerscript's <code>.table.heap</code> section, thus effectively
+   overwriting the heap, then reboots the device.</li>
+<li>On reboot, only the remaining heap memory is initialized, leaving the core
+   dump data intact.</li>
+<li>The application has no limitations other than a reduced total heap size!
+   It may access the report data at any time and use all hardware to send out
+   this report.</li>
+<li>After the application clears the report ands reboots, the heap will once 
+   again be fully available.</li>
+</ol>
+<h2 id="restrictions-on-hardfault-entry">Restrictions on HardFault Entry<a class="headerlink" href="#restrictions-on-hardfault-entry" title="Permanent link">&para;</a></h2>
+<p>A HardFault is a serious bug and should it happen your application is most likely
+compromised in some way. Here are some important points to take note of.</p>
+<ol>
+<li>The HardFault has a hardcoded priority of -1 and only the NMI and the Reset
+   exceptions have a higher priority (-2 and -3). This means ALL device interrupts
+   have a LOWER priority!</li>
+<li>The HardFault is a synchronous exception, it will NOT wait for anything to
+   complete, especially not the currently executing interrupt (if any).</li>
+<li>There are many reasons for the HardFault exception to be raised (e.g. accessing
+   invalid memory, executing undefined instructions, dividing by zero) making
+   it very difficult to recover in a generic way. It is therefore reasonable
+   to abandon execution (=&gt; reboot) rather than resuming execution in an
+   increasingly unstable application.</li>
+</ol>
+<p>On HardFault entry, this module calls the function <code>modm_hardfault_entry()</code> which
+can be overwritten by the application to put the devices hardware in a safe mode.
+This can be as simple as disabling power to external components, however, its
+execution should be strictly time bound and NOT depend on other interrupts
+completing (they won't), which will cause a deadlock.</p>
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">modm_hardfault_entry</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Board</span><span class="o">::</span><span class="n">MotorDrivers</span><span class="o">::</span><span class="n">disable</span><span class="p">();</span>
+    <span class="c1">// return from this function as fast as possible</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>After this function returns, this module will generate the coredump into the
+heap and reboot the device.</p>
+<h2 id="reporting-the-fault">Reporting the Fault<a class="headerlink" href="#reporting-the-fault" title="Permanent link">&para;</a></h2>
+<p>In order to recover from the HardFault the device is rebooted with a smaller
+heap. Once the <code>main()</code> function is reached, the application code should check
+for <code>FaultReporter::hasReport()</code> and then only initialize the bare minimum of
+Hardware to send this report to the developer.</p>
+<p>To access the report, use the <code>FaultReporter::begin()</code> and <code>FaultReporter::end()</code>
+functions which return a <code>const_iterator</code> of the actual core dump data, that can
+be used in a range-based for loop.</p>
+<p>Remember to call  <code>FaultReporter::clearAndReboot()</code> to clear the report, reboot
+the device and reclaim the full heap.</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">FaultReporter</span><span class="o">::</span><span class="n">hasReport</span><span class="p">())</span> <span class="c1">// Check first after boot</span>
+    <span class="p">{</span>
+        <span class="n">Application</span><span class="o">::</span><span class="n">partialInitialize</span><span class="p">();</span> <span class="c1">// Initialize only the necessary</span>
+        <span class="kt">uint32_t</span> <span class="n">id</span> <span class="o">=</span> <span class="n">FaultReporter</span><span class="o">::</span><span class="n">firmware</span><span class="p">();</span>
+        <span class="n">reportBegin</span><span class="p">(</span><span class="n">id</span><span class="p">);</span> <span class="c1">// start your report with the firmware hash</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="kt">uint8_t</span> <span class="nl">data</span> <span class="p">:</span> <span class="n">FaultReporter</span><span class="p">())</span>
+            <span class="n">reportData</span><span class="p">(</span><span class="n">data</span><span class="p">);</span> <span class="c1">// send each byte of data</span>
+        <span class="n">reportEnd</span><span class="p">();</span> <span class="c1">// end the report</span>
+        <span class="n">FaultReporter</span><span class="o">::</span><span class="n">clearAndReboot</span><span class="p">();</span> <span class="c1">// clear the report and reboot</span>
+        <span class="c1">// never reached</span>
+    <span class="p">}</span>
+    <span class="c1">// Normal initialization</span>
+    <span class="n">Application</span><span class="o">::</span><span class="n">initialize</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>The application is able to use the heap, however, depending on the report size
+(controllable via the <code>report_level</code> option) the heap may be much smaller then
+normal. Make sure your application can deal with that.</p>
+<p>For complex applications which perhaps communicate asynchronously (CAN,
+Ethernet, Wireless) it may not be possible to send the report in one piece or
+at the same time. The report data remains available until you reboot, even after
+you've cleared the report.</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="kt">bool</span> <span class="n">faultReport</span><span class="p">{</span><span class="n">FaultReporter</span><span class="o">::</span><span class="n">hasReport</span><span class="p">()};</span>
+    <span class="n">FaultReporter</span><span class="o">::</span><span class="n">clear</span><span class="p">();</span> <span class="c1">// only clear report but do not reboot</span>
+    <span class="n">Application</span><span class="o">::</span><span class="n">initialize</span><span class="p">();</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">doOtherStuff</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">faultReport</span> <span class="n">and</span> <span class="n">applicationReady</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// Still valid AFTER clear, but BEFORE reboot</span>
+            <span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">id</span> <span class="o">=</span> <span class="n">FaultReporter</span><span class="o">::</span><span class="n">firmware</span><span class="p">();</span>
+            <span class="k">auto</span> <span class="n">begin</span> <span class="o">=</span> <span class="n">FaultReporter</span><span class="o">::</span><span class="n">begin</span><span class="p">();</span>
+            <span class="k">auto</span> <span class="n">end</span> <span class="o">=</span> <span class="n">FaultReporter</span><span class="o">::</span><span class="n">end</span><span class="p">();</span>
+            <span class="c1">//</span>
+            <span class="n">Application</span><span class="o">::</span><span class="n">sendReport</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">end</span><span class="p">);</span>
+            <span class="c1">// reboot when report has been fully sent</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="using-the-fault-report">Using the Fault Report<a class="headerlink" href="#using-the-fault-report" title="Permanent link">&para;</a></h2>
+<p>The fault report contains a core dump generated by CrashCatcher and is supposed
+to be used by CrashDebug to present the memory view to the GDB debugger.
+For this, you must use the ELF file that corresponds to the devices firmware,
+as well as copy the coredump data formatted as <em>hexadecimal</em> values into a text
+file, then call the debugger like this:</p>
+<div class="codehilite"><pre><span></span>arm-none-eabi-gdb -tui executable.elf -ex &quot;set target-charset ASCII&quot; \
+    -ex &quot;target remote | CrashDebug --elf executable.elf --dump coredump.txt&quot;
+</pre></div>
+
+<p>Note that the firmware identifier is the CRC32 hash of the ROM section, this can
+help you find the right ELF file.</p>
+<h3 id="post-mortem-debugging-with-scons">Post-Mortem Debugging with SCons<a class="headerlink" href="#post-mortem-debugging-with-scons" title="Permanent link">&para;</a></h3>
+<p>The <code>:build:scons</code> module provides a few helper methods for working with fault
+reports. You still need to copy the coredump data manually, however, the firmware
+selection is automated.</p>
+<p>The SCons build system will automatically cache both the ELF and binary files
+for the firmware ID for every firmware upload (using <code>scons artifact</code>).
+When a fault is reported, you can tell SCons the firmware hash and it will use
+the corresponding ELF file automatically.</p>
+<div class="codehilite"><pre><span></span><span class="c1"># Copy data into coredump.txt</span>
+touch coredump.txt
+<span class="c1"># Start postmortem debugging of {hash}</span>
+scons postmortem <span class="nv">firmware</span><span class="o">={</span>hash<span class="o">}</span>
+</pre></div>
+
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
-<h4 id="led">led<a class="headerlink" href="#led" title="Permanent link">&para;</a></h4>
-<p>Toggle an LED on the specified pin: <code>disabled</code> ∈ <code>{ A0, A1, A10, A11, A12, A13, A14, A15, A2, A3, A4, A5, A6, A7, A8, A9, B0, B1, B10, B11, B12, B13, B14, B15, B2, B3, B4, B5, B6, B7, B8, B9, C0, C1, C10, C11, C12, C13, C14, C15, C2, C3, C4, C5, C6, C7, C8, C9, D0, D1, D10, D11, D12, D13, D14, D15, D2, D3, D4, D5, D6, D7, D8, D9, E0, E1, E10, E11, E12, E13, E14, E15, E2, E3, E4, E5, E6, E7, E8, E9, F0, F1, F10, F11, F12, F13, F14, F15, F2, F3, F4, F5, F6, F7, F8, F9, G0, G1, G10, G11, G12, G13, G14, G15, G2, G3, G4, G5, G6, G7, G8, G9, H0, H1, H10, H11, H12, H13, H14, H15, H2, H3, H4, H5, H6, H7, H8, H9, I0, I1, I10, I11, I12, I13, I14, I15, I2, I3, I4, I5, I6, I7, I8, I9, J0, J1, J12, J13, J14, J15, J2, J3, J4, J5, K3, K4, K5, K6, K7, disabled }</code></p>
+<h4 id="report_level">report_level<a class="headerlink" href="#report_level" title="Permanent link">&para;</a></h4>
+<p>Fault Report Level: <code>core+stack+data</code> ∈ <code>{ core, core+stack, core+stack+data }</code></p>
+<p>This module will try to store as much data as is available in the heap and any
+leftover data will be discarded. This means the application may not have any
+heap available after a reboot.</p>
+<p>You can control how much data is generated by choosing the right report level:</p>
+<ul>
+<li>core: Just dumps the core registers, which describe where the fault occurred
+        and why. This is usually less than 250 Bytes.</li>
+<li>stack: Dumps the main stack memory. This will get you a full backtrace, but
+         may take a few kB of space.</li>
+<li>data: Dumps all memory sections containing static data: <code>.data</code>, <code>.fastdata</code>,
+        <code>.bss</code>. This allows you to see data that isn't related to your current
+        fault location, however, this can take several tens of kB of data.</li>
+</ul>
+<p>It is strongly recommended to choose the report level that generates less data
+than you heap size. The <code>scons size</code> output displays this very prominently,
+if the Data size is smaller than your Heap size, you're good to use the
+<code>core+stack+data</code> setting:</p>
+<div class="codehilite"><pre><span></span>Data:      5.2 KiB (26.0% used) = 2285 B static (11.2%) + 3040 B stack (14.8%)
+(.bss + .data + .fastdata + .noinit + .stack)
+
+Heap:     14.8 KiB (74.0% available)
+(.heap1)
+</pre></div>
+
+<p>If Heap is smaller than the Data, you may need to switch to using only the
+<code>core+stack</code> setting:</p>
+<div class="codehilite"><pre><span></span>Data:     11.2 KiB (56.0% used) = 8429 B static (41.2%) + 3040 B stack (14.8%)
+(.bss + .data + .fastdata + .noinit + .stack)
+
+Heap:      8.8 KiB (44.0% available)
+(.heap1)
+</pre></div>
+
+<h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="c1">// Class</span>
+<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">FaultReporter</span><span class="p">;</span>
+<span class="c1">// Function</span>
+<span class="kt">void</span> <span class="nf">modm_hardfault_entry</span><span class="p">();</span>
+</pre></div>
+
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
-<!-- Title: modm:platform:fault.cortex Pages: 1 -->
-<svg width="501pt" height="150pt"
- viewBox="0.00 0.00 500.50 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Title: modm:platform:fault Pages: 1 -->
+<svg width="382pt" height="150pt"
+ viewBox="0.00 0.00 381.50 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 146)">
-<title>modm:platform:fault.cortex</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-146 496.5,-146 496.5,4 -4,4"/>
-<!-- modm_platform_fault_cortex -->
+<title>modm:platform:fault</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-146 377.5,-146 377.5,4 -4,4"/>
+<!-- modm_platform_fault -->
 <g id="node1" class="node">
-<title>modm_platform_fault_cortex</title>
-<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="301,-53 201,-53 201,0 301,0 301,-53"/>
-<text text-anchor="middle" x="251" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="251" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="251" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">fault.cortex</text>
-</g>
-<!-- modm_architecture_clock -->
-<g id="node2" class="node">
-<title>modm_architecture_clock</title>
-<g id="a_node2"><a xlink:href="../modm-architecture-clock" xlink:title="modm:&#10;architecture:&#10;clock">
-<polygon fill="#d3d3d3" stroke="#000000" points="110,-142 0,-142 0,-89 110,-89 110,-142"/>
-<text text-anchor="middle" x="55" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="55" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
-<text text-anchor="middle" x="55" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">clock</text>
-</a>
-</g>
-</g>
-<!-- modm_platform_fault_cortex&#45;&gt;modm_architecture_clock -->
-<g id="edge1" class="edge">
-<title>modm_platform_fault_cortex&#45;&gt;modm_architecture_clock</title>
-<path fill="none" stroke="#000000" d="M200.7796,-49.3041C176.0235,-60.5454 145.8817,-74.2323 119.445,-86.2367"/>
-<polygon fill="#000000" stroke="#000000" points="117.9216,-83.0845 110.2634,-90.4059 120.8158,-89.4582 117.9216,-83.0845"/>
+<title>modm_platform_fault</title>
+<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="233,-53 150,-53 150,0 233,0 233,-53"/>
+<text text-anchor="middle" x="191.5" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="191.5" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="191.5" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">fault</text>
 </g>
 <!-- modm_cmsis_device -->
-<g id="node3" class="node">
+<g id="node2" class="node">
 <title>modm_cmsis_device</title>
-<g id="a_node3"><a xlink:href="../modm-cmsis-device" xlink:title="modm:&#10;cmsis:&#10;device">
-<polygon fill="#d3d3d3" stroke="#000000" points="193.5,-142 128.5,-142 128.5,-89 193.5,-89 193.5,-142"/>
-<text text-anchor="middle" x="161" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="161" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">cmsis:</text>
-<text text-anchor="middle" x="161" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">device</text>
+<g id="a_node2"><a xlink:href="../modm-cmsis-device" xlink:title="modm:&#10;cmsis:&#10;device">
+<polygon fill="#d3d3d3" stroke="#000000" points="65,-142 0,-142 0,-89 65,-89 65,-142"/>
+<text text-anchor="middle" x="32.5" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="32.5" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">cmsis:</text>
+<text text-anchor="middle" x="32.5" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">device</text>
 </a>
 </g>
 </g>
-<!-- modm_platform_fault_cortex&#45;&gt;modm_cmsis_device -->
+<!-- modm_platform_fault&#45;&gt;modm_cmsis_device -->
+<g id="edge1" class="edge">
+<title>modm_platform_fault&#45;&gt;modm_cmsis_device</title>
+<path fill="none" stroke="#000000" d="M149.7876,-47.473C129.0339,-58.1616 103.4862,-71.698 73.895,-88.9158"/>
+<polygon fill="#000000" stroke="#000000" points="71.8704,-86.0456 65.0144,-94.123 75.4112,-92.084 71.8704,-86.0456"/>
+</g>
+<!-- modm_crashcatcher -->
+<g id="node3" class="node">
+<title>modm_crashcatcher</title>
+<g id="a_node3"><a xlink:href="../modm-crashcatcher" xlink:title="modm:&#10;crashcatcher">
+<polygon fill="#d3d3d3" stroke="#000000" points="194,-134.5 83,-134.5 83,-96.5 194,-96.5 194,-134.5"/>
+<text text-anchor="middle" x="138.5" y="-119.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="138.5" y="-104.3" font-family="Times,serif" font-size="14.00" fill="#000000">crashcatcher</text>
+</a>
+</g>
+</g>
+<!-- modm_platform_fault&#45;&gt;modm_crashcatcher -->
 <g id="edge2" class="edge">
-<title>modm_platform_fault_cortex&#45;&gt;modm_cmsis_device</title>
-<path fill="none" stroke="#000000" d="M223.997,-53.2029C214.9198,-62.1793 204.6728,-72.3124 195.1214,-81.7577"/>
-<polygon fill="#000000" stroke="#000000" points="192.6334,-79.2958 187.9839,-88.8159 197.5554,-84.2731 192.6334,-79.2958"/>
+<title>modm_platform_fault&#45;&gt;modm_crashcatcher</title>
+<path fill="none" stroke="#000000" d="M175.5983,-53.2029C169.1189,-64.0834 161.6274,-76.6634 155.0802,-87.6579"/>
+<polygon fill="#000000" stroke="#000000" points="151.9548,-86.0655 149.8454,-96.4482 157.9692,-89.6471 151.9548,-86.0655"/>
+</g>
+<!-- modm_math_utils -->
+<g id="node4" class="node">
+<title>modm_math_utils</title>
+<g id="a_node4"><a xlink:href="../modm-math-utils" xlink:title="modm:&#10;math:&#10;utils">
+<polygon fill="#d3d3d3" stroke="#000000" points="277,-142 212,-142 212,-89 277,-89 277,-142"/>
+<text text-anchor="middle" x="244.5" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="244.5" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
+<text text-anchor="middle" x="244.5" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">utils</text>
+</a>
+</g>
+</g>
+<!-- modm_platform_fault&#45;&gt;modm_math_utils -->
+<g id="edge3" class="edge">
+<title>modm_platform_fault&#45;&gt;modm_math_utils</title>
+<path fill="none" stroke="#000000" d="M207.4017,-53.2029C212.4328,-61.6513 218.074,-71.1243 223.4096,-80.0841"/>
+<polygon fill="#000000" stroke="#000000" points="220.4857,-82.0148 228.6095,-88.8159 226.5001,-78.4332 220.4857,-82.0148"/>
 </g>
 <!-- modm_platform -->
-<g id="node4" class="node">
-<title>modm_platform</title>
-<g id="a_node4"><a xlink:href="../modm-platform" xlink:title="modm:&#10;platform">
-<polygon fill="#d3d3d3" stroke="#000000" points="290,-134.5 212,-134.5 212,-96.5 290,-96.5 290,-134.5"/>
-<text text-anchor="middle" x="251" y="-119.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="251" y="-104.3" font-family="Times,serif" font-size="14.00" fill="#000000">platform</text>
-</a>
-</g>
-</g>
-<!-- modm_platform_fault_cortex&#45;&gt;modm_platform -->
-<g id="edge3" class="edge">
-<title>modm_platform_fault_cortex&#45;&gt;modm_platform</title>
-<path fill="none" stroke="#000000" d="M251,-53.2029C251,-63.6482 251,-75.6597 251,-86.3311"/>
-<polygon fill="#000000" stroke="#000000" points="247.5001,-86.4482 251,-96.4482 254.5001,-86.4483 247.5001,-86.4482"/>
-</g>
-<!-- modm_platform_gpio -->
 <g id="node5" class="node">
-<title>modm_platform_gpio</title>
-<g id="a_node5"><a xlink:href="../modm-platform-gpio" xlink:title="modm:&#10;platform:&#10;gpio">
-<polygon fill="#d3d3d3" stroke="#000000" points="391.5,-142 308.5,-142 308.5,-89 391.5,-89 391.5,-142"/>
-<text text-anchor="middle" x="350" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="350" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="350" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">gpio</text>
+<title>modm_platform</title>
+<g id="a_node5"><a xlink:href="../modm-platform" xlink:title="modm:&#10;platform">
+<polygon fill="#d3d3d3" stroke="#000000" points="373.5,-134.5 295.5,-134.5 295.5,-96.5 373.5,-96.5 373.5,-134.5"/>
+<text text-anchor="middle" x="334.5" y="-119.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="334.5" y="-104.3" font-family="Times,serif" font-size="14.00" fill="#000000">platform</text>
 </a>
 </g>
 </g>
-<!-- modm_platform_fault_cortex&#45;&gt;modm_platform_gpio -->
+<!-- modm_platform_fault&#45;&gt;modm_platform -->
 <g id="edge4" class="edge">
-<title>modm_platform_fault_cortex&#45;&gt;modm_platform_gpio</title>
-<path fill="none" stroke="#000000" d="M280.7033,-53.2029C290.7861,-62.2673 302.181,-72.5112 312.7752,-82.0353"/>
-<polygon fill="#000000" stroke="#000000" points="310.5411,-84.7332 320.3177,-88.8159 315.2209,-79.5275 310.5411,-84.7332"/>
-</g>
-<!-- modm_platform_rcc -->
-<g id="node6" class="node">
-<title>modm_platform_rcc</title>
-<g id="a_node6"><a xlink:href="../modm-platform-rcc" xlink:title="modm:&#10;platform:&#10;rcc">
-<polygon fill="#d3d3d3" stroke="#000000" points="492.5,-142 409.5,-142 409.5,-89 492.5,-89 492.5,-142"/>
-<text text-anchor="middle" x="451" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="451" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="451" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">rcc</text>
-</a>
-</g>
-</g>
-<!-- modm_platform_fault_cortex&#45;&gt;modm_platform_rcc -->
-<g id="edge5" class="edge">
-<title>modm_platform_fault_cortex&#45;&gt;modm_platform_rcc</title>
-<path fill="none" stroke="#000000" d="M301.1653,-46.05C328.3709,-56.9619 362.672,-71.2165 400.294,-88.7933"/>
-<polygon fill="#000000" stroke="#000000" points="398.8663,-91.9897 409.4044,-93.0847 401.8492,-85.657 398.8663,-91.9897"/>
+<title>modm_platform_fault&#45;&gt;modm_platform</title>
+<path fill="none" stroke="#000000" d="M233.2459,-52.4817C252.8341,-64.6729 276.0484,-79.121 295.3046,-91.1056"/>
+<polygon fill="#000000" stroke="#000000" points="293.5068,-94.1093 303.8462,-96.4218 297.2056,-88.1663 293.5068,-94.1093"/>
 </g>
 </g>
 </svg>

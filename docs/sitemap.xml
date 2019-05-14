@@ -236,6 +236,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>http://modm.io/reference/module/modm-crashcatcher/</loc>
+     <lastmod>2019-05-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>http://modm.io/reference/module/modm-debug/</loc>
      <lastmod>2019-05-14</lastmod>
      <changefreq>daily</changefreq>
@@ -671,7 +676,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://modm.io/reference/module/modm-platform-fault-cortex/</loc>
+     <loc>http://modm.io/reference/module/modm-platform-fault/</loc>
      <lastmod>2019-05-14</lastmod>
      <changefreq>daily</changefreq>
     </url>

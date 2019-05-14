@@ -13,7 +13,7 @@
         <meta name="description" content="A modular C++17 library generator for barebone embedded programming">
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-driver-ds1302/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-crashcatcher/">
       
       
         <meta name="author" content="Niklas Hauser">
@@ -42,7 +42,7 @@
     
     
       
-        <title>modm:driver:ds1302 - modm barebone embedded library</title>
+        <title>modm:crashcatcher - modm barebone embedded library</title>
       
     
     
@@ -110,7 +110,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#modmdriverds1302-ds1302-real-time-clock" tabindex="1" class="md-skip">
+      <a href="#modmcrashcatcher-crashcatcher" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -135,7 +135,7 @@
               modm barebone embedded library
             </span>
             <span class="md-header-nav__topic">
-              modm:driver:ds1302
+              modm:crashcatcher
             </span>
           
         </div>
@@ -948,11 +948,49 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../modm-crashcatcher/" title="modm:crashcatcher" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        modm:crashcatcher
+      </label>
+    
+    <a href="./" title="modm:crashcatcher" class="md-nav__link md-nav__link--active">
       modm:crashcatcher
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1152,56 +1190,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        modm:driver:ds1302
-      </label>
-    
-    <a href="./" title="modm:driver:ds1302" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../modm-driver-ds1302/" title="modm:driver:ds1302" class="md-nav__link">
       modm:driver:ds1302
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#content" title="Content" class="md-nav__link">
-    Content
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" title="Dependencies" class="md-nav__link">
-    Dependencies
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -2892,13 +2885,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#content" title="Content" class="md-nav__link">
-    Content
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#dependencies" title="Dependencies" class="md-nav__link">
     Dependencies
   </a>
@@ -2925,85 +2911,48 @@
                 <div class="admonition warning">
 <p class="admonition-title">These module docs are in beta and may be incomplete.</p>
 </div>
-<h1 id="modmdriverds1302-ds1302-real-time-clock">modm:driver:ds1302: DS1302 Real-Time Clock<a class="headerlink" href="#modmdriverds1302-ds1302-real-time-clock" title="Permanent link">&para;</a></h1>
-<h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="c1">// Class</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">Ds1302</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">PinSet</span>  <span class="o">&gt;</span><span class="p">;</span>
-<span class="c1">// Struct</span>
-<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">ds1302</span><span class="o">::</span><span class="n">Config</span><span class="p">;</span>
-<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">ds1302</span><span class="o">::</span><span class="n">Data</span><span class="p">;</span>
-<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">ds1302</span><span class="p">;</span>
-</pre></div>
-
+<h1 id="modmcrashcatcher-crashcatcher">modm:crashcatcher: CrashCatcher<a class="headerlink" href="#modmcrashcatcher-crashcatcher" title="Permanent link">&para;</a></h1>
+<p>CrashCatcher hooks into the ARM Cortex-M HardFault handler and generates a coredump
+that can be used with CrashDebug for post-mortem debugging.</p>
+<ul>
+<li><a href="https://github.com/adamgreen/CrashCatcher">https://github.com/adamgreen/CrashCatcher</a></li>
+<li><a href="https://github.com/adamgreen/CrashDebug">https://github.com/adamgreen/CrashDebug</a></li>
+</ul>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
-<!-- Title: modm:driver:ds1302 Pages: 1 -->
-<svg width="330pt" height="150pt"
- viewBox="0.00 0.00 329.50 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 146)">
-<title>modm:driver:ds1302</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-146 325.5,-146 325.5,4 -4,4"/>
-<!-- modm_driver_ds1302 -->
+<!-- Title: modm:crashcatcher Pages: 1 -->
+<svg width="119pt" height="135pt"
+ viewBox="0.00 0.00 119.00 135.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 131)">
+<title>modm:crashcatcher</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-131 115,-131 115,4 -4,4"/>
+<!-- modm_crashcatcher -->
 <g id="node1" class="node">
-<title>modm_driver_ds1302</title>
-<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="217.5,-53 148.5,-53 148.5,0 217.5,0 217.5,-53"/>
-<text text-anchor="middle" x="183" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="183" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="183" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">ds1302</text>
+<title>modm_crashcatcher</title>
+<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="111,-127 0,-127 0,-89 111,-89 111,-127"/>
+<text text-anchor="middle" x="55.5" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="55.5" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">crashcatcher</text>
 </g>
-<!-- modm_architecture_delay -->
+<!-- modm_platform_fault -->
 <g id="node2" class="node">
-<title>modm_architecture_delay</title>
-<g id="a_node2"><a xlink:href="../modm-architecture-delay" xlink:title="modm:&#10;architecture:&#10;delay">
-<polygon fill="#d3d3d3" stroke="#000000" points="110,-142 0,-142 0,-89 110,-89 110,-142"/>
-<text text-anchor="middle" x="55" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="55" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
-<text text-anchor="middle" x="55" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">delay</text>
+<title>modm_platform_fault</title>
+<g id="a_node2"><a xlink:href="../modm-platform-fault" xlink:title="modm:&#10;platform:&#10;fault">
+<polygon fill="#d3d3d3" stroke="#000000" points="97,-53 14,-53 14,0 97,0 97,-53"/>
+<text text-anchor="middle" x="55.5" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="55.5" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="55.5" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">fault</text>
 </a>
 </g>
 </g>
-<!-- modm_driver_ds1302&#45;&gt;modm_architecture_delay -->
+<!-- modm_platform_fault&#45;&gt;modm_crashcatcher -->
 <g id="edge1" class="edge">
-<title>modm_driver_ds1302&#45;&gt;modm_architecture_delay</title>
-<path fill="none" stroke="#000000" d="M148.3614,-50.5847C133.9932,-60.575 117.1045,-72.318 101.67,-83.0498"/>
-<polygon fill="#000000" stroke="#000000" points="99.4824,-80.3079 93.2701,-88.8903 103.4786,-86.0551 99.4824,-80.3079"/>
-</g>
-<!-- modm_architecture_gpio -->
-<g id="node3" class="node">
-<title>modm_architecture_gpio</title>
-<g id="a_node3"><a xlink:href="../modm-architecture-gpio" xlink:title="modm:&#10;architecture:&#10;gpio">
-<polygon fill="#d3d3d3" stroke="#000000" points="238,-142 128,-142 128,-89 238,-89 238,-142"/>
-<text text-anchor="middle" x="183" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="183" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
-<text text-anchor="middle" x="183" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">gpio</text>
-</a>
-</g>
-</g>
-<!-- modm_driver_ds1302&#45;&gt;modm_architecture_gpio -->
-<g id="edge2" class="edge">
-<title>modm_driver_ds1302&#45;&gt;modm_architecture_gpio</title>
-<path fill="none" stroke="#000000" d="M183,-53.2029C183,-61.2113 183,-70.1403 183,-78.6802"/>
-<polygon fill="#000000" stroke="#000000" points="179.5001,-78.8159 183,-88.8159 186.5001,-78.8159 179.5001,-78.8159"/>
-</g>
-<!-- modm_driver -->
-<g id="node4" class="node">
-<title>modm_driver</title>
-<g id="a_node4"><a xlink:href="../modm-driver" xlink:title="modm:&#10;driver">
-<polygon fill="#d3d3d3" stroke="#000000" points="321.5,-134.5 256.5,-134.5 256.5,-96.5 321.5,-96.5 321.5,-134.5"/>
-<text text-anchor="middle" x="289" y="-119.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="289" y="-104.3" font-family="Times,serif" font-size="14.00" fill="#000000">driver</text>
-</a>
-</g>
-</g>
-<!-- modm_driver_ds1302&#45;&gt;modm_driver -->
-<g id="edge3" class="edge">
-<title>modm_driver_ds1302&#45;&gt;modm_driver</title>
-<path fill="none" stroke="#000000" d="M214.8035,-53.2029C228.6694,-64.845 244.8526,-78.4329 258.5605,-89.9423"/>
-<polygon fill="#000000" stroke="#000000" points="256.4,-92.6984 266.3091,-96.4482 260.9012,-87.3375 256.4,-92.6984"/>
+<title>modm_platform_fault&#45;&gt;modm_crashcatcher</title>
+<path fill="none" stroke="#000000" d="M55.5,-53.1861C55.5,-61.3465 55.5,-70.3646 55.5,-78.6895"/>
+<polygon fill="#000000" stroke="#000000" points="52.0001,-78.7469 55.5,-88.7469 59.0001,-78.747 52.0001,-78.7469"/>
 </g>
 </g>
 </svg>
@@ -3027,7 +2976,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../modm-driver-drv832x-spi/" title="modm:driver:drv832x_spi" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../modm-container/" title="modm:container" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -3036,19 +2985,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                modm:driver:drv832x_spi
+                modm:container
               </span>
             </div>
           </a>
         
         
-          <a href="../modm-driver-ds1631/" title="modm:driver:ds1631" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../modm-debug/" title="modm:debug" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                modm:driver:ds1631
+                modm:debug
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

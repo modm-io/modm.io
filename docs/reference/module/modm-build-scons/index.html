@@ -883,6 +883,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#scons-postmortem" title="scons postmortem" class="md-nav__link">
+    scons postmortem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#scons-symbols" title="scons symbols" class="md-nav__link">
     scons symbols
   </a>
@@ -899,6 +906,13 @@
           <li class="md-nav__item">
   <a href="#scons-bin" title="scons bin" class="md-nav__link">
     scons bin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scons-artifact" title="scons artifact" class="md-nav__link">
+    scons artifact
   </a>
   
 </li>
@@ -1198,6 +1212,18 @@
   <li class="md-nav__item">
     <a href="../modm-container/" title="modm:container" class="md-nav__link">
       modm:container
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-crashcatcher/" title="modm:crashcatcher" class="md-nav__link">
+      modm:crashcatcher
     </a>
   </li>
 
@@ -2252,8 +2278,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../modm-platform-fault-cortex/" title="modm:platform:fault.cortex" class="md-nav__link">
-      modm:platform:fault.cortex
+    <a href="../modm-platform-fault/" title="modm:platform:fault" class="md-nav__link">
+      modm:platform:fault
     </a>
   </li>
 
@@ -3143,6 +3169,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#scons-postmortem" title="scons postmortem" class="md-nav__link">
+    scons postmortem
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#scons-symbols" title="scons symbols" class="md-nav__link">
     scons symbols
   </a>
@@ -3159,6 +3192,13 @@
           <li class="md-nav__item">
   <a href="#scons-bin" title="scons bin" class="md-nav__link">
     scons bin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scons-artifact" title="scons artifact" class="md-nav__link">
+    scons artifact
   </a>
   
 </li>
@@ -3398,7 +3438,7 @@ Linking········ build/release/game_of_life.elf
 
 <h4 id="scons-size">scons size<a class="headerlink" href="#scons-size" title="Permanent link">&para;</a></h4>
 <p>Displays the static Flash and RAM consumption of your target.
-(* <em>only STM32 targets</em>)</p>
+(* <em>only Cortex-M targets</em>)</p>
 <p>Example for a STM32 target with 16MB external heap:</p>
 <div class="codehilite"><pre><span></span> $ scons size
 Memory usage:.. build/release/game_of_life.elf
@@ -3419,7 +3459,7 @@ Heap:     16.4 MiB
 <p>Writes the executable onto your target via Avrdude or OpenOCD.
 This is a convenience wrapper around the programming options and methods
 defined in the <code>modm:build</code> module.
-(* <em>only AVR and STM32 targets</em>)</p>
+(* <em>only AVR and Cortex-M targets</em>)</p>
 <p>Example for a STM32 target:</p>
 <div class="codehilite"><pre><span></span> $ scons program
 .----OpenOCD--- build/release/game_of_life.elf
@@ -3450,7 +3490,7 @@ shutdown command invoked
 <h4 id="scons-gdb">scons gdb<a class="headerlink" href="#scons-gdb" title="Permanent link">&para;</a></h4>
 <p>Launches OpenOCD in the background, then launches GDB in foreground with the
 correct executable. When GDB exits, it stops the OpenOCD process.
-(* <em>only STM32 targets</em>)</p>
+(* <em>only Cortex-M targets</em>)</p>
 <p>This is just a convenience wrapper for the debug functionality defined in the
 <code>modm:build</code> module.</p>
 <div class="admonition tip">
@@ -3463,6 +3503,12 @@ compiled with the release profile, since that's the default.
 First try to <code>scons gdb profile=release</code>, and if that doesn't help, compile
 and <code>scons program profile=debug</code> and try <code>scons gdb profile=debug</code> again.</p>
 </div>
+<h4 id="scons-postmortem">scons postmortem<a class="headerlink" href="#scons-postmortem" title="Permanent link">&para;</a></h4>
+<p>Launches GDB for post-mortem debugging with the firmware identified by the
+<code>firmware={hash}</code> argument using the data from the <code>coredump={filepath}</code>
+argument.
+(* <em>only Cortex-M targets</em>)</p>
+<p>See the <code>:platform:fault</code> module for details how to receive the coredump data.</p>
 <h4 id="scons-symbols">scons symbols<a class="headerlink" href="#scons-symbols" title="Permanent link">&para;</a></h4>
 <p>Dumps the symbol table for your executable.</p>
 <div class="codehilite"><pre><span></span> $ scons symbols
@@ -3511,6 +3557,13 @@ main()
 <p>Creates a binary file of your executable.</p>
 <div class="codehilite"><pre><span></span> $ scons bin
 Binary File···· build/release/game_of_life.bin
+</pre></div>
+
+<h4 id="scons-artifact">scons artifact<a class="headerlink" href="#scons-artifact" title="Permanent link">&para;</a></h4>
+<p>Caches the ELF and binary file of the newest compiled executable identified by
+the hash of the binary file in <code>{build_path}/artifacts/{hash}.elf</code>.</p>
+<div class="codehilite"><pre><span></span> $ scons artifact
+Cache Artifact· build/release/game_of_life.elf
 </pre></div>
 
 <h4 id="scons-c">scons -c<a class="headerlink" href="#scons-c" title="Permanent link">&para;</a></h4>
