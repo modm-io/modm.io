@@ -13,7 +13,7 @@
         <meta name="description" content="A modular C++17 library generator for barebone embedded programming">
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-math-matrix/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-platform-itm/">
       
       
         <meta name="author" content="Niklas Hauser">
@@ -42,7 +42,7 @@
     
     
       
-        <title>modm:math:matrix - modm barebone embedded library</title>
+        <title>modm:platform:itm - modm barebone embedded library</title>
       
     
     
@@ -110,7 +110,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#modmmathmatrix-matrix-math" tabindex="1" class="md-skip">
+      <a href="#modmplatformitm-instrumentation-trace-macrocell-itm" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -135,7 +135,7 @@
               modm barebone embedded library
             </span>
             <span class="md-header-nav__topic">
-              modm:math:matrix
+              modm:platform:itm
             </span>
           
         </div>
@@ -1764,56 +1764,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        modm:math:matrix
-      </label>
-    
-    <a href="./" title="modm:math:matrix" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../modm-math-matrix/" title="modm:math:matrix" class="md-nav__link">
       modm:math:matrix
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#content" title="Content" class="md-nav__link">
-    Content
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" title="Dependencies" class="md-nav__link">
-    Dependencies
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -2157,11 +2112,90 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../modm-platform-itm/" title="modm:platform:itm" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        modm:platform:itm
+      </label>
+    
+    <a href="./" title="modm:platform:itm" class="md-nav__link md-nav__link--active">
       modm:platform:itm
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#caveats" title="Caveats" class="md-nav__link">
+    Caveats
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#receiving-data" title="Receiving Data" class="md-nav__link">
+    Receiving Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" title="Options" class="md-nav__link">
+    Options
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buffertx" title="buffer.tx" class="md-nav__link">
+    buffer.tx
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content" title="Content" class="md-nav__link">
+    Content
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -2904,6 +2938,40 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#caveats" title="Caveats" class="md-nav__link">
+    Caveats
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#receiving-data" title="Receiving Data" class="md-nav__link">
+    Receiving Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" title="Options" class="md-nav__link">
+    Options
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buffertx" title="buffer.tx" class="md-nav__link">
+    buffer.tx
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#content" title="Content" class="md-nav__link">
     Content
   </a>
@@ -2937,24 +3005,82 @@
                 <div class="admonition warning">
 <p class="admonition-title">These module docs are in beta and may be incomplete.</p>
 </div>
-<h1 id="modmmathmatrix-matrix-math">modm:math:matrix: Matrix Math<a class="headerlink" href="#modmmathmatrix-matrix-math" title="Permanent link">&para;</a></h1>
+<h1 id="modmplatformitm-instrumentation-trace-macrocell-itm">modm:platform:itm: Instrumentation Trace Macrocell (ITM)<a class="headerlink" href="#modmplatformitm-instrumentation-trace-macrocell-itm" title="Permanent link">&para;</a></h1>
+<p>This module provides the ITM port 0 as a (buffered) Uart interface.
+You can use this class as a <em>transmit-only</em> alternative for logging:</p>
+<div class="codehilite"><pre><span></span><span class="n">modm</span><span class="o">::</span><span class="n">IODeviceWrapper</span><span class="o">&lt;</span><span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">Itm</span><span class="p">,</span> 
+                      <span class="n">modm</span><span class="o">::</span><span class="n">IOBuffer</span><span class="o">::</span><span class="n">DiscardIfFull</span><span class="o">&gt;</span> <span class="n">itm_device</span><span class="p">;</span>
+<span class="n">modm</span><span class="o">::</span><span class="n">IOStream</span> <span class="n">stream</span><span class="p">(</span><span class="n">itm_device</span><span class="p">);</span>
+<span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello World&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">modm</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+
+<h2 id="caveats">Caveats<a class="headerlink" href="#caveats" title="Permanent link">&para;</a></h2>
+<p>The ITM is part of the ARM Cortex-M debug functionality and forwards its data
+to the Trace Port Interface Unit (TPIU) which outputs over the trace pins.
+Only the SWO trace pin is currently supported (asynchronous tracing).</p>
+<div class="admonition warning">
+<p class="admonition-title">The ITM is not a UART replacement!</p>
+<p>The TPIU only outputs data when a debugger is attached to the target!</p>
+</div>
+<p>The <code>Itm</code> class will safely discard any data if a debugger is not attached, so
+you can use it for debugging without running the risk of a deadlock.</p>
+<div class="admonition warning">
+<p class="admonition-title">The ITM requires polling!</p>
+<p>The hardware does not generate a "buffer empty" interrupt, so the
+buffered implementation requires you to call the <code>update()</code> function!</p>
+</div>
+<p>By default the <code>Itm</code> class is non-buffered and therefore blocking.
+You must set the <code>modm:platform:itm:buffer.tx</code> option to non-zero to use the
+buffered version!</p>
+<h2 id="receiving-data">Receiving Data<a class="headerlink" href="#receiving-data" title="Permanent link">&para;</a></h2>
+<p>You must use OpenOCD to configure your target's hardware, as well as capture
+the asynchronous trace stream.</p>
+<div class="admonition warning">
+<p class="admonition-title">Is the SWO pin connected to your debugger?</p>
+<p>Check if your debugger supports trace output and if the SWO pin is actually
+connected to it on your development board!</p>
+</div>
+<p>To log the output to a file called <code>itm.fifo</code> you can call the <code>modm_log_itm</code>
+command manually.</p>
+<div class="codehilite"><pre><span></span> $ openocd -f &quot;modm/openocd.cfg&quot; -c &quot;modm_log_itm itm.fifo 64000000&quot;
+</pre></div>
+
+<p>You can then either use <code>tail -f itm.fifo</code> to display the raw data stream
+(which is often enough) or use the <a href="https://docs.rs/itm/"><code>itmdump</code> program</a>
+for an advanced use-case (like de-multiplexing data streams).</p>
+<div class="admonition note">
+<p class="admonition-title">OpenOCD requires the CPU/HCLK frequency</p>
+<p>You must provide the CPU/HCLK frequency of your target, so that
+OpenOCD can correctly set the prescaler for the asynchronous SWO output.</p>
+</div>
+<p>When using the <code>modm:build:scons</code> module, you can also use the convenience
+wrapper, which logs to a temporary file and displays it's contents on the
+terminal</p>
+<div class="codehilite"><pre><span></span> $ scons itm fcpu=64000000
+.----OpenOCD--&gt; Single Wire Viewer
+&#39;------SWO----- stm32f103rbt
+
+Hello from the SWO.
+debug
+info
+warning
+error
+loop 0
+loop 1
+loop 2
+loop 3
+loop 4
+loop 5
+</pre></div>
+
+<h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
+<h4 id="buffertx">buffer.tx<a class="headerlink" href="#buffertx" title="Permanent link">&para;</a></h4>
+<p>Transmit buffer size: <code>0</code> ∈ <code>{ 0 ... 65534 }</code></p>
+<p>You must call the <code>update()</code> function repeatedly when a transmit buffer is
+used, otherwise you have to call <code>flushWriteBuffer()</code> to empty the buffer.</p>
 <h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1">// Class</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">LUDecomposition</span><span class="o">::</span><span class="n">LUSubDecomposition</span><span class="o">&lt;</span> <span class="n">T</span><span class="p">,</span> <span class="n">OFFSET</span><span class="p">,</span> <span class="n">WIDTH</span><span class="p">,</span> <span class="n">OFFSET</span> <span class="o">&gt;</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">LUDecomposition</span><span class="o">::</span><span class="n">LUSubDecomposition</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">T</span> <span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">OFFSET</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">HEIGHT</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">WIDTH</span> <span class="o">&gt;</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">LUDecomposition</span><span class="o">::</span><span class="n">RowOperation</span><span class="o">&lt;</span> <span class="n">T</span><span class="p">,</span> <span class="mi">0</span> <span class="o">&gt;</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">LUDecomposition</span><span class="o">::</span><span class="n">RowOperation</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">T</span> <span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">HEIGHT</span> <span class="o">&gt;</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">LUDecomposition</span><span class="p">;</span>
-<span class="c1">// Function</span>
-<span class="n">IOStream</span><span class="o">&amp;</span> <span class="n">modm</span><span class="o">::</span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">IOStream</span> <span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">Matrix</span><span class="o">&lt;</span> <span class="n">T</span><span class="p">,</span> <span class="n">WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="p">);</span>
-<span class="n">T</span> <span class="n">modm</span><span class="o">::</span><span class="n">determinant</span><span class="p">(</span><span class="k">const</span> <span class="n">modm</span><span class="o">::</span><span class="n">Matrix</span><span class="o">&lt;</span> <span class="n">T</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
-<span class="n">T</span> <span class="n">modm</span><span class="o">::</span><span class="n">determinant</span><span class="p">(</span><span class="k">const</span> <span class="n">modm</span><span class="o">::</span><span class="n">Matrix</span><span class="o">&lt;</span> <span class="n">T</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
-<span class="n">T</span> <span class="n">modm</span><span class="o">::</span><span class="n">determinant</span><span class="p">(</span><span class="k">const</span> <span class="n">modm</span><span class="o">::</span><span class="n">Matrix</span><span class="o">&lt;</span> <span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">N</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
-<span class="c1">// Typedef</span>
-<span class="k">typedef</span> <span class="n">Matrix</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">&gt;</span> <span class="n">modm</span><span class="o">::</span><span class="n">Matrix1f</span><span class="p">;</span>
-<span class="k">typedef</span> <span class="n">Matrix</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">&gt;</span> <span class="n">modm</span><span class="o">::</span><span class="n">Matrix2f</span><span class="p">;</span>
-<span class="k">typedef</span> <span class="n">Matrix</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="o">&gt;</span> <span class="n">modm</span><span class="o">::</span><span class="n">Matrix3f</span><span class="p">;</span>
-<span class="k">typedef</span> <span class="n">Matrix</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="o">&gt;</span> <span class="n">modm</span><span class="o">::</span><span class="n">Matrix4f</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">Itm</span><span class="p">;</span>
 </pre></div>
 
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
@@ -2963,90 +3089,69 @@
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
-<!-- Title: modm:math:matrix Pages: 1 -->
-<svg width="342pt" height="150pt"
- viewBox="0.00 0.00 342.00 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Title: modm:platform:itm Pages: 1 -->
+<svg width="298pt" height="150pt"
+ viewBox="0.00 0.00 298.00 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 146)">
-<title>modm:math:matrix</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-146 338,-146 338,4 -4,4"/>
-<!-- modm_math_matrix -->
+<title>modm:platform:itm</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-146 294,-146 294,4 -4,4"/>
+<!-- modm_platform_itm -->
 <g id="node1" class="node">
-<title>modm_math_matrix</title>
-<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="241,-53 176,-53 176,0 241,0 241,-53"/>
-<text text-anchor="middle" x="208.5" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="208.5" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
-<text text-anchor="middle" x="208.5" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">matrix</text>
+<title>modm_platform_itm</title>
+<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="202.5,-53 119.5,-53 119.5,0 202.5,0 202.5,-53"/>
+<text text-anchor="middle" x="161" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="161" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="161" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">itm</text>
 </g>
-<!-- modm_io -->
+<!-- modm_architecture_uart -->
 <g id="node2" class="node">
-<title>modm_io</title>
-<g id="a_node2"><a xlink:href="../modm-io" xlink:title="modm:&#10;io">
-<polygon fill="#d3d3d3" stroke="#000000" points="65,-134.5 0,-134.5 0,-96.5 65,-96.5 65,-134.5"/>
-<text text-anchor="middle" x="32.5" y="-119.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="32.5" y="-104.3" font-family="Times,serif" font-size="14.00" fill="#000000">io</text>
+<title>modm_architecture_uart</title>
+<g id="a_node2"><a xlink:href="../modm-architecture-uart" xlink:title="modm:&#10;architecture:&#10;uart">
+<polygon fill="#d3d3d3" stroke="#000000" points="110,-142 0,-142 0,-89 110,-89 110,-142"/>
+<text text-anchor="middle" x="55" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="55" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
+<text text-anchor="middle" x="55" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">uart</text>
 </a>
 </g>
 </g>
-<!-- modm_math_matrix&#45;&gt;modm_io -->
+<!-- modm_platform_itm&#45;&gt;modm_architecture_uart -->
 <g id="edge1" class="edge">
-<title>modm_math_matrix&#45;&gt;modm_io</title>
-<path fill="none" stroke="#000000" d="M175.9594,-40.0363C148.2168,-51.9358 107.5428,-70.2389 73.5,-89 72.201,-89.7159 70.888,-90.4577 69.569,-91.2186"/>
-<polygon fill="#000000" stroke="#000000" points="67.6349,-88.2974 60.8613,-96.4441 71.2368,-94.2996 67.6349,-88.2974"/>
+<title>modm_platform_itm&#45;&gt;modm_architecture_uart</title>
+<path fill="none" stroke="#000000" d="M129.1965,-53.2029C118.2959,-62.3553 105.9631,-72.7102 94.5267,-82.3125"/>
+<polygon fill="#000000" stroke="#000000" points="92.189,-79.7052 86.781,-88.8159 96.6901,-85.0661 92.189,-79.7052"/>
 </g>
-<!-- modm_math -->
+<!-- modm_cmsis_device -->
 <g id="node3" class="node">
-<title>modm_math</title>
-<g id="a_node3"><a xlink:href="../modm-math" xlink:title="modm:&#10;math">
-<polygon fill="#d3d3d3" stroke="#000000" points="148,-134.5 83,-134.5 83,-96.5 148,-96.5 148,-134.5"/>
-<text text-anchor="middle" x="115.5" y="-119.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="115.5" y="-104.3" font-family="Times,serif" font-size="14.00" fill="#000000">math</text>
+<title>modm_cmsis_device</title>
+<g id="a_node3"><a xlink:href="../modm-cmsis-device" xlink:title="modm:&#10;cmsis:&#10;device">
+<polygon fill="#d3d3d3" stroke="#000000" points="193.5,-142 128.5,-142 128.5,-89 193.5,-89 193.5,-142"/>
+<text text-anchor="middle" x="161" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="161" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">cmsis:</text>
+<text text-anchor="middle" x="161" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">device</text>
 </a>
 </g>
 </g>
-<!-- modm_math_matrix&#45;&gt;modm_math -->
+<!-- modm_platform_itm&#45;&gt;modm_cmsis_device -->
 <g id="edge2" class="edge">
-<title>modm_math_matrix&#45;&gt;modm_math</title>
-<path fill="none" stroke="#000000" d="M180.5969,-53.2029C168.659,-64.6274 154.7631,-77.9256 142.883,-89.2947"/>
-<polygon fill="#000000" stroke="#000000" points="140.2129,-87.0055 135.408,-96.4482 145.0527,-92.0629 140.2129,-87.0055"/>
+<title>modm_platform_itm&#45;&gt;modm_cmsis_device</title>
+<path fill="none" stroke="#000000" d="M161,-53.2029C161,-61.2113 161,-70.1403 161,-78.6802"/>
+<polygon fill="#000000" stroke="#000000" points="157.5001,-78.8159 161,-88.8159 164.5001,-78.8159 157.5001,-78.8159"/>
 </g>
-<!-- modm_math_geometry -->
+<!-- modm_platform -->
 <g id="node4" class="node">
-<title>modm_math_geometry</title>
-<g id="a_node4"><a xlink:href="../modm-math-geometry" xlink:title="modm:&#10;math:&#10;geometry">
-<polygon fill="#d3d3d3" stroke="#000000" points="251,-142 166,-142 166,-89 251,-89 251,-142"/>
-<text text-anchor="middle" x="208.5" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="208.5" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
-<text text-anchor="middle" x="208.5" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">geometry</text>
+<title>modm_platform</title>
+<g id="a_node4"><a xlink:href="../modm-platform" xlink:title="modm:&#10;platform">
+<polygon fill="#d3d3d3" stroke="#000000" points="290,-134.5 212,-134.5 212,-96.5 290,-96.5 290,-134.5"/>
+<text text-anchor="middle" x="251" y="-119.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="251" y="-104.3" font-family="Times,serif" font-size="14.00" fill="#000000">platform</text>
 </a>
 </g>
 </g>
-<!-- modm_math_matrix&#45;&gt;modm_math_geometry -->
+<!-- modm_platform_itm&#45;&gt;modm_platform -->
 <g id="edge3" class="edge">
-<title>modm_math_matrix&#45;&gt;modm_math_geometry</title>
-<path fill="none" stroke="#000000" d="M202.2547,-53.2029C201.776,-61.2113 201.6378,-70.1403 201.8402,-78.6802"/>
-<polygon fill="#000000" stroke="#000000" points="198.3489,-78.9678 202.2558,-88.8159 205.343,-78.6809 198.3489,-78.9678"/>
-</g>
-<!-- modm_utils -->
-<g id="node5" class="node">
-<title>modm_utils</title>
-<g id="a_node5"><a xlink:href="../modm-utils" xlink:title="modm:&#10;utils">
-<polygon fill="#d3d3d3" stroke="#000000" points="334,-134.5 269,-134.5 269,-96.5 334,-96.5 334,-134.5"/>
-<text text-anchor="middle" x="301.5" y="-119.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="301.5" y="-104.3" font-family="Times,serif" font-size="14.00" fill="#000000">utils</text>
-</a>
-</g>
-</g>
-<!-- modm_math_matrix&#45;&gt;modm_utils -->
-<g id="edge4" class="edge">
-<title>modm_math_matrix&#45;&gt;modm_utils</title>
-<path fill="none" stroke="#000000" d="M236.4031,-53.2029C248.341,-64.6274 262.2369,-77.9256 274.117,-89.2947"/>
-<polygon fill="#000000" stroke="#000000" points="271.9473,-92.0629 281.592,-96.4482 276.7871,-87.0055 271.9473,-92.0629"/>
-</g>
-<!-- modm_math_geometry&#45;&gt;modm_math_matrix -->
-<g id="edge5" class="edge">
-<title>modm_math_geometry&#45;&gt;modm_math_matrix</title>
-<path fill="none" stroke="#000000" d="M214.7442,-88.8159C215.2234,-80.809 215.3621,-71.8804 215.1603,-63.3399"/>
-<polygon fill="#000000" stroke="#000000" points="218.6515,-63.0514 214.7453,-53.2029 211.6574,-63.3378 218.6515,-63.0514"/>
+<title>modm_platform_itm&#45;&gt;modm_platform</title>
+<path fill="none" stroke="#000000" d="M188.003,-53.2029C199.5558,-64.6274 213.0034,-77.9256 224.5003,-89.2947"/>
+<polygon fill="#000000" stroke="#000000" points="222.1627,-91.9054 231.7342,-96.4482 227.0847,-86.9281 222.1627,-91.9054"/>
 </g>
 </g>
 </svg>
@@ -3070,7 +3175,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../modm-math-interpolation/" title="modm:math:interpolation" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../modm-platform-id/" title="modm:platform:id" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -3079,19 +3184,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                modm:math:interpolation
+                modm:platform:id
               </span>
             </div>
           </a>
         
         
-          <a href="../modm-math-saturated/" title="modm:math:saturated" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../modm-platform-random/" title="modm:platform:random" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                modm:math:saturated
+                modm:platform:random
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
