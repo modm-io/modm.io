@@ -566,6 +566,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../modm-architecture-build-id/" title="modm:architecture:build_id" class="md-nav__link">
+      modm:architecture:build_id
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../modm-architecture-can/" title="modm:architecture:can" class="md-nav__link">
       modm:architecture:can
     </a>
@@ -3107,8 +3119,9 @@ the device and reclaim the full heap.</p>
     <span class="k">if</span> <span class="p">(</span><span class="n">FaultReporter</span><span class="o">::</span><span class="n">hasReport</span><span class="p">())</span> <span class="c1">// Check first after boot</span>
     <span class="p">{</span>
         <span class="n">Application</span><span class="o">::</span><span class="n">partialInitialize</span><span class="p">();</span> <span class="c1">// Initialize only the necessary</span>
-        <span class="kt">uint32_t</span> <span class="n">id</span> <span class="o">=</span> <span class="n">FaultReporter</span><span class="o">::</span><span class="n">firmware</span><span class="p">();</span>
-        <span class="n">reportBegin</span><span class="p">(</span><span class="n">id</span><span class="p">);</span> <span class="c1">// start your report with the firmware hash</span>
+        <span class="n">reportBegin</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="kt">uint8_t</span> <span class="nl">data</span> <span class="p">:</span> <span class="n">FaultReporter</span><span class="o">::</span><span class="n">buildId</span><span class="p">())</span>
+            <span class="n">reportBuildId</span><span class="p">(</span><span class="n">data</span><span class="p">);</span> <span class="c1">// send each byte of Build ID</span>
         <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="kt">uint8_t</span> <span class="nl">data</span> <span class="p">:</span> <span class="n">FaultReporter</span><span class="p">())</span>
             <span class="n">reportData</span><span class="p">(</span><span class="n">data</span><span class="p">);</span> <span class="c1">// send each byte of data</span>
         <span class="n">reportEnd</span><span class="p">();</span> <span class="c1">// end the report</span>
@@ -3139,7 +3152,7 @@ you've cleared the report.</p>
         <span class="k">if</span> <span class="p">(</span><span class="n">faultReport</span> <span class="n">and</span> <span class="n">applicationReady</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="c1">// Still valid AFTER clear, but BEFORE reboot</span>
-            <span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">id</span> <span class="o">=</span> <span class="n">FaultReporter</span><span class="o">::</span><span class="n">firmware</span><span class="p">();</span>
+            <span class="k">const</span> <span class="k">auto</span> <span class="n">id</span> <span class="o">=</span> <span class="n">FaultReporter</span><span class="o">::</span><span class="n">buildId</span><span class="p">();</span>
             <span class="k">auto</span> <span class="n">begin</span> <span class="o">=</span> <span class="n">FaultReporter</span><span class="o">::</span><span class="n">begin</span><span class="p">();</span>
             <span class="k">auto</span> <span class="n">end</span> <span class="o">=</span> <span class="n">FaultReporter</span><span class="o">::</span><span class="n">end</span><span class="p">();</span>
             <span class="c1">//</span>
@@ -3160,20 +3173,28 @@ file, then call the debugger like this:</p>
     -ex &quot;target remote | CrashDebug --elf executable.elf --dump coredump.txt&quot;
 </pre></div>
 
-<p>Note that the firmware identifier is the CRC32 hash of the ROM section, this can
-help you find the right ELF file.</p>
+<p>Note that the <code>FaultReporter::buildId()</code> contains the GNU Build ID, which can
+help you find the right ELF file:</p>
+<div class="codehilite"><pre><span></span>arm-none-eabi-readelf -n executable.elf
+
+Displaying notes found in: .build_id
+  Owner                 Data size Description
+  GNU                  0x00000014 NT_GNU_BUILD_ID (unique build ID bitstring)
+    Build ID: 59f08f7a37a7340799d9dba6b0c092bc3c9515c5
+</pre></div>
+
 <h3 id="post-mortem-debugging-with-scons">Post-Mortem Debugging with SCons<a class="headerlink" href="#post-mortem-debugging-with-scons" title="Permanent link">&para;</a></h3>
 <p>The <code>:build:scons</code> module provides a few helper methods for working with fault
 reports. You still need to copy the coredump data manually, however, the firmware
 selection is automated.</p>
-<p>The SCons build system will automatically cache both the ELF and binary files
-for the firmware ID for every firmware upload (using <code>scons artifact</code>).
-When a fault is reported, you can tell SCons the firmware hash and it will use
+<p>The SCons build system will automatically cache the ELF file for the build id for
+every firmware upload (using <code>scons artifact</code>).
+When a fault is reported, you can tell SCons the firmware build id and it will use
 the corresponding ELF file automatically.</p>
 <div class="codehilite"><pre><span></span><span class="c1"># Copy data into coredump.txt</span>
 touch coredump.txt
-<span class="c1"># Start postmortem debugging of {hash}</span>
-scons postmortem <span class="nv">firmware</span><span class="o">={</span>hash<span class="o">}</span>
+<span class="c1"># Start postmortem debugging of executable with this build id</span>
+scons postmortem <span class="nv">firmware</span><span class="o">=</span>59f08f7a37a7340799d9dba6b0c092bc3c9515c5
 </pre></div>
 
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
@@ -3226,84 +3247,84 @@ Heap:      8.8 KiB (44.0% available)
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: modm:platform:fault Pages: 1 -->
-<svg width="382pt" height="150pt"
- viewBox="0.00 0.00 381.50 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="427pt" height="150pt"
+ viewBox="0.00 0.00 427.00 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 146)">
 <title>modm:platform:fault</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-146 377.5,-146 377.5,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-146 423,-146 423,4 -4,4"/>
 <!-- modm_platform_fault -->
 <g id="node1" class="node">
 <title>modm_platform_fault</title>
-<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="233,-53 150,-53 150,0 233,0 233,-53"/>
-<text text-anchor="middle" x="191.5" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="191.5" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="191.5" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">fault</text>
+<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="255.5,-53 172.5,-53 172.5,0 255.5,0 255.5,-53"/>
+<text text-anchor="middle" x="214" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="214" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="214" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">fault</text>
+</g>
+<!-- modm_architecture_build_id -->
+<g id="node2" class="node">
+<title>modm_architecture_build_id</title>
+<g id="a_node2"><a xlink:href="../modm-architecture-build-id" xlink:title="modm:&#10;architecture:&#10;build_id">
+<polygon fill="#d3d3d3" stroke="#000000" points="110,-142 0,-142 0,-89 110,-89 110,-142"/>
+<text text-anchor="middle" x="55" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="55" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
+<text text-anchor="middle" x="55" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">build_id</text>
+</a>
+</g>
+</g>
+<!-- modm_platform_fault&#45;&gt;modm_architecture_build_id -->
+<g id="edge1" class="edge">
+<title>modm_platform_fault&#45;&gt;modm_architecture_build_id</title>
+<path fill="none" stroke="#000000" d="M172.2246,-49.8837C153.5499,-60.3369 131.2598,-72.8137 111.1553,-84.0672"/>
+<polygon fill="#000000" stroke="#000000" points="109.4088,-81.0337 102.3924,-88.9722 112.8279,-87.1419 109.4088,-81.0337"/>
 </g>
 <!-- modm_cmsis_device -->
-<g id="node2" class="node">
+<g id="node3" class="node">
 <title>modm_cmsis_device</title>
-<g id="a_node2"><a xlink:href="../modm-cmsis-device" xlink:title="modm:&#10;cmsis:&#10;device">
-<polygon fill="#d3d3d3" stroke="#000000" points="65,-142 0,-142 0,-89 65,-89 65,-142"/>
-<text text-anchor="middle" x="32.5" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="32.5" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">cmsis:</text>
-<text text-anchor="middle" x="32.5" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">device</text>
+<g id="a_node3"><a xlink:href="../modm-cmsis-device" xlink:title="modm:&#10;cmsis:&#10;device">
+<polygon fill="#d3d3d3" stroke="#000000" points="193.5,-142 128.5,-142 128.5,-89 193.5,-89 193.5,-142"/>
+<text text-anchor="middle" x="161" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="161" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">cmsis:</text>
+<text text-anchor="middle" x="161" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">device</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_fault&#45;&gt;modm_cmsis_device -->
-<g id="edge1" class="edge">
+<g id="edge2" class="edge">
 <title>modm_platform_fault&#45;&gt;modm_cmsis_device</title>
-<path fill="none" stroke="#000000" d="M149.7876,-47.473C129.0339,-58.1616 103.4862,-71.698 73.895,-88.9158"/>
-<polygon fill="#000000" stroke="#000000" points="71.8704,-86.0456 65.0144,-94.123 75.4112,-92.084 71.8704,-86.0456"/>
+<path fill="none" stroke="#000000" d="M198.0983,-53.2029C193.0672,-61.6513 187.426,-71.1243 182.0904,-80.0841"/>
+<polygon fill="#000000" stroke="#000000" points="178.9999,-78.4332 176.8905,-88.8159 185.0143,-82.0148 178.9999,-78.4332"/>
 </g>
 <!-- modm_crashcatcher -->
-<g id="node3" class="node">
+<g id="node4" class="node">
 <title>modm_crashcatcher</title>
-<g id="a_node3"><a xlink:href="../modm-crashcatcher" xlink:title="modm:&#10;crashcatcher">
-<polygon fill="#d3d3d3" stroke="#000000" points="194,-134.5 83,-134.5 83,-96.5 194,-96.5 194,-134.5"/>
-<text text-anchor="middle" x="138.5" y="-119.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="138.5" y="-104.3" font-family="Times,serif" font-size="14.00" fill="#000000">crashcatcher</text>
+<g id="a_node4"><a xlink:href="../modm-crashcatcher" xlink:title="modm:&#10;crashcatcher">
+<polygon fill="#d3d3d3" stroke="#000000" points="322.5,-134.5 211.5,-134.5 211.5,-96.5 322.5,-96.5 322.5,-134.5"/>
+<text text-anchor="middle" x="267" y="-119.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="267" y="-104.3" font-family="Times,serif" font-size="14.00" fill="#000000">crashcatcher</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_fault&#45;&gt;modm_crashcatcher -->
-<g id="edge2" class="edge">
-<title>modm_platform_fault&#45;&gt;modm_crashcatcher</title>
-<path fill="none" stroke="#000000" d="M175.5983,-53.2029C169.1189,-64.0834 161.6274,-76.6634 155.0802,-87.6579"/>
-<polygon fill="#000000" stroke="#000000" points="151.9548,-86.0655 149.8454,-96.4482 157.9692,-89.6471 151.9548,-86.0655"/>
-</g>
-<!-- modm_math_utils -->
-<g id="node4" class="node">
-<title>modm_math_utils</title>
-<g id="a_node4"><a xlink:href="../modm-math-utils" xlink:title="modm:&#10;math:&#10;utils">
-<polygon fill="#d3d3d3" stroke="#000000" points="277,-142 212,-142 212,-89 277,-89 277,-142"/>
-<text text-anchor="middle" x="244.5" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="244.5" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
-<text text-anchor="middle" x="244.5" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">utils</text>
-</a>
-</g>
-</g>
-<!-- modm_platform_fault&#45;&gt;modm_math_utils -->
 <g id="edge3" class="edge">
-<title>modm_platform_fault&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M207.4017,-53.2029C212.4328,-61.6513 218.074,-71.1243 223.4096,-80.0841"/>
-<polygon fill="#000000" stroke="#000000" points="220.4857,-82.0148 228.6095,-88.8159 226.5001,-78.4332 220.4857,-82.0148"/>
+<title>modm_platform_fault&#45;&gt;modm_crashcatcher</title>
+<path fill="none" stroke="#000000" d="M229.9017,-53.2029C236.3811,-64.0834 243.8726,-76.6634 250.4198,-87.6579"/>
+<polygon fill="#000000" stroke="#000000" points="247.5308,-89.6471 255.6546,-96.4482 253.5452,-86.0655 247.5308,-89.6471"/>
 </g>
 <!-- modm_platform -->
 <g id="node5" class="node">
 <title>modm_platform</title>
 <g id="a_node5"><a xlink:href="../modm-platform" xlink:title="modm:&#10;platform">
-<polygon fill="#d3d3d3" stroke="#000000" points="373.5,-134.5 295.5,-134.5 295.5,-96.5 373.5,-96.5 373.5,-134.5"/>
-<text text-anchor="middle" x="334.5" y="-119.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="334.5" y="-104.3" font-family="Times,serif" font-size="14.00" fill="#000000">platform</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="419,-134.5 341,-134.5 341,-96.5 419,-96.5 419,-134.5"/>
+<text text-anchor="middle" x="380" y="-119.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="380" y="-104.3" font-family="Times,serif" font-size="14.00" fill="#000000">platform</text>
 </a>
 </g>
 </g>
 <!-- modm_platform_fault&#45;&gt;modm_platform -->
 <g id="edge4" class="edge">
 <title>modm_platform_fault&#45;&gt;modm_platform</title>
-<path fill="none" stroke="#000000" d="M233.2459,-52.4817C252.8341,-64.6729 276.0484,-79.121 295.3046,-91.1056"/>
-<polygon fill="#000000" stroke="#000000" points="293.5068,-94.1093 303.8462,-96.4218 297.2056,-88.1663 293.5068,-94.1093"/>
+<path fill="none" stroke="#000000" d="M255.5971,-48.3073C278.2397,-60.2343 306.7149,-75.3253 332,-89 333.5254,-89.825 335.0769,-90.6668 336.6429,-91.5188"/>
+<polygon fill="#000000" stroke="#000000" points="335.2379,-94.7395 345.6914,-96.4645 338.5952,-88.5972 335.2379,-94.7395"/>
 </g>
 </g>
 </svg>
