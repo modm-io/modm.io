@@ -1033,6 +1033,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#unittestsource" title="unittest.source" class="md-nav__link">
+    unittest.source
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unittestrunner" title="unittest.runner" class="md-nav__link">
+    unittest.runner
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#infogit" title="info.git" class="md-nav__link">
     info.git
   </a>
@@ -3338,6 +3352,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#unittestsource" title="unittest.source" class="md-nav__link">
+    unittest.source
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unittestrunner" title="unittest.runner" class="md-nav__link">
+    unittest.runner
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#infogit" title="info.git" class="md-nav__link">
     info.git
   </a>
@@ -3773,6 +3801,15 @@ can be accessed as <code>#include &lt;image.hpp&gt;</code>.</p>
 You can disable CacheDir by setting an empty string.</p>
 <h4 id="imagesource">image.source<a class="headerlink" href="#imagesource" title="Permanent link">&para;</a></h4>
 <p>Path to directory containing .pbm files: <code>{ Path }</code></p>
+<h4 id="unittestsource">unittest.source<a class="headerlink" href="#unittestsource" title="Permanent link">&para;</a></h4>
+<p>Path to directory containing unittests: <code>{ Path }</code></p>
+<p>When this path is declared, the generated SConstruct will compile <strong>only</strong> the
+unittests, not your application source code!
+You should use separate project configurations for compiling your unittest and
+application!</p>
+<h4 id="unittestrunner">unittest.runner<a class="headerlink" href="#unittestrunner" title="Permanent link">&para;</a></h4>
+<p>Path to unittests runner template: <code>{ Path }</code></p>
+<p>See modm/test/runners/*.cpp.in</p>
 <h4 id="infogit">info.git<a class="headerlink" href="#infogit" title="Permanent link">&para;</a></h4>
 <p>Generate git repository state information: <code>Disabled</code> ∈ <code>{ Disabled, Info, Info+Status }</code></p>
 <ul>
