@@ -13,7 +13,7 @@
         <meta name="description" content="A modular C++17 library generator for barebone embedded programming">
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-driver-ssd1306/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-driver-bno055/">
       
       
         <meta name="author" content="Niklas Hauser">
@@ -42,7 +42,7 @@
     
     
       
-        <title>modm:driver:ssd1306 - modm barebone embedded library</title>
+        <title>modm:driver:bno055 - modm barebone embedded library</title>
       
     
     
@@ -110,7 +110,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#modmdriverssd1306-ssd1306-display" tabindex="1" class="md-skip">
+      <a href="#modmdriverbno055-bno055-9-dof-inertial-measurement-unit" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -135,7 +135,7 @@
               modm barebone embedded library
             </span>
             <span class="md-header-nav__topic">
-              modm:driver:ssd1306
+              modm:driver:bno055
             </span>
           
         </div>
@@ -1272,11 +1272,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../modm-driver-bno055/" title="modm:driver:bno055" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        modm:driver:bno055
+      </label>
+    
+    <a href="./" title="modm:driver:bno055" class="md-nav__link md-nav__link--active">
       modm:driver:bno055
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#content" title="Content" class="md-nav__link">
+    Content
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1728,56 +1773,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        modm:driver:ssd1306
-      </label>
-    
-    <a href="./" title="modm:driver:ssd1306" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../modm-driver-ssd1306/" title="modm:driver:ssd1306" class="md-nav__link">
       modm:driver:ssd1306
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#content" title="Content" class="md-nav__link">
-    Content
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" title="Dependencies" class="md-nav__link">
-    Dependencies
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -3081,12 +3081,18 @@
                 <div class="admonition warning">
 <p class="admonition-title">These module docs are in beta and may be incomplete.</p>
 </div>
-<h1 id="modmdriverssd1306-ssd1306-display">modm:driver:ssd1306: SSD1306 Display<a class="headerlink" href="#modmdriverssd1306-ssd1306-display" title="Permanent link">&para;</a></h1>
+<h1 id="modmdriverbno055-bno055-9-dof-inertial-measurement-unit">modm:driver:bno055: BNO055 9-DOF Inertial Measurement Unit<a class="headerlink" href="#modmdriverbno055-bno055-9-dof-inertial-measurement-unit" title="Permanent link">&para;</a></h1>
+<p>The BNO055 is a System in Package (SiP), integrating a triaxial 14-bit
+accelerometer, a triaxial 16-bit gyroscope with a range of ±2000 degrees per
+second, a triaxial geomagnetic sensor and a 32-bit ARM Cortex-M0+ microcontroller
+running Bosch Sensortec sensor fusion software, in a single package.</p>
 <h2 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1">// Class</span>
-<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">Ssd1306</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">I2cMaster</span> <span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">Height</span><span class="o">=</span><span class="mi">64</span> <span class="o">&gt;</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">modm</span><span class="o">::</span><span class="n">Bno055</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">I2cMaster</span>  <span class="o">&gt;</span><span class="p">;</span>
 <span class="c1">// Struct</span>
-<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">ssd1306</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">bno055</span><span class="o">::</span><span class="n">Data</span><span class="o">::</span><span class="n">Raw</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">bno055</span><span class="o">::</span><span class="n">Data</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">modm</span><span class="o">::</span><span class="n">bno055</span><span class="p">;</span>
 </pre></div>
 
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
@@ -3095,19 +3101,19 @@
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
-<!-- Title: modm:driver:ssd1306 Pages: 1 -->
-<svg width="405pt" height="150pt"
- viewBox="0.00 0.00 405.00 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Title: modm:driver:bno055 Pages: 1 -->
+<svg width="750pt" height="150pt"
+ viewBox="0.00 0.00 749.50 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 146)">
-<title>modm:driver:ssd1306</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-146 401,-146 401,4 -4,4"/>
-<!-- modm_driver_ssd1306 -->
+<title>modm:driver:bno055</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-146 745.5,-146 745.5,4 -4,4"/>
+<!-- modm_driver_bno055 -->
 <g id="node1" class="node">
-<title>modm_driver_ssd1306</title>
-<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="249.5,-53 172.5,-53 172.5,0 249.5,0 249.5,-53"/>
-<text text-anchor="middle" x="211" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="211" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="211" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">ssd1306</text>
+<title>modm_driver_bno055</title>
+<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="417,-53 347,-53 347,0 417,0 417,-53"/>
+<text text-anchor="middle" x="382" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="382" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
+<text text-anchor="middle" x="382" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">bno055</text>
 </g>
 <!-- modm_architecture_i2c_device -->
 <g id="node2" class="node">
@@ -3120,61 +3126,112 @@
 </a>
 </g>
 </g>
-<!-- modm_driver_ssd1306&#45;&gt;modm_architecture_i2c_device -->
+<!-- modm_driver_bno055&#45;&gt;modm_architecture_i2c_device -->
 <g id="edge1" class="edge">
-<title>modm_driver_ssd1306&#45;&gt;modm_architecture_i2c_device</title>
-<path fill="none" stroke="#000000" d="M172.4382,-48.5C153.7324,-59.1719 130.9199,-72.1867 110.3937,-83.8972"/>
-<polygon fill="#000000" stroke="#000000" points="108.4035,-81.003 101.452,-88.9985 111.8723,-87.0832 108.4035,-81.003"/>
+<title>modm_driver_bno055&#45;&gt;modm_architecture_i2c_device</title>
+<path fill="none" stroke="#000000" d="M346.6257,-33.0423C297.505,-42.5298 205.8579,-61.6877 119.9371,-88.878"/>
+<polygon fill="#000000" stroke="#000000" points="118.7536,-85.5819 110.301,-91.9697 120.8922,-92.2473 118.7536,-85.5819"/>
+</g>
+<!-- modm_architecture_register -->
+<g id="node3" class="node">
+<title>modm_architecture_register</title>
+<g id="a_node3"><a xlink:href="../modm-architecture-register" xlink:title="modm:&#10;architecture:&#10;register">
+<polygon fill="#d3d3d3" stroke="#000000" points="238,-142 128,-142 128,-89 238,-89 238,-142"/>
+<text text-anchor="middle" x="183" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="183" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
+<text text-anchor="middle" x="183" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">register</text>
+</a>
+</g>
+</g>
+<!-- modm_driver_bno055&#45;&gt;modm_architecture_register -->
+<g id="edge2" class="edge">
+<title>modm_driver_bno055&#45;&gt;modm_architecture_register</title>
+<path fill="none" stroke="#000000" d="M346.8809,-42.2065C319.3433,-54.5224 280.2759,-71.9947 247.1923,-86.7909"/>
+<polygon fill="#000000" stroke="#000000" points="245.734,-83.6089 238.0343,-90.8867 248.5919,-89.999 245.734,-83.6089"/>
 </g>
 <!-- modm_driver -->
-<g id="node3" class="node">
+<g id="node4" class="node">
 <title>modm_driver</title>
-<g id="a_node3"><a xlink:href="../modm-driver" xlink:title="modm:&#10;driver">
-<polygon fill="#d3d3d3" stroke="#000000" points="193.5,-134.5 128.5,-134.5 128.5,-96.5 193.5,-96.5 193.5,-134.5"/>
-<text text-anchor="middle" x="161" y="-119.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="161" y="-104.3" font-family="Times,serif" font-size="14.00" fill="#000000">driver</text>
+<g id="a_node4"><a xlink:href="../modm-driver" xlink:title="modm:&#10;driver">
+<polygon fill="#d3d3d3" stroke="#000000" points="321.5,-134.5 256.5,-134.5 256.5,-96.5 321.5,-96.5 321.5,-134.5"/>
+<text text-anchor="middle" x="289" y="-119.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="289" y="-104.3" font-family="Times,serif" font-size="14.00" fill="#000000">driver</text>
 </a>
 </g>
 </g>
-<!-- modm_driver_ssd1306&#45;&gt;modm_driver -->
-<g id="edge2" class="edge">
-<title>modm_driver_ssd1306&#45;&gt;modm_driver</title>
-<path fill="none" stroke="#000000" d="M195.9984,-53.2029C189.8857,-64.0834 182.8183,-76.6634 176.6417,-87.6579"/>
-<polygon fill="#000000" stroke="#000000" points="173.5498,-86.0155 171.7032,-96.4482 179.6527,-89.4441 173.5498,-86.0155"/>
+<!-- modm_driver_bno055&#45;&gt;modm_driver -->
+<g id="edge3" class="edge">
+<title>modm_driver_bno055&#45;&gt;modm_driver</title>
+<path fill="none" stroke="#000000" d="M354.0969,-53.2029C342.159,-64.6274 328.2631,-77.9256 316.383,-89.2947"/>
+<polygon fill="#000000" stroke="#000000" points="313.7129,-87.0055 308.908,-96.4482 318.5527,-92.0629 313.7129,-87.0055"/>
+</g>
+<!-- modm_math_geometry -->
+<g id="node5" class="node">
+<title>modm_math_geometry</title>
+<g id="a_node5"><a xlink:href="../modm-math-geometry" xlink:title="modm:&#10;math:&#10;geometry">
+<polygon fill="#d3d3d3" stroke="#000000" points="424.5,-142 339.5,-142 339.5,-89 424.5,-89 424.5,-142"/>
+<text text-anchor="middle" x="382" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="382" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
+<text text-anchor="middle" x="382" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">geometry</text>
+</a>
+</g>
+</g>
+<!-- modm_driver_bno055&#45;&gt;modm_math_geometry -->
+<g id="edge4" class="edge">
+<title>modm_driver_bno055&#45;&gt;modm_math_geometry</title>
+<path fill="none" stroke="#000000" d="M382,-53.2029C382,-61.2113 382,-70.1403 382,-78.6802"/>
+<polygon fill="#000000" stroke="#000000" points="378.5001,-78.8159 382,-88.8159 385.5001,-78.8159 378.5001,-78.8159"/>
+</g>
+<!-- modm_math_utils -->
+<g id="node6" class="node">
+<title>modm_math_utils</title>
+<g id="a_node6"><a xlink:href="../modm-math-utils" xlink:title="modm:&#10;math:&#10;utils">
+<polygon fill="#d3d3d3" stroke="#000000" points="507.5,-142 442.5,-142 442.5,-89 507.5,-89 507.5,-142"/>
+<text text-anchor="middle" x="475" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="475" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
+<text text-anchor="middle" x="475" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">utils</text>
+</a>
+</g>
+</g>
+<!-- modm_driver_bno055&#45;&gt;modm_math_utils -->
+<g id="edge5" class="edge">
+<title>modm_driver_bno055&#45;&gt;modm_math_utils</title>
+<path fill="none" stroke="#000000" d="M409.9031,-53.2029C419.2829,-62.1793 429.8714,-72.3124 439.7412,-81.7577"/>
+<polygon fill="#000000" stroke="#000000" points="437.472,-84.4306 447.1166,-88.8159 442.3118,-79.3732 437.472,-84.4306"/>
+</g>
+<!-- modm_processing_resumable -->
+<g id="node7" class="node">
+<title>modm_processing_resumable</title>
+<g id="a_node7"><a xlink:href="../modm-processing-resumable" xlink:title="modm:&#10;processing:&#10;resumable">
+<polygon fill="#d3d3d3" stroke="#000000" points="624.5,-142 525.5,-142 525.5,-89 624.5,-89 624.5,-142"/>
+<text text-anchor="middle" x="575" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="575" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">processing:</text>
+<text text-anchor="middle" x="575" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">resumable</text>
+</a>
+</g>
+</g>
+<!-- modm_driver_bno055&#45;&gt;modm_processing_resumable -->
+<g id="edge6" class="edge">
+<title>modm_driver_bno055&#45;&gt;modm_processing_resumable</title>
+<path fill="none" stroke="#000000" d="M417.3992,-42.824C444.934,-55.5214 483.7434,-73.418 515.9594,-88.274"/>
+<polygon fill="#000000" stroke="#000000" points="514.7432,-91.5674 525.2899,-92.5767 517.6746,-85.2107 514.7432,-91.5674"/>
 </g>
 <!-- modm_processing_timer -->
-<g id="node4" class="node">
+<g id="node8" class="node">
 <title>modm_processing_timer</title>
-<g id="a_node4"><a xlink:href="../modm-processing-timer" xlink:title="modm:&#10;processing:&#10;timer">
-<polygon fill="#d3d3d3" stroke="#000000" points="310.5,-142 211.5,-142 211.5,-89 310.5,-89 310.5,-142"/>
-<text text-anchor="middle" x="261" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="261" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">processing:</text>
-<text text-anchor="middle" x="261" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">timer</text>
+<g id="a_node8"><a xlink:href="../modm-processing-timer" xlink:title="modm:&#10;processing:&#10;timer">
+<polygon fill="#d3d3d3" stroke="#000000" points="741.5,-142 642.5,-142 642.5,-89 741.5,-89 741.5,-142"/>
+<text text-anchor="middle" x="692" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="692" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">processing:</text>
+<text text-anchor="middle" x="692" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">timer</text>
 </a>
 </g>
 </g>
-<!-- modm_driver_ssd1306&#45;&gt;modm_processing_timer -->
-<g id="edge3" class="edge">
-<title>modm_driver_ssd1306&#45;&gt;modm_processing_timer</title>
-<path fill="none" stroke="#000000" d="M226.0016,-53.2029C230.7479,-61.6513 236.0698,-71.1243 241.1034,-80.0841"/>
-<polygon fill="#000000" stroke="#000000" points="238.0595,-81.8118 246.0089,-88.8159 244.1624,-78.3832 238.0595,-81.8118"/>
-</g>
-<!-- modm_ui_display -->
-<g id="node5" class="node">
-<title>modm_ui_display</title>
-<g id="a_node5"><a xlink:href="../modm-ui-display" xlink:title="modm:&#10;ui:&#10;display">
-<polygon fill="#d3d3d3" stroke="#000000" points="397,-142 329,-142 329,-89 397,-89 397,-142"/>
-<text text-anchor="middle" x="363" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="363" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">ui:</text>
-<text text-anchor="middle" x="363" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">display</text>
-</a>
-</g>
-</g>
-<!-- modm_driver_ssd1306&#45;&gt;modm_ui_display -->
-<g id="edge4" class="edge">
-<title>modm_driver_ssd1306&#45;&gt;modm_ui_display</title>
-<path fill="none" stroke="#000000" d="M249.5101,-48.1876C270.4507,-60.0795 296.7508,-75.1752 320,-89 320.0895,-89.0532 320.1791,-89.1065 320.2688,-89.1599"/>
-<polygon fill="#000000" stroke="#000000" points="318.418,-92.131 328.7919,-94.2834 322.0245,-86.1316 318.418,-92.131"/>
+<!-- modm_driver_bno055&#45;&gt;modm_processing_timer -->
+<g id="edge7" class="edge">
+<title>modm_driver_bno055&#45;&gt;modm_processing_timer</title>
+<path fill="none" stroke="#000000" d="M417.2452,-33.0882C464.6,-42.4035 551.3435,-61.0966 632.4003,-88.6567"/>
+<polygon fill="#000000" stroke="#000000" points="631.6593,-92.1037 642.2541,-92.0616 633.9455,-85.4875 631.6593,-92.1037"/>
 </g>
 </g>
 </svg>
@@ -3198,7 +3255,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../modm-driver-siemens-s75/" title="modm:driver:siemens_s75" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../modm-driver-bmp085/" title="modm:driver:bmp085" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -3207,19 +3264,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                modm:driver:siemens_s75
+                modm:driver:bmp085
               </span>
             </div>
           </a>
         
         
-          <a href="../modm-driver-tcs3414/" title="modm:driver:tcs3414" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../modm-driver-drv832x-spi/" title="modm:driver:drv832x_spi" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                modm:driver:tcs3414
+                modm:driver:drv832x_spi
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

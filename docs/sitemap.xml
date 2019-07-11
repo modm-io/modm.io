@@ -371,6 +371,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>http://modm.io/reference/module/modm-driver-bno055/</loc>
+     <lastmod>2019-07-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>http://modm.io/reference/module/modm-driver-drv832x-spi/</loc>
      <lastmod>2019-07-11</lastmod>
      <changefreq>daily</changefreq>
