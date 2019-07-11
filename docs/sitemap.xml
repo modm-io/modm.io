@@ -206,6 +206,56 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>http://modm.io/reference/module/modm-cmsis-dsp-basic-math/</loc>
+     <lastmod>2019-07-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://modm.io/reference/module/modm-cmsis-dsp-complex-math/</loc>
+     <lastmod>2019-07-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://modm.io/reference/module/modm-cmsis-dsp-controller/</loc>
+     <lastmod>2019-07-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://modm.io/reference/module/modm-cmsis-dsp-fast-math/</loc>
+     <lastmod>2019-07-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://modm.io/reference/module/modm-cmsis-dsp-filtering/</loc>
+     <lastmod>2019-07-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://modm.io/reference/module/modm-cmsis-dsp-matrix/</loc>
+     <lastmod>2019-07-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://modm.io/reference/module/modm-cmsis-dsp-statistics/</loc>
+     <lastmod>2019-07-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://modm.io/reference/module/modm-cmsis-dsp-support/</loc>
+     <lastmod>2019-07-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://modm.io/reference/module/modm-cmsis-dsp-tables/</loc>
+     <lastmod>2019-07-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://modm.io/reference/module/modm-cmsis-dsp-transform/</loc>
+     <lastmod>2019-07-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>http://modm.io/reference/module/modm-communication/</loc>
      <lastmod>2019-07-11</lastmod>
      <changefreq>daily</changefreq>
