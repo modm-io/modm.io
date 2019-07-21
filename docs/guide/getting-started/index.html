@@ -3363,7 +3363,7 @@ logging functions.</p>
     <span class="n">Board</span><span class="o">::</span><span class="n">initialize</span><span class="p">();</span>
     <span class="n">Board</span><span class="o">::</span><span class="n">Leds</span><span class="o">::</span><span class="n">setOutput</span><span class="p">();</span>
 
-    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">Board</span><span class="o">::</span><span class="n">Leds</span><span class="o">::</span><span class="n">toggle</span><span class="p">();</span>
         <span class="n">modm</span><span class="o">::</span><span class="n">delayMilliseconds</span><span class="p">(</span><span class="n">Board</span><span class="o">::</span><span class="n">Button</span><span class="o">::</span><span class="n">read</span><span class="p">()</span> <span class="o">?</span> <span class="mi">250</span> <span class="o">:</span> <span class="mi">500</span><span class="p">);</span>
@@ -3504,7 +3504,7 @@ source code.</p>
 <p class="admonition-title">Check your repository path</p>
 <p>Make sure you've set the correct path to the modm <code>repo.lb</code> file, otherwise
 lbuild cannot help you much. <strong>This is especially important when copying
-from our examples, which have the repository path set in the inherited 
+from our examples, which have the repository path set in the inherited
 common configuration file located in <code>modm/examples/lbuild.xml</code>!</strong></p>
 </div>
 <p>A minimal <code>main.cpp</code> for this configuration would look like this:</p>
@@ -3514,7 +3514,7 @@ common configuration file located in <code>modm/examples/lbuild.xml</code>!</str
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="n">GpioA0</span><span class="o">::</span><span class="n">setOutput</span><span class="p">();</span>
-    <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">GpioA0</span><span class="o">::</span><span class="n">toggle</span><span class="p">();</span>
         <span class="n">modm</span><span class="o">::</span><span class="n">delayMilliseconds</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
     <span class="p">}</span>

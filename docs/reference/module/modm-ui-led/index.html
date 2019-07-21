@@ -3241,7 +3241,7 @@ Note that you only need to call the <code>update()</code> member of the animator
 <span class="n">modm</span><span class="o">::</span><span class="n">ui</span><span class="o">::</span><span class="n">Indicator</span><span class="o">&lt;</span><span class="kt">uint8_t</span><span class="o">&gt;</span> <span class="n">indicator</span><span class="p">(</span><span class="n">led</span><span class="p">);</span>
 <span class="n">indicator</span><span class="p">.</span><span class="n">start</span><span class="p">();</span>
 
-<span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">indicator</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
 <span class="p">}</span>
@@ -3260,7 +3260,7 @@ methods inside a 1ms <code>modm::PeriodicTimer</code>:</p>
 
 <div class="codehilite"><pre><span></span><span class="n">modm</span><span class="o">::</span><span class="n">PeriodicTimer</span> <span class="n">update_timer</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 
-<span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">update_timer</span><span class="p">.</span><span class="n">execute</span><span class="p">())</span>
     <span class="p">{</span>

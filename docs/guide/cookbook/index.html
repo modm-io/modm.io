@@ -3151,7 +3151,7 @@ use cases.</p>
 <span class="n">Uart</span><span class="o">::</span><span class="n">write</span><span class="p">(</span><span class="sc">&#39;i&#39;</span><span class="p">);</span>
 
 <span class="kt">uint8_t</span> <span class="n">buffer</span><span class="p">;</span>
-<span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// create a simple loopback</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">Uart</span><span class="o">::</span><span class="n">read</span><span class="p">(</span><span class="n">buffer</span><span class="p">))</span> <span class="p">{</span>
         <span class="n">Uart</span><span class="o">::</span><span class="n">write</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span>
@@ -3181,7 +3181,7 @@ use cases.</p>
 
 <span class="n">Led</span><span class="o">::</span><span class="n">setOutput</span><span class="p">(</span><span class="n">modm</span><span class="o">::</span><span class="n">Gpio</span><span class="o">::</span><span class="n">High</span><span class="p">);</span>
 
-<span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">timeout</span><span class="p">.</span><span class="n">execute</span><span class="p">())</span> <span class="p">{</span>
         <span class="c1">// executes just once</span>
         <span class="n">timer</span><span class="p">.</span><span class="n">stop</span><span class="p">();</span>

@@ -3290,7 +3290,7 @@ you've cleared the report.</p>
     <span class="n">FaultReporter</span><span class="o">::</span><span class="n">clear</span><span class="p">();</span> <span class="c1">// only clear report but do not reboot</span>
     <span class="n">Application</span><span class="o">::</span><span class="n">initialize</span><span class="p">();</span>
 
-    <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="n">doOtherStuff</span><span class="p">();</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">faultReport</span> <span class="n">and</span> <span class="n">applicationReady</span><span class="p">)</span>

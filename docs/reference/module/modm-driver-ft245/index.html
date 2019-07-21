@@ -3132,7 +3132,7 @@ Port is switched between input and output mode.</p>
     <span class="n">Rd</span><span class="o">::</span><span class="n">setOutput</span><span class="p">(</span><span class="n">modm</span><span class="o">::</span><span class="n">Gpio</span><span class="o">::</span><span class="n">High</span><span class="p">);</span>
     <span class="n">Wr</span><span class="o">::</span><span class="n">setOutput</span><span class="p">(</span><span class="n">modm</span><span class="o">::</span><span class="n">Gpio</span><span class="o">::</span><span class="n">Low</span><span class="p">);</span>
 
-    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="kt">uint8_t</span> <span class="n">c</span><span class="p">;</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">myFt</span><span class="o">::</span><span class="n">read</span><span class="p">(</span><span class="n">c</span><span class="p">))</span> <span class="p">{</span>
