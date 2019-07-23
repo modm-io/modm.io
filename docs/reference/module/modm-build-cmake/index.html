@@ -890,6 +890,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#make-openocd" title="make openocd" class="md-nav__link">
+    make openocd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#make-clean" title="make clean" class="md-nav__link">
     make clean
   </a>
@@ -919,6 +926,33 @@
           <li class="md-nav__item">
   <a href="#include_makefile" title="include_makefile" class="md-nav__link">
     include_makefile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#include_cmakelists" title="include_cmakelists" class="md-nav__link">
+    include_cmakelists
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collectors" title="Collectors" class="md-nav__link">
+    Collectors
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flag_format" title="flag_format" class="md-nav__link">
+    flag_format
   </a>
   
 </li>
@@ -3206,6 +3240,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#make-openocd" title="make openocd" class="md-nav__link">
+    make openocd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#make-clean" title="make clean" class="md-nav__link">
     make clean
   </a>
@@ -3235,6 +3276,33 @@
           <li class="md-nav__item">
   <a href="#include_makefile" title="include_makefile" class="md-nav__link">
     include_makefile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#include_cmakelists" title="include_cmakelists" class="md-nav__link">
+    include_cmakelists
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collectors" title="Collectors" class="md-nav__link">
+    Collectors
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flag_format" title="flag_format" class="md-nav__link">
+    flag_format
   </a>
   
 </li>
@@ -3273,30 +3341,26 @@
 </div>
 <h1 id="modmbuildcmake-cmake-build-script-generator">modm:build:cmake: CMake Build Script Generator<a class="headerlink" href="#modmbuildcmake-cmake-build-script-generator" title="Permanent link">&para;</a></h1>
 <p><a href="http://cmake.org">CMake</a> is a widely used build tool supported by almost every IDE.</p>
-<p>This module generates two files:</p>
+<p>This module generates three files:</p>
 <ul>
+<li>a <code>modm/repo.cmake</code> file: configures all required CMake tools with
+  the right settings (also using information from the <code>modm:build</code> module) to
+  compile the modm library.</li>
 <li>a top-level <code>CMakeLists.txt</code>: configures CMake to build modm and your
   application.</li>
 <li>a top-level <code>Makefile</code>: provides a convenience wrapper for calling CMake from
   the command line.</li>
 </ul>
 <p>This module is intended to be used for integration with IDEs that natively only
-support CMake. It therefore only provides the bare minimum of features and
-can only be used to compile for ARM Cortex-M targets.</p>
-<p><em>The <code>modm:build:scons</code> module is the preferred build system for modm.</em></p>
+support CMake. It therefore only provides the bare minimum of features to compile
+and upload your application to your target. For additional build tools features
+see the <code>modm:build:scons</code> module.</p>
 <h2 id="make-methods">Make Methods<a class="headerlink" href="#make-methods" title="Permanent link">&para;</a></h2>
 <p>The <code>Makefile</code> wrapper provides these convenience methods.</p>
 <h4 id="make-cmake">make cmake<a class="headerlink" href="#make-cmake" title="Permanent link">&para;</a></h4>
 <p>Generates the CMake build folders and initializes the build system.</p>
 <div class="codehilite"><pre><span></span> $ make cmake
     ...
--- Project : blink_cmake
--- Platform: stm32
--- Compiler: gcc
--- Part    : stm32f103c8t
--- Family  : f1
--- Core    : cortex-m3
--- Path    : build/{project.name}
 -- Configuring done
 -- Generating done
 -- Build files have been written to: build/{project.name}/cmake-build-release
@@ -3333,9 +3397,10 @@ Scanning dependencies of target blink_cmake
 
 <h4 id="make-upload-release">make upload-release<a class="headerlink" href="#make-upload-release" title="Permanent link">&para;</a></h4>
 <h4 id="make-upload-debug">make upload-debug<a class="headerlink" href="#make-upload-debug" title="Permanent link">&para;</a></h4>
-<p>Writes the executable onto your target via OpenOCD.
+<p>Writes the executable onto your target via AvrDude or OpenOCD.
 This is a convenience wrapper around the programming options and methods
-defined in the <code>modm:build</code> module.</p>
+defined in the <code>modm:build</code> module.
+(* <em>only AVR and ARM Cortex-M targets</em>)</p>
 <div class="codehilite"><pre><span></span> $ make upload-release
 [100%] Built target blink_cmake
 [100%] Built target blink_cmake.bin
@@ -3364,23 +3429,31 @@ shutdown command invoked
 <h4 id="make-gdb-release">make gdb-release<a class="headerlink" href="#make-gdb-release" title="Permanent link">&para;</a></h4>
 <p>Launches GDB with the debug or release executable.
 This is just a convenience wrapper for the debug functionality defined in the
-<code>modm:build</code> module.</p>
+<code>modm:build</code> module.
+(* <em>only ARM Cortex-M targets</em>)</p>
 <p><strong>OpenOCD must already be running in the background</strong>. Launch it by manually
-calling it in another terminal:</p>
-<div class="codehilite"><pre><span></span>openocd -f modm/openocd.cfg
-</pre></div>
-
+calling <code>make openocd</code> in another terminal.</p>
+<h4 id="make-openocd">make openocd<a class="headerlink" href="#make-openocd" title="Permanent link">&para;</a></h4>
+<p>Starts OpenOCD with the modm specific configuration.</p>
 <h4 id="make-clean">make clean<a class="headerlink" href="#make-clean" title="Permanent link">&para;</a></h4>
 <p>Removes the CMake build artifacts.</p>
 <h4 id="make-cleanall">make cleanall<a class="headerlink" href="#make-cleanall" title="Permanent link">&para;</a></h4>
-<p>Removes the entire build folders. You must then first call <code>make cmake</code> before
-being able to build again</p>
+<p>Removes the entire build folder. You must then first call <code>make cmake</code> before
+being able to build again.</p>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <h4 id="include_makefile">include_makefile<a class="headerlink" href="#include_makefile" title="Permanent link">&para;</a></h4>
 <p>Generate a wrapper Makefile: <code>True</code> ∈ <code>{ True, False }</code></p>
 <div class="admonition warning">
 <p class="admonition-title">This overwrites any top-level <code>Makefile</code> file!</p>
 </div>
+<h4 id="include_cmakelists">include_cmakelists<a class="headerlink" href="#include_cmakelists" title="Permanent link">&para;</a></h4>
+<p>Generate a CMakeLists.txt: <code>True</code> ∈ <code>{ True, False }</code></p>
+<div class="admonition warning">
+<p class="admonition-title">This overwrites any top-level <code>CMakeLists.txt</code> file!</p>
+</div>
+<h2 id="collectors">Collectors<a class="headerlink" href="#collectors" title="Permanent link">&para;</a></h2>
+<h4 id="flag_format">flag_format<a class="headerlink" href="#flag_format" title="Permanent link">&para;</a></h4>
+<p>Formatting compile flags for CMake ∈ <code>Callable</code></p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"

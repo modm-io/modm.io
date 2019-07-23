@@ -835,13 +835,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-black-magic-probe" title="Using Black Magic Probe" class="md-nav__link">
-    Using Black Magic Probe
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#using-avrdude" title="Using AvrDude" class="md-nav__link">
     Using AvrDude
   </a>
@@ -1153,6 +1146,13 @@
   
     <nav class="md-nav">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avrdude_options" title="avrdude_options" class="md-nav__link">
+    avrdude_options
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#collect_flags" title="collect_flags" class="md-nav__link">
@@ -3434,13 +3434,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-black-magic-probe" title="Using Black Magic Probe" class="md-nav__link">
-    Using Black Magic Probe
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#using-avrdude" title="Using AvrDude" class="md-nav__link">
     Using AvrDude
   </a>
@@ -3754,6 +3747,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#avrdude_options" title="avrdude_options" class="md-nav__link">
+    avrdude_options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#collect_flags" title="collect_flags" class="md-nav__link">
     collect_flags
   </a>
@@ -3818,7 +3818,7 @@
 the specific build system generator implementation.
 This includes straight-forward options like project name and build path
 but also more complicated configuration for programming your target via
-AvrDude/OpenOCD/Black Magic Probe and debugging via GDB.</p>
+AvrDude or OpenOCD and debugging via GDB.</p>
 <p><strong>Note that this module does not compile your project, you will need to choose
 the <code>modm:build:scons</code> or <code>modm:build:cmake</code> submodule for that, or provide
 your own build system.</strong></p>
@@ -3829,15 +3829,10 @@ your own build system.</strong></p>
 <li>Search directories passed via the <code>openocd.search</code> metadata key.</li>
 <li>User configuration files passed via the <code>openocd.configfile</code> metadata key.
   Your custom <code>modm:build:openocd.cfg</code> is added here too.</li>
-<li>Two programming commands:<ul>
-<li><code>program_release</code> for uploading the release profile.</li>
-<li><code>program_debug</code> for uploading your debug profile.</li>
-</ul>
-</li>
+<li>The target specific programming command <code>modm_program elffile</code></li>
 </ul>
 <p>You can now upload your program in a one-line command:</p>
-<p><div class="codehilite"><pre><span></span>openocd -f modm/openocd.cfg -c <span class="s2">&quot;program_release&quot;</span>
-openocd -f modm/openocd.cfg -c <span class="s2">&quot;program_debug&quot;</span>
+<p><div class="codehilite"><pre><span></span>openocd -f modm/openocd.cfg -c <span class="s2">&quot;modm_program path/to/project.elf&quot;</span>
 </pre></div>
 <div class="codehilite"><pre><span></span>Open On-Chip Debugger 0.10.0
 adapter speed: 2000 kHz
@@ -3867,24 +3862,21 @@ shutdown command invoked
 </pre></div></p>
 <h2 id="using-gdb">Using GDB<a class="headerlink" href="#using-gdb" title="Permanent link">&para;</a></h2>
 <p>For debugging your program on ARM Cortex-M device, we provide the <code>modm/gdbinit</code>
-file for the <code>arm-none-eabi-gdb</code> debugger connected to your target via OpenOCD.</p>
-<p>Four commands are provided for convenience:</p>
+and <code>modm/openocd_gdbinit</code> files for the <code>arm-none-eabi-gdb</code> debugger connected
+to your target via OpenOCD.</p>
+<p>Two commands are provided for convenience:</p>
 <ul>
-<li><code>file_debug</code> loads the debug profile ELF file.</li>
-<li><code>file_release</code> loads the release profile ELF file.</li>
 <li><code>restart</code> resets the device and halts.</li>
 <li><code>rerun</code> resets the device and continues execution.</li>
 </ul>
 <p>GDB is configured in TUI mode and continues running the target after attaching,
-but <em>does not</em> load an ELF file! Please call <code>file_{debug, release}</code> first or
-pass the ELF file as a command line argument.</p>
+but <em>does not</em> load an ELF file! Please pass the ELF file as a command line
+argument.</p>
 <p>You can start your debug session by launching OpenOCD and then GDB:</p>
 <div class="codehilite"><pre><span></span><span class="c1"># Run OpenOCD without any commands in the background</span>
 openocd -f modm/openocd.cfg
-<span class="c1"># Open another terminal</span>
-arm-none-eabi-gdb -x modm/gdbinit
-<span class="c1"># OR optionally with your custom ELF file</span>
-arm-none-eabi-gdb -x modm/gdbinit path/to/project.elf
+<span class="c1"># Open another shell with your projects ELF file</span>
+arm-none-eabi-gdb -x modm/gdbinit -x modm/openocd_gdbinit path/to/project.elf
 </pre></div>
 
 <div class="codehilite"><pre><span></span>   ┌——main.cpp———————————————————————————————————————————————————————┐
@@ -3922,45 +3914,10 @@ period of time, while the device's debug peripheral is initialized.
 This time is dependent on the debug adapter and may range from just a few
 milliseconds to hundreds. Make sure your hardware can handle that!</p>
 </div>
-<h2 id="using-black-magic-probe">Using Black Magic Probe<a class="headerlink" href="#using-black-magic-probe" title="Permanent link">&para;</a></h2>
-<p><a href="https://github.com/blacksphere/blackmagic">Black Magic Probe</a> is convenient tool to convert cheap USB ST-LINK V2 clones to a fully functional GDB compatible debug adaptor for ARM Cortex microcontrollers. GDB can directly communicate with the debug adaptor making debugging easy and accessible. Currently, only uploading code to the target is supported with this modm module.</p>
-<p>Black Magic Probe creates two serial devices, the first being the GDB interface and the second a plain serial adaptor for debugging purposes.</p>
-<div class="codehilite"><pre><span></span>$ ls -l /dev/tty.usb*
-crw-rw-rw-  1 root  wheel   21, 104 Feb 19 09:46 /dev/tty.usbmodemDEADBEEF
-crw-rw-rw-  1 root  wheel   21, 106 Feb 19 09:46 /dev/tty.usbmodemDEADBEF1
-</pre></div>
-
-<p>You can upload your code using a Black Magic Probe with specifying the GDB interface as <code>port</code> parameter.</p>
-<div class="codehilite"><pre><span></span>$ scons bmp port=/dev/cu.usbmodemDEADBEEF verbose=1
-scons: Reading SConscript files ...
-bmp port iss = /dev/cu.usbmodemDEADBEEF
-scons: done reading SConscript files.
-scons: Building targets ...
-arm-none-eabi-gdb -ex &quot;target extended-remote /dev/cu.usbmodemDEADBEEF&quot; -ex &quot;monitor swdp_scan&quot; -ex &quot;attach 1&quot; -ex &quot;load path/to/project.elf&quot; -ex &quot;detach&quot; -ex &quot;quit&quot;
-[...]
-Remote debugging using /dev/cu.usbmodemDEADBEEF
-Target voltage: unknown
-Available Targets:
-No. Att Driver
- 1      STM32F1 medium density
-Attaching to Remote target
-warning: No executable has been specified and target does not support
-determining executable automatically.  Try using the &quot;file&quot; command.
-0x0800038e in ?? ()
-Loading section .vector_rom, size 0xec lma 0x8000000
-[...]
-Loading section .table.section_heap, size 0xc lma 0x80013f8
-Start address 0x8000e6c, load size 5120
-Transfer rate: 10 KB/sec, 365 bytes/write.
-Detaching from program: , Remote target
-[Inferior 1 (Remote target) detached]
-scons: done building targets.
-</pre></div>
-
 <h2 id="using-avrdude">Using AvrDude<a class="headerlink" href="#using-avrdude" title="Permanent link">&para;</a></h2>
 <p>Unfortunately AvrDude does not support a user configuration file like OpenOCD
 does, so there is no convenient one-line command to issue.
-You have to use the support of the specific build system.</p>
+You have to use the wrapper support of the specific build system.</p>
 <h2 id="compiler-options">Compiler Options<a class="headerlink" href="#compiler-options" title="Permanent link">&para;</a></h2>
 <p>We maintain a common set of compiler options for all build system generator, so
 that they all have feature parity. We currently only support compiling modm
@@ -3986,7 +3943,6 @@ project, the options presented here are only the most important ones.</p>
 <h4 id="only-c">Only C<a class="headerlink" href="#only-c" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>-std=gnu11</code>: use C11 with GNU extensions (for <code>asm volatile</code>).</li>
-<li><code>-Wnested-externs</code>: shouldn't use <code>extern</code> inside a function body.</li>
 </ul>
 <h4 id="only-c_1">Only C++<a class="headerlink" href="#only-c_1" title="Permanent link">&para;</a></h4>
 <ul>
@@ -4153,11 +4109,20 @@ See <a href="https://gcc.gnu.org/onlinedocs/gcc/Link-Options.html">Options for L
 <h4 id="pkg-config">pkg-config<a class="headerlink" href="#pkg-config" title="Permanent link">&para;</a></h4>
 <p>Packages to configure against ∈ <code>String</code></p>
 <h2 id="queries">Queries<a class="headerlink" href="#queries" title="Permanent link">&para;</a></h2>
+<h4 id="avrdude_options">avrdude_options<a class="headerlink" href="#avrdude_options" title="Permanent link">&para;</a></h4>
+<p>Merges the default AvrDude options with the user options:
+- <code>avrdude_programmer</code>
+- <code>avrdude_port</code>
+- <code>avrdude_baudrate</code>
+- <code>avrdude_options</code></p>
+<p><strong>POST-BUILD ONLY</strong>
+:returns: options dictionary</p>
 <h4 id="collect_flags">collect_flags<a class="headerlink" href="#collect_flags" title="Permanent link">&para;</a></h4>
 <p>Scans the collections for module compile flags.
 Converts them into SCons-compatible names and places them into a dictionary
 of the form: flags[filename][name][profile] = list(values).</p>
-<p>:param env: the post_build step env
+<p><strong>POST-BUILD ONLY</strong>
+:param env: the post_build step env
 :param scope_filter: the collection scope filter
 :returns: compile flags dictionary</p>
 <h4 id="device">device<a class="headerlink" href="#device" title="Permanent link">&para;</a></h4>
@@ -4178,7 +4143,7 @@ A memory region is a dictionary containing:
 <p>:returns: a list of memory regions.</p>
 <h4 id="source_files">source_files<a class="headerlink" href="#source_files" title="Permanent link">&para;</a></h4>
 <p>Builds a list of files that need to be compiled per repository.</p>
-<p>:param buildlog: the buildlog object available in the post_build step
+<p><strong>POST-BUILD ONLY</strong>
 :returns: a dictionary of sorted lists of filenames, keyed by repository.</p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>

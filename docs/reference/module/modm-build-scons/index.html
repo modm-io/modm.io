@@ -881,6 +881,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#scons-bmp" title="scons bmp" class="md-nav__link">
+    scons bmp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#scons-run" title="scons run" class="md-nav__link">
     scons run
   </a>
@@ -939,13 +946,6 @@
           <li class="md-nav__item">
   <a href="#scons-c" title="scons -c" class="md-nav__link">
     scons -c
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scons-cmakewrapper" title="scons cmakewrapper" class="md-nav__link">
-    scons cmakewrapper
   </a>
   
 </li>
@@ -3344,6 +3344,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#scons-bmp" title="scons bmp" class="md-nav__link">
+    scons bmp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#scons-run" title="scons run" class="md-nav__link">
     scons run
   </a>
@@ -3402,13 +3409,6 @@
           <li class="md-nav__item">
   <a href="#scons-c" title="scons -c" class="md-nav__link">
     scons -c
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scons-cmakewrapper" title="scons cmakewrapper" class="md-nav__link">
-    scons cmakewrapper
   </a>
   
 </li>
@@ -3647,8 +3647,7 @@ Linking········ build/release/game_of_life.elf
 </pre></div>
 
 <h4 id="scons-size">scons size<a class="headerlink" href="#scons-size" title="Permanent link">&para;</a></h4>
-<p>Displays the static Flash and RAM consumption of your target.
-(* <em>only Cortex-M targets</em>)</p>
+<p>Displays the static Flash and RAM consumption of your target.</p>
 <p>Example for a STM32 target with 16MB external heap:</p>
 <div class="codehilite"><pre><span></span> $ scons size
 Memory usage:.. build/release/game_of_life.elf
@@ -3669,7 +3668,7 @@ Heap:     16.4 MiB
 <p>Writes the executable onto your target via Avrdude or OpenOCD.
 This is a convenience wrapper around the programming options and methods
 defined in the <code>modm:build</code> module.
-(* <em>only AVR and Cortex-M targets</em>)</p>
+(* <em>only AVR and ARM Cortex-M targets</em>)</p>
 <p>Example for a STM32 target:</p>
 <div class="codehilite"><pre><span></span> $ scons program
 .----OpenOCD--- build/release/game_of_life.elf
@@ -3694,13 +3693,56 @@ verified 13064 bytes in 0.296308s (43.056 KiB/s)
 shutdown command invoked
 </pre></div>
 
+<h4 id="scons-bmp">scons bmp<a class="headerlink" href="#scons-bmp" title="Permanent link">&para;</a></h4>
+<p>[Black Magic Probe][bmp] is convenient tool to convert cheap USB ST-LINK V2 clones
+to a fully functional GDB compatible debug adaptor for ARM Cortex microcontrollers.
+GDB can directly communicate with the debug adaptor making debugging easy and
+accessible. Currently, only uploading code to the target is supported.
+(* <em>only ARM Cortex-M targets</em>)</p>
+<p>Black Magic Probe creates two serial devices, the first being the GDB interface
+and the second a plain serial adaptor for debugging purposes.</p>
+<div class="codehilite"><pre><span></span>$ ls -l /dev/tty.usb*
+crw-rw-rw-  1 root  wheel   21, 104 Feb 19 09:46 /dev/tty.usbmodemDEADBEEF
+crw-rw-rw-  1 root  wheel   21, 106 Feb 19 09:46 /dev/tty.usbmodemDEADBEF1
+</pre></div>
+
+<p>You can upload your code using a Black Magic Probe with specifying the GDB
+interface as <code>port</code> parameter.</p>
+<div class="codehilite"><pre><span></span>$ scons bmp port=/dev/cu.usbmodemDEADBEEF verbose=1
+scons: Reading SConscript files ...
+bmp port iss = /dev/cu.usbmodemDEADBEEF
+scons: done reading SConscript files.
+scons: Building targets ...
+arm-none-eabi-gdb -ex &quot;target extended-remote /dev/cu.usbmodemDEADBEEF&quot; \
+                  -ex &quot;monitor swdp_scan&quot; -ex &quot;attach 1&quot; -ex &quot;load path/to/project.elf&quot; \
+                  -ex &quot;detach&quot; -ex &quot;quit&quot;
+[...]
+Remote debugging using /dev/cu.usbmodemDEADBEEF
+Target voltage: unknown
+Available Targets:
+No. Att Driver
+ 1      STM32F1 medium density
+Attaching to Remote target
+warning: No executable has been specified and target does not support
+determining executable automatically.  Try using the &quot;file&quot; command.
+0x0800038e in ?? ()
+Loading section .vector_rom, size 0xec lma 0x8000000
+[...]
+Loading section .table.section_heap, size 0xc lma 0x80013f8
+Start address 0x8000e6c, load size 5120
+Transfer rate: 10 KB/sec, 365 bytes/write.
+Detaching from program: , Remote target
+[Inferior 1 (Remote target) detached]
+scons: done building targets.
+</pre></div>
+
 <h4 id="scons-run">scons run<a class="headerlink" href="#scons-run" title="Permanent link">&para;</a></h4>
 <p>Executes your project on your computer.
 (* <em>only Hosted targets</em>)</p>
 <h4 id="scons-gdb">scons gdb<a class="headerlink" href="#scons-gdb" title="Permanent link">&para;</a></h4>
 <p>Launches OpenOCD in the background, then launches GDB in foreground with the
 correct executable. When GDB exits, it stops the OpenOCD process.
-(* <em>only Cortex-M targets</em>)</p>
+(* <em>only ARM Cortex-M targets</em>)</p>
 <p>This is just a convenience wrapper for the debug functionality defined in the
 <code>modm:build</code> module.</p>
 <div class="admonition tip">
@@ -3717,12 +3759,12 @@ and <code>scons program profile=debug</code> and try <code>scons gdb profile=deb
 <p>Launches GDB for post-mortem debugging with the firmware identified by the
 <code>firmware={hash}</code> argument using the data from the <code>coredump={filepath}</code>
 argument.
-(* <em>only Cortex-M targets</em>)</p>
+(* <em>only ARM Cortex-M targets</em>)</p>
 <p>See the <code>:platform:fault</code> module for details how to receive the coredump data.</p>
 <h4 id="scons-itm">scons itm<a class="headerlink" href="#scons-itm" title="Permanent link">&para;</a></h4>
 <p>Configures OpenOCD in tracing mode to output ITM channel 0 on SWO pin and
 displays the serial output stream.
-(* <em>only Cortex-M targets</em>)</p>
+(* <em>only ARM Cortex-M targets</em>)</p>
 <p>See the <code>:platform:itm</code> module for details how to use the ITM as a logging
 output.</p>
 <h4 id="scons-symbols">scons symbols<a class="headerlink" href="#scons-symbols" title="Permanent link">&para;</a></h4>
@@ -3795,12 +3837,6 @@ Removed build/release/game_of_life.elf
 Removed build/release/game_of_life.lss
 </pre></div>
 
-<h4 id="scons-cmakewrapper">scons cmakewrapper<a class="headerlink" href="#scons-cmakewrapper" title="Permanent link">&para;</a></h4>
-<p>Generates a <code>CMakeLists.txt</code> file that wraps the scons commands so
-that the project can be imported into IDE with CMake support, like CLion.</p>
-<div class="admonition warning">
-<p class="admonition-title">Consider this an unstable feature</p>
-</div>
 <h4 id="scons-qtcreator">scons qtcreator<a class="headerlink" href="#scons-qtcreator" title="Permanent link">&para;</a></h4>
 <p>Generates several files so that the project can be imported into Qt Creator via
 the <code>.creator</code> file importer. Note, that no compiliation or debugging features
@@ -3825,8 +3861,8 @@ and its options are evaluated for the wrapper as follows:</p>
 
 <p>The generated files are available as a top-level <code>#include &lt;identifiers.hpp&gt;</code>.</p>
 <h2 id="information-tool">Information Tool<a class="headerlink" href="#information-tool" title="Permanent link">&para;</a></h2>
-<p>Our <code>info</code> SCons tool generates a set of header files containing preprocessor
-defines with the repository state.</p>
+<p>Our <code>info</code> SCons tool generates a set of header files containing information
+about the repository state.</p>
 <p>A call to <code>env.InfoGit(with_status={True, False})</code> will generate a <code>&lt;info_git.h&gt;</code>
 header file and add these two defines to the command line CPP options:</p>
 <ul>
