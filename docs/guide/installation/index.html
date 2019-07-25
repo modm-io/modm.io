@@ -3120,8 +3120,7 @@ lack of commitment from Atmel on keeping their AVR toolchain up-to-date.</p>
 <h2 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h2>
 <p>We will use <a href="http://brew.sh/">Homebrew</a> to install the minimal build system:</p>
 <div class="codehilite"><pre><span></span>brew install python3 scons git doxygen
-pip3 install --user modm
-pip install --user pathlib pyelftools
+pip3 install modm
 </pre></div>
 
 
@@ -3139,6 +3138,13 @@ brew install openocd --HEAD
 </pre></div>
 
 
+<p>scons now works with Python 3. Unfortunately, macOS still defaults to Python 2.
+For a less intrusive way to run all scons scripts with Python 3 add this to your
+~/.bashrc or ~/.zshrc</p>
+<div class="codehilite"><pre><span></span>alias scons=&quot;/usr/bin/env python3 $(which scons)&quot;
+</pre></div>
+
+
 <p>To compile modm for macOS you need to install these libraries:</p>
 <div class="codehilite"><pre><span></span>brew install boost gtkmm sdl zmqpp gcc
 </pre></div>
@@ -3149,7 +3155,13 @@ brew install openocd --HEAD
 <div class="codehilite"><pre><span></span>sudo apt-get install python3 python3-pip scons git
 sudo apt-get --no-install-recommends install doxygen
 pip3 install --user modm
-pip install --user pathlib pyelftools
+</pre></div>
+
+
+<p>scons now works with Python 3. Unfortunately, Ubuntu still defaults to Python 2.
+For a less intrusive way to run all scons scripts with Python 3 add this to your
+~/.bashrc or ~/.zshrc</p>
+<div class="codehilite"><pre><span></span>alias scons=&quot;/usr/bin/env python3 $(which scons)&quot;
 </pre></div>
 
 
