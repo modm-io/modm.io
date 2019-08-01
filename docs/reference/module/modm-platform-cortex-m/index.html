@@ -3480,7 +3480,7 @@ implemented as follows:</p>
 <li>Call <code>__modm_initialize_platform()</code> to initialize the device  hardware.</li>
 <li>Copy data from internal flash to internal RAM.</li>
 <li>Zero sections in internal RAM.</li>
-<li>Initialize ARM Cortex-M core, enabled FPU and relocate vector table.</li>
+<li>Initialize ARM Cortex-M core: enable FPU and relocate vector table.</li>
 <li>Execute shared hardware initialization functions.</li>
 <li>Copy data from internal flash to <em>external</em> RAM.</li>
 <li>Zero sections in <em>external</em> RAM.</li>
@@ -3509,12 +3509,11 @@ perhaps even write this function in Assembly if deemed necessary. <em>Do not
 initialize the device clock, leave the default clock undisturbed</em>!</p>
 <h3 id="additional-initialization">Additional Initialization<a class="headerlink" href="#additional-initialization" title="Permanent link">&para;</a></h3>
 <p>A few modules need to initialize additional hardware during booting. For
-example: your device has external memories connected that you want to place a
-custom section for data in (that need to be copied from internal ROM) and use
-the remaining memory for heap. You can create a function that configures the
-peripherals for these external memories and place <em>a pointer to it</em> into a
-special linker section and the startup script will call each of these functions
-and then copy/zero the external memory and initialize the heap.</p>
+example: your device has external memories connected that you want to use for
+the heap. You can create a function that configures the peripherals for these
+external memories and place <em>a pointer to this function</em> into a special linker
+section and the startup script will then call this function before heap
+initialization.</p>
 <p>Since the hardware init functions are called <em>after</em> internal data
 initialization, you have a valid C environment and thus can access the device
 normally, but since the calls happen <em>before</em> external data and heap
@@ -3701,23 +3700,23 @@ heap section:</p>
 <p>Next, add the sections that need to be copied from ROM to RAM, here the contents
 of the <code>.sdramdata</code> section is stored in the internal <code>FLASH</code> memory and needs
 to be copied into SDRAM during the startup:</p>
-<div class="codehilite"><pre><span></span><span class="n">env</span><span class="o">.</span><span class="n">collect</span><span class="p">(</span><span class="s2">&quot;:platform:cortex-m:linkerscript.table_extern.copy&quot;</span><span class="p">,</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">LONG(__sdramdata_load)</span>
-<span class="sd">LONG(__sdramdata_start)</span>
-<span class="sd">LONG(__sdramdata_end)</span>
-<span class="sd">&quot;&quot;&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">linkerscript_copy</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">LONG(__sdramdata_load)</span>
+<span class="s2">LONG(__sdramdata_start)</span>
+<span class="s2">LONG(__sdramdata_end)</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">env</span><span class="o">.</span><span class="n">collect</span><span class="p">(</span><span class="s2">&quot;:platform:cortex-m:linkerscript.table_extern.copy&quot;</span><span class="p">,</span> <span class="n">linkerscript_copy</span><span class="p">)</span>
 </pre></div>
 
 <p>And finally, to register the remaining memory in SDRAM with the allocator, add
 the memory range to the heap table. Remember to use the correct memory traits
 for this memory, see <code>modm:architecture:memory</code> for the trait definitions:</p>
-<div class="codehilite"><pre><span></span><span class="n">env</span><span class="o">.</span><span class="n">collect</span><span class="p">(</span><span class="s2">&quot;:platform:cortex-m:linkerscript.table_extern.heap&quot;</span><span class="p">,</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">LONG(0x801f)</span>
-<span class="sd">LONG(__heap_extern_start)</span>
-<span class="sd">LONG(__heap_extern_end)</span>
-<span class="sd">&quot;&quot;&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">linkerscript_heap</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">LONG(0x801f)</span>
+<span class="s2">LONG(__heap_extern_start)</span>
+<span class="s2">LONG(__heap_extern_end)</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">env</span><span class="o">.</span><span class="n">collect</span><span class="p">(</span><span class="s2">&quot;:platform:cortex-m:linkerscript.table_extern.heap&quot;</span><span class="p">,</span> <span class="n">linkerscript_heap</span><span class="p">)</span>
 </pre></div>
 
 <div class="admonition info">
@@ -3727,7 +3726,7 @@ and paste the result <em>as is</em> into the linkerscripts. No input validation 
 performed, so if you receive linker errors with your additions, please check
 the GNU LD documentation first.</p>
 </div>
-<p><em>Module only available for stm32.</em></p>
+<p><em>This module is only available for stm32.</em></p>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <h4 id="allocator">allocator<a class="headerlink" href="#allocator" title="Permanent link">&para;</a></h4>
 <p>Dynamic memory allocation strategy</p>
@@ -3771,10 +3770,10 @@ regions. The upside of this large static allocation is very fast allocation
 times of O(1), but we recommend using TLSF only for devices with multiple
 memory regions.</p>
 </div>
-<p>Default: <code>newlib</code><br />
-Inputs: <code>[block, newlib, tlsf]</code><br />
-Input Dependency: <code>block -&gt; modm:architecture:heap</code><br />
-Input Dependency: <code>tlsf -&gt; modm:tlsf</code>  </p>
+<p>Default: <code>newlib</code>
+Inputs: <code>[block, newlib, tlsf]</code>
+Input Dependency: <code>block -&gt; modm:architecture:heap</code>
+Input Dependency: <code>tlsf -&gt; modm:tlsf</code></p>
 <h4 id="linkerscriptflash_offset">linkerscript.flash_offset<a class="headerlink" href="#linkerscriptflash_offset" title="Permanent link">&para;</a></h4>
 <p>Offset of FLASH Section Origin</p>
 <p>Add an offset to the default start address of the flash memory. This might be
@@ -3783,18 +3782,18 @@ required for bootloaders located there.</p>
 <p class="admonition-title">Vector Table Relocation</p>
 <p>Not all offsets are compatible with the vector table relocation.</p>
 </div>
-<p>Default: <code>0</code><br />
-Inputs: <code>[0 ... 0x10000]</code> <em>stm32{f0,f1,f3,f4,f7,g0,l4}</em><br />
-Inputs: <code>[0 ... 0x100000]</code> <em>stm32{f1,f2,f4,f7,l4}</em><br />
-Inputs: <code>[0 ... 0x180000]</code> <em>stm32f4</em><br />
-Inputs: <code>[0 ... 0x20000]</code> <em>stm32{f0,f1,f2,f3,f4,g0,l4}</em><br />
-Inputs: <code>[0 ... 0x200000]</code> <em>stm32{f4,f7,l4}</em><br />
-Inputs: <code>[0 ... 0x4000]</code> <em>stm32{f0,f1,f3,g0}</em><br />
-Inputs: <code>[0 ... 0x40000]</code> <em>stm32{f0,f1,f2,f3,f4,f7,l4}</em><br />
-Inputs: <code>[0 ... 0x60000]</code> <em>stm32{f1,f3,f4}</em><br />
-Inputs: <code>[0 ... 0x8000]</code> <em>stm32{f0,f1,f3,g0}</em><br />
-Inputs: <code>[0 ... 0x80000]</code> <em>stm32{f1,f2,f3,f4,f7,l4}</em><br />
-Inputs: <code>[0 ... 0xc0000]</code> <em>stm32{f1,f2}</em>  </p>
+<p>Default: <code>0</code>
+Inputs: <code>[0 ... 0x10000]</code> <em>stm32{f0,f1,f3,f4,f7,g0,l4}</em>
+Inputs: <code>[0 ... 0x100000]</code> <em>stm32{f1,f2,f4,f7,l4}</em>
+Inputs: <code>[0 ... 0x180000]</code> <em>stm32f4</em>
+Inputs: <code>[0 ... 0x20000]</code> <em>stm32{f0,f1,f2,f3,f4,g0,l4}</em>
+Inputs: <code>[0 ... 0x200000]</code> <em>stm32{f4,f7,l4}</em>
+Inputs: <code>[0 ... 0x4000]</code> <em>stm32{f0,f1,f3,g0}</em>
+Inputs: <code>[0 ... 0x40000]</code> <em>stm32{f0,f1,f2,f3,f4,f7,l4}</em>
+Inputs: <code>[0 ... 0x60000]</code> <em>stm32{f1,f3,f4}</em>
+Inputs: <code>[0 ... 0x8000]</code> <em>stm32{f0,f1,f3,g0}</em>
+Inputs: <code>[0 ... 0x80000]</code> <em>stm32{f1,f2,f3,f4,f7,l4}</em>
+Inputs: <code>[0 ... 0xc0000]</code> <em>stm32{f1,f2}</em></p>
 <h4 id="main_stack_size">main_stack_size<a class="headerlink" href="#main_stack_size" title="Permanent link">&para;</a></h4>
 <p>Minimum size of the application main stack</p>
 <p>The ARM Cortex-M uses a descending stack mechanism which is placed so that it
@@ -3821,8 +3820,8 @@ main stack, an alignment buffer up to 1kB is added to the main stack.</p>
 &#39;---------------------------------&#39; &lt;-- RAM origin
 </pre></div>
 
-<p>Default: <code>3040</code><br />
-Inputs: <code>[256 .. 3040 .. 65536]</code>  </p>
+<p>Default: <code>3040</code>
+Inputs: <code>[256 .. 3040 .. 65536]</code></p>
 <h4 id="vector_table_location">vector_table_location<a class="headerlink" href="#vector_table_location" title="Permanent link">&para;</a></h4>
 <p>Vector table location in ROM or RAM</p>
 <p>The vector table is always stored in ROM and copied to RAM by the startup script
@@ -3852,10 +3851,10 @@ therefore may not be modifiable with this option!</p>
 slow down interrupt latency, since both I-Code and D-Code memory interface
 need to fetch from the same access port.</p>
 </div>
-<p><em>Option only available for stm32{f1,f2,f3,f4,f7,l4}.</em></p>
-<p>Default: <code>ram</code> <em>stm32{f3,f7}</em><br />
-Default: <code>rom</code> <em>stm32{f1,f2,f3,f4,l4}</em><br />
-Inputs: <code>[ram, rom]</code>  </p>
+<p><em>This option is only available for stm32{f1,f2,f3,f4,f7,l4}.</em></p>
+<p>Default: <code>ram</code> <em>stm32{f3,f7}</em>
+Default: <code>rom</code> <em>stm32{f1,f2,f3,f4,l4}</em>
+Inputs: <code>[ram, rom]</code></p>
 <h2 id="collectors">Collectors<a class="headerlink" href="#collectors" title="Permanent link">&para;</a></h2>
 <h4 id="linkerscript_1">linkerscript<a class="headerlink" href="#linkerscript_1" title="Permanent link">&para;</a></h4>
 <p>Computes linkerscript properties

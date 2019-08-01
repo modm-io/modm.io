@@ -3150,46 +3150,46 @@
                 
                 
                 <h1 id="modmplatformgpio-general-purpose-io-gpio">modm:platform:gpio: General Purpose I/O (GPIO)<a class="headerlink" href="#modmplatformgpio-general-purpose-io-gpio" title="Permanent link">&para;</a></h1>
-<p><em>Module only available for stm32.</em></p>
+<p><em>This module is only available for stm32.</em></p>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <h4 id="enable_ports">enable_ports<a class="headerlink" href="#enable_ports" title="Permanent link">&para;</a></h4>
 <p>Enable clock for these GPIO ports during startup</p>
-<p>Default: <code>{A, B, C, D, E, F, G, H, I, J, K}</code> <em>stm32{f4,f7}</em><br />
-Default: <code>{A, B, C, D, E, F, G, H, I}</code> <em>stm32{f2,f4,f7,l4}</em><br />
-Default: <code>{A, B, C, D, E, F, G, H}</code> <em>stm32{f2,f3,f4,f7,l4}</em><br />
-Default: <code>{A, B, C, D, E, F, G}</code> <em>stm32f1</em><br />
-Default: <code>{A, B, C, D, E, F}</code> <em>stm32{f0,f3}</em><br />
-Default: <code>{A, B, C, D, E, G, H}</code> <em>stm32l4</em><br />
-Default: <code>{A, B, C, D, E, H, I}</code> <em>stm32f4</em><br />
-Default: <code>{A, B, C, D, E, H}</code> <em>stm32{f2,f4,f7,l4}</em><br />
-Default: <code>{A, B, C, D, E}</code> <em>stm32f1</em><br />
-Default: <code>{A, B, C, D, F}</code> <em>stm32{f0,f3,g0}</em><br />
-Default: <code>{A, B, C, D, G, H}</code> <em>stm32l4</em><br />
-Default: <code>{A, B, C, D, H}</code> <em>stm32{f2,f4,f7,l4}</em><br />
-Default: <code>{A, B, C, D}</code> <em>stm32f1</em><br />
-Default: <code>{A, B, C, F}</code> <em>stm32{f0,f3,g0}</em><br />
-Default: <code>{A, B, C, H}</code> <em>stm32{f4,l4}</em><br />
-Default: <code>{A, B, D}</code> <em>stm32f1</em><br />
-Default: <code>{A, B, F}</code> <em>stm32{f0,f3}</em><br />
-Default: <code>{A, F}</code> <em>stm32f038f6p</em><br />
-Inputs: <code>[A, B, C, D]</code> <em>stm32f1</em><br />
-Inputs: <code>[A, B, C, D, E]</code> <em>stm32f1</em><br />
-Inputs: <code>[A, B, C, D, E, F]</code> <em>stm32{f0,f3}</em><br />
-Inputs: <code>[A, B, C, D, E, F, G]</code> <em>stm32f1</em><br />
-Inputs: <code>[A, B, C, D, E, F, G, H]</code> <em>stm32{f2,f3,f4,f7,l4}</em><br />
-Inputs: <code>[A, B, C, D, E, F, G, H, I]</code> <em>stm32{f2,f4,f7,l4}</em><br />
-Inputs: <code>[A, B, C, D, E, F, G, H, I, J, K]</code> <em>stm32{f4,f7}</em><br />
-Inputs: <code>[A, B, C, D, E, G, H]</code> <em>stm32l4</em><br />
-Inputs: <code>[A, B, C, D, E, H]</code> <em>stm32{f2,f4,f7,l4}</em><br />
-Inputs: <code>[A, B, C, D, E, H, I]</code> <em>stm32f4</em><br />
-Inputs: <code>[A, B, C, D, F]</code> <em>stm32{f0,f3,g0}</em><br />
-Inputs: <code>[A, B, C, D, G, H]</code> <em>stm32l4</em><br />
-Inputs: <code>[A, B, C, D, H]</code> <em>stm32{f2,f4,f7,l4}</em><br />
-Inputs: <code>[A, B, C, F]</code> <em>stm32{f0,f3,g0}</em><br />
-Inputs: <code>[A, B, C, H]</code> <em>stm32{f4,l4}</em><br />
-Inputs: <code>[A, B, D]</code> <em>stm32f1</em><br />
-Inputs: <code>[A, B, F]</code> <em>stm32{f0,f3}</em><br />
-Inputs: <code>[A, F]</code> <em>stm32f038f6p</em>  </p>
+<p>Default: <code>{A, B, C, D, E, F, G, H, I, J, K}</code> <em>stm32{f4,f7}</em>
+Default: <code>{A, B, C, D, E, F, G, H, I}</code> <em>stm32{f2,f4,f7,l4}</em>
+Default: <code>{A, B, C, D, E, F, G, H}</code> <em>stm32{f2,f3,f4,f7,l4}</em>
+Default: <code>{A, B, C, D, E, F, G}</code> <em>stm32f1</em>
+Default: <code>{A, B, C, D, E, F}</code> <em>stm32{f0,f3}</em>
+Default: <code>{A, B, C, D, E, G, H}</code> <em>stm32l4</em>
+Default: <code>{A, B, C, D, E, H, I}</code> <em>stm32f4</em>
+Default: <code>{A, B, C, D, E, H}</code> <em>stm32{f2,f4,f7,l4}</em>
+Default: <code>{A, B, C, D, E}</code> <em>stm32f1</em>
+Default: <code>{A, B, C, D, F}</code> <em>stm32{f0,f3,g0}</em>
+Default: <code>{A, B, C, D, G, H}</code> <em>stm32l4</em>
+Default: <code>{A, B, C, D, H}</code> <em>stm32{f2,f4,f7,l4}</em>
+Default: <code>{A, B, C, D}</code> <em>stm32f1</em>
+Default: <code>{A, B, C, F}</code> <em>stm32{f0,f3,g0}</em>
+Default: <code>{A, B, C, H}</code> <em>stm32{f4,l4}</em>
+Default: <code>{A, B, D}</code> <em>stm32f1</em>
+Default: <code>{A, B, F}</code> <em>stm32{f0,f3}</em>
+Default: <code>{A, F}</code> <em>stm32f038f6p</em>
+Inputs: <code>[A, B, C, D]</code> <em>stm32f1</em>
+Inputs: <code>[A, B, C, D, E]</code> <em>stm32f1</em>
+Inputs: <code>[A, B, C, D, E, F]</code> <em>stm32{f0,f3}</em>
+Inputs: <code>[A, B, C, D, E, F, G]</code> <em>stm32f1</em>
+Inputs: <code>[A, B, C, D, E, F, G, H]</code> <em>stm32{f2,f3,f4,f7,l4}</em>
+Inputs: <code>[A, B, C, D, E, F, G, H, I]</code> <em>stm32{f2,f4,f7,l4}</em>
+Inputs: <code>[A, B, C, D, E, F, G, H, I, J, K]</code> <em>stm32{f4,f7}</em>
+Inputs: <code>[A, B, C, D, E, G, H]</code> <em>stm32l4</em>
+Inputs: <code>[A, B, C, D, E, H]</code> <em>stm32{f2,f4,f7,l4}</em>
+Inputs: <code>[A, B, C, D, E, H, I]</code> <em>stm32f4</em>
+Inputs: <code>[A, B, C, D, F]</code> <em>stm32{f0,f3,g0}</em>
+Inputs: <code>[A, B, C, D, G, H]</code> <em>stm32l4</em>
+Inputs: <code>[A, B, C, D, H]</code> <em>stm32{f2,f4,f7,l4}</em>
+Inputs: <code>[A, B, C, F]</code> <em>stm32{f0,f3,g0}</em>
+Inputs: <code>[A, B, C, H]</code> <em>stm32{f4,l4}</em>
+Inputs: <code>[A, B, D]</code> <em>stm32f1</em>
+Inputs: <code>[A, B, F]</code> <em>stm32{f0,f3}</em>
+Inputs: <code>[A, F]</code> <em>stm32f038f6p</em></p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
