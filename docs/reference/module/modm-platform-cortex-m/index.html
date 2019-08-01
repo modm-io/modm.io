@@ -3478,8 +3478,6 @@ implemented as follows:</p>
 <ol>
 <li>The main stack pointer (MSP) is initialized by hardware.</li>
 <li>Call <code>__modm_initialize_platform()</code> to initialize the device  hardware.</li>
-<li>Populate internal main stack with execution guard (see
-   <code>modm:platform:cortex-m:stack_guard</code> option).</li>
 <li>Copy data from internal flash to internal RAM.</li>
 <li>Zero sections in internal RAM.</li>
 <li>Initialize ARM Cortex-M core, enabled FPU and relocate vector table.</li>
@@ -3487,11 +3485,11 @@ implemented as follows:</p>
 <li>Copy data from internal flash to <em>external</em> RAM.</li>
 <li>Zero sections in <em>external</em> RAM.</li>
 <li>Initialize heap via <code>__modm_initialize_memory()</code> (provided by the
-    <code>modm:platform:cortex-m:allocator</code> option).</li>
+   <code>modm:platform:cortex-m:allocator</code> option).</li>
 <li>Call static constructors.</li>
 <li>Call <code>main()</code> application entry point.</li>
 <li>If <code>main()</code> returns, assert on <code>core.main.exit</code> (only in debug profile).</li>
-<li>Reboot if assert returns.</li>
+<li>Reboot if assertion returns.</li>
 </ol>
 <h3 id="device-initialization">Device Initialization<a class="headerlink" href="#device-initialization" title="Permanent link">&para;</a></h3>
 <p>The <code>__modm_initialize_platform()</code> function is called <em>directly</em> after reset,
