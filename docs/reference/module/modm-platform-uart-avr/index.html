@@ -1,0 +1,3365 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="A modular C++17 library generator for barebone embedded programming">
+      
+      
+        <link rel="canonical" href="http://modm.io/reference/module/modm-platform-uart-avr/">
+      
+      
+        <meta name="author" content="Niklas Hauser">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>:platform:uart (avr) - modm barebone embedded library</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.01803549.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Ubuntu+Mono&display=fallback">
+        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../../extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#modmplatformuart-universal-asynchronous-receiver-transmitter-uart" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://modm.io" title="modm barebone embedded library" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              modm barebone embedded library
+            </span>
+            <span class="md-header-nav__topic">
+              
+                :platform:uart (avr)
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/modm-io/modm" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    modm-io/modm
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../.." title="Home" class="md-tabs__link">
+          Home
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../guide/getting-started/" title="Guide" class="md-tabs__link">
+          Guide
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../documentation/" title="Reference" class="md-tabs__link md-tabs__link--active">
+          Reference
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="http://modm.io" title="modm barebone embedded library" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    modm barebone embedded library
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/modm-io/modm" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    modm-io/modm
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Home
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Home
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../how-modm-works/" title="How modm works" class="md-nav__link">
+      How modm works
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../who-we-are/" title="Who we are" class="md-nav__link">
+      Who we are
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guide/getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guide/installation/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../guide/testing/" title="Testing" class="md-nav__link">
+      Testing
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Reference
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Reference
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../documentation/" title="Documentation" class="md-nav__link">
+      Documentation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../build-systems/" title="Build Systems" class="md-nav__link">
+      Build Systems
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Modules
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Modules
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture/" title=":architecture" class="md-nav__link">
+      :architecture
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-1-wire/" title=":architecture:1-wire" class="md-nav__link">
+      :architecture:1-wire
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-accessor/" title=":architecture:accessor" class="md-nav__link">
+      :architecture:accessor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-adc/" title=":architecture:adc" class="md-nav__link">
+      :architecture:adc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-assert/" title=":architecture:assert" class="md-nav__link">
+      :architecture:assert
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-atomic/" title=":architecture:atomic" class="md-nav__link">
+      :architecture:atomic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-block-device/" title=":architecture:block.device" class="md-nav__link">
+      :architecture:block.device
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-build_id/" title=":architecture:build_id" class="md-nav__link">
+      :architecture:build_id
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-can/" title=":architecture:can" class="md-nav__link">
+      :architecture:can
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-clock/" title=":architecture:clock" class="md-nav__link">
+      :architecture:clock
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-delay/" title=":architecture:delay" class="md-nav__link">
+      :architecture:delay
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-gpio/" title=":architecture:gpio" class="md-nav__link">
+      :architecture:gpio
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-gpio-expander/" title=":architecture:gpio.expander" class="md-nav__link">
+      :architecture:gpio.expander
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-heap/" title=":architecture:heap" class="md-nav__link">
+      :architecture:heap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-i2c/" title=":architecture:i2c" class="md-nav__link">
+      :architecture:i2c
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-i2c-device/" title=":architecture:i2c.device" class="md-nav__link">
+      :architecture:i2c.device
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-i2c-multiplexer/" title=":architecture:i2c.multiplexer" class="md-nav__link">
+      :architecture:i2c.multiplexer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-interrupt/" title=":architecture:interrupt" class="md-nav__link">
+      :architecture:interrupt
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-memory/" title=":architecture:memory" class="md-nav__link">
+      :architecture:memory
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-register/" title=":architecture:register" class="md-nav__link">
+      :architecture:register
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-spi/" title=":architecture:spi" class="md-nav__link">
+      :architecture:spi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-spi-device/" title=":architecture:spi.device" class="md-nav__link">
+      :architecture:spi.device
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-uart/" title=":architecture:uart" class="md-nav__link">
+      :architecture:uart
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-architecture-unaligned/" title=":architecture:unaligned" class="md-nav__link">
+      :architecture:unaligned
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board/" title=":board" class="md-nav__link">
+      :board
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-al-avreb-can/" title=":board:al-avreb-can" class="md-nav__link">
+      :board:al-avreb-can
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-arduino-nano/" title=":board:arduino-nano" class="md-nav__link">
+      :board:arduino-nano
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-arduino-uno/" title=":board:arduino-uno" class="md-nav__link">
+      :board:arduino-uno
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-black-pill/" title=":board:black-pill" class="md-nav__link">
+      :board:black-pill
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-blue-pill/" title=":board:blue-pill" class="md-nav__link">
+      :board:blue-pill
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-disco-f051r8/" title=":board:disco-f051r8" class="md-nav__link">
+      :board:disco-f051r8
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-disco-f072rb/" title=":board:disco-f072rb" class="md-nav__link">
+      :board:disco-f072rb
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-disco-f100rb/" title=":board:disco-f100rb" class="md-nav__link">
+      :board:disco-f100rb
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-disco-f303vc/" title=":board:disco-f303vc" class="md-nav__link">
+      :board:disco-f303vc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-disco-f407vg/" title=":board:disco-f407vg" class="md-nav__link">
+      :board:disco-f407vg
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-disco-f429zi/" title=":board:disco-f429zi" class="md-nav__link">
+      :board:disco-f429zi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-disco-f469ni/" title=":board:disco-f469ni" class="md-nav__link">
+      :board:disco-f469ni
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-disco-f746ng/" title=":board:disco-f746ng" class="md-nav__link">
+      :board:disco-f746ng
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-disco-f769ni/" title=":board:disco-f769ni" class="md-nav__link">
+      :board:disco-f769ni
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-disco-l476vg/" title=":board:disco-l476vg" class="md-nav__link">
+      :board:disco-l476vg
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-nucleo-f031k6/" title=":board:nucleo-f031k6" class="md-nav__link">
+      :board:nucleo-f031k6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-nucleo-f042k6/" title=":board:nucleo-f042k6" class="md-nav__link">
+      :board:nucleo-f042k6
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-nucleo-f103rb/" title=":board:nucleo-f103rb" class="md-nav__link">
+      :board:nucleo-f103rb
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-nucleo-f303k8/" title=":board:nucleo-f303k8" class="md-nav__link">
+      :board:nucleo-f303k8
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-nucleo-f401re/" title=":board:nucleo-f401re" class="md-nav__link">
+      :board:nucleo-f401re
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-nucleo-f411re/" title=":board:nucleo-f411re" class="md-nav__link">
+      :board:nucleo-f411re
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-nucleo-f429zi/" title=":board:nucleo-f429zi" class="md-nav__link">
+      :board:nucleo-f429zi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-nucleo-f446re/" title=":board:nucleo-f446re" class="md-nav__link">
+      :board:nucleo-f446re
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-nucleo-g071rb/" title=":board:nucleo-g071rb" class="md-nav__link">
+      :board:nucleo-g071rb
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-nucleo-l432kc/" title=":board:nucleo-l432kc" class="md-nav__link">
+      :board:nucleo-l432kc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-nucleo-l476rg/" title=":board:nucleo-l476rg" class="md-nav__link">
+      :board:nucleo-l476rg
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-olimexino-stm32/" title=":board:olimexino-stm32" class="md-nav__link">
+      :board:olimexino-stm32
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-stm32f030_demo/" title=":board:stm32f030_demo" class="md-nav__link">
+      :board:stm32f030_demo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-build/" title=":build" class="md-nav__link">
+      :build
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-build-cmake/" title=":build:cmake" class="md-nav__link">
+      :build:cmake
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-build-scons/" title=":build:scons" class="md-nav__link">
+      :build:scons
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-cmsis/" title=":cmsis" class="md-nav__link">
+      :cmsis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-cmsis-core/" title=":cmsis:core" class="md-nav__link">
+      :cmsis:core
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-cmsis-device/" title=":cmsis:device" class="md-nav__link">
+      :cmsis:device
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-cmsis-dsp/" title=":cmsis:dsp" class="md-nav__link">
+      :cmsis:dsp
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-cmsis-dsp-basic_math/" title=":cmsis:dsp:basic_math" class="md-nav__link">
+      :cmsis:dsp:basic_math
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-cmsis-dsp-complex_math/" title=":cmsis:dsp:complex_math" class="md-nav__link">
+      :cmsis:dsp:complex_math
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-cmsis-dsp-controller/" title=":cmsis:dsp:controller" class="md-nav__link">
+      :cmsis:dsp:controller
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-cmsis-dsp-fast_math/" title=":cmsis:dsp:fast_math" class="md-nav__link">
+      :cmsis:dsp:fast_math
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-cmsis-dsp-filtering/" title=":cmsis:dsp:filtering" class="md-nav__link">
+      :cmsis:dsp:filtering
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-cmsis-dsp-matrix/" title=":cmsis:dsp:matrix" class="md-nav__link">
+      :cmsis:dsp:matrix
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-cmsis-dsp-statistics/" title=":cmsis:dsp:statistics" class="md-nav__link">
+      :cmsis:dsp:statistics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-cmsis-dsp-support/" title=":cmsis:dsp:support" class="md-nav__link">
+      :cmsis:dsp:support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-cmsis-dsp-tables/" title=":cmsis:dsp:tables" class="md-nav__link">
+      :cmsis:dsp:tables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-cmsis-dsp-transform/" title=":cmsis:dsp:transform" class="md-nav__link">
+      :cmsis:dsp:transform
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-communication/" title=":communication" class="md-nav__link">
+      :communication
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-communication-ros/" title=":communication:ros" class="md-nav__link">
+      :communication:ros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-communication-sab/" title=":communication:sab" class="md-nav__link">
+      :communication:sab
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-communication-sab2/" title=":communication:sab2" class="md-nav__link">
+      :communication:sab2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-communication-xpcc/" title=":communication:xpcc" class="md-nav__link">
+      :communication:xpcc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-communication-xpcc-generator/" title=":communication:xpcc:generator" class="md-nav__link">
+      :communication:xpcc:generator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-container/" title=":container" class="md-nav__link">
+      :container
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-crashcatcher/" title=":crashcatcher" class="md-nav__link">
+      :crashcatcher
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-debug/" title=":debug" class="md-nav__link">
+      :debug
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-docs/" title=":docs" class="md-nav__link">
+      :docs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver/" title=":driver" class="md-nav__link">
+      :driver
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-ad7280a/" title=":driver:ad7280a" class="md-nav__link">
+      :driver:ad7280a
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-ad7928/" title=":driver:ad7928" class="md-nav__link">
+      :driver:ad7928
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-adc_sampler/" title=":driver:adc_sampler" class="md-nav__link">
+      :driver:adc_sampler
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-adns9800/" title=":driver:adns9800" class="md-nav__link">
+      :driver:adns9800
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-ads7843/" title=":driver:ads7843" class="md-nav__link">
+      :driver:ads7843
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-ams5915/" title=":driver:ams5915" class="md-nav__link">
+      :driver:ams5915
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-block-device/" title=":driver:block.device" class="md-nav__link">
+      :driver:block.device
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-block-device-file/" title=":driver:block.device:file" class="md-nav__link">
+      :driver:block.device:file
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-block-device-heap/" title=":driver:block.device:heap" class="md-nav__link">
+      :driver:block.device:heap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-block-device-mirror/" title=":driver:block.device:mirror" class="md-nav__link">
+      :driver:block.device:mirror
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-block-device-spi-flash/" title=":driver:block.device:spi.flash" class="md-nav__link">
+      :driver:block.device:spi.flash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-bme280/" title=":driver:bme280" class="md-nav__link">
+      :driver:bme280
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-bmp085/" title=":driver:bmp085" class="md-nav__link">
+      :driver:bmp085
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-bno055/" title=":driver:bno055" class="md-nav__link">
+      :driver:bno055
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-drv832x_spi/" title=":driver:drv832x_spi" class="md-nav__link">
+      :driver:drv832x_spi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-ds1302/" title=":driver:ds1302" class="md-nav__link">
+      :driver:ds1302
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-ds1631/" title=":driver:ds1631" class="md-nav__link">
+      :driver:ds1631
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-ds18b20/" title=":driver:ds18b20" class="md-nav__link">
+      :driver:ds18b20
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-ea_dog/" title=":driver:ea_dog" class="md-nav__link">
+      :driver:ea_dog
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-fat/" title=":driver:fat" class="md-nav__link">
+      :driver:fat
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-ft245/" title=":driver:ft245" class="md-nav__link">
+      :driver:ft245
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-ft6x06/" title=":driver:ft6x06" class="md-nav__link">
+      :driver:ft6x06
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-hclax/" title=":driver:hclax" class="md-nav__link">
+      :driver:hclax
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-hd44780/" title=":driver:hd44780" class="md-nav__link">
+      :driver:hd44780
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-hmc58x/" title=":driver:hmc58x" class="md-nav__link">
+      :driver:hmc58x
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-hmc6343/" title=":driver:hmc6343" class="md-nav__link">
+      :driver:hmc6343
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-i2c-eeprom/" title=":driver:i2c.eeprom" class="md-nav__link">
+      :driver:i2c.eeprom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-itg3200/" title=":driver:itg3200" class="md-nav__link">
+      :driver:itg3200
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-l3gd20/" title=":driver:l3gd20" class="md-nav__link">
+      :driver:l3gd20
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-lawicel/" title=":driver:lawicel" class="md-nav__link">
+      :driver:lawicel
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-lis3-transport/" title=":driver:lis3.transport" class="md-nav__link">
+      :driver:lis3.transport
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-lis302dl/" title=":driver:lis302dl" class="md-nav__link">
+      :driver:lis302dl
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-lis3dsh/" title=":driver:lis3dsh" class="md-nav__link">
+      :driver:lis3dsh
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-lm75/" title=":driver:lm75" class="md-nav__link">
+      :driver:lm75
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-lsm303a/" title=":driver:lsm303a" class="md-nav__link">
+      :driver:lsm303a
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-ltc2984/" title=":driver:ltc2984" class="md-nav__link">
+      :driver:ltc2984
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-max6966/" title=":driver:max6966" class="md-nav__link">
+      :driver:max6966
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-max7219/" title=":driver:max7219" class="md-nav__link">
+      :driver:max7219
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-mcp23x17/" title=":driver:mcp23x17" class="md-nav__link">
+      :driver:mcp23x17
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-mcp2515/" title=":driver:mcp2515" class="md-nav__link">
+      :driver:mcp2515
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-memory_bus/" title=":driver:memory_bus" class="md-nav__link">
+      :driver:memory_bus
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-nokia5110/" title=":driver:nokia5110" class="md-nav__link">
+      :driver:nokia5110
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-nrf24/" title=":driver:nrf24" class="md-nav__link">
+      :driver:nrf24
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-parallel_tft_display/" title=":driver:parallel_tft_display" class="md-nav__link">
+      :driver:parallel_tft_display
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-pat9125el/" title=":driver:pat9125el" class="md-nav__link">
+      :driver:pat9125el
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-pca8574/" title=":driver:pca8574" class="md-nav__link">
+      :driver:pca8574
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-pca9535/" title=":driver:pca9535" class="md-nav__link">
+      :driver:pca9535
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-pca9548a/" title=":driver:pca9548a" class="md-nav__link">
+      :driver:pca9548a
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-pca9685/" title=":driver:pca9685" class="md-nav__link">
+      :driver:pca9685
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-siemens_s65/" title=":driver:siemens_s65" class="md-nav__link">
+      :driver:siemens_s65
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-siemens_s75/" title=":driver:siemens_s75" class="md-nav__link">
+      :driver:siemens_s75
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-ssd1306/" title=":driver:ssd1306" class="md-nav__link">
+      :driver:ssd1306
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-tcs3414/" title=":driver:tcs3414" class="md-nav__link">
+      :driver:tcs3414
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-tcs3472/" title=":driver:tcs3472" class="md-nav__link">
+      :driver:tcs3472
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-terminal/" title=":driver:terminal" class="md-nav__link">
+      :driver:terminal
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-tlc594x/" title=":driver:tlc594x" class="md-nav__link">
+      :driver:tlc594x
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-tmp102/" title=":driver:tmp102" class="md-nav__link">
+      :driver:tmp102
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-tmp175/" title=":driver:tmp175" class="md-nav__link">
+      :driver:tmp175
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-vl53l0/" title=":driver:vl53l0" class="md-nav__link">
+      :driver:vl53l0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-vl6180/" title=":driver:vl6180" class="md-nav__link">
+      :driver:vl6180
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-ws2812/" title=":driver:ws2812" class="md-nav__link">
+      :driver:ws2812
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-fatfs/" title=":fatfs" class="md-nav__link">
+      :fatfs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-freertos/" title=":freertos" class="md-nav__link">
+      :freertos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-io/" title=":io" class="md-nav__link">
+      :io
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-math/" title=":math" class="md-nav__link">
+      :math
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-math-filter/" title=":math:filter" class="md-nav__link">
+      :math:filter
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-math-geometry/" title=":math:geometry" class="md-nav__link">
+      :math:geometry
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-math-interpolation/" title=":math:interpolation" class="md-nav__link">
+      :math:interpolation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-math-matrix/" title=":math:matrix" class="md-nav__link">
+      :math:matrix
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-math-saturated/" title=":math:saturated" class="md-nav__link">
+      :math:saturated
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-math-units/" title=":math:units" class="md-nav__link">
+      :math:units
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-math-utils/" title=":math:utils" class="md-nav__link">
+      :math:utils
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform/" title=":platform" class="md-nav__link">
+      :platform
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-1-wire-bitbang/" title=":platform:1-wire.bitbang" class="md-nav__link">
+      :platform:1-wire.bitbang
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-adc-avr-mega-tiny/" title=":platform:adc (avr{mega,tiny})" class="md-nav__link">
+      :platform:adc (avr{mega,tiny})
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-adc-stm32f0/" title=":platform:adc (stm32f0)" class="md-nav__link">
+      :platform:adc (stm32f0)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-adc-stm32-f1-f2-f3-f4-f7/" title=":platform:adc (stm32{f1,f2,f3,f4,f7})" class="md-nav__link">
+      :platform:adc (stm32{f1,f2,f3,f4,f7})
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-adc-stm32-f3-l4/" title=":platform:adc (stm32{f3,l4})" class="md-nav__link">
+      :platform:adc (stm32{f3,l4})
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-can/" title=":platform:can" class="md-nav__link">
+      :platform:can
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-can-common/" title=":platform:can.common" class="md-nav__link">
+      :platform:can.common
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-canusb/" title=":platform:canusb" class="md-nav__link">
+      :platform:canusb
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-clock/" title=":platform:clock" class="md-nav__link">
+      :platform:clock
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-comp/" title=":platform:comp" class="md-nav__link">
+      :platform:comp
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-core-avr/" title=":platform:core (avr)" class="md-nav__link">
+      :platform:core (avr)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-core-hosted/" title=":platform:core (hosted)" class="md-nav__link">
+      :platform:core (hosted)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-core-stm32/" title=":platform:core (stm32)" class="md-nav__link">
+      :platform:core (stm32)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-cortex-m/" title=":platform:cortex-m" class="md-nav__link">
+      :platform:cortex-m
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-dma/" title=":platform:dma" class="md-nav__link">
+      :platform:dma
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-fault/" title=":platform:fault" class="md-nav__link">
+      :platform:fault
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-fsmc/" title=":platform:fsmc" class="md-nav__link">
+      :platform:fsmc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-gpio-avr/" title=":platform:gpio (avr)" class="md-nav__link">
+      :platform:gpio (avr)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-gpio-hosted/" title=":platform:gpio (hosted)" class="md-nav__link">
+      :platform:gpio (hosted)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-gpio-stm32/" title=":platform:gpio (stm32)" class="md-nav__link">
+      :platform:gpio (stm32)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-gpio-common/" title=":platform:gpio.common" class="md-nav__link">
+      :platform:gpio.common
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-i2c-avr/" title=":platform:i2c (avr)" class="md-nav__link">
+      :platform:i2c (avr)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-i2c-stm32-f0-f3-f7-g0-l4/" title=":platform:i2c (stm32{f0,f3,f7,g0,l4})" class="md-nav__link">
+      :platform:i2c (stm32{f0,f3,f7,g0,l4})
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-i2c-stm32-f1-f2-f4/" title=":platform:i2c (stm32{f1,f2,f4})" class="md-nav__link">
+      :platform:i2c (stm32{f1,f2,f4})
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-i2c-bitbang/" title=":platform:i2c.bitbang" class="md-nav__link">
+      :platform:i2c.bitbang
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-id/" title=":platform:id" class="md-nav__link">
+      :platform:id
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-itm/" title=":platform:itm" class="md-nav__link">
+      :platform:itm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-random/" title=":platform:random" class="md-nav__link">
+      :platform:random
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-rcc/" title=":platform:rcc" class="md-nav__link">
+      :platform:rcc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-socketcan/" title=":platform:socketcan" class="md-nav__link">
+      :platform:socketcan
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-spi-avr/" title=":platform:spi (avr)" class="md-nav__link">
+      :platform:spi (avr)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-spi-stm32/" title=":platform:spi (stm32)" class="md-nav__link">
+      :platform:spi (stm32)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-spi-bitbang/" title=":platform:spi.bitbang" class="md-nav__link">
+      :platform:spi.bitbang
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-systick/" title=":platform:systick" class="md-nav__link">
+      :platform:systick
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-timer/" title=":platform:timer" class="md-nav__link">
+      :platform:timer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        :platform:uart (avr)
+      </label>
+    
+    <a href="./" title=":platform:uart (avr)" class="md-nav__link md-nav__link--active">
+      :platform:uart (avr)
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#options" title="Options" class="md-nav__link">
+    Options
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bufferrx" title="buffer.rx" class="md-nav__link">
+    buffer.rx
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffertx" title="buffer.tx" class="md-nav__link">
+    buffer.tx
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffered" title="buffered" class="md-nav__link">
+    buffered
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-uart-hosted-darwin-linux/" title=":platform:uart (hosted{darwin,linux})" class="md-nav__link">
+      :platform:uart (hosted{darwin,linux})
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-uart-stm32/" title=":platform:uart (stm32)" class="md-nav__link">
+      :platform:uart (stm32)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-uart-spi/" title=":platform:uart.spi" class="md-nav__link">
+      :platform:uart.spi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-processing/" title=":processing" class="md-nav__link">
+      :processing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-processing-protothread/" title=":processing:protothread" class="md-nav__link">
+      :processing:protothread
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-processing-resumable/" title=":processing:resumable" class="md-nav__link">
+      :processing:resumable
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-processing-rtos/" title=":processing:rtos" class="md-nav__link">
+      :processing:rtos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-processing-scheduler/" title=":processing:scheduler" class="md-nav__link">
+      :processing:scheduler
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-processing-timer/" title=":processing:timer" class="md-nav__link">
+      :processing:timer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-ros/" title=":ros" class="md-nav__link">
+      :ros
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-stdc++/" title=":stdc++" class="md-nav__link">
+      :stdc++
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-tlsf/" title=":tlsf" class="md-nav__link">
+      :tlsf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-ui/" title=":ui" class="md-nav__link">
+      :ui
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-ui-animation/" title=":ui:animation" class="md-nav__link">
+      :ui:animation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-ui-button/" title=":ui:button" class="md-nav__link">
+      :ui:button
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-ui-color/" title=":ui:color" class="md-nav__link">
+      :ui:color
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-ui-display/" title=":ui:display" class="md-nav__link">
+      :ui:display
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-ui-gui/" title=":ui:gui" class="md-nav__link">
+      :ui:gui
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-ui-led/" title=":ui:led" class="md-nav__link">
+      :ui:led
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-ui-menu/" title=":ui:menu" class="md-nav__link">
+      :ui:menu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-ui-time/" title=":ui:time" class="md-nav__link">
+      :ui:time
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-unittest/" title=":unittest" class="md-nav__link">
+      :unittest
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-utils/" title=":utils" class="md-nav__link">
+      :utils
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#options" title="Options" class="md-nav__link">
+    Options
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bufferrx" title="buffer.rx" class="md-nav__link">
+    buffer.rx
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffertx" title="buffer.tx" class="md-nav__link">
+    buffer.tx
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffered" title="buffered" class="md-nav__link">
+    buffered
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" title="Dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="modmplatformuart-universal-asynchronous-receiver-transmitter-uart">modm:platform:uart: Universal Asynchronous Receiver Transmitter (UART)<a class="headerlink" href="#modmplatformuart-universal-asynchronous-receiver-transmitter-uart" title="Permanent link">&para;</a></h1>
+<p><em>Module only available for avr.</em></p>
+<h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
+<h4 id="bufferrx">buffer.rx<a class="headerlink" href="#bufferrx" title="Permanent link">&para;</a></h4>
+<p><em>Option only available for avrmega.</em></p>
+<p>Default: <code>8</code><br />
+Inputs: <code>[1 .. 8 .. 254]</code>  </p>
+<h4 id="buffertx">buffer.tx<a class="headerlink" href="#buffertx" title="Permanent link">&para;</a></h4>
+<p><em>Option only available for avrmega.</em></p>
+<p>Default: <code>64</code><br />
+Inputs: <code>[1 .. 64 .. 254]</code>  </p>
+<h4 id="buffered">buffered<a class="headerlink" href="#buffered" title="Permanent link">&para;</a></h4>
+<p><em>Option only available for avrmega.</em></p>
+<p>Default: <code>True</code><br />
+Inputs: <code>[True, False]</code>  </p>
+<h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: modm:platform:uart Pages: 1 -->
+<svg width="476pt" height="150pt"
+ viewBox="0.00 0.00 475.50 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 146)">
+<title>modm:platform:uart</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-146 471.5,-146 471.5,4 -4,4"/>
+<!-- modm_platform_uart -->
+<g id="node1" class="node">
+<title>modm_platform_uart</title>
+<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="288.5,-53 205.5,-53 205.5,0 288.5,0 288.5,-53"/>
+<text text-anchor="middle" x="247" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="247" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="247" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">uart</text>
+</g>
+<!-- modm_architecture_atomic -->
+<g id="node2" class="node">
+<title>modm_architecture_atomic</title>
+<polygon fill="#d3d3d3" stroke="#000000" points="110,-142 0,-142 0,-89 110,-89 110,-142"/>
+<text text-anchor="middle" x="55" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="55" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
+<text text-anchor="middle" x="55" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">atomic</text>
+</g>
+<!-- modm_platform_uart&#45;&gt;modm_architecture_atomic -->
+<g id="edge1" class="edge">
+<title>modm_platform_uart&#45;&gt;modm_architecture_atomic</title>
+<path fill="none" stroke="#000000" d="M205.3389,-45.8117C180.2693,-57.4325 147.8281,-72.4703 119.5017,-85.6008"/>
+<polygon fill="#000000" stroke="#000000" points="117.6704,-82.5918 110.0697,-89.9729 120.6144,-88.9427 117.6704,-82.5918"/>
+</g>
+<!-- modm_architecture_interrupt -->
+<g id="node3" class="node">
+<title>modm_architecture_interrupt</title>
+<polygon fill="#d3d3d3" stroke="#000000" points="238,-142 128,-142 128,-89 238,-89 238,-142"/>
+<text text-anchor="middle" x="183" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="183" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
+<text text-anchor="middle" x="183" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">interrupt</text>
+</g>
+<!-- modm_platform_uart&#45;&gt;modm_architecture_interrupt -->
+<g id="edge2" class="edge">
+<title>modm_platform_uart&#45;&gt;modm_architecture_interrupt</title>
+<path fill="none" stroke="#000000" d="M227.7979,-53.2029C221.5961,-61.8273 214.6265,-71.5194 208.0654,-80.6434"/>
+<polygon fill="#000000" stroke="#000000" points="205.1853,-78.6537 202.1886,-88.8159 210.8684,-82.7405 205.1853,-78.6537"/>
+</g>
+<!-- modm_architecture_uart -->
+<g id="node4" class="node">
+<title>modm_architecture_uart</title>
+<polygon fill="#d3d3d3" stroke="#000000" points="366,-142 256,-142 256,-89 366,-89 366,-142"/>
+<text text-anchor="middle" x="311" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="311" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
+<text text-anchor="middle" x="311" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">uart</text>
+</g>
+<!-- modm_platform_uart&#45;&gt;modm_architecture_uart -->
+<g id="edge3" class="edge">
+<title>modm_platform_uart&#45;&gt;modm_architecture_uart</title>
+<path fill="none" stroke="#000000" d="M266.2021,-53.2029C272.4039,-61.8273 279.3735,-71.5194 285.9346,-80.6434"/>
+<polygon fill="#000000" stroke="#000000" points="283.1316,-82.7405 291.8114,-88.8159 288.8147,-78.6537 283.1316,-82.7405"/>
+</g>
+<!-- modm_platform_gpio -->
+<g id="node5" class="node">
+<title>modm_platform_gpio</title>
+<polygon fill="#d3d3d3" stroke="#000000" points="467.5,-142 384.5,-142 384.5,-89 467.5,-89 467.5,-142"/>
+<text text-anchor="middle" x="426" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="426" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="426" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">gpio</text>
+</g>
+<!-- modm_platform_uart&#45;&gt;modm_platform_gpio -->
+<g id="edge4" class="edge">
+<title>modm_platform_uart&#45;&gt;modm_platform_gpio</title>
+<path fill="none" stroke="#000000" d="M288.6349,-46.5048C313.7303,-58.6433 346.2896,-74.5344 375,-89 375.0947,-89.0477 375.1895,-89.0955 375.2843,-89.1433"/>
+<polygon fill="#000000" stroke="#000000" points="373.7944,-92.3121 384.295,-93.722 376.9655,-86.0716 373.7944,-92.3121"/>
+</g>
+</g>
+</svg>
+
+<div class="admonition warning">
+<p class="admonition-title">Limited availability: Check with 'lbuild discover' if this module is available for your target!</p>
+</div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../modm-platform-timer/" title=":platform:timer" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                :platform:timer
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../modm-platform-uart-hosted-darwin-linux/" title=":platform:uart (hosted{darwin,linux})" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                :platform:uart (hosted{darwin,linux})
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy 2009-2019 Niklas Hauser & modm authors
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/modm-io" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/RCA_eV" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+    
+  </body>
+</html>
