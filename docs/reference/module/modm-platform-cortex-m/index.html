@@ -3770,10 +3770,10 @@ regions. The upside of this large static allocation is very fast allocation
 times of O(1), but we recommend using TLSF only for devices with multiple
 memory regions.</p>
 </div>
-<p>Default: <code>newlib</code>
-Inputs: <code>[block, newlib, tlsf]</code>
-Input Dependency: <code>block -&gt; modm:architecture:heap</code>
-Input Dependency: <code>tlsf -&gt; modm:tlsf</code></p>
+<p>Default: <code>newlib</code><br />
+Inputs: <code>[block, newlib, tlsf]</code><br />
+Input Dependency: <code>block -&gt; modm:architecture:heap</code><br />
+Input Dependency: <code>tlsf -&gt; modm:tlsf</code>  </p>
 <h4 id="linkerscriptflash_offset">linkerscript.flash_offset<a class="headerlink" href="#linkerscriptflash_offset" title="Permanent link">&para;</a></h4>
 <p>Offset of FLASH Section Origin</p>
 <p>Add an offset to the default start address of the flash memory. This might be
@@ -3782,18 +3782,18 @@ required for bootloaders located there.</p>
 <p class="admonition-title">Vector Table Relocation</p>
 <p>Not all offsets are compatible with the vector table relocation.</p>
 </div>
-<p>Default: <code>0</code>
-Inputs: <code>[0 ... 0x10000]</code> <em>stm32{f0,f1,f3,f4,f7,g0,l4}</em>
-Inputs: <code>[0 ... 0x100000]</code> <em>stm32{f1,f2,f4,f7,l4}</em>
-Inputs: <code>[0 ... 0x180000]</code> <em>stm32f4</em>
-Inputs: <code>[0 ... 0x20000]</code> <em>stm32{f0,f1,f2,f3,f4,g0,l4}</em>
-Inputs: <code>[0 ... 0x200000]</code> <em>stm32{f4,f7,l4}</em>
-Inputs: <code>[0 ... 0x4000]</code> <em>stm32{f0,f1,f3,g0}</em>
-Inputs: <code>[0 ... 0x40000]</code> <em>stm32{f0,f1,f2,f3,f4,f7,l4}</em>
-Inputs: <code>[0 ... 0x60000]</code> <em>stm32{f1,f3,f4}</em>
-Inputs: <code>[0 ... 0x8000]</code> <em>stm32{f0,f1,f3,g0}</em>
-Inputs: <code>[0 ... 0x80000]</code> <em>stm32{f1,f2,f3,f4,f7,l4}</em>
-Inputs: <code>[0 ... 0xc0000]</code> <em>stm32{f1,f2}</em></p>
+<p>Default: <code>0</code><br />
+Inputs: <code>[0 ... 0x10000]</code> <em>stm32{f0,f1,f3,f4,f7,g0,l4}</em><br />
+Inputs: <code>[0 ... 0x100000]</code> <em>stm32{f1,f2,f4,f7,l4}</em><br />
+Inputs: <code>[0 ... 0x180000]</code> <em>stm32f4</em><br />
+Inputs: <code>[0 ... 0x20000]</code> <em>stm32{f0,f1,f2,f3,f4,g0,l4}</em><br />
+Inputs: <code>[0 ... 0x200000]</code> <em>stm32{f4,f7,l4}</em><br />
+Inputs: <code>[0 ... 0x4000]</code> <em>stm32{f0,f1,f3,g0}</em><br />
+Inputs: <code>[0 ... 0x40000]</code> <em>stm32{f0,f1,f2,f3,f4,f7,l4}</em><br />
+Inputs: <code>[0 ... 0x60000]</code> <em>stm32{f1,f3,f4}</em><br />
+Inputs: <code>[0 ... 0x8000]</code> <em>stm32{f0,f1,f3,g0}</em><br />
+Inputs: <code>[0 ... 0x80000]</code> <em>stm32{f1,f2,f3,f4,f7,l4}</em><br />
+Inputs: <code>[0 ... 0xc0000]</code> <em>stm32{f1,f2}</em>  </p>
 <h4 id="main_stack_size">main_stack_size<a class="headerlink" href="#main_stack_size" title="Permanent link">&para;</a></h4>
 <p>Minimum size of the application main stack</p>
 <p>The ARM Cortex-M uses a descending stack mechanism which is placed so that it
@@ -3820,8 +3820,8 @@ main stack, an alignment buffer up to 1kB is added to the main stack.</p>
 &#39;---------------------------------&#39; &lt;-- RAM origin
 </pre></div>
 
-<p>Default: <code>3040</code>
-Inputs: <code>[256 .. 3040 .. 65536]</code></p>
+<p>Default: <code>3040</code><br />
+Inputs: <code>[256 .. 3040 .. 65536]</code>  </p>
 <h4 id="vector_table_location">vector_table_location<a class="headerlink" href="#vector_table_location" title="Permanent link">&para;</a></h4>
 <p>Vector table location in ROM or RAM</p>
 <p>The vector table is always stored in ROM and copied to RAM by the startup script
@@ -3852,9 +3852,9 @@ slow down interrupt latency, since both I-Code and D-Code memory interface
 need to fetch from the same access port.</p>
 </div>
 <p><em>This option is only available for stm32{f1,f2,f3,f4,f7,l4}.</em></p>
-<p>Default: <code>ram</code> <em>stm32{f3,f7}</em>
-Default: <code>rom</code> <em>stm32{f1,f2,f3,f4,l4}</em>
-Inputs: <code>[ram, rom]</code></p>
+<p>Default: <code>ram</code> <em>stm32{f3,f7}</em><br />
+Default: <code>rom</code> <em>stm32{f1,f2,f3,f4,l4}</em><br />
+Inputs: <code>[ram, rom]</code>  </p>
 <h2 id="collectors">Collectors<a class="headerlink" href="#collectors" title="Permanent link">&para;</a></h2>
 <h4 id="linkerscript_1">linkerscript<a class="headerlink" href="#linkerscript_1" title="Permanent link">&para;</a></h4>
 <p>Computes linkerscript properties

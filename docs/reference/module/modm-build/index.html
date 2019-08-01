@@ -4082,23 +4082,23 @@ project, the options presented here are only the most important ones.</p>
 <h4 id="avrdudebaudrate">avrdude.baudrate<a class="headerlink" href="#avrdudebaudrate" title="Permanent link">&para;</a></h4>
 <p>AvrDude programmer baudrate</p>
 <p><em>This option is only available for avr.</em></p>
-<p>Default: <code>0</code>
-Inputs: <code>[0 ... +Inf]</code></p>
+<p>Default: <code>0</code><br />
+Inputs: <code>[0 ... +Inf]</code>  </p>
 <h4 id="avrdudeoptions">avrdude.options<a class="headerlink" href="#avrdudeoptions" title="Permanent link">&para;</a></h4>
 <p>AvrDude programmer options</p>
 <p><em>This option is only available for avr.</em></p>
-<p>Default: <code>""</code>
-Inputs: <code>[String]</code></p>
+<p>Default: <code>""</code><br />
+Inputs: <code>[String]</code>  </p>
 <h4 id="avrdudeport">avrdude.port<a class="headerlink" href="#avrdudeport" title="Permanent link">&para;</a></h4>
 <p>AvrDude programmer port</p>
 <p><em>This option is only available for avr.</em></p>
-<p>Default: <code>""</code>
-Inputs: <code>[String]</code></p>
+<p>Default: <code>""</code><br />
+Inputs: <code>[String]</code>  </p>
 <h4 id="avrdudeprogrammer">avrdude.programmer<a class="headerlink" href="#avrdudeprogrammer" title="Permanent link">&para;</a></h4>
 <p>AvrDude programmer</p>
 <p><em>This option is only available for avr.</em></p>
-<p>Default: <code>""</code>
-Inputs: <code>[String]</code></p>
+<p>Default: <code>""</code><br />
+Inputs: <code>[String]</code>  </p>
 <h4 id="buildpath">build.path<a class="headerlink" href="#buildpath" title="Permanent link">&para;</a></h4>
 <p>Build Path</p>
 <p>The build path is defaulted to <code>build/{modm:build:project.name}</code>.</p>
@@ -4107,8 +4107,8 @@ to a <em>common</em> directory so that you don't have <code>build/</code> folder
 Remember to add your build path to your <code>.gitignore</code>.</p>
 <p>You should use a relative path instead of an absolute one, so that this option
 still works for other developers.</p>
-<p>Default: <code>build/project</code>
-Inputs: <code>[Path]</code></p>
+<p>Default: <code>build/project</code><br />
+Inputs: <code>[Path]</code>  </p>
 <h4 id="openocdcfg">openocd.cfg<a class="headerlink" href="#openocdcfg" title="Permanent link">&para;</a></h4>
 <p>Path to a custom OpenOCD configuration file</p>
 <p>If you have a custom configuration file for your target, it will get included
@@ -4122,15 +4122,15 @@ and do not execute them by default. A stray <code>init</code> or similar in your
 will mess with modm's ability to program and debug a device correctly.</p>
 </div>
 <p><em>This option is only available for stm32.</em></p>
-<p>Default: <code>[]</code>
-Inputs: <code>[Path]</code></p>
+<p>Default: <code>[]</code><br />
+Inputs: <code>[Path]</code>  </p>
 <h4 id="projectname">project.name<a class="headerlink" href="#projectname" title="Permanent link">&para;</a></h4>
 <p>Project Name</p>
 <p>The project name defaults to the folder name you're calling lbuild from.</p>
 <p>It's used by your build system to name the executable and it may also be passed
 to your application via a string constant or CPP define.</p>
-<p>Default: <code>project</code>
-Inputs: <code>[String]</code></p>
+<p>Default: <code>project</code><br />
+Inputs: <code>[String]</code>  </p>
 <h2 id="collectors">Collectors<a class="headerlink" href="#collectors" title="Permanent link">&para;</a></h2>
 <h4 id="archflags">archflags<a class="headerlink" href="#archflags" title="Permanent link">&para;</a></h4>
 <p>Compiler flags related to the target architecture</p>
