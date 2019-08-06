@@ -1581,6 +1581,18 @@
 
 
   <li class="md-nav__item">
+    <a href="reference/module/modm-driver-apa102/" title=":driver:apa102" class="md-nav__link">
+      :driver:apa102
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="reference/module/modm-driver-block-device/" title=":driver:block.device" class="md-nav__link">
       :driver:block.device
     </a>
@@ -2111,6 +2123,18 @@
   <li class="md-nav__item">
     <a href="reference/module/modm-driver-siemens_s75/" title=":driver:siemens_s75" class="md-nav__link">
       :driver:siemens_s75
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="reference/module/modm-driver-sk6812/" title=":driver:sk6812" class="md-nav__link">
+      :driver:sk6812
     </a>
   </li>
 
@@ -3355,61 +3379,64 @@ can easily configure them for you specific needs.</p>
 <td align="center">ADNS9800</td>
 <td align="center">ADS7843</td>
 <td align="center">AMS5915</td>
-<td align="center">SPI-FLASH</td>
+<td align="center">APA102</td>
 </tr><tr>
+<td align="center">SPI-FLASH</td>
 <td align="center">BME280</td>
 <td align="center">BMP085</td>
 <td align="center">BNO055</td>
 <td align="center">DRV832X</td>
 <td align="center">DS1302</td>
-<td align="center">DS1631</td>
 </tr><tr>
+<td align="center">DS1631</td>
 <td align="center">DS18B20</td>
 <td align="center">EA-DOG</td>
 <td align="center">FT245</td>
 <td align="center">FT6X06</td>
 <td align="center">HCLAx</td>
-<td align="center">HD44780</td>
 </tr><tr>
+<td align="center">HD44780</td>
 <td align="center">HMC58x</td>
 <td align="center">HMC6343</td>
 <td align="center">I2C-EEPROM</td>
 <td align="center">ITG3200</td>
 <td align="center">L3GD20</td>
-<td align="center">LAWICEL</td>
 </tr><tr>
+<td align="center">LAWICEL</td>
 <td align="center">LIS302DL</td>
 <td align="center">LIS3DSH</td>
 <td align="center">LM75</td>
 <td align="center">LSM303A</td>
 <td align="center">LTC2984</td>
-<td align="center">MAX6966</td>
 </tr><tr>
+<td align="center">MAX6966</td>
 <td align="center">MAX7219</td>
 <td align="center">MCP23X17</td>
 <td align="center">MCP2515</td>
 <td align="center">NOKIA5110</td>
 <td align="center">NRF24</td>
-<td align="center">TFT-DISPLAY</td>
 </tr><tr>
+<td align="center">TFT-DISPLAY</td>
 <td align="center">PAT9125EL</td>
 <td align="center">PCA8574</td>
 <td align="center">PCA9535</td>
 <td align="center">PCA9548A</td>
 <td align="center">PCA9685</td>
-<td align="center">SIEMENS-S65</td>
 </tr><tr>
+<td align="center">SIEMENS-S65</td>
 <td align="center">SIEMENS-S75</td>
+<td align="center">SK6812</td>
 <td align="center">SSD1306</td>
 <td align="center">TCS3414</td>
 <td align="center">TCS3472</td>
+</tr><tr>
 <td align="center">TLC594X</td>
 <td align="center">TMP102</td>
-</tr><tr>
 <td align="center">TMP175</td>
 <td align="center">VL53L0</td>
 <td align="center">VL6180</td>
 <td align="center">WS2812</td>
+</tr><tr>
 </tr>
 </table>
 <!--/drivertable-->
@@ -3508,57 +3535,60 @@ compilable as enforced by our CI.</p>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/linux/xpcc/basic/main.cpp">Linux: xpcc/basic</a></td>
 </tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f031k6/blink/main.cpp">NUCLEO-F031K6: blink</a></td>
+<td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f031k6/sk6812/main.cpp">NUCLEO-F031K6: sk6812</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f042k6/adc/main.cpp">NUCLEO-F042K6: adc</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f042k6/blink/main.cpp">NUCLEO-F042K6: blink</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f103rb/blink/main.cpp">NUCLEO-F103RB: blink</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f103rb/hard_fault/main.cpp">NUCLEO-F103RB: hard_fault</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f103rb/itm/main.cpp">NUCLEO-F103RB: itm</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f103rb/rtos/main.cpp">NUCLEO-F103RB: rtos</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f103rb/undefined_irq/main.cpp">NUCLEO-F103RB: undefined_irq</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f303k8/blink/main.cpp">NUCLEO-F303K8: blink</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f303k8/rtos/main.cpp">NUCLEO-F303K8: rtos</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f401re/blink/main.cpp">NUCLEO-F401RE: blink</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f401re/distance_vl53l0/main.cpp">NUCLEO-F401RE: distance_vl53l0</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f411re/blink/main.cpp">NUCLEO-F411RE: blink</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f411re/imu_bno055/main.cpp">NUCLEO-F411RE: imu_bno055</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f411re/radio/nrf24-basic-comm/main.cpp">NUCLEO-F411RE: radio/nrf24-basic-comm</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f411re/radio/nrf24-data/main.cpp">NUCLEO-F411RE: radio/nrf24-data</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f411re/radio/nrf24-phy-test/main.cpp">NUCLEO-F411RE: radio/nrf24-phy-test</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f411re/radio/nrf24-scanner/main.cpp">NUCLEO-F411RE: radio/nrf24-scanner</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f411re/rtos/main.cpp">NUCLEO-F411RE: rtos</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f411re/ws2812b/main.cpp">NUCLEO-F411RE: ws2812b</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f429zi/blink/main.cpp">NUCLEO-F429ZI: blink</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f429zi/cmsis_dsp/class_marks/main.cpp">NUCLEO-F429ZI: cmsis_dsp/class_marks</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f429zi/cmsis_dsp/convolution/main.cpp">NUCLEO-F429ZI: cmsis_dsp/convolution</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f429zi/cmsis_dsp/dotproduct/main.cpp">NUCLEO-F429ZI: cmsis_dsp/dotproduct</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f429zi/cmsis_dsp/fft_bin/main.cpp">NUCLEO-F429ZI: cmsis_dsp/fft_bin</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f429zi/cmsis_dsp/fir/main.cpp">NUCLEO-F429ZI: cmsis_dsp/fir</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f429zi/cmsis_dsp/graphic_equalizer/main.cpp">NUCLEO-F429ZI: cmsis_dsp/graphic_equalizer</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f429zi/cmsis_dsp/linear_interp/main.cpp">NUCLEO-F429ZI: cmsis_dsp/linear_interp</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f429zi/cmsis_dsp/matrix/main.cpp">NUCLEO-F429ZI: cmsis_dsp/matrix</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f429zi/cmsis_dsp/signal_converge/main.cpp">NUCLEO-F429ZI: cmsis_dsp/signal_converge</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f429zi/cmsis_dsp/sin_cos/main.cpp">NUCLEO-F429ZI: cmsis_dsp/sin_cos</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f429zi/cmsis_dsp/variance/main.cpp">NUCLEO-F429ZI: cmsis_dsp/variance</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f429zi/pat9125el/main.cpp">NUCLEO-F429ZI: pat9125el</a></td>
-<td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f429zi/spi_flash/main.cpp">NUCLEO-F429ZI: spi_flash</a></td>
 </tr><tr>
+<td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f429zi/spi_flash/main.cpp">NUCLEO-F429ZI: spi_flash</a></td>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_f446re/blink/main.cpp">NUCLEO-F446RE: blink</a></td>
+</tr><tr>
+<td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_g071rb/apa102/main.cpp">NUCLEO-G071RB: apa102</a></td>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_g071rb/blink/main.cpp">NUCLEO-G071RB: blink</a></td>
 </tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_g071rb/rtos/main.cpp">NUCLEO-G071RB: rtos</a></td>
