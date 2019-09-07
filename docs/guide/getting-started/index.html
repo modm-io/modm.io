@@ -3401,6 +3401,27 @@ set it in the inherited base <code>modm/examples/lbuild.xml</code> configuration
 repository and module options and of course which modules you want to have
 generated. Even though modm will generate a library that is self-contained,
 we still recommend adding modm as a git submodule for reproducibility.</p>
+<p>This guide assumes the following project layout:</p>
+<div class="codehilite"><pre><span></span> $ tree
+.
+├── modm
+│   ├── repo.lb
+│   └── {a lot of stuff}
+└── project_name
+    ├── main.cpp
+    └── project.xml
+</pre></div>
+
+<div class="admonition warning">
+<p class="admonition-title">Place your applications into their own folder!</p>
+<p>All modm build systems search <em>recursively</em> for application sources inside
+the current folder. If you place the modm library repository into your
+application folder you will see build errors related to building sources
+twice:</p>
+<div class="codehilite"><pre><span></span>scons: *** Multiple ways to build the same target were specified for: ...
+</pre></div>
+
+</div>
 <h3 id="using-a-board-support-package">Using a Board Support Package<a class="headerlink" href="#using-a-board-support-package" title="Permanent link">&para;</a></h3>
 <p>To build on a BSP, inherit from an existing project configuration using the
 <code>&lt;extends&gt;</code> element. You can discover the available configuration aliases using
