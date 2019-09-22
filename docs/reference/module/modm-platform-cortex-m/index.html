@@ -935,6 +935,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../modm-board-disco-l152rc/" title=":board:disco-l152rc" class="md-nav__link">
+      :board:disco-l152rc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../modm-board-disco-l476vg/" title=":board:disco-l476vg" class="md-nav__link">
       :board:disco-l476vg
     </a>
@@ -1045,6 +1057,18 @@
   <li class="md-nav__item">
     <a href="../modm-board-nucleo-g071rb/" title=":board:nucleo-g071rb" class="md-nav__link">
       :board:nucleo-g071rb
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-nucleo-l152re/" title=":board:nucleo-l152re" class="md-nav__link">
+      :board:nucleo-l152re
     </a>
   </li>
 
@@ -2375,8 +2399,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../modm-platform-adc-stm32-f1-f2-f3-f4-f7/" title=":platform:adc (stm32{f1,f2,f3,f4,f7})" class="md-nav__link">
-      :platform:adc (stm32{f1,f2,f3,f4,f7})
+    <a href="../modm-platform-adc-stm32-f1-f2-f3-f4-f7-l1/" title=":platform:adc (stm32{f1,f2,f3,f4,f7,l1})" class="md-nav__link">
+      :platform:adc (stm32{f1,f2,f3,f4,f7,l1})
     </a>
   </li>
 
@@ -2831,8 +2855,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../modm-platform-i2c-stm32-f1-f2-f4/" title=":platform:i2c (stm32{f1,f2,f4})" class="md-nav__link">
-      :platform:i2c (stm32{f1,f2,f4})
+    <a href="../modm-platform-i2c-stm32-f1-f2-f4-l1/" title=":platform:i2c (stm32{f1,f2,f4,l1})" class="md-nav__link">
+      :platform:i2c (stm32{f1,f2,f4,l1})
     </a>
   </li>
 
@@ -3807,16 +3831,16 @@ required for bootloaders located there.</p>
 <p>Not all offsets are compatible with the vector table relocation.</p>
 </div>
 <p>Default: <code>0</code><br />
-Inputs: <code>[0 ... 0x10000]</code> <em>stm32{f0,f1,f3,f4,f7,g0,l4}</em><br />
+Inputs: <code>[0 ... 0x10000]</code> <em>stm32{f0,f1,f3,f4,f7,g0,l1,l4}</em><br />
 Inputs: <code>[0 ... 0x100000]</code> <em>stm32{f1,f2,f4,f7,l4}</em><br />
 Inputs: <code>[0 ... 0x180000]</code> <em>stm32f4</em><br />
-Inputs: <code>[0 ... 0x20000]</code> <em>stm32{f0,f1,f2,f3,f4,g0,l4}</em><br />
+Inputs: <code>[0 ... 0x20000]</code> <em>stm32{f0,f1,f2,f3,f4,g0,l1,l4}</em><br />
 Inputs: <code>[0 ... 0x200000]</code> <em>stm32{f4,f7,l4}</em><br />
 Inputs: <code>[0 ... 0x4000]</code> <em>stm32{f0,f1,f3,g0}</em><br />
-Inputs: <code>[0 ... 0x40000]</code> <em>stm32{f0,f1,f2,f3,f4,f7,l4}</em><br />
-Inputs: <code>[0 ... 0x60000]</code> <em>stm32{f1,f3,f4}</em><br />
-Inputs: <code>[0 ... 0x8000]</code> <em>stm32{f0,f1,f3,g0}</em><br />
-Inputs: <code>[0 ... 0x80000]</code> <em>stm32{f1,f2,f3,f4,f7,l4}</em><br />
+Inputs: <code>[0 ... 0x40000]</code> <em>stm32{f0,f1,f2,f3,f4,f7,l1,l4}</em><br />
+Inputs: <code>[0 ... 0x60000]</code> <em>stm32{f1,f3,f4,l1}</em><br />
+Inputs: <code>[0 ... 0x8000]</code> <em>stm32{f0,f1,f3,g0,l1}</em><br />
+Inputs: <code>[0 ... 0x80000]</code> <em>stm32{f1,f2,f3,f4,f7,l1,l4}</em><br />
 Inputs: <code>[0 ... 0xc0000]</code> <em>stm32{f1,f2}</em>  </p>
 <h4 id="main_stack_size">main_stack_size<a class="headerlink" href="#main_stack_size" title="Permanent link">&para;</a></h4>
 <p>Minimum size of the application main stack</p>
@@ -3875,9 +3899,9 @@ therefore may not be modifiable with this option!</p>
 slow down interrupt latency, since both I-Code and D-Code memory interface
 need to fetch from the same access port.</p>
 </div>
-<p><em>This option is only available for stm32{f1,f2,f3,f4,f7,l4}.</em></p>
+<p><em>This option is only available for stm32{f1,f2,f3,f4,f7,l1,l4}.</em></p>
 <p>Default: <code>ram</code> <em>stm32{f3,f7}</em><br />
-Default: <code>rom</code> <em>stm32{f1,f2,f3,f4,l4}</em><br />
+Default: <code>rom</code> <em>stm32{f1,f2,f3,f4,l1,l4}</em><br />
 Inputs: <code>[ram, rom]</code>  </p>
 <h2 id="collectors">Collectors<a class="headerlink" href="#collectors" title="Permanent link">&para;</a></h2>
 <h4 id="linkerscript_1">linkerscript<a class="headerlink" href="#linkerscript_1" title="Permanent link">&para;</a></h4>
