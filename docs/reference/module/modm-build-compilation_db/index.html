@@ -13,7 +13,7 @@
         <meta name="description" content="A modular C++17 library generator for barebone embedded programming">
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-driver-ssd1306/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-build-compilation_db/">
       
       
         <meta name="author" content="Niklas Hauser">
@@ -42,7 +42,7 @@
     
     
       
-        <title>:driver:ssd1306 - modm barebone embedded library</title>
+        <title>:build:compilation_db - modm barebone embedded library</title>
       
     
     
@@ -93,7 +93,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#modmdriverssd1306-ssd1306-display" tabindex="1" class="md-skip">
+      <a href="#modmbuildcompilation_db-compilationdb-generator" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -119,7 +119,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                :driver:ssd1306
+                :build:compilation_db
               
             </span>
           
@@ -1149,11 +1149,69 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../modm-build-compilation_db/" title=":build:compilation_db" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        :build:compilation_db
+      </label>
+    
+    <a href="./" title=":build:compilation_db" class="md-nav__link md-nav__link--active">
       :build:compilation_db
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scons-integration" title="SCons integration" class="md-nav__link">
+    SCons integration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collectors" title="Collectors" class="md-nav__link">
+    Collectors
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flag_format" title="flag_format" class="md-nav__link">
+    flag_format
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -2109,49 +2167,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        :driver:ssd1306
-      </label>
-    
-    <a href="./" title=":driver:ssd1306" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../modm-driver-ssd1306/" title=":driver:ssd1306" class="md-nav__link">
       :driver:ssd1306
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" title="Dependencies" class="md-nav__link">
-    Dependencies
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -3146,9 +3166,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dependencies" title="Dependencies" class="md-nav__link">
-    Dependencies
+  <a href="#scons-integration" title="SCons integration" class="md-nav__link">
+    SCons integration
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collectors" title="Collectors" class="md-nav__link">
+    Collectors
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flag_format" title="flag_format" class="md-nav__link">
+    flag_format
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3169,71 +3209,44 @@
               
                 
                 
-                <h1 id="modmdriverssd1306-ssd1306-display">modm:driver:ssd1306: SSD1306 Display<a class="headerlink" href="#modmdriverssd1306-ssd1306-display" title="Permanent link">&para;</a></h1>
-<h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.40.1 (20161225.0304)
- -->
-<!-- Title: modm:driver:ssd1306 Pages: 1 -->
-<svg width="322pt" height="150pt"
- viewBox="0.00 0.00 322.00 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 146)">
-<title>modm:driver:ssd1306</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-146 318,-146 318,4 -4,4"/>
-<!-- modm_driver_ssd1306 -->
-<g id="node1" class="node">
-<title>modm_driver_ssd1306</title>
-<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="216.5,-53 139.5,-53 139.5,0 216.5,0 216.5,-53"/>
-<text text-anchor="middle" x="178" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="178" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">driver:</text>
-<text text-anchor="middle" x="178" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">ssd1306</text>
-</g>
-<!-- modm_architecture_i2c_device -->
-<g id="node2" class="node">
-<title>modm_architecture_i2c_device</title>
-<polygon fill="#d3d3d3" stroke="#000000" points="110,-142 0,-142 0,-89 110,-89 110,-142"/>
-<text text-anchor="middle" x="55" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="55" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
-<text text-anchor="middle" x="55" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">i2c.device</text>
-</g>
-<!-- modm_driver_ssd1306&#45;&gt;modm_architecture_i2c_device -->
-<g id="edge1" class="edge">
-<title>modm_driver_ssd1306&#45;&gt;modm_architecture_i2c_device</title>
-<path fill="none" stroke="#000000" d="M141.0959,-53.2029C128.2039,-62.5313 113.5854,-73.1089 100.1015,-82.8656"/>
-<polygon fill="#000000" stroke="#000000" points="97.9279,-80.1182 91.878,-88.8159 102.0314,-85.7893 97.9279,-80.1182"/>
-</g>
-<!-- modm_processing_timer -->
-<g id="node3" class="node">
-<title>modm_processing_timer</title>
-<polygon fill="#d3d3d3" stroke="#000000" points="227.5,-142 128.5,-142 128.5,-89 227.5,-89 227.5,-142"/>
-<text text-anchor="middle" x="178" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="178" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">processing:</text>
-<text text-anchor="middle" x="178" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">timer</text>
-</g>
-<!-- modm_driver_ssd1306&#45;&gt;modm_processing_timer -->
-<g id="edge2" class="edge">
-<title>modm_driver_ssd1306&#45;&gt;modm_processing_timer</title>
-<path fill="none" stroke="#000000" d="M178,-53.2029C178,-61.2113 178,-70.1403 178,-78.6802"/>
-<polygon fill="#000000" stroke="#000000" points="174.5001,-78.8159 178,-88.8159 181.5001,-78.8159 174.5001,-78.8159"/>
-</g>
-<!-- modm_ui_display -->
-<g id="node4" class="node">
-<title>modm_ui_display</title>
-<polygon fill="#d3d3d3" stroke="#000000" points="314,-142 246,-142 246,-89 314,-89 314,-142"/>
-<text text-anchor="middle" x="280" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="280" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">ui:</text>
-<text text-anchor="middle" x="280" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">display</text>
-</g>
-<!-- modm_driver_ssd1306&#45;&gt;modm_ui_display -->
-<g id="edge3" class="edge">
-<title>modm_driver_ssd1306&#45;&gt;modm_ui_display</title>
-<path fill="none" stroke="#000000" d="M208.6034,-53.2029C218.9918,-62.2673 230.732,-72.5112 241.6472,-82.0353"/>
-<polygon fill="#000000" stroke="#000000" points="239.5822,-84.8785 249.4182,-88.8159 244.1844,-79.6041 239.5822,-84.8785"/>
-</g>
-</g>
-</svg>
+                <h1 id="modmbuildcompilation_db-compilationdb-generator">modm:build:compilation_db: CompilationDB Generator<a class="headerlink" href="#modmbuildcompilation_db-compilationdb-generator" title="Permanent link">&para;</a></h1>
+<p>This module generates a Python script that generates a CompilationDB file, which
+allows you to import your project into a code editor like CLion or Qt Creator
+with working code completion and enhanced refactoring.</p>
+<div class="admonition note">
+<p class="admonition-title">CompilationDB is not a build system replacement</p>
+<p>CompilationDB support is currently only implemented as an import mechanism
+in all IDEs, it cannot be used to compile <em>AND LINK</em> your application
+correctly. Use a proper build system for that purpose.</p>
+</div>
+<p>Since the CompilationDB requires absolute paths making it difficult to share
+with other users, this module instead generates a script that you can call
+whenever you need to generate a new <code>compile_commands.json</code> file.</p>
+<p>The script takes are argument the application folder or files that it should
+include. The search is recursive and looks only for source files while
+ignoring any generated files:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># When calling this from where project.xml is located</span>
+<span class="c1"># adding all sources contained in the current folder</span>
+python3 modm/tools/builder_compilation_db.py .
+</pre></div>
+
+<p>To generate the CompilationDB for debug mode, use the <code>--debug</code> option:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># You can also add individual files</span>
+python3 modm/tools/builder_compilation_db.py --debug main.cpp
+</pre></div>
+
+<h2 id="scons-integration">SCons integration<a class="headerlink" href="#scons-integration" title="Permanent link">&para;</a></h2>
+<p>When including this module together with the <code>modm:build:scons</code> module, a new
+command is added to SCons, which wraps the above command line invocation.</p>
+<div class="codehilite"><pre><span></span><span class="c1"># This command safely wraps the generation script</span>
+scons compilation_db <span class="nv">profile</span><span class="o">=</span>release
+scons compilation_db <span class="nv">profile</span><span class="o">=</span>debug
+</pre></div>
+
+<h2 id="collectors">Collectors<a class="headerlink" href="#collectors" title="Permanent link">&para;</a></h2>
+<h4 id="flag_format">flag_format<a class="headerlink" href="#flag_format" title="Permanent link">&para;</a></h4>
+<p>Formatting compile flags for CompilationDB</p>
+<p>Inputs: <code>[Callable]</code></p>
                 
                   
                 
@@ -3254,7 +3267,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../modm-driver-sk6812/" title=":driver:sk6812" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../modm-build-cmake/" title=":build:cmake" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -3263,19 +3276,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                :driver:sk6812
+                :build:cmake
               </span>
             </div>
           </a>
         
         
-          <a href="../modm-driver-tcs3414/" title=":driver:tcs3414" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../modm-build-scons/" title=":build:scons" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                :driver:tcs3414
+                :build:scons
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
