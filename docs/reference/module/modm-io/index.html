@@ -3500,7 +3500,7 @@ implementing a reasonably large subset of <code>printf</code>.</p>
 <p>All expensive features incl. printf are disabled by default! Check the options.</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title"><code>modm::endl</code> does implicitly flush!</p>
+<p class="admonition-title"><code>modm::endl</code> does NOT implicitly flush!</p>
 <p>Flushing is <em>extremely expensive</em> on embedded systems, therefore <code>modm::endl</code>
 does not implicitly flush the stream. Please call <code>modm::flush</code> explicitly.</p>
 </div>

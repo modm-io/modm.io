@@ -2,1172 +2,1172 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>http://modm.io/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/how-modm-works/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/who-we-are/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/guide/getting-started/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/guide/installation/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/guide/testing/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/documentation/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/build-systems/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-architecture/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-architecture-1-wire/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-architecture-accessor/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-architecture-adc/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-architecture-assert/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-architecture-atomic/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-architecture-block-device/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-architecture-build_id/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-architecture-can/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-architecture-clock/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-architecture-delay/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-architecture-gpio/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-architecture-gpio-expander/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-architecture-heap/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-architecture-i2c/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-architecture-i2c-device/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-architecture-i2c-multiplexer/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-architecture-interrupt/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-architecture-memory/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-architecture-register/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-architecture-spi/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-architecture-spi-device/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-architecture-uart/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-architecture-unaligned/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-al-avreb-can/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-arduino-nano/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-arduino-uno/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-black-pill/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-blue-pill/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-disco-f051r8/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-disco-f072rb/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-disco-f100rb/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-disco-f303vc/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-disco-f407vg/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-disco-f429zi/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-disco-f469ni/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-disco-f746ng/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-disco-f769ni/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-disco-l152rc/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-disco-l476vg/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-mini-f401/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-mini-f411/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-nucleo-f031k6/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-nucleo-f042k6/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-nucleo-f103rb/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-nucleo-f303k8/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-nucleo-f401re/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-nucleo-f411re/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-nucleo-f429zi/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-nucleo-f446re/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-nucleo-g071rb/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-nucleo-g474re/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-nucleo-l152re/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-nucleo-l432kc/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-nucleo-l476rg/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-olimexino-stm32/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-board-stm32f030_demo/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-build/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-build-cmake/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-build-compilation_db/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-build-scons/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-cmsis/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-cmsis-core/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-cmsis-device/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-cmsis-dsp/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-cmsis-dsp-basic_math/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-cmsis-dsp-bayes/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-cmsis-dsp-complex_math/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-cmsis-dsp-controller/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-cmsis-dsp-distance/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-cmsis-dsp-fast_math/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-cmsis-dsp-filtering/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-cmsis-dsp-matrix/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-cmsis-dsp-statistics/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-cmsis-dsp-support/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-cmsis-dsp-svm/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-cmsis-dsp-tables/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-cmsis-dsp-transform/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-communication/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-communication-ros/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-communication-sab/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-communication-sab2/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-communication-xpcc/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-communication-xpcc-generator/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-container/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-crashcatcher/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-debug/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-docs/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-ad7280a/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-ad7928/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-adc_sampler/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-adns9800/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-ads7843/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-ams5915/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-apa102/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-block-device/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-block-device-file/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-block-device-heap/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-block-device-mirror/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-block-device-spi-flash/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-bme280/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-bmp085/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-bno055/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-drv832x_spi/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-ds1302/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-ds1631/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-ds18b20/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-ea_dog/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-fat/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-ft245/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-ft6x06/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-hclax/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-hd44780/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-hmc58x/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-hmc6343/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-i2c-eeprom/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-itg3200/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-l3gd20/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-lawicel/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-lis3-transport/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-lis302dl/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-lis3dsh/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-lm75/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-lsm303a/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-ltc2984/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-max6966/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-max7219/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-mcp23x17/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-mcp2515/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-memory_bus/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-nokia5110/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-nrf24/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-parallel_tft_display/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-pat9125el/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-pca8574/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-pca9535/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-pca9548a/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-pca9685/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-siemens_s65/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-siemens_s75/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-sk6812/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-sk9822/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-ssd1306/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-tcs3414/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-tcs3472/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-terminal/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-tlc594x/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-tmp102/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-tmp175/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-vl53l0/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-vl6180/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-driver-ws2812/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-fatfs/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-freertos/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-io/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-math/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-math-algorithm/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-math-filter/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-math-geometry/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-math-interpolation/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-math-matrix/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-math-saturated/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-math-units/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-math-utils/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-1-wire-bitbang/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-adc-avr-mega-tiny/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-adc-stm32-f0-g0/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-adc-stm32-f1-f2-f3-f4-f7-l1/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-adc-stm32-f3-g4-l4/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-can/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-can-common/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-canusb/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-clock/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-comp/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-core-avr/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-core-hosted/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-core-stm32/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-cortex-m/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-dma/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-fault/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-fsmc/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-gpio-avr/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-gpio-hosted/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-gpio-stm32/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-gpio-common/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-i2c-avr/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-i2c-stm32-f0-f3-f7-g0-g4-l4/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-i2c-stm32-f1-f2-f4-l1/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-i2c-bitbang/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-id/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-itm/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-random/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-rcc/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-socketcan/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-spi-avr/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-spi-stm32/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-spi-bitbang/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-systick/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-timer/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-uart-avr/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-uart-hosted-darwin-linux/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-uart-stm32/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-platform-uart-spi/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-processing/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-processing-protothread/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-processing-resumable/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-processing-rtos/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-processing-scheduler/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-processing-timer/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-ros/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-stdc++/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-tlsf/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-ui/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-ui-animation/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-ui-button/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-ui-color/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-ui-display/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-ui-gui/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-ui-led/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-ui-menu/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-ui-time/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-unittest/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://modm.io/reference/module/modm-utils/</loc>
-     <lastmod>2020-01-09</lastmod>
+     <lastmod>2020-01-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
