@@ -1550,6 +1550,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#doxygen" class="md-nav__link">
+    Doxygen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doxypress" class="md-nav__link">
+    Doxypress
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#options" class="md-nav__link">
     Options
   </a>
@@ -2954,8 +2968,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../modm-platform-uart-avr/" title=":platform:uart (avr)" class="md-nav__link">
-      :platform:uart (avr)
+    <a href="../modm-platform-uart-avr-90-mega/" title=":platform:uart (avr{90,mega})" class="md-nav__link">
+      :platform:uart (avr{90,mega})
     </a>
   </li>
 
@@ -3267,6 +3281,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#doxygen" class="md-nav__link">
+    Doxygen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doxypress" class="md-nav__link">
+    Doxypress
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#options" class="md-nav__link">
     Options
   </a>
@@ -3305,10 +3333,19 @@
                 
                 <h1 id="documentation-generator">Documentation Generator<a class="headerlink" href="#documentation-generator" title="Permanent link">&para;</a></h1>
 <p>lbuild module: <code>modm:docs</code></p>
-<p>This module creates the Doxygen groups and hierarchy according to the modm
-module structure into <code>modm/docs</code>.</p>
+<p>This module creates the documentation groups and hierarchy according to
+the modm module structure into <code>modm/docs</code>.</p>
+<p>The documentation can be generated using Doxygen or Doxypress.</p>
+<h2 id="doxygen">Doxygen<a class="headerlink" href="#doxygen" title="Permanent link">&para;</a></h2>
 <p>To generate the C++ documentation call Doxygen manually:</p>
 <div class="codehilite"><pre><span></span><code>(cd modm/docs &amp;&amp; doxygen doxyfile.cfg)
+</code></pre></div>
+
+<p>Then open <code>modm/docs/html/index.html</code> in your web browser of choice.</p>
+<h2 id="doxypress">Doxypress<a class="headerlink" href="#doxypress" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.copperspice.com/docs/doxypress/install-doxypress.html">Install Doxypress.</a></p>
+<p>To generate the C++ documentation call Doxypress:</p>
+<div class="codehilite"><pre><span></span><code>(cd modm/docs &amp;&amp; doxypress doxypress.json)
 </code></pre></div>
 
 <p>Then open <code>modm/docs/html/index.html</code> in your web browser of choice.</p>
