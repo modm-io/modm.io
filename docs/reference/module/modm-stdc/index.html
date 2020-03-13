@@ -13,7 +13,7 @@
         <meta name="description" content="A modular C++17 library generator for barebone embedded programming">
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-platform-uart-avr-90-mega/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-stdc/">
       
       
         <meta name="author" content="Niklas Hauser">
@@ -42,7 +42,7 @@
     
     
       
-        <title>:platform:uart (avr{90,mega}) - modm barebone embedded library</title>
+        <title>:stdc - modm barebone embedded library</title>
       
     
     
@@ -93,7 +93,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#universal-asynchronous-receiver-transmitter-uart" tabindex="0" class="md-skip">
+      <a href="#c-standard-environment" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -119,7 +119,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                :platform:uart (avr{90,mega})
+                :stdc
               
             </span>
           
@@ -2901,83 +2901,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        :platform:uart (avr{90,mega})
-      </label>
-    
-    <a href="./" title=":platform:uart (avr{90,mega})" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../modm-platform-uart-avr-90-mega/" title=":platform:uart (avr{90,mega})" class="md-nav__link">
       :platform:uart (avr{90,mega})
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
-    Options
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bufferrx" class="md-nav__link">
-    buffer.rx
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#buffertx" class="md-nav__link">
-    buffer.tx
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#buffered" class="md-nav__link">
-    buffered
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    Dependencies
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -3105,11 +3033,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../modm-stdc/" title=":stdc" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        :stdc
+      </label>
+    
+    <a href="./" title=":stdc" class="md-nav__link md-nav__link--active">
       :stdc
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#arm-cortex-m" class="md-nav__link">
+    ARM Cortex-M
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -3300,36 +3273,9 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
-    Options
+  <a href="#arm-cortex-m" class="md-nav__link">
+    ARM Cortex-M
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bufferrx" class="md-nav__link">
-    buffer.rx
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#buffertx" class="md-nav__link">
-    buffer.tx
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#buffered" class="md-nav__link">
-    buffered
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3357,111 +3303,63 @@
               
                 
                 
-                <h1 id="universal-asynchronous-receiver-transmitter-uart">Universal Asynchronous Receiver Transmitter (UART)<a class="headerlink" href="#universal-asynchronous-receiver-transmitter-uart" title="Permanent link">&para;</a></h1>
-<p>lbuild module: <code>modm:platform:uart</code></p>
-<p><em>This module is only available for avr{90,mega}.</em></p>
-<h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
-<h4 id="bufferrx">buffer.rx<a class="headerlink" href="#bufferrx" title="Permanent link">&para;</a></h4>
-<p><em>This option is only available for avrmega.</em></p>
-<p>Default: <code>8</code><br />
-Inputs: <code>[1 .. 8 .. 254]</code>  </p>
-<h4 id="buffertx">buffer.tx<a class="headerlink" href="#buffertx" title="Permanent link">&para;</a></h4>
-<p><em>This option is only available for avrmega.</em></p>
-<p>Default: <code>64</code><br />
-Inputs: <code>[1 .. 64 .. 254]</code>  </p>
-<h4 id="buffered">buffered<a class="headerlink" href="#buffered" title="Permanent link">&para;</a></h4>
-<p><em>This option is only available for avrmega.</em></p>
-<p>Default: <code>True</code><br />
-Inputs: <code>[True, False]</code>  </p>
+                <h1 id="c-standard-environment">C Standard Environment<a class="headerlink" href="#c-standard-environment" title="Permanent link">&para;</a></h1>
+<p>lbuild module: <code>modm:stdc</code></p>
+<p>Refines the C language to make it easier to use on embedded targets.</p>
+<h2 id="arm-cortex-m">ARM Cortex-M<a class="headerlink" href="#arm-cortex-m" title="Permanent link">&para;</a></h2>
+<p>For ARMv6-M, C11 atomics are implemented via atomic lock.</p>
+<p>Additional compiler options:</p>
+<ul>
+<li><code>--specs=nano.specs</code>: use Newlib Nano (when not using exceptions).</li>
+<li><code>--specs=nosys.specs</code>: No additional C library features are implemented.</li>
+</ul>
+<p><em>This module is only available for avr, stm32.</em></p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
-<!-- Title: modm:platform:uart Pages: 1 -->
-<svg width="580pt" height="150pt"
- viewBox="0.00 0.00 579.50 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 146)">
-<title>modm:platform:uart</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-146 575.5,-146 575.5,4 -4,4"/>
-<!-- modm_platform_uart -->
+<!-- Title: modm:stdc Pages: 1 -->
+<svg width="246pt" height="135pt"
+ viewBox="0.00 0.00 246.00 135.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 131)">
+<title>modm:stdc</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-131 242,-131 242,4 -4,4"/>
+<!-- modm_stdc -->
 <g id="node1" class="node">
-<title>modm_platform_uart</title>
-<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="352.5,-53 269.5,-53 269.5,0 352.5,0 352.5,-53"/>
-<text text-anchor="middle" x="311" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="311" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="311" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">uart</text>
+<title>modm_stdc</title>
+<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="151.5,-38 86.5,-38 86.5,0 151.5,0 151.5,-38"/>
+<text text-anchor="middle" x="119" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="119" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">stdc</text>
+</g>
+<!-- modm_architecture_assert -->
+<g id="node2" class="node">
+<title>modm_architecture_assert</title>
+<polygon fill="#d3d3d3" stroke="#000000" points="110,-127 0,-127 0,-74 110,-74 110,-127"/>
+<text text-anchor="middle" x="55" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="55" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
+<text text-anchor="middle" x="55" y="-81.8" font-family="Times,serif" font-size="14.00" fill="#000000">assert</text>
+</g>
+<!-- modm_stdc&#45;&gt;modm_architecture_assert -->
+<g id="edge1" class="edge">
+<title>modm_stdc&#45;&gt;modm_architecture_assert</title>
+<path fill="none" stroke="#000000" d="M103.8329,-38.3144C97.3717,-46.5423 89.6305,-56.4002 82.2364,-65.8161"/>
+<polygon fill="#000000" stroke="#000000" points="79.2922,-63.8983 75.8688,-73.9249 84.7976,-68.2216 79.2922,-63.8983"/>
 </g>
 <!-- modm_architecture_atomic -->
-<g id="node2" class="node">
-<title>modm_architecture_atomic</title>
-<polygon fill="#d3d3d3" stroke="#000000" points="110,-142 0,-142 0,-89 110,-89 110,-142"/>
-<text text-anchor="middle" x="55" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="55" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
-<text text-anchor="middle" x="55" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">atomic</text>
-</g>
-<!-- modm_platform_uart&#45;&gt;modm_architecture_atomic -->
-<g id="edge1" class="edge">
-<title>modm_platform_uart&#45;&gt;modm_architecture_atomic</title>
-<path fill="none" stroke="#000000" d="M269.4816,-38.9904C232.4385,-50.3627 176.5794,-68.0705 119.5779,-88.8825"/>
-<polygon fill="#000000" stroke="#000000" points="118.2277,-85.6498 110.0505,-92.3867 120.6441,-92.2196 118.2277,-85.6498"/>
-</g>
-<!-- modm_architecture_interrupt -->
 <g id="node3" class="node">
-<title>modm_architecture_interrupt</title>
-<polygon fill="#d3d3d3" stroke="#000000" points="238,-142 128,-142 128,-89 238,-89 238,-142"/>
-<text text-anchor="middle" x="183" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="183" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
-<text text-anchor="middle" x="183" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">interrupt</text>
+<title>modm_architecture_atomic</title>
+<polygon fill="#d3d3d3" stroke="#000000" stroke-dasharray="5,2" points="238,-127 128,-127 128,-74 238,-74 238,-127"/>
+<text text-anchor="middle" x="183" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="183" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
+<text text-anchor="middle" x="183" y="-81.8" font-family="Times,serif" font-size="14.00" fill="#000000">atomic</text>
 </g>
-<!-- modm_platform_uart&#45;&gt;modm_architecture_interrupt -->
+<!-- modm_stdc&#45;&gt;modm_architecture_atomic -->
 <g id="edge2" class="edge">
-<title>modm_platform_uart&#45;&gt;modm_architecture_interrupt</title>
-<path fill="none" stroke="#000000" d="M272.5958,-53.2029C259.1797,-62.5313 243.9669,-73.1089 229.9349,-82.8656"/>
-<polygon fill="#000000" stroke="#000000" points="227.5894,-80.2335 221.3771,-88.8159 231.5856,-85.9807 227.5894,-80.2335"/>
-</g>
-<!-- modm_architecture_uart -->
-<g id="node4" class="node">
-<title>modm_architecture_uart</title>
-<polygon fill="#d3d3d3" stroke="#000000" points="366,-142 256,-142 256,-89 366,-89 366,-142"/>
-<text text-anchor="middle" x="311" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="311" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
-<text text-anchor="middle" x="311" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">uart</text>
-</g>
-<!-- modm_platform_uart&#45;&gt;modm_architecture_uart -->
-<g id="edge3" class="edge">
-<title>modm_platform_uart&#45;&gt;modm_architecture_uart</title>
-<path fill="none" stroke="#000000" d="M311,-53.2029C311,-61.2113 311,-70.1403 311,-78.6802"/>
-<polygon fill="#000000" stroke="#000000" points="307.5001,-78.8159 311,-88.8159 314.5001,-78.8159 307.5001,-78.8159"/>
-</g>
-<!-- modm_math_algorithm -->
-<g id="node5" class="node">
-<title>modm_math_algorithm</title>
-<polygon fill="#d3d3d3" stroke="#000000" points="470,-142 384,-142 384,-89 470,-89 470,-142"/>
-<text text-anchor="middle" x="427" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="427" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
-<text text-anchor="middle" x="427" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">algorithm</text>
-</g>
-<!-- modm_platform_uart&#45;&gt;modm_math_algorithm -->
-<g id="edge4" class="edge">
-<title>modm_platform_uart&#45;&gt;modm_math_algorithm</title>
-<path fill="none" stroke="#000000" d="M345.8038,-53.2029C357.8475,-62.4433 371.4888,-72.9095 384.1051,-82.5893"/>
-<polygon fill="#000000" stroke="#000000" points="382.1563,-85.5055 392.2207,-88.8159 386.4174,-79.9518 382.1563,-85.5055"/>
-</g>
-<!-- modm_platform_gpio -->
-<g id="node6" class="node">
-<title>modm_platform_gpio</title>
-<polygon fill="#d3d3d3" stroke="#000000" points="571.5,-142 488.5,-142 488.5,-89 571.5,-89 571.5,-142"/>
-<text text-anchor="middle" x="530" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="530" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="530" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">gpio</text>
-</g>
-<!-- modm_platform_uart&#45;&gt;modm_platform_gpio -->
-<g id="edge5" class="edge">
-<title>modm_platform_uart&#45;&gt;modm_platform_gpio</title>
-<path fill="none" stroke="#000000" d="M352.6479,-40.3902C386.9948,-52.2257 436.7602,-70.254 479,-89 479.0969,-89.043 479.1939,-89.0861 479.2909,-89.1293"/>
-<polygon fill="#000000" stroke="#000000" points="477.9115,-92.3476 488.4556,-93.3829 480.8584,-85.9982 477.9115,-92.3476"/>
+<title>modm_stdc&#45;&gt;modm_architecture_atomic</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M134.1671,-38.3144C140.6283,-46.5423 148.3695,-56.4002 155.7636,-65.8161"/>
+<polygon fill="#000000" stroke="#000000" points="153.2024,-68.2216 162.1312,-73.9249 158.7078,-63.8983 153.2024,-68.2216"/>
 </g>
 </g>
 </svg>
@@ -3490,7 +3388,7 @@ Inputs: <code>[True, False]</code>  </p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../modm-platform-timer/" title=":platform:timer" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../modm-ros/" title=":ros" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -3499,19 +3397,19 @@ Inputs: <code>[True, False]</code>  </p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                :platform:timer
+                :ros
               </span>
             </div>
           </a>
         
         
-          <a href="../modm-platform-uart-hosted-darwin-linux/" title=":platform:uart (hosted{darwin,linux})" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../modm-stdc%2B%2B/" title=":stdc++" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                :platform:uart (hosted{darwin,linux})
+                :stdc++
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
