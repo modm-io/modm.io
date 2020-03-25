@@ -623,18 +623,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../modm-architecture-heap/" title=":architecture:heap" class="md-nav__link">
-      :architecture:heap
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../modm-architecture-i2c/" title=":architecture:i2c" class="md-nav__link">
       :architecture:i2c
     </a>
@@ -1621,6 +1609,18 @@
   <li class="md-nav__item">
     <a href="../modm-driver-apa102/" title=":driver:apa102" class="md-nav__link">
       :driver:apa102
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-block-allocator/" title=":driver:block.allocator" class="md-nav__link">
+      :driver:block.allocator
     </a>
   </li>
 
@@ -2749,13 +2749,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#allocator" class="md-nav__link">
-    allocator
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#linkerscriptflash_offset" class="md-nav__link">
     linkerscript.flash_offset
   </a>
@@ -2948,6 +2941,30 @@
   <li class="md-nav__item">
     <a href="../modm-platform-gpio-common/" title=":platform:gpio.common" class="md-nav__link">
       :platform:gpio.common
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-heap-avr/" title=":platform:heap (avr)" class="md-nav__link">
+      :platform:heap (avr)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-heap-stm32/" title=":platform:heap (stm32)" class="md-nav__link">
+      :platform:heap (stm32)
     </a>
   </li>
 
@@ -3534,13 +3551,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#allocator" class="md-nav__link">
-    allocator
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#linkerscriptflash_offset" class="md-nav__link">
     linkerscript.flash_offset
   </a>
@@ -3679,11 +3689,11 @@ implemented as follows:</p>
 <li>Execute shared hardware initialization functions.</li>
 <li>Copy data from internal flash to <em>external</em> RAM.</li>
 <li>Zero sections in <em>external</em> RAM.</li>
-<li>Initialize heap via <code>__modm_initialize_memory()</code> (provided by the
-   <code>modm:platform:cortex-m:allocator</code> option).</li>
+<li>Initialize heap via <code>__modm_initialize_memory()</code> (implemented by the
+   <code>modm:platform:heap</code> module).</li>
 <li>Call static constructors.</li>
 <li>Call <code>main()</code> application entry point.</li>
-<li>If <code>main()</code> returns, assert on <code>core.main.exit</code> (only in debug profile).</li>
+<li>If <code>main()</code> returns, assert on <code>main.exit</code> (only in debug profile).</li>
 <li>Reboot if assertion returns.</li>
 </ol>
 <h3 id="device-initialization">Device Initialization<a class="headerlink" href="#device-initialization" title="Permanent link">&para;</a></h3>
@@ -3745,7 +3755,7 @@ linkerscript and the <code>Reset_Handler</code> is defined by the startup script
 <p>All handlers are weakly aliased to <code>Undefined_Handler</code>, which is called if an
 IRQ is enabled, but no handler is defined for it. This default handler
 determines the currectly active IRQ, sets its priority to the lowest level, and
-disables the IRQ from firing again and then asserts on <code>core.nvic.undefined</code>
+disables the IRQ from firing again and then asserts on <code>nvic.undef</code>
 with the (signed) IRQ number as context.</p>
 <p>The lowering of the priority is necessary, since the assertion handlers (see
 <code>modm:architecture:assert</code>) are called from within this active IRQ and its
@@ -3938,52 +3948,6 @@ the GNU LD documentation first.</p>
 </ul>
 <p><em>This module is only available for stm32.</em></p>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
-<h4 id="allocator">allocator<a class="headerlink" href="#allocator" title="Permanent link">&para;</a></h4>
-<p>Dynamic memory allocation strategy</p>
-<p>By default, the arm-none-eabi toolchain ships with the <code>newlib</code> libc, which uses
-<code>dlmalloc</code> as the underlying allocator algorithm and only requires the
-implementation of the <code>void * sbrk(ptrdiff_t size)</code> hook. However, this limits
-the allocator to use just <em>one</em> memory region, which must then also be of
-<em>continuous</em> extend, since <code>sbrk</code> can only grow and shrink, but not jump.
-Therefore, when using the <code>newlib</code> strategy, only the largest memory region is
-used as heap! Depending on the device memory architecture this can leave large
-memory regions unused.</p>
-<p>For devices with very small memories, we recommend using the block allocator
-strategy, which uses a very light-weight and simple algorithm. This also only
-operates on one continuous memory region as heap.</p>
-<div class="admonition note">
-<p class="admonition-title">Memory traits</p>
-<p>Memories can have different traits, such as DMA-ability or access time. The
-default memory allocator functions (malloc, new, etc) only return DMA-able
-memories, ordered by fastest access time. Similarly the search for the
-largest memory region only considers DMA-able memory.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">On multi-SRAM devices</p>
-<p>For devices which contain separate memories laid out in a continuous way
-(often called SRAM1, SRAM2, etc.) the <code>newlib</code> and <code>block</code> strategies choose
-the largest continuous memory region, <em>even though</em> unaligned accesses
-across memory regions may not be supported in hardware and lead to a bus
-fault! Consider using the TLSF implementation, which does not suffer from
-this issue.</p>
-</div>
-<p>To use all non-statically allocated memory for heap, use the TLSF strategy,
-which natively supports multiple memory regions. Our implementation treats
-all internal memories as separate regions, so unaligned accesses across memory
-boundaries are not an issue. To request heap memory of different traits, see
-<code>modm::MemoryTraits</code>.</p>
-<div class="admonition note">
-<p class="admonition-title">TLSF has static overhead</p>
-<p>The TLSF implementation has a static overhead of about 1kB per memory trait
-group, however, these can then contain multiple non-continuous memory
-regions. The upside of this large static allocation is very fast allocation
-times of O(1), but we recommend using TLSF only for devices with multiple
-memory regions.</p>
-</div>
-<p>Default: <code>newlib</code><br />
-Inputs: <code>[block, newlib, tlsf]</code><br />
-Input Dependency: <code>block -&gt; modm:architecture:heap</code><br />
-Input Dependency: <code>tlsf -&gt; modm:tlsf</code>  </p>
 <h4 id="linkerscriptflash_offset">linkerscript.flash_offset<a class="headerlink" href="#linkerscriptflash_offset" title="Permanent link">&para;</a></h4>
 <p>Offset of FLASH Section Origin</p>
 <p>Add an offset to the default start address of the flash memory. This might be
@@ -4030,8 +3994,8 @@ main stack, an alignment buffer up to 1kB is added to the main stack.</p>
 &#39;---------------------------------&#39; &lt;-- RAM origin
 </code></pre></div>
 
-<p>Default: <code>3040</code><br />
-Inputs: <code>[256 .. 3040 .. 65536]</code>  </p>
+<p>Default: <code>3*1024 (3072)</code><br />
+Inputs: <code>[256 .. 3*1024 .. 65536]</code>  </p>
 <h4 id="vector_table_location">vector_table_location<a class="headerlink" href="#vector_table_location" title="Permanent link">&para;</a></h4>
 <p>Vector table location in ROM or RAM</p>
 <p>The vector table is always stored in ROM and copied to RAM by the startup script
@@ -4125,18 +4089,18 @@ the total number of vectors in the table!</p>
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: modm:platform:cortex&#45;m Pages: 1 -->
-<svg width="859pt" height="150pt"
- viewBox="0.00 0.00 858.50 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="520pt" height="150pt"
+ viewBox="0.00 0.00 519.50 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 146)">
 <title>modm:platform:cortex&#45;m</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-146 854.5,-146 854.5,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-146 515.5,-146 515.5,4 -4,4"/>
 <!-- modm_platform_cortex_m -->
 <g id="node1" class="node">
 <title>modm_platform_cortex_m</title>
-<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="533.5,-53 450.5,-53 450.5,0 533.5,0 533.5,-53"/>
-<text text-anchor="middle" x="492" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="492" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="492" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">cortex&#45;m</text>
+<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="330.5,-53 247.5,-53 247.5,0 330.5,0 330.5,-53"/>
+<text text-anchor="middle" x="289" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="289" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="289" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">cortex&#45;m</text>
 </g>
 <!-- modm_architecture_assert -->
 <g id="node2" class="node">
@@ -4149,104 +4113,63 @@ the total number of vectors in the table!</p>
 <!-- modm_platform_cortex_m&#45;&gt;modm_architecture_assert -->
 <g id="edge1" class="edge">
 <title>modm_platform_cortex_m&#45;&gt;modm_architecture_assert</title>
-<path fill="none" stroke="#000000" d="M450.4796,-30.354C382.6444,-37.318 243.9832,-54.3477 119.8959,-88.9898"/>
-<polygon fill="#000000" stroke="#000000" points="118.8934,-85.6361 110.2289,-91.7333 120.8046,-92.3701 118.8934,-85.6361"/>
-</g>
-<!-- modm_architecture_heap -->
-<g id="node3" class="node">
-<title>modm_architecture_heap</title>
-<polygon fill="#d3d3d3" stroke="#000000" stroke-dasharray="5,2" points="238,-142 128,-142 128,-89 238,-89 238,-142"/>
-<text text-anchor="middle" x="183" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="183" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
-<text text-anchor="middle" x="183" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">heap</text>
-</g>
-<!-- modm_platform_cortex_m&#45;&gt;modm_architecture_heap -->
-<g id="edge2" class="edge">
-<title>modm_platform_cortex_m&#45;&gt;modm_architecture_heap</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M450.2973,-35.2299C403.1362,-45.5212 324.0109,-64.0503 248.0467,-88.8154"/>
-<polygon fill="#000000" stroke="#000000" points="246.7182,-85.5682 238.3198,-92.0271 248.913,-92.2152 246.7182,-85.5682"/>
+<path fill="none" stroke="#000000" d="M247.2543,-41.3179C214.8225,-52.9489 168.5207,-69.8124 119.5912,-88.819"/>
+<polygon fill="#000000" stroke="#000000" points="118.1462,-85.6257 110.1011,-92.5197 120.6894,-92.1474 118.1462,-85.6257"/>
 </g>
 <!-- modm_architecture_interrupt -->
-<g id="node4" class="node">
+<g id="node3" class="node">
 <title>modm_architecture_interrupt</title>
-<polygon fill="#d3d3d3" stroke="#000000" points="366,-142 256,-142 256,-89 366,-89 366,-142"/>
-<text text-anchor="middle" x="311" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="311" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
-<text text-anchor="middle" x="311" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">interrupt</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="238,-142 128,-142 128,-89 238,-89 238,-142"/>
+<text text-anchor="middle" x="183" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="183" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
+<text text-anchor="middle" x="183" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">interrupt</text>
 </g>
 <!-- modm_platform_cortex_m&#45;&gt;modm_architecture_interrupt -->
-<g id="edge3" class="edge">
+<g id="edge2" class="edge">
 <title>modm_platform_cortex_m&#45;&gt;modm_architecture_interrupt</title>
-<path fill="none" stroke="#000000" d="M450.4749,-46.9184C427.887,-58.0252 399.4743,-71.9961 374.1969,-84.4253"/>
-<polygon fill="#000000" stroke="#000000" points="372.472,-81.3731 365.0426,-88.9266 375.5609,-87.6548 372.472,-81.3731"/>
-</g>
-<!-- modm_architecture_memory -->
-<g id="node5" class="node">
-<title>modm_architecture_memory</title>
-<polygon fill="#d3d3d3" stroke="#000000" points="494,-142 384,-142 384,-89 494,-89 494,-142"/>
-<text text-anchor="middle" x="439" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="439" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
-<text text-anchor="middle" x="439" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">memory</text>
-</g>
-<!-- modm_platform_cortex_m&#45;&gt;modm_architecture_memory -->
-<g id="edge4" class="edge">
-<title>modm_platform_cortex_m&#45;&gt;modm_architecture_memory</title>
-<path fill="none" stroke="#000000" d="M476.0983,-53.2029C471.0672,-61.6513 465.426,-71.1243 460.0904,-80.0841"/>
-<polygon fill="#000000" stroke="#000000" points="456.9999,-78.4332 454.8905,-88.8159 463.0143,-82.0148 456.9999,-78.4332"/>
+<path fill="none" stroke="#000000" d="M257.1965,-53.2029C246.2959,-62.3553 233.9631,-72.7102 222.5267,-82.3125"/>
+<polygon fill="#000000" stroke="#000000" points="220.189,-79.7052 214.781,-88.8159 224.6901,-85.0661 220.189,-79.7052"/>
 </g>
 <!-- modm_cmsis_device -->
-<g id="node6" class="node">
+<g id="node4" class="node">
 <title>modm_cmsis_device</title>
-<polygon fill="#d3d3d3" stroke="#000000" points="577.5,-142 512.5,-142 512.5,-89 577.5,-89 577.5,-142"/>
-<text text-anchor="middle" x="545" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="545" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">cmsis:</text>
-<text text-anchor="middle" x="545" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">device</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="321.5,-142 256.5,-142 256.5,-89 321.5,-89 321.5,-142"/>
+<text text-anchor="middle" x="289" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="289" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">cmsis:</text>
+<text text-anchor="middle" x="289" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">device</text>
 </g>
 <!-- modm_platform_cortex_m&#45;&gt;modm_cmsis_device -->
-<g id="edge5" class="edge">
+<g id="edge3" class="edge">
 <title>modm_platform_cortex_m&#45;&gt;modm_cmsis_device</title>
-<path fill="none" stroke="#000000" d="M507.9017,-53.2029C512.9328,-61.6513 518.574,-71.1243 523.9096,-80.0841"/>
-<polygon fill="#000000" stroke="#000000" points="520.9857,-82.0148 529.1095,-88.8159 527.0001,-78.4332 520.9857,-82.0148"/>
+<path fill="none" stroke="#000000" d="M289,-53.2029C289,-61.2113 289,-70.1403 289,-78.6802"/>
+<polygon fill="#000000" stroke="#000000" points="285.5001,-78.8159 289,-88.8159 292.5001,-78.8159 285.5001,-78.8159"/>
 </g>
 <!-- modm_platform_clock -->
-<g id="node7" class="node">
+<g id="node5" class="node">
 <title>modm_platform_clock</title>
-<polygon fill="#d3d3d3" stroke="#000000" points="678.5,-142 595.5,-142 595.5,-89 678.5,-89 678.5,-142"/>
-<text text-anchor="middle" x="637" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="637" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
-<text text-anchor="middle" x="637" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">clock</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="422.5,-142 339.5,-142 339.5,-89 422.5,-89 422.5,-142"/>
+<text text-anchor="middle" x="381" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="381" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">platform:</text>
+<text text-anchor="middle" x="381" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">clock</text>
 </g>
 <!-- modm_platform_cortex_m&#45;&gt;modm_platform_clock -->
-<g id="edge6" class="edge">
+<g id="edge4" class="edge">
 <title>modm_platform_cortex_m&#45;&gt;modm_platform_clock</title>
-<path fill="none" stroke="#000000" d="M533.5512,-52.0038C550.0844,-62.1518 569.2611,-73.9223 586.5795,-84.5523"/>
-<polygon fill="#000000" stroke="#000000" points="585.0892,-87.7442 595.4428,-89.9924 588.751,-81.7783 585.0892,-87.7442"/>
+<path fill="none" stroke="#000000" d="M316.603,-53.2029C325.882,-62.1793 336.3567,-72.3124 346.1203,-81.7577"/>
+<polygon fill="#000000" stroke="#000000" points="343.7956,-84.3785 353.4164,-88.8159 348.6627,-79.3474 343.7956,-84.3785"/>
 </g>
 <!-- modm_stdc++ -->
-<g id="node8" class="node">
+<g id="node6" class="node">
 <title>modm_stdc++</title>
-<polygon fill="#d3d3d3" stroke="#000000" points="767.5,-134.5 696.5,-134.5 696.5,-96.5 767.5,-96.5 767.5,-134.5"/>
-<text text-anchor="middle" x="732" y="-119.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="732" y="-104.3" font-family="Times,serif" font-size="14.00" fill="#000000">stdc++</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="511.5,-134.5 440.5,-134.5 440.5,-96.5 511.5,-96.5 511.5,-134.5"/>
+<text text-anchor="middle" x="476" y="-119.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="476" y="-104.3" font-family="Times,serif" font-size="14.00" fill="#000000">stdc++</text>
 </g>
 <!-- modm_platform_cortex_m&#45;&gt;modm_stdc++ -->
-<g id="edge7" class="edge">
+<g id="edge5" class="edge">
 <title>modm_platform_cortex_m&#45;&gt;modm_stdc++</title>
-<path fill="none" stroke="#000000" d="M533.5796,-36.7268C573.985,-47.3629 636.598,-65.7124 688,-89 689.7667,-89.8004 691.5508,-90.6561 693.3365,-91.5518"/>
-<polygon fill="#000000" stroke="#000000" points="691.738,-94.666 702.2069,-96.2948 695.0387,-88.493 691.738,-94.666"/>
-</g>
-<!-- modm_tlsf -->
-<g id="node9" class="node">
-<title>modm_tlsf</title>
-<polygon fill="#d3d3d3" stroke="#000000" stroke-dasharray="5,2" points="850.5,-134.5 785.5,-134.5 785.5,-96.5 850.5,-96.5 850.5,-134.5"/>
-<text text-anchor="middle" x="818" y="-119.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="818" y="-104.3" font-family="Times,serif" font-size="14.00" fill="#000000">tlsf</text>
-</g>
-<!-- modm_platform_cortex_m&#45;&gt;modm_tlsf -->
-<g id="edge8" class="edge">
-<title>modm_platform_cortex_m&#45;&gt;modm_tlsf</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M533.5082,-30.8888C590.2695,-37.9309 694.4731,-54.609 777,-89 778.8189,-89.758 780.6456,-90.5969 782.4637,-91.4957"/>
-<polygon fill="#000000" stroke="#000000" points="780.9541,-94.6594 791.4063,-96.3925 784.3162,-88.5197 780.9541,-94.6594"/>
+<path fill="none" stroke="#000000" d="M330.6539,-43.0236C359.5433,-54.8892 398.6646,-71.7693 432,-89 433.5249,-89.7882 435.0693,-90.6077 436.6216,-91.4494"/>
+<polygon fill="#000000" stroke="#000000" points="435.0855,-94.6009 445.5181,-96.448 438.5144,-88.4982 435.0855,-94.6009"/>
 </g>
 </g>
 </svg>

@@ -623,18 +623,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../modm-architecture-heap/" title=":architecture:heap" class="md-nav__link">
-      :architecture:heap
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../modm-architecture-i2c/" title=":architecture:i2c" class="md-nav__link">
       :architecture:i2c
     </a>
@@ -1659,6 +1647,18 @@
   <li class="md-nav__item">
     <a href="../modm-driver-apa102/" title=":driver:apa102" class="md-nav__link">
       :driver:apa102
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-driver-block-allocator/" title=":driver:block.allocator" class="md-nav__link">
+      :driver:block.allocator
     </a>
   </li>
 
@@ -2773,6 +2773,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../modm-platform-heap-avr/" title=":platform:heap (avr)" class="md-nav__link">
+      :platform:heap (avr)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-heap-stm32/" title=":platform:heap (stm32)" class="md-nav__link">
+      :platform:heap (stm32)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../modm-platform-i2c-avr/" title=":platform:i2c (avr)" class="md-nav__link">
       :platform:i2c (avr)
     </a>
@@ -3291,6 +3315,18 @@
                 
                 <h1 id="memory-traits">Memory Traits<a class="headerlink" href="#memory-traits" title="Permanent link">&para;</a></h1>
 <p>lbuild module: <code>modm:architecture:memory</code></p>
+<p>Memories have different traits, such as DMA-ability or access time. The memory
+allocator functions (<code>malloc()</code>, <code>operator new</code>, etc) by default only return
+DMA-able memories, ordered by fastest access time. To allocate memory with
+specific traits, use the overloaded <code>operator new</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">auto</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="p">(</span><span class="n">modm</span><span class="o">::</span><span class="n">MemoryFastData</span><span class="p">)</span> <span class="n">Foo</span><span class="p">;</span>
+<span class="k">auto</span> <span class="o">*</span><span class="n">q</span> <span class="o">=</span> <span class="k">new</span> <span class="p">(</span><span class="n">modm</span><span class="o">::</span><span class="n">MemoryExternal</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">nothrow</span><span class="p">)</span> <span class="n">Foo</span><span class="p">;</span>
+</code></pre></div>
+
+<div class="admonition tip">
+<p class="admonition-title">You need to choose a heap implementation!</p>
+<p>You can include the <code>:platform:heap</code> module or supply your own implementation.</p>
+</div>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
