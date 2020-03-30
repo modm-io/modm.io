@@ -2795,13 +2795,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#linkerscript_1" class="md-nav__link">
-    linkerscript
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#linkerscriptmemory" class="md-nav__link">
     linkerscript.memory
   </a>
@@ -2839,6 +2832,26 @@
           <li class="md-nav__item">
   <a href="#linkerscripttable_externzero" class="md-nav__link">
     linkerscript.table_extern.zero
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#queries" class="md-nav__link">
+    Queries
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linkerscript_1" class="md-nav__link">
+    linkerscript
   </a>
   
 </li>
@@ -3597,13 +3610,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#linkerscript_1" class="md-nav__link">
-    linkerscript
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#linkerscriptmemory" class="md-nav__link">
     linkerscript.memory
   </a>
@@ -3641,6 +3647,26 @@
           <li class="md-nav__item">
   <a href="#linkerscripttable_externzero" class="md-nav__link">
     linkerscript.table_extern.zero
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#queries" class="md-nav__link">
+    Queries
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linkerscript_1" class="md-nav__link">
+    linkerscript
   </a>
   
 </li>
@@ -4042,6 +4068,25 @@ need to fetch from the same access port.</p>
 Default: <code>rom</code> <em>stm32{f1,f2,f3,f4,l1,l4}</em><br />
 Inputs: <code>[ram, rom]</code>  </p>
 <h2 id="collectors">Collectors<a class="headerlink" href="#collectors" title="Permanent link">&para;</a></h2>
+<h4 id="linkerscriptmemory">linkerscript.memory<a class="headerlink" href="#linkerscriptmemory" title="Permanent link">&para;</a></h4>
+<p>Additions to the linkerscript's 'MEMORY'</p>
+<p>Inputs: <code>[String]</code></p>
+<h4 id="linkerscriptprocess_stack_size">linkerscript.process_stack_size<a class="headerlink" href="#linkerscriptprocess_stack_size" title="Permanent link">&para;</a></h4>
+<p>Maximum required size of the process stack</p>
+<p>Inputs: <code>[0 ... +Inf]</code></p>
+<h4 id="linkerscriptsections">linkerscript.sections<a class="headerlink" href="#linkerscriptsections" title="Permanent link">&para;</a></h4>
+<p>Additions to the linkerscript's 'SECTIONS'</p>
+<p>Inputs: <code>[String]</code></p>
+<h4 id="linkerscripttable_externcopy">linkerscript.table_extern.copy<a class="headerlink" href="#linkerscripttable_externcopy" title="Permanent link">&para;</a></h4>
+<p>Additions to the linkerscript's '.table.copy.extern' section</p>
+<p>Inputs: <code>[String]</code></p>
+<h4 id="linkerscripttable_externheap">linkerscript.table_extern.heap<a class="headerlink" href="#linkerscripttable_externheap" title="Permanent link">&para;</a></h4>
+<p>Additions to the linkerscript's '.table.heap' section</p>
+<p>Inputs: <code>[String]</code></p>
+<h4 id="linkerscripttable_externzero">linkerscript.table_extern.zero<a class="headerlink" href="#linkerscripttable_externzero" title="Permanent link">&para;</a></h4>
+<p>Additions to the linkerscript's '.table.zero.extern' section</p>
+<p>Inputs: <code>[String]</code></p>
+<h2 id="queries">Queries<a class="headerlink" href="#queries" title="Permanent link">&para;</a></h2>
 <h4 id="linkerscript_1">linkerscript<a class="headerlink" href="#linkerscript_1" title="Permanent link">&para;</a></h4>
 <p>Computes linkerscript properties
 (* <em>post-build only</em>):</p>
@@ -4065,24 +4110,6 @@ Inputs: <code>[ram, rom]</code>  </p>
 <li><code>ram_origin</code>: Total size of all SRAM regions</li>
 </ul>
 <p>:returns: dictionary of linkerscript properties</p>
-<h4 id="linkerscriptmemory">linkerscript.memory<a class="headerlink" href="#linkerscriptmemory" title="Permanent link">&para;</a></h4>
-<p>Additions to the linkerscript's 'MEMORY'</p>
-<p>Inputs: <code>[String]</code></p>
-<h4 id="linkerscriptprocess_stack_size">linkerscript.process_stack_size<a class="headerlink" href="#linkerscriptprocess_stack_size" title="Permanent link">&para;</a></h4>
-<p>Maximum required size of the process stack</p>
-<p>Inputs: <code>[0 ... +Inf]</code></p>
-<h4 id="linkerscriptsections">linkerscript.sections<a class="headerlink" href="#linkerscriptsections" title="Permanent link">&para;</a></h4>
-<p>Additions to the linkerscript's 'SECTIONS'</p>
-<p>Inputs: <code>[String]</code></p>
-<h4 id="linkerscripttable_externcopy">linkerscript.table_extern.copy<a class="headerlink" href="#linkerscripttable_externcopy" title="Permanent link">&para;</a></h4>
-<p>Additions to the linkerscript's '.table.copy.extern' section</p>
-<p>Inputs: <code>[String]</code></p>
-<h4 id="linkerscripttable_externheap">linkerscript.table_extern.heap<a class="headerlink" href="#linkerscripttable_externheap" title="Permanent link">&para;</a></h4>
-<p>Additions to the linkerscript's '.table.heap' section</p>
-<p>Inputs: <code>[String]</code></p>
-<h4 id="linkerscripttable_externzero">linkerscript.table_extern.zero<a class="headerlink" href="#linkerscripttable_externzero" title="Permanent link">&para;</a></h4>
-<p>Additions to the linkerscript's '.table.zero.extern' section</p>
-<p>Inputs: <code>[String]</code></p>
 <h4 id="vector_table">vector_table<a class="headerlink" href="#vector_table" title="Permanent link">&para;</a></h4>
 <p>Computes vector table properties:</p>
 <ul>

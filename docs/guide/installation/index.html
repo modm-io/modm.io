@@ -3356,11 +3356,12 @@
 with modm:</p>
 <ul>
 <li><a href="http://www.python.org/">Python 3</a></li>
-<li><a href="http://www.scons.org/">Software Construct</a></li>
+<li><a href="https://www.scons.org">Software Construct</a> or <a href="https://www.cmake.org">CMake</a></li>
 <li><a href="https://github.com/modm-io/lbuild">Library Builder</a></li>
-<li>AVR toolchain: <a href="http://www.nongnu.org/avr-libc">avr-gcc</a> and <a href="http://www.nongnu.org/avrdude">avrdude</a></li>
+<li>AVR toolchain: <a href="https://www.nongnu.org/avr-libc">avr-gcc</a> and <a href="https://www.nongnu.org/avrdude">avrdude</a></li>
 <li>ARM toolchain: <a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm">gcc-arm-toolchain</a> and <a href="http://openocd.org">OpenOCD</a>.</li>
-<li><a href="http://www.doxygen.nl">Doxygen</a></li>
+<li>Optional: <a href="http://www.doxygen.nl">Doxygen</a> or <a href="https://www.copperspice.com/documentation-doxypress.html">Doxypress</a></li>
+<li>Optional: <a href="https://www.gdbgui.com">gdbgui</a> for IDE-independent debugging</li>
 </ul>
 <p>Note that the modm examples use the SCons build system by default, however,
 you are not <em>required</em> to use it. See <a href="../../reference/build-systems">the reference manual</a> for
@@ -3402,10 +3403,17 @@ brew install openocd --HEAD
 </code></pre></div>
 
 
-<p>scons now works with Python 3. Unfortunately, macOS still defaults to Python 2.
+<p>We recommend the use of a graphical frontend for GDB called <a href="https://www.gdbgui.com">gdbgui</a>:</p>
+<div class="codehilite"><pre><span></span><code>pip3 install gdbgui
+</code></pre></div>
+
+
+<p>SCons now works with Python 3. Unfortunately, macOS still defaults to Python 2.
 For a less intrusive way to run all scons scripts with Python 3 add this to your
 <code>.bashrc</code> or <code>.zshrc</code>:</p>
 <div class="codehilite"><pre><span></span><code>alias scons=&quot;/usr/bin/env python3 $(which scons)&quot;
+# or if your using scons elsewhere too:
+alias scons3=&quot;/usr/bin/env python3 $(which scons)&quot;
 </code></pre></div>
 
 
@@ -3438,13 +3446,18 @@ For a less intrusive way to run all scons scripts with Python 3 add this to your
 <div class="admonition bug">
 <p class="admonition-title">avr-gcc on Ubuntu</p>
 <p>Ubuntu does not provide an up-to-date version of avr-gcc that supports C++17.
-For our CI we've created a <a href="https://github.com/salkinium/docker-avr-gcc/releases">precompiled version of avr-gcc for Ubuntu</a>.
-Use at your own risk.</p>
+For our CI we've created a <a href="https://github.com/modm-ext/docker-avr-gcc/releases">precompiled version of avr-gcc for Ubuntu</a>.
+Unfortunately its path is hardcoded to <code>/work/avr-gcc</code>.</p>
 </div>
 <p>Install the ARM toochain by downloading <a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm">the pre-built version</a>
 for 64-bit Linux and adding its <code>/bin</code> directory to your path.
-Even though your distribution may ship their own ARM toolchain, we <em>very strongly
-recommend</em> using the official toolchain, since all of modm is tested with it.</p>
+<strong>Even though your distribution may ship their own ARM toolchain, we very strongly
+recommend using the official toolchain, since all of modm is tested with it.</strong></p>
+<p>We recommend the use of a graphical frontend for GDB called <a href="https://www.gdbgui.com">gdbgui</a>:</p>
+<div class="codehilite"><pre><span></span><code>pip3 install gdbgui
+</code></pre></div>
+
+
 <p>To compile modm <em>for Linux</em> (and not the embedded target) you need to install
 some of these libraries as well, depending on what modm modules you use:</p>
 <div class="codehilite"><pre><span></span><code>sudo apt-get install gcc build-essential libboost-all-dev libzmqpp-dev
@@ -3452,27 +3465,36 @@ some of these libraries as well, depending on what modm modules you use:</p>
 
 
 <h2 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h2>
-<p>We will use <a href="https://www.anaconda.com/">Anaconda</a> (<a href="http://conda.pydata.org/miniconda.html">Miniconda</a> <a href="https://docs.conda.io/en/latest/miniconda.html#windows-installers">Windows installation</a> is sufficient) to create a new Python 3 environment and install all
-necessary packages:</p>
+<p>We will use <a href="https://www.anaconda.com">Anaconda</a> (<a href="https://docs.conda.io/en/latest/miniconda.html#windows-installers">Miniconda Windows installation</a> is
+sufficient) to create a new Python 3 environment and install all necessary
+packages:</p>
 <div class="codehilite"><pre><span></span><code>conda create --name modm python=3 pip
 activate modm
 conda install -c conda-forge git
-pip install jinja2 scons future pyelftools lbuild
+pip install jinja2 scons future pyelftools lbuild gdbgui
 </code></pre></div>
 
 
 <p>For ARM development install the Windows 32-bit build of the <a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm">GNU Arm Embedded
 Toolchain</a>. For programming and debugging ARM Cortex-M
-devices install the pre-build <a href="http://gnutoolchains.com/arm-eabi/openocd/">OpenOCD binaries</a>.
+devices install the pre-build <a href="https://gnutoolchains.com/arm-eabi/openocd">OpenOCD binaries</a>.
 You'll need to add both <code>/bin</code> paths to your <code>PATH</code> variable manually.</p>
 <div class="admonition warning">
 <p class="admonition-title">For non-English speakers</p>
-<p>For now project and build paths containing non-ASCII characters are not parsed correctly.</p>
+<p>For now project and build paths containing non-ASCII characters are not
+parsed correctly.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Windows paths</p>
+<p>Windows created maximal incompatibility with it's <code>\</code> path separator.
+Even though we try hard to not hardcode the path separator, there may still
+be issues related to this. <a href="https://github.com/modm-io/modm/issues/new">Please open an issue</a> in that case.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Dear Windows users</p>
-<p>We don't regularly use Windows with modm, so we rely on YOU to keep these install instructions
-working and up-to-date. Please <a href="https://github.com/modm-io/modm/blob/develop/CONTRIBUTING.md">open a PR with improvements</a>.</p>
+<p>We don't regularly use Windows with modm, so we rely on YOU to keep these
+install instructions working and up-to-date. Please <a href="https://github.com/modm-io/modm/blob/develop/CONTRIBUTING.md">open a PR with
+improvements</a>.</p>
 </div>
                 
                   

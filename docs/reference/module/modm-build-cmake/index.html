@@ -1205,55 +1205,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#make-build-release" class="md-nav__link">
-    make build-release
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#make-build-debug" class="md-nav__link">
-    make build-debug
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#make-upload-release" class="md-nav__link">
-    make upload-release
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#make-upload-debug" class="md-nav__link">
-    make upload-debug
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#make-gdb" class="md-nav__link">
-    make gdb
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#make-gdb-release" class="md-nav__link">
-    make gdb-release
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#make-openocd" class="md-nav__link">
-    make openocd
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#make-clean" class="md-nav__link">
     make clean
   </a>
@@ -1263,6 +1214,55 @@
           <li class="md-nav__item">
   <a href="#make-cleanall" class="md-nav__link">
     make cleanall
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-build" class="md-nav__link">
+    make build
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-size" class="md-nav__link">
+    make size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-program" class="md-nav__link">
+    make program
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-program-bmp" class="md-nav__link">
+    make program-bmp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-debug" class="md-nav__link">
+    make debug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-debug-coredump" class="md-nav__link">
+    make debug-coredump
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-log-itm" class="md-nav__link">
+    make log-itm
   </a>
   
 </li>
@@ -3440,55 +3440,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#make-build-release" class="md-nav__link">
-    make build-release
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#make-build-debug" class="md-nav__link">
-    make build-debug
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#make-upload-release" class="md-nav__link">
-    make upload-release
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#make-upload-debug" class="md-nav__link">
-    make upload-debug
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#make-gdb" class="md-nav__link">
-    make gdb
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#make-gdb-release" class="md-nav__link">
-    make gdb-release
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#make-openocd" class="md-nav__link">
-    make openocd
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#make-clean" class="md-nav__link">
     make clean
   </a>
@@ -3498,6 +3449,55 @@
           <li class="md-nav__item">
   <a href="#make-cleanall" class="md-nav__link">
     make cleanall
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-build" class="md-nav__link">
+    make build
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-size" class="md-nav__link">
+    make size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-program" class="md-nav__link">
+    make program
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-program-bmp" class="md-nav__link">
+    make program-bmp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-debug" class="md-nav__link">
+    make debug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-debug-coredump" class="md-nav__link">
+    make debug-coredump
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-log-itm" class="md-nav__link">
+    make log-itm
   </a>
   
 </li>
@@ -3604,16 +3604,23 @@ see the <code>modm:build:scons</code> module.</p>
 <div class="admonition note">
 <p class="admonition-title">You must call this once before you can build!</p>
 <p>If you forget to call this first, the build will fail with this error message:</p>
-<div class="codehilite"><pre><span></span><code> $ make build-release
+<div class="codehilite"><pre><span></span><code> $ make build
 Error: build/cmake-build-release is not a directory
 make: *** [build-release] Error 1
 </code></pre></div>
 
 </div>
-<h4 id="make-build-release">make build-release<a class="headerlink" href="#make-build-release" title="Permanent link">&para;</a></h4>
-<h4 id="make-build-debug">make build-debug<a class="headerlink" href="#make-build-debug" title="Permanent link">&para;</a></h4>
+<h4 id="make-clean">make clean<a class="headerlink" href="#make-clean" title="Permanent link">&para;</a></h4>
+<p>Removes the CMake build artifacts.</p>
+<h4 id="make-cleanall">make cleanall<a class="headerlink" href="#make-cleanall" title="Permanent link">&para;</a></h4>
+<p>Removes the entire build folder. You must then first call <code>make cmake</code> before
+being able to build again.</p>
+<h4 id="make-build">make build<a class="headerlink" href="#make-build" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>make build profile={debug|release}
+</code></pre></div>
+
 <p>Compiles your application into an executable using the release or debug profile.</p>
-<div class="codehilite"><pre><span></span><code> $ make build-release
+<div class="codehilite"><pre><span></span><code> $ make build profile=release
 Scanning dependencies of target blink_cmake
 [  3%] Building C object CMakeFiles/blink_cmake.dir/modm/ext/cmsis/device/peripherals.c.o
 [  7%] Building CXX object CMakeFiles/blink_cmake.dir/modm/src/modm/architecture/driver/atomic/flag.cpp.o
@@ -3628,13 +3635,31 @@ Scanning dependencies of target blink_cmake
 [100%] Built target blink_cmake.lss
 </code></pre></div>
 
-<h4 id="make-upload-release">make upload-release<a class="headerlink" href="#make-upload-release" title="Permanent link">&para;</a></h4>
-<h4 id="make-upload-debug">make upload-debug<a class="headerlink" href="#make-upload-debug" title="Permanent link">&para;</a></h4>
-<p>Writes the executable onto your target via AvrDude or OpenOCD.
-This is a convenience wrapper around the programming options and methods
-defined in the <code>modm:build</code> module.
-(* <em>only AVR and ARM Cortex-M targets</em>)</p>
-<div class="codehilite"><pre><span></span><code> $ make upload-release
+<h4 id="make-size">make size<a class="headerlink" href="#make-size" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>make size profile={debug|release}
+</code></pre></div>
+
+<p>Displays the static Flash and RAM consumption of your target.</p>
+<p>Example for the Blue Pill target:</p>
+<div class="codehilite"><pre><span></span><code> $ make size
+
+Program:   1.4 KiB (2.2% used)
+(.build_id + .fastcode + .fastdata + .hardware_init + .rodata +
+ .table.copy.intern + .table.heap + .table.zero.intern + .text + .vector_rom)
+
+Data:      3.0 KiB (15.1% used) = 20 B static (0.1%) + 3072 B stack (15.0%)
+(.bss + .fastdata + .stack)
+
+Heap:     17.0 KiB (84.9% available)
+(.heap1)
+</code></pre></div>
+
+<h4 id="make-program">make program<a class="headerlink" href="#make-program" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>make program profile={debug|release} [port={serial-port}]
+</code></pre></div>
+
+<p>Writes the executable onto your target via AvrDude or OpenOCD.</p>
+<div class="codehilite"><pre><span></span><code> $ make program
 [100%] Built target blink_cmake
 [100%] Built target blink_cmake.bin
 [100%] Built target blink_cmake.hex
@@ -3658,21 +3683,47 @@ verified 1652 bytes in 0.104584s (15.426 KiB/s)
 shutdown command invoked
 </code></pre></div>
 
-<h4 id="make-gdb">make gdb<a class="headerlink" href="#make-gdb" title="Permanent link">&para;</a></h4>
-<h4 id="make-gdb-release">make gdb-release<a class="headerlink" href="#make-gdb-release" title="Permanent link">&para;</a></h4>
-<p>Launches GDB with the debug or release executable.
-This is just a convenience wrapper for the debug functionality defined in the
-<code>modm:build</code> module.
+<h4 id="make-program-bmp">make program-bmp<a class="headerlink" href="#make-program-bmp" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>make program-bmp profile={debug|release} [port={serial-port}]
+</code></pre></div>
+
+<p>Writes the executable onto your target via Black Magic Probe.
 (* <em>only ARM Cortex-M targets</em>)</p>
-<p><strong>OpenOCD must already be running in the background</strong>. Launch it by manually
-calling <code>make openocd</code> in another terminal.</p>
-<h4 id="make-openocd">make openocd<a class="headerlink" href="#make-openocd" title="Permanent link">&para;</a></h4>
-<p>Starts OpenOCD with the modm specific configuration.</p>
-<h4 id="make-clean">make clean<a class="headerlink" href="#make-clean" title="Permanent link">&para;</a></h4>
-<p>Removes the CMake build artifacts.</p>
-<h4 id="make-cleanall">make cleanall<a class="headerlink" href="#make-cleanall" title="Permanent link">&para;</a></h4>
-<p>Removes the entire build folder. You must then first call <code>make cmake</code> before
-being able to build again.</p>
+<h4 id="make-debug">make debug<a class="headerlink" href="#make-debug" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>make debug profile={debug|release} ui={tui|web}
+</code></pre></div>
+
+<p>Launches OpenOCD in the background, then launches GDB in foreground with the
+correct executable with text-based or <a href="gdbgui">web-based gdbgui</a> UI. When GDB
+exits, it stops the OpenOCD process.
+(* <em>only ARM Cortex-M targets</em>)</p>
+<p>To use gdbgui you must have it installed via <code>pip install gdbgui</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Choose the correct profile</p>
+<p>When debugging, make sure to select the correct compilation profile. The
+firmware and the executable given to GDB have to be the some or you'll see
+GDB translate the program counter to the wrong code locations. When you
+suspect a bug in your firmware, consider that it was most likely compiled
+with the release profile, since that's the default. First try to
+<code>make debug profile=release</code>, and if that doesn't help, compile and
+<code>make program profile=debug</code> and try <code>make debug profile=debug</code> again.</p>
+</div>
+<h4 id="make-debug-coredump">make debug-coredump<a class="headerlink" href="#make-debug-coredump" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>make debug-coredump profile={debug|release} ui={tui|web}
+</code></pre></div>
+
+<p>Launches GDB for post-mortem debugging with the using the data in the
+<code>coredump.txt</code> argument.
+(* <em>only ARM Cortex-M targets</em>)</p>
+<p>See the <code>:platform:fault</code> module for details how to receive the coredump data.</p>
+<h4 id="make-log-itm">make log-itm<a class="headerlink" href="#make-log-itm" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>make log-itm fcpu={HCLK in Hz}
+</code></pre></div>
+
+<p>Configures OpenOCD in tracing mode to output ITM channel 0 on SWO pin and
+displays the serial output stream.</p>
+<p>See the <code>:platform:itm</code> module for details how to use the ITM as a logging
+output.</p>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <h4 id="include_cmakelists">include_cmakelists<a class="headerlink" href="#include_cmakelists" title="Permanent link">&para;</a></h4>
 <p>Generate a CMakeLists.txt</p>
