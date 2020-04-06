@@ -2642,6 +2642,33 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#blocking-delay" class="md-nav__link">
+    Blocking Delay
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    Options
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#f_cpu" class="md-nav__link">
+    f_cpu
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dependencies" class="md-nav__link">
     Dependencies
   </a>
@@ -3302,6 +3329,33 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#blocking-delay" class="md-nav__link">
+    Blocking Delay
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    Options
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#f_cpu" class="md-nav__link">
+    f_cpu
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dependencies" class="md-nav__link">
     Dependencies
   </a>
@@ -3327,9 +3381,40 @@
                 
                 <h1 id="avr-core">AVR Core<a class="headerlink" href="#avr-core" title="Permanent link">&para;</a></h1>
 <p>lbuild module: <code>modm:platform:core</code></p>
-<p>Implements the interfaces defined in the <code>:architecture</code> modules.
-Adds the <code>-mmcu={target}</code> compile flag.</p>
+<p>Implements the interfaces defined in the <code>:architecture</code> modules. Adds the
+<code>-mmcu={target}</code> compile flag and the <code>F_CPU={core frequency}</code> define.</p>
+<h2 id="blocking-delay">Blocking Delay<a class="headerlink" href="#blocking-delay" title="Permanent link">&para;</a></h2>
+<p>The delay functions as defined by <code>modm:architecture:delay</code> and called with a
+<strong>constant value</strong> are implemented directly via GCC's
+<code>__builtin_avr_delay_cycles(ns / (1e9 / F_CPU))</code>. Constant delays are therefore
+fairly accurate.</p>
+<p>For delays with a dynamic time, the following limitations apply for nanoseconds:</p>
+<ul>
+<li>The input is limited to 16-bit nanoseconds, so ~65 microseconds.</li>
+<li>The minimum delay is between 5-10 cycles, so even at the fastest clock rate of
+  32MHz a delay below ~250ns is not possible. At 8MHz delays less than 1us are
+  not possible.</li>
+<li>For longer delays, the 3-cycle <code>_delay_loop_1(loops)</code> is used and the number
+  of loops should be calculated by dividing the input value by <code>ns_per_loop =
+  3e9/F_CPU</code>. However, division is prohibitively slow and thus very coarsly
+  approximated by shifting the input: <code>ns &gt;&gt; ceil(log_2(ns_per_loop))</code>. This is
+  only accurate for <code>3e9/2^7</code> = 23.4MHz, 11.7MHz, 5.8MHz, etc. For all other
+  clock speeds the error is bound by a factor of 2, so the delay is at most
+  twice as long as expected.</li>
+</ul>
+<p>For micro- and milliseconds delays with dynamic time:</p>
+<ul>
+<li>Microseconds delay is implemented fairly accurately in 1us steps with a
+  maximum time delay of 65ms for clocks larger than 6MHz, or .</li>
+<li>Millisecond delay is implemented fairly accurately in 1ms steps on 32-bits of
+  input time.</li>
+</ul>
 <p><em>This module is only available for avr.</em></p>
+<h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
+<h4 id="f_cpu">f_cpu<a class="headerlink" href="#f_cpu" title="Permanent link">&para;</a></h4>
+<p>CPU clock frequency</p>
+<p>Default: <code>None</code><br />
+Inputs: <code>[1 ... 32000000]</code>  </p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"

@@ -2740,15 +2740,22 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#compiler-options" class="md-nav__link">
-    Compiler Options
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blocking-delay" class="md-nav__link">
+    Blocking Delay
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#compiler-options" class="md-nav__link">
+    Compiler Options
+  </a>
   
 </li>
       
@@ -3555,15 +3562,22 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#compiler-options" class="md-nav__link">
-    Compiler Options
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blocking-delay" class="md-nav__link">
+    Blocking Delay
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#compiler-options" class="md-nav__link">
+    Compiler Options
+  </a>
   
 </li>
       
@@ -3969,7 +3983,18 @@ and paste the result <em>as is</em> into the linkerscripts. No input validation 
 performed, so if you receive linker errors with your additions, please check
 the GNU LD documentation first.</p>
 </div>
-<h3 id="compiler-options">Compiler Options<a class="headerlink" href="#compiler-options" title="Permanent link">&para;</a></h3>
+<h2 id="blocking-delay">Blocking Delay<a class="headerlink" href="#blocking-delay" title="Permanent link">&para;</a></h2>
+<p>The delay functions as defined by <code>modm:architecture:delay</code> are implemented via
+software loop or hardware cycle counter (via DWT-&gt;CYCCNT, not available on
+ARMv6-M devices) and have the following limitations:</p>
+<ul>
+<li>nanosecond delay is implemented as a tight loop with better than 100ns
+  resolution and accuracy at any CPU frequency.</li>
+<li>microsecond delay has a maximum delay of 10 seconds.</li>
+<li>millisecond delay is implemented via <code>modm::delay_us(ms * 1000)</code>, thus also
+  has a maximum delay of 10 seconds.</li>
+</ul>
+<h2 id="compiler-options">Compiler Options<a class="headerlink" href="#compiler-options" title="Permanent link">&para;</a></h2>
 <p>This module adds these architecture specific <a href="https://gcc.gnu.org/onlinedocs/gcc/Option-Summary.html">compiler options</a>:</p>
 <ul>
 <li><code>-mcpu=cortex-m{type}</code>: the target to compile for.</li>
