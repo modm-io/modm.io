@@ -740,7 +740,11 @@
      <lastmod>2020-04-09</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://modm.io/reference/module/modm-platform-clock/</loc>
+     <loc>http://modm.io/reference/module/modm-platform-clock-avr/</loc>
+     <lastmod>2020-04-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>http://modm.io/reference/module/modm-platform-clock-stm32/</loc>
      <lastmod>2020-04-09</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -845,10 +849,6 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>http://modm.io/reference/module/modm-platform-spi-bitbang/</loc>
-     <lastmod>2020-04-09</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>http://modm.io/reference/module/modm-platform-systick/</loc>
      <lastmod>2020-04-09</lastmod>
      <changefreq>daily</changefreq>
     </url><url>

@@ -2591,8 +2591,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../modm-platform-clock/" title=":platform:clock" class="md-nav__link">
-      :platform:clock
+    <a href="../modm-platform-clock-avr/" title=":platform:clock (avr)" class="md-nav__link">
+      :platform:clock (avr)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-clock-stm32/" title=":platform:clock (stm32)" class="md-nav__link">
+      :platform:clock (stm32)
     </a>
   </li>
 
@@ -2915,18 +2927,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../modm-platform-systick/" title=":platform:systick" class="md-nav__link">
-      :platform:systick
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../modm-platform-timer/" title=":platform:timer" class="md-nav__link">
       :platform:timer
     </a>
@@ -3074,15 +3074,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#timeouts" class="md-nav__link">
-    Timeouts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#periodic-timers" class="md-nav__link">
-    Periodic Timers
+  <a href="#resolution" class="md-nav__link">
+    Resolution
   </a>
   
 </li>
@@ -3316,15 +3309,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#timeouts" class="md-nav__link">
-    Timeouts
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#periodic-timers" class="md-nav__link">
-    Periodic Timers
+  <a href="#resolution" class="md-nav__link">
+    Resolution
   </a>
   
 </li>
@@ -3355,129 +3341,166 @@
                 
                 <h1 id="software-timers">Software Timers<a class="headerlink" href="#software-timers" title="Permanent link">&para;</a></h1>
 <p>lbuild module: <code>modm:processing:timer</code></p>
-<p>An implementation of lightweight software timeouts and periodic timers.</p>
-<ul>
-<li><code>modm::Timestamp</code> containing a time in millisecond resolution up to 49 days.</li>
-<li><code>modm::Timeout</code> for timeouts up to 24 days.</li>
-<li><code>modm::PeriodicTimer</code> for periodic timeouts up to 24 days periods.</li>
-</ul>
-<p>There are also 16-bit versions of these, in case you need to preserve memory:</p>
-<ul>
-<li><code>modm::ShortTimestamp</code> containing a time in millisecond resolution up to 65 seconds.</li>
-<li><code>modm::ShortTimeout</code> for timeouts up to 32 seconds.</li>
-<li><code>modm::ShortPeriodicTimer</code> for periodic timeouts up to 32 second periods.</li>
-</ul>
-<p>These classes default to using <code>modm::Clock</code>, which must be implemented on your
-system to return a time with millisecond resolution.</p>
-<p>You may also create your own timers with custom time bases and resolutions
-using these classes:</p>
-<ul>
-<li><code>modm::GenericTimestamp</code>.</li>
-<li><code>modm::GenericTimeout</code>.</li>
-<li><code>modm::GenericPeriodicTimer</code>.</li>
-</ul>
+<p>This module provides polling based software timers for executing code after a
+delay or periodically in millisecond resolution via <code>modm::Clock</code> and in
+microsecond resolution via <code>modm::PreciseClock</code>.</p>
+<p>To delay or delegate execution to the future, you can use <code>modm::Timeout</code> to set
+a duration after which the timeout expires and executes your code:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">modm</span><span class="o">::</span><span class="n">Timeout</span> <span class="n">timeout</span><span class="p">{</span><span class="mi">100</span><span class="n">ms</span><span class="p">};</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">not</span> <span class="n">timeout</span><span class="p">.</span><span class="n">isExpired</span><span class="p">())</span> <span class="p">;</span>
+<span class="c1">// your code after a delay</span>
+</code></pre></div>
+
+<p>However, this construct is not very useful, particularly since you could also
+simply use <code>modm::delay(100ms)</code> for this, so instead use the <code>execute()</code>
+method to poll non-blockingly for expiration:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">modm</span><span class="o">::</span><span class="n">Timeout</span> <span class="n">timeout</span><span class="p">{</span><span class="mi">100</span><span class="n">ms</span><span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">update</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">timeout</span><span class="p">.</span><span class="n">execute</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// your code after a expiration</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// You must call the update() function in your main loop now!</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">update</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>The <code>execute()</code> method returns true only once after expiration, so it can be
+continuously polled somewhere in your code. A more comfortable use-case is to
+use a <code>modm::Timeout</code> inside a class that needs to provide some asynchronous
+method for timekeeping:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">DelayEvents</span>
+<span class="p">{</span>
+    <span class="n">modm</span><span class="o">::</span><span class="n">Timeout</span> <span class="n">timeout</span><span class="p">;</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">event</span><span class="p">()</span> <span class="p">{</span> <span class="n">timeout</span><span class="p">.</span><span class="n">restart</span><span class="p">(</span><span class="mi">100</span><span class="n">ms</span><span class="p">);</span> <span class="p">}</span>
+    <span class="kt">void</span> <span class="n">update</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">timeout</span><span class="p">.</span><span class="n">execute</span><span class="p">())</span> <span class="p">{</span>
+            <span class="c1">// delegated code here</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>However, for more complex use-cases, these classes are intended to be used with
+Protothreads (from module <code>modm:processing:protothread</code>) or Resumable Functions
+(from module <code>modm:processing:resumable</code>) to implement non-blocking delays.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">FancyDelayEvents</span> <span class="o">:</span> <span class="k">public</span> <span class="n">modm</span><span class="o">::</span><span class="n">pt</span><span class="o">::</span><span class="n">Protothread</span>
+<span class="p">{</span>
+    <span class="n">modm</span><span class="o">::</span><span class="n">Timeout</span> <span class="n">timeout</span><span class="p">;</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">event</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="o">-&gt;</span><span class="n">restart</span><span class="p">();</span> <span class="c1">// restart entire protothread</span>
+    <span class="p">}</span>
+    <span class="kt">bool</span> <span class="n">update</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">PT_BEGIN</span><span class="p">();</span>
+
+        <span class="c1">// pre-delay computation</span>
+        <span class="n">timeout</span><span class="p">.</span><span class="n">restart</span><span class="p">(</span><span class="mi">100</span><span class="n">ms</span><span class="p">);</span>
+        <span class="n">PT_WAIT_UNTIL</span><span class="p">(</span><span class="n">timeout</span><span class="p">.</span><span class="n">isExpired</span><span class="p">());</span>
+        <span class="c1">// post-delay computation</span>
+
+        <span class="n">PT_END</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>For periodic timeouts, you could simply restart the timeout, however, the
+<code>restart()</code> method schedules a timeout from the <em>current</em> time onwards:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span> <span class="nf">update</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">timeout</span><span class="p">.</span><span class="n">execute</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// delayed code</span>
+        <span class="n">timeout</span><span class="p">.</span><span class="n">restart</span><span class="p">();</span> <span class="c1">// restarts but with *current* time!!!</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>This can lead to longer period than required, particularly in a system that has
+a lot to do and cannot service every timeout immediately. The solution is to use
+a <code>modm::PeriodicTimer</code>, which only reimplements the <code>execute()</code> method to
+automatically restart the timer, by adding the interval to the <em>old</em> time, thus
+keeping the period accurate:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">modm</span><span class="o">::</span><span class="n">PeriodicTimer</span> <span class="n">timer</span><span class="p">{</span><span class="mi">100</span><span class="n">ms</span><span class="p">};</span>
+<span class="kt">void</span> <span class="nf">update</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">timer</span><span class="p">.</span><span class="n">execute</span><span class="p">())</span> <span class="c1">// automatically restarts</span>
+    <span class="p">{</span>
+        <span class="c1">// blink an LED or something</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>The <code>execute()</code> method actually returns the number of missed periods, so that in
+a heavily congested system you do not need to keep track of time yourself. This
+can be particularly useful when dealing with soft-time physical systems like LED
+animations or control loops:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">modm</span><span class="o">::</span><span class="n">PeriodicTimer</span> <span class="n">timer</span><span class="p">{</span><span class="mi">1</span><span class="n">ms</span><span class="p">};</span> <span class="c1">// render at 1kHz ideally</span>
+<span class="kt">void</span> <span class="nf">update</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// call only once regarless of the number of periods</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">const</span> <span class="kt">size_t</span> <span class="n">periods</span> <span class="o">=</span> <span class="n">timer</span><span class="p">.</span><span class="n">execute</span><span class="p">();</span> <span class="n">periods</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">animation</span><span class="p">.</span><span class="n">step</span><span class="p">(</span><span class="n">periods</span><span class="p">);</span> <span class="c1">// still compute the missing steps</span>
+        <span class="n">animation</span><span class="p">.</span><span class="n">render</span><span class="p">();</span>      <span class="c1">// but only render once please</span>
+    <span class="p">}</span>
+    <span class="c1">// or alternatively to call the code the number of missed periods</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">periods</span><span class="p">{</span><span class="n">timer</span><span class="p">.</span><span class="n">execute</span><span class="p">()};</span> <span class="n">periods</span><span class="p">;</span> <span class="n">periods</span><span class="o">--</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// periods is decreasing!</span>
+    <span class="p">}</span>
+    <span class="c1">// This is fine, since execute() is evaluated only once!</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">periods</span> <span class="p">:</span> <span class="n">modm</span><span class="o">::</span><span class="n">range</span><span class="p">(</span><span class="n">timer</span><span class="p">.</span><span class="n">execute</span><span class="p">()))</span>
+    <span class="p">{</span>
+        <span class="c1">// periods is increasing!</span>
+    <span class="p">}</span>
+    <span class="c1">// THIS WILL NOT WORK, since execute() reschedules itself immediately!</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">periods</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span> <span class="n">periods</span> <span class="o">&lt;</span> <span class="n">timer</span><span class="p">.</span><span class="n">execute</span><span class="p">();</span> <span class="n">periods</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// called at most only once!!! periods == 0 always!</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Never use these classes when a precise timebase is needed!</p>
+<p class="admonition-title">DO NOT use for hard real time systems!</p>
+<p>You are responsible for polling these timers <code>execute()</code> methods as often as
+required. If you need to meed hard real time deadlines these are not the
+timers you are looking for!</p>
 </div>
-<h2 id="timeouts">Timeouts<a class="headerlink" href="#timeouts" title="Permanent link">&para;</a></h2>
-<p>The <code>modm::GenericTimeout</code> classes allow for a signal to be generated after a
-period of time, which can also be used to execute code once after timeout
-expiration.</p>
-<p>Its behavior can be described by the following annotated waveform:</p>
+<div class="admonition note">
+<p class="admonition-title">Timers are stopped by default!</p>
+<p>If you want to start a timer at construction time, give the constructor a
+duration. Duration Zero will expire the timer immediately</p>
+</div>
+<h2 id="resolution">Resolution<a class="headerlink" href="#resolution" title="Permanent link">&para;</a></h2>
+<p>Two timer resolutions are available, using <code>modm::Clock</code> for milliseconds and
+<code>modm::PreciseClock</code> for microseconds. They follow the same naming scheme:</p>
 <ul>
-<li>C: Default Constructor</li>
-<li>S: (Re-)Start timeout</li>
-<li>E: Timeout Expired</li>
-<li>H: Code handler (<code>execute()</code> returned <code>true</code>)</li>
-<li>P: Stop timeout</li>
+<li><code>modm::Timeout</code>, <code>modm::PeriodicTimer</code>: 49 days in milliseconds and 8 bytes.</li>
+<li><code>modm::PreciseTimeout</code>, <code>modm::PrecisePeriodicTimer</code>: 71 mins in microseconds
+  and 8 bytes.</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>Event:    C      S      E     H       P            S          E H
-                         _____________                         ______________
-Expired:  ______________/             \_______________________/              ...
-                  ______                            __________
-Armed:    _______/      \__________________________/          \______________...
-          _______                      ____________
-Stopped:         \____________________/            \_________________________...
-
-                              _                                 _
-Handle:   ___________________/ \_______________________________/ \___________...
-
-Remaining:   0  |   +   |      -      |     0      |     +     |   -
-
-     time ——————&gt;
-</code></pre></div>
-
-<p>The default constructor initializes the timeout in the <code>Stopped</code> state,
-in which <code>isExpired()</code> and <code>execute()</code> never return <code>true</code>.
-If you need a timeout to expire immidiately after construction, you need
-to explicitly initialize the constructor with time <code>0</code>, which has the
-same behavior as <code>restart(0)</code>.</p>
-<p>If you want to execute code once after the timeout expired, poll the
-<code>execute()</code> method, which returns <code>true</code> exactly once after expiration.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="n">timeout</span><span class="p">.</span><span class="n">execute</span><span class="p">())</span>
-<span class="p">{</span>
-    <span class="c1">// called once after timeout</span>
-    <span class="n">Led</span><span class="o">::</span><span class="n">toggle</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></div>
-
-<p>Be aware, however, that since this method is polled, it cannot execute
-exactly at the time of expiration, but some time after expiration, as
-indicated in the above waveform graph.</p>
-<p>The <code>remaining()</code> time until expiration is signed positive before, and
-negative after expiration. This means <code>Clock::now() + Timeout::remaining()</code>
-will yield the timestamp of the expiration.
-If the timeout is stopped, <code>remaining()</code> returns zero.</p>
-<h2 id="periodic-timers">Periodic Timers<a class="headerlink" href="#periodic-timers" title="Permanent link">&para;</a></h2>
-<p>The <code>modm::GenericPeriodicTimer</code> class allows for periodic code execution.</p>
-<p>Its behavior can be described by the following annotated waveform:</p>
+<p>If you deal with short time periods, you can save a little memory by using the
+16-bit versions of the same timers:</p>
 <ul>
-<li>C: Constructor</li>
-<li>S: (Re-)Start timer</li>
-<li>I: Period interval</li>
-<li>H: Code handler (<code>execute()</code> returned <code>true</code>)</li>
-<li>P: Stop timer</li>
+<li><code>modm::ShortTimeout</code>, <code>modm::ShortPeriodicTimer</code>: 65 seconds in milliseconds
+  and 4 bytes.</li>
+<li><code>modm::ShortPreciseTimeout</code>, <code>modm::ShortPrecisePeriodicTimer</code>: 65
+  milliseconds in microseconds and 4 bytes.</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>Event:    C         IH        I         I  H      I  S    IH   I    IH  P
-                     _         _____________       __      _    ______
-Expired:  __________/ \_______/             \_____/  \____/ \__/      \____...
-          __________   _______               _____    ____   __        _
-Armed:              \_/       \_____________/     \__/    \_/  \______/ \__...
-                                                                         __
-Stopped:  ______________________________________________________________/  ...
-
-                     _                     _               _         _
-Handle:   __________/ \___________________/ \_____________/ \_______/ \____...
-
-Remaining:     +    |0|   +   |     -     |0|  +  | -|  + |0| +| -  |0|+| 0
-
-     time ——————&gt;
-</code></pre></div>
-
-<p>If you want to execute code once per period interval, poll the
-<code>execute()</code> method, which returns <code>true</code> exactly once after expiration.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="n">timer</span><span class="p">.</span><span class="n">execute</span><span class="p">())</span>
-<span class="p">{</span>
-    <span class="c1">// periodically called once</span>
-    <span class="n">Led</span><span class="o">::</span><span class="n">toggle</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></div>
-
-<p>Be aware, however, that since this method is polled, it cannot execute
-exactly at the time of expiration, but some time after expiration, as
-indicated in the above waveform graph.
-If one or several periods are missed when polling <code>execute()</code>, these
-code executions are discarded and will not be caught up.
-Instead, <code>execute()</code> returns <code>true</code> once and then reschedules itself
-for the next period, without any period skewing.</p>
-<p>Notice, that the <code>PeriodicTimerState::Expired</code> is reset to
-<code>PeriodicTimerState::Armed</code> only after <code>execute()</code> has returned <code>true</code>.
-This is different to the behavior of GenericTimeout, where calls to
-<code>GenericTimeout::execute()</code> have no impact on class state.</p>
-<p>The <code>remaining()</code> time until period expiration is signed positive before,
-and negative after period expiration until <code>execute()</code> is called.
-If the timer is stopped, <code>remaining()</code> returns zero.</p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -3485,59 +3508,73 @@ If the timer is stopped, <code>remaining()</code> returns zero.</p>
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: modm:processing:timer Pages: 1 -->
-<svg width="285pt" height="150pt"
- viewBox="0.00 0.00 284.50 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="413pt" height="150pt"
+ viewBox="0.00 0.00 412.50 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 146)">
 <title>modm:processing:timer</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-146 280.5,-146 280.5,4 -4,4"/>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-146 408.5,-146 408.5,4 -4,4"/>
 <!-- modm_processing_timer -->
 <g id="node1" class="node">
 <title>modm_processing_timer</title>
-<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="210.5,-53 111.5,-53 111.5,0 210.5,0 210.5,-53"/>
-<text text-anchor="middle" x="161" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="161" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">processing:</text>
-<text text-anchor="middle" x="161" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">timer</text>
+<polygon fill="#d3d3d3" stroke="#000000" stroke-width="2" points="285.5,-53 186.5,-53 186.5,0 285.5,0 285.5,-53"/>
+<text text-anchor="middle" x="236" y="-37.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="236" y="-22.8" font-family="Times,serif" font-size="14.00" fill="#000000">processing:</text>
+<text text-anchor="middle" x="236" y="-7.8" font-family="Times,serif" font-size="14.00" fill="#000000">timer</text>
 </g>
-<!-- modm_architecture_clock -->
+<!-- modm_architecture_assert -->
 <g id="node2" class="node">
-<title>modm_architecture_clock</title>
+<title>modm_architecture_assert</title>
 <polygon fill="#d3d3d3" stroke="#000000" points="110,-142 0,-142 0,-89 110,-89 110,-142"/>
 <text text-anchor="middle" x="55" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
 <text text-anchor="middle" x="55" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
-<text text-anchor="middle" x="55" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">clock</text>
+<text text-anchor="middle" x="55" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">assert</text>
+</g>
+<!-- modm_processing_timer&#45;&gt;modm_architecture_assert -->
+<g id="edge1" class="edge">
+<title>modm_processing_timer&#45;&gt;modm_architecture_assert</title>
+<path fill="none" stroke="#000000" d="M186.0618,-51.0552C165.0013,-61.411 140.2456,-73.5837 117.9544,-84.5445"/>
+<polygon fill="#000000" stroke="#000000" points="116.3266,-81.4446 108.8972,-88.9981 119.4154,-87.7263 116.3266,-81.4446"/>
+</g>
+<!-- modm_architecture_clock -->
+<g id="node3" class="node">
+<title>modm_architecture_clock</title>
+<polygon fill="#d3d3d3" stroke="#000000" points="238,-142 128,-142 128,-89 238,-89 238,-142"/>
+<text text-anchor="middle" x="183" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="183" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
+<text text-anchor="middle" x="183" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">clock</text>
 </g>
 <!-- modm_processing_timer&#45;&gt;modm_architecture_clock -->
-<g id="edge1" class="edge">
+<g id="edge2" class="edge">
 <title>modm_processing_timer&#45;&gt;modm_architecture_clock</title>
-<path fill="none" stroke="#000000" d="M129.1965,-53.2029C118.2959,-62.3553 105.9631,-72.7102 94.5267,-82.3125"/>
-<polygon fill="#000000" stroke="#000000" points="92.189,-79.7052 86.781,-88.8159 96.6901,-85.0661 92.189,-79.7052"/>
+<path fill="none" stroke="#000000" d="M220.0983,-53.2029C215.0672,-61.6513 209.426,-71.1243 204.0904,-80.0841"/>
+<polygon fill="#000000" stroke="#000000" points="200.9999,-78.4332 198.8905,-88.8159 207.0143,-82.0148 200.9999,-78.4332"/>
 </g>
 <!-- modm_io -->
-<g id="node3" class="node">
+<g id="node4" class="node">
 <title>modm_io</title>
-<polygon fill="#d3d3d3" stroke="#000000" points="193.5,-134.5 128.5,-134.5 128.5,-96.5 193.5,-96.5 193.5,-134.5"/>
-<text text-anchor="middle" x="161" y="-119.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="161" y="-104.3" font-family="Times,serif" font-size="14.00" fill="#000000">io</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="321.5,-134.5 256.5,-134.5 256.5,-96.5 321.5,-96.5 321.5,-134.5"/>
+<text text-anchor="middle" x="289" y="-119.3" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="289" y="-104.3" font-family="Times,serif" font-size="14.00" fill="#000000">io</text>
 </g>
 <!-- modm_processing_timer&#45;&gt;modm_io -->
-<g id="edge2" class="edge">
+<g id="edge3" class="edge">
 <title>modm_processing_timer&#45;&gt;modm_io</title>
-<path fill="none" stroke="#000000" d="M161,-53.2029C161,-63.6482 161,-75.6597 161,-86.3311"/>
-<polygon fill="#000000" stroke="#000000" points="157.5001,-86.4482 161,-96.4482 164.5001,-86.4483 157.5001,-86.4482"/>
+<path fill="none" stroke="#000000" d="M251.9017,-53.2029C258.3811,-64.0834 265.8726,-76.6634 272.4198,-87.6579"/>
+<polygon fill="#000000" stroke="#000000" points="269.5308,-89.6471 277.6546,-96.4482 275.5452,-86.0655 269.5308,-89.6471"/>
 </g>
 <!-- modm_math_utils -->
-<g id="node4" class="node">
+<g id="node5" class="node">
 <title>modm_math_utils</title>
-<polygon fill="#d3d3d3" stroke="#000000" points="276.5,-142 211.5,-142 211.5,-89 276.5,-89 276.5,-142"/>
-<text text-anchor="middle" x="244" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
-<text text-anchor="middle" x="244" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
-<text text-anchor="middle" x="244" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">utils</text>
+<polygon fill="#d3d3d3" stroke="#000000" points="404.5,-142 339.5,-142 339.5,-89 404.5,-89 404.5,-142"/>
+<text text-anchor="middle" x="372" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
+<text text-anchor="middle" x="372" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">math:</text>
+<text text-anchor="middle" x="372" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">utils</text>
 </g>
 <!-- modm_processing_timer&#45;&gt;modm_math_utils -->
-<g id="edge3" class="edge">
+<g id="edge4" class="edge">
 <title>modm_processing_timer&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="#000000" d="M185.9027,-53.2029C194.1919,-62.0913 203.5387,-72.1138 212.2732,-81.4797"/>
-<polygon fill="#000000" stroke="#000000" points="209.7349,-83.8897 219.1148,-88.8159 214.8542,-79.1155 209.7349,-83.8897"/>
+<path fill="none" stroke="#000000" d="M276.8045,-53.2029C293.8611,-64.365 313.6509,-77.3157 330.7543,-88.5083"/>
+<polygon fill="#000000" stroke="#000000" points="329.1405,-91.6351 339.4246,-94.1823 332.9736,-85.7778 329.1405,-91.6351"/>
 </g>
 </g>
 </svg>

@@ -13,7 +13,7 @@
         <meta name="description" content="A modular C++17 library generator for barebone embedded programming">
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-platform-clock/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-platform-clock-avr/">
       
       
         <meta name="author" content="Niklas Hauser">
@@ -42,7 +42,7 @@
     
     
       
-        <title>:platform:clock - modm barebone embedded library</title>
+        <title>:platform:clock (avr) - modm barebone embedded library</title>
       
     
     
@@ -93,7 +93,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#system-clock" tabindex="0" class="md-skip">
+      <a href="#system-clock-via-timercounter-0" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -119,7 +119,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                :platform:clock
+                :platform:clock (avr)
               
             </span>
           
@@ -2600,11 +2600,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        :platform:clock
+        :platform:clock (avr)
       </label>
     
-    <a href="./" title=":platform:clock" class="md-nav__link md-nav__link--active">
-      :platform:clock
+    <a href="./" title=":platform:clock (avr)" class="md-nav__link md-nav__link--active">
+      :platform:clock (avr)
     </a>
     
       
@@ -2632,6 +2632,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-clock-stm32/" title=":platform:clock (stm32)" class="md-nav__link">
+      :platform:clock (stm32)
+    </a>
   </li>
 
         
@@ -2943,18 +2955,6 @@
   <li class="md-nav__item">
     <a href="../modm-platform-spi-bitbang/" title=":platform:spi.bitbang" class="md-nav__link">
       :platform:spi.bitbang
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../modm-platform-systick/" title=":platform:systick" class="md-nav__link">
-      :platform:systick
     </a>
   </li>
 
@@ -3325,8 +3325,18 @@
               
                 
                 
-                <h1 id="system-clock">System Clock<a class="headerlink" href="#system-clock" title="Permanent link">&para;</a></h1>
+                <h1 id="system-clock-via-timercounter-0">System Clock via Timer/Counter 0<a class="headerlink" href="#system-clock-via-timercounter-0" title="Permanent link">&para;</a></h1>
 <p>lbuild module: <code>modm:platform:clock</code></p>
+<p>The TC0 timer is used to provide a time point at milli- and microsecond
+resolution to implement the <code>modm::Clock::now()</code> and <code>modm::PreciseClock::now()</code>
+interfaces defined in the <code>modm:architecture:clock</code> module.</p>
+<p>For this, the timer is configured to trigger a 1ms interrupt to increment the
+millisecond counter. To compute the microsecond counter, the 8-bit timer counter
+is used to interpolate between milliseconds via a 16x16=16-bit multiplication
+and shift to avoid a division. This is very fast, however, the resolution of the
+<code>modm::PreciseClock</code> is limited to <em>at best</em> ~4us (1000us/8-bit) and <em>at worst</em>
+~32us ((2MHz/64)/1000us).</p>
+<p><em>This module is only available for avr.</em></p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -3350,7 +3360,7 @@
 <!-- modm_architecture_atomic -->
 <g id="node2" class="node">
 <title>modm_architecture_atomic</title>
-<polygon fill="#d3d3d3" stroke="#000000" stroke-dasharray="5,2" points="110,-142 0,-142 0,-89 110,-89 110,-142"/>
+<polygon fill="#d3d3d3" stroke="#000000" points="110,-142 0,-142 0,-89 110,-89 110,-142"/>
 <text text-anchor="middle" x="55" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
 <text text-anchor="middle" x="55" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
 <text text-anchor="middle" x="55" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">atomic</text>
@@ -3358,13 +3368,13 @@
 <!-- modm_platform_clock&#45;&gt;modm_architecture_atomic -->
 <g id="edge1" class="edge">
 <title>modm_platform_clock&#45;&gt;modm_architecture_atomic</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M99.7979,-53.2029C93.5961,-61.8273 86.6265,-71.5194 80.0654,-80.6434"/>
+<path fill="none" stroke="#000000" d="M99.7979,-53.2029C93.5961,-61.8273 86.6265,-71.5194 80.0654,-80.6434"/>
 <polygon fill="#000000" stroke="#000000" points="77.1853,-78.6537 74.1886,-88.8159 82.8684,-82.7405 77.1853,-78.6537"/>
 </g>
 <!-- modm_architecture_clock -->
 <g id="node3" class="node">
 <title>modm_architecture_clock</title>
-<polygon fill="#d3d3d3" stroke="#000000" stroke-dasharray="5,2" points="238,-142 128,-142 128,-89 238,-89 238,-142"/>
+<polygon fill="#d3d3d3" stroke="#000000" points="238,-142 128,-142 128,-89 238,-89 238,-142"/>
 <text text-anchor="middle" x="183" y="-126.8" font-family="Times,serif" font-size="14.00" fill="#000000">modm:</text>
 <text text-anchor="middle" x="183" y="-111.8" font-family="Times,serif" font-size="14.00" fill="#000000">architecture:</text>
 <text text-anchor="middle" x="183" y="-96.8" font-family="Times,serif" font-size="14.00" fill="#000000">clock</text>
@@ -3372,11 +3382,15 @@
 <!-- modm_platform_clock&#45;&gt;modm_architecture_clock -->
 <g id="edge2" class="edge">
 <title>modm_platform_clock&#45;&gt;modm_architecture_clock</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M138.2021,-53.2029C144.4039,-61.8273 151.3735,-71.5194 157.9346,-80.6434"/>
+<path fill="none" stroke="#000000" d="M138.2021,-53.2029C144.4039,-61.8273 151.3735,-71.5194 157.9346,-80.6434"/>
 <polygon fill="#000000" stroke="#000000" points="155.1316,-82.7405 163.8114,-88.8159 160.8147,-78.6537 155.1316,-82.7405"/>
 </g>
 </g>
 </svg>
+
+<div class="admonition warning">
+<p class="admonition-title">Limited availability: Check with 'lbuild discover' if this module is available for your target!</p>
+</div>
                 
                   
                 
@@ -3413,13 +3427,13 @@
           </a>
         
         
-          <a href="../modm-platform-comp/" title=":platform:comp" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../modm-platform-clock-stm32/" title=":platform:clock (stm32)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                :platform:comp
+                :platform:clock (stm32)
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
