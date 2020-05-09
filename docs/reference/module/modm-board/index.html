@@ -777,6 +777,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#create-the-systemclock-struct" class="md-nav__link">
+    Create the SystemClock struct
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cubemx-clock-graph" class="md-nav__link">
+    1. CubeMX Clock Graph
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-peripheral-mapping" class="md-nav__link">
+    2. Peripheral Mapping
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dependencies" class="md-nav__link">
     Dependencies
   </a>
@@ -3328,6 +3355,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#create-the-systemclock-struct" class="md-nav__link">
+    Create the SystemClock struct
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cubemx-clock-graph" class="md-nav__link">
+    1. CubeMX Clock Graph
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-peripheral-mapping" class="md-nav__link">
+    2. Peripheral Mapping
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dependencies" class="md-nav__link">
     Dependencies
   </a>
@@ -3430,6 +3484,30 @@ own BSP:</p>
 <li>You may need to manually add the pre-defined collector values to your project
    configuration (check for <code>env.collect(...)</code> in the BSPs <code>module.lb</code>).</li>
 </ol>
+<h2 id="create-the-systemclock-struct">Create the SystemClock struct<a class="headerlink" href="#create-the-systemclock-struct" title="Permanent link">&para;</a></h2>
+<p>The easiest way using ST's CubeMX tool.</p>
+<h3 id="1-cubemx-clock-graph">1. CubeMX Clock Graph<a class="headerlink" href="#1-cubemx-clock-graph" title="Permanent link">&para;</a></h3>
+<p>First we create a project in CubeMX with the desired microcontroller using the
+largest (pin-count, flash) variant. CubeMX displays something like this in the
+"Clock configuration" tab:</p>
+<p><img alt="ST CubeMX Clock Configuration example" src="https://user-images.githubusercontent.com/2820734/81305132-43715000-907e-11ea-8b8e-b444dc7560cf.png" /></p>
+<p>Then configure all clocks, muxes, multipliers and dividers to the highest
+allowed clock speeds (*).</p>
+<p>(*) exceptions: E.g. USB usually requires exactly 48 MHz.</p>
+<p>This settings are reflected in the constants <code>static constexpr uint32_t Frequency</code>,
+<code>Apb1</code> and <code>Apb2</code> as well as in <code>const Rcc::PllFactors pllFactors{...}</code> and the
+following lines. The <code>PllFactors</code> struct should be fairly self-explanatory.</p>
+<h3 id="2-peripheral-mapping">2. Peripheral Mapping<a class="headerlink" href="#2-peripheral-mapping" title="Permanent link">&para;</a></h3>
+<p>As we can see in the graphic above, there are different clock ranges.
+Each peripheral is connected to a clock domain.
+Some peripherals have an upstream clock mux, this is currently ignored in
+modm and the default setting for the clock mux is assumed.</p>
+<p>The figure shows the block diagram of the controller, which can be found at
+the beginning of the data sheet (not in the reference manual):</p>
+<p><img alt="STM32 Block Diagram example" src="https://user-images.githubusercontent.com/2820734/81448035-fffe0b00-917d-11ea-8a1f-428548851e63.png" /></p>
+<p>For each peripheral we create a <code>static constexpr uint32_t</code> member in
+the <code>struct SystemClock</code> and assign the value of the clock domain to which
+the peripheral is connected.</p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
