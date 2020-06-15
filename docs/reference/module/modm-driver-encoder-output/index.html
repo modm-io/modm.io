@@ -11,7 +11,7 @@
         <meta name="description" content="A modular C++17 library generator for barebone embedded programming">
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-driver-tmp175/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-driver-encoder-output/">
       
       
         <meta name="author" content="Niklas Hauser">
@@ -21,7 +21,7 @@
     
     
       
-        <title>:driver:tmp175 - modm barebone embedded library</title>
+        <title>:driver:encoder.output - modm barebone embedded library</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tmp175-thermometer" class="md-skip">
+        <a href="#encoder-output" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              :driver:tmp175
+              :driver:encoder.output
             
           </span>
         </div>
@@ -1769,11 +1769,53 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../modm-driver-encoder-output/" title=":driver:encoder.output" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        :driver:encoder.output
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title=":driver:encoder.output" class="md-nav__link md-nav__link--active">
       :driver:encoder.output
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -2297,53 +2339,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        :driver:tmp175
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title=":driver:tmp175" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../modm-driver-tmp175/" title=":driver:tmp175" class="md-nav__link">
       :driver:tmp175
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    Dependencies
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -3341,90 +3341,57 @@
                   
                 
                 
-                <h1 id="tmp175-thermometer">TMP175 Thermometer<a class="headerlink" href="#tmp175-thermometer" title="Permanent link">&para;</a></h1>
-<p>lbuild module: <code>modm:driver:tmp175</code></p>
-<p>TMP175 digital temperature sensor driver.</p>
-<p>The TMP175 is a digital temperature sensor with a two-wire interface
-and measures temperature over a range of -40 to +125 deg Celsius with a
-resolution of 1/16 (0.0625) deg C and an accuracy of up to 1.5 deg C.</p>
-<p>The sensor has a default refresh rate of 4Hz but can be raised up to
-30Hz by repeatedly manually starting a conversion (with startConversion()),
-which lasts between 30ms and 240ms depending on resolution.</p>
+                <h1 id="encoder-output">Encoder Output<a class="headerlink" href="#encoder-output" title="Permanent link">&para;</a></h1>
+<p>lbuild module: <code>modm:driver:encoder.output</code></p>
+<p>This driver generates a AB (incremental) encoder signal to
+emulate a hardware encoder with a microcontroller.</p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
-<!-- Title: modm:driver:tmp175 Pages: 1 -->
-<svg width="448pt" height="150pt"
- viewBox="0.00 0.00 447.50 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Title: modm:driver:encoder.output Pages: 1 -->
+<svg width="234pt" height="150pt"
+ viewBox="0.00 0.00 233.50 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 146)">
-<title>modm:driver:tmp175</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-146 443.5,-146 443.5,4 -4,4"/>
-<!-- modm_driver_tmp175 -->
+<title>modm:driver:encoder.output</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-146 229.5,-146 229.5,4 -4,4"/>
+<!-- modm_driver_encoder_output -->
 <g id="node1" class="node">
-<title>modm_driver_tmp175</title>
-<polygon fill="lightgrey" stroke="black" stroke-width="2" points="269.5,-53 197.5,-53 197.5,0 269.5,0 269.5,-53"/>
-<text text-anchor="middle" x="233.5" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="233.5" y="-22.8" font-family="Times,serif" font-size="14.00">driver:</text>
-<text text-anchor="middle" x="233.5" y="-7.8" font-family="Times,serif" font-size="14.00">tmp175</text>
+<title>modm_driver_encoder_output</title>
+<polygon fill="lightgrey" stroke="black" stroke-width="2" points="177.5,-53 53.5,-53 53.5,0 177.5,0 177.5,-53"/>
+<text text-anchor="middle" x="115.5" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="115.5" y="-22.8" font-family="Times,serif" font-size="14.00">driver:</text>
+<text text-anchor="middle" x="115.5" y="-7.8" font-family="Times,serif" font-size="14.00">encoder.output</text>
 </g>
-<!-- modm_architecture_i2c_device -->
+<!-- modm_architecture_gpio -->
 <g id="node2" class="node">
-<title>modm_architecture_i2c_device</title>
+<title>modm_architecture_gpio</title>
 <polygon fill="lightgrey" stroke="black" points="109,-142 0,-142 0,-89 109,-89 109,-142"/>
 <text text-anchor="middle" x="54.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
 <text text-anchor="middle" x="54.5" y="-111.8" font-family="Times,serif" font-size="14.00">architecture:</text>
-<text text-anchor="middle" x="54.5" y="-96.8" font-family="Times,serif" font-size="14.00">i2c.device</text>
+<text text-anchor="middle" x="54.5" y="-96.8" font-family="Times,serif" font-size="14.00">gpio</text>
 </g>
-<!-- modm_driver_tmp175&#45;&gt;modm_architecture_i2c_device -->
+<!-- modm_driver_encoder_output&#45;&gt;modm_architecture_gpio -->
 <g id="edge1" class="edge">
-<title>modm_driver_tmp175&#45;&gt;modm_architecture_i2c_device</title>
-<path fill="none" stroke="black" d="M197.28,-45.11C174.06,-56.39 143.31,-71.33 116.3,-84.46"/>
-<polygon fill="black" stroke="black" points="114.77,-81.32 107.3,-88.84 117.83,-87.61 114.77,-81.32"/>
+<title>modm_driver_encoder_output&#45;&gt;modm_architecture_gpio</title>
+<path fill="none" stroke="black" d="M97.53,-53.13C91.56,-61.64 84.82,-71.25 78.48,-80.3"/>
+<polygon fill="black" stroke="black" points="75.43,-78.55 72.55,-88.75 81.16,-82.57 75.43,-78.55"/>
 </g>
-<!-- modm_architecture_register -->
+<!-- modm_processing_timer -->
 <g id="node3" class="node">
-<title>modm_architecture_register</title>
-<polygon fill="lightgrey" stroke="black" points="236,-142 127,-142 127,-89 236,-89 236,-142"/>
-<text text-anchor="middle" x="181.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="181.5" y="-111.8" font-family="Times,serif" font-size="14.00">architecture:</text>
-<text text-anchor="middle" x="181.5" y="-96.8" font-family="Times,serif" font-size="14.00">register</text>
+<title>modm_processing_timer</title>
+<polygon fill="lightgrey" stroke="black" points="225.5,-142 127.5,-142 127.5,-89 225.5,-89 225.5,-142"/>
+<text text-anchor="middle" x="176.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="176.5" y="-111.8" font-family="Times,serif" font-size="14.00">processing:</text>
+<text text-anchor="middle" x="176.5" y="-96.8" font-family="Times,serif" font-size="14.00">timer</text>
 </g>
-<!-- modm_driver_tmp175&#45;&gt;modm_architecture_register -->
+<!-- modm_driver_encoder_output&#45;&gt;modm_processing_timer -->
 <g id="edge2" class="edge">
-<title>modm_driver_tmp175&#45;&gt;modm_architecture_register</title>
-<path fill="none" stroke="black" d="M218.18,-53.13C213.15,-61.55 207.47,-71.05 202.11,-80.02"/>
-<polygon fill="black" stroke="black" points="199.02,-78.37 196.89,-88.75 205.03,-81.96 199.02,-78.37"/>
-</g>
-<!-- modm_driver_lm75 -->
-<g id="node4" class="node">
-<title>modm_driver_lm75</title>
-<polygon fill="lightgrey" stroke="black" points="319,-142 254,-142 254,-89 319,-89 319,-142"/>
-<text text-anchor="middle" x="286.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="286.5" y="-111.8" font-family="Times,serif" font-size="14.00">driver:</text>
-<text text-anchor="middle" x="286.5" y="-96.8" font-family="Times,serif" font-size="14.00">lm75</text>
-</g>
-<!-- modm_driver_tmp175&#45;&gt;modm_driver_lm75 -->
-<g id="edge3" class="edge">
-<title>modm_driver_tmp175&#45;&gt;modm_driver_lm75</title>
-<path fill="none" stroke="black" d="M249.12,-53.13C254.24,-61.55 260.03,-71.05 265.5,-80.02"/>
-<polygon fill="black" stroke="black" points="262.62,-82.03 270.81,-88.75 268.6,-78.39 262.62,-82.03"/>
-</g>
-<!-- modm_processing_protothread -->
-<g id="node5" class="node">
-<title>modm_processing_protothread</title>
-<polygon fill="lightgrey" stroke="black" points="439.5,-142 337.5,-142 337.5,-89 439.5,-89 439.5,-142"/>
-<text text-anchor="middle" x="388.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="388.5" y="-111.8" font-family="Times,serif" font-size="14.00">processing:</text>
-<text text-anchor="middle" x="388.5" y="-96.8" font-family="Times,serif" font-size="14.00">protothread</text>
-</g>
-<!-- modm_driver_tmp175&#45;&gt;modm_processing_protothread -->
-<g id="edge4" class="edge">
-<title>modm_driver_tmp175&#45;&gt;modm_processing_protothread</title>
-<path fill="none" stroke="black" d="M269.84,-47.9C288.94,-58.62 312.75,-71.98 334.01,-83.92"/>
-<polygon fill="black" stroke="black" points="332.51,-87.09 342.95,-88.93 335.94,-80.99 332.51,-87.09"/>
+<title>modm_driver_encoder_output&#45;&gt;modm_processing_timer</title>
+<path fill="none" stroke="black" d="M133.47,-53.13C139.44,-61.64 146.18,-71.25 152.52,-80.3"/>
+<polygon fill="black" stroke="black" points="149.84,-82.57 158.45,-88.75 155.57,-78.55 149.84,-82.57"/>
 </g>
 </g>
 </svg>
@@ -3446,7 +3413,7 @@ which lasts between 30ms and 240ms depending on resolution.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../modm-driver-tmp102/" title=":driver:tmp102" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../modm-driver-ea_dog/" title=":driver:ea_dog" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -3455,19 +3422,19 @@ which lasts between 30ms and 240ms depending on resolution.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                :driver:tmp102
+                :driver:ea_dog
               </div>
             </div>
           </a>
         
         
-          <a href="../modm-driver-vl53l0/" title=":driver:vl53l0" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../modm-driver-fat/" title=":driver:fat" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                :driver:vl53l0
+                :driver:fat
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
