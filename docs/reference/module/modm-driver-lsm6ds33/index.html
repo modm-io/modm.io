@@ -11,7 +11,7 @@
         <meta name="description" content="A modular C++17 library generator for barebone embedded programming">
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-driver-adns9800/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-driver-lsm6ds33/">
       
       
         <meta name="author" content="Niklas Hauser">
@@ -21,7 +21,7 @@
     
     
       
-        <title>:driver:adns9800 - modm barebone embedded library</title>
+        <title>:driver:lsm6ds33 - modm barebone embedded library</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#adns-9800-laser-motion-sensor" class="md-skip">
+        <a href="#lsm6ds33-always-on-3d-accelerometer-and-3d-gyroscope" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              :driver:adns9800
+              :driver:lsm6ds33
             
           </span>
         </div>
@@ -1541,73 +1541,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        :driver:adns9800
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title=":driver:adns9800" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../modm-driver-adns9800/" title=":driver:adns9800" class="md-nav__link">
       :driver:adns9800
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
-    Options
-  </a>
-  
-    <nav class="md-nav" aria-label="Options">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#firmware" class="md-nav__link">
-    firmware
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    Dependencies
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -2059,11 +1997,53 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../modm-driver-lsm6ds33/" title=":driver:lsm6ds33" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        :driver:lsm6ds33
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title=":driver:lsm6ds33" class="md-nav__link md-nav__link--active">
       :driver:lsm6ds33
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -3363,26 +3343,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
-    Options
-  </a>
-  
-    <nav class="md-nav" aria-label="Options">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#firmware" class="md-nav__link">
-    firmware
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#dependencies" class="md-nav__link">
     Dependencies
   </a>
@@ -3405,75 +3365,91 @@
                   
                 
                 
-                <h1 id="adns-9800-laser-motion-sensor">ADNS-9800 Laser Motion Sensor<a class="headerlink" href="#adns-9800-laser-motion-sensor" title="Permanent link">&para;</a></h1>
-<p>lbuild module: <code>modm:driver:adns9800</code></p>
-<p>Based on work of Alexander Entinger, MSc / LXRobotics
-Based on <a href="https://github.com/mrjohnk/ADNS-9800">https://github.com/mrjohnk/ADNS-9800</a></p>
-<h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
-<h4 id="firmware">firmware<a class="headerlink" href="#firmware" title="Permanent link">&para;</a></h4>
-<p>Select the firmware version to initialize the device with.</p>
-<p>Default: <code>a6</code><br />
-Inputs: <code>[a4, a4b, a5, a6]</code>  </p>
+                <h1 id="lsm6ds33-always-on-3d-accelerometer-and-3d-gyroscope">LSM6DS33 always-on 3D accelerometer and 3D gyroscope<a class="headerlink" href="#lsm6ds33-always-on-3d-accelerometer-and-3d-gyroscope" title="Permanent link">&para;</a></h1>
+<p>lbuild module: <code>modm:driver:lsm6ds33</code></p>
+<p>The LSM6DS33 is a system-in-package featuring a 3D digital accelerometer and
+a 3D digital gyroscope performing at 1.25 mA (up to 1.6 kHz ODR) in high-performance mode.
+has a full-scale acceleration range of ±2/±4/±8/±16 g and an angular rate range
+of ±125/±245/±500/±1000/±2000 dps.
+The LSM6DS33 includes an I2C serial bus interface that supports standard and
+fast mode 100 kHz and 400 kHz.</p>
+<p>This driver only supports the raw data output of the sensor.
+Functions like tap recognition, step counter, free fall recogition, etc. are not supported</p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
-<!-- Title: modm:driver:adns9800 Pages: 1 -->
-<svg width="327pt" height="150pt"
- viewBox="0.00 0.00 327.00 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Title: modm:driver:lsm6ds33 Pages: 1 -->
+<svg width="436pt" height="150pt"
+ viewBox="0.00 0.00 436.00 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 146)">
-<title>modm:driver:adns9800</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-146 323,-146 323,4 -4,4"/>
-<!-- modm_driver_adns9800 -->
+<title>modm:driver:lsm6ds33</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-146 432,-146 432,4 -4,4"/>
+<!-- modm_driver_lsm6ds33 -->
 <g id="node1" class="node">
-<title>modm_driver_adns9800</title>
-<polygon fill="lightgrey" stroke="black" stroke-width="2" points="224.5,-53 138.5,-53 138.5,0 224.5,0 224.5,-53"/>
-<text text-anchor="middle" x="181.5" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="181.5" y="-22.8" font-family="Times,serif" font-size="14.00">driver:</text>
-<text text-anchor="middle" x="181.5" y="-7.8" font-family="Times,serif" font-size="14.00">adns9800</text>
+<title>modm_driver_lsm6ds33</title>
+<polygon fill="lightgrey" stroke="black" stroke-width="2" points="286.5,-53 200.5,-53 200.5,0 286.5,0 286.5,-53"/>
+<text text-anchor="middle" x="243.5" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="243.5" y="-22.8" font-family="Times,serif" font-size="14.00">driver:</text>
+<text text-anchor="middle" x="243.5" y="-7.8" font-family="Times,serif" font-size="14.00">lsm6ds33</text>
 </g>
-<!-- modm_architecture_delay -->
+<!-- modm_architecture_register -->
 <g id="node2" class="node">
-<title>modm_architecture_delay</title>
+<title>modm_architecture_register</title>
 <polygon fill="lightgrey" stroke="black" points="109,-142 0,-142 0,-89 109,-89 109,-142"/>
 <text text-anchor="middle" x="54.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
 <text text-anchor="middle" x="54.5" y="-111.8" font-family="Times,serif" font-size="14.00">architecture:</text>
-<text text-anchor="middle" x="54.5" y="-96.8" font-family="Times,serif" font-size="14.00">delay</text>
+<text text-anchor="middle" x="54.5" y="-96.8" font-family="Times,serif" font-size="14.00">register</text>
 </g>
-<!-- modm_driver_adns9800&#45;&gt;modm_architecture_delay -->
+<!-- modm_driver_lsm6ds33&#45;&gt;modm_architecture_register -->
 <g id="edge1" class="edge">
-<title>modm_driver_adns9800&#45;&gt;modm_architecture_delay</title>
-<path fill="none" stroke="black" d="M144.08,-53.13C130.38,-62.52 114.72,-73.25 100.37,-83.08"/>
-<polygon fill="black" stroke="black" points="98.36,-80.21 92.09,-88.75 102.32,-85.99 98.36,-80.21"/>
+<title>modm_driver_lsm6ds33&#45;&gt;modm_architecture_register</title>
+<path fill="none" stroke="black" d="M200.14,-47.46C175.96,-58.59 145.39,-72.66 118.51,-85.03"/>
+<polygon fill="black" stroke="black" points="116.79,-81.97 109.17,-89.33 119.72,-88.33 116.79,-81.97"/>
 </g>
-<!-- modm_architecture_spi -->
+<!-- modm_driver_lis3_transport -->
 <g id="node3" class="node">
-<title>modm_architecture_spi</title>
-<polygon fill="lightgrey" stroke="black" points="236,-142 127,-142 127,-89 236,-89 236,-142"/>
-<text text-anchor="middle" x="181.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="181.5" y="-111.8" font-family="Times,serif" font-size="14.00">architecture:</text>
-<text text-anchor="middle" x="181.5" y="-96.8" font-family="Times,serif" font-size="14.00">spi</text>
+<title>modm_driver_lis3_transport</title>
+<polygon fill="lightgrey" stroke="black" points="241.5,-142 127.5,-142 127.5,-89 241.5,-89 241.5,-142"/>
+<text text-anchor="middle" x="184.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="184.5" y="-111.8" font-family="Times,serif" font-size="14.00">driver:</text>
+<text text-anchor="middle" x="184.5" y="-96.8" font-family="Times,serif" font-size="14.00">lis3.transport</text>
 </g>
-<!-- modm_driver_adns9800&#45;&gt;modm_architecture_spi -->
+<!-- modm_driver_lsm6ds33&#45;&gt;modm_driver_lis3_transport -->
 <g id="edge2" class="edge">
-<title>modm_driver_adns9800&#45;&gt;modm_architecture_spi</title>
-<path fill="none" stroke="black" d="M181.5,-53.13C181.5,-61.11 181.5,-70.07 181.5,-78.62"/>
-<polygon fill="black" stroke="black" points="178,-78.75 181.5,-88.75 185,-78.75 178,-78.75"/>
+<title>modm_driver_lsm6ds33&#45;&gt;modm_driver_lis3_transport</title>
+<path fill="none" stroke="black" d="M226.12,-53.13C220.35,-61.64 213.83,-71.25 207.69,-80.3"/>
+<polygon fill="black" stroke="black" points="204.68,-78.51 201.96,-88.75 210.47,-82.44 204.68,-78.51"/>
 </g>
-<!-- modm_debug -->
+<!-- modm_math_geometry -->
 <g id="node4" class="node">
-<title>modm_debug</title>
-<polygon fill="lightgrey" stroke="black" points="319,-134.5 254,-134.5 254,-96.5 319,-96.5 319,-134.5"/>
-<text text-anchor="middle" x="286.5" y="-119.3" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="286.5" y="-104.3" font-family="Times,serif" font-size="14.00">debug</text>
+<title>modm_math_geometry</title>
+<polygon fill="lightgrey" stroke="black" points="345,-142 260,-142 260,-89 345,-89 345,-142"/>
+<text text-anchor="middle" x="302.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="302.5" y="-111.8" font-family="Times,serif" font-size="14.00">math:</text>
+<text text-anchor="middle" x="302.5" y="-96.8" font-family="Times,serif" font-size="14.00">geometry</text>
 </g>
-<!-- modm_driver_adns9800&#45;&gt;modm_debug -->
+<!-- modm_driver_lsm6ds33&#45;&gt;modm_math_geometry -->
 <g id="edge3" class="edge">
-<title>modm_driver_adns9800&#45;&gt;modm_debug</title>
-<path fill="none" stroke="black" d="M212.44,-53.13C226.49,-64.78 243.05,-78.5 256.94,-90.01"/>
-<polygon fill="black" stroke="black" points="254.83,-92.81 264.77,-96.49 259.3,-87.42 254.83,-92.81"/>
+<title>modm_driver_lsm6ds33&#45;&gt;modm_math_geometry</title>
+<path fill="none" stroke="black" d="M260.88,-53.13C266.65,-61.64 273.17,-71.25 279.31,-80.3"/>
+<polygon fill="black" stroke="black" points="276.53,-82.44 285.04,-88.75 282.32,-78.51 276.53,-82.44"/>
+</g>
+<!-- modm_math_utils -->
+<g id="node5" class="node">
+<title>modm_math_utils</title>
+<polygon fill="lightgrey" stroke="black" points="428,-142 363,-142 363,-89 428,-89 428,-142"/>
+<text text-anchor="middle" x="395.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="395.5" y="-111.8" font-family="Times,serif" font-size="14.00">math:</text>
+<text text-anchor="middle" x="395.5" y="-96.8" font-family="Times,serif" font-size="14.00">utils</text>
+</g>
+<!-- modm_driver_lsm6ds33&#45;&gt;modm_math_utils -->
+<g id="edge4" class="edge">
+<title>modm_driver_lsm6ds33&#45;&gt;modm_math_utils</title>
+<path fill="none" stroke="black" d="M286.75,-50.8C305.38,-60.99 327.53,-73.31 354.13,-88.86"/>
+<polygon fill="black" stroke="black" points="352.52,-91.98 362.92,-94.03 356.07,-85.95 352.52,-91.98"/>
 </g>
 </g>
 </svg>
@@ -3495,7 +3471,7 @@ Inputs: <code>[a4, a4b, a5, a6]</code>  </p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../modm-driver-adc_sampler/" title=":driver:adc_sampler" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../modm-driver-lsm303a/" title=":driver:lsm303a" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -3504,19 +3480,19 @@ Inputs: <code>[a4, a4b, a5, a6]</code>  </p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                :driver:adc_sampler
+                :driver:lsm303a
               </div>
             </div>
           </a>
         
         
-          <a href="../modm-driver-ads7843/" title=":driver:ads7843" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../modm-driver-ltc2984/" title=":driver:ltc2984" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                :driver:ads7843
+                :driver:ltc2984
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
