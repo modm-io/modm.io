@@ -3509,7 +3509,7 @@
 <p>lbuild module: <code>modm:platform:itm</code></p>
 <p>This module provides the ITM port 0 as a (buffered) Uart interface.
 You can use this class as a <em>transmit-only</em> alternative for logging:</p>
-<div class="highlight"><pre><span></span><code><span class="n">modm</span><span class="o">::</span><span class="n">IODeviceWrapper</span><span class="o">&lt;</span><span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">Itm</span><span class="p">,</span> 
+<div class="highlight"><pre><span></span><code><span class="n">modm</span><span class="o">::</span><span class="n">IODeviceWrapper</span><span class="o">&lt;</span><span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">Itm</span><span class="p">,</span>
                       <span class="n">modm</span><span class="o">::</span><span class="n">IOBuffer</span><span class="o">::</span><span class="n">DiscardIfFull</span><span class="o">&gt;</span> <span class="n">itm_device</span><span class="p">;</span>
 <span class="n">modm</span><span class="o">::</span><span class="n">IOStream</span> <span class="n">stream</span><span class="p">(</span><span class="n">itm_device</span><span class="p">);</span>
 <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello World&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">modm</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
@@ -3557,7 +3557,7 @@ OpenOCD can correctly set the prescaler for the asynchronous SWO output.</p>
 <p>When using the <code>modm:build:scons</code> module, you can also use the convenience
 wrapper, which logs to a temporary file and displays it's contents on the
 terminal</p>
-<div class="highlight"><pre><span></span><code> $ scons itm fcpu=64000000
+<div class="highlight"><pre><span></span><code> $ scons log-itm fcpu=64000000
 .----OpenOCD--&gt; Single Wire Viewer
 &#39;------SWO----- stm32f103rbt
 

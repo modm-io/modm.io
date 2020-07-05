@@ -3541,20 +3541,25 @@ some of these libraries as well, depending on what modm modules you use:</p>
 
 
 <h2 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
-<p>For Ubuntu 18.04LTS, these commands install the basic build system:</p>
+<p>For Ubuntu 20.04LTS, these commands install the basic build system:</p>
 <div class="codehilite"><pre><span></span><code>sudo apt-get install python3 python3-pip scons git
 sudo apt-get --no-install-recommends install doxygen
 pip3 install modm
 </code></pre></div>
 
 
-<p>scons now works with Python 3. Unfortunately, Ubuntu still defaults to Python 2.
-For a less intrusive way to run all scons scripts with Python 3 add this to your
-<code>.bashrc</code> or <code>.zshrc</code>:</p>
+<div class="admonition warning">
+<p class="admonition-title">Use Python 3!</p>
+<p>Ubuntu 18.04LTS unfortunately defaults to Python 2, however, our SCons tools
+require Python 3. For a less intrusive way to run all scons scripts with
+Python 3 add this to your <code>.bashrc</code> or <code>.zshrc</code>:</p>
 <div class="codehilite"><pre><span></span><code>alias scons=&quot;/usr/bin/env python3 $(which scons)&quot;
 </code></pre></div>
 
 
+<p>If you get errors about missing <code>pyelftools</code>, check that you're really
+running SCons with Python 3!</p>
+</div>
 <p>Install the AVR toochain:</p>
 <div class="codehilite"><pre><span></span><code>sudo apt-get install gcc-avr binutils-avr avr-libc avrdude
 </code></pre></div>
