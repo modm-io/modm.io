@@ -883,6 +883,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../modm-board-feather-m0/" title=":board:feather-m0" class="md-nav__link">
+      :board:feather-m0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../modm-board-mega-2560-pro/" title=":board:mega-2560-pro" class="md-nav__link">
       :board:mega-2560-pro
     </a>
@@ -1111,6 +1123,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../modm-board-samd21-mini/" title=":board:samd21-mini" class="md-nav__link">
+      :board:samd21-mini
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../modm-board-stm32f030_demo/" title=":board:stm32f030_demo" class="md-nav__link">
       :board:stm32f030_demo
     </a>
@@ -1195,8 +1219,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../modm-cmsis-device/" title=":cmsis:device" class="md-nav__link">
-      :cmsis:device
+    <a href="../modm-cmsis-device-sam/" title=":cmsis:device (sam)" class="md-nav__link">
+      :cmsis:device (sam)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-cmsis-device-stm32/" title=":cmsis:device (stm32)" class="md-nav__link">
+      :cmsis:device (stm32)
     </a>
   </li>
 
@@ -2623,8 +2659,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../modm-platform-clock-stm32/" title=":platform:clock (stm32)" class="md-nav__link">
-      :platform:clock (stm32)
+    <a href="../modm-platform-clock-sam--stm32/" title=":platform:clock (sam, stm32)" class="md-nav__link">
+      :platform:clock (sam, stm32)
     </a>
   </li>
 
@@ -2661,6 +2697,18 @@
   <li class="md-nav__item">
     <a href="../modm-platform-core-hosted/" title=":platform:core (hosted)" class="md-nav__link">
       :platform:core (hosted)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-core-sam/" title=":platform:core (sam)" class="md-nav__link">
+      :platform:core (sam)
     </a>
   </li>
 
@@ -2755,6 +2803,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../modm-platform-gclk/" title=":platform:gclk" class="md-nav__link">
+      :platform:gclk
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../modm-platform-gpio-avr/" title=":platform:gpio (avr)" class="md-nav__link">
       :platform:gpio (avr)
     </a>
@@ -2769,6 +2829,18 @@
   <li class="md-nav__item">
     <a href="../modm-platform-gpio-hosted/" title=":platform:gpio (hosted)" class="md-nav__link">
       :platform:gpio (hosted)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-gpio-sam/" title=":platform:gpio (sam)" class="md-nav__link">
+      :platform:gpio (sam)
     </a>
   </li>
 
@@ -2803,8 +2875,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../modm-platform-heap-stm32/" title=":platform:heap (stm32)" class="md-nav__link">
-      :platform:heap (stm32)
+    <a href="../modm-platform-heap-sam--stm32/" title=":platform:heap (sam, stm32)" class="md-nav__link">
+      :platform:heap (sam, stm32)
     </a>
   </li>
 
@@ -3540,43 +3612,43 @@ Released under the BSD license.
   * Add tlsf_walk_heap</p>
 <p>2006/08/25 - v1.0
   * First release</p>
-<p><em>This module is only available for stm32.</em></p>
+<p><em>This module is only available for sam, stm32.</em></p>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <h4 id="minimum_pool_size">minimum_pool_size<a class="headerlink" href="#minimum_pool_size" title="Permanent link">&para;</a></h4>
 <p>Minimum pool size in byte</p>
 <p>Default: <code>10240</code> <em>stm32{f1,l1}</em><br />
 Default: <code>12288</code> <em>stm32f3</em><br />
 Default: <code>131072</code> <em>stm32{f2,f4,g4,l4}</em><br />
-Default: <code>16384</code> <em>stm32{f0,f1,f3,l1}</em><br />
+Default: <code>16384</code> <em>sam, stm32{f0,f1,f3,l1}</em><br />
 Default: <code>163840</code> <em>stm32l4</em><br />
 Default: <code>196608</code> <em>stm32f4</em><br />
 Default: <code>20480</code> <em>stm32f1</em><br />
 Default: <code>24576</code> <em>stm32{f1,f3}</em><br />
 Default: <code>262144</code> <em>stm32{f4,f7}</em><br />
-Default: <code>32768</code> <em>stm32{f0,f1,f3,f4,g4,l1}</em><br />
+Default: <code>32768</code> <em>sam, stm32{f0,f1,f3,f4,g4,l1}</em><br />
 Default: <code>327680</code> <em>stm32{f4,l4}</em><br />
 Default: <code>36864</code> <em>stm32g0</em><br />
 Default: <code>393216</code> <em>stm32f7</em><br />
-Default: <code>4096</code> <em>stm32{f0,f1,l1}</em><br />
+Default: <code>4096</code> <em>sam, stm32{f0,f1,l1}</em><br />
 Default: <code>40960</code> <em>stm32{f3,l4}</em><br />
 Default: <code>458752</code> <em>stm32f7</em><br />
 Default: <code>49152</code> <em>stm32{f1,l1}</em><br />
 Default: <code>6144</code> <em>stm32{f0,f1}</em><br />
 Default: <code>65536</code> <em>stm32{f1,f2,f3,f4,l4}</em><br />
 Default: <code>655360</code> <em>stm32l4</em><br />
-Default: <code>8192</code> <em>stm32{f0,f1,g0,l1}</em><br />
+Default: <code>8192</code> <em>sam, stm32{f0,f1,g0,l1}</em><br />
 Default: <code>81920</code> <em>stm32{f1,l1}</em><br />
 Default: <code>98304</code> <em>stm32{f1,f2,f4}</em><br />
 Inputs: <code>[4096 .. 10240 .. 536870912]</code> <em>stm32{f1,l1}</em><br />
 Inputs: <code>[4096 .. 12288 .. 536870912]</code> <em>stm32f3</em><br />
 Inputs: <code>[4096 .. 131072 .. 536870912]</code> <em>stm32{f2,f4,g4,l4}</em><br />
-Inputs: <code>[4096 .. 16384 .. 536870912]</code> <em>stm32{f0,f1,f3,l1}</em><br />
+Inputs: <code>[4096 .. 16384 .. 536870912]</code> <em>sam, stm32{f0,f1,f3,l1}</em><br />
 Inputs: <code>[4096 .. 163840 .. 536870912]</code> <em>stm32l4</em><br />
 Inputs: <code>[4096 .. 196608 .. 536870912]</code> <em>stm32f4</em><br />
 Inputs: <code>[4096 .. 20480 .. 536870912]</code> <em>stm32f1</em><br />
 Inputs: <code>[4096 .. 24576 .. 536870912]</code> <em>stm32{f1,f3}</em><br />
 Inputs: <code>[4096 .. 262144 .. 536870912]</code> <em>stm32{f4,f7}</em><br />
-Inputs: <code>[4096 .. 32768 .. 536870912]</code> <em>stm32{f0,f1,f3,f4,g4,l1}</em><br />
+Inputs: <code>[4096 .. 32768 .. 536870912]</code> <em>sam, stm32{f0,f1,f3,f4,g4,l1}</em><br />
 Inputs: <code>[4096 .. 327680 .. 536870912]</code> <em>stm32{f4,l4}</em><br />
 Inputs: <code>[4096 .. 36864 .. 536870912]</code> <em>stm32g0</em><br />
 Inputs: <code>[4096 .. 393216 .. 536870912]</code> <em>stm32f7</em><br />
@@ -3586,10 +3658,10 @@ Inputs: <code>[4096 .. 49152 .. 536870912]</code> <em>stm32{f1,l1}</em><br />
 Inputs: <code>[4096 .. 6144 .. 536870912]</code> <em>stm32{f0,f1}</em><br />
 Inputs: <code>[4096 .. 65536 .. 536870912]</code> <em>stm32{f1,f2,f3,f4,l4}</em><br />
 Inputs: <code>[4096 .. 655360 .. 536870912]</code> <em>stm32l4</em><br />
-Inputs: <code>[4096 .. 8192 .. 536870912]</code> <em>stm32{f0,f1,g0,l1}</em><br />
+Inputs: <code>[4096 .. 8192 .. 536870912]</code> <em>sam, stm32{f0,f1,g0,l1}</em><br />
 Inputs: <code>[4096 .. 81920 .. 536870912]</code> <em>stm32{f1,l1}</em><br />
 Inputs: <code>[4096 .. 98304 .. 536870912]</code> <em>stm32{f1,f2,f4}</em><br />
-Inputs: <code>[4096 ... 536870912]</code> <em>stm32{f0,f1,l1}</em>  </p>
+Inputs: <code>[4096 ... 536870912]</code> <em>sam, stm32{f0,f1,l1}</em>  </p>
 <h4 id="subdivisions">subdivisions<a class="headerlink" href="#subdivisions" title="Permanent link">&para;</a></h4>
 <p>Number of subdivisions per memory pool</p>
 <div class="admonition warning">

@@ -11,7 +11,7 @@
         <meta name="description" content="A modular C++17 library generator for barebone embedded programming">
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-platform-heap-stm32/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-platform-gpio-sam/">
       
       
         <meta name="author" content="Niklas Hauser">
@@ -21,7 +21,7 @@
     
     
       
-        <title>:platform:heap (stm32) - modm barebone embedded library</title>
+        <title>:platform:gpio (sam) - modm barebone embedded library</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#heap-memory" class="md-skip">
+        <a href="#general-purpose-io-gpio" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              :platform:heap (stm32)
+              :platform:gpio (sam)
             
           </span>
         </div>
@@ -883,6 +883,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../modm-board-feather-m0/" title=":board:feather-m0" class="md-nav__link">
+      :board:feather-m0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../modm-board-mega-2560-pro/" title=":board:mega-2560-pro" class="md-nav__link">
       :board:mega-2560-pro
     </a>
@@ -1111,6 +1123,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../modm-board-samd21-mini/" title=":board:samd21-mini" class="md-nav__link">
+      :board:samd21-mini
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../modm-board-stm32f030_demo/" title=":board:stm32f030_demo" class="md-nav__link">
       :board:stm32f030_demo
     </a>
@@ -1195,8 +1219,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../modm-cmsis-device/" title=":cmsis:device" class="md-nav__link">
-      :cmsis:device
+    <a href="../modm-cmsis-device-sam/" title=":cmsis:device (sam)" class="md-nav__link">
+      :cmsis:device (sam)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-cmsis-device-stm32/" title=":cmsis:device (stm32)" class="md-nav__link">
+      :cmsis:device (stm32)
     </a>
   </li>
 
@@ -2623,8 +2659,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../modm-platform-clock-stm32/" title=":platform:clock (stm32)" class="md-nav__link">
-      :platform:clock (stm32)
+    <a href="../modm-platform-clock-sam--stm32/" title=":platform:clock (sam, stm32)" class="md-nav__link">
+      :platform:clock (sam, stm32)
     </a>
   </li>
 
@@ -2661,6 +2697,18 @@
   <li class="md-nav__item">
     <a href="../modm-platform-core-hosted/" title=":platform:core (hosted)" class="md-nav__link">
       :platform:core (hosted)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-core-sam/" title=":platform:core (sam)" class="md-nav__link">
+      :platform:core (sam)
     </a>
   </li>
 
@@ -2755,6 +2803,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../modm-platform-gclk/" title=":platform:gclk" class="md-nav__link">
+      :platform:gclk
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../modm-platform-gpio-avr/" title=":platform:gpio (avr)" class="md-nav__link">
       :platform:gpio (avr)
     </a>
@@ -2770,6 +2830,60 @@
     <a href="../modm-platform-gpio-hosted/" title=":platform:gpio (hosted)" class="md-nav__link">
       :platform:gpio (hosted)
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        :platform:gpio (sam)
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title=":platform:gpio (sam)" class="md-nav__link md-nav__link--active">
+      :platform:gpio (sam)
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -2801,148 +2915,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        :platform:heap (stm32)
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title=":platform:heap (stm32)" class="md-nav__link md-nav__link--active">
-      :platform:heap (stm32)
+  <li class="md-nav__item">
+    <a href="../modm-platform-heap-sam--stm32/" title=":platform:heap (sam, stm32)" class="md-nav__link">
+      :platform:heap (sam, stm32)
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#heap-is-not-implemented-error" class="md-nav__link">
-    Heap is not Implemented Error
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#predefined-allocators" class="md-nav__link">
-    Predefined Allocators
-  </a>
-  
-    <nav class="md-nav" aria-label="Predefined Allocators">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#newlib" class="md-nav__link">
-    Newlib
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#block" class="md-nav__link">
-    Block
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tlsf" class="md-nav__link">
-    TLSF
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#custom-allocator" class="md-nav__link">
-    Custom Allocator
-  </a>
-  
-    <nav class="md-nav" aria-label="Custom Allocator">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#using-the-heaptable" class="md-nav__link">
-    Using the HeapTable
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#providing-sbrk" class="md-nav__link">
-    Providing sbrk
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wrapping-malloc" class="md-nav__link">
-    Wrapping malloc
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
-    Options
-  </a>
-  
-    <nav class="md-nav" aria-label="Options">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#allocator" class="md-nav__link">
-    allocator
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    Dependencies
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -3438,101 +3415,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#heap-is-not-implemented-error" class="md-nav__link">
-    Heap is not Implemented Error
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#predefined-allocators" class="md-nav__link">
-    Predefined Allocators
-  </a>
-  
-    <nav class="md-nav" aria-label="Predefined Allocators">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#newlib" class="md-nav__link">
-    Newlib
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#block" class="md-nav__link">
-    Block
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tlsf" class="md-nav__link">
-    TLSF
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#custom-allocator" class="md-nav__link">
-    Custom Allocator
-  </a>
-  
-    <nav class="md-nav" aria-label="Custom Allocator">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#using-the-heaptable" class="md-nav__link">
-    Using the HeapTable
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#providing-sbrk" class="md-nav__link">
-    Providing sbrk
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wrapping-malloc" class="md-nav__link">
-    Wrapping malloc
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#options" class="md-nav__link">
-    Options
-  </a>
-  
-    <nav class="md-nav" aria-label="Options">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#allocator" class="md-nav__link">
-    allocator
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#dependencies" class="md-nav__link">
     Dependencies
   </a>
@@ -3555,300 +3437,70 @@
                   
                 
                 
-                <h1 id="heap-memory">Heap Memory<a class="headerlink" href="#heap-memory" title="Permanent link">&para;</a></h1>
-<p>lbuild module: <code>modm:platform:heap</code></p>
-<p>Your applicaton is linked against the <code>newlib-nano</code> libc, which only requires
-the implementation of the <code>void* sbrk(ptrdiff_t size)</code> hook to use the heap.</p>
-<p>However, the <code>sbrk</code> mechanism can only grow and shrink forward and backwards in
-memory and in particular it does not support discontinuous jumps from one memory
-section to another. The limitation stems from being designed for use with a MMU
-which would simply map another physical page into the linear virtual address
-space so that the heap section appears continuous to <code>sbrk</code>.</p>
-<p>Since we do not have a MMU on Cortex-M, this strategy limits the use of the
-default newlib allocator to <em>one</em> continuous memory region. Therefore this
-module implements alternative allocators for devices with multiple memory
-regions with different traits and extends the C++ <code>operator new</code> to access
-them.</p>
-<p>See the <code>modm:architecture:memory</code> module for what kind of memory traits exist.</p>
-<h2 id="heap-is-not-implemented-error">Heap is not Implemented Error<a class="headerlink" href="#heap-is-not-implemented-error" title="Permanent link">&para;</a></h2>
-<p>This module is not included by default, and any attempt to use the heap
-fails with one or multiple linker error messages similiar to this:</p>
-<div class="highlight"><pre><span></span><code>`_sbrk_r&#39; referenced in section `.text._malloc_r&#39;
-    of libc_nano.a(lib_a-nano-mallocr.o): defined in discarded section
-      `.Heap_is_not_implemented!_
-           _Please_include_the__modm:platform:heap__module_in_your_project!&#39;
-    of libmodm.a(no_heap.o)
-</code></pre></div>
-
-<p>This is to prevent you from <em>accidentally</em> using the heap, which may not be
-desirable for your application. If this occurs you have three choices. You can:</p>
-<ol>
-<li>find and remove calls to malloc/new in your application, or</li>
-<li>include this module with its predefined allocators, or</li>
-<li>implement your own allocator.</li>
-</ol>
-<h2 id="predefined-allocators">Predefined Allocators<a class="headerlink" href="#predefined-allocators" title="Permanent link">&para;</a></h2>
-<p>There are several trade-offs to each allocator, however, as a rule of thumb,
-choose:</p>
-<ul>
-<li><code>newlib</code> for devices with one large continuous RAM region.</li>
-<li><code>block</code> for devices with one very small RAM region.</li>
-<li><code>tlsf</code> for devices with multiple, different discontinuous RAM regions.</li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">Multi-SRAM regions</p>
-<p>For devices which contain separate memories laid out in a continuous way
-(often called SRAM1, SRAM2, SRAM3, etc.) the <code>newlib</code> and <code>block</code> strategies
-choose the largest continuous memory region, <em>even though</em> unaligned
-accesses across memory regions may not be supported in hardware and lead to
-a bus fault! Consider using the TLSF implementation, which does not suffer
-from this issue.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Allocators are not interrupt- or thread-safe</p>
-<p>No locking is implemented by default, if you need this feature, consider
-implementing your own custom allocator algorithm!</p>
-</div>
-<h3 id="newlib">Newlib<a class="headerlink" href="#newlib" title="Permanent link">&para;</a></h3>
-<p>The newlib-nano allocator is a simple linked list, its overhead is therefore
-low, but the access time may not be good.
-Due to the limitations of the <code>sbrk</code> mechanism only the largest memory region is
-used as heap! Depending on the device memory architecture this can leave large
-memory regions unused.</p>
-<p>Consider using the TLSF allocator for devices with multiple discontinuous
-memories.</p>
-<h3 id="block">Block<a class="headerlink" href="#block" title="Permanent link">&para;</a></h3>
-<p>For devices with very small memories, we recommend using the block allocator
-strategy, which uses a very light-weight and simple algorithm. This also only
-operates on one continuous memory region as heap.</p>
-<div class="admonition bug">
-<p class="admonition-title">The Block allocator does not implement realloc!</p>
-<p>This is a bug in <code>modm:driver:block.allocator</code> and currently a <code>modm_assert</code>
-will fail.</p>
-</div>
-<h3 id="tlsf">TLSF<a class="headerlink" href="#tlsf" title="Permanent link">&para;</a></h3>
-<p>To use all non-statically allocated memory for heap, use the TLSF strategy,
-which natively supports multiple memory regions. This implementation treats
-all internal memories as separate regions, so unaligned access across memory
-boundaries is not an issue. To request heap memory of different traits, see
-the <code>modm:architecture:memory</code> module.</p>
-<div class="admonition note">
-<p class="admonition-title">TLSF has static overhead</p>
-<p>The TLSF implementation has a static overhead of about 1kB per memory trait
-group, however, these can then contain multiple discontinuous regions. The
-upside of this large static allocation is very fast allocation times of
-O(1), but we recommend using TLSF only for devices with multiple large
-memory regions.</p>
-</div>
-<h2 id="custom-allocator">Custom Allocator<a class="headerlink" href="#custom-allocator" title="Permanent link">&para;</a></h2>
-<p>To implement your own allocator <strong>do not</strong> include this module. Instead
-initialize your heap in the function <code>__modm_initialize_memory()</code>, which gets
-called by the startup script after hardware init, but before static constructors
-are called (see <code>modm:platform:cortex-m</code> for details).</p>
-<p>The simplest way to do so is to allocate a huge array into one of the heap
-sections and use this as your heap. Consult <code>modm:platform:core</code> for what
-heap sections your target provides!</p>
-<div class="highlight"><pre><span></span><code><span class="n">modm_section</span><span class="p">(</span><span class="s">&quot;.heap1&quot;</span><span class="p">)</span> <span class="c1">// always the main heap section</span>
-<span class="kt">uint8_t</span> <span class="n">heap_begin</span><span class="p">[</span><span class="mi">10</span><span class="o">*</span><span class="mi">1024</span><span class="p">];</span> <span class="c1">// 10 kB heap</span>
-<span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="k">const</span> <span class="n">heap_end</span><span class="p">{</span><span class="n">heap_begin</span> <span class="o">+</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">heap_begin</span><span class="p">)};</span>
-
-<span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="kt">void</span> <span class="n">__modm_initialize_memory</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="c1">// Initialize your specific allocator algorithm here</span>
-    <span class="n">allocator</span><span class="p">.</span><span class="n">initialize</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></div>
-
-<div class="admonition warning">
-<p class="admonition-title">Static constructors are only called afterwards!</p>
-<p>Since constructors may call the heap, it must be initialized before static
-constructors are called. Only trivially constructed (POD) objects are
-already initialized!</p>
-</div>
-<h3 id="using-the-heaptable">Using the HeapTable<a class="headerlink" href="#using-the-heaptable" title="Permanent link">&para;</a></h3>
-<p>If you prefer a little more control, include the <code>modm:architecture:memory</code>
-module to get access to the internal <code>modm::platform::HeapTable</code> API, which
-lists memory regions by traits and sizes.</p>
-<p>For example to find the largest continuous memory section with default traits
-you can use this code:</p>
-<div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">heap_begin</span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
-<span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">heap_end</span><span class="p">{</span><span class="k">nullptr</span><span class="p">};</span>
-<span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="kt">void</span> <span class="n">__modm_initialize_memory</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">bool</span> <span class="n">success</span> <span class="o">=</span> <span class="n">HeapTable</span><span class="o">::</span><span class="n">find_largest</span><span class="p">(</span><span class="o">&amp;</span><span class="n">heap_begin</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">heap_end</span><span class="p">,</span>
-                                           <span class="n">modm</span><span class="o">::</span><span class="n">MemoryDefault</span><span class="p">);</span>
-    <span class="n">modm_assert</span><span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="s">&quot;heap.init&quot;</span><span class="p">,</span> <span class="s">&quot;No default memory section found!&quot;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
-
-<p>If you want to know more about the available memory regions, you can iterate
-over the heap table directly. This gives you full control over <em>where</em> you want
-to place you heap. You can print this table at runtime to get a feel for it:</p>
-<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="p">[</span><span class="n">traits</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">size</span><span class="p">]</span> <span class="o">:</span> <span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">HeapTable</span><span class="p">())</span>
-<span class="p">{</span>
-    <span class="n">MODM_LOG_INFO</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Memory section %#x @[0x%p,0x%p](%u)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
-                         <span class="n">traits</span><span class="p">.</span><span class="n">value</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">size</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
-
-<h3 id="providing-sbrk">Providing sbrk<a class="headerlink" href="#providing-sbrk" title="Permanent link">&para;</a></h3>
-<p>To use the builtin allocator from newlib, all you need to provide is an
-implementation of the <code>sbrk</code> function. A simple implementation for a
-[<code>heap_begin</code>, <code>heap_end</code>] memory region looks like this:</p>
-<div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">heap_top</span><span class="p">{</span><span class="n">heap_begin</span><span class="p">};</span>
-<span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="kt">void</span><span class="o">*</span> <span class="n">_sbrk_r</span><span class="p">(</span><span class="k">struct</span> <span class="n">_reent</span> <span class="o">*</span><span class="p">,</span>  <span class="kt">ptrdiff_t</span> <span class="n">size</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="k">const</span> <span class="n">heap</span> <span class="o">=</span> <span class="n">heap_top</span><span class="p">;</span>
-    <span class="n">heap_top</span> <span class="o">+=</span> <span class="n">size</span><span class="p">;</span>
-    <span class="n">modm_assert</span><span class="p">(</span><span class="n">heap_top</span> <span class="o">&lt;</span> <span class="n">heap_end</span><span class="p">,</span> <span class="s">&quot;heap.sbrk&quot;</span><span class="p">,</span> <span class="s">&quot;Heap overflowed!&quot;</span><span class="p">);</span>
-    <span class="k">return</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span> <span class="n">heap</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-
-<h3 id="wrapping-malloc">Wrapping malloc<a class="headerlink" href="#wrapping-malloc" title="Permanent link">&para;</a></h3>
-<p>To use a completely custom allocator, you need to replace the newlib allocator
-by wrapping the <code>malloc</code>, <code>calloc</code>, <code>realloc</code> and <code>free</code> functions via the
-linker by adding this to your project configuration:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;library&gt;</span>
-  <span class="c">&lt;!-- repos, modules, options, etc... --&gt;</span>
-  <span class="nt">&lt;collectors&gt;</span>
-    <span class="nt">&lt;collect</span> <span class="na">name=</span><span class="s">&quot;:build:linkflags&quot;</span><span class="nt">&gt;</span>-Wl,-wrap,_malloc_r<span class="nt">&lt;/collect&gt;</span>
-    <span class="nt">&lt;collect</span> <span class="na">name=</span><span class="s">&quot;:build:linkflags&quot;</span><span class="nt">&gt;</span>-Wl,-wrap,_calloc_r<span class="nt">&lt;/collect&gt;</span>
-    <span class="nt">&lt;collect</span> <span class="na">name=</span><span class="s">&quot;:build:linkflags&quot;</span><span class="nt">&gt;</span>-Wl,-wrap,_realloc_r<span class="nt">&lt;/collect&gt;</span>
-    <span class="nt">&lt;collect</span> <span class="na">name=</span><span class="s">&quot;:build:linkflags&quot;</span><span class="nt">&gt;</span>-Wl,-wrap,_free_r<span class="nt">&lt;/collect&gt;</span>
-  <span class="nt">&lt;/collectors&gt;</span>
-<span class="nt">&lt;/library&gt;</span>
-</code></pre></div>
-
-<p>And then implement the following functions with your custom allocator:</p>
-<div class="highlight"><pre><span></span><code><span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="kt">void</span> <span class="o">*</span>
-<span class="n">__wrap__malloc_r</span><span class="p">(</span><span class="k">struct</span> <span class="n">_reent</span> <span class="o">*</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">size</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">allocator</span><span class="p">.</span><span class="n">malloc</span><span class="p">(</span><span class="n">size</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="kt">void</span> <span class="o">*</span>
-<span class="n">__wrap__calloc_r</span><span class="p">(</span><span class="k">struct</span> <span class="n">_reent</span> <span class="o">*</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">size</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">allocator</span><span class="p">.</span><span class="n">calloc</span><span class="p">(</span><span class="n">size</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="kt">void</span> <span class="o">*</span>
-<span class="n">__wrap__realloc_r</span><span class="p">(</span><span class="k">struct</span> <span class="n">_reent</span> <span class="o">*</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">ptr</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">size</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">allocator</span><span class="p">.</span><span class="n">realloc</span><span class="p">(</span><span class="n">ptr</span><span class="p">,</span> <span class="n">size</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="kt">void</span> 
-<span class="n">__wrap__free_r</span><span class="p">(</span><span class="k">struct</span> <span class="n">_reent</span> <span class="o">*</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">p</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">allocator</span><span class="p">.</span><span class="n">free</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
-
-<p>This is particularly recommended if you need a thread-safe malloc, which you
-implement here via the <code>_reent</code> struct. Consult newlib docs for details.</p>
-<div class="admonition tip">
-<p class="admonition-title">sbrk is not called anymore</p>
-<p>When wrapping these malloc functions, <code>_sbrk_r</code> is not called anymore, and
-therefore is thrown away by the linker, thus the linker error disappears.
-You therefore do not need to implement it, not even as a stub.</p>
-</div>
-<p>To also support memory traits, you need to overwrite the default implementation
-of <code>malloc_traits(size, traits)</code> which would otherwise just ignore the traits:</p>
-<div class="highlight"><pre><span></span><code><span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="kt">void</span> <span class="o">*</span>
-<span class="n">malloc_traits</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">size</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">ctraits</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="c1">// Convert back from C land to C++ land:</span>
-    <span class="k">const</span> <span class="n">modm</span><span class="o">::</span><span class="n">MemoryTraits</span> <span class="n">traits</span><span class="p">{</span><span class="n">ctraits</span><span class="p">};</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">traits</span> <span class="o">&amp;</span> <span class="n">modm</span><span class="o">::</span><span class="n">MemoryTrait</span><span class="o">::</span><span class="n">AccessDMA</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// check for space in DMA-able heap regions</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="c1">// check other regions</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">ptr</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-
-<p><em>This module is only available for stm32.</em></p>
-<h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
-<h4 id="allocator">allocator<a class="headerlink" href="#allocator" title="Permanent link">&para;</a></h4>
-<p>Heap allocator algorithms</p>
-<p>Default: <code>tlsf</code><br />
-Inputs: <code>[block, newlib, tlsf]</code><br />
-Input Dependency: <code>block -&gt; modm:driver:block.allocator</code><br />
-Input Dependency: <code>tlsf -&gt; modm:tlsf</code>  </p>
+                <h1 id="general-purpose-io-gpio">General Purpose I/O (GPIO)<a class="headerlink" href="#general-purpose-io-gpio" title="Permanent link">&para;</a></h1>
+<p>lbuild module: <code>modm:platform:gpio</code></p>
+<p><em>This module is only available for sam.</em></p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
-<!-- Title: modm:platform:heap Pages: 1 -->
-<svg width="466pt" height="150pt"
- viewBox="0.00 0.00 466.00 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Title: modm:platform:gpio Pages: 1 -->
+<svg width="283pt" height="150pt"
+ viewBox="0.00 0.00 283.00 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 146)">
-<title>modm:platform:heap</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-146 462,-146 462,4 -4,4"/>
-<!-- modm_platform_heap -->
+<title>modm:platform:gpio</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-146 279,-146 279,4 -4,4"/>
+<!-- modm_platform_gpio -->
 <g id="node1" class="node">
-<title>modm_platform_heap</title>
-<polygon fill="lightgrey" stroke="black" stroke-width="2" points="289,-53 206,-53 206,0 289,0 289,-53"/>
-<text text-anchor="middle" x="247.5" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="247.5" y="-22.8" font-family="Times,serif" font-size="14.00">platform:</text>
-<text text-anchor="middle" x="247.5" y="-7.8" font-family="Times,serif" font-size="14.00">heap</text>
+<title>modm_platform_gpio</title>
+<polygon fill="lightgrey" stroke="black" stroke-width="2" points="201,-53 118,-53 118,0 201,0 201,-53"/>
+<text text-anchor="middle" x="159.5" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="159.5" y="-22.8" font-family="Times,serif" font-size="14.00">platform:</text>
+<text text-anchor="middle" x="159.5" y="-7.8" font-family="Times,serif" font-size="14.00">gpio</text>
 </g>
-<!-- modm_architecture_assert -->
+<!-- modm_architecture_gpio -->
 <g id="node2" class="node">
-<title>modm_architecture_assert</title>
+<title>modm_architecture_gpio</title>
 <polygon fill="lightgrey" stroke="black" points="109,-142 0,-142 0,-89 109,-89 109,-142"/>
 <text text-anchor="middle" x="54.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
 <text text-anchor="middle" x="54.5" y="-111.8" font-family="Times,serif" font-size="14.00">architecture:</text>
-<text text-anchor="middle" x="54.5" y="-96.8" font-family="Times,serif" font-size="14.00">assert</text>
+<text text-anchor="middle" x="54.5" y="-96.8" font-family="Times,serif" font-size="14.00">gpio</text>
 </g>
-<!-- modm_platform_heap&#45;&gt;modm_architecture_assert -->
+<!-- modm_platform_gpio&#45;&gt;modm_architecture_gpio -->
 <g id="edge1" class="edge">
-<title>modm_platform_heap&#45;&gt;modm_architecture_assert</title>
-<path fill="none" stroke="black" d="M205.62,-46.38C180.11,-57.88 147.01,-72.8 118.29,-85.74"/>
-<polygon fill="black" stroke="black" points="116.81,-82.57 109.13,-89.87 119.69,-88.95 116.81,-82.57"/>
+<title>modm_platform_gpio&#45;&gt;modm_architecture_gpio</title>
+<path fill="none" stroke="black" d="M128.56,-53.13C117.55,-62.25 105.01,-72.65 93.42,-82.25"/>
+<polygon fill="black" stroke="black" points="91.04,-79.67 85.58,-88.75 95.51,-85.07 91.04,-79.67"/>
 </g>
-<!-- modm_architecture_memory -->
+<!-- modm_cmsis_device -->
 <g id="node3" class="node">
-<title>modm_architecture_memory</title>
-<polygon fill="lightgrey" stroke="black" points="236,-142 127,-142 127,-89 236,-89 236,-142"/>
-<text text-anchor="middle" x="181.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="181.5" y="-111.8" font-family="Times,serif" font-size="14.00">architecture:</text>
-<text text-anchor="middle" x="181.5" y="-96.8" font-family="Times,serif" font-size="14.00">memory</text>
+<title>modm_cmsis_device</title>
+<polygon fill="lightgrey" stroke="black" points="192,-142 127,-142 127,-89 192,-89 192,-142"/>
+<text text-anchor="middle" x="159.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="159.5" y="-111.8" font-family="Times,serif" font-size="14.00">cmsis:</text>
+<text text-anchor="middle" x="159.5" y="-96.8" font-family="Times,serif" font-size="14.00">device</text>
 </g>
-<!-- modm_platform_heap&#45;&gt;modm_architecture_memory -->
+<!-- modm_platform_gpio&#45;&gt;modm_cmsis_device -->
 <g id="edge2" class="edge">
-<title>modm_platform_heap&#45;&gt;modm_architecture_memory</title>
-<path fill="none" stroke="black" d="M228.05,-53.13C221.53,-61.73 214.16,-71.45 207.23,-80.58"/>
-<polygon fill="black" stroke="black" points="204.29,-78.67 201.03,-88.75 209.87,-82.9 204.29,-78.67"/>
+<title>modm_platform_gpio&#45;&gt;modm_cmsis_device</title>
+<path fill="none" stroke="black" d="M159.5,-53.13C159.5,-61.11 159.5,-70.07 159.5,-78.62"/>
+<polygon fill="black" stroke="black" points="156,-78.75 159.5,-88.75 163,-78.75 156,-78.75"/>
 </g>
-<!-- modm_driver_block_allocator -->
+<!-- modm_math_utils -->
 <g id="node4" class="node">
-<title>modm_driver_block_allocator</title>
-<polygon fill="lightgrey" stroke="black" stroke-dasharray="5,2" points="375,-142 254,-142 254,-89 375,-89 375,-142"/>
-<text text-anchor="middle" x="314.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="314.5" y="-111.8" font-family="Times,serif" font-size="14.00">driver:</text>
-<text text-anchor="middle" x="314.5" y="-96.8" font-family="Times,serif" font-size="14.00">block.allocator</text>
+<title>modm_math_utils</title>
+<polygon fill="lightgrey" stroke="black" points="275,-142 210,-142 210,-89 275,-89 275,-142"/>
+<text text-anchor="middle" x="242.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="242.5" y="-111.8" font-family="Times,serif" font-size="14.00">math:</text>
+<text text-anchor="middle" x="242.5" y="-96.8" font-family="Times,serif" font-size="14.00">utils</text>
 </g>
-<!-- modm_platform_heap&#45;&gt;modm_driver_block_allocator -->
+<!-- modm_platform_gpio&#45;&gt;modm_math_utils -->
 <g id="edge3" class="edge">
-<title>modm_platform_heap&#45;&gt;modm_driver_block_allocator</title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M267.24,-53.13C273.86,-61.73 281.35,-71.45 288.38,-80.58"/>
-<polygon fill="black" stroke="black" points="285.8,-82.96 294.67,-88.75 291.34,-78.69 285.8,-82.96"/>
-</g>
-<!-- modm_tlsf -->
-<g id="node5" class="node">
-<title>modm_tlsf</title>
-<polygon fill="lightgrey" stroke="black" stroke-dasharray="5,2" points="458,-134.5 393,-134.5 393,-96.5 458,-96.5 458,-134.5"/>
-<text text-anchor="middle" x="425.5" y="-119.3" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="425.5" y="-104.3" font-family="Times,serif" font-size="14.00">tlsf</text>
-</g>
-<!-- modm_platform_heap&#45;&gt;modm_tlsf -->
-<g id="edge4" class="edge">
-<title>modm_platform_heap&#45;&gt;modm_tlsf</title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M289.26,-44.52C316.76,-56.14 353.32,-72.4 384.5,-89 385.84,-89.71 387.2,-90.45 388.56,-91.21"/>
-<polygon fill="black" stroke="black" points="387.16,-94.45 397.56,-96.43 390.67,-88.39 387.16,-94.45"/>
+<title>modm_platform_gpio&#45;&gt;modm_math_utils</title>
+<path fill="none" stroke="black" d="M183.95,-53.13C192.41,-61.99 202,-72.05 210.94,-81.42"/>
+<polygon fill="black" stroke="black" points="208.5,-83.93 217.93,-88.75 213.56,-79.1 208.5,-83.93"/>
 </g>
 </g>
 </svg>
@@ -3874,7 +3526,7 @@ Input Dependency: <code>tlsf -&gt; modm:tlsf</code>  </p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../modm-platform-heap-avr/" title=":platform:heap (avr)" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../modm-platform-gpio-hosted/" title=":platform:gpio (hosted)" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -3883,19 +3535,19 @@ Input Dependency: <code>tlsf -&gt; modm:tlsf</code>  </p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                :platform:heap (avr)
+                :platform:gpio (hosted)
               </div>
             </div>
           </a>
         
         
-          <a href="../modm-platform-i2c-avr/" title=":platform:i2c (avr)" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../modm-platform-gpio-stm32/" title=":platform:gpio (stm32)" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                :platform:i2c (avr)
+                :platform:gpio (stm32)
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

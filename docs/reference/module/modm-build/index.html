@@ -883,6 +883,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../modm-board-feather-m0/" title=":board:feather-m0" class="md-nav__link">
+      :board:feather-m0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../modm-board-mega-2560-pro/" title=":board:mega-2560-pro" class="md-nav__link">
       :board:mega-2560-pro
     </a>
@@ -1101,6 +1113,18 @@
   <li class="md-nav__item">
     <a href="../modm-board-olimexino-stm32/" title=":board:olimexino-stm32" class="md-nav__link">
       :board:olimexino-stm32
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-board-samd21-mini/" title=":board:samd21-mini" class="md-nav__link">
+      :board:samd21-mini
     </a>
   </li>
 
@@ -1454,6 +1478,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#bossacoptions" class="md-nav__link">
+    bossac.options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ccflags" class="md-nav__link">
     ccflags
   </a>
@@ -1761,8 +1792,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../modm-cmsis-device/" title=":cmsis:device" class="md-nav__link">
-      :cmsis:device
+    <a href="../modm-cmsis-device-sam/" title=":cmsis:device (sam)" class="md-nav__link">
+      :cmsis:device (sam)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-cmsis-device-stm32/" title=":cmsis:device (stm32)" class="md-nav__link">
+      :cmsis:device (stm32)
     </a>
   </li>
 
@@ -3189,8 +3232,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../modm-platform-clock-stm32/" title=":platform:clock (stm32)" class="md-nav__link">
-      :platform:clock (stm32)
+    <a href="../modm-platform-clock-sam--stm32/" title=":platform:clock (sam, stm32)" class="md-nav__link">
+      :platform:clock (sam, stm32)
     </a>
   </li>
 
@@ -3227,6 +3270,18 @@
   <li class="md-nav__item">
     <a href="../modm-platform-core-hosted/" title=":platform:core (hosted)" class="md-nav__link">
       :platform:core (hosted)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-core-sam/" title=":platform:core (sam)" class="md-nav__link">
+      :platform:core (sam)
     </a>
   </li>
 
@@ -3321,6 +3376,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../modm-platform-gclk/" title=":platform:gclk" class="md-nav__link">
+      :platform:gclk
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../modm-platform-gpio-avr/" title=":platform:gpio (avr)" class="md-nav__link">
       :platform:gpio (avr)
     </a>
@@ -3335,6 +3402,18 @@
   <li class="md-nav__item">
     <a href="../modm-platform-gpio-hosted/" title=":platform:gpio (hosted)" class="md-nav__link">
       :platform:gpio (hosted)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-platform-gpio-sam/" title=":platform:gpio (sam)" class="md-nav__link">
+      :platform:gpio (sam)
     </a>
   </li>
 
@@ -3369,8 +3448,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../modm-platform-heap-stm32/" title=":platform:heap (stm32)" class="md-nav__link">
-      :platform:heap (stm32)
+    <a href="../modm-platform-heap-sam--stm32/" title=":platform:heap (sam, stm32)" class="md-nav__link">
+      :platform:heap (sam, stm32)
     </a>
   </li>
 
@@ -4163,6 +4242,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#bossacoptions" class="md-nav__link">
+    bossac.options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ccflags" class="md-nav__link">
     ccflags
   </a>
@@ -4731,7 +4817,7 @@ projects using the same target (like small bring-up and test projects).</p>
 and do not execute them by default. A stray <code>init</code> or similar in your script
 will mess with modm's ability to program and debug a device correctly.</p>
 </div>
-<p><em>This option is only available for stm32.</em></p>
+<p><em>This option is only available for sam, stm32.</em></p>
 <p>Default: <code>[]</code><br />
 Inputs: <code>[Path]</code>  </p>
 <h4 id="projectname">project.name<a class="headerlink" href="#projectname" title="Permanent link">&para;</a></h4>
@@ -4771,6 +4857,10 @@ See <a href="https://gcc.gnu.org/onlinedocs/gcc/Assembler-Options.html">Assemble
 <p>Assembler flags (release profile)</p>
 <p>Flags must start with '-'!
 See <a href="https://gcc.gnu.org/onlinedocs/gcc/Assembler-Options.html">Assembler Options</a></p>
+<p>Inputs: <code>[String]</code></p>
+<h4 id="bossacoptions">bossac.options<a class="headerlink" href="#bossacoptions" title="Permanent link">&para;</a></h4>
+<p>Additional BOSSAc options</p>
+<p><em>This collector is only available for sam.</em></p>
 <p>Inputs: <code>[String]</code></p>
 <h4 id="ccflags">ccflags<a class="headerlink" href="#ccflags" title="Permanent link">&para;</a></h4>
 <p>Compiler flags for both C and C++ sources</p>
@@ -4877,7 +4967,7 @@ See <a href="https://gcc.gnu.org/onlinedocs/gcc/Link-Options.html">Options for L
 <p>Inputs: <code>[String]</code></p>
 <h4 id="openocdsource">openocd.source<a class="headerlink" href="#openocdsource" title="Permanent link">&para;</a></h4>
 <p>Additional OpenOCD source files.</p>
-<p><em>This collector is only available for stm32.</em></p>
+<p><em>This collector is only available for sam, stm32.</em></p>
 <p>Inputs: <code>[Path]</code></p>
 <h4 id="pathinclude">path.include<a class="headerlink" href="#pathinclude" title="Permanent link">&para;</a></h4>
 <p>Search path for header files</p>
@@ -4887,7 +4977,7 @@ See <a href="https://gcc.gnu.org/onlinedocs/gcc/Link-Options.html">Options for L
 <p>Inputs: <code>[Path]</code></p>
 <h4 id="pathopenocd">path.openocd<a class="headerlink" href="#pathopenocd" title="Permanent link">&para;</a></h4>
 <p>Search path for OpenOCD configuration files</p>
-<p><em>This collector is only available for stm32.</em></p>
+<p><em>This collector is only available for sam, stm32.</em></p>
 <p>Inputs: <code>[Path]</code></p>
 <h4 id="pkg-config">pkg-config<a class="headerlink" href="#pkg-config" title="Permanent link">&para;</a></h4>
 <p>Packages to configure against</p>

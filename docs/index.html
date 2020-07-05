@@ -957,6 +957,18 @@
 
 
   <li class="md-nav__item">
+    <a href="reference/module/modm-board-feather-m0/" title=":board:feather-m0" class="md-nav__link">
+      :board:feather-m0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="reference/module/modm-board-mega-2560-pro/" title=":board:mega-2560-pro" class="md-nav__link">
       :board:mega-2560-pro
     </a>
@@ -1185,6 +1197,18 @@
 
 
   <li class="md-nav__item">
+    <a href="reference/module/modm-board-samd21-mini/" title=":board:samd21-mini" class="md-nav__link">
+      :board:samd21-mini
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="reference/module/modm-board-stm32f030_demo/" title=":board:stm32f030_demo" class="md-nav__link">
       :board:stm32f030_demo
     </a>
@@ -1269,8 +1293,20 @@
 
 
   <li class="md-nav__item">
-    <a href="reference/module/modm-cmsis-device/" title=":cmsis:device" class="md-nav__link">
-      :cmsis:device
+    <a href="reference/module/modm-cmsis-device-sam/" title=":cmsis:device (sam)" class="md-nav__link">
+      :cmsis:device (sam)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="reference/module/modm-cmsis-device-stm32/" title=":cmsis:device (stm32)" class="md-nav__link">
+      :cmsis:device (stm32)
     </a>
   </li>
 
@@ -2697,8 +2733,8 @@
 
 
   <li class="md-nav__item">
-    <a href="reference/module/modm-platform-clock-stm32/" title=":platform:clock (stm32)" class="md-nav__link">
-      :platform:clock (stm32)
+    <a href="reference/module/modm-platform-clock-sam--stm32/" title=":platform:clock (sam, stm32)" class="md-nav__link">
+      :platform:clock (sam, stm32)
     </a>
   </li>
 
@@ -2735,6 +2771,18 @@
   <li class="md-nav__item">
     <a href="reference/module/modm-platform-core-hosted/" title=":platform:core (hosted)" class="md-nav__link">
       :platform:core (hosted)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="reference/module/modm-platform-core-sam/" title=":platform:core (sam)" class="md-nav__link">
+      :platform:core (sam)
     </a>
   </li>
 
@@ -2829,6 +2877,18 @@
 
 
   <li class="md-nav__item">
+    <a href="reference/module/modm-platform-gclk/" title=":platform:gclk" class="md-nav__link">
+      :platform:gclk
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="reference/module/modm-platform-gpio-avr/" title=":platform:gpio (avr)" class="md-nav__link">
       :platform:gpio (avr)
     </a>
@@ -2843,6 +2903,18 @@
   <li class="md-nav__item">
     <a href="reference/module/modm-platform-gpio-hosted/" title=":platform:gpio (hosted)" class="md-nav__link">
       :platform:gpio (hosted)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="reference/module/modm-platform-gpio-sam/" title=":platform:gpio (sam)" class="md-nav__link">
+      :platform:gpio (sam)
     </a>
   </li>
 
@@ -2877,8 +2949,8 @@
 
 
   <li class="md-nav__item">
-    <a href="reference/module/modm-platform-heap-stm32/" title=":platform:heap (stm32)" class="md-nav__link">
-      :platform:heap (stm32)
+    <a href="reference/module/modm-platform-heap-sam--stm32/" title=":platform:heap (sam, stm32)" class="md-nav__link">
+      :platform:heap (sam, stm32)
     </a>
   </li>
 
@@ -3496,7 +3568,8 @@ back so everyone can benefit.</p>
 <li>Hundreds of tests to ensure correct functionality.</li>
 </ul>
 <h2 id="targets">Targets<a class="headerlink" href="#targets" title="Permanent link">&para;</a></h2>
-<p>modm can generate code for <!--avrcount-->530<!--/avrcount--> AVR and <!--stmcount-->1959<!--/stmcount-->
+<p>modm can generate code for <!--avrcount-->530<!--/avrcount--> AVR,
+<!--samcount-->163<!--/samcount--> SAM and <!--stmcount-->1959<!--/stmcount-->
 STM32 devices, however, there are different levels of support and testing.</p>
 <p><center></p>
 <table>
@@ -3543,6 +3616,14 @@ STM32 devices, however, there are different levels of support and testing.</p>
 <td align="left">STM32G4</td>
 <td align="left">★★★★</td>
 </tr>
+<tr>
+<td align="left">SAMD21</td>
+<td align="left">★</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
 </tbody>
 </table>
 <p></center></p>
@@ -3586,31 +3667,33 @@ documentation.</p>
 <td align="center">DISCO-L152RC</td>
 <td align="center">DISCO-L476VG</td>
 </tr><tr>
+<td align="center">FEATHER-M0</td>
 <td align="center">MEGA-2560-PRO</td>
 <td align="center">MINI-F401</td>
 <td align="center">MINI-F411</td>
-<td align="center">NUCLEO-F031K6</td>
 </tr><tr>
+<td align="center">NUCLEO-F031K6</td>
 <td align="center">NUCLEO-F042K6</td>
 <td align="center">NUCLEO-F103RB</td>
 <td align="center">NUCLEO-F303K8</td>
-<td align="center">NUCLEO-F303RE</td>
 </tr><tr>
+<td align="center">NUCLEO-F303RE</td>
 <td align="center">NUCLEO-F401RE</td>
 <td align="center">NUCLEO-F411RE</td>
 <td align="center">NUCLEO-F429ZI</td>
-<td align="center">NUCLEO-F446RE</td>
 </tr><tr>
+<td align="center">NUCLEO-F446RE</td>
 <td align="center">NUCLEO-F746ZG</td>
 <td align="center">NUCLEO-G071RB</td>
 <td align="center">NUCLEO-G474RE</td>
-<td align="center">NUCLEO-L152RE</td>
 </tr><tr>
+<td align="center">NUCLEO-L152RE</td>
 <td align="center">NUCLEO-L432KC</td>
 <td align="center">NUCLEO-L476RG</td>
 <td align="center">OLIMEXINO-STM32</td>
-<td align="center">STM32F030F4P6-DEMO</td>
 </tr><tr>
+<td align="center">SAMD21-MINI</td>
+<td align="center">STM32F030F4P6-DEMO</td>
 </tr>
 </table>
 </center></p>
@@ -3887,135 +3970,136 @@ compilable as enforced by our CI.</p>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_l476rg/i2c_test/main.cpp">NUCLEO-L476RG: i2c_test</a></td>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/olimexino_stm32/blink/main.cpp">OLIMEXINO-STM32: blink</a></td>
 </tr><tr>
+<td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/samd/blink/main.cpp">SAMD: blink</a></td>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f0_discovery/blink/main.cpp">STM32F0-DISCOVERY: blink</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f0_discovery/logger/main.cpp">STM32F0-DISCOVERY: logger</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f030f4p6_demo_board/blink/main.cpp">STM32F030F4P6-DEMO-BOARD: blink</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f072_discovery/blink/main.cpp">STM32F072-DISCOVERY: blink</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f072_discovery/can/main.cpp">STM32F072-DISCOVERY: can</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f072_discovery/hard_fault/main.cpp">STM32F072-DISCOVERY: hard_fault</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f072_discovery/rotation/main.cpp">STM32F072-DISCOVERY: rotation</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f072_discovery/tmp102/main.cpp">STM32F072-DISCOVERY: tmp102</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f072_discovery/uart/main.cpp">STM32F072-DISCOVERY: uart</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f072_discovery/unaligned_access/main.cpp">STM32F072-DISCOVERY: unaligned_access</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f1_discovery/blink/main.cpp">STM32F1-DISCOVERY: blink</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f1_discovery/logger/main.cpp">STM32F1-DISCOVERY: logger</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f103c8t6_black_pill/blink/main.cpp">STM32F103C8T6-Black Pill: blink</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f103c8t6_blue_pill/adns_9800/main.cpp">STM32F103C8T6-Blue Pill: adns_9800</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f103c8t6_blue_pill/blink/main.cpp">STM32F103C8T6-Blue Pill: blink</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f103c8t6_blue_pill/can/main.cpp">STM32F103C8T6-Blue Pill: can</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f103c8t6_blue_pill/environment/main.cpp">STM32F103C8T6-Blue Pill: environment</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f103c8t6_blue_pill/logger/main.cpp">STM32F103C8T6-Blue Pill: logger</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f103c8t6_blue_pill/tlc594x/main.cpp">STM32F103C8T6-Blue Pill: tlc594x</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f103c8t6_blue_pill/weight_scale_hx711/main.cpp">STM32F103C8T6-Blue Pill: weight_scale_hx711</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f3_discovery/accelerometer/main.cpp">STM32F3-DISCOVERY: accelerometer</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f3_discovery/adc/continous/main.cpp">STM32F3-DISCOVERY: adc/continous</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f3_discovery/adc/interrupt/main.cpp">STM32F3-DISCOVERY: adc/interrupt</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f3_discovery/adc/simple/main.cpp">STM32F3-DISCOVERY: adc/simple</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f3_discovery/blink/main.cpp">STM32F3-DISCOVERY: blink</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f3_discovery/can/main.cpp">STM32F3-DISCOVERY: can</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f3_discovery/comp/main.cpp">STM32F3-DISCOVERY: comp</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f3_discovery/ft245/main.cpp">STM32F3-DISCOVERY: ft245</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f3_discovery/gdb/main.cpp">STM32F3-DISCOVERY: gdb</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f3_discovery/rotation/main.cpp">STM32F3-DISCOVERY: rotation</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f3_discovery/timer/basic/main.cpp">STM32F3-DISCOVERY: timer/basic</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f3_discovery/uart/hal/main.cpp">STM32F3-DISCOVERY: uart/hal</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f3_discovery/uart/logger/main.cpp">STM32F3-DISCOVERY: uart/logger</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/accelerometer/main.cpp">STM32F4-DISCOVERY: accelerometer</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/adc/interrupt/main.cpp">STM32F4-DISCOVERY: adc/interrupt</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/adc/oversample/main.cpp">STM32F4-DISCOVERY: adc/oversample</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/adc/simple/main.cpp">STM32F4-DISCOVERY: adc/simple</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/app_uart_sniffer/main.cpp">STM32F4-DISCOVERY: app_uart_sniffer</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/barometer_bmp085_bmp180/main.cpp">STM32F4-DISCOVERY: barometer_bmp085_bmp180</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/blink/main.cpp">STM32F4-DISCOVERY: blink</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/can/main.cpp">STM32F4-DISCOVERY: can</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/can2/main.cpp">STM32F4-DISCOVERY: can2</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/colour_tcs3414/main.cpp">STM32F4-DISCOVERY: colour_tcs3414</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/display/hd44780/main.cpp">STM32F4-DISCOVERY: display/hd44780</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/display/nokia_5110/main.cpp">STM32F4-DISCOVERY: display/nokia_5110</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/display/ssd1306/main.cpp">STM32F4-DISCOVERY: display/ssd1306</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/distance_vl6180/main.cpp">STM32F4-DISCOVERY: distance_vl6180</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/encoder_output/main.cpp">STM32F4-DISCOVERY: encoder_output</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/exti/main.cpp">STM32F4-DISCOVERY: exti</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/fpu/main.cpp">STM32F4-DISCOVERY: fpu</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/fsmc/main.cpp">STM32F4-DISCOVERY: fsmc</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/led_matrix_display/main.cpp">STM32F4-DISCOVERY: led_matrix_display</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/open407v-d/gui/main.cpp">STM32F4-DISCOVERY: open407v-d/gui</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/open407v-d/touchscreen/main.cpp">STM32F4-DISCOVERY: open407v-d/touchscreen</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/pressure_ams5915/main.cpp">STM32F4-DISCOVERY: pressure_ams5915</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/protothreads/main.cpp">STM32F4-DISCOVERY: protothreads</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/sab2/main.cpp">STM32F4-DISCOVERY: sab2</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/spi/main.cpp">STM32F4-DISCOVERY: spi</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/temperature_ltc2984/main.cpp">STM32F4-DISCOVERY: temperature_ltc2984</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/timer/main.cpp">STM32F4-DISCOVERY: timer</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/timer_test/main.cpp">STM32F4-DISCOVERY: timer_test</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/uart/main.cpp">STM32F4-DISCOVERY: uart</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f4_discovery/uart_spi/main.cpp">STM32F4-DISCOVERY: uart_spi</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f401ccu_mini_f401/blink/main.cpp">STM32F401CCU-MINI-F401: blink</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f411ceu_mini_f411/blink/main.cpp">STM32F411CEU-MINI-F411: blink</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f429_discovery/blink/main.cpp">STM32F429-DISCOVERY: blink</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f429_discovery/logger/main.cpp">STM32F429-DISCOVERY: logger</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f469_discovery/assert/main.cpp">STM32F469-DISCOVERY: assert</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f469_discovery/blink/main.cpp">STM32F469-DISCOVERY: blink</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f469_discovery/can/main.cpp">STM32F469-DISCOVERY: can</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f469_discovery/display/main.cpp">STM32F469-DISCOVERY: display</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f469_discovery/exceptions_rtti/main.cpp">STM32F469-DISCOVERY: exceptions_rtti</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f469_discovery/game_of_life/main.cpp">STM32F469-DISCOVERY: game_of_life</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f469_discovery/hard_fault/main.cpp">STM32F469-DISCOVERY: hard_fault</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f469_discovery/ports/main.cpp">STM32F469-DISCOVERY: ports</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f469_discovery/threadsafe_statics/main.cpp">STM32F469-DISCOVERY: threadsafe_statics</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f469_discovery/tlsf-allocator/main.cpp">STM32F469-DISCOVERY: tlsf-allocator</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f469_discovery/touchscreen/main.cpp">STM32F469-DISCOVERY: touchscreen</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f746g_discovery/adc_ad7928/main.cpp">STM32F746G-DISCOVERY: adc_ad7928</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f746g_discovery/blink/main.cpp">STM32F746G-DISCOVERY: blink</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f746g_discovery/rtos/main.cpp">STM32F746G-DISCOVERY: rtos</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f746g_discovery/tmp102/main.cpp">STM32F746G-DISCOVERY: tmp102</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32f769i_discovery/blink/main.cpp">STM32F769I-DISCOVERY: blink</a></td>
+</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32l1_discovery/blink/main.cpp">STM32L1-DISCOVERY: blink</a></td>
-</tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/stm32l476_discovery/blink/main.cpp">STM32L476-DISCOVERY: blink</a></td>
-<td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/windows/build_info/main.cpp">Windows: build_info</a></td>
 </tr><tr>
+<td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/windows/build_info/main.cpp">Windows: build_info</a></td>
 </tr>
 </table>
 
