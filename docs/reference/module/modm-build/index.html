@@ -4602,13 +4602,13 @@ a look in your generated <code>modm/modm_tools</code> folder.</p>
 <li>guessing the serial port when a baudrate was set.</li>
 <li>inspecting the ELF file to decide whether EEPROM needs to be programmed.</li>
 </ul>
-<div class="highlight"><pre><span></span><code>python3 modm/modm_tools/avrdude.py -p m328p -c arduino -P auto -b <span class="m">57600</span> <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>python3 modm/modm_tools/avrdude.py -p m328p -c arduino -P auto -b <span class="m">57600</span> <span class="se">\\</span>
                                    path/to/project.elf
 </code></pre></div>
 
 <p><a href="http://avr-libc.nongnu.org/user-manual/group__avr__fuse.html">Fuses stored in the ELF file</a>
 can be programmed by passing <code>--fuse</code> arguments:</p>
-<div class="highlight"><pre><span></span><code>python3 modm/modm_tools/avrdude.py -p m328p -c stk500v2 path/to/project.elf <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>python3 modm/modm_tools/avrdude.py -p m328p -c stk500v2 path/to/project.elf <span class="se">\\</span>
                                    --fuse hfuse --fuse lfuse --fuse efuse
 </code></pre></div>
 
@@ -4712,8 +4712,8 @@ IDE-independent debugging solution.</p>
 <p>Inspects the ELF file and generates a size report of the static usage of the
 device's memories. You must pass the available memory segments as a Python
 dictionary:</p>
-<div class="highlight"><pre><span></span><code>python3 modm/modm_tools/size.py path/to/project.elf <span class="se">\</span>
-    <span class="s2">&quot;[{&#39;name&#39;: &#39;flash&#39;, &#39;access&#39;: &#39;rx&#39;, &#39;start&#39;: 134217728, &#39;size&#39;: 65536}, \</span>
+<div class="highlight"><pre><span></span><code>python3 modm/modm_tools/size.py path/to/project.elf <span class="se">\\</span>
+    <span class="s2">&quot;[{&#39;name&#39;: &#39;flash&#39;, &#39;access&#39;: &#39;rx&#39;, &#39;start&#39;: 134217728, &#39;size&#39;: 65536}, \\</span>
 <span class="s2">    {&#39;name&#39;: &#39;sram1&#39;, &#39;access&#39;: &#39;rwx&#39;, &#39;start&#39;: 536870912, &#39;size&#39;: 20480}]&quot;</span>
 
 Program:   <span class="m">1</span>.4 KiB <span class="o">(</span><span class="m">2</span>.2% used<span class="o">)</span>
@@ -4731,7 +4731,7 @@ Heap:     <span class="m">17</span>.0 KiB <span class="o">(</span><span class="m
 <h3 id="unittest">Unittest<a class="headerlink" href="#unittest" title="Permanent link">&para;</a></h3>
 <p>This tools scans a directory for files ending in <code>_test.hpp</code>, extracts their
 test cases and generates a source file containing the test runner.</p>
-<div class="highlight"><pre><span></span><code>python3 modm/modm_tools/unittest.py path/containing/tests <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>python3 modm/modm_tools/unittest.py path/containing/tests <span class="se">\\</span>
                                     path/to/generated_runner.cpp
 </code></pre></div>
 
