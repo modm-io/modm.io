@@ -11,7 +11,7 @@
         <meta name="description" content="A modular C++17 library generator for barebone embedded programming">
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-math-interpolation/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-driver-is31fl3733/">
       
       
         <meta name="author" content="Niklas Hauser">
@@ -21,7 +21,7 @@
     
     
       
-        <title>:math:interpolation - modm barebone embedded library</title>
+        <title>:driver:is31fl3733 - modm barebone embedded library</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#interpolation-methods" class="md-skip">
+        <a href="#is31fl3733-matrix-driver" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +93,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              :math:interpolation
+              :driver:is31fl3733
             
           </span>
         </div>
@@ -1949,11 +1949,53 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../modm-driver-is31fl3733/" title=":driver:is31fl3733" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        :driver:is31fl3733
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title=":driver:is31fl3733" class="md-nav__link md-nav__link--active">
       :driver:is31fl3733
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -2525,67 +2567,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        :math:interpolation
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title=":math:interpolation" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../modm-math-interpolation/" title=":math:interpolation" class="md-nav__link">
       :math:interpolation
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#linear-interpolation" class="md-nav__link">
-    Linear Interpolation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lagrange-interpolation" class="md-nav__link">
-    Lagrange Interpolation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    Dependencies
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -3501,20 +3487,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#linear-interpolation" class="md-nav__link">
-    Linear Interpolation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lagrange-interpolation" class="md-nav__link">
-    Lagrange Interpolation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#dependencies" class="md-nav__link">
     Dependencies
   </a>
@@ -3537,143 +3509,55 @@
                   
                 
                 
-                <h1 id="interpolation-methods">Interpolation Methods<a class="headerlink" href="#interpolation-methods" title="Permanent link">&para;</a></h1>
-<p>lbuild module: <code>modm:math:interpolation</code></p>
-<p>Simple interpolation methods between a list of points.</p>
-<h2 id="linear-interpolation">Linear Interpolation<a class="headerlink" href="#linear-interpolation" title="Permanent link">&para;</a></h2>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Definition of the supporting points. The first type is the</span>
-<span class="c1">// input type, the second the output type</span>
-<span class="k">using</span> <span class="n">Point</span> <span class="o">=</span> <span class="n">modm</span><span class="o">::</span><span class="n">Pair</span><span class="o">&lt;</span><span class="kt">int8_t</span><span class="p">,</span> <span class="kt">int16_t</span><span class="o">&gt;</span><span class="p">;</span>
-
-<span class="c1">// Create a array of supporting points describing the curve.</span>
-<span class="k">const</span> <span class="n">Point</span> <span class="n">supportingPoints</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span>
-<span class="p">{</span>
-    <span class="p">{</span> <span class="mi">30</span><span class="p">,</span> <span class="o">-</span><span class="mi">200</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">50</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">2050</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">3000</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">20000</span> <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="n">modm</span><span class="o">::</span><span class="n">interpolation</span><span class="o">::</span><span class="n">Linear</span><span class="o">&lt;</span><span class="n">Point</span><span class="o">&gt;</span> <span class="n">value</span><span class="p">(</span><span class="n">supportingPoints</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
-<span class="c1">// ...</span>
-
-<span class="kt">int8_t</span>  <span class="n">a</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>
-<span class="kt">int16_t</span> <span class="n">b</span> <span class="o">=</span> <span class="n">value</span><span class="p">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
-</code></pre></div>
-
-<p>Example with supporting points read from flash:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Definition of a supporting point</span>
-<span class="k">using</span> <span class="n">Point</span> <span class="o">=</span> <span class="n">modm</span><span class="o">::</span><span class="n">Pair</span><span class="o">&lt;</span><span class="kt">int8_t</span><span class="p">,</span> <span class="kt">int16_t</span><span class="o">&gt;</span><span class="p">;</span>
-
-<span class="c1">// Array of supporting points in flash</span>
-<span class="n">FLASH_STORAGE</span><span class="p">(</span><span class="n">Point</span> <span class="n">supportingPoints</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span> <span class="o">=</span>
-<span class="p">{</span>
-    <span class="p">{</span> <span class="mi">30</span><span class="p">,</span> <span class="o">-</span><span class="mi">200</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">50</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">2050</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">3000</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">20000</span> <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="c1">// Create an interpolator object which reads the</span>
-<span class="c1">// supporting points from flash.</span>
-<span class="n">modm</span><span class="o">::</span><span class="n">interpolation</span><span class="o">::</span><span class="n">Linear</span><span class="o">&lt;</span><span class="n">Point</span><span class="p">,</span> <span class="n">modm</span><span class="o">::</span><span class="n">accessor</span><span class="o">::</span><span class="n">Flash</span><span class="o">&gt;</span>
-        <span class="n">value</span><span class="p">(</span><span class="n">modm</span><span class="o">::</span><span class="n">accessor</span><span class="o">::</span><span class="n">asFlash</span><span class="p">(</span><span class="n">supportingPoints</span><span class="p">),</span> <span class="mi">6</span><span class="p">);</span>
-<span class="c1">// ...</span>
-
-<span class="kt">int8_t</span>  <span class="n">a</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
-<span class="kt">int16_t</span> <span class="n">b</span> <span class="o">=</span> <span class="n">value</span><span class="p">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
-</code></pre></div>
-
-<h2 id="lagrange-interpolation">Lagrange Interpolation<a class="headerlink" href="#lagrange-interpolation" title="Permanent link">&para;</a></h2>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">Point</span> <span class="o">=</span> <span class="n">modm</span><span class="o">::</span><span class="n">Pair</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="o">&gt;</span><span class="p">;</span>
-
-<span class="c1">// interpolate x^2 over the range of 1 &lt;= x &lt;= 3</span>
-<span class="n">Point</span> <span class="n">points</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span>
-<span class="p">{</span>
-    <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span> <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="n">modm</span><span class="o">::</span><span class="n">interpolation</span><span class="o">::</span><span class="n">Lagrange</span><span class="o">&lt;</span><span class="n">Point</span><span class="o">&gt;</span> <span class="n">value</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
-<span class="c1">// ...</span>
-
-<span class="kt">float</span> <span class="n">output</span> <span class="o">=</span> <span class="n">value</span><span class="p">.</span><span class="n">interpolate</span><span class="p">(</span><span class="mf">1.5f</span><span class="p">);</span>
-<span class="c1">// output =&gt; 2.25;</span>
-</code></pre></div>
-
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Only floating points types are allowed as second type of <code>modm::Pair</code>,
-otherwise the calculation will deliver wrong results!</p>
-</div>
-<p>See <a href="http://en.wikipedia.org/wiki/Lagrange_interpolation">Wikipedia</a>.</p>
+                <h1 id="is31fl3733-matrix-driver">IS31FL3733 Matrix Driver<a class="headerlink" href="#is31fl3733-matrix-driver" title="Permanent link">&para;</a></h1>
+<p>lbuild module: <code>modm:driver:is31fl3733</code></p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
-<!-- Title: modm:math:interpolation Pages: 1 -->
-<svg width="303pt" height="150pt"
- viewBox="0.00 0.00 303.00 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Title: modm:driver:is31fl3733 Pages: 1 -->
+<svg width="244pt" height="150pt"
+ viewBox="0.00 0.00 244.00 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 146)">
-<title>modm:math:interpolation</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-146 299,-146 299,4 -4,4"/>
-<!-- modm_math_interpolation -->
+<title>modm:driver:is31fl3733</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-146 240,-146 240,4 -4,4"/>
+<!-- modm_driver_is31fl3733 -->
 <g id="node1" class="node">
-<title>modm_math_interpolation</title>
-<polygon fill="lightgrey" stroke="black" stroke-width="2" points="224,-53 115,-53 115,0 224,0 224,-53"/>
-<text text-anchor="middle" x="169.5" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="169.5" y="-22.8" font-family="Times,serif" font-size="14.00">math:</text>
-<text text-anchor="middle" x="169.5" y="-7.8" font-family="Times,serif" font-size="14.00">interpolation</text>
+<title>modm_driver_is31fl3733</title>
+<polygon fill="lightgrey" stroke="black" stroke-width="2" points="163.5,-53 71.5,-53 71.5,0 163.5,0 163.5,-53"/>
+<text text-anchor="middle" x="117.5" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="117.5" y="-22.8" font-family="Times,serif" font-size="14.00">driver:</text>
+<text text-anchor="middle" x="117.5" y="-7.8" font-family="Times,serif" font-size="14.00">is31fl3733</text>
 </g>
-<!-- modm_architecture_accessor -->
+<!-- modm_architecture_i2c_device -->
 <g id="node2" class="node">
-<title>modm_architecture_accessor</title>
+<title>modm_architecture_i2c_device</title>
 <polygon fill="lightgrey" stroke="black" points="109,-142 0,-142 0,-89 109,-89 109,-142"/>
 <text text-anchor="middle" x="54.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
 <text text-anchor="middle" x="54.5" y="-111.8" font-family="Times,serif" font-size="14.00">architecture:</text>
-<text text-anchor="middle" x="54.5" y="-96.8" font-family="Times,serif" font-size="14.00">accessor</text>
+<text text-anchor="middle" x="54.5" y="-96.8" font-family="Times,serif" font-size="14.00">i2c.device</text>
 </g>
-<!-- modm_math_interpolation&#45;&gt;modm_architecture_accessor -->
+<!-- modm_driver_is31fl3733&#45;&gt;modm_architecture_i2c_device -->
 <g id="edge1" class="edge">
-<title>modm_math_interpolation&#45;&gt;modm_architecture_accessor</title>
-<path fill="none" stroke="black" d="M135.62,-53.13C123.44,-62.34 109.56,-72.85 96.76,-82.53"/>
-<polygon fill="black" stroke="black" points="94.4,-79.93 88.54,-88.75 98.62,-85.51 94.4,-79.93"/>
+<title>modm_driver_is31fl3733&#45;&gt;modm_architecture_i2c_device</title>
+<path fill="none" stroke="black" d="M98.94,-53.13C92.71,-61.73 85.67,-71.45 79.06,-80.58"/>
+<polygon fill="black" stroke="black" points="76.18,-78.6 73.15,-88.75 81.85,-82.7 76.18,-78.6"/>
 </g>
-<!-- modm_container -->
+<!-- modm_architecture_register -->
 <g id="node3" class="node">
-<title>modm_container</title>
-<polygon fill="lightgrey" stroke="black" points="211.5,-134.5 127.5,-134.5 127.5,-96.5 211.5,-96.5 211.5,-134.5"/>
-<text text-anchor="middle" x="169.5" y="-119.3" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="169.5" y="-104.3" font-family="Times,serif" font-size="14.00">container</text>
+<title>modm_architecture_register</title>
+<polygon fill="lightgrey" stroke="black" points="236,-142 127,-142 127,-89 236,-89 236,-142"/>
+<text text-anchor="middle" x="181.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="181.5" y="-111.8" font-family="Times,serif" font-size="14.00">architecture:</text>
+<text text-anchor="middle" x="181.5" y="-96.8" font-family="Times,serif" font-size="14.00">register</text>
 </g>
-<!-- modm_math_interpolation&#45;&gt;modm_container -->
+<!-- modm_driver_is31fl3733&#45;&gt;modm_architecture_register -->
 <g id="edge2" class="edge">
-<title>modm_math_interpolation&#45;&gt;modm_container</title>
-<path fill="none" stroke="black" d="M169.5,-53.13C169.5,-63.58 169.5,-75.7 169.5,-86.39"/>
-<polygon fill="black" stroke="black" points="166,-86.49 169.5,-96.49 173,-86.49 166,-86.49"/>
-</g>
-<!-- modm_math_utils -->
-<g id="node4" class="node">
-<title>modm_math_utils</title>
-<polygon fill="lightgrey" stroke="black" points="295,-142 230,-142 230,-89 295,-89 295,-142"/>
-<text text-anchor="middle" x="262.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="262.5" y="-111.8" font-family="Times,serif" font-size="14.00">math:</text>
-<text text-anchor="middle" x="262.5" y="-96.8" font-family="Times,serif" font-size="14.00">utils</text>
-</g>
-<!-- modm_math_interpolation&#45;&gt;modm_math_utils -->
-<g id="edge3" class="edge">
-<title>modm_math_interpolation&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="black" d="M196.9,-53.13C206.46,-62.08 217.33,-72.25 227.43,-81.7"/>
-<polygon fill="black" stroke="black" points="225.28,-84.47 234.97,-88.75 230.06,-79.36 225.28,-84.47"/>
+<title>modm_driver_is31fl3733&#45;&gt;modm_architecture_register</title>
+<path fill="none" stroke="black" d="M136.36,-53.13C142.68,-61.73 149.83,-71.45 156.55,-80.58"/>
+<polygon fill="black" stroke="black" points="153.81,-82.77 162.56,-88.75 159.45,-78.62 153.81,-82.77"/>
 </g>
 </g>
 </svg>
@@ -3695,7 +3579,7 @@ otherwise the calculation will deliver wrong results!</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../modm-math-geometry/" title=":math:geometry" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../modm-driver-i2c-eeprom/" title=":driver:i2c.eeprom" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -3704,19 +3588,19 @@ otherwise the calculation will deliver wrong results!</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                :math:geometry
+                :driver:i2c.eeprom
               </div>
             </div>
           </a>
         
         
-          <a href="../modm-math-matrix/" title=":math:matrix" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../modm-driver-itg3200/" title=":driver:itg3200" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                :math:matrix
+                :driver:itg3200
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
