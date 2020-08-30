@@ -2491,6 +2491,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#custom-configuration" class="md-nav__link">
+    Custom Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#options" class="md-nav__link">
     Options
   </a>
@@ -2521,6 +2528,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-freertos-tcp/" title=":freertos:tcp" class="md-nav__link">
+      :freertos:tcp
+    </a>
   </li>
 
         
@@ -3508,6 +3527,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#custom-configuration" class="md-nav__link">
+    Custom Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#options" class="md-nav__link">
     Options
   </a>
@@ -3553,6 +3579,15 @@
                 <h1 id="afreertos">a:FreeRTOS<a class="headerlink" href="#afreertos" title="Permanent link">&para;</a></h1>
 <p>lbuild module: <code>modm:freertos</code></p>
 <p>Amazon FreeRTOS port for modm to be used with via the <code>modm:processing:rtos</code> module.</p>
+<h2 id="custom-configuration">Custom Configuration<a class="headerlink" href="#custom-configuration" title="Permanent link">&para;</a></h2>
+<p>This module defines a default FreeRTOS config. If you need to change a
+configuration setting, then you can define a <code>FreeRTOSConfigLocal.h</code> file, which
+is included <em>after</em> at the end of the config. You must therefore first <code>#undef</code>
+the config macros, then redefine them with your options, for example:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#undef configCHECK_FOR_STACK_OVERFLOW</span>
+<span class="cp">#define configCHECK_FOR_STACK_OVERFLOW 0</span>
+</code></pre></div>
+
 <p><em>This module is only available for sam, stm32.</em></p>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <h4 id="frequency">frequency<a class="headerlink" href="#frequency" title="Permanent link">&para;</a></h4>
@@ -3659,13 +3694,13 @@ Inputs: <code>[1 ... 1000]</code>  </p>
           </a>
         
         
-          <a href="../modm-io/" title=":io" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../modm-freertos-tcp/" title=":freertos:tcp" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                :io
+                :freertos:tcp
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

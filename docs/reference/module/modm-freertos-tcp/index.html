@@ -11,7 +11,7 @@
         <meta name="description" content="A modular C++17 library generator for barebone embedded programming">
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-architecture-unaligned/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-freertos-tcp/">
       
       
         <meta name="author" content="Niklas Hauser">
@@ -21,7 +21,7 @@
     
     
       
-        <title>:architecture:unaligned - modm barebone embedded library</title>
+        <title>:freertos:tcp - modm barebone embedded library</title>
       
     
     
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#unaligned-memory-accessor" class="md-skip">
+        <a href="#afreertos-plus-tcp" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              :architecture:unaligned
+              :freertos:tcp
             
           </span>
         </div>
@@ -666,20 +666,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title=":architecture:unaligned" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../modm-architecture-unaligned/" title=":architecture:unaligned" class="md-nav__link">
       :architecture:unaligned
     </a>
-    
   </li>
 
         
@@ -2475,11 +2466,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../modm-freertos-tcp/" title=":freertos:tcp" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title=":freertos:tcp" class="md-nav__link md-nav__link--active">
       :freertos:tcp
     </a>
+    
   </li>
 
         
@@ -3472,8 +3472,19 @@
                   
                 
                 
-                <h1 id="unaligned-memory-accessor">Unaligned Memory Accessor<a class="headerlink" href="#unaligned-memory-accessor" title="Permanent link">&para;</a></h1>
-<p>lbuild module: <code>modm:architecture:unaligned</code></p>
+                <h1 id="afreertos-plus-tcp">a:FreeRTOS-Plus-TCP<a class="headerlink" href="#afreertos-plus-tcp" title="Permanent link">&para;</a></h1>
+<p>lbuild module: <code>modm:freertos:tcp</code></p>
+<p>This module defines a default FreeRTOS IP config. If you need to change a
+configuration setting, then you can define a <code>FreeRTOSConfigIPLocal.h</code> file, which
+is included <em>after</em> at the end of the config. You must therefore first <code>#undef</code>
+the config macros, then redefine them with your options, for example:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#undef ipconfigUSE_DNS</span>
+<span class="cp">#define ipconfigUSE_DNS 1</span>
+</code></pre></div>
+
+<div class="admonition warning">
+<p class="admonition-title">Limited availability: Check with 'lbuild discover' if this module is available for your target!</p>
+</div>
                 
               
               
@@ -3492,7 +3503,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../modm-architecture-uart/" title=":architecture:uart" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../modm-freertos/" title=":freertos" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -3501,19 +3512,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                :architecture:uart
+                :freertos
               </div>
             </div>
           </a>
         
         
-          <a href="../modm-board/" title=":board" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../modm-io/" title=":io" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                :board
+                :io
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
