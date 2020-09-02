@@ -285,18 +285,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../getting-started/" title="Getting Started" class="md-nav__link">
-      Getting Started
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -334,15 +322,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#macos" class="md-nav__link">
-    macOS
+  <a href="#linux" class="md-nav__link">
+    Linux
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    Linux
+  <a href="#macos" class="md-nav__link">
+    macOS
   </a>
   
 </li>
@@ -358,6 +346,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
   </li>
 
         
@@ -3512,15 +3512,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#macos" class="md-nav__link">
-    macOS
+  <a href="#linux" class="md-nav__link">
+    Linux
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#linux" class="md-nav__link">
-    Linux
+  <a href="#macos" class="md-nav__link">
+    macOS
   </a>
   
 </li>
@@ -3579,6 +3579,46 @@ lack of commitment from Atmel on keeping their AVR toolchain up-to-date.</p>
 <code>python3 -c "import sys; print(sys.stdout.encoding)"</code> returns <code>UTF-8</code>.</p>
 </div>
 <p>Please help us <a href="https://github.com/modm-io/modm/blob/develop/CONTRIBUTING.md">keep these instructions up-to-date</a>!</p>
+<h2 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
+<p>For Ubuntu 20.04LTS, these commands install the basic build system:</p>
+<div class="codehilite"><pre><span></span><code>sudo apt-get install python3 python3-pip scons git gcc-arm-none-eabi openocd \
+  gcc build-essential libboost-all-dev
+pip3 install modm gdbgui
+</code></pre></div>
+
+
+<div class="admonition warning">
+<p class="admonition-title">OpenOCD for recent targets</p>
+<p>The latest OpenOCD release v0.10.0 (as of May 2020) is too old for some targets
+(STM32G0, STM32G4, STM32F7). To program these targets you need to compile the
+<a href="https://github.com/ntfreak/openocd">HEAD version of OpenOCD from source</a>, install it and add it to
+the beginning of your <code>$PATH</code>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Python 3 on Ubuntu ≤ 19.10</p>
+<p>Ubuntu ≤ 19.10 unfortunately defaults to Python 2, however, our SCons tools
+require Python 3. For a less intrusive way to run all scons scripts with
+Python 3 add this to your <code>.bashrc</code> or <code>.zshrc</code>:</p>
+<div class="codehilite"><pre><span></span><code>alias scons=&quot;/usr/bin/env python3 $(which scons)&quot;
+</code></pre></div>
+
+
+<p>If you get errors about missing <code>pyelftools</code>, check that you're really
+running SCons with Python 3!</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">arm-none-eabi-gcc on Ubuntu ≤ 19.10</p>
+<p>Ubuntu ≤ 19.10 does not provide a recent arm-none-eabi-gcc toolchain.
+Install the ARM toochain by downloading <a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm">the pre-built version</a>
+for 64-bit Linux and adding its <code>/bin</code> directory to the beginning of your <code>$PATH</code>.</p>
+</div>
+<div class="admonition bug">
+<p class="admonition-title">avr-gcc on Ubuntu</p>
+<p>Ubuntu does not provide an up-to-date version of avr-gcc that supports C++17.
+For our CI we've created a <a href="https://github.com/modm-ext/docker-avr-gcc/releases">precompiled version of avr-gcc for Ubuntu</a>.
+Unfortunately its path is hardcoded to <code>/work/avr-gcc</code>,
+<a href="https://github.com/modm-ext/docker-avr-gcc/issues/1">please help us fix it</a>.</p>
+</div>
 <h2 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h2>
 <p>We will use <a href="http://brew.sh/">Homebrew</a> to install the minimal build system:</p>
 <div class="codehilite"><pre><span></span><code>brew install python3 scons git doxygen
@@ -3622,60 +3662,6 @@ alias scons3=&quot;/usr/bin/env python3 $(which scons)&quot;
 <p>To compile modm <em>for macOS</em> (and not the embedded target) you need to install
 some of these libraries as well, depending on what modm modules you use:</p>
 <div class="codehilite"><pre><span></span><code>brew install boost gcc
-</code></pre></div>
-
-
-<h2 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
-<p>For Ubuntu 20.04LTS, these commands install the basic build system:</p>
-<div class="codehilite"><pre><span></span><code>sudo apt-get install python3 python3-pip scons git
-sudo apt-get --no-install-recommends install doxygen
-pip3 install modm
-</code></pre></div>
-
-
-<div class="admonition warning">
-<p class="admonition-title">Use Python 3!</p>
-<p>Ubuntu 18.04LTS unfortunately defaults to Python 2, however, our SCons tools
-require Python 3. For a less intrusive way to run all scons scripts with
-Python 3 add this to your <code>.bashrc</code> or <code>.zshrc</code>:</p>
-<div class="codehilite"><pre><span></span><code>alias scons=&quot;/usr/bin/env python3 $(which scons)&quot;
-</code></pre></div>
-
-
-<p>If you get errors about missing <code>pyelftools</code>, check that you're really
-running SCons with Python 3!</p>
-</div>
-<p>Install the AVR toochain:</p>
-<div class="codehilite"><pre><span></span><code>sudo apt-get install gcc-avr binutils-avr avr-libc avrdude
-</code></pre></div>
-
-
-<div class="admonition bug">
-<p class="admonition-title">avr-gcc on Ubuntu</p>
-<p>Ubuntu does not provide an up-to-date version of avr-gcc that supports C++17.
-For our CI we've created a <a href="https://github.com/modm-ext/docker-avr-gcc/releases">precompiled version of avr-gcc for Ubuntu</a>.
-Unfortunately its path is hardcoded to <code>/work/avr-gcc</code>.</p>
-</div>
-<p>Install the ARM toochain by downloading <a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm">the pre-built version</a>
-for 64-bit Linux and adding its <code>/bin</code> directory to your path.
-<strong>Even though your distribution may ship their own ARM toolchain, we very strongly
-recommend using the official toolchain, since all of modm is tested with it.</strong></p>
-<p>Install OpenOCD via your package manager:</p>
-<div class="codehilite"><pre><span></span><code>sudo apt-get install openocd
-</code></pre></div>
-
-
-<p>The latest OpenOCD release v0.10.0 (as of May 2020) is too old for some targets
-(STM32G0, STM32G4, STM32F7). To program these targets you need to compile the
-<a href="https://github.com/ntfreak/openocd">HEAD version of OpenOCD from source</a>.</p>
-<p>We recommend the use of a graphical frontend for GDB called <a href="https://www.gdbgui.com">gdbgui</a>:</p>
-<div class="codehilite"><pre><span></span><code>pip3 install gdbgui
-</code></pre></div>
-
-
-<p>To compile modm <em>for Linux</em> (and not the embedded target) you need to install
-some of these libraries as well, depending on what modm modules you use:</p>
-<div class="codehilite"><pre><span></span><code>sudo apt-get install gcc build-essential libboost-all-dev
 </code></pre></div>
 
 
@@ -3729,7 +3715,7 @@ improvements</a>.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../getting-started/" title="Getting Started" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../who-we-are/" title="Who we are" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -3738,19 +3724,19 @@ improvements</a>.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Getting Started
+                Who we are
               </div>
             </div>
           </a>
         
         
-          <a href="../testing/" title="Testing" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../getting-started/" title="Getting Started" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Testing
+                Getting Started
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
