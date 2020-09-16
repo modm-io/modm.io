@@ -3675,7 +3675,7 @@ solution and your target has enough memory, include all strings in your binary.<
 <code>uintptr_t</code>. Otherwise all bits are set via <code>uintptr_t(-1)</code>.</p>
 <p>Assertions are implemented as macros and expand to this pseudo-code equivalent:</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">modm_assert</span><span class="p">(</span><span class="kt">bool</span> <span class="n">condition</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">description</span><span class="p">,</span>
-                 <span class="kt">uintptr_t</span> <span class="n">context</span><span class="o">=</span><span class="kt">uintptr_t</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+                 <span class="kt">uintptr_t</span> <span class="n">context</span><span class="o">=</span><span class="kt">uintptr_t</span><span class="p">(</span><span class="mi">-1</span><span class="p">))</span>
 <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">not</span> <span class="n">condition</span><span class="p">)</span>
     <span class="p">{</span>

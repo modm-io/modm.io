@@ -3720,20 +3720,20 @@ compile time.</p>
 <span class="p">{</span>
 <span class="p">...</span>
     <span class="k">template</span><span class="o">&lt;</span> <span class="n">Peripheral</span> <span class="n">peripheral</span> <span class="o">&gt;</span>
-    <span class="k">struct</span> <span class="n">Tx</span> <span class="p">{</span>
+    <span class="k">struct</span> <span class="nc">Tx</span> <span class="p">{</span>
         <span class="k">static_assert</span><span class="p">(</span>
             <span class="p">(</span><span class="n">peripheral</span> <span class="o">==</span> <span class="n">Peripheral</span><span class="o">::</span><span class="n">Uart4</span><span class="p">),</span>
             <span class="s">&quot;GpioA0::Tx only connects to Uart4!&quot;</span><span class="p">);</span>
     <span class="p">};</span>
     <span class="k">template</span><span class="o">&lt;</span> <span class="n">Peripheral</span> <span class="n">peripheral</span> <span class="o">&gt;</span>
-    <span class="k">struct</span> <span class="n">Ch1</span> <span class="p">{</span>
+    <span class="k">struct</span> <span class="nc">Ch1</span> <span class="p">{</span>
         <span class="k">static_assert</span><span class="p">(</span>
             <span class="p">(</span><span class="n">peripheral</span> <span class="o">==</span> <span class="n">Peripheral</span><span class="o">::</span><span class="n">Tim2</span><span class="p">)</span> <span class="o">||</span>
             <span class="p">(</span><span class="n">peripheral</span> <span class="o">==</span> <span class="n">Peripheral</span><span class="o">::</span><span class="n">Tim5</span><span class="p">),</span>
             <span class="s">&quot;GpioA0::Ch1 only connects to Tim2 or Tim5!&quot;</span><span class="p">);</span>
     <span class="p">};</span>
     <span class="k">template</span><span class="o">&lt;</span> <span class="n">Peripheral</span> <span class="n">peripheral</span> <span class="o">&gt;</span>
-    <span class="k">struct</span> <span class="n">In0</span> <span class="p">{</span>
+    <span class="k">struct</span> <span class="nc">In0</span> <span class="p">{</span>
         <span class="k">static_assert</span><span class="p">(</span>
             <span class="p">(</span><span class="n">peripheral</span> <span class="o">==</span> <span class="n">Peripheral</span><span class="o">::</span><span class="n">Adc1</span><span class="p">)</span> <span class="o">||</span>
             <span class="p">(</span><span class="n">peripheral</span> <span class="o">==</span> <span class="n">Peripheral</span><span class="o">::</span><span class="n">Adc2</span><span class="p">)</span> <span class="o">||</span>
@@ -3814,7 +3814,7 @@ In addition the executable now only contains prescaler values which are written
 directly to the hardware without any computation required. This is very helpful
 for keeping code size in check on very resource constrained targets, like the AVRs.</p>
 <div class="highlight"><pre><span></span><code><span class="n">Uart4</span><span class="o">::</span><span class="n">connect</span><span class="o">&lt;</span><span class="n">GpioA0</span><span class="o">::</span><span class="n">Tx</span><span class="p">,</span> <span class="n">GpioA1</span><span class="o">::</span><span class="n">Rx</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Gpio</span><span class="o">::</span><span class="n">InputType</span><span class="o">::</span><span class="n">PullUp</span><span class="p">);</span> <span class="c1">// pull-up in RX pin</span>
-<span class="n">Uart4</span><span class="o">::</span><span class="n">initialize</span><span class="o">&lt;</span><span class="n">Board</span><span class="o">::</span><span class="n">SystemClock</span><span class="p">,</span> <span class="mi">115</span><span class="err">&#39;</span><span class="mi">200</span><span class="n">_Bd</span><span class="o">&gt;</span><span class="p">();</span> <span class="c1">// Within 1% default tolerance</span>
+<span class="n">Uart4</span><span class="o">::</span><span class="n">initialize</span><span class="o">&lt;</span><span class="n">Board</span><span class="o">::</span><span class="n">SystemClock</span><span class="p">,</span> <span class="mi">115&#39;200</span><span class="n">_Bd</span><span class="o">&gt;</span><span class="p">();</span> <span class="c1">// Within 1% default tolerance</span>
 <span class="n">Uart4</span><span class="o">::</span><span class="n">initialize</span><span class="o">&lt;</span><span class="n">Board</span><span class="o">::</span><span class="n">SystemClock</span><span class="p">,</span> <span class="mf">115.2</span><span class="n">_kBd</span><span class="p">,</span> <span class="mi">0</span><span class="n">_pct</span><span class="o">&gt;</span><span class="p">();</span>
 <span class="c1">// error: The closest available baudrate exceeds the tolerance of the requested baudrate!</span>
 </code></pre></div>
@@ -3948,9 +3948,9 @@ Here is an example of <a href="https://github.com/modm-io/modm/blob/develop/exam
             <span class="n">averageY</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">accelerometer</span><span class="p">.</span><span class="n">getData</span><span class="p">().</span><span class="n">getY</span><span class="p">());</span>
 
             <span class="c1">// set the boards LEDs depending on the acceleration values</span>
-            <span class="n">LedUp</span><span class="o">::</span><span class="n">set</span><span class="p">(</span>   <span class="n">averageX</span><span class="p">.</span><span class="n">getValue</span><span class="p">()</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">);</span>
+            <span class="n">LedUp</span><span class="o">::</span><span class="n">set</span><span class="p">(</span>   <span class="n">averageX</span><span class="p">.</span><span class="n">getValue</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">-0.2</span><span class="p">);</span>
             <span class="n">LedDown</span><span class="o">::</span><span class="n">set</span><span class="p">(</span> <span class="n">averageX</span><span class="p">.</span><span class="n">getValue</span><span class="p">()</span> <span class="o">&gt;</span>  <span class="mf">0.2</span><span class="p">);</span>
-            <span class="n">LedLeft</span><span class="o">::</span><span class="n">set</span><span class="p">(</span> <span class="n">averageY</span><span class="p">.</span><span class="n">getValue</span><span class="p">()</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">);</span>
+            <span class="n">LedLeft</span><span class="o">::</span><span class="n">set</span><span class="p">(</span> <span class="n">averageY</span><span class="p">.</span><span class="n">getValue</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">-0.2</span><span class="p">);</span>
             <span class="n">LedRight</span><span class="o">::</span><span class="n">set</span><span class="p">(</span><span class="n">averageY</span><span class="p">.</span><span class="n">getValue</span><span class="p">()</span> <span class="o">&gt;</span>  <span class="mf">0.2</span><span class="p">);</span>
 
             <span class="c1">// defer back to other protothreads until the timer fires</span>

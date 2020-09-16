@@ -3552,7 +3552,7 @@ counter is used to interpolate the time between interrupts with this algorithm:<
 <span class="kt">void</span> <span class="nf">SysTick_Handler</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="n">milli_time</span> <span class="o">+=</span> <span class="mi">250</span><span class="p">;</span>
-    <span class="n">micro_time</span> <span class="o">+=</span> <span class="mi">250</span><span class="err">&#39;</span><span class="mo">000</span><span class="p">;</span>
+    <span class="n">micro_time</span> <span class="o">+=</span> <span class="mi">250&#39;000</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="n">modm</span><span class="o">::</span><span class="p">{</span><span class="n">Precise</span><span class="p">}</span><span class="n">Clock</span><span class="o">::</span><span class="n">now</span><span class="p">()</span>

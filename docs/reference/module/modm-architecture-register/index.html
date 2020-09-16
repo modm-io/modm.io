@@ -3687,11 +3687,11 @@ bit groups and bit configurations in registers with type-safe access.</p>
     <span class="n">Div4</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
     <span class="n">Div8</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
 <span class="p">};</span>
-<span class="k">typedef</span> <span class="n">Configuration</span><span class="o">&lt;</span><span class="n">Control_t</span><span class="p">,</span> <span class="n">Prescaler</span><span class="p">,</span> <span class="mi">0</span><span class="n">b11</span><span class="p">,</span> <span class="mi">4</span><span class="o">&gt;</span> <span class="n">Prescaler_t</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="n">Configuration</span><span class="o">&lt;</span><span class="n">Control_t</span><span class="p">,</span> <span class="n">Prescaler</span><span class="p">,</span> <span class="mb">0b11</span><span class="p">,</span> <span class="mi">4</span><span class="o">&gt;</span> <span class="n">Prescaler_t</span><span class="p">;</span>
 </code></pre></div>
 
 <p>Why? If you have two or more configurations with the same selections in the same register,  you can simply add another one:</p>
-<div class="highlight"><pre><span></span><code><span class="k">typedef</span> <span class="n">Configuration</span><span class="o">&lt;</span> <span class="n">Control_t</span><span class="p">,</span> <span class="n">Prescaler</span><span class="p">,</span> <span class="mi">0</span><span class="n">b11</span><span class="p">,</span> <span class="mi">6</span> <span class="o">&gt;</span>  <span class="n">Prescaler2_t</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span> <span class="n">Configuration</span><span class="o">&lt;</span> <span class="n">Control_t</span><span class="p">,</span> <span class="n">Prescaler</span><span class="p">,</span> <span class="mb">0b11</span><span class="p">,</span> <span class="mi">6</span> <span class="o">&gt;</span>  <span class="n">Prescaler2_t</span><span class="p">;</span>
 </code></pre></div>
 
 <p>Configurations can be used inline:</p>

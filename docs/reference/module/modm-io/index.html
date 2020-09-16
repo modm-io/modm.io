@@ -3760,10 +3760,10 @@
 C++ <code>std::basic_ostream</code>-like formatting via <code>operator &lt;&lt;</code> as well as
 implementing a reasonably large subset of <code>printf</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="n">modm</span><span class="o">::</span><span class="n">IOStream</span> <span class="n">stream</span><span class="p">(</span><span class="n">device</span><span class="p">);</span>
-<span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;format number 8: &quot;</span> <span class="o">&lt;&lt;</span> <span class="kt">uint8_t</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; or as signed -100: &quot;</span> <span class="o">&lt;&lt;</span> <span class="kt">int8_t</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">);</span>
+<span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;format number 8: &quot;</span> <span class="o">&lt;&lt;</span> <span class="kt">uint8_t</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; or as signed -100: &quot;</span> <span class="o">&lt;&lt;</span> <span class="kt">int8_t</span><span class="p">(</span><span class="mi">-100</span><span class="p">);</span>
 <span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="n">modm</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
-<span class="n">stream</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;format number 8: %u or as signed -100: %d&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">);</span>
+<span class="n">stream</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;format number 8: %u or as signed -100: %d&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">-100</span><span class="p">);</span>
 </code></pre></div>
 
 <div class="admonition warning">

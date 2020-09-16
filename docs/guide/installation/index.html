@@ -3571,7 +3571,7 @@ with modm:</p>
 <li><a href="https://github.com/modm-io/lbuild">Library Builder</a></li>
 <li>AVR toolchain: <a href="https://www.nongnu.org/avr-libc">avr-gcc</a> and <a href="https://www.nongnu.org/avrdude">avrdude</a></li>
 <li>ARM toolchain: <a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm">gcc-arm-toolchain</a> and <a href="http://openocd.org">OpenOCD</a> (HEAD version!).</li>
-<li>Optional: <a href="http://www.doxygen.nl">Doxygen</a> or <a href="https://www.copperspice.com/documentation-doxypress.html">Doxypress</a></li>
+<li>Optional: <a href="https://www.copperspice.com/documentation-doxypress.html">Doxypress</a> (preferred) or <a href="http://www.doxygen.nl">Doxygen</a></li>
 <li>Optional: <a href="https://www.gdbgui.com">gdbgui</a> for IDE-independent debugging</li>
 </ul>
 <p>Note that the modm examples use the SCons build system by default, however,
@@ -3595,9 +3595,65 @@ lack of commitment from Atmel on keeping their AVR toolchain up-to-date.</p>
 <p>Please help us <a href="https://github.com/modm-io/modm/blob/develop/CONTRIBUTING.md">keep these instructions up-to-date</a>!</p>
 <h2 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
 <p>For Ubuntu 20.04LTS, these commands install the basic build system:</p>
-<div class="codehilite"><pre><span></span><code>sudo apt-get install python3 python3-pip scons git gcc-arm-none-eabi openocd \
-  gcc build-essential libboost-all-dev
+<div class="codehilite"><pre><span></span><code>sudo apt install python3 python3-pip scons cmake git doxygen
 pip3 install modm gdbgui
+</code></pre></div>
+
+
+<div class="admonition info">
+<p class="admonition-title">Python Packages in PATH</p>
+<p>The pip3 command installs executables into <code>~/.local/bin</code>, which
+must be added to PATH if it is not already the case.
+Add the following line to the end of your <code>~/.bashrc</code> file:</p>
+<div class="codehilite"><pre><span></span><code>export PATH=&quot;~/.local/bin:$PATH&quot;
+</code></pre></div>
+
+
+</div>
+<p>For host system (x86_64/arm64) targets:</p>
+<div class="codehilite"><pre><span></span><code>sudo apt install gcc build-essential libboost-all-dev
+</code></pre></div>
+
+
+<p>For ARM Cortex-M targets:</p>
+<div class="codehilite"><pre><span></span><code>sudo apt install openocd
+</code></pre></div>
+
+
+<div class="admonition warning">
+<p class="admonition-title">Ubuntus 'gcc-arm-none-eabi' package</p>
+<p>The Ubuntu package 'gcc-arm-none-eabi' causes <a href="https://github.com/modm-io/modm/issues/468">issues at the moment</a>.
+We recommend using the toolchain provided by ARM:</p>
+<div class="codehilite"><pre><span></span><code>wget -O- https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2020q2/gcc-arm-none-eabi-9-2020-q2-update-x86_64-linux.tar.bz2 | sudo tar xj -C /opt/
+</code></pre></div>
+
+
+<p>Add it to your systems PATH variable by appending the following line to <code>~/.bashrc</code>:</p>
+<div class="codehilite"><pre><span></span><code>export PATH=&quot;/opt/gcc-arm-none-eabi-9-2020-q2-update/bin:$PATH&quot;
+</code></pre></div>
+
+
+</div>
+<p>For Atmel/Microchip AVR targets:</p>
+<div class="codehilite"><pre><span></span><code>wget -O- https://github.com/modm-ext/docker-avr-gcc/releases/download/v10.2.0/avr-gcc.tar.bz2 | sudo tar xj -C /opt
+</code></pre></div>
+
+
+<p>Add it to your systems PATH variable by appending the following line to <code>~/.bashrc</code>:</p>
+<div class="codehilite"><pre><span></span><code>export PATH=&quot;/opt/avr-gcc/avr-gcc/bin:/opt/avr-gcc/avr-binutils/bin:$PATH&quot;
+</code></pre></div>
+
+
+<p>We recommend Doxypress to generate the documentation:
+Download the <a href="https://download.copperspice.com/doxypress/binary/">binary</a> for your distribution and unzip it:</p>
+<div class="codehilite"><pre><span></span><code>sudo mkdir /opt/doxypress
+wget -O- https://download.copperspice.com/doxypress/binary/doxypress-1.4.0-ubuntu20.04-x64.tar.bz2 | sudo tar xj -C /opt/doxypress
+</code></pre></div>
+
+
+<p>... and add the directory to your <code>PATH</code> variable by appending the following line
+to <code>~/.bashrc</code>:</p>
+<div class="codehilite"><pre><span></span><code>export PATH=&quot;/opt/doxypress:$PATH&quot;
 </code></pre></div>
 
 
@@ -3606,10 +3662,12 @@ pip3 install modm gdbgui
 <p>The latest OpenOCD release v0.10.0 (as of May 2020) is too old for some targets
 (STM32G0, STM32G4, STM32F7). To program these targets you need to compile the
 <a href="https://github.com/ntfreak/openocd">HEAD version of OpenOCD from source</a>, install it and add it to
-the beginning of your <code>$PATH</code>.</p>
+the beginning of your <code>$PATH</code>.
+<a href="https://rleh.de/2019/10/08/openocd-stm32-stm32g4-stm32g0.html">Here</a> is a guide
+on how to do it.</p>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">Python 3 on Ubuntu ≤ 19.10</p>
+<p class="admonition-title">Ubuntu ≤ 19.10</p>
 <p>Ubuntu ≤ 19.10 unfortunately defaults to Python 2, however, our SCons tools
 require Python 3. For a less intrusive way to run all scons scripts with
 Python 3 add this to your <code>.bashrc</code> or <code>.zshrc</code>:</p>
@@ -3619,19 +3677,6 @@ Python 3 add this to your <code>.bashrc</code> or <code>.zshrc</code>:</p>
 
 <p>If you get errors about missing <code>pyelftools</code>, check that you're really
 running SCons with Python 3!</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">arm-none-eabi-gcc on Ubuntu ≤ 19.10</p>
-<p>Ubuntu ≤ 19.10 does not provide a recent arm-none-eabi-gcc toolchain.
-Install the ARM toochain by downloading <a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm">the pre-built version</a>
-for 64-bit Linux and adding its <code>/bin</code> directory to the beginning of your <code>$PATH</code>.</p>
-</div>
-<div class="admonition bug">
-<p class="admonition-title">avr-gcc on Ubuntu</p>
-<p>Ubuntu does not provide an up-to-date version of avr-gcc that supports C++17.
-For our CI we've created a <a href="https://github.com/modm-ext/docker-avr-gcc/releases">precompiled version of avr-gcc for Ubuntu</a>.
-Unfortunately its path is hardcoded to <code>/work/avr-gcc</code>,
-<a href="https://github.com/modm-ext/docker-avr-gcc/issues/1">please help us fix it</a>.</p>
 </div>
 <h2 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h2>
 <p>We will use <a href="http://brew.sh/">Homebrew</a> to install the minimal build system:</p>
@@ -3659,23 +3704,19 @@ brew install openocd --HEAD
 </code></pre></div>
 
 
-<p>We recommend the use of a graphical frontend for GDB called <a href="https://www.gdbgui.com">gdbgui</a>:</p>
+<p>We recommend using a graphical frontend for GDB called <a href="https://www.gdbgui.com">gdbgui</a>:</p>
 <div class="codehilite"><pre><span></span><code>pip3 install gdbgui
 </code></pre></div>
 
 
-<p>SCons now works with Python 3. Unfortunately, macOS still defaults to Python 2.
-For a less intrusive way to run all scons scripts with Python 3 add this to your
-<code>.bashrc</code> or <code>.zshrc</code>:</p>
-<div class="codehilite"><pre><span></span><code>alias scons=&quot;/usr/bin/env python3 $(which scons)&quot;
-# or if your using scons elsewhere too:
-alias scons3=&quot;/usr/bin/env python3 $(which scons)&quot;
+<p>To compile modm <em>for x86_64 macOS</em> you need to install these tools too:</p>
+<div class="codehilite"><pre><span></span><code>brew install boost gcc
 </code></pre></div>
 
 
-<p>To compile modm <em>for macOS</em> (and not the embedded target) you need to install
-some of these libraries as well, depending on what modm modules you use:</p>
-<div class="codehilite"><pre><span></span><code>brew install boost gcc
+<p>We recommend using Doxypress to generate the API documentation:</p>
+<div class="codehilite"><pre><span></span><code>brew tap modm-ext/modm
+brew install doxypress
 </code></pre></div>
 
 
@@ -3686,14 +3727,16 @@ packages:</p>
 <div class="codehilite"><pre><span></span><code>conda create --name modm python=3 pip
 activate modm
 conda install -c conda-forge git
-pip install jinja2 scons future pyelftools lbuild gdbgui
+pip install modm scons future gdbgui
 </code></pre></div>
 
 
 <p>For ARM development install the Windows 32-bit build of the <a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm">GNU Arm Embedded
 Toolchain</a>. For programming and debugging ARM Cortex-M
 devices install the pre-build <a href="https://gnutoolchains.com/arm-eabi/openocd">OpenOCD binaries</a>.
-You'll need to add both <code>/bin</code> paths to your <code>PATH</code> variable manually.</p>
+You need to add both <code>/bin</code> paths to your <code>PATH</code> variable manually.</p>
+<p>We recommend using Doxypress to generate the documentation:
+Download the <a href="https://download.copperspice.com/doxypress/binary/">Installer (*.exe)</a> and run it.</p>
 <div class="admonition warning">
 <p class="admonition-title">For non-English speakers</p>
 <p>For now project and build paths containing non-ASCII characters are not
@@ -3701,7 +3744,7 @@ parsed correctly.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Windows paths</p>
-<p>Windows created maximal incompatibility with it's <code>\</code> path separator.
+<p>Windows created maximal incompatibility with its <code>\</code> path separator.
 Even though we try hard to not hardcode the path separator, there may still
 be issues related to this. <a href="https://github.com/modm-io/modm/issues/new">Please open an issue</a> in that case.</p>
 </div>
