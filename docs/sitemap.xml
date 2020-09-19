@@ -284,6 +284,10 @@
      <lastmod>2020-09-19</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
+     <loc>http://modm.io/reference/module/modm-board-stm32_f4ve/</loc>
+     <lastmod>2020-09-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>http://modm.io/reference/module/modm-board-stm32f030_demo/</loc>
      <lastmod>2020-09-19</lastmod>
      <changefreq>daily</changefreq>
@@ -553,6 +557,10 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>http://modm.io/reference/module/modm-driver-i2c-eeprom/</loc>
+     <lastmod>2020-09-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>http://modm.io/reference/module/modm-driver-ili9341/</loc>
      <lastmod>2020-09-19</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
