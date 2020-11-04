@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fatfs" class="md-skip">
+        <a href="#fatfs-generic-fat-filesystem-module" class="md-skip">
           Skip to content
         </a>
       
@@ -2112,9 +2112,38 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        :fatfs
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
     <a href="./" class="md-nav__link md-nav__link--active">
       :fatfs
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#custom-configuration" class="md-nav__link">
+    Custom Configuration
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -3037,6 +3066,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../modm-tinyusb-device-audio/" class="md-nav__link">
+      :tinyusb:device:audio
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../modm-tinyusb-device-bth/" class="md-nav__link">
       :tinyusb:device:bth
     </a>
@@ -3370,6 +3411,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#custom-configuration" class="md-nav__link">
+    Custom Configuration
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3381,14 +3437,17 @@
               
                 
                 
-                <h1 id="fatfs">FatFS<a class="headerlink" href="#fatfs" title="Permanent link">&para;</a></h1>
+                <h1 id="fatfs-generic-fat-filesystem-module">FatFs Generic FAT Filesystem Module<a class="headerlink" href="#fatfs-generic-fat-filesystem-module" title="Permanent link">&para;</a></h1>
 <p>lbuild module: <code>modm:fatfs</code></p>
-<p>Generic FAT Filesystem Module.
-See <a href="http://elm-chan.org/fsw/ff/00index_e.html">http://elm-chan.org/fsw/ff/00index_e.html</a>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This version of FatFS is outdated and rarely used in modm.</p>
-</div>
+<p>See <a href="http://elm-chan.org/fsw/ff/00index_e.html">http://elm-chan.org/fsw/ff/00index_e.html</a>.</p>
+<h2 id="custom-configuration">Custom Configuration<a class="headerlink" href="#custom-configuration" title="Permanent link">&para;</a></h2>
+<p>This module defines a default <code>ffconf.h</code> config file. If you need to change a
+configuration setting, then you can define a <code>ffconf_local.h</code> file, which
+is included <em>after</em> at the end of the config. You must therefore first <code>#undef</code>
+the config macros, then redefine them with your options, for example:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#undef FF_USE_STRFUNC</span>
+<span class="cp">#define FF_USE_STRFUNC 1</span>
+</code></pre></div>
                 
               
               
