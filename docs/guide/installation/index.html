@@ -9,13 +9,14 @@
         <meta name="description" content="A modular C++17 library generator for barebone embedded programming">
       
       
+      
         <link rel="canonical" href="http://modm.io/guide/installation/">
       
       
         <meta name="author" content="Niklas Hauser">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
     
     
       
@@ -23,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.38780c08.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.19753c6b.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f72e892.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.196e0c26.min.css">
         
           
           
@@ -77,7 +78,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="http://modm.io" title="modm barebone embedded library" class="md-header-nav__button md-logo" aria-label="modm barebone embedded library">
       
@@ -111,7 +114,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -162,7 +165,9 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="http://modm.io" title="modm barebone embedded library" class="md-nav__button md-logo" aria-label="modm barebone embedded library">
       
@@ -195,8 +200,7 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
     <label class="md-nav__link" for="nav-1">
       Home
       <span class="md-nav__icon md-icon"></span>
@@ -259,8 +263,7 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     <label class="md-nav__link" for="nav-2">
       Guide
       <span class="md-nav__icon md-icon"></span>
@@ -373,8 +376,7 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
     <label class="md-nav__link" for="nav-3">
       Reference
       <span class="md-nav__icon md-icon"></span>
@@ -418,8 +420,7 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" >
     <label class="md-nav__link" for="nav-3-3">
       Modules
       <span class="md-nav__icon md-icon"></span>
@@ -3500,7 +3501,6 @@ lack of commitment from Atmel on keeping their AVR toolchain up-to-date.</p>
 pip3 install modm gdbgui
 </code></pre></div>
 
-
 <div class="admonition info">
 <p class="admonition-title">Python Packages in PATH</p>
 <p>The pip3 command installs executables into <code>~/.local/bin</code>, which
@@ -3509,17 +3509,14 @@ Add the following line to the end of your <code>~/.bashrc</code> file:</p>
 <div class="codehilite"><pre><span></span><code>export PATH=&quot;~/.local/bin:$PATH&quot;
 </code></pre></div>
 
-
 </div>
 <p>For host system (x86_64/arm64) targets:</p>
 <div class="codehilite"><pre><span></span><code>sudo apt install gcc build-essential libboost-all-dev
 </code></pre></div>
 
-
 <p>For ARM Cortex-M targets:</p>
 <div class="codehilite"><pre><span></span><code>sudo apt install openocd
 </code></pre></div>
-
 
 <div class="admonition warning">
 <p class="admonition-title">Ubuntus 'gcc-arm-none-eabi' package</p>
@@ -3528,22 +3525,18 @@ We recommend using the toolchain provided by ARM:</p>
 <div class="codehilite"><pre><span></span><code>wget -O- https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2020q2/gcc-arm-none-eabi-9-2020-q2-update-x86_64-linux.tar.bz2 | sudo tar xj -C /opt/
 </code></pre></div>
 
-
 <p>Add it to your systems PATH variable by appending the following line to <code>~/.bashrc</code>:</p>
 <div class="codehilite"><pre><span></span><code>export PATH=&quot;/opt/gcc-arm-none-eabi-9-2020-q2-update/bin:$PATH&quot;
 </code></pre></div>
-
 
 </div>
 <p>For Atmel/Microchip AVR targets:</p>
 <div class="codehilite"><pre><span></span><code>wget -O- https://github.com/modm-ext/docker-avr-gcc/releases/download/v10.2.0/avr-gcc.tar.bz2 | sudo tar xj -C /opt
 </code></pre></div>
 
-
 <p>Add it to your systems PATH variable by appending the following line to <code>~/.bashrc</code>:</p>
 <div class="codehilite"><pre><span></span><code>export PATH=&quot;/opt/avr-gcc/avr-gcc/bin:/opt/avr-gcc/avr-binutils/bin:$PATH&quot;
 </code></pre></div>
-
 
 <p>We recommend Doxypress to generate the documentation:
 Download the <a href="https://download.copperspice.com/doxypress/binary/">binary</a> for your distribution and unzip it:</p>
@@ -3551,12 +3544,10 @@ Download the <a href="https://download.copperspice.com/doxypress/binary/">binary
 wget -O- https://download.copperspice.com/doxypress/binary/doxypress-1.4.0-ubuntu20.04-x64.tar.bz2 | sudo tar xj -C /opt/doxypress
 </code></pre></div>
 
-
 <p>... and add the directory to your <code>PATH</code> variable by appending the following line
 to <code>~/.bashrc</code>:</p>
 <div class="codehilite"><pre><span></span><code>export PATH=&quot;/opt/doxypress:$PATH&quot;
 </code></pre></div>
-
 
 <div class="admonition warning">
 <p class="admonition-title">OpenOCD for recent targets</p>
@@ -3575,7 +3566,6 @@ Python 3 add this to your <code>.bashrc</code> or <code>.zshrc</code>:</p>
 <div class="codehilite"><pre><span></span><code>alias scons=&quot;/usr/bin/env python3 $(which scons)&quot;
 </code></pre></div>
 
-
 <p>If you get errors about missing <code>pyelftools</code>, check that you're really
 running SCons with Python 3!</p>
 </div>
@@ -3585,12 +3575,10 @@ running SCons with Python 3!</p>
 pip3 install modm
 </code></pre></div>
 
-
 <p>Install the <a href="https://github.com/osx-cross/homebrew-avr">AVR toolchain from source</a>:</p>
 <div class="codehilite"><pre><span></span><code>brew tap osx-cross/avr
 brew install avr-gcc
 </code></pre></div>
-
 
 <p>And the <a href="https://github.com/osx-cross/homebrew-arm">pre-built ARM toolchain</a> as
 well:</p>
@@ -3599,27 +3587,22 @@ brew install arm-gcc-bin
 brew install openocd --HEAD
 </code></pre></div>
 
-
 <p>To program Microchip SAM devices via the bootloader, install the <code>bossac</code> tool:</p>
 <div class="codehilite"><pre><span></span><code>brew cask install bossa
 </code></pre></div>
-
 
 <p>We recommend using a graphical frontend for GDB called <a href="https://www.gdbgui.com">gdbgui</a>:</p>
 <div class="codehilite"><pre><span></span><code>pip3 install gdbgui
 </code></pre></div>
 
-
 <p>To compile modm <em>for x86_64 macOS</em> you need to install these tools too:</p>
 <div class="codehilite"><pre><span></span><code>brew install boost gcc
 </code></pre></div>
-
 
 <p>We recommend using Doxypress to generate the API documentation:</p>
 <div class="codehilite"><pre><span></span><code>brew tap modm-ext/modm
 brew install doxypress
 </code></pre></div>
-
 
 <h2 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h2>
 <p>We will use <a href="https://www.anaconda.com">Anaconda</a> (<a href="https://docs.conda.io/en/latest/miniconda.html#windows-installers">Miniconda Windows installation</a> is
@@ -3630,7 +3613,6 @@ activate modm
 conda install -c conda-forge git
 pip install modm scons future gdbgui
 </code></pre></div>
-
 
 <p>For ARM development install the Windows 32-bit build of the <a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm">GNU Arm Embedded
 Toolchain</a>. For programming and debugging ARM Cortex-M
@@ -3747,8 +3729,8 @@ improvements</a>.</p>
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.77e55a48.min.js"></script>
-      <script src="../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({

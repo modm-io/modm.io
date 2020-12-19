@@ -9,13 +9,14 @@
         <meta name="description" content="A modular C++17 library generator for barebone embedded programming">
       
       
+      
         <link rel="canonical" href="http://modm.io/reference/module/modm-architecture-register/">
       
       
         <meta name="author" content="Niklas Hauser">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
     
     
       
@@ -23,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.19753c6b.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.196e0c26.min.css">
         
           
           
@@ -77,7 +78,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="http://modm.io" title="modm barebone embedded library" class="md-header-nav__button md-logo" aria-label="modm barebone embedded library">
       
@@ -111,7 +114,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -162,7 +165,9 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="http://modm.io" title="modm barebone embedded library" class="md-nav__button md-logo" aria-label="modm barebone embedded library">
       
@@ -195,8 +200,7 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
     <label class="md-nav__link" for="nav-1">
       Home
       <span class="md-nav__icon md-icon"></span>
@@ -257,8 +261,7 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
     <label class="md-nav__link" for="nav-2">
       Guide
       <span class="md-nav__icon md-icon"></span>
@@ -321,8 +324,7 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     <label class="md-nav__link" for="nav-3">
       Reference
       <span class="md-nav__icon md-icon"></span>
@@ -368,8 +370,7 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
     <label class="md-nav__link" for="nav-3-3">
       Modules
       <span class="md-nav__icon md-icon"></span>
@@ -3494,7 +3495,6 @@ bit groups and bit configurations in registers with type-safe access.</p>
 <div class="highlight"><pre><span></span><code>   7    6    5      4      3      2      1    0
 | EN | FS | PRE1 | PRE0 | DEL2 | DEL1 | DEL0 | |
 </code></pre></div>
-
 <ul>
 <li>Bit 7: Enable</li>
 <li>Bit 6: Full Scale</li>
@@ -3527,7 +3527,6 @@ bit groups and bit configurations in registers with type-safe access.</p>
 <span class="c1">// typedef modm::Flags8&lt; Control &gt;  Control_t;</span>
 <span class="c1">// and some enum operator overloading magic</span>
 </code></pre></div>
-
 <p>You can handle all its register bits as you would expect:</p>
 <div class="highlight"><pre><span></span><code><span class="n">Control_t</span> <span class="n">control</span> <span class="o">=</span> <span class="n">Control</span><span class="o">::</span><span class="n">EN</span><span class="p">;</span>
 <span class="n">control</span> <span class="o">=</span> <span class="n">Control</span><span class="o">::</span><span class="n">EN</span> <span class="o">|</span> <span class="n">Control</span><span class="o">::</span><span class="n">FS</span><span class="p">;</span>
@@ -3542,12 +3541,10 @@ bit groups and bit configurations in registers with type-safe access.</p>
 <span class="kt">bool</span> <span class="n">noneSet</span> <span class="o">=</span> <span class="n">control</span><span class="p">.</span><span class="n">none</span><span class="p">(</span><span class="n">Control</span><span class="o">::</span><span class="n">PRE1</span> <span class="o">|</span> <span class="n">Control</span><span class="o">::</span><span class="n">PRE0</span><span class="p">);</span>
 <span class="kt">bool</span> <span class="n">allSet</span> <span class="o">=</span> <span class="n">control</span><span class="p">.</span><span class="n">all</span><span class="p">(</span><span class="n">Control</span><span class="o">::</span><span class="n">EN</span> <span class="o">|</span> <span class="n">Control</span><span class="o">::</span><span class="n">FS</span><span class="p">);</span>
 </code></pre></div>
-
 <p>You still get raw access if you really need it:</p>
 <div class="highlight"><pre><span></span><code><span class="kt">uint8_t</span> <span class="n">raw</span> <span class="o">=</span> <span class="n">control</span><span class="p">.</span><span class="n">value</span><span class="p">;</span> <span class="c1">// the underlying type</span>
 <span class="n">control</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="mh">0x24</span><span class="p">;</span>
 </code></pre></div>
-
 <p>The access is type-safe, you cannot use bits from two different registers:</p>
 <div class="highlight"><pre><span></span><code><span class="k">enum</span> <span class="k">class</span> <span class="nc">Control2</span> <span class="o">:</span> <span class="kt">uint8_t</span>
 <span class="p">{</span>
@@ -3558,7 +3555,6 @@ bit groups and bit configurations in registers with type-safe access.</p>
 
 <span class="k">auto</span> <span class="n">control</span> <span class="o">=</span> <span class="n">Control</span><span class="o">::</span><span class="n">EN</span> <span class="o">|</span> <span class="n">Control2</span><span class="o">::</span><span class="n">HS</span><span class="p">;</span> <span class="c1">// compile error</span>
 </code></pre></div>
-
 <p>You can even overload functions on argument type now:</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">write</span><span class="p">(</span><span class="n">Control_t</span> <span class="n">control</span><span class="p">);</span>
 <span class="kt">void</span> <span class="nf">write</span><span class="p">(</span><span class="n">Control2_t</span> <span class="n">control</span><span class="p">);</span>
@@ -3566,7 +3562,6 @@ bit groups and bit configurations in registers with type-safe access.</p>
 <span class="n">write</span><span class="p">(</span><span class="n">Control</span><span class="o">::</span><span class="n">EN</span> <span class="o">|</span> <span class="n">Control</span><span class="o">::</span><span class="n">FS</span><span class="p">);</span>  <span class="c1">// calls #1</span>
 <span class="n">write</span><span class="p">(</span><span class="n">Control2</span><span class="o">::</span><span class="n">DIS</span><span class="p">);</span>              <span class="c1">// calls #2</span>
 </code></pre></div>
-
 <h2 id="register-configurations">Register Configurations<a class="headerlink" href="#register-configurations" title="Permanent link">&para;</a></h2>
 <p>Configurations are also described as a strongly-typed enum and then wrapped into the Configuration template class.</p>
 <div class="highlight"><pre><span></span><code><span class="k">enum</span> <span class="k">class</span>
@@ -3579,7 +3574,6 @@ bit groups and bit configurations in registers with type-safe access.</p>
 <span class="p">};</span>
 <span class="k">typedef</span> <span class="n">Configuration</span><span class="o">&lt;</span> <span class="n">Control_t</span><span class="p">,</span> <span class="n">Prescaler</span><span class="p">,</span> <span class="p">(</span><span class="n">Bit5</span> <span class="o">|</span> <span class="n">Bit4</span><span class="p">)</span> <span class="o">&gt;</span>  <span class="n">Prescaler_t</span><span class="p">;</span>
 </code></pre></div>
-
 <p>The <code>Prescaler</code> enum values are already shifted in this example (hence the <code>(Bit5 | Bit4)</code> mask), however you can also declare the prescaler values non-shifted and let the wrapper shift it:</p>
 <div class="highlight"><pre><span></span><code><span class="k">enum</span> <span class="k">class</span> <span class="nc">Prescaler</span> <span class="o">:</span> <span class="kt">uint8_t</span>
 <span class="p">{</span>
@@ -3590,28 +3584,23 @@ bit groups and bit configurations in registers with type-safe access.</p>
 <span class="p">};</span>
 <span class="k">typedef</span> <span class="n">Configuration</span><span class="o">&lt;</span><span class="n">Control_t</span><span class="p">,</span> <span class="n">Prescaler</span><span class="p">,</span> <span class="mb">0b11</span><span class="p">,</span> <span class="mi">4</span><span class="o">&gt;</span> <span class="n">Prescaler_t</span><span class="p">;</span>
 </code></pre></div>
-
 <p>Why? If you have two or more configurations with the same selections in the same register,  you can simply add another one:</p>
 <div class="highlight"><pre><span></span><code><span class="k">typedef</span> <span class="n">Configuration</span><span class="o">&lt;</span> <span class="n">Control_t</span><span class="p">,</span> <span class="n">Prescaler</span><span class="p">,</span> <span class="mb">0b11</span><span class="p">,</span> <span class="mi">6</span> <span class="o">&gt;</span>  <span class="n">Prescaler2_t</span><span class="p">;</span>
 </code></pre></div>
-
 <p>Configurations can be used inline:</p>
 <div class="highlight"><pre><span></span><code><span class="n">Control_t</span> <span class="n">control</span> <span class="o">=</span> <span class="n">Control</span><span class="o">::</span><span class="n">EN</span> <span class="o">|</span> <span class="n">Prescaler_t</span><span class="p">(</span><span class="n">Prescaler</span><span class="o">::</span><span class="n">Div2</span><span class="p">);</span>
 <span class="n">Control_t</span> <span class="n">control</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="n">Prescaler_t</span><span class="o">::</span><span class="n">mask</span><span class="p">();</span>
 </code></pre></div>
-
 <p>But do not have to:</p>
 <div class="highlight"><pre><span></span><code><span class="n">Prescaler_t</span><span class="o">::</span><span class="n">set</span><span class="p">(</span><span class="n">control</span><span class="p">,</span> <span class="n">Prescaler</span><span class="o">::</span><span class="n">Div2</span><span class="p">);</span>
 <span class="n">Prescaler_t</span><span class="o">::</span><span class="n">reset</span><span class="p">(</span><span class="n">control</span><span class="p">);</span>
 <span class="n">Prescaler</span> <span class="n">prescaler</span> <span class="o">=</span> <span class="n">Prescaler_t</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">control</span><span class="p">);</span>
 </code></pre></div>
-
 <h2 id="register-values">Register Values<a class="headerlink" href="#register-values" title="Permanent link">&para;</a></h2>
 <p>Values are described using the Value template class which masks and shifts the value as required.
 In our example the value has a width of 3 bits and needs to be shifted 1 bit:</p>
 <div class="highlight"><pre><span></span><code><span class="k">typedef</span> <span class="n">Value</span><span class="o">&lt;</span> <span class="n">Control_t</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span> <span class="o">&gt;</span>  <span class="n">Delay_t</span><span class="p">;</span>
 </code></pre></div>
-
 <p>This can be used the same way as the Configuration:</p>
 <div class="highlight"><pre><span></span><code><span class="n">Control_t</span> <span class="n">control</span> <span class="o">=</span> <span class="n">Control</span><span class="o">::</span><span class="n">EN</span> <span class="o">|</span> <span class="n">Prescaler_t</span><span class="p">(</span><span class="n">Prescaler</span><span class="o">::</span><span class="n">Div2</span><span class="p">)</span> <span class="o">|</span> <span class="n">Delay_t</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
 <span class="n">Control_t</span> <span class="n">control</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="n">Delay_t</span><span class="o">::</span><span class="n">mask</span><span class="p">();</span>
@@ -3620,7 +3609,6 @@ In our example the value has a width of 3 bits and needs to be shifted 1 bit:</p
 <span class="n">Delay_t</span><span class="o">::</span><span class="n">reset</span><span class="p">(</span><span class="n">control</span><span class="p">);</span>
 <span class="kt">uint8_t</span> <span class="n">delay</span> <span class="o">=</span> <span class="n">Delay_t</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">control</span><span class="p">);</span>
 </code></pre></div>
-
 <p>See <a href="https://blog.salkinium.com/typesafe-register-access-in-c++/">Typesafe Register Access in C++</a>
 for a more detailed background on this implementation.</p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
@@ -3630,35 +3618,35 @@ for a more detailed background on this implementation.</p>
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: modm:architecture:register Pages: 1 -->
-<svg width="117pt" height="150pt"
+<p><svg width="117pt" height="150pt"
  viewBox="0.00 0.00 117.00 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 146)">
 <title>modm:architecture:register</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-146 113,-146 113,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-146 113,-146 113,4 -4,4"/></p>
 <!-- modm_architecture_register -->
-<g id="node1" class="node">
+<p><g id="node1" class="node">
 <title>modm_architecture_register</title>
 <polygon fill="lightgrey" stroke="black" stroke-width="2" points="109,-53 0,-53 0,0 109,0 109,-53"/>
 <text text-anchor="middle" x="54.5" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
 <text text-anchor="middle" x="54.5" y="-22.8" font-family="Times,serif" font-size="14.00">architecture:</text>
 <text text-anchor="middle" x="54.5" y="-7.8" font-family="Times,serif" font-size="14.00">register</text>
-</g>
+</g></p>
 <!-- modm_math_utils -->
-<g id="node2" class="node">
+<p><g id="node2" class="node">
 <title>modm_math_utils</title>
 <polygon fill="lightgrey" stroke="black" points="87,-142 22,-142 22,-89 87,-89 87,-142"/>
 <text text-anchor="middle" x="54.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
 <text text-anchor="middle" x="54.5" y="-111.8" font-family="Times,serif" font-size="14.00">math:</text>
 <text text-anchor="middle" x="54.5" y="-96.8" font-family="Times,serif" font-size="14.00">utils</text>
-</g>
+</g></p>
 <!-- modm_architecture_register&#45;&gt;modm_math_utils -->
-<g id="edge1" class="edge">
+<p><g id="edge1" class="edge">
 <title>modm_architecture_register&#45;&gt;modm_math_utils</title>
 <path fill="none" stroke="black" d="M54.5,-53.13C54.5,-61.11 54.5,-70.07 54.5,-78.62"/>
 <polygon fill="black" stroke="black" points="51,-78.75 54.5,-88.75 58,-78.75 51,-78.75"/>
 </g>
 </g>
-</svg>
+</svg></p>
                 
               
               
@@ -3751,8 +3739,8 @@ for a more detailed background on this implementation.</p>
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.77e55a48.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({

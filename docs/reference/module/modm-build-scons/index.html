@@ -9,13 +9,14 @@
         <meta name="description" content="A modular C++17 library generator for barebone embedded programming">
       
       
+      
         <link rel="canonical" href="http://modm.io/reference/module/modm-build-scons/">
       
       
         <meta name="author" content="Niklas Hauser">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
     
     
       
@@ -23,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.19753c6b.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.196e0c26.min.css">
         
           
           
@@ -77,7 +78,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="http://modm.io" title="modm barebone embedded library" class="md-header-nav__button md-logo" aria-label="modm barebone embedded library">
       
@@ -111,7 +114,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -162,7 +165,9 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="http://modm.io" title="modm barebone embedded library" class="md-nav__button md-logo" aria-label="modm barebone embedded library">
       
@@ -195,8 +200,7 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
     <label class="md-nav__link" for="nav-1">
       Home
       <span class="md-nav__icon md-icon"></span>
@@ -257,8 +261,7 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
     <label class="md-nav__link" for="nav-2">
       Guide
       <span class="md-nav__icon md-icon"></span>
@@ -321,8 +324,7 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     <label class="md-nav__link" for="nav-3">
       Reference
       <span class="md-nav__icon md-icon"></span>
@@ -368,8 +370,7 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
     <label class="md-nav__link" for="nav-3-3">
       Modules
       <span class="md-nav__icon md-icon"></span>
@@ -4064,7 +4065,6 @@ commands, especially <code>scons program profile=debug</code> and
 <h4 id="scons-build">scons build<a class="headerlink" href="#scons-build" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons build profile={debug|release}
 </code></pre></div>
-
 <p>Compiles your application into an executable.</p>
 <p>Example for a STM32 target:</p>
 <div class="highlight"><pre><span></span><code> $ scons build
@@ -4077,11 +4077,9 @@ Create Library· build/release/modm/libmodm.a
 Indexing······· build/release/modm/libmodm.a
 Linking········ build/release/game_of_life.elf
 </code></pre></div>
-
 <h4 id="scons-size">scons size<a class="headerlink" href="#scons-size" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons size profile={debug|release}
 </code></pre></div>
-
 <p>Displays the static Flash and RAM consumption of your target.</p>
 <p>Example for a STM32 target with 16MB external heap:</p>
 <div class="highlight"><pre><span></span><code> $ scons size
@@ -4098,11 +4096,9 @@ Data:      5.8 KiB (1.5% used) = 2936 B static (0.7%) + 3040 B stack (0.8%)
 Heap:     16.4 MiB
 (.heap0 + .heap1 + .heap2 + .heap3 + .heap5 + .heap_extern)
 </code></pre></div>
-
 <h4 id="scons-program">scons program<a class="headerlink" href="#scons-program" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons program profile={debug|release} [port={serial-port}]
 </code></pre></div>
-
 <p>Writes the executable onto your target via Avrdude or OpenOCD.
 This is a convenience wrapper around the programming options and methods
 defined in the <code>modm:build</code> module.
@@ -4130,11 +4126,9 @@ verified 13064 bytes in 0.296308s (43.056 KiB/s)
 ** Verified OK **
 shutdown command invoked
 </code></pre></div>
-
 <h4 id="scons-program-dfu">scons program-dfu<a class="headerlink" href="#scons-program-dfu" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons program-dfu profile={debug|release}
 </code></pre></div>
-
 <p>Writes the executable onto your target via Device Firmware Update (DFU) over USB.
 A DFU bootloader is available on many STM32 microcontrollers
 and can be accessed by pressing the BOOT0-Button during startup.
@@ -4183,11 +4177,9 @@ File downloaded successfully
 Transitioning to dfuMANIFEST state
 scons: done building targets.
 </code></pre></div>
-
 <h4 id="scons-program-bmp">scons program-bmp<a class="headerlink" href="#scons-program-bmp" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons program-bmp profile={debug|release} [port={serial-port}]
 </code></pre></div>
-
 <p><a href="https://github.com/blacksphere/blackmagic">Black Magic Probe</a> is convenient tool to convert cheap USB ST-LINK V2 clones
 to a fully functional GDB compatible debug adaptor for ARM Cortex microcontrollers.
 GDB can directly communicate with the debug adaptor making debugging easy and
@@ -4199,7 +4191,6 @@ and the second a plain serial adaptor for debugging purposes.</p>
 crw-rw-rw-  1 root  wheel   21, 104 Feb 19 09:46 /dev/tty.usbmodemDEADBEEF
 crw-rw-rw-  1 root  wheel   21, 106 Feb 19 09:46 /dev/tty.usbmodemDEADBEF1
 </code></pre></div>
-
 <p>You can let the tool guess the port or explicitly specify it:</p>
 <div class="highlight"><pre><span></span><code>$ scons program-bmp port=/dev/cu.usbmodemDEADBEEF
 scons: Reading SConscript files ...
@@ -4224,11 +4215,9 @@ Detaching from program: , Remote target
 [Inferior 1 (Remote target) detached]
 scons: done building targets.
 </code></pre></div>
-
 <h4 id="scons-program-remote">scons program-remote<a class="headerlink" href="#scons-program-remote" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons program-remote profile={debug|release} [host={ip or hostname}]
 </code></pre></div>
-
 <p>Writes the executable onto your target connected to a remote OpenOCD process
 running on your own computer (host=<code>localhost</code>) or somewhere else.</p>
 <h4 id="scons-run">scons run<a class="headerlink" href="#scons-run" title="Permanent link">&para;</a></h4>
@@ -4237,7 +4226,6 @@ running on your own computer (host=<code>localhost</code>) or somewhere else.</p
 <h4 id="scons-debug">scons debug<a class="headerlink" href="#scons-debug" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons debug profile={debug|release} ui={tui|web}
 </code></pre></div>
-
 <p>Launches OpenOCD in the background, then launches GDB in foreground with the
 correct executable with text-based or <a href="gdbgui">web-based GDBGUI</a> UI. When GDB
 exits, it stops the OpenOCD process.
@@ -4258,14 +4246,12 @@ program profile=debug</code> and try <code>scons debug profile=debug</code> agai
 <h4 id="scons-debug-bmp">scons debug-bmp<a class="headerlink" href="#scons-debug-bmp" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons debug-bmp profile={debug|release} ui={tui|web} port={serial-port}
 </code></pre></div>
-
 <p>Launches GDB to debug via Black Magic Probe.
 (* <em>only ARM Cortex-M targets</em>)</p>
 <h4 id="scons-debug-coredump">scons debug-coredump<a class="headerlink" href="#scons-debug-coredump" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons debug-coredump profile={debug|release} ui={tui|web} \
                      firmware={GNU Build ID} coredump={path/to/coredump.txt}
 </code></pre></div>
-
 <p>Launches GDB for post-mortem debugging with the firmware identified by the
 <code>firmware={hash}</code> argument using the data from the <code>coredump={filepath}</code>
 argument.
@@ -4274,33 +4260,28 @@ argument.
 <h4 id="scons-program-remote_1">scons program-remote<a class="headerlink" href="#scons-program-remote_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons debug-remote profile={debug|release} ui={tui|web} [host={ip or hostname}]
 </code></pre></div>
-
 <p>Debugs the executable via a remote OpenOCD process running on your own computer
 (localhost is default) or somewhere else.
 (* <em>only ARM Cortex-M targets</em>)</p>
 <h4 id="scons-reset">scons reset<a class="headerlink" href="#scons-reset" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons reset
 </code></pre></div>
-
 <p>Resets the executable via OpenOCD.
 (* <em>only ARM Cortex-M targets</em>)</p>
 <h4 id="scons-reset-bmp">scons reset-bmp<a class="headerlink" href="#scons-reset-bmp" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons reset-bmp [port={serial}]
 </code></pre></div>
-
 <p>Resets the executable via Black Magic Probe.
 (* <em>only ARM Cortex-M targets</em>)</p>
 <h4 id="scons-reset-remote">scons reset-remote<a class="headerlink" href="#scons-reset-remote" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons reset-remote [host={ip or hostname}]
 </code></pre></div>
-
 <p>Resets the executable via a remote OpenOCD process running on your own computer
 (localhost is default) or somewhere else.
 (* <em>only ARM Cortex-M targets</em>)</p>
 <h4 id="scons-log-itm">scons log-itm<a class="headerlink" href="#scons-log-itm" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons log-itm fcpu={HCLK in Hz}
 </code></pre></div>
-
 <p>Configures OpenOCD in tracing mode to output ITM channel 0 on SWO pin and
 displays the serial output stream.
 (* <em>only ARM Cortex-M targets</em>)</p>
@@ -4319,13 +4300,11 @@ loop: 59
 loop: 60
 loop: 61
 </code></pre></div>
-
 <p>See the <code>:platform:itm</code> module for details how to use the ITM as a logging
 output.</p>
 <h4 id="scons-symbols">scons symbols<a class="headerlink" href="#scons-symbols" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons symbols profile={debug|release}
 </code></pre></div>
-
 <p>Dumps the symbol table for your executable.</p>
 <div class="highlight"><pre><span></span><code> $ scons symbols
 Show symbols for &#39;build/release/game_of_life.elf&#39;:
@@ -4339,11 +4318,9 @@ Show symbols for &#39;build/release/game_of_life.elf&#39;:
 134221192 00001378 t _GLOBAL__sub_I_p
 536871782 00002054 b (anonymous namespace)::txBuffer
 </code></pre></div>
-
 <h4 id="scons-listing">scons listing<a class="headerlink" href="#scons-listing" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons listing profile={debug|release}
 </code></pre></div>
-
 <p>Decompiles your executable into an annotated assembly listing.
 This is very useful for checking and learning how the compiler translates C++
 into assembly instructions:</p>
@@ -4371,30 +4348,24 @@ main()
  8000d82:   f7ff feff   bl  8000b84 &lt;_Z12game_of_lifev&gt;
     ...
 </code></pre></div>
-
 <h4 id="scons-bin">scons bin<a class="headerlink" href="#scons-bin" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons bin profile={debug|release}
 </code></pre></div>
-
 <p>Creates a binary file of your executable.</p>
 <div class="highlight"><pre><span></span><code> $ scons bin
 Binary File···· build/release/game_of_life.bin
 </code></pre></div>
-
 <h4 id="scons-artifact">scons artifact<a class="headerlink" href="#scons-artifact" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons artifact profile={debug|release}
 </code></pre></div>
-
 <p>Caches the ELF and binary file of the newest compiled executable identified by
 the hash of the binary file in <code>{build_path}/artifacts/{hash}.elf</code>.</p>
 <div class="highlight"><pre><span></span><code> $ scons artifact
 Cache Artifact· build/release/game_of_life.elf
 </code></pre></div>
-
 <h4 id="scons-c">scons -c<a class="headerlink" href="#scons-c" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons -c profile={debug|release}
 </code></pre></div>
-
 <p>Cleans the build artifacts.</p>
 <div class="highlight"><pre><span></span><code> $ scons -c
 Removed build/release/main.o
@@ -4406,7 +4377,6 @@ Removed build/release/modm/libmodm.a
 Removed build/release/game_of_life.elf
 Removed build/release/game_of_life.lss
 </code></pre></div>
-
 <h4 id="scons-qtcreator">scons qtcreator<a class="headerlink" href="#scons-qtcreator" title="Permanent link">&para;</a></h4>
 <p>Generates several files so that the project can be imported into Qt Creator via
 the <code>.creator</code> file importer. Note, that no compiliation or debugging features
@@ -4428,7 +4398,6 @@ and its options are evaluated for the wrapper as follows:</p>
     <span class="n">namespace</span><span class="o">=</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;::xpcc:generator:namespace&quot;</span><span class="p">]</span>
 <span class="p">)</span>
 </code></pre></div>
-
 <p>The generated files are available as a top-level <code>#include &lt;identifiers.hpp&gt;</code>.</p>
 <h2 id="information-tool">Information Tool<a class="headerlink" href="#information-tool" title="Permanent link">&para;</a></h2>
 <p>Our <code>info</code> SCons tool generates a set of header files containing information
@@ -4510,7 +4479,6 @@ Info:    Renamed:   0
 Info:    Copied:    0
 Info:    Untracked: 6
 </code></pre></div>
-
 <h3 id="build-information">Build Information<a class="headerlink" href="#build-information" title="Permanent link">&para;</a></h3>
 <p>These are the values defined as <code>const char *</code> strings in <code>&lt;info_build.h&gt;</code>:</p>
 <ul>
@@ -4527,13 +4495,11 @@ Info:    User:     user
 Info:    Os:       Mac 10.12.6 (x86_64)
 Info:    Compiler: g++-8 (Homebrew GCC 8.1.0) 8.1.0
 </code></pre></div>
-
 <h2 id="bitmap-tool">Bitmap Tool<a class="headerlink" href="#bitmap-tool" title="Permanent link">&para;</a></h2>
 <p>If the <code>modm:build:scons:image.source</code> is defined as a path, it'll be searched
 for <code>.pbm</code> files to convert into C++ data files using the <code>bitmap</code> tool:</p>
 <div class="highlight"><pre><span></span><code><span class="n">source</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">Bitmap</span><span class="p">(</span><span class="n">bpm_file</span><span class="p">)</span>
 </code></pre></div>
-
 <p>See the <code>GraphicsDisplay::drawImage()</code> method in the <code>modm:ui:display</code> module
 for how to use these generated files.
 The directory is added to the include search paths, so the generated files
@@ -4678,8 +4644,8 @@ Inputs: <code>[Path]</code>  </p>
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.77e55a48.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({

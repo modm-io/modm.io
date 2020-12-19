@@ -9,13 +9,14 @@
         <meta name="description" content="A modular C++17 library generator for barebone embedded programming">
       
       
+      
         <link rel="canonical" href="http://modm.io/how-modm-works/">
       
       
         <meta name="author" content="Niklas Hauser">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
     
     
       
@@ -23,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.38780c08.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.19753c6b.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.3f72e892.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
         
           
           
@@ -77,7 +78,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="http://modm.io" title="modm barebone embedded library" class="md-header-nav__button md-logo" aria-label="modm barebone embedded library">
       
@@ -111,7 +114,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -162,7 +165,9 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="http://modm.io" title="modm barebone embedded library" class="md-nav__button md-logo" aria-label="modm barebone embedded library">
       
@@ -197,8 +202,7 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
     <label class="md-nav__link" for="nav-1">
       Home
       <span class="md-nav__icon md-icon"></span>
@@ -325,8 +329,7 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
     <label class="md-nav__link" for="nav-2">
       Guide
       <span class="md-nav__icon md-icon"></span>
@@ -387,8 +390,7 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
     <label class="md-nav__link" for="nav-3">
       Reference
       <span class="md-nav__icon md-icon"></span>
@@ -432,8 +434,7 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" >
     <label class="md-nav__link" for="nav-3-3">
       Modules
       <span class="md-nav__icon md-icon"></span>
@@ -3544,11 +3545,10 @@ properties and calling <code>env.template</code> with the input and output file 
         <span class="n">env</span><span class="o">.</span><span class="n">template</span><span class="p">(</span><span class="s2">&quot;uart.hpp.in&quot;</span><span class="p">,</span> <span class="s2">&quot;uart_</span><span class="si">{}</span><span class="s2">.hpp&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">instance</span><span class="p">))</span>
         <span class="n">env</span><span class="o">.</span><span class="n">template</span><span class="p">(</span><span class="s2">&quot;uart.cpp.in&quot;</span><span class="p">,</span> <span class="s2">&quot;uart_</span><span class="si">{}</span><span class="s2">.cpp&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">instance</span><span class="p">))</span>
 </code></pre></div>
-
 <p>The input template then can access all the devices properties, and generate
 the correct code for this device. Here the template on left is passed to the
 <a href="http://jinja.pocoo.org">Jinja2 engine</a> which outputs the code on the right.</p>
-<p><center>
+<p><center></p>
 <table class="" width="100%">
 <tr>
 <td>
@@ -3571,7 +3571,7 @@ the correct code for this device. Here the template on left is passed to the
 </td>
 </tr>
 </table>
-</center></p>
+<p></center></p>
 <p>This example is simple, but since it's based on Python, <a href="https://xkcd.com/353">anything more
 complicated is possible</a>.
 Looking at the data excerpt from a STM32 device the above module will generate a
@@ -3591,7 +3591,6 @@ generate classes for the four USART peripherals.</p>
 <span class="nt">&lt;/driver&gt;</span>
 ...
 </code></pre></div>
-
 <p>With these techiques we can generate a target specific HAL for hundreds of devices.
 Don't believe us? <a href="https://circleci.com/gh/modm-io/workflows/modm/tree/develop">Check out our CI doing just that</a>.</p>
 <p><center>
@@ -3612,7 +3611,6 @@ Consider this data from the GPIO peripheral, which shows the signal map for the
     <span class="nt">&lt;signal</span> <span class="na">af=</span><span class="s">&quot;8&quot;</span> <span class="na">driver=</span><span class="s">&quot;uart&quot;</span> <span class="na">instance=</span><span class="s">&quot;4&quot;</span> <span class="na">name=</span><span class="s">&quot;tx&quot;</span><span class="nt">/&gt;</span>
     ...
 </code></pre></div>
-
 <p>We use this data in the <code>modm:platform:gpio</code> module to generate type-safe
 signal connections, which will then assert that the signal you want to connect
 actually exists on this pin and even gives you a helpful (!) error message at
@@ -3644,11 +3642,10 @@ compile time.</p>
 <span class="p">...</span>
 <span class="p">};</span>
 </code></pre></div>
-
 <p>Continuing with this technique, we can even check if your signal groups are
 conflict free of overlaps or invalid configurations and again give you a
 helpful error message!</p>
-<p><center>
+<p><center></p>
 <table class="" width="100%">
 <tr>
 <td>
@@ -3708,7 +3705,7 @@ Available groups for Usart1 are:
 </td>
 </tr>
 </table>
-</center></p>
+<p></center></p>
 <p>We use a similar technique to <a href="http://blog.salkinium.com/computing-baudrates-at-compile-time">compute baudrates at compile time</a>
 and make sure the resulting baudrates remains within the specified error tolerances.
 In addition the executable now only contains prescaler values which are written
@@ -3719,7 +3716,6 @@ for keeping code size in check on very resource constrained targets, like the AV
 <span class="n">Uart4</span><span class="o">::</span><span class="n">initialize</span><span class="o">&lt;</span><span class="n">Board</span><span class="o">::</span><span class="n">SystemClock</span><span class="p">,</span> <span class="mf">115.2</span><span class="n">_kBd</span><span class="p">,</span> <span class="mi">0</span><span class="n">_pct</span><span class="o">&gt;</span><span class="p">();</span>
 <span class="c1">// error: The closest available baudrate exceeds the tolerance of the requested baudrate!</span>
 </code></pre></div>
-
 <h2 id="modm-is-fast-and-usable">modm is fast and usable<a class="headerlink" href="#modm-is-fast-and-usable" title="Permanent link">&para;</a></h2>
 <p>modm's APIs are kept simple and fast by splitting up functionality into
 separate, small, static functions, which implement the same behavior on all
@@ -3745,7 +3741,6 @@ dealing with external interrupts or even just toggling a pin is done quite dissi
 <span class="n">Button</span><span class="o">::</span><span class="n">enableExternalInterrupt</span><span class="p">();</span>
 <span class="n">Button</span><span class="o">::</span><span class="n">acknowledgeExternalInterruptFlag</span><span class="p">();</span>
 </code></pre></div>
-
 <p>You can use these GPIOs as building blocks for more complex drivers and
 peripherals and still maintain access speed without sacrificing usability:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Create a hardware accelerated port of 4 bit width.</span>
@@ -3760,7 +3755,6 @@ peripherals and still maintain access speed without sacrificing usability:</p>
 <span class="n">display</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello World!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">modm</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>    <span class="c1">// Yes, ostreams. Deal with it.</span>
 <span class="n">display</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;You don&#39;t really have to use %s!&quot;</span><span class="p">,</span> <span class="s">&quot;OStreams&quot;</span><span class="p">);</span>
 </code></pre></div>
-
 <p>All drivers in modm follow the same principle of building up your hardware drivers from other parts of the HAL by passing them as template parameters. This works surprisingly well to reduce both code size and execution time. For example, here is how you assemble and initialize a driver for the MCP23x17 GPIO expander and then use its pins.</p>
 <div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">Transport</span> <span class="o">=</span> <span class="n">modm</span><span class="o">::</span><span class="n">Mcp23TransportSpi</span><span class="o">&lt;</span> <span class="n">SpiMaster1</span><span class="p">,</span> <span class="n">GpioA0</span> <span class="o">&gt;</span><span class="p">;</span>
 <span class="k">using</span> <span class="n">GpioExpander</span> <span class="o">=</span> <span class="n">modm</span><span class="o">::</span><span class="n">Mcp23x17</span><span class="o">&lt;</span> <span class="n">Transport</span> <span class="o">&gt;</span><span class="p">;</span>
@@ -3778,7 +3772,6 @@ peripherals and still maintain access speed without sacrificing usability:</p>
 <span class="n">Pin1</span><span class="o">::</span><span class="n">setInput</span><span class="p">();</span>
 <span class="kt">bool</span> <span class="n">state</span> <span class="o">=</span> <span class="n">Pin1</span><span class="o">::</span><span class="n">read</span><span class="p">();</span>
 </code></pre></div>
-
 <h2 id="modm-is-memory-efficient">modm is memory-efficient<a class="headerlink" href="#modm-is-memory-efficient" title="Permanent link">&para;</a></h2>
 <p>Our HAL does not allocate memory dynamically – everything is either
 statically allocated or must explicitly be allocated by the user.
@@ -3797,11 +3790,10 @@ modm:platform:cortex-m:main_stack_size = 3040  [256 ... 65536]
 modm:platform:uart:1:buffer.rx = 16  [1 ... 65534]
 modm:platform:uart:1:buffer.tx = 250  [1 ... 65534]
 </code></pre></div>
-
 <p>We transparently show you how much static memory your application is using,
 so you get an idea of how much certain functionality costs you in resources.
 This is the size of the accelerometer example on the STM32F4 discovery board:</p>
-<p><div class="highlight"><pre><span></span><code> $ cd examples/stm32f4_discovery/accelerometer
+<div class="highlight"><pre><span></span><code> $ cd examples/stm32f4_discovery/accelerometer
  $ scons
 ...
 Memory usage··· build/stm32f4_discovery/accelerometer/project.elf
@@ -3816,7 +3808,8 @@ Data:       3464B (1.7% used) = 424B static (0.2%) + 3040B stack (1.5%)
 Heap:     197240B (98.3% available)
 (.heap0 + .heap1 + .heap2 + .heap5)
 </code></pre></div>
-<!-- (⚡️ automate size generation from example output) --></p>
+<!-- (⚡️ automate size generation from example output) -->
+
 <h2 id="modm-does-multitasking">modm does multitasking<a class="headerlink" href="#modm-does-multitasking" title="Permanent link">&para;</a></h2>
 <!-- (⚡️ requires module documentation for protothread/resumable) -->
 
@@ -3970,8 +3963,8 @@ Here is an example of <a href="https://github.com/modm-io/modm/blob/develop/exam
       
     </div>
     
-      <script src="../assets/javascripts/vendor.77e55a48.min.js"></script>
-      <script src="../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({

@@ -9,13 +9,14 @@
         <meta name="description" content="A modular C++17 library generator for barebone embedded programming">
       
       
+      
         <link rel="canonical" href="http://modm.io/reference/module/modm-tinyusb/">
       
       
         <meta name="author" content="Niklas Hauser">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
     
     
       
@@ -23,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.19753c6b.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.196e0c26.min.css">
         
           
           
@@ -77,7 +78,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="http://modm.io" title="modm barebone embedded library" class="md-header-nav__button md-logo" aria-label="modm barebone embedded library">
       
@@ -111,7 +114,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -162,7 +165,9 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="http://modm.io" title="modm barebone embedded library" class="md-nav__button md-logo" aria-label="modm barebone embedded library">
       
@@ -195,8 +200,7 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
     <label class="md-nav__link" for="nav-1">
       Home
       <span class="md-nav__icon md-icon"></span>
@@ -257,8 +261,7 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
     <label class="md-nav__link" for="nav-2">
       Guide
       <span class="md-nav__icon md-icon"></span>
@@ -321,8 +324,7 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     <label class="md-nav__link" for="nav-3">
       Reference
       <span class="md-nav__icon md-icon"></span>
@@ -368,8 +370,7 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
     <label class="md-nav__link" for="nav-3-3">
       Modules
       <span class="md-nav__icon md-icon"></span>
@@ -3573,7 +3574,6 @@ enough endpoints and USB RAM available:</p>
 <span class="c">&lt;!-- Using two CDC ports! --&gt;</span>
 <span class="nt">&lt;option</span> <span class="na">name=</span><span class="s">&quot;modm:tinyusb:config&quot;</span><span class="nt">&gt;</span>device.cdc,device.cdc<span class="nt">&lt;/option&gt;</span>
 </code></pre></div>
-
 <p>modm will generate the USB descriptors automatically for the set of device
 classes you've chosen. You can then implement your app via TinyUSB callbacks.</p>
 <h2 id="manual-usb-descriptors">Manual USB Descriptors<a class="headerlink" href="#manual-usb-descriptors" title="Permanent link">&para;</a></h2>
@@ -3584,7 +3584,6 @@ manually depend on the device classes you want to implement:</p>
 <span class="nt">&lt;module&gt;</span>modm:tinyusb:device:hid<span class="nt">&lt;/module&gt;</span>
 <span class="nt">&lt;module&gt;</span>modm:tinyusb:device:usbtmc<span class="nt">&lt;/module&gt;</span>
 </code></pre></div>
-
 <h2 id="initializing-usb">Initializing USB<a class="headerlink" href="#initializing-usb" title="Permanent link">&para;</a></h2>
 <p>The <code>modm:platform:usb</code> module provides the correct way of initializing the USB
 peripheral, however, you must connect the right signals too:</p>
@@ -3599,7 +3598,6 @@ peripheral, however, you must connect the right signals too:</p>
 <span class="c1">// Enable hardware Vbus sensing on GpioA9 (this can be tricky to get right!)</span>
 <span class="n">USB_OTG_FS</span><span class="o">-&gt;</span><span class="n">GCCFG</span> <span class="o">|=</span> <span class="n">USB_OTG_GCCFG_VBDEN</span><span class="p">;</span>
 </code></pre></div>
-
 <p>Note that depending on your specific hardware setup, you may need to fiddle
 around to find the right VBus sensing mechanism.</p>
 <div class="admonition warning">
@@ -3618,19 +3616,16 @@ See the <code>modm:architecture:assert</code> module for details.</p>
 <div class="highlight"><pre><span></span><code>Assertion &#39;tu&#39; failed!
 Abandoning...
 </code></pre></div>
-
 <p>If you run this again in debug mode, you'll note a much more detailed assertion
 description. In this example you've exhaused the number of endpoints:</p>
 <div class="highlight"><pre><span></span><code>Assertion &#39;tu&#39; failed!
   modm/ext/tinyusb/portable/st/synopsys/dcd_synopsys.c:524 -&gt; &quot;epnum &lt; 4U&quot;
 Abandoning...
 </code></pre></div>
-
 <p>To trace the TinyUSB core, you can add <code>CFG_TUSB_DEBUG=2</code> to your CPP flags and
 the output will be forwarded to <code>MODM_LOG_DEBUG</code>.</p>
 <div class="highlight"><pre><span></span><code>&lt;collect name=&quot;modm:build:cppdefines&quot;&gt;CFG_TUSB_DEBUG=2&lt;/collect&gt;
 </code></pre></div>
-
 <p><em>This module is only available for sam, stm32{f0,f1,f2,f3,f4,f7,g4,l1,l4}.</em></p>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <h4 id="config">config<a class="headerlink" href="#config" title="Permanent link">&para;</a></h4>
@@ -3656,168 +3651,167 @@ Input Dependency: <code>high -&gt; modm:platform:usb:hs</code>  </p>
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: modm:tinyusb Pages: 1 -->
-<svg width="964pt" height="150pt"
+<p><svg width="964pt" height="150pt"
  viewBox="0.00 0.00 963.50 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 146)">
 <title>modm:tinyusb</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-146 959.5,-146 959.5,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-146 959.5,-146 959.5,4 -4,4"/></p>
 <!-- modm_tinyusb -->
-<g id="node1" class="node">
+<p><g id="node1" class="node">
 <title>modm_tinyusb</title>
 <polygon fill="lightgrey" stroke="black" stroke-width="2" points="536.5,-38 466.5,-38 466.5,0 536.5,0 536.5,-38"/>
 <text text-anchor="middle" x="501.5" y="-22.8" font-family="Times,serif" font-size="14.00">modm:</text>
 <text text-anchor="middle" x="501.5" y="-7.8" font-family="Times,serif" font-size="14.00">tinyusb</text>
-</g>
+</g></p>
 <!-- modm_architecture_interrupt -->
-<g id="node2" class="node">
+<p><g id="node2" class="node">
 <title>modm_architecture_interrupt</title>
 <polygon fill="lightgrey" stroke="black" points="109,-134.5 0,-134.5 0,-81.5 109,-81.5 109,-134.5"/>
 <text text-anchor="middle" x="54.5" y="-119.3" font-family="Times,serif" font-size="14.00">modm:</text>
 <text text-anchor="middle" x="54.5" y="-104.3" font-family="Times,serif" font-size="14.00">architecture:</text>
 <text text-anchor="middle" x="54.5" y="-89.3" font-family="Times,serif" font-size="14.00">interrupt</text>
-</g>
+</g></p>
 <!-- modm_tinyusb&#45;&gt;modm_architecture_interrupt -->
-<g id="edge1" class="edge">
+<p><g id="edge1" class="edge">
 <title>modm_tinyusb&#45;&gt;modm_architecture_interrupt</title>
 <path fill="none" stroke="black" d="M466.45,-20.94C397.85,-23.65 241.68,-34.07 117.5,-74 114.39,-75 111.24,-76.15 108.1,-77.4"/>
 <polygon fill="black" stroke="black" points="106.56,-74.26 98.77,-81.44 109.33,-80.68 106.56,-74.26"/>
-</g>
+</g></p>
 <!-- modm_cmsis_device -->
-<g id="node3" class="node">
+<p><g id="node3" class="node">
 <title>modm_cmsis_device</title>
 <polygon fill="lightgrey" stroke="black" points="192,-134.5 127,-134.5 127,-81.5 192,-81.5 192,-134.5"/>
 <text text-anchor="middle" x="159.5" y="-119.3" font-family="Times,serif" font-size="14.00">modm:</text>
 <text text-anchor="middle" x="159.5" y="-104.3" font-family="Times,serif" font-size="14.00">cmsis:</text>
 <text text-anchor="middle" x="159.5" y="-89.3" font-family="Times,serif" font-size="14.00">device</text>
-</g>
+</g></p>
 <!-- modm_tinyusb&#45;&gt;modm_cmsis_device -->
-<g id="edge2" class="edge">
+<p><g id="edge2" class="edge">
 <title>modm_tinyusb&#45;&gt;modm_cmsis_device</title>
 <path fill="none" stroke="black" d="M466.45,-20.72C408.54,-23.1 290.36,-33.05 200.5,-74 199.15,-74.62 197.8,-75.29 196.47,-76"/>
 <polygon fill="black" stroke="black" points="194.56,-73.07 187.88,-81.29 198.23,-79.03 194.56,-73.07"/>
-</g>
+</g></p>
 <!-- modm_platform_usb -->
-<g id="node4" class="node">
+<p><g id="node4" class="node">
 <title>modm_platform_usb</title>
 <polygon fill="lightgrey" stroke="black" points="293,-134.5 210,-134.5 210,-81.5 293,-81.5 293,-134.5"/>
 <text text-anchor="middle" x="251.5" y="-119.3" font-family="Times,serif" font-size="14.00">modm:</text>
 <text text-anchor="middle" x="251.5" y="-104.3" font-family="Times,serif" font-size="14.00">platform:</text>
 <text text-anchor="middle" x="251.5" y="-89.3" font-family="Times,serif" font-size="14.00">usb</text>
-</g>
+</g></p>
 <!-- modm_tinyusb&#45;&gt;modm_platform_usb -->
-<g id="edge3" class="edge">
+<p><g id="edge3" class="edge">
 <title>modm_tinyusb&#45;&gt;modm_platform_usb</title>
 <path fill="none" stroke="black" d="M466.38,-25.95C425.5,-33.67 356.58,-49.17 301.5,-74 299.72,-74.8 297.94,-75.66 296.15,-76.57"/>
 <polygon fill="black" stroke="black" points="294.39,-73.55 287.31,-81.44 297.76,-79.68 294.39,-73.55"/>
-</g>
+</g></p>
 <!-- modm_platform_usb_fs -->
-<g id="node5" class="node">
+<p><g id="node5" class="node">
 <title>modm_platform_usb_fs</title>
 <polygon fill="lightgrey" stroke="black" stroke-dasharray="5,2" points="394,-142 311,-142 311,-74 394,-74 394,-142"/>
 <text text-anchor="middle" x="352.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
 <text text-anchor="middle" x="352.5" y="-111.8" font-family="Times,serif" font-size="14.00">platform:</text>
 <text text-anchor="middle" x="352.5" y="-96.8" font-family="Times,serif" font-size="14.00">usb:</text>
 <text text-anchor="middle" x="352.5" y="-81.8" font-family="Times,serif" font-size="14.00">fs</text>
-</g>
+</g></p>
 <!-- modm_tinyusb&#45;&gt;modm_platform_usb_fs -->
-<g id="edge4" class="edge">
+<p><g id="edge4" class="edge">
 <title>modm_tinyusb&#45;&gt;modm_platform_usb_fs</title>
 <path fill="none" stroke="black" stroke-dasharray="5,2" d="M466.74,-38.04C449.51,-47.19 428.32,-58.74 402.87,-73.9"/>
 <polygon fill="black" stroke="black" points="400.85,-71.04 394.07,-79.18 404.45,-77.04 400.85,-71.04"/>
-</g>
+</g></p>
 <!-- modm_platform_usb_hs -->
-<g id="node6" class="node">
+<p><g id="node6" class="node">
 <title>modm_platform_usb_hs</title>
 <polygon fill="lightgrey" stroke="black" stroke-dasharray="5,2" points="495,-142 412,-142 412,-74 495,-74 495,-142"/>
 <text text-anchor="middle" x="453.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
 <text text-anchor="middle" x="453.5" y="-111.8" font-family="Times,serif" font-size="14.00">platform:</text>
 <text text-anchor="middle" x="453.5" y="-96.8" font-family="Times,serif" font-size="14.00">usb:</text>
 <text text-anchor="middle" x="453.5" y="-81.8" font-family="Times,serif" font-size="14.00">hs</text>
-</g>
+</g></p>
 <!-- modm_tinyusb&#45;&gt;modm_platform_usb_hs -->
-<g id="edge5" class="edge">
+<p><g id="edge5" class="edge">
 <title>modm_tinyusb&#45;&gt;modm_platform_usb_hs</title>
 <path fill="none" stroke="black" stroke-dasharray="5,2" d="M491.55,-38.03C487.23,-45.87 481.96,-55.42 476.73,-64.89"/>
 <polygon fill="black" stroke="black" points="473.54,-63.43 471.78,-73.88 479.67,-66.81 473.54,-63.43"/>
-</g>
+</g></p>
 <!-- modm_tinyusb_device_cdc -->
-<g id="node7" class="node">
+<p><g id="node7" class="node">
 <title>modm_tinyusb_device_cdc</title>
 <polygon fill="lightgrey" stroke="black" stroke-dasharray="5,2" points="587.5,-142 513.5,-142 513.5,-74 587.5,-74 587.5,-142"/>
 <text text-anchor="middle" x="550.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
 <text text-anchor="middle" x="550.5" y="-111.8" font-family="Times,serif" font-size="14.00">tinyusb:</text>
 <text text-anchor="middle" x="550.5" y="-96.8" font-family="Times,serif" font-size="14.00">device:</text>
 <text text-anchor="middle" x="550.5" y="-81.8" font-family="Times,serif" font-size="14.00">cdc</text>
-</g>
+</g></p>
 <!-- modm_tinyusb&#45;&gt;modm_tinyusb_device_cdc -->
-<g id="edge6" class="edge">
+<p><g id="edge6" class="edge">
 <title>modm_tinyusb&#45;&gt;modm_tinyusb_device_cdc</title>
 <path fill="none" stroke="black" stroke-dasharray="5,2" d="M511.65,-38.03C516.07,-45.87 521.45,-55.42 526.78,-64.89"/>
 <polygon fill="black" stroke="black" points="523.89,-66.88 531.84,-73.88 529.99,-63.45 523.89,-66.88"/>
-</g>
+</g></p>
 <!-- modm_tinyusb_device_dfu -->
-<g id="node8" class="node">
+<p><g id="node8" class="node">
 <title>modm_tinyusb_device_dfu</title>
 <polygon fill="lightgrey" stroke="black" stroke-dasharray="5,2" points="679.5,-142 605.5,-142 605.5,-74 679.5,-74 679.5,-142"/>
 <text text-anchor="middle" x="642.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
 <text text-anchor="middle" x="642.5" y="-111.8" font-family="Times,serif" font-size="14.00">tinyusb:</text>
 <text text-anchor="middle" x="642.5" y="-96.8" font-family="Times,serif" font-size="14.00">device:</text>
 <text text-anchor="middle" x="642.5" y="-81.8" font-family="Times,serif" font-size="14.00">dfu</text>
-</g>
+</g></p>
 <!-- modm_tinyusb&#45;&gt;modm_tinyusb_device_dfu -->
-<g id="edge7" class="edge">
+<p><g id="edge7" class="edge">
 <title>modm_tinyusb&#45;&gt;modm_tinyusb_device_dfu</title>
 <path fill="none" stroke="black" stroke-dasharray="5,2" d="M535.42,-38.15C553.78,-48.25 576.69,-61.31 596.5,-74 596.59,-74.06 596.68,-74.12 596.77,-74.17"/>
 <polygon fill="black" stroke="black" points="595.05,-77.23 605.32,-79.83 598.91,-71.39 595.05,-77.23"/>
-</g>
+</g></p>
 <!-- modm_tinyusb_device_midi -->
-<g id="node9" class="node">
+<p><g id="node9" class="node">
 <title>modm_tinyusb_device_midi</title>
 <polygon fill="lightgrey" stroke="black" stroke-dasharray="5,2" points="771.5,-142 697.5,-142 697.5,-74 771.5,-74 771.5,-142"/>
 <text text-anchor="middle" x="734.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
 <text text-anchor="middle" x="734.5" y="-111.8" font-family="Times,serif" font-size="14.00">tinyusb:</text>
 <text text-anchor="middle" x="734.5" y="-96.8" font-family="Times,serif" font-size="14.00">device:</text>
 <text text-anchor="middle" x="734.5" y="-81.8" font-family="Times,serif" font-size="14.00">midi</text>
-</g>
+</g></p>
 <!-- modm_tinyusb&#45;&gt;modm_tinyusb_device_midi -->
-<g id="edge8" class="edge">
+<p><g id="edge8" class="edge">
 <title>modm_tinyusb&#45;&gt;modm_tinyusb_device_midi</title>
 <path fill="none" stroke="black" stroke-dasharray="5,2" d="M536.57,-26.39C573.12,-33.85 631.74,-48.06 687.89,-74.24"/>
 <polygon fill="black" stroke="black" points="686.71,-77.56 697.24,-78.73 689.74,-71.25 686.71,-77.56"/>
-</g>
+</g></p>
 <!-- modm_tinyusb_device_msc -->
-<g id="node10" class="node">
+<p><g id="node10" class="node">
 <title>modm_tinyusb_device_msc</title>
 <polygon fill="lightgrey" stroke="black" stroke-dasharray="5,2" points="863.5,-142 789.5,-142 789.5,-74 863.5,-74 863.5,-142"/>
 <text text-anchor="middle" x="826.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
 <text text-anchor="middle" x="826.5" y="-111.8" font-family="Times,serif" font-size="14.00">tinyusb:</text>
 <text text-anchor="middle" x="826.5" y="-96.8" font-family="Times,serif" font-size="14.00">device:</text>
 <text text-anchor="middle" x="826.5" y="-81.8" font-family="Times,serif" font-size="14.00">msc</text>
-</g>
+</g></p>
 <!-- modm_tinyusb&#45;&gt;modm_tinyusb_device_msc -->
-<g id="edge9" class="edge">
+<p><g id="edge9" class="edge">
 <title>modm_tinyusb&#45;&gt;modm_tinyusb_device_msc</title>
 <path fill="none" stroke="black" stroke-dasharray="5,2" d="M536.84,-21.99C589.37,-25.96 690.58,-37.55 779.94,-74.41"/>
 <polygon fill="black" stroke="black" points="778.8,-77.74 789.38,-78.42 781.54,-71.29 778.8,-77.74"/>
-</g>
+</g></p>
 <!-- modm_tinyusb_device_vendor -->
-<g id="node11" class="node">
+<p><g id="node11" class="node">
 <title>modm_tinyusb_device_vendor</title>
 <polygon fill="lightgrey" stroke="black" stroke-dasharray="5,2" points="955.5,-142 881.5,-142 881.5,-74 955.5,-74 955.5,-142"/>
 <text text-anchor="middle" x="918.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
 <text text-anchor="middle" x="918.5" y="-111.8" font-family="Times,serif" font-size="14.00">tinyusb:</text>
 <text text-anchor="middle" x="918.5" y="-96.8" font-family="Times,serif" font-size="14.00">device:</text>
 <text text-anchor="middle" x="918.5" y="-81.8" font-family="Times,serif" font-size="14.00">vendor</text>
-</g>
+</g></p>
 <!-- modm_tinyusb&#45;&gt;modm_tinyusb_device_vendor -->
-<g id="edge10" class="edge">
+<p><g id="edge10" class="edge">
 <title>modm_tinyusb&#45;&gt;modm_tinyusb_device_vendor</title>
 <path fill="none" stroke="black" stroke-dasharray="5,2" d="M536.68,-19.66C602.58,-20.16 748.35,-26.66 871.84,-74.45"/>
 <polygon fill="black" stroke="black" points="870.86,-77.82 881.44,-78.27 873.44,-71.32 870.86,-77.82"/>
 </g>
 </g>
-</svg>
-
+</svg></p>
 <div class="admonition warning">
 <p class="admonition-title">Limited availability: Check with 'lbuild discover' if this module is available for your target!</p>
 </div>
@@ -3913,8 +3907,8 @@ Input Dependency: <code>high -&gt; modm:platform:usb:hs</code>  </p>
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.77e55a48.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({

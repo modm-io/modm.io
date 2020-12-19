@@ -9,13 +9,14 @@
         <meta name="description" content="A modular C++17 library generator for barebone embedded programming">
       
       
+      
         <link rel="canonical" href="http://modm.io/reference/module/modm-build/">
       
       
         <meta name="author" content="Niklas Hauser">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
     
     
       
@@ -23,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.19753c6b.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.196e0c26.min.css">
         
           
           
@@ -77,7 +78,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="http://modm.io" title="modm barebone embedded library" class="md-header-nav__button md-logo" aria-label="modm barebone embedded library">
       
@@ -111,7 +114,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -162,7 +165,9 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="http://modm.io" title="modm barebone embedded library" class="md-nav__button md-logo" aria-label="modm barebone embedded library">
       
@@ -195,8 +200,7 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
     <label class="md-nav__link" for="nav-1">
       Home
       <span class="md-nav__icon md-icon"></span>
@@ -257,8 +261,7 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
     <label class="md-nav__link" for="nav-2">
       Guide
       <span class="md-nav__icon md-icon"></span>
@@ -321,8 +324,7 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     <label class="md-nav__link" for="nav-3">
       Reference
       <span class="md-nav__icon md-icon"></span>
@@ -368,8 +370,7 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
-    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
     <label class="md-nav__link" for="nav-3-3">
       Modules
       <span class="md-nav__icon md-icon"></span>
@@ -4563,7 +4564,6 @@ generate a <code>modm/openocd.cfg</code> file with the target specific configura
 <p>You need to start openocd with this configuration file:</p>
 <div class="highlight"><pre><span></span><code>openocd -f modm/openocd.cfg
 </code></pre></div>
-
 <div class="admonition warning">
 <p class="admonition-title">Be careful attaching to a running target</p>
 <p>The OpenOCD implementation halts the target at least while the device's
@@ -4588,7 +4588,6 @@ file! Please pass the ELF file as a command line argument.</p>
 <p>You can start your GDB session like so:</p>
 <div class="highlight"><pre><span></span><code>arm-none-eabi-gdb -x modm/gdbinit path/to/project.elf
 </code></pre></div>
-
 <h2 id="generic-python-tools">Generic Python Tools<a class="headerlink" href="#generic-python-tools" title="Permanent link">&para;</a></h2>
 <p>We have written a number of pure Python tools to provide common functionality
 that get wrapped by the build system.</p>
@@ -4605,19 +4604,16 @@ a look in your generated <code>modm/modm_tools</code> folder.</p>
 <div class="highlight"><pre><span></span><code>python3 modm/modm_tools/avrdude.py -p m328p -c arduino -P auto -b <span class="m">57600</span> <span class="se">\\</span>
                                    path/to/project.elf
 </code></pre></div>
-
 <p><a href="http://avr-libc.nongnu.org/user-manual/group__avr__fuse.html">Fuses stored in the ELF file</a>
 can be programmed by passing <code>--fuse</code> arguments:</p>
 <div class="highlight"><pre><span></span><code>python3 modm/modm_tools/avrdude.py -p m328p -c stk500v2 path/to/project.elf <span class="se">\\</span>
                                    --fuse hfuse --fuse lfuse --fuse efuse
 </code></pre></div>
-
 <p>(* <em>only AVR targets</em>)</p>
 <h3 id="openocd_1">OpenOCD<a class="headerlink" href="#openocd_1" title="Permanent link">&para;</a></h3>
 <p>Simply wraps OpenOCD and issues the right command to program the target.</p>
 <div class="highlight"><pre><span></span><code>python3 modm/modm_tools/openocd.py -f modm/openocd.cfg path/to/project.elf
 </code></pre></div>
-
 <p>(* <em>only ARM Cortex-M targets</em>)</p>
 <h3 id="black-magic-probe">Black Magic Probe<a class="headerlink" href="#black-magic-probe" title="Permanent link">&para;</a></h3>
 <p>This tool wraps GDB to program an ELF file onto a target connected to a BMP.
@@ -4626,7 +4622,6 @@ You can explictly pass the serial port, or let the tool guess it.</p>
 <span class="c1"># or choose the port explicitly</span>
 python3 modm/modm_tools/bmp.py path/to/project.elf -p /dev/tty.usbserial-123
 </code></pre></div>
-
 <p>(* <em>only ARM Cortex-M targets</em>)</p>
 <h3 id="gdb_1">GDB<a class="headerlink" href="#gdb_1" title="Permanent link">&para;</a></h3>
 <p>For debugging your program on ARM Cortex-M device, this Python tool wraps
@@ -4638,7 +4633,6 @@ the openocd backend with the common configuration files:</p>
         -x modm/gdbinit -x modm/openocd_gdbinit <span class="se">\</span>
         openocd -f modm/openocd.cfg
 </code></pre></div>
-
 <p>Or you can call the Python API directly:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;modm&quot;</span><span class="p">)</span>
@@ -4649,7 +4643,6 @@ the openocd backend with the common configuration files:</p>
 <span class="n">gdb</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="s2">&quot;path/to/project.elf&quot;</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="n">backend</span><span class="p">,</span>
          <span class="n">config</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;modm/gdbinit&quot;</span><span class="p">,</span> <span class="s2">&quot;modm/openocd_gdbinit&quot;</span><span class="p">],</span> <span class="n">ui</span><span class="o">=</span><span class="s2">&quot;tui&quot;</span><span class="p">)</span>
 </code></pre></div>
-
 <p>This configuration starts the OpenOCD process in the background for you,
 however, if you want to connect to an already running process, you can use the
 remote backend with the <code>--host={ip or hostname}</code> via the command line:</p>
@@ -4657,7 +4650,6 @@ remote backend with the <code>--host={ip or hostname}</code> via the command lin
 python3 modm/modm_tools/gdb.py path/to/project.elf -x modm/gdbinit -ui<span class="o">=</span>tui <span class="se">\</span>
         remote --host <span class="m">123</span>.45.67.89
 </code></pre></div>
-
 <p>Note that you can use different programmer backends to GDB:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Black Magic Probe</span>
 python3 modm/modm_tools/gdb.py path/to/project.elf -x modm/gdbinit -ui<span class="o">=</span>tui <span class="se">\</span>
@@ -4667,7 +4659,6 @@ python3 modm/modm_tools/gdb.py path/to/project.elf -x modm/gdbinit -ui<span clas
 python3 modm/modm_tools/gdb.py path/to/project.elf -x modm/gdbinit -ui<span class="o">=</span>tui <span class="se">\</span>
         crashdebug --binary-path modm/ext/crashcatcher/bins --dump coredump.txt
 </code></pre></div>
-
 <p>(* <em>only ARM Cortex-M targets</em>)</p>
 <p>Currently two UIs are implemented for debugging:</p>
 <ul>
@@ -4703,7 +4694,6 @@ Program received signal SIGINT, Interrupt.
 0x080017a0 in drawPixel (color=&lt;optimized out&gt;, y=42, x=578) at main.c
 (gdb)
 </code></pre></div>
-
 <h4 id="web-ui">Web UI<a class="headerlink" href="#web-ui" title="Permanent link">&para;</a></h4>
 <p>This UI simply uses the <a href="https://www.gdbgui.com">gdbgui</a> project and works very well as an advanced
 IDE-independent debugging solution.</p>
@@ -4726,7 +4716,6 @@ Data:      <span class="m">3</span>.0 KiB <span class="o">(</span><span class="m
 Heap:     <span class="m">17</span>.0 KiB <span class="o">(</span><span class="m">84</span>.9% available<span class="o">)</span>
 <span class="o">(</span>.heap1<span class="o">)</span>
 </code></pre></div>
-
 <p>(* <em>only ARM Cortex-M targets</em>)</p>
 <h3 id="unittest">Unittest<a class="headerlink" href="#unittest" title="Permanent link">&para;</a></h3>
 <p>This tools scans a directory for files ending in <code>_test.hpp</code>, extracts their
@@ -4734,7 +4723,6 @@ test cases and generates a source file containing the test runner.</p>
 <div class="highlight"><pre><span></span><code>python3 modm/modm_tools/unit_test.py path/containing/tests <span class="se">\\</span>
                                     path/to/generated_runner.cpp
 </code></pre></div>
-
 <p>Note that the files containing unittests must contain <em>one</em> class that inherits
 from the <code>unittest::TestSuite</code> class, and test case names must begin with
 <code>test</code>:</p>
@@ -4744,7 +4732,6 @@ from the <code>unittest::TestSuite</code> class, and test case names must begin 
     <span class="kt">void</span> <span class="n">testCase1</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div>
-
 <h3 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h3>
 <p>Usually logging is done simply via a serial port and only a USB-Serial adapter
 is necessary to read the device output. However, some forms of logging require
@@ -4754,26 +4741,22 @@ host support or additional processing steps.</p>
 <code>modm:platform:itm</code> module:</p>
 <div class="highlight"><pre><span></span><code>python3 modm/modm_tools/log.py itm openocd -f modm/openocd.cfg -fcpu <span class="m">64000000</span>
 </code></pre></div>
-
 <p>(* <em>only ARM Cortex-M targets</em>)</p>
 <h3 id="gnu-build-id">GNU Build-ID<a class="headerlink" href="#gnu-build-id" title="Permanent link">&para;</a></h3>
 <p>To extract the build ID from an ELF file:</p>
 <div class="highlight"><pre><span></span><code>python3 modm/modm_tools/build_id.py path/to/project.elf
 fa8918e6971ed783b25bff0ad11a0541be47a933
 </code></pre></div>
-
 <p>To copy the ELF file to a artifact cache:</p>
 <div class="highlight"><pre><span></span><code>python3 modm/modm_tools/build_id.py path/to/project.elf --cache path/to/folder
 <span class="c1"># copies to `path/to/folder/fa8918e6971ed783b25bff0ad11a0541be47a933.elf`</span>
 </code></pre></div>
-
 <p>(* <em>only ARM Cortex-M targets</em>)</p>
 <h3 id="bitmap">Bitmap<a class="headerlink" href="#bitmap" title="Permanent link">&para;</a></h3>
 <p>This tool can convert P1 <code>.pbm</code> files into C++ source code.</p>
 <div class="highlight"><pre><span></span><code>python3 modm/modm_tools/bitmap.py image.pbm --outpath .
 <span class="c1"># creates `image.hpp` and `image.cpp` in the CWD</span>
 </code></pre></div>
-
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <h4 id="avrdudebaudrate">avrdude.baudrate<a class="headerlink" href="#avrdudebaudrate" title="Permanent link">&para;</a></h4>
 <p>AvrDude programmer baudrate</p>
@@ -5116,8 +5099,8 @@ A memory region is a dictionary containing:</p>
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.77e55a48.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
