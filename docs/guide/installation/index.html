@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A modular C++17 library generator for barebone embedded programming">
+        <meta name="description" content="A modular C++20 library generator for barebone embedded programming">
       
       
       
@@ -3480,8 +3480,8 @@ with modm:</p>
 you are not <em>required</em> to use it. See <a href="../../reference/build-systems">the reference manual</a> for
 additional build system documentation.</p>
 <div class="admonition info">
-<p class="admonition-title">Use GCC 7 or newer</p>
-<p>modm uses C++17, so you need <em>at least</em> GCC 7.</p>
+<p class="admonition-title">Use GCC 10 or newer</p>
+<p>modm uses C++20, so you need <em>at least</em> GCC 10.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Beware of AVRs</p>
@@ -3520,18 +3520,18 @@ Add the following line to the end of your <code>~/.bashrc</code> file:</p>
 
 <div class="admonition warning">
 <p class="admonition-title">Ubuntus 'gcc-arm-none-eabi' package</p>
-<p>The Ubuntu package 'gcc-arm-none-eabi' causes <a href="https://github.com/modm-io/modm/issues/468">issues at the moment</a>.
+<p>The Ubuntu package 'gcc-arm-none-eabi' causes <a href="https://github.com/modm-io/modm/issues/468">issues at the moment</a> and ships only version 9.3.
 We recommend using the toolchain provided by ARM:</p>
-<div class="codehilite"><pre><span></span><code>wget -O- https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2020q2/gcc-arm-none-eabi-9-2020-q2-update-x86_64-linux.tar.bz2 | sudo tar xj -C /opt/
+<div class="codehilite"><pre><span></span><code>wget -O- https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2 | sudo tar xj -C /opt/
 </code></pre></div>
 
 <p>Add it to your systems PATH variable by appending the following line to <code>~/.bashrc</code>:</p>
-<div class="codehilite"><pre><span></span><code>export PATH=&quot;/opt/gcc-arm-none-eabi-9-2020-q2-update/bin:$PATH&quot;
+<div class="codehilite"><pre><span></span><code>export PATH=&quot;/opt/gcc-arm-none-eabi-10-2020-q4-major/bin:$PATH&quot;
 </code></pre></div>
 
 </div>
 <p>For Atmel/Microchip AVR targets:</p>
-<div class="codehilite"><pre><span></span><code>wget -O- https://github.com/modm-ext/docker-avr-gcc/releases/download/v10.2.0/avr-gcc.tar.bz2 | sudo tar xj -C /opt
+<div class="codehilite"><pre><span></span><code>wget -O- https://github.com/modm-io/avr-gcc/releases/download/v10.2.0/avr-gcc.tar.bz2 | sudo tar xj -C /opt
 </code></pre></div>
 
 <p>Add it to your systems PATH variable by appending the following line to <code>~/.bashrc</code>:</p>
