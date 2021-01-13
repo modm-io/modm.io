@@ -3551,7 +3551,7 @@ to <code>~/.bashrc</code>:</p>
 
 <div class="admonition warning">
 <p class="admonition-title">OpenOCD for recent targets</p>
-<p>The latest OpenOCD release v0.10.0 (as of May 2020) is too old for some targets
+<p>The latest OpenOCD release v0.10.0 (as of Jan 2021) is too old for some targets
 (STM32G0, STM32G4, STM32F7). To program these targets you need to compile the
 <a href="https://github.com/ntfreak/openocd">HEAD version of OpenOCD from source</a>, install it and add it to
 the beginning of your <code>$PATH</code>.
@@ -3571,13 +3571,15 @@ running SCons with Python 3!</p>
 </div>
 <h2 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h2>
 <p>We will use <a href="http://brew.sh/">Homebrew</a> to install the minimal build system:</p>
-<div class="codehilite"><pre><span></span><code>brew install python3 scons git doxygen
+<div class="codehilite"><pre><span></span><code>brew update
+brew install python3 scons git doxygen
 pip3 install modm
 </code></pre></div>
 
 <p>Install the <a href="https://github.com/osx-cross/homebrew-avr">AVR toolchain from source</a>:</p>
 <div class="codehilite"><pre><span></span><code>brew tap osx-cross/avr
-brew install avr-gcc
+brew install avr-gcc@10
+brew link --force avr-gcc@10
 </code></pre></div>
 
 <p>And the <a href="https://github.com/osx-cross/homebrew-arm">pre-built ARM toolchain</a> as
