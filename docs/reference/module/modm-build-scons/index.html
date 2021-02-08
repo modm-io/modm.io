@@ -984,6 +984,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#scons-library" class="md-nav__link">
+    scons library
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#scons-symbols" class="md-nav__link">
     scons symbols
   </a>
@@ -3829,6 +3836,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#scons-library" class="md-nav__link">
+    scons library
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#scons-symbols" class="md-nav__link">
     scons symbols
   </a>
@@ -4134,9 +4148,6 @@ A DFU bootloader is available on many STM32 microcontrollers
 and can be accessed by pressing the BOOT0-Button during startup.
 (* <em>only ARM Cortex-M targets</em>)</p>
 <div class="highlight"><pre><span></span><code>$ scons program-dfu
-scons: Reading SConscript files ...
-scons: done reading SConscript files.
-scons: Building targets ...
 dfu_stm32_programmer: program [...]/blink/release/blink.bin
 dfu-util 0.9
 
@@ -4193,9 +4204,6 @@ crw-rw-rw-  1 root  wheel   21, 106 Feb 19 09:46 /dev/tty.usbmodemDEADBEF1
 </code></pre></div>
 <p>You can let the tool guess the port or explicitly specify it:</p>
 <div class="highlight"><pre><span></span><code>$ scons program-bmp port=/dev/cu.usbmodemDEADBEEF
-scons: Reading SConscript files ...
-scons: done reading SConscript files.
-scons: Building targets ...
 [...]
 Remote debugging using /dev/cu.usbmodemDEADBEEF
 Target voltage: unknown
@@ -4286,9 +4294,6 @@ argument.
 displays the serial output stream.
 (* <em>only ARM Cortex-M targets</em>)</p>
 <div class="highlight"><pre><span></span><code> $ scons log-itm fcpu=64000000
-scons: Reading SConscript files ...
-scons: done reading SConscript files.
-scons: Building targets ...
 .----OpenOCD--&gt; Single Wire Viewer
 &#39;------SWO----- stm32f103rbt6
 Open On-Chip Debugger 0.10.0
@@ -4302,6 +4307,18 @@ loop: 61
 </code></pre></div>
 <p>See the <code>:platform:itm</code> module for details how to use the ITM as a logging
 output.</p>
+<h4 id="scons-library">scons library<a class="headerlink" href="#scons-library" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>scons library profile={debug|release}
+</code></pre></div>
+<p>Generates only the static library <code>libmodm.a</code> without linking it to the
+application.</p>
+<div class="highlight"><pre><span></span><code> $ scons library
+Compiling C++·· {debug|release}/modm/ext/gcc/assert.o
+    ...
+Compiling C++·· {debug|release}/modm/src/modm/utils/dummy.o
+Create Library· {debug|release}/modm/libmodm.a
+Indexing······· {debug|release}/modm/libmodm.a
+</code></pre></div>
 <h4 id="scons-symbols">scons symbols<a class="headerlink" href="#scons-symbols" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons symbols profile={debug|release}
 </code></pre></div>
