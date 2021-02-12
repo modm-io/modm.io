@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-board-nucleo-f401re/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-driver-mmc5603/">
       
       
         <meta name="author" content="Niklas Hauser">
@@ -20,7 +20,7 @@
     
     
       
-        <title>:board:nucleo-f401re - modm barebone embedded library</title>
+        <title>:driver:mmc5603 - modm barebone embedded library</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nucleo-f401re" class="md-skip">
+        <a href="#mmc5603-3-axis-digital-magnetometer" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              :board:nucleo-f401re
+              :driver:mmc5603
             
           </span>
         </div>
@@ -999,49 +999,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        :board:nucleo-f401re
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../modm-board-nucleo-f401re/" class="md-nav__link">
       :board:nucleo-f401re
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    Dependencies
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -2285,11 +2247,49 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../modm-driver-mmc5603/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        :driver:mmc5603
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       :driver:mmc5603
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -3870,103 +3870,74 @@
               
                 
                 
-                <h1 id="nucleo-f401re">NUCLEO-F401RE<a class="headerlink" href="#nucleo-f401re" title="Permanent link">&para;</a></h1>
-<p>lbuild module: <code>modm:board:nucleo-f401re</code></p>
-<p><a href="https://www.st.com/en/evaluation-tools/nucleo-f401re.html">Nucleo kit for STM32F401RE</a></p>
-<p><em>This module is only available for stm32f401ret6.</em></p>
+                <h1 id="mmc5603-3-axis-digital-magnetometer">MMC5603 3-Axis Digital Magnetometer<a class="headerlink" href="#mmc5603-3-axis-digital-magnetometer" title="Permanent link">&para;</a></h1>
+<p>lbuild module: <code>modm:driver:mmc5603</code></p>
+<p>The MMC5603NJ is a monolithic complete 3-axis AMR magnetic sensor with on-chip
+signal processing and integrated I2C bus.</p>
+<p>It can measure magnetic fields within the full scale range of ±30 Gauss (G),
+with up to 0.0625mG per LSB resolution at 20bits operation mode and 2mG total
+RMS noise level, enabling heading accuracy of ±1° in electronic compass applications.</p>
+<p>An integrated SET/RESET function provides for the elimination of error due to
+Null Field output change with temperature. In addition it clears the sensors of
+any residual magnetic polarization resulting from exposure to strong external
+magnets. The SET/RESET function can be performed for each measurement or
+periodically as the specific application requires.</p>
+<p>The MMC5603NJ is in wafer level package with an ultra-small size of 0.8x0.8x0.4mm
+and with an operating temperature range from -40°C to +85°C.</p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<p><svg width="604pt" height="165pt"
- viewBox="0.00 0.00 604.00 165.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 161)">
-<title>modm:board:nucleo&#45;f401re</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-161 600,-161 600,4 -4,4"/>
+<p><svg width="327pt" height="150pt"
+ viewBox="0.00 0.00 327.00 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 146)">
+<title>modm:driver:mmc5603</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-146 323,-146 323,4 -4,4"/>
 <g id="node1" class="node">
-<title>modm_board_nucleo_f401re</title>
-<polygon fill="lightgrey" stroke="black" stroke-width="2" points="359,-53 244,-53 244,0 359,0 359,-53"/>
-<text text-anchor="middle" x="301.5" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="301.5" y="-22.8" font-family="Times,serif" font-size="14.00">board:</text>
-<text text-anchor="middle" x="301.5" y="-7.8" font-family="Times,serif" font-size="14.00">nucleo&#45;f401re</text>
+<title>modm_driver_mmc5603</title>
+<polygon fill="lightgrey" stroke="black" stroke-width="2" points="225,-53 138,-53 138,0 225,0 225,-53"/>
+<text text-anchor="middle" x="181.5" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="181.5" y="-22.8" font-family="Times,serif" font-size="14.00">driver:</text>
+<text text-anchor="middle" x="181.5" y="-7.8" font-family="Times,serif" font-size="14.00">mmc5603</text>
 </g>
 <g id="node2" class="node">
-<title>modm_architecture_clock</title>
-<polygon fill="lightgrey" stroke="black" points="109,-149.5 0,-149.5 0,-96.5 109,-96.5 109,-149.5"/>
-<text text-anchor="middle" x="54.5" y="-134.3" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="54.5" y="-119.3" font-family="Times,serif" font-size="14.00">architecture:</text>
-<text text-anchor="middle" x="54.5" y="-104.3" font-family="Times,serif" font-size="14.00">clock</text>
+<title>modm_architecture_i2c_device</title>
+<polygon fill="lightgrey" stroke="black" points="109,-142 0,-142 0,-89 109,-89 109,-142"/>
+<text text-anchor="middle" x="54.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="54.5" y="-111.8" font-family="Times,serif" font-size="14.00">architecture:</text>
+<text text-anchor="middle" x="54.5" y="-96.8" font-family="Times,serif" font-size="14.00">i2c.device</text>
 </g>
 <g id="edge1" class="edge">
-<title>modm_board_nucleo_f401re&#45;&gt;modm_architecture_clock</title>
-<path fill="none" stroke="black" d="M243.84,-44.17C207.13,-55.42 158.87,-71.38 117.5,-89 115.16,-89.99 112.8,-91.04 110.42,-92.13"/>
-<polygon fill="black" stroke="black" points="108.78,-89.03 101.23,-96.47 111.77,-95.36 108.78,-89.03"/>
+<title>modm_driver_mmc5603&#45;&gt;modm_architecture_i2c_device</title>
+<path fill="none" stroke="black" d="M144.08,-53.13C130.38,-62.52 114.72,-73.25 100.37,-83.08"/>
+<polygon fill="black" stroke="black" points="98.36,-80.21 92.09,-88.75 102.32,-85.99 98.36,-80.21"/>
 </g>
 <g id="node3" class="node">
-<title>modm_debug</title>
-<polygon fill="lightgrey" stroke="black" points="192,-142 127,-142 127,-104 192,-104 192,-142"/>
-<text text-anchor="middle" x="159.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="159.5" y="-111.8" font-family="Times,serif" font-size="14.00">debug</text>
+<title>modm_architecture_register</title>
+<polygon fill="lightgrey" stroke="black" points="236,-142 127,-142 127,-89 236,-89 236,-142"/>
+<text text-anchor="middle" x="181.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="181.5" y="-111.8" font-family="Times,serif" font-size="14.00">architecture:</text>
+<text text-anchor="middle" x="181.5" y="-96.8" font-family="Times,serif" font-size="14.00">register</text>
 </g>
 <g id="edge2" class="edge">
-<title>modm_board_nucleo_f401re&#45;&gt;modm_debug</title>
-<path fill="none" stroke="black" d="M256.7,-53.07C238.88,-63.68 218.39,-76.43 200.5,-89 196.59,-91.74 192.57,-94.74 188.65,-97.78"/>
-<polygon fill="black" stroke="black" points="186.47,-95.04 180.8,-103.99 190.81,-100.53 186.47,-95.04"/>
+<title>modm_driver_mmc5603&#45;&gt;modm_architecture_register</title>
+<path fill="none" stroke="black" d="M181.5,-53.13C181.5,-61.11 181.5,-70.07 181.5,-78.62"/>
+<polygon fill="black" stroke="black" points="178,-78.75 181.5,-88.75 185,-78.75 178,-78.75"/>
 </g>
 <g id="node4" class="node">
-<title>modm_platform_clock</title>
-<polygon fill="lightgrey" stroke="black" points="293,-149.5 210,-149.5 210,-96.5 293,-96.5 293,-149.5"/>
-<text text-anchor="middle" x="251.5" y="-134.3" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="251.5" y="-119.3" font-family="Times,serif" font-size="14.00">platform:</text>
-<text text-anchor="middle" x="251.5" y="-104.3" font-family="Times,serif" font-size="14.00">clock</text>
+<title>modm_math_utils</title>
+<polygon fill="lightgrey" stroke="black" points="319,-142 254,-142 254,-89 319,-89 319,-142"/>
+<text text-anchor="middle" x="286.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="286.5" y="-111.8" font-family="Times,serif" font-size="14.00">math:</text>
+<text text-anchor="middle" x="286.5" y="-96.8" font-family="Times,serif" font-size="14.00">utils</text>
 </g>
 <g id="edge3" class="edge">
-<title>modm_board_nucleo_f401re&#45;&gt;modm_platform_clock</title>
-<path fill="none" stroke="black" d="M287.84,-53.32C282.33,-63.74 275.88,-75.92 269.96,-87.11"/>
-<polygon fill="black" stroke="black" points="266.73,-85.73 265.15,-96.21 272.92,-89.01 266.73,-85.73"/>
-</g>
-<g id="node5" class="node">
-<title>modm_platform_core</title>
-<polygon fill="lightgrey" stroke="black" points="394,-149.5 311,-149.5 311,-96.5 394,-96.5 394,-149.5"/>
-<text text-anchor="middle" x="352.5" y="-134.3" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="352.5" y="-119.3" font-family="Times,serif" font-size="14.00">platform:</text>
-<text text-anchor="middle" x="352.5" y="-104.3" font-family="Times,serif" font-size="14.00">core</text>
-</g>
-<g id="edge4" class="edge">
-<title>modm_board_nucleo_f401re&#45;&gt;modm_platform_core</title>
-<path fill="none" stroke="black" d="M315.44,-53.32C321.06,-63.74 327.63,-75.92 333.67,-87.11"/>
-<polygon fill="black" stroke="black" points="330.75,-89.07 338.58,-96.21 336.91,-85.75 330.75,-89.07"/>
-</g>
-<g id="node6" class="node">
-<title>modm_platform_gpio</title>
-<polygon fill="lightgrey" stroke="black" points="495,-149.5 412,-149.5 412,-96.5 495,-96.5 495,-149.5"/>
-<text text-anchor="middle" x="453.5" y="-134.3" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="453.5" y="-119.3" font-family="Times,serif" font-size="14.00">platform:</text>
-<text text-anchor="middle" x="453.5" y="-104.3" font-family="Times,serif" font-size="14.00">gpio</text>
-</g>
-<g id="edge5" class="edge">
-<title>modm_board_nucleo_f401re&#45;&gt;modm_platform_gpio</title>
-<path fill="none" stroke="black" d="M344.92,-53.15C363.12,-64.04 384.44,-76.97 403.5,-89 404.45,-89.6 405.4,-90.2 406.36,-90.81"/>
-<polygon fill="black" stroke="black" points="404.81,-93.98 415.11,-96.44 408.59,-88.09 404.81,-93.98"/>
-</g>
-<g id="node7" class="node">
-<title>modm_platform_uart_2</title>
-<polygon fill="lightgrey" stroke="black" points="596,-157 513,-157 513,-89 596,-89 596,-157"/>
-<text text-anchor="middle" x="554.5" y="-141.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="554.5" y="-126.8" font-family="Times,serif" font-size="14.00">platform:</text>
-<text text-anchor="middle" x="554.5" y="-111.8" font-family="Times,serif" font-size="14.00">uart:</text>
-<text text-anchor="middle" x="554.5" y="-96.8" font-family="Times,serif" font-size="14.00">2</text>
-</g>
-<g id="edge6" class="edge">
-<title>modm_board_nucleo_f401re&#45;&gt;modm_platform_uart_2</title>
-<path fill="none" stroke="black" d="M359.13,-40.23C398.41,-49.96 451.33,-65.16 503.65,-88.98"/>
-<polygon fill="black" stroke="black" points="502.18,-92.15 512.72,-93.2 505.13,-85.81 502.18,-92.15"/>
+<title>modm_driver_mmc5603&#45;&gt;modm_math_utils</title>
+<path fill="none" stroke="black" d="M212.44,-53.13C223.45,-62.25 235.99,-72.65 247.58,-82.25"/>
+<polygon fill="black" stroke="black" points="245.49,-85.07 255.42,-88.75 249.96,-79.67 245.49,-85.07"/>
 </g>
 </g>
 </svg></p>
-<div class="admonition warning">
-<p class="admonition-title">Limited availability: Check with 'lbuild discover' if this module is available for your target!</p>
-</div>
                 
               
               
@@ -3985,7 +3956,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../modm-board-nucleo-f334r8/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../modm-driver-memory_bus/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -3994,19 +3965,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                :board:nucleo-f334r8
+                :driver:memory_bus
               </div>
             </div>
           </a>
         
         
-          <a href="../modm-board-nucleo-f411re/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../modm-driver-nokia5110/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                :board:nucleo-f411re
+                :driver:nokia5110
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
