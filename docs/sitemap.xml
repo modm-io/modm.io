@@ -260,6 +260,10 @@
      <lastmod>2021-02-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
+     <loc>http://modm.io/reference/module/modm-board-nucleo-f767zi/</loc>
+     <lastmod>2021-02-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>http://modm.io/reference/module/modm-board-nucleo-g071rb/</loc>
      <lastmod>2021-02-21</lastmod>
      <changefreq>daily</changefreq>
@@ -592,6 +596,10 @@
      <lastmod>2021-02-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
+     <loc>http://modm.io/reference/module/modm-driver-lan8720a/</loc>
+     <lastmod>2021-02-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>http://modm.io/reference/module/modm-driver-lawicel/</loc>
      <lastmod>2021-02-21</lastmod>
      <changefreq>daily</changefreq>
@@ -760,6 +768,10 @@
      <lastmod>2021-02-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
+     <loc>http://modm.io/reference/module/modm-freertos-tcp-lan8720a/</loc>
+     <lastmod>2021-02-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>http://modm.io/reference/module/modm-io/</loc>
      <lastmod>2021-02-21</lastmod>
      <changefreq>daily</changefreq>
@@ -873,6 +885,10 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>http://modm.io/reference/module/modm-platform-dma/</loc>
+     <lastmod>2021-02-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>http://modm.io/reference/module/modm-platform-eth/</loc>
      <lastmod>2021-02-21</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
