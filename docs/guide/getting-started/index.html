@@ -4059,12 +4059,14 @@
 especially if you have a development board that modm supports out-of-box.</p>
 <p>Make sure you've <a href="https://modm.io/guide/installation">installed all tools required for building modm</a>.</p>
 <h2 id="tldr">TL;DR<a class="headerlink" href="#tldr" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>lbuild build    # generate modm library (call only once)
+<p>To compile any example:</p>
+<div class="highlight"><pre><span></span><code>cd modm/examples/generic/blinky  # cd into the example
+lbuild build    # generate modm library (call only once)
 scons program   # compile and upload to your development board
 </code></pre></div>
 <p>To debug with GDB in TUI mode:</p>
 <div class="highlight"><pre><span></span><code>scons program profile=debug # compile and upload debug profile
-scons gdb profile=debug     # launch OpenOCD and GDB for debugging
+scons debug profile=debug   # launch OpenOCD and GDB for debugging
 </code></pre></div>
 <p>To generate your target specific Doxygen documentation:</p>
 <div class="highlight"><pre><span></span><code>(cd modm/docs &amp;&amp; doxygen doxyfile.cfg)  # may take a minute or two
