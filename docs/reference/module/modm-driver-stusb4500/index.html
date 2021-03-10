@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-platform-uart-stm32/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-driver-stusb4500/">
       
       
         <meta name="author" content="Niklas Hauser">
@@ -20,7 +20,7 @@
     
     
       
-        <title>:platform:uart (stm32) - modm barebone embedded library</title>
+        <title>:driver:stusb4500 - modm barebone embedded library</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#universal-asynchronous-receiver-transmitter-uart" class="md-skip">
+        <a href="#stusb4500-usb-pd-controller" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +99,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              :platform:uart (stm32)
+              :driver:stusb4500
             
           </span>
         </div>
@@ -2451,11 +2451,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../modm-driver-stusb4500/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        :driver:stusb4500
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       :driver:stusb4500
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#standalone-usb-pd-controller-for-power-sinking-devices" class="md-nav__link">
+    Standalone USB PD controller for power sinking devices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -3327,49 +3372,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        :platform:uart (stm32)
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../modm-platform-uart-stm32/" class="md-nav__link">
       :platform:uart (stm32)
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    Dependencies
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -3923,6 +3930,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#standalone-usb-pd-controller-for-power-sinking-devices" class="md-nav__link">
+    Standalone USB PD controller for power sinking devices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dependencies" class="md-nav__link">
     Dependencies
   </a>
@@ -3942,126 +3956,43 @@
               
                 
                 
-                <h1 id="universal-asynchronous-receiver-transmitter-uart">Universal Asynchronous Receiver Transmitter (UART)<a class="headerlink" href="#universal-asynchronous-receiver-transmitter-uart" title="Permanent link">&para;</a></h1>
-<p>lbuild module: <code>modm:platform:uart</code></p>
-<p><em>This module is only available for stm32.</em></p>
+                <h1 id="stusb4500-usb-pd-controller">STUSB4500 USB PD controller<a class="headerlink" href="#stusb4500-usb-pd-controller" title="Permanent link">&para;</a></h1>
+<p>lbuild module: <code>modm:driver:stusb4500</code></p>
+<h2 id="standalone-usb-pd-controller-for-power-sinking-devices">Standalone USB PD controller for power sinking devices<a class="headerlink" href="#standalone-usb-pd-controller-for-power-sinking-devices" title="Permanent link">&para;</a></h2>
+<p>The STUSB4500 is a USB power delivery controller for USB power sink devices.
+See <a href="https://www.st.com/en/interfaces-and-transceivers/stusb4500.html">https://www.st.com/en/interfaces-and-transceivers/stusb4500.html</a></p>
+<p>The STUSB4500 is connected via I2C to the microcontroller.</p>
+<p>This driver only implements basic functionality for now.</p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<p><svg width="888pt" height="150pt"
- viewBox="0.00 0.00 888.00 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<p><svg width="117pt" height="150pt"
+ viewBox="0.00 0.00 117.00 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 146)">
-<title>modm:platform:uart</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-146 884,-146 884,4 -4,4"/>
+<title>modm:driver:stusb4500</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-146 113,-146 113,4 -4,4"/>
 <g id="node1" class="node">
-<title>modm_platform_uart</title>
-<polygon fill="lightgrey" stroke="black" stroke-width="2" points="529,-53 446,-53 446,0 529,0 529,-53"/>
-<text text-anchor="middle" x="487.5" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="487.5" y="-22.8" font-family="Times,serif" font-size="14.00">platform:</text>
-<text text-anchor="middle" x="487.5" y="-7.8" font-family="Times,serif" font-size="14.00">uart</text>
+<title>modm_driver_stusb4500</title>
+<polygon fill="lightgrey" stroke="black" stroke-width="2" points="100.5,-53 8.5,-53 8.5,0 100.5,0 100.5,-53"/>
+<text text-anchor="middle" x="54.5" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="54.5" y="-22.8" font-family="Times,serif" font-size="14.00">driver:</text>
+<text text-anchor="middle" x="54.5" y="-7.8" font-family="Times,serif" font-size="14.00">stusb4500</text>
 </g>
 <g id="node2" class="node">
-<title>modm_architecture_atomic</title>
+<title>modm_architecture_i2c_device</title>
 <polygon fill="lightgrey" stroke="black" points="109,-142 0,-142 0,-89 109,-89 109,-142"/>
 <text text-anchor="middle" x="54.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
 <text text-anchor="middle" x="54.5" y="-111.8" font-family="Times,serif" font-size="14.00">architecture:</text>
-<text text-anchor="middle" x="54.5" y="-96.8" font-family="Times,serif" font-size="14.00">atomic</text>
+<text text-anchor="middle" x="54.5" y="-96.8" font-family="Times,serif" font-size="14.00">i2c.device</text>
 </g>
 <g id="edge1" class="edge">
-<title>modm_platform_uart&#45;&gt;modm_architecture_atomic</title>
-<path fill="none" stroke="black" d="M445.79,-31.41C378.4,-38.38 241.54,-55.23 119.14,-88.76"/>
-<polygon fill="black" stroke="black" points="117.92,-85.47 109.23,-91.52 119.8,-92.21 117.92,-85.47"/>
-</g>
-<g id="node3" class="node">
-<title>modm_architecture_interrupt</title>
-<polygon fill="lightgrey" stroke="black" points="236,-142 127,-142 127,-89 236,-89 236,-142"/>
-<text text-anchor="middle" x="181.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="181.5" y="-111.8" font-family="Times,serif" font-size="14.00">architecture:</text>
-<text text-anchor="middle" x="181.5" y="-96.8" font-family="Times,serif" font-size="14.00">interrupt</text>
-</g>
-<g id="edge2" class="edge">
-<title>modm_platform_uart&#45;&gt;modm_architecture_interrupt</title>
-<path fill="none" stroke="black" d="M445.73,-36.25C398.92,-46.45 320.73,-64.69 245.89,-88.69"/>
-<polygon fill="black" stroke="black" points="244.74,-85.38 236.31,-91.8 246.9,-92.04 244.74,-85.38"/>
-</g>
-<g id="node4" class="node">
-<title>modm_architecture_register</title>
-<polygon fill="lightgrey" stroke="black" points="363,-142 254,-142 254,-89 363,-89 363,-142"/>
-<text text-anchor="middle" x="308.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="308.5" y="-111.8" font-family="Times,serif" font-size="14.00">architecture:</text>
-<text text-anchor="middle" x="308.5" y="-96.8" font-family="Times,serif" font-size="14.00">register</text>
-</g>
-<g id="edge3" class="edge">
-<title>modm_platform_uart&#45;&gt;modm_architecture_register</title>
-<path fill="none" stroke="black" d="M445.98,-47.68C423.45,-58.63 395.15,-72.39 370.09,-84.56"/>
-<polygon fill="black" stroke="black" points="368.49,-81.45 361.03,-88.97 371.55,-87.75 368.49,-81.45"/>
-</g>
-<g id="node5" class="node">
-<title>modm_architecture_uart</title>
-<polygon fill="lightgrey" stroke="black" points="490,-142 381,-142 381,-89 490,-89 490,-142"/>
-<text text-anchor="middle" x="435.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="435.5" y="-111.8" font-family="Times,serif" font-size="14.00">architecture:</text>
-<text text-anchor="middle" x="435.5" y="-96.8" font-family="Times,serif" font-size="14.00">uart</text>
-</g>
-<g id="edge4" class="edge">
-<title>modm_platform_uart&#45;&gt;modm_architecture_uart</title>
-<path fill="none" stroke="black" d="M472.18,-53.13C467.15,-61.55 461.47,-71.05 456.11,-80.02"/>
-<polygon fill="black" stroke="black" points="453.02,-78.37 450.89,-88.75 459.03,-81.96 453.02,-78.37"/>
-</g>
-<g id="node6" class="node">
-<title>modm_cmsis_device</title>
-<polygon fill="lightgrey" stroke="black" points="573,-142 508,-142 508,-89 573,-89 573,-142"/>
-<text text-anchor="middle" x="540.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="540.5" y="-111.8" font-family="Times,serif" font-size="14.00">cmsis:</text>
-<text text-anchor="middle" x="540.5" y="-96.8" font-family="Times,serif" font-size="14.00">device</text>
-</g>
-<g id="edge5" class="edge">
-<title>modm_platform_uart&#45;&gt;modm_cmsis_device</title>
-<path fill="none" stroke="black" d="M503.12,-53.13C508.24,-61.55 514.03,-71.05 519.5,-80.02"/>
-<polygon fill="black" stroke="black" points="516.62,-82.03 524.81,-88.75 522.6,-78.39 516.62,-82.03"/>
-</g>
-<g id="node7" class="node">
-<title>modm_math_algorithm</title>
-<polygon fill="lightgrey" stroke="black" points="677.5,-142 591.5,-142 591.5,-89 677.5,-89 677.5,-142"/>
-<text text-anchor="middle" x="634.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="634.5" y="-111.8" font-family="Times,serif" font-size="14.00">math:</text>
-<text text-anchor="middle" x="634.5" y="-96.8" font-family="Times,serif" font-size="14.00">algorithm</text>
-</g>
-<g id="edge6" class="edge">
-<title>modm_platform_uart&#45;&gt;modm_math_algorithm</title>
-<path fill="none" stroke="black" d="M529.23,-52.2C545.78,-61.99 565,-73.37 582.45,-83.69"/>
-<polygon fill="black" stroke="black" points="581,-86.9 591.39,-88.98 584.56,-80.88 581,-86.9"/>
-</g>
-<g id="node8" class="node">
-<title>modm_platform_gpio</title>
-<polygon fill="lightgrey" stroke="black" points="779,-142 696,-142 696,-89 779,-89 779,-142"/>
-<text text-anchor="middle" x="737.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="737.5" y="-111.8" font-family="Times,serif" font-size="14.00">platform:</text>
-<text text-anchor="middle" x="737.5" y="-96.8" font-family="Times,serif" font-size="14.00">gpio</text>
-</g>
-<g id="edge7" class="edge">
-<title>modm_platform_uart&#45;&gt;modm_platform_gpio</title>
-<path fill="none" stroke="black" d="M529.35,-38.28C570.1,-49.28 633.48,-67.72 686.5,-89 686.59,-89.04 686.69,-89.08 686.78,-89.11"/>
-<polygon fill="black" stroke="black" points="685.15,-92.22 695.73,-92.93 687.9,-85.79 685.15,-92.22"/>
-</g>
-<g id="node9" class="node">
-<title>modm_platform_rcc</title>
-<polygon fill="lightgrey" stroke="black" points="880,-142 797,-142 797,-89 880,-89 880,-142"/>
-<text text-anchor="middle" x="838.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="838.5" y="-111.8" font-family="Times,serif" font-size="14.00">platform:</text>
-<text text-anchor="middle" x="838.5" y="-96.8" font-family="Times,serif" font-size="14.00">rcc</text>
-</g>
-<g id="edge8" class="edge">
-<title>modm_platform_uart&#45;&gt;modm_platform_rcc</title>
-<path fill="none" stroke="black" d="M529.34,-32.42C586.47,-39.91 691.82,-56.53 787.34,-88.94"/>
-<polygon fill="black" stroke="black" points="786.26,-92.26 796.85,-92.23 788.54,-85.65 786.26,-92.26"/>
+<title>modm_driver_stusb4500&#45;&gt;modm_architecture_i2c_device</title>
+<path fill="none" stroke="black" d="M54.5,-53.13C54.5,-61.11 54.5,-70.07 54.5,-78.62"/>
+<polygon fill="black" stroke="black" points="51,-78.75 54.5,-88.75 58,-78.75 51,-78.75"/>
 </g>
 </g>
 </svg></p>
-<div class="admonition warning">
-<p class="admonition-title">Limited availability: Check with 'lbuild discover' if this module is available for your target!</p>
-</div>
                 
               
               
@@ -4080,7 +4011,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../modm-platform-uart-sam/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../modm-driver-ssd1306/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -4089,19 +4020,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                :platform:uart (sam)
+                :driver:ssd1306
               </div>
             </div>
           </a>
         
         
-          <a href="../modm-platform-uart-spi/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../modm-driver-sx1276/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                :platform:uart.spi
+                :driver:sx1276
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
