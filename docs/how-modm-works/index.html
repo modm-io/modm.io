@@ -4011,9 +4011,8 @@ Three of these projects form the heart of modm:</p>
 specifically for your targets and needs and generate a custom library.
 You can generate more than just code, in this example, lbuild also generates a
 build system which then compiles and links the application into a executable.</p>
-<p><center>
-<img width="80%" src="/images/system_overview.png"/>
-</center></p>
+<style scoped>@media(prefers-color-scheme:dark){img{filter:invert(100%)}}</style>
+<p><img alt="" src="../images/system_overview.png" /></p>
 <p>We've also put a lot of thought into modm-devices, about what data to extract,
 how to format and store it. We automated the entire process to get the high
 quality data we use to build our library.
@@ -4097,11 +4096,7 @@ generate classes for the four USART peripherals.</p>
 <span class="nt">&lt;/driver&gt;</span>
 ...
 </code></pre></div>
-<p>With these techiques we can generate a target specific HAL for hundreds of devices.
-Don't believe us? <a href="https://circleci.com/gh/modm-io/workflows/modm/tree/develop">Check out our CI doing just that</a>.</p>
-<p><center>
-<img width="70%" src="/images/circle-ci.png"/>
-</center></p>
+<p>With these techiques we can generate a target specific HAL for hundreds of devices.</p>
 <h2 id="modm-asserts-at-compile-time">modm asserts at compile-time<a class="headerlink" href="#modm-asserts-at-compile-time" title="Permanent link">&para;</a></h2>
 <p>modm stands out for its extensive use of generated static C++ (template) classes.
 Consider this data from the GPIO peripheral, which shows the signal map for the
