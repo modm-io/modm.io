@@ -1344,6 +1344,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#scons-program-fuses" class="md-nav__link">
+    scons program-fuses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#scons-program-dfu" class="md-nav__link">
     scons program-dfu
   </a>
@@ -4270,6 +4277,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#scons-program-fuses" class="md-nav__link">
+    scons program-fuses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#scons-program-dfu" class="md-nav__link">
     scons program-dfu
   </a>
@@ -4673,6 +4687,22 @@ wrote 16384 bytes from file {debug|release}/blink.elf in 0.589736s (27.131 KiB/s
 verified 13064 bytes in 0.296308s (43.056 KiB/s)
 ** Verified OK **
 shutdown command invoked
+</code></pre></div>
+<h4 id="scons-program-fuses">scons program-fuses<a class="headerlink" href="#scons-program-fuses" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>scons program-fuses profile={debug|release} [firmware={hash or file}]
+</code></pre></div>
+<p>Writes all fuses onto your target connected to avrdude.
+(* <em>only AVR targets</em>)</p>
+<p>You can define the fuse values in your source code via the <a href="https://www.nongnu.org/avr-libc/user-manual/group__avr__fuse.html"><code>FUSES</code> struct ELF
+section</a> mechanism, they are automatically used by avrdude. For fuse
+values see the <a href="https://www.engbedded.com/fusecalc/">AVR Fuse Calculator</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;avr/io.h&gt;</span><span class="cp"></span>
+<span class="n">FUSES</span> <span class="o">=</span>
+<span class="p">{</span>
+    <span class="n">LFUSE_DEFAULT</span><span class="p">,</span> <span class="c1">// .low</span>
+    <span class="n">HFUSE_DEFAULT</span><span class="p">,</span> <span class="c1">// .high</span>
+    <span class="n">EFUSE_DEFAULT</span><span class="p">,</span> <span class="c1">// .extended</span>
+<span class="p">};</span>
 </code></pre></div>
 <h4 id="scons-program-dfu">scons program-dfu<a class="headerlink" href="#scons-program-dfu" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons program-dfu profile={debug|release} [firmware={hash or file}]
