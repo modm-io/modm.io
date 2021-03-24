@@ -540,7 +540,11 @@
      <lastmod>2021-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://modm.io/reference/module/modm-driver-encoder-output/</loc>
+     <loc>http://modm.io/reference/module/modm-driver-encoder_input-bitbang/</loc>
+     <lastmod>2021-03-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>http://modm.io/reference/module/modm-driver-encoder_output-bitbang/</loc>
      <lastmod>2021-03-24</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
