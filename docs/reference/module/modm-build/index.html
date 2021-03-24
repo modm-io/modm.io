@@ -2484,20 +2484,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../modm-driver-encoder_input-bitbang/" class="md-nav__link">
-      :driver:encoder_input.bitbang
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../modm-driver-encoder_output-bitbang/" class="md-nav__link">
-      :driver:encoder_output.bitbang
+    <a href="../modm-driver-encoder-output/" class="md-nav__link">
+      :driver:encoder.output
     </a>
   </li>
 
@@ -5304,7 +5292,7 @@ to a <em>common</em> directory so that you don't have <code>build/</code> folder
 Remember to add your build path to your <code>.gitignore</code>.</p>
 <p>You should use a relative path instead of an absolute one, so that this option
 still works for other developers.</p>
-<p>Default: <code>build/project</code><br />
+<p>Default: <code>build/modm</code><br />
 Inputs: <code>[Path]</code>  </p>
 <h4 id="openocdcfg">openocd.cfg<a class="headerlink" href="#openocdcfg" title="Permanent link">&para;</a></h4>
 <p>Path to a custom OpenOCD configuration file</p>
@@ -5326,7 +5314,7 @@ Inputs: <code>[Path]</code>  </p>
 <p>The project name defaults to the folder name you're calling lbuild from.</p>
 <p>It's used by your build system to name the executable and it may also be passed
 to your application via a string constant or CPP define.</p>
-<p>Default: <code>project</code><br />
+<p>Default: <code>modm</code><br />
 Inputs: <code>[String]</code>  </p>
 <h2 id="collectors">Collectors<a class="headerlink" href="#collectors" title="Permanent link">&para;</a></h2>
 <h4 id="archflags">archflags<a class="headerlink" href="#archflags" title="Permanent link">&para;</a></h4>

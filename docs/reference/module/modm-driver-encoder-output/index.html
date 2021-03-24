@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-driver-encoder_output-bitbang/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-driver-encoder-output/">
       
       
         <meta name="author" content="Niklas Hauser">
@@ -20,7 +20,7 @@
     
     
       
-        <title>:driver:encoder_output.bitbang - modm barebone embedded library</title>
+        <title>:driver:encoder.output - modm barebone embedded library</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quadrature-encoder-output" class="md-skip">
+        <a href="#encoder-output" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              :driver:encoder_output.bitbang
+              :driver:encoder.output
             
           </span>
         </div>
@@ -1913,18 +1913,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../modm-driver-encoder_input-bitbang/" class="md-nav__link">
-      :driver:encoder_input.bitbang
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -1936,12 +1924,12 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        :driver:encoder_output.bitbang
+        :driver:encoder.output
         <span class="md-nav__icon md-icon"></span>
       </label>
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      :driver:encoder_output.bitbang
+      :driver:encoder.output
     </a>
     
       
@@ -3956,8 +3944,8 @@
               
                 
                 
-                <h1 id="quadrature-encoder-output">Quadrature Encoder Output<a class="headerlink" href="#quadrature-encoder-output" title="Permanent link">&para;</a></h1>
-<p>lbuild module: <code>modm:driver:encoder_output.bitbang</code></p>
+                <h1 id="encoder-output">Encoder Output<a class="headerlink" href="#encoder-output" title="Permanent link">&para;</a></h1>
+<p>lbuild module: <code>modm:driver:encoder.output</code></p>
 <p>This driver generates a AB (incremental) encoder signal to
 emulate a hardware encoder with a microcontroller.</p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
@@ -3967,13 +3955,13 @@ emulate a hardware encoder with a microcontroller.</p>
 <p><svg class="deps" width="234pt" height="150pt"
  viewBox="0.00 0.00 233.50 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph deps" transform="scale(1 1) rotate(0) translate(4 146)">
-<title>modm:driver:encoder_output.bitbang</title>
+<title>modm:driver:encoder.output</title>
 <g id="node1" class="node">
-<title>modm_driver_encoder_output_bitbang</title>
-<polygon fill="lightgrey" stroke="black" stroke-width="2" points="209,-53 22,-53 22,0 209,0 209,-53"/>
+<title>modm_driver_encoder_output</title>
+<polygon fill="lightgrey" stroke="black" stroke-width="2" points="177.5,-53 53.5,-53 53.5,0 177.5,0 177.5,-53"/>
 <text text-anchor="middle" x="115.5" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
 <text text-anchor="middle" x="115.5" y="-22.8" font-family="Times,serif" font-size="14.00">driver:</text>
-<text text-anchor="middle" x="115.5" y="-7.8" font-family="Times,serif" font-size="14.00">encoder_output.bitbang</text>
+<text text-anchor="middle" x="115.5" y="-7.8" font-family="Times,serif" font-size="14.00">encoder.output</text>
 </g>
 <g id="node2" class="node">
 <title>modm_architecture_gpio</title>
@@ -3983,7 +3971,7 @@ emulate a hardware encoder with a microcontroller.</p>
 <text text-anchor="middle" x="54.5" y="-96.8" font-family="Times,serif" font-size="14.00">gpio</text>
 </g>
 <g id="edge1" class="edge">
-<title>modm_driver_encoder_output_bitbang&#45;&gt;modm_architecture_gpio</title>
+<title>modm_driver_encoder_output&#45;&gt;modm_architecture_gpio</title>
 <path fill="none" stroke="black" d="M97.53,-53.13C91.56,-61.64 84.82,-71.25 78.48,-80.3"/>
 <polygon fill="black" stroke="black" points="75.43,-78.55 72.55,-88.75 81.16,-82.57 75.43,-78.55"/>
 </g>
@@ -3995,7 +3983,7 @@ emulate a hardware encoder with a microcontroller.</p>
 <text text-anchor="middle" x="176.5" y="-96.8" font-family="Times,serif" font-size="14.00">timer</text>
 </g>
 <g id="edge2" class="edge">
-<title>modm_driver_encoder_output_bitbang&#45;&gt;modm_processing_timer</title>
+<title>modm_driver_encoder_output&#45;&gt;modm_processing_timer</title>
 <path fill="none" stroke="black" d="M133.47,-53.13C139.44,-61.64 146.18,-71.25 152.52,-80.3"/>
 <polygon fill="black" stroke="black" points="149.84,-82.57 158.45,-88.75 155.57,-78.55 149.84,-82.57"/>
 </g>
@@ -4020,7 +4008,7 @@ emulate a hardware encoder with a microcontroller.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../modm-driver-encoder_input-bitbang/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../modm-driver-ea_dog/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -4029,7 +4017,7 @@ emulate a hardware encoder with a microcontroller.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                :driver:encoder_input.bitbang
+                :driver:ea_dog
               </div>
             </div>
           </a>
