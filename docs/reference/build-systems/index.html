@@ -395,6 +395,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#make" class="md-nav__link">
+    Make
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cmake" class="md-nav__link">
     CMake
   </a>
@@ -1319,6 +1326,18 @@
   <li class="md-nav__item">
     <a href="../module/modm-build-compilation_db/" class="md-nav__link">
       :build:compilation_db
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../module/modm-build-make/" class="md-nav__link">
+      :build:make
     </a>
   </li>
 
@@ -3956,6 +3975,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#make" class="md-nav__link">
+    Make
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cmake" class="md-nav__link">
     CMake
   </a>
@@ -4013,6 +4039,12 @@ tips during the review.</p>
 one and features many very useful modm- and embedded-specific tools.
 However, it is more optimized for terminal use and not for integration into IDEs.</p>
 <p><a href="../module/modm-build-scons">See the <code>modm:build:scons</code> documentation</a>.</p>
+<h3 id="make">Make<a class="headerlink" href="#make" title="Permanent link">&para;</a></h3>
+<p>The <code>modm:build:make</code> generator creates a stand-alone, but feature-complete,
+Makefile build system. The embedded-specific tooling is provided by wrapping
+separate Python3 scripts in <code>.PHONY</code> targets. It is intended as a simple,
+hackable build system without standardized IDE integration.</p>
+<p><a href="../module/modm-build-make">See the <code>modm:build:make</code> documentation</a>.</p>
 <h3 id="cmake">CMake<a class="headerlink" href="#cmake" title="Permanent link">&para;</a></h3>
 <p>The <code>modm:build:cmake</code> module generates a CMake build script, which you can
 import into a lot of IDEs and compile it from there.

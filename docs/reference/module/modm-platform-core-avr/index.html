@@ -1279,6 +1279,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../modm-build-make/" class="md-nav__link">
+      :build:make
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../modm-build-scons/" class="md-nav__link">
       :build:scons
     </a>
@@ -2942,6 +2954,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#fuses" class="md-nav__link">
+    Fuses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#blocking-delay" class="md-nav__link">
     Blocking Delay
   </a>
@@ -3964,6 +3983,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#fuses" class="md-nav__link">
+    Fuses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#blocking-delay" class="md-nav__link">
     Blocking Delay
   </a>
@@ -4014,6 +4040,18 @@
 <p>lbuild module: <code>modm:platform:core</code></p>
 <p>Implements the interfaces defined in the <code>:architecture</code> modules. Adds the
 <code>-mmcu={target}</code> compile flag and the <code>F_CPU={core frequency}</code> define.</p>
+<h2 id="fuses">Fuses<a class="headerlink" href="#fuses" title="Permanent link">&para;</a></h2>
+<p>You can define the fuse values in your source code via the <a href="https://www.nongnu.org/avr-libc/user-manual/group__avr__fuse.html"><code>FUSES</code> struct ELF
+section</a> mechanism, they are automatically used by avrdude. For fuse
+values see the <a href="https://www.engbedded.com/fusecalc/">AVR Fuse Calculator</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;avr/io.h&gt;</span><span class="cp"></span>
+<span class="n">FUSES</span> <span class="o">=</span>
+<span class="p">{</span>
+    <span class="n">LFUSE_DEFAULT</span><span class="p">,</span> <span class="c1">// .low</span>
+    <span class="n">HFUSE_DEFAULT</span><span class="p">,</span> <span class="c1">// .high</span>
+    <span class="n">EFUSE_DEFAULT</span><span class="p">,</span> <span class="c1">// .extended</span>
+<span class="p">};</span>
+</code></pre></div>
 <h2 id="blocking-delay">Blocking Delay<a class="headerlink" href="#blocking-delay" title="Permanent link">&para;</a></h2>
 <p>The delay functions as defined by <code>modm:architecture:delay</code> and called with a
 <strong>constant value</strong> are implemented directly via GCC's

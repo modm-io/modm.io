@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-board-disco-f746ng/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-build-make/">
       
       
         <meta name="author" content="Niklas Hauser">
@@ -20,7 +20,7 @@
     
     
       
-        <title>:board:disco-f746ng - modm barebone embedded library</title>
+        <title>:build:make - modm barebone embedded library</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#stm32f7discovery" class="md-skip">
+        <a href="#makefile-build-script-generator" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              :board:disco-f746ng
+              :build:make
             
           </span>
         </div>
@@ -833,49 +833,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        :board:disco-f746ng
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../modm-board-disco-f746ng/" class="md-nav__link">
       :board:disco-f746ng
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    Dependencies
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1315,11 +1277,249 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../modm-build-make/" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        :build:make
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
       :build:make
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#makefile-targets" class="md-nav__link">
+    Makefile Targets
+  </a>
+  
+    <nav class="md-nav" aria-label="Makefile Targets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#make" class="md-nav__link">
+    make
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-build" class="md-nav__link">
+    make build
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-clean" class="md-nav__link">
+    make clean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-run" class="md-nav__link">
+    make run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-size" class="md-nav__link">
+    make size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-program" class="md-nav__link">
+    make program
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-program-fuses" class="md-nav__link">
+    make program-fuses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-program-dfu" class="md-nav__link">
+    make program-dfu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-program-bmp" class="md-nav__link">
+    make program-bmp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-debug" class="md-nav__link">
+    make debug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-debug-bmp" class="md-nav__link">
+    make debug-bmp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-debug-coredump" class="md-nav__link">
+    make debug-coredump
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-reset" class="md-nav__link">
+    make reset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-reset-bmp" class="md-nav__link">
+    make reset-bmp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-log-itm" class="md-nav__link">
+    make log-itm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-library" class="md-nav__link">
+    make library
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-symbols" class="md-nav__link">
+    make symbols
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-listing" class="md-nav__link">
+    make listing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-bin" class="md-nav__link">
+    make bin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-hex" class="md-nav__link">
+    make hex
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#information-tool" class="md-nav__link">
+    Information Tool
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bitmap-tool" class="md-nav__link">
+    Bitmap Tool
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#include_makefile" class="md-nav__link">
+    include_makefile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collectors" class="md-nav__link">
+    Collectors
+  </a>
+  
+    <nav class="md-nav" aria-label="Collectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flag_format" class="md-nav__link">
+    flag_format
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -3949,9 +4149,209 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    Dependencies
+  <a href="#makefile-targets" class="md-nav__link">
+    Makefile Targets
   </a>
+  
+    <nav class="md-nav" aria-label="Makefile Targets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#make" class="md-nav__link">
+    make
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-build" class="md-nav__link">
+    make build
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-clean" class="md-nav__link">
+    make clean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-run" class="md-nav__link">
+    make run
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-size" class="md-nav__link">
+    make size
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-program" class="md-nav__link">
+    make program
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-program-fuses" class="md-nav__link">
+    make program-fuses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-program-dfu" class="md-nav__link">
+    make program-dfu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-program-bmp" class="md-nav__link">
+    make program-bmp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-debug" class="md-nav__link">
+    make debug
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-debug-bmp" class="md-nav__link">
+    make debug-bmp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-debug-coredump" class="md-nav__link">
+    make debug-coredump
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-reset" class="md-nav__link">
+    make reset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-reset-bmp" class="md-nav__link">
+    make reset-bmp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-log-itm" class="md-nav__link">
+    make log-itm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-library" class="md-nav__link">
+    make library
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-symbols" class="md-nav__link">
+    make symbols
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-listing" class="md-nav__link">
+    make listing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-bin" class="md-nav__link">
+    make bin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-hex" class="md-nav__link">
+    make hex
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#information-tool" class="md-nav__link">
+    Information Tool
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bitmap-tool" class="md-nav__link">
+    Bitmap Tool
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#include_makefile" class="md-nav__link">
+    include_makefile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collectors" class="md-nav__link">
+    Collectors
+  </a>
+  
+    <nav class="md-nav" aria-label="Collectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flag_format" class="md-nav__link">
+    flag_format
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3968,129 +4368,374 @@
               
                 
                 
-                <h1 id="stm32f7discovery">STM32F7DISCOVERY<a class="headerlink" href="#stm32f7discovery" title="Permanent link">&para;</a></h1>
-<p>lbuild module: <code>modm:board:disco-f746ng</code></p>
-<p><a href="https://www.st.com/en/evaluation-tools/32f746gdiscovery.html">Discovery kit for STM32F746</a></p>
-<p><em>This module is only available for stm32f746ngh6.</em></p>
-<h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<p><svg class="deps" width="806pt" height="165pt"
- viewBox="0.00 0.00 806.00 165.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph deps" transform="scale(1 1) rotate(0) translate(4 161)">
-<title>modm:board:disco&#45;f746ng</title>
-<g id="node1" class="node">
-<title>modm_board_disco_f746ng</title>
-<polygon fill="lightgrey" stroke="black" stroke-width="2" points="456.5,-53 348.5,-53 348.5,0 456.5,0 456.5,-53"/>
-<text text-anchor="middle" x="402.5" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="402.5" y="-22.8" font-family="Times,serif" font-size="14.00">board:</text>
-<text text-anchor="middle" x="402.5" y="-7.8" font-family="Times,serif" font-size="14.00">disco&#45;f746ng</text>
-</g>
-<g id="node2" class="node">
-<title>modm_architecture_clock</title>
-<polygon fill="lightgrey" stroke="black" points="109,-149.5 0,-149.5 0,-96.5 109,-96.5 109,-149.5"/>
-<text text-anchor="middle" x="54.5" y="-134.3" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="54.5" y="-119.3" font-family="Times,serif" font-size="14.00">architecture:</text>
-<text text-anchor="middle" x="54.5" y="-104.3" font-family="Times,serif" font-size="14.00">clock</text>
-</g>
-<g id="edge1" class="edge">
-<title>modm_board_disco_f746ng&#45;&gt;modm_architecture_clock</title>
-<path fill="none" stroke="black" d="M348.24,-34.75C289.98,-43.55 195.31,-60.81 117.5,-89 114.78,-89.99 112.03,-91.07 109.28,-92.22"/>
-<polygon fill="black" stroke="black" points="107.67,-89.1 99.95,-96.37 110.51,-95.5 107.67,-89.1"/>
-</g>
-<g id="node3" class="node">
-<title>modm_debug</title>
-<polygon fill="lightgrey" stroke="black" points="192,-142 127,-142 127,-104 192,-104 192,-142"/>
-<text text-anchor="middle" x="159.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="159.5" y="-111.8" font-family="Times,serif" font-size="14.00">debug</text>
-</g>
-<g id="edge2" class="edge">
-<title>modm_board_disco_f746ng&#45;&gt;modm_debug</title>
-<path fill="none" stroke="black" d="M348.44,-38.04C306.45,-47.6 247.65,-64.06 200.5,-89 195.87,-91.45 191.26,-94.45 186.9,-97.64"/>
-<polygon fill="black" stroke="black" points="184.59,-95 178.86,-103.91 188.9,-100.52 184.59,-95"/>
-</g>
-<g id="node4" class="node">
-<title>modm_platform_clock</title>
-<polygon fill="lightgrey" stroke="black" points="293,-149.5 210,-149.5 210,-96.5 293,-96.5 293,-149.5"/>
-<text text-anchor="middle" x="251.5" y="-134.3" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="251.5" y="-119.3" font-family="Times,serif" font-size="14.00">platform:</text>
-<text text-anchor="middle" x="251.5" y="-104.3" font-family="Times,serif" font-size="14.00">clock</text>
-</g>
-<g id="edge3" class="edge">
-<title>modm_board_disco_f746ng&#45;&gt;modm_platform_clock</title>
-<path fill="none" stroke="black" d="M359.53,-53.19C341.51,-64.09 320.4,-77.02 301.5,-89 300.56,-89.6 299.6,-90.21 298.64,-90.82"/>
-<polygon fill="black" stroke="black" points="296.41,-88.1 289.9,-96.45 300.2,-93.98 296.41,-88.1"/>
-</g>
-<g id="node5" class="node">
-<title>modm_platform_core</title>
-<polygon fill="lightgrey" stroke="black" points="394,-149.5 311,-149.5 311,-96.5 394,-96.5 394,-149.5"/>
-<text text-anchor="middle" x="352.5" y="-134.3" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="352.5" y="-119.3" font-family="Times,serif" font-size="14.00">platform:</text>
-<text text-anchor="middle" x="352.5" y="-104.3" font-family="Times,serif" font-size="14.00">core</text>
-</g>
-<g id="edge4" class="edge">
-<title>modm_board_disco_f746ng&#45;&gt;modm_platform_core</title>
-<path fill="none" stroke="black" d="M388.84,-53.32C383.33,-63.74 376.88,-75.92 370.96,-87.11"/>
-<polygon fill="black" stroke="black" points="367.73,-85.73 366.15,-96.21 373.92,-89.01 367.73,-85.73"/>
-</g>
-<g id="node6" class="node">
-<title>modm_platform_gpio</title>
-<polygon fill="lightgrey" stroke="black" points="495,-149.5 412,-149.5 412,-96.5 495,-96.5 495,-149.5"/>
-<text text-anchor="middle" x="453.5" y="-134.3" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="453.5" y="-119.3" font-family="Times,serif" font-size="14.00">platform:</text>
-<text text-anchor="middle" x="453.5" y="-104.3" font-family="Times,serif" font-size="14.00">gpio</text>
-</g>
-<g id="edge5" class="edge">
-<title>modm_board_disco_f746ng&#45;&gt;modm_platform_gpio</title>
-<path fill="none" stroke="black" d="M416.44,-53.32C422.06,-63.74 428.63,-75.92 434.67,-87.11"/>
-<polygon fill="black" stroke="black" points="431.75,-89.07 439.58,-96.21 437.91,-85.75 431.75,-89.07"/>
-</g>
-<g id="node7" class="node">
-<title>modm_platform_uart_1</title>
-<polygon fill="lightgrey" stroke="black" points="596,-157 513,-157 513,-89 596,-89 596,-157"/>
-<text text-anchor="middle" x="554.5" y="-141.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="554.5" y="-126.8" font-family="Times,serif" font-size="14.00">platform:</text>
-<text text-anchor="middle" x="554.5" y="-111.8" font-family="Times,serif" font-size="14.00">uart:</text>
-<text text-anchor="middle" x="554.5" y="-96.8" font-family="Times,serif" font-size="14.00">1</text>
-</g>
-<g id="edge6" class="edge">
-<title>modm_board_disco_f746ng&#45;&gt;modm_platform_uart_1</title>
-<path fill="none" stroke="black" d="M445.92,-53.15C462.2,-62.89 480.98,-74.27 504.37,-88.98"/>
-<polygon fill="black" stroke="black" points="502.52,-91.95 512.84,-94.32 506.25,-86.03 502.52,-91.95"/>
-</g>
-<g id="node8" class="node">
-<title>modm_platform_usb_fs</title>
-<polygon fill="lightgrey" stroke="black" points="697,-157 614,-157 614,-89 697,-89 697,-157"/>
-<text text-anchor="middle" x="655.5" y="-141.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="655.5" y="-126.8" font-family="Times,serif" font-size="14.00">platform:</text>
-<text text-anchor="middle" x="655.5" y="-111.8" font-family="Times,serif" font-size="14.00">usb:</text>
-<text text-anchor="middle" x="655.5" y="-96.8" font-family="Times,serif" font-size="14.00">fs</text>
-</g>
-<g id="edge7" class="edge">
-<title>modm_board_disco_f746ng&#45;&gt;modm_platform_usb_fs</title>
-<path fill="none" stroke="black" d="M456.63,-39.37C496.17,-49.04 550.79,-64.51 604.42,-88.88"/>
-<polygon fill="black" stroke="black" points="603.18,-92.16 613.72,-93.2 606.13,-85.81 603.18,-92.16"/>
-</g>
-<g id="node9" class="node">
-<title>modm_platform_usb_hs</title>
-<polygon fill="lightgrey" stroke="black" points="798,-157 715,-157 715,-89 798,-89 798,-157"/>
-<text text-anchor="middle" x="756.5" y="-141.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="756.5" y="-126.8" font-family="Times,serif" font-size="14.00">platform:</text>
-<text text-anchor="middle" x="756.5" y="-111.8" font-family="Times,serif" font-size="14.00">usb:</text>
-<text text-anchor="middle" x="756.5" y="-96.8" font-family="Times,serif" font-size="14.00">hs</text>
-</g>
-<g id="edge8" class="edge">
-<title>modm_board_disco_f746ng&#45;&gt;modm_platform_usb_hs</title>
-<path fill="none" stroke="black" d="M456.76,-32.16C516.9,-38.69 616.18,-53.57 705.42,-89.05"/>
-<polygon fill="black" stroke="black" points="704.27,-92.36 714.86,-92.89 706.92,-85.87 704.27,-92.36"/>
-</g>
-</g>
-</svg></p>
-<style>@media(prefers-color-scheme:dark){svg.deps{filter:invert(100%);}}</style>
-<div class="admonition warning">
-<p class="admonition-title">Limited availability: Check with 'lbuild discover' if this module is available for your target!</p>
+                <h1 id="makefile-build-script-generator">Makefile Build Script Generator<a class="headerlink" href="#makefile-build-script-generator" title="Permanent link">&para;</a></h1>
+<p>lbuild module: <code>modm:build:make</code></p>
+<p><a href="https://www.gnu.org/software/make/manual/make.html">Make</a> is a simple dependency tracking build system. It's very lightweight and
+available pretty much everywhere.</p>
+<p>This module generates a set of self contained Makefiles for building modm
+applications:</p>
+<ul>
+<li>a <code>modm/config.mk</code> file: configures the toolchain, device-specific information
+  and sets up generic and special build rules based on the <code>modm:build</code> options.</li>
+<li>a <code>modm/repo.mk</code> file: contains all build rules to build the modm library.</li>
+<li>a top-level <code>Makefile</code> file: globs the application sources and provides all
+  the Makefile targets for the device-specific embedded tools.</li>
+</ul>
+<p>We do not intend to serve every possible use-case with this module.
+<strong>If you need something special, write your own Makefile, maybe starting by
+modifying ours.</strong>
+Remember to set <code>modm:build:make:include_makefile</code> to <code>False</code>, so that your
+custom <code>Makefile</code> does not get overwritten by <code>lbuild build</code>.</p>
+<div class="admonition bug">
+<p class="admonition-title">No Windows Support</p>
+<p>Due to issues with the Windows path separator <code>\</code> the generated Makefile may
+not work correctly on Windows. We recommend using SCons on Windows instead.</p>
 </div>
+<h2 id="makefile-targets">Makefile Targets<a class="headerlink" href="#makefile-targets" title="Permanent link">&para;</a></h2>
+<p>This module generates these <a href="https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html"><code>.PHONY</code> targets</a>.</p>
+<h4 id="make">make<a class="headerlink" href="#make" title="Permanent link">&para;</a></h4>
+<p>Defaults to <strong>make build size</strong>.</p>
+<p>You can add these arguments to any of the Make commands:</p>
+<ul>
+<li><code>-j8</code>: Process 8 jobs in parallel. You can also <code>export MAKEFLAGS="-j8"</code> in
+         your <code>.bashrc</code> to have a permanent setting.</li>
+<li><code>-n</code>: gives a verbose, simulated output, so you can check what options the
+        compiler is called with.</li>
+<li><code>profile=release</code>: Compile project with the release profile options (default).</li>
+<li><code>profile=debug</code>: Compile project with the debug profile options.</li>
+</ul>
+<p>For a description of the <code>release</code> and <code>debug</code> profiles, see the <code>modm:build</code>
+module documentation.</p>
+<div class="admonition tip">
+<p class="admonition-title">Debug Profile</p>
+<p>When working with the debug profile, make sure to add <code>profile=debug</code> to all
+commands, especially <code>make program profile=debug</code> and
+<code>make debug profile=debug</code>!</p>
+</div>
+<h4 id="make-build">make build<a class="headerlink" href="#make-build" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>make build profile={debug|release}
+</code></pre></div>
+<p>Compiles your application into an executable.</p>
+<p>Example for an embedded target:</p>
+<div class="highlight"><pre><span></span><code> $ make build
+Compiling C++·· {debug|release}/main.o
+Compiling C···· {debug|release}/modm/ext/gcc/cabi.o
+    ...
+Compiling C++·· {debug|release}/modm/src/modm/utils/dummy.o
+Archiving······ {debug|release}/modm/libmodm.a
+Indexing······· {debug|release}/modm/libmodm.a
+Linking········ /build/{debug|release}/blink.elf
+</code></pre></div>
+<h4 id="make-clean">make clean<a class="headerlink" href="#make-clean" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>make clean profile={debug|release}
+</code></pre></div>
+<p>Cleans the build artifacts.</p>
+<div class="highlight"><pre><span></span><code> $ make clean
+Removing······· {debug|release}
+</code></pre></div>
+<h4 id="make-run">make run<a class="headerlink" href="#make-run" title="Permanent link">&para;</a></h4>
+<p>Compiles and executes your program on your computer.
+(* <em>only Hosted targets</em>)</p>
+<h4 id="make-size">make size<a class="headerlink" href="#make-size" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>make size profile={debug|release}
+</code></pre></div>
+<p>Displays the static Flash and RAM consumption of your target.</p>
+<p>Example for a STM32 target with 16MB external heap:</p>
+<div class="highlight"><pre><span></span><code> $ make size
+Memory usage··· /build/{debug|release}/blink.elf
+Program:  12.8 KiB (0.6% used)
+(.data + .fastcode + .fastdata + .hardware_init + .reset + .rodata +
+ .table.copy.extern + .table.copy.intern + .table.section_heap +
+ .table.zero.intern + .text)
+
+Data:      5.8 KiB (1.5% used) = 2936 B static (0.7%) + 3040 B stack (0.8%)
+(.bss + .data + .fastdata + .stack)
+
+Heap:     16.4 MiB
+(.heap0 + .heap1 + .heap2 + .heap3 + .heap5 + .heap_extern)
+</code></pre></div>
+<h4 id="make-program">make program<a class="headerlink" href="#make-program" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>make program profile={debug|release} [port={serial-port}]
+</code></pre></div>
+<p>Writes the executable onto your target via Avrdude or OpenOCD.
+This is a convenience wrapper around the programming options and methods
+defined in the <code>modm:build</code> module.
+(* <em>only AVR and ARM Cortex-M targets</em>)</p>
+<p>Example for a STM32 target:</p>
+<div class="highlight"><pre><span></span><code> $ make program
+Open On-Chip Debugger 0.10.0
+    ...
+Info : using stlink api v2
+Info : Target voltage: 3.259396
+Info : stm32f4x.cpu: hardware has 6 breakpoints, 4 watchpoints
+    ...
+** Programming Started **
+auto erase enabled
+Info : device id = 0x10006434
+Info : flash size = 2048kbytes
+Info : Dual Bank 2048 kiB STM32F42x/43x/469/479 found
+    ...
+wrote 16384 bytes from file {debug|release}/blink.elf in 0.589736s (27.131 KiB/s)
+** Programming Finished **
+** Verify Started **
+verified 13064 bytes in 0.296308s (43.056 KiB/s)
+** Verified OK **
+shutdown command invoked
+</code></pre></div>
+<h4 id="make-program-fuses">make program-fuses<a class="headerlink" href="#make-program-fuses" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>make program-fuses profile={debug|release}
+</code></pre></div>
+<p>Writes all fuses onto your target connected to avrdude. See the
+<code>modm:platform:core</code> module for how to define the fuse values.
+(* <em>only AVR targets</em>)</p>
+<h4 id="make-program-dfu">make program-dfu<a class="headerlink" href="#make-program-dfu" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>make program-dfu profile={debug|release}
+</code></pre></div>
+<p>Writes the executable onto your target via Device Firmware Update (DFU) over USB.
+A DFU bootloader is available on many STM32 microcontrollers
+and can be accessed by pressing the BOOT0-Button during startup.
+(* <em>only ARM Cortex-M targets</em>)</p>
+<div class="highlight"><pre><span></span><code>$ make program-dfu
+Binary File···· /build/{debug|release}/blink.bin
+dfu_stm32_programmer: program /build/{debug|release}/blink.bin
+dfu-util 0.9
+Opening DFU capable USB device...
+ID 0483:df11
+Run-time device DFU version 011a
+Claiming USB DFU Interface...
+Determining device status: state = dfuIDLE, status = 0
+dfuIDLE, continuing
+DFU mode device DFU version 011a
+Device returned transfer size 2048
+DfuSe interface name: &quot;Internal Flash  &quot;
+Memory segment at 0x08000000   4 x 16384 = 65536 (rew)
+Memory segment at 0x08010000   1 x 65536 = 65536 (rew)
+Memory segment at 0x08020000   1 x 131072 = 131072 (rew)
+Downloading to address = 0x08000000, size = 2060
+Download        [                         ]   0%            0 bytes   Poll timeout 100 ms
+   Poll timeout 0 ms
+ Download from image offset 00000000 to memory 08000000-080007ff, size 2048
+   Poll timeout 104 ms
+   Poll timeout 0 ms
+ Download from image offset 00000800 to memory 08000800-0800080b, size 12
+   Poll timeout 104 ms
+   Poll timeout 0 ms
+File downloaded successfully
+   Poll timeout 104 ms
+   Poll timeout 0 ms
+Transitioning to dfuMANIFEST state
+</code></pre></div>
+<h4 id="make-program-bmp">make program-bmp<a class="headerlink" href="#make-program-bmp" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>make program-bmp profile={debug|release} [port={serial-port}]
+</code></pre></div>
+<p><a href="https://github.com/blacksphere/blackmagic">Black Magic Probe</a> is convenient tool to convert cheap USB ST-LINK V2 clones
+to a fully functional GDB compatible debug adaptor for ARM Cortex microcontrollers.
+GDB can directly communicate with the debug adaptor making debugging easy and
+accessible.
+(* <em>only ARM Cortex-M targets</em>)</p>
+<p>Black Magic Probe creates two serial devices, the first being the GDB interface
+and the second a plain serial adaptor for debugging purposes.</p>
+<div class="highlight"><pre><span></span><code>$ ls -l /dev/tty.usb*
+crw-rw-rw-  1 root  wheel   21, 104 Feb 19 09:46 /dev/tty.usbmodemDEADBEEF
+crw-rw-rw-  1 root  wheel   21, 106 Feb 19 09:46 /dev/tty.usbmodemDEADBEF1
+</code></pre></div>
+<p>You can let the tool guess the port or explicitly specify it:</p>
+<div class="highlight"><pre><span></span><code>$ make program-bmp port=/dev/tty.usbmodemDEADBEEF
+Remote debugging using /dev/tty.usbmodemDEADBEEF
+Target voltage: unknown
+Available Targets:
+No. Att Driver
+ 1      STM32F1 medium density
+Attaching to Remote target
+warning: No executable has been specified and target does not support
+determining executable automatically.  Try using the &quot;file&quot; command.
+0x0800038e in ?? ()
+Loading section .vector_rom, size 0xec lma 0x8000000
+[...]
+Loading section .table.section_heap, size 0xc lma 0x80013f8
+Start address 0x8000e6c, load size 5120
+Transfer rate: 10 KB/sec, 365 bytes/write.
+Detaching from program: , Remote target
+[Inferior 1 (Remote target) detached]
+make: done building targets.
+</code></pre></div>
+<h4 id="make-debug">make debug<a class="headerlink" href="#make-debug" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>make debug profile={debug|release} ui={tui|web}
+</code></pre></div>
+<p>Launches OpenOCD in the background, then launches GDB in foreground with the
+correct executable with text-based or <a href="https://www.gdbgui.com">web-based GDBGUI</a> UI. When GDB
+exits, it stops the OpenOCD process.
+(* <em>only ARM Cortex-M targets</em>)</p>
+<p>This is just a convenience wrapper for the debug functionality defined in the
+<code>modm:build</code> module. To use GDBGUI you must have it installed via
+<code>pip install gdbgui</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Choose the correct profile</p>
+<p>When debugging, make sure to select the correct compilation profile. The
+firmware and the executable given to GDB have to be the same or you'll see
+GDB translate the program counter to the wrong code locations. When you
+suspect a bug in your firmware, consider that it was most likely compiled
+with the release profile, since that's the default. First try to <code>make
+debug profile=release</code>, and if that doesn't help, compile and <code>make
+program profile=debug</code> and try <code>make debug profile=debug</code> again.</p>
+</div>
+<h4 id="make-debug-bmp">make debug-bmp<a class="headerlink" href="#make-debug-bmp" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>make debug-bmp profile={debug|release} ui={tui|web} port={serial-port}
+</code></pre></div>
+<p>Launches GDB to debug via Black Magic Probe.
+(* <em>only ARM Cortex-M targets</em>)</p>
+<h4 id="make-debug-coredump">make debug-coredump<a class="headerlink" href="#make-debug-coredump" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>make debug-coredump profile={debug|release} ui={tui|web} \
+                    coredump={path/to/coredump.txt}
+</code></pre></div>
+<p>Launches GDB for post-mortem debugging with the latest firmware using the data
+from the <code>coredump={filepath}</code> argument.
+(* <em>only ARM Cortex-M targets</em>)</p>
+<p>See the <code>modm:platform:fault</code> module for details how to receive the coredump data.</p>
+<h4 id="make-reset">make reset<a class="headerlink" href="#make-reset" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>make reset
+</code></pre></div>
+<p>Resets the executable via OpenOCD.
+(* <em>only ARM Cortex-M targets</em>)</p>
+<h4 id="make-reset-bmp">make reset-bmp<a class="headerlink" href="#make-reset-bmp" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>make reset-bmp [port={serial}]
+</code></pre></div>
+<p>Resets the executable via Black Magic Probe.
+(* <em>only ARM Cortex-M targets</em>)</p>
+<h4 id="make-log-itm">make log-itm<a class="headerlink" href="#make-log-itm" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>make log-itm fcpu={HCLK in Hz}
+</code></pre></div>
+<p>Configures OpenOCD in tracing mode to output ITM channel 0 on SWO pin and
+displays the serial output stream.
+(* <em>only ARM Cortex-M targets</em>)</p>
+<div class="highlight"><pre><span></span><code> $ make log-itm fcpu=64000000
+Open On-Chip Debugger 0.10.0
+Licensed under GNU GPL v2
+Info : The selected transport took over low-level target control.
+loop: 57
+loop: 58
+loop: 59
+loop: 60
+loop: 61
+</code></pre></div>
+<p>See the <code>:platform:itm</code> module for details how to use the ITM as a logging
+output.</p>
+<h4 id="make-library">make library<a class="headerlink" href="#make-library" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>make library profile={debug|release}
+</code></pre></div>
+<p>Generates only the static library <code>libmodm.a</code> without linking it to the
+application.</p>
+<div class="highlight"><pre><span></span><code> $ make library
+Compiling C++·· {debug|release}/modm/ext/gcc/assert.o
+    ...
+Compiling C++·· {debug|release}/modm/src/modm/utils/dummy.o
+Archiving······ {debug|release}/modm/libmodm.a
+Indexing······· {debug|release}/modm/libmodm.a
+</code></pre></div>
+<h4 id="make-symbols">make symbols<a class="headerlink" href="#make-symbols" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>make symbols profile={debug|release}
+</code></pre></div>
+<p>Dumps the symbol table for your executable.</p>
+<div class="highlight"><pre><span></span><code> $ make symbols
+536871656 00000001 b (anonymous namespace)::nextOperation
+536871657 00000001 b (anonymous namespace)::checkNextOperation
+536871658 00000001 b (anonymous namespace)::error
+536871444 00000001 b read_touch()::initialized
+    ...
+134228236 00000668 T I2C1_EV_IRQHandler
+134224924 00001136 T otm8009a_init(unsigned char)
+134221192 00001378 t _GLOBAL__sub_I_p
+536871782 00002054 b (anonymous namespace)::txBuffer
+</code></pre></div>
+<h4 id="make-listing">make listing<a class="headerlink" href="#make-listing" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>make listing profile={debug|release}
+</code></pre></div>
+<p>Decompiles your executable into an annotated assembly listing.
+This is very useful for checking and learning how the compiler translates C++
+into assembly instructions:</p>
+<div class="highlight"><pre><span></span><code> $ make listing
+Listing········ {debug|release}/blink.lss
+ $ less {debug|release}/blink.lss
+    ...
+Disassembly of section .text:
+    ...
+08000d74 &lt;main&gt;:
+main():
+./main.cpp:315
+
+int
+main()
+{
+ 8000d74:   b508        push    {r3, lr}
+    Board::initialize();
+ 8000d76:   f7ff fcc9   bl  800070c &lt;_ZN5Board10initializeEv&gt;
+    Board::initializeDisplay();
+ 8000d7a:   f000 fd91   bl  80018a0 &lt;_ZN5Board17initializeDisplayEv&gt;
+    Board::initializeTouchscreen();
+ 8000d7e:   f7ff fc55   bl  800062c &lt;_ZN5Board21initializeTouchscreenEv&gt;
+    blink();
+ 8000d82:   f7ff feff   bl  8000b84 &lt;_Z12blinkv&gt;
+    ...
+</code></pre></div>
+<h4 id="make-bin">make bin<a class="headerlink" href="#make-bin" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>make bin profile={debug|release}
+</code></pre></div>
+<p>Creates a binary file of your executable.</p>
+<div class="highlight"><pre><span></span><code> $ make bin
+Binary File···· {debug|release}/blink.bin
+</code></pre></div>
+<h4 id="make-hex">make hex<a class="headerlink" href="#make-hex" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>make hex profile={debug|release}
+</code></pre></div>
+<p>Creates a Intel-hex file of your executable.</p>
+<div class="highlight"><pre><span></span><code> $ make bin
+Hex File······· {debug|release}/blink.hex
+</code></pre></div>
+<h2 id="information-tool">Information Tool<a class="headerlink" href="#information-tool" title="Permanent link">&para;</a></h2>
+<p>This tool generates a set of header files containing information about the
+repository state.</p>
+<p>Setting the <code>modm:build:info.git</code> option will generate a <code>&lt;info_git.h&gt;</code> header
+file and add these two defines to the command line CPP options:</p>
+<ul>
+<li><code>MODM_GIT_INFO</code></li>
+<li><code>MODM_GIT_STATUS</code>: defined only with option <code>Git+Status</code>.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Increased build time</p>
+<p>Since the git repository status can change at any time, it needs to be
+checked on every build. This adds less than a second to every build.</p>
+</div>
+<p>Setting the <code>modm:build:info.build</code> option will generate a <code>&lt;info_build.h&gt;</code>
+header file and add this define to the command line CPP options:</p>
+<ul>
+<li><code>MODM_BUILD_INFO</code></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Respect developers privacy</p>
+<p>This information is placed into the firmware in <strong>cleartext</strong>, so it will
+be trivial to extract from a memory dump. Consider this information public
+as soon as it is uploaded to your target. Make sure you only use the
+information you absolutely need!</p>
+</div>
+<h2 id="bitmap-tool">Bitmap Tool<a class="headerlink" href="#bitmap-tool" title="Permanent link">&para;</a></h2>
+<p>If the <code>modm:build:image.source</code> is defined as a path, it'll be searched
+for <code>.pbm</code> files to convert into C++ data files using the <code>bitmap</code> tool.</p>
+<p>See the <code>GraphicsDisplay::drawImage()</code> method in the <code>modm:ui:display</code> module
+for how to use these generated files.
+The directory is added to the include search paths, so the generated files
+can be accessed as <code>#include &lt;image.hpp&gt;</code>.</p>
+<h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
+<h4 id="include_makefile">include_makefile<a class="headerlink" href="#include_makefile" title="Permanent link">&para;</a></h4>
+<p>Generate a Makefile</p>
+<div class="admonition warning">
+<p class="admonition-title">This overwrites any top-level <code>Makefile</code>!</p>
+</div>
+<p>Default: <code>True</code><br />
+Inputs: <code>[True, False]</code>  </p>
+<h2 id="collectors">Collectors<a class="headerlink" href="#collectors" title="Permanent link">&para;</a></h2>
+<h4 id="flag_format">flag_format<a class="headerlink" href="#flag_format" title="Permanent link">&para;</a></h4>
+<p>Formatting compile flags for Make</p>
+<p>Inputs: <code>[Callable]</code></p>
                 
               
               
@@ -4109,7 +4754,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../modm-board-disco-f469ni/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../modm-build-compilation_db/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -4118,19 +4763,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                :board:disco-f469ni
+                :build:compilation_db
               </div>
             </div>
           </a>
         
         
-          <a href="../modm-board-disco-f769ni/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../modm-build-scons/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                :board:disco-f769ni
+                :build:scons
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

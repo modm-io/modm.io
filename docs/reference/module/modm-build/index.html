@@ -1412,6 +1412,33 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#information-tool" class="md-nav__link">
+    Information Tool
+  </a>
+  
+    <nav class="md-nav" aria-label="Information Tool">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-information" class="md-nav__link">
+    Git Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-information" class="md-nav__link">
+    Build Information
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#unittest" class="md-nav__link">
     Unittest
   </a>
@@ -1501,6 +1528,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#imagesource" class="md-nav__link">
+    image.source
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infobuild" class="md-nav__link">
+    info.build
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infogit" class="md-nav__link">
+    info.git
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#openocdcfg" class="md-nav__link">
     openocd.cfg
   </a>
@@ -1510,6 +1558,13 @@
           <li class="md-nav__item">
   <a href="#projectname" class="md-nav__link">
     project.name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unittestsource" class="md-nav__link">
+    unittest.source
   </a>
   
 </li>
@@ -1838,6 +1893,18 @@
   <li class="md-nav__item">
     <a href="../modm-build-compilation_db/" class="md-nav__link">
       :build:compilation_db
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../modm-build-make/" class="md-nav__link">
+      :build:make
     </a>
   </li>
 
@@ -4606,6 +4673,33 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#information-tool" class="md-nav__link">
+    Information Tool
+  </a>
+  
+    <nav class="md-nav" aria-label="Information Tool">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-information" class="md-nav__link">
+    Git Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-information" class="md-nav__link">
+    Build Information
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#unittest" class="md-nav__link">
     Unittest
   </a>
@@ -4695,6 +4789,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#imagesource" class="md-nav__link">
+    image.source
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infobuild" class="md-nav__link">
+    info.build
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infogit" class="md-nav__link">
+    info.git
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#openocdcfg" class="md-nav__link">
     openocd.cfg
   </a>
@@ -4704,6 +4819,13 @@
           <li class="md-nav__item">
   <a href="#projectname" class="md-nav__link">
     project.name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unittestsource" class="md-nav__link">
+    unittest.source
   </a>
   
 </li>
@@ -5132,6 +5254,9 @@ can be programmed by passing <code>--fuse</code> arguments:</p>
 <p>Simply wraps OpenOCD and issues the right command to program the target.</p>
 <div class="highlight"><pre><span></span><code>python3 modm/modm_tools/openocd.py -f modm/openocd.cfg path/to/project.elf
 </code></pre></div>
+<p>You can also reset the target:</p>
+<div class="highlight"><pre><span></span><code>python3 modm/modm_tools/openocd.py -f modm/openocd.cfg --reset
+</code></pre></div>
 <p>(* <em>only ARM Cortex-M targets</em>)</p>
 <h3 id="black-magic-probe">Black Magic Probe<a class="headerlink" href="#black-magic-probe" title="Permanent link">&para;</a></h3>
 <p>This tool wraps GDB to program an ELF file onto a target connected to a BMP.
@@ -5139,6 +5264,9 @@ You can explictly pass the serial port, or let the tool guess it.</p>
 <div class="highlight"><pre><span></span><code>python3 modm/modm_tools/bmp.py path/to/project.elf
 <span class="c1"># or choose the port explicitly</span>
 python3 modm/modm_tools/bmp.py path/to/project.elf -p /dev/tty.usbserial-123
+</code></pre></div>
+<p>You can also reset the target:</p>
+<div class="highlight"><pre><span></span><code>python3 modm/modm_tools/bmp.py --reset
 </code></pre></div>
 <p>(* <em>only ARM Cortex-M targets</em>)</p>
 <h3 id="gdb_1">GDB<a class="headerlink" href="#gdb_1" title="Permanent link">&para;</a></h3>
@@ -5235,6 +5363,96 @@ Heap:     <span class="m">17</span>.0 KiB <span class="o">(</span><span class="m
 <span class="o">(</span>.heap1<span class="o">)</span>
 </code></pre></div>
 <p>(* <em>only ARM Cortex-M targets</em>)</p>
+<h3 id="information-tool">Information Tool<a class="headerlink" href="#information-tool" title="Permanent link">&para;</a></h3>
+<p>This tool generates a set of source files containing information about the
+repository state.</p>
+<p>You can use the <code>--check-rebuild</code> flag to only write the output file when the
+information changed. This prevents unnecessary rebuilding and relinking.</p>
+<div class="admonition warning">
+<p class="admonition-title">Respect developers privacy</p>
+<p>This information is placed into the firmware in <strong>cleartext</strong>, so it will
+be trivial to extract from a memory dump. Consider this information public
+as soon as it is uploaded to your target. Make sure you only use the
+information you absolutely need!</p>
+</div>
+<h4 id="git-information">Git Information<a class="headerlink" href="#git-information" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>python3 modm/modm_tools/info.py -o git_info.c -t git        <span class="o">[</span>--check-rebuild<span class="o">]</span>
+python3 modm/modm_tools/info.py -o git_info.c -t git_status <span class="o">[</span>--check-rebuild<span class="o">]</span>
+</code></pre></div>
+<p>The <code>git_info(directory)</code> function returns a dictionary with these values:</p>
+<ul>
+<li><code>MODM_GIT_SHA</code>: commit hash: <code>%H</code>.</li>
+<li><code>MODM_GIT_SHA_ABBR</code>: short commit hash: <code>%h</code>.</li>
+<li><code>MODM_GIT_SUBJECT</code>: commit subject as text: <code>%s</code>.</li>
+<li><code>MODM_GIT_AUTHOR</code>: author name: <code>%an</code>.</li>
+<li><code>MODM_GIT_AUTHOR_EMAIL</code>: author email: <code>%ae</code>.</li>
+<li><code>MODM_GIT_AUTHOR_DATE</code>: authoring date: <code>%ad</code>.</li>
+<li><code>MODM_GIT_AUTHOR_DATE_TIMESTAMP</code>: authoring date as Unix timestamp: <code>%at</code>.</li>
+<li><code>MODM_GIT_COMMITTER</code>: committer name: <code>%cn</code>.</li>
+<li><code>MODM_GIT_COMMITTER_EMAIL</code>: committer email: <code>%ce</code>.</li>
+<li><code>MODM_GIT_COMMITTER_DATE</code>: committer date: <code>%cd</code>.</li>
+<li><code>MODM_GIT_COMMITTER_DATE_TIMESTAMP</code>: committer das as Unix timestamp: <code>%ct</code>.</li>
+<li><code>MODM_GIT_CONFIG_USER_NAME</code>: local user name: <code>user.name</code>.</li>
+<li><code>MODM_GIT_CONFIG_USER_EMAIL</code>: local user email: <code>user.email</code>.</li>
+</ul>
+<p>The <code>git_info(directory, with_status=True)</code> function returns these additional values:</p>
+<ul>
+<li><code>MODM_GIT_MODIFIED</code>: number of modified files: <code>M</code>.</li>
+<li><code>MODM_GIT_ADDED</code>: number of added files: <code>A</code>.</li>
+<li><code>MODM_GIT_DELETED</code>: number of deleted files: <code>D</code>.</li>
+<li><code>MODM_GIT_RENAMED</code>: number of renamed files: <code>R</code>.</li>
+<li><code>MODM_GIT_COPIED</code>: number of copied files: <code>C</code>.</li>
+<li><code>MODM_GIT_UNTRACKED</code>: number of untracked files: <code>?</code>.</li>
+</ul>
+<p>This example project is showing an unclean repository state with uncommitted
+changes. This can give you a few hints as to where a firmware came from and help
+you pinpoint the source of a bug or feature.</p>
+<div class="highlight"><pre><span></span><code>Local Git User:
+Name:  Name Surname
+Email: name.surname@example.com
+Last Commit:
+SHA:             1b5a9a642857182161a615039c92907e59881614
+Abbreviated SHA: 1b5a9a642
+Subject:         wip
+
+Author:
+Name:      Name Surname
+Email:     name.surname@example.com
+Date:      Tue Jul 17 22:23:20 2018 +0200
+Timestamp: 1531859000
+
+Committer:
+Name:      Name Surname
+Email:     name.surname@example.com
+Date:      Tue Jul 17 22:23:20 2018 +0200
+Timestamp: 1531859000
+
+File Status:
+Modified:  10
+Added:     0
+Deleted:   0
+Renamed:   0
+Copied:    0
+Untracked: 6
+</code></pre></div>
+<h4 id="build-information">Build Information<a class="headerlink" href="#build-information" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>python3 modm/modm_tools/info.py -o build_info.c -t build --compiler<span class="o">=</span>gcc <span class="o">[</span>--check-rebuild<span class="o">]</span>
+</code></pre></div>
+<p>Generates a files with these values defined as <code>const char *</code> strings:</p>
+<ul>
+<li><code>MODM_BUILD_PROJECT_NAME</code>: as defined in the <code>modm:build:project.name</code> option.</li>
+<li><code>MODM_BUILD_MACHINE</code>: machine information.</li>
+<li><code>MODM_BUILD_USER</code>: user information.</li>
+<li><code>MODM_BUILD_OS</code>: OS version string (best effort, may not be useful!).</li>
+<li><code>MODM_BUILD_COMPILER</code>: compiler information.</li>
+</ul>
+<p>Example output on macOS:</p>
+<div class="highlight"><pre><span></span><code>Project:  build_info
+Machine:  name.local
+User:     user
+OS:       macOS 10.14.6 (x86_64)
+Compiler: g++-10 10.2.0
+</code></pre></div>
 <h3 id="unittest">Unittest<a class="headerlink" href="#unittest" title="Permanent link">&para;</a></h3>
 <p>This tools scans a directory for files ending in <code>_test.hpp</code>, extracts their
 test cases and generates a source file containing the test runner.</p>
@@ -5306,6 +5524,22 @@ Remember to add your build path to your <code>.gitignore</code>.</p>
 still works for other developers.</p>
 <p>Default: <code>build/modm</code><br />
 Inputs: <code>[Path]</code>  </p>
+<h4 id="imagesource">image.source<a class="headerlink" href="#imagesource" title="Permanent link">&para;</a></h4>
+<p>Path to directory containing .pbm files</p>
+<p>Default: <code>[]</code><br />
+Inputs: <code>[Path]</code>  </p>
+<h4 id="infobuild">info.build<a class="headerlink" href="#infobuild" title="Permanent link">&para;</a></h4>
+<p>Generate build state information</p>
+<p>Default: <code>False</code><br />
+Inputs: <code>[True, False]</code>  </p>
+<h4 id="infogit">info.git<a class="headerlink" href="#infogit" title="Permanent link">&para;</a></h4>
+<p>Generate git repository state information</p>
+<ul>
+<li><code>Info</code>: generates information about the last commit.</li>
+<li><code>Info+Status</code>: like <code>Info</code> plus git file status.</li>
+</ul>
+<p>Default: <code>Disabled</code><br />
+Inputs: <code>[Disabled, Info, Info+Status]</code>  </p>
 <h4 id="openocdcfg">openocd.cfg<a class="headerlink" href="#openocdcfg" title="Permanent link">&para;</a></h4>
 <p>Path to a custom OpenOCD configuration file</p>
 <p>If you have a custom configuration file for your target, it will get included
@@ -5328,6 +5562,14 @@ Inputs: <code>[Path]</code>  </p>
 to your application via a string constant or CPP define.</p>
 <p>Default: <code>modm</code><br />
 Inputs: <code>[String]</code>  </p>
+<h4 id="unittestsource">unittest.source<a class="headerlink" href="#unittestsource" title="Permanent link">&para;</a></h4>
+<p>Path to directory containing unittests</p>
+<p>When this path is declared, the generated build script will compile <strong>only</strong> the
+unittests, not your application source code!
+You must use separate project configurations for compiling your unittest and
+application!</p>
+<p>Default: <code>[]</code><br />
+Inputs: <code>[Path]</code>  </p>
 <h2 id="collectors">Collectors<a class="headerlink" href="#collectors" title="Permanent link">&para;</a></h2>
 <h4 id="archflags">archflags<a class="headerlink" href="#archflags" title="Permanent link">&para;</a></h4>
 <p>Compiler flags related to the target architecture</p>

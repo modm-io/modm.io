@@ -1277,6 +1277,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../modm-build-make/" class="md-nav__link">
+      :build:make
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -1327,6 +1339,13 @@
           <li class="md-nav__item">
   <a href="#scons-build" class="md-nav__link">
     scons build
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scons-c" class="md-nav__link">
+    scons -c
   </a>
   
 </li>
@@ -1479,13 +1498,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#scons-c" class="md-nav__link">
-    scons -c
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#scons-qtcreator" class="md-nav__link">
     scons qtcreator
   </a>
@@ -1508,26 +1520,6 @@
   <a href="#information-tool" class="md-nav__link">
     Information Tool
   </a>
-  
-    <nav class="md-nav" aria-label="Information Tool">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#git-information" class="md-nav__link">
-    Git Information
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#build-information" class="md-nav__link">
-    Build Information
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1554,13 +1546,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#imagesource" class="md-nav__link">
-    image.source
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#include_sconstruct" class="md-nav__link">
     include_sconstruct
   </a>
@@ -1568,29 +1553,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#infobuild" class="md-nav__link">
-    info.build
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#infogit" class="md-nav__link">
-    info.git
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#pathartifact" class="md-nav__link">
     path.artifact
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#unittestsource" class="md-nav__link">
-    unittest.source
   </a>
   
 </li>
@@ -4277,6 +4241,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#scons-c" class="md-nav__link">
+    scons -c
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#scons-size" class="md-nav__link">
     scons size
   </a>
@@ -4424,13 +4395,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#scons-c" class="md-nav__link">
-    scons -c
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#scons-qtcreator" class="md-nav__link">
     scons qtcreator
   </a>
@@ -4453,26 +4417,6 @@
   <a href="#information-tool" class="md-nav__link">
     Information Tool
   </a>
-  
-    <nav class="md-nav" aria-label="Information Tool">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#git-information" class="md-nav__link">
-    Git Information
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#build-information" class="md-nav__link">
-    Build Information
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4499,13 +4443,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#imagesource" class="md-nav__link">
-    image.source
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#include_sconstruct" class="md-nav__link">
     include_sconstruct
   </a>
@@ -4513,29 +4450,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#infobuild" class="md-nav__link">
-    info.build
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#infogit" class="md-nav__link">
-    info.git
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#pathartifact" class="md-nav__link">
     path.artifact
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#unittestsource" class="md-nav__link">
-    unittest.source
   </a>
   
 </li>
@@ -4595,8 +4511,8 @@
                 <h1 id="scons-build-script-generator">SCons Build Script Generator<a class="headerlink" href="#scons-build-script-generator" title="Permanent link">&para;</a></h1>
 <p>lbuild module: <code>modm:build:scons</code></p>
 <p><a href="http://scons.org">SCons</a> is a software construction build system written in Python.
-For a better embedded experience, we've extended it with a custom build tools
-<a href="https://github.com/modm-io/scons-build-tools">by the DLR</a> as well as our own modm-specific build tools.</p>
+For a better embedded experience, we've extended it with modm-specific build
+tools.</p>
 <p>This module generates two files:</p>
 <ul>
 <li>a <code>modm/SConscript</code> file: configures all required SCons tools with
@@ -4615,12 +4531,12 @@ the right SCons tool with the right arguments.</p>
 <strong>If you need something special, write your own SConstruct file, maybe
 starting by modifying ours.</strong>
 Remember to set <code>modm:build:scons:include_sconstruct</code> to <code>False</code>, so that your
-custom <code>SConstruct</code> does not get overwritten.
+custom <code>SConstruct</code> does not get overwritten by <code>lbuild build</code>.
 See the instructions inside our generated default <code>SConstruct</code>.</p>
 <h2 id="scons-methods">SCons Methods<a class="headerlink" href="#scons-methods" title="Permanent link">&para;</a></h2>
 <p>This module generates these SCons methods depending on the target.</p>
 <h4 id="scons">scons<a class="headerlink" href="#scons" title="Permanent link">&para;</a></h4>
-<p>Defaults to <strong>scons build</strong>.</p>
+<p>Defaults to <strong>scons build size</strong>.</p>
 <p>You can add these arguments to any of the SCons commands:</p>
 <ul>
 <li><code>verbose=1</code>: gives a more verbose output, so you can, for example, check what
@@ -4653,6 +4569,20 @@ Compiling C++·· {debug|release}/modm/src/modm/utils/dummy.o
 Archiving······ {debug|release}/modm/libmodm.a
 Indexing······· {debug|release}/modm/libmodm.a
 Linking········ /build/{debug|release}/blink.elf
+</code></pre></div>
+<h4 id="scons-c">scons -c<a class="headerlink" href="#scons-c" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>scons -c profile={debug|release}
+</code></pre></div>
+<p>Cleans the build artifacts.</p>
+<div class="highlight"><pre><span></span><code> $ scons -c
+Removed {debug|release}/main.o
+Removed {debug|release}/modm/ext/tlsf/tlsf.o
+    ...
+Removed {debug|release}/modm/src/modm/ui/display/virtual_graphic_display.o
+Removed {debug|release}/modm/src/modm/utils/dummy.o
+Removed {debug|release}/modm/libmodm.a
+Removed {debug|release}/blink.elf
+Removed {debug|release}/blink.lss
 </code></pre></div>
 <h4 id="scons-size">scons size<a class="headerlink" href="#scons-size" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons size profile={debug|release} [firmware={hash or file}]
@@ -4705,19 +4635,9 @@ shutdown command invoked
 <h4 id="scons-program-fuses">scons program-fuses<a class="headerlink" href="#scons-program-fuses" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons program-fuses profile={debug|release} [firmware={hash or file}]
 </code></pre></div>
-<p>Writes all fuses onto your target connected to avrdude.
+<p>Writes all fuses onto your target connected to avrdude. See the
+<code>modm:platform:core</code> module for how to define the fuse values.
 (* <em>only AVR targets</em>)</p>
-<p>You can define the fuse values in your source code via the <a href="https://www.nongnu.org/avr-libc/user-manual/group__avr__fuse.html"><code>FUSES</code> struct ELF
-section</a> mechanism, they are automatically used by avrdude. For fuse
-values see the <a href="https://www.engbedded.com/fusecalc/">AVR Fuse Calculator</a>.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;avr/io.h&gt;</span><span class="cp"></span>
-<span class="n">FUSES</span> <span class="o">=</span>
-<span class="p">{</span>
-    <span class="n">LFUSE_DEFAULT</span><span class="p">,</span> <span class="c1">// .low</span>
-    <span class="n">HFUSE_DEFAULT</span><span class="p">,</span> <span class="c1">// .high</span>
-    <span class="n">EFUSE_DEFAULT</span><span class="p">,</span> <span class="c1">// .extended</span>
-<span class="p">};</span>
-</code></pre></div>
 <h4 id="scons-program-dfu">scons program-dfu<a class="headerlink" href="#scons-program-dfu" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons program-dfu profile={debug|release} [firmware={hash or file}]
 </code></pre></div>
@@ -4731,21 +4651,10 @@ Binary File···· /build/{debug|release}/blink.bin
 ╰─────DFU─────&gt; stm32f469nih
 dfu_stm32_programmer: program /build/{debug|release}/blink.bin
 dfu-util 0.9
-
-Copyright 2005-2009 Weston Schmidt, Harald Welte and OpenMoko Inc.
-Copyright 2010-2016 Tormod Volden and Stefan Schmidt
-This program is Free Software and has ABSOLUTELY NO WARRANTY
-Please report bugs to http://sourceforge.net/p/dfu-util/tickets/
-
-dfu-util: Invalid DFU suffix signature
-dfu-util: A valid DFU suffix will be required in a future dfu-util release!!!
 Opening DFU capable USB device...
 ID 0483:df11
 Run-time device DFU version 011a
 Claiming USB DFU Interface...
-Setting Alternate Setting #0 ...
-Determining device status: state = dfuERROR, status = 10
-dfuERROR, clearing status
 Determining device status: state = dfuIDLE, status = 0
 dfuIDLE, continuing
 DFU mode device DFU version 011a
@@ -4784,10 +4693,10 @@ crw-rw-rw-  1 root  wheel   21, 104 Feb 19 09:46 /dev/tty.usbmodemDEADBEEF
 crw-rw-rw-  1 root  wheel   21, 106 Feb 19 09:46 /dev/tty.usbmodemDEADBEF1
 </code></pre></div>
 <p>You can let the tool guess the port or explicitly specify it:</p>
-<div class="highlight"><pre><span></span><code>$ scons program-bmp port=/dev/cu.usbmodemDEADBEEF
+<div class="highlight"><pre><span></span><code>$ scons program-bmp port=/dev/tty.usbmodemDEADBEEF
 ╭─Black─Magic── /build/{debug|release}/blink.elf
 ╰────Probe────&gt; stm32f103rbt6
-Remote debugging using /dev/cu.usbmodemDEADBEEF
+Remote debugging using /dev/tty.usbmodemDEADBEEF
 Target voltage: unknown
 Available Targets:
 No. Att Driver
@@ -4817,7 +4726,7 @@ running on your own computer (host=<code>localhost</code>) or somewhere else.</p
 <div class="highlight"><pre><span></span><code>scons debug profile={debug|release} ui={tui|web} [firmware={hash or file}]
 </code></pre></div>
 <p>Launches OpenOCD in the background, then launches GDB in foreground with the
-correct executable with text-based or <a href="gdbgui">web-based GDBGUI</a> UI. When GDB
+correct executable with text-based or <a href="https://www.gdbgui.com">web-based GDBGUI</a> UI. When GDB
 exits, it stops the OpenOCD process.
 (* <em>only ARM Cortex-M targets</em>)</p>
 <p>This is just a convenience wrapper for the debug functionality defined in the
@@ -4826,7 +4735,7 @@ exits, it stops the OpenOCD process.
 <div class="admonition tip">
 <p class="admonition-title">Choose the correct profile</p>
 <p>When debugging, make sure to select the correct compilation profile. The
-firmware and the executable given to GDB have to be the some or you'll see
+firmware and the executable given to GDB have to be the same or you'll see
 GDB translate the program counter to the wrong code locations. When you
 suspect a bug in your firmware, consider that it was most likely compiled
 with the release profile, since that's the default. First try to <code>scons
@@ -4847,7 +4756,7 @@ program profile=debug</code> and try <code>scons debug profile=debug</code> agai
 (optional) <code>firmware={hash or filepath}</code> argument using the data from the
 <code>coredump={filepath}</code> argument.
 (* <em>only ARM Cortex-M targets</em>)</p>
-<p>See the <code>:platform:fault</code> module for details how to receive the coredump data.</p>
+<p>See the <code>modm:platform:fault</code> module for details how to receive the coredump data.</p>
 <h4 id="scons-program-remote_1">scons program-remote<a class="headerlink" href="#scons-program-remote_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons debug-remote profile={debug|release} ui={tui|web} [host={ip or hostname}] [firmware={hash or file}]
 </code></pre></div>
@@ -4972,20 +4881,6 @@ with the <code>modm:build:scons:path.artifact</code> option.</p>
 ╭───Artifact─── /build/release/blink.elf
 ╰────Cache────&gt; artifacts/0214523ab713bc7bdfb37d902e65dae8305f4754.elf
 </code></pre></div>
-<h4 id="scons-c">scons -c<a class="headerlink" href="#scons-c" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>scons -c profile={debug|release}
-</code></pre></div>
-<p>Cleans the build artifacts.</p>
-<div class="highlight"><pre><span></span><code> $ scons -c
-Removed {debug|release}/main.o
-Removed {debug|release}/modm/ext/tlsf/tlsf.o
-    ...
-Removed {debug|release}/modm/src/modm/ui/display/virtual_graphic_display.o
-Removed {debug|release}/modm/src/modm/utils/dummy.o
-Removed {debug|release}/modm/libmodm.a
-Removed {debug|release}/blink.elf
-Removed {debug|release}/blink.lss
-</code></pre></div>
 <h4 id="scons-qtcreator">scons qtcreator<a class="headerlink" href="#scons-qtcreator" title="Permanent link">&para;</a></h4>
 <p>Generates several files so that the project can be imported into Qt Creator via
 the <code>.creator</code> file importer. Note, that no compiliation or debugging features
@@ -5017,13 +4912,18 @@ header file and add these two defines to the command line CPP options:</p>
 <li><code>MODM_GIT_INFO</code></li>
 <li><code>MODM_GIT_STATUS</code>: defined only if called with <code>with_state=True</code>.</li>
 </ul>
-<p>You can enable this by setting the <code>modm:build:scons:info.git</code> option.</p>
+<p>You can enable this by setting the <code>modm:build:info.git</code> option.</p>
+<div class="admonition info">
+<p class="admonition-title">Increased build time</p>
+<p>Since the git repository status can change at any time, it needs to be
+checked on every build. This adds less than a second to every build.</p>
+</div>
 <p>A call to <code>env.InfoBuild()</code> will generate a <code>&lt;info_build.h&gt;</code> header file and add
 this define to the command line CPP options:</p>
 <ul>
 <li><code>MODM_BUILD_INFO</code></li>
 </ul>
-<p>You can enable this by setting the <code>modm:build:scons:info.build</code> option.</p>
+<p>You can enable this by setting the <code>modm:build:info.build</code> option.</p>
 <div class="admonition warning">
 <p class="admonition-title">Respect developers privacy</p>
 <p>This information is placed into the firmware in <strong>cleartext</strong>, so it will
@@ -5031,81 +4931,8 @@ be trivial to extract from a memory dump. Consider this information public
 as soon as it is uploaded to your target. Make sure you only use the
 information you absolutely need!</p>
 </div>
-<h3 id="git-information">Git Information<a class="headerlink" href="#git-information" title="Permanent link">&para;</a></h3>
-<p>These are the values defined as <code>const char *</code> strings in <code>&lt;info_git.h&gt;</code>:</p>
-<ul>
-<li><code>MODM_GIT_SHA</code>: commit hash: <code>%H</code>.</li>
-<li><code>MODM_GIT_SHA_ABBR</code>: short commit hash: <code>%h</code>.</li>
-<li><code>MODM_GIT_SUBJECT</code>: commit subject as text: <code>%s</code>.</li>
-<li><code>MODM_GIT_AUTHOR</code>: author name: <code>%an</code>.</li>
-<li><code>MODM_GIT_AUTHOR_EMAIL</code>: author email: <code>%ae</code>.</li>
-<li><code>MODM_GIT_AUTHOR_DATE</code>: authoring date: <code>%ad</code>.</li>
-<li><code>MODM_GIT_AUTHOR_DATE_TIMESTAMP</code>: authoring date as Unix timestamp: <code>%at</code>.</li>
-<li><code>MODM_GIT_COMMITTER</code>: committer name: <code>%cn</code>.</li>
-<li><code>MODM_GIT_COMMITTER_EMAIL</code>: committer email: <code>%ce</code>.</li>
-<li><code>MODM_GIT_COMMITTER_DATE</code>: committer date: <code>%cd</code>.</li>
-<li><code>MODM_GIT_COMMITTER_DATE_TIMESTAMP</code>: committer das as Unix timestamp: <code>%ct</code>.</li>
-<li><code>MODM_GIT_CONFIG_USER_NAME</code>: local user name: <code>user.name</code>.</li>
-<li><code>MODM_GIT_CONFIG_USER_EMAIL</code>: local user email: <code>user.email</code>.</li>
-</ul>
-<p>If called <code>with_status=True</code>, this information is added as well:</p>
-<ul>
-<li><code>MODM_GIT_MODIFIED</code>: number of modified files: <code>M</code>.</li>
-<li><code>MODM_GIT_ADDED</code>: number of added files: <code>A</code>.</li>
-<li><code>MODM_GIT_DELETED</code>: number of deleted files: <code>D</code>.</li>
-<li><code>MODM_GIT_RENAMED</code>: number of renamed files: <code>R</code>.</li>
-<li><code>MODM_GIT_COPIED</code>: number of copied files: <code>C</code>.</li>
-<li><code>MODM_GIT_UNTRACKED</code>: number of untracked files: <code>?</code>.</li>
-</ul>
-<p>This is the output of the <code>example/linux/git</code> project showing an unclean
-repository state with uncommitted changes. This can give you a few hints as to
-where a firmware came from and help you pinpoint the source of a bug or feature.</p>
-<div class="highlight"><pre><span></span><code>Info:    Local Git User:
-Info:    Name:  Name Surname
-Info:    Email: name.surname@provider.com
-Info:    Last Commit:
-Info:    SHA:             1b5a9a642857182161a615039c92907e59881614
-Info:    Abbreviated SHA: 1b5a9a642
-Info:    Subject:         wip
-Info:
-Info:    Author:
-Info:    Name:      Name Surname
-Info:    Email:     name.surname@provider.com
-Info:    Date:      Tue Jul 17 22:23:20 2018 +0200
-Info:    Timestamp: 1531859000
-Info:
-Info:    Committer:
-Info:    Name:      Name Surname
-Info:    Email:     name.surname@provider.com
-Info:    Date:      Tue Jul 17 22:23:20 2018 +0200
-Info:    Timestamp: 1531859000
-Info:
-Info:    File Status:
-Info:    Modified:  10
-Info:    Added:     0
-Info:    Deleted:   0
-Info:    Renamed:   0
-Info:    Copied:    0
-Info:    Untracked: 6
-</code></pre></div>
-<h3 id="build-information">Build Information<a class="headerlink" href="#build-information" title="Permanent link">&para;</a></h3>
-<p>These are the values defined as <code>const char *</code> strings in <code>&lt;info_build.h&gt;</code>:</p>
-<ul>
-<li><code>MODM_BUILD_PROJECT_NAME</code>: as defined in the <code>modm:build:project.name</code> option.</li>
-<li><code>MODM_BUILD_MACHINE</code>: machine information.</li>
-<li><code>MODM_BUILD_USER</code>: user information.</li>
-<li><code>MODM_BUILD_OS</code>: OS version string (best effort, may not be useful!).</li>
-<li><code>MODM_BUILD_COMPILER</code>: compiler information.</li>
-</ul>
-<p>The output of the <code>examples/linux/build_info</code> running on macOS:</p>
-<div class="highlight"><pre><span></span><code>Info:    Project:  build_info
-Info:    Machine:  name.local
-Info:    User:     user
-Info:    Os:       Mac 10.12.6 (x86_64)
-Info:    Compiler: g++-8 (Homebrew GCC 8.1.0) 8.1.0
-</code></pre></div>
 <h2 id="bitmap-tool">Bitmap Tool<a class="headerlink" href="#bitmap-tool" title="Permanent link">&para;</a></h2>
-<p>If the <code>modm:build:scons:image.source</code> is defined as a path, it'll be searched
+<p>If the <code>modm:build:image.source</code> is defined as a path, it'll be searched
 for <code>.pbm</code> files to convert into C++ data files using the <code>bitmap</code> tool:</p>
 <div class="highlight"><pre><span></span><code><span class="n">source</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">Bitmap</span><span class="p">(</span><span class="n">bpm_file</span><span class="p">)</span>
 </code></pre></div>
@@ -5120,10 +4947,6 @@ can be accessed as <code>#include &lt;image.hpp&gt;</code>.</p>
 You can disable CacheDir by setting an empty string.</p>
 <p>Default: <code>[]</code><br />
 Inputs: <code>[Path]</code>  </p>
-<h4 id="imagesource">image.source<a class="headerlink" href="#imagesource" title="Permanent link">&para;</a></h4>
-<p>Path to directory containing .pbm files</p>
-<p>Default: <code>[]</code><br />
-Inputs: <code>[Path]</code>  </p>
 <h4 id="include_sconstruct">include_sconstruct<a class="headerlink" href="#include_sconstruct" title="Permanent link">&para;</a></h4>
 <p>Generate a SConstruct file</p>
 <div class="admonition warning">
@@ -5131,32 +4954,12 @@ Inputs: <code>[Path]</code>  </p>
 </div>
 <p>Default: <code>True</code><br />
 Inputs: <code>[True, False]</code>  </p>
-<h4 id="infobuild">info.build<a class="headerlink" href="#infobuild" title="Permanent link">&para;</a></h4>
-<p>Generate build state information</p>
-<p>Default: <code>False</code><br />
-Inputs: <code>[True, False]</code>  </p>
-<h4 id="infogit">info.git<a class="headerlink" href="#infogit" title="Permanent link">&para;</a></h4>
-<p>Generate git repository state information</p>
-<ul>
-<li><code>Info</code>: generates information about the last commit.</li>
-<li><code>Info+Status</code>: like <code>Info</code> plus git file status.</li>
-</ul>
-<p>Default: <code>Disabled</code><br />
-Inputs: <code>[Disabled, Info, Info+Status]</code>  </p>
 <h4 id="pathartifact">path.artifact<a class="headerlink" href="#pathartifact" title="Permanent link">&para;</a></h4>
 <p>Path to Artifact Store</p>
 <p>The artifact folder contains ELF files named by their GNU build id hash. This
 allows identification of firmware on the device via serial output and is useful
 for archiving or post-mortem debugging.</p>
 <p>Default: <code>artifacts</code><br />
-Inputs: <code>[Path]</code>  </p>
-<h4 id="unittestsource">unittest.source<a class="headerlink" href="#unittestsource" title="Permanent link">&para;</a></h4>
-<p>Path to directory containing unittests</p>
-<p>When this path is declared, the generated SConstruct will compile <strong>only</strong> the
-unittests, not your application source code!
-You should use separate project configurations for compiling your unittest and
-application!</p>
-<p>Default: <code>[]</code><br />
 Inputs: <code>[Path]</code>  </p>
 <h2 id="collectors">Collectors<a class="headerlink" href="#collectors" title="Permanent link">&para;</a></h2>
 <h4 id="flag_format">flag_format<a class="headerlink" href="#flag_format" title="Permanent link">&para;</a></h4>
@@ -5186,7 +4989,7 @@ Inputs: <code>[Path]</code>  </p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../modm-build-compilation_db/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../modm-build-make/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -5195,7 +4998,7 @@ Inputs: <code>[Path]</code>  </p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                :build:compilation_db
+                :build:make
               </div>
             </div>
           </a>
