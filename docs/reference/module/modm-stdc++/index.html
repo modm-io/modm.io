@@ -308,8 +308,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guide/getting-started/" class="md-nav__link">
-        Getting Started
+      <a href="../../../guide/examples/" class="md-nav__link">
+        Explore Examples
       </a>
     </li>
   
@@ -320,8 +320,20 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guide/testing/" class="md-nav__link">
-        Testing
+      <a href="../../../guide/discover/" class="md-nav__link">
+        Discover modm
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guide/custom-project/" class="md-nav__link">
+        Your Project
       </a>
     </li>
   
@@ -735,8 +747,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../modm-board-black-pill/" class="md-nav__link">
-        :board:black-pill
+      <a href="../modm-board-black-pill-f103/" class="md-nav__link">
+        :board:black-pill-f103
       </a>
     </li>
   
@@ -747,8 +759,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../modm-board-blue-pill/" class="md-nav__link">
-        :board:blue-pill
+      <a href="../modm-board-black-pill-f401/" class="md-nav__link">
+        :board:black-pill-f401
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modm-board-black-pill-f411/" class="md-nav__link">
+        :board:black-pill-f411
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modm-board-blue-pill-f103/" class="md-nav__link">
+        :board:blue-pill-f103
       </a>
     </li>
   
@@ -917,30 +953,6 @@
     <li class="md-nav__item">
       <a href="../modm-board-mega-2560-pro/" class="md-nav__link">
         :board:mega-2560-pro
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../modm-board-mini-f401/" class="md-nav__link">
-        :board:mini-f401
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../modm-board-mini-f411/" class="md-nav__link">
-        :board:mini-f411
       </a>
     </li>
   
@@ -4137,10 +4149,12 @@ Inputs: <code>[True, False]</code>  </p>
 <p>Enables safe initialization of statics inside functions and interrupts.
 In case of recursive initialization the debug assertion <code>cxa.guard.recursion</code>
 is raised.</p>
-<p>Further reading on this topic:
-- <a href="https://static.docs.arm.com/ihi0041/d/IHI0041D_cppabi.pdf">C++ ABI for the ARM Architecture</a>
-- <a href="https://manishearth.github.io/blog/2015/06/26/adventures-in-systems-programming-c-plus-plus-local-statics/">https://manishearth.github.io/blog/2015/06/26/adventures-in-systems-programming-c-plus-plus-local-statics/</a>
-- <a href="https://iamroman.org/blog/2017/04/cpp11-static-init/">https://iamroman.org/blog/2017/04/cpp11-static-init/</a></p>
+<p>Further reading on this topic:</p>
+<ul>
+<li><a href="https://developer.arm.com/documentation/ihi0041/latest">C++ ABI for the ARM Architecture</a></li>
+<li><a href="https://manishearth.github.io/blog/2015/06/26/adventures-in-systems-programming-c-plus-plus-local-statics/">Adventures in Systems Programming: C++ Local Statics</a></li>
+<li><a href="https://iamroman.org/blog/2017/04/cpp11-static-init/">C++11 thread-safe static object initialization</a></li>
+</ul>
 <p><em>This option is only available for sam, stm32.</em></p>
 <p>Default: <code>True</code><br />
 Inputs: <code>[True, False]</code>  </p>

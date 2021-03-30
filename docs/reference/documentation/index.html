@@ -308,8 +308,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guide/getting-started/" class="md-nav__link">
-        Getting Started
+      <a href="../../guide/examples/" class="md-nav__link">
+        Explore Examples
       </a>
     </li>
   
@@ -320,8 +320,20 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guide/testing/" class="md-nav__link">
-        Testing
+      <a href="../../guide/discover/" class="md-nav__link">
+        Discover modm
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/custom-project/" class="md-nav__link">
+        Your Project
       </a>
     </li>
   
@@ -785,8 +797,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/modm-board-black-pill/" class="md-nav__link">
-        :board:black-pill
+      <a href="../module/modm-board-black-pill-f103/" class="md-nav__link">
+        :board:black-pill-f103
       </a>
     </li>
   
@@ -797,8 +809,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/modm-board-blue-pill/" class="md-nav__link">
-        :board:blue-pill
+      <a href="../module/modm-board-black-pill-f401/" class="md-nav__link">
+        :board:black-pill-f401
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module/modm-board-black-pill-f411/" class="md-nav__link">
+        :board:black-pill-f411
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module/modm-board-blue-pill-f103/" class="md-nav__link">
+        :board:blue-pill-f103
       </a>
     </li>
   
@@ -967,30 +1003,6 @@
     <li class="md-nav__item">
       <a href="../module/modm-board-mega-2560-pro/" class="md-nav__link">
         :board:mega-2560-pro
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../module/modm-board-mini-f401/" class="md-nav__link">
-        :board:mini-f401
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../module/modm-board-mini-f411/" class="md-nav__link">
-        :board:mini-f411
       </a>
     </li>
   
@@ -4030,7 +4042,7 @@ a first-class citizen of our code generation engine <code>lbuild</code>.</p>
    <code>modm:docs</code> module via <code>lbuild build</code>.</li>
 </ol>
 <h2 id="modules">Modules<a class="headerlink" href="#modules" title="Permanent link">&para;</a></h2>
-<p>The modm modules and their options are <a href="../../guide/getting-started#discovering-modm">shown by <code>lbuild discover</code></a>.
+<p>The modm modules and their options are <a href="../../guide/discover">shown by <code>lbuild discover</code></a>.
 These descriptions advertise the modules capabilities and gives a
 high-level overview of how to use it.</p>
 <p>You can search for keywords in all modules using <code>lbuild search QUERIES [QUERIES ...]</code>:</p>
@@ -4064,26 +4076,24 @@ for certain targets. These are then labels as "<em>{Module, Option, Collector} o
 available for {target}</em>". Additionally the view does not show peripheral
 instance submodule to reduce visual noise.</p>
 <h2 id="doxypress-doxygen">Doxypress / Doxygen<a class="headerlink" href="#doxypress-doxygen" title="Permanent link">&para;</a></h2>
-<p>The generated C/C++ API is documented using Doxypress or Doxygen and therefore only
+<p>The generated C/C++ API is documented using Doxypress and therefore only
 available <em>after</em> code generation.</p>
 <p>To view this documentation, include the <code>modm:docs</code> module in your <code>project.xml</code>
 configuration and run <code>lbuild build</code>. A <code>modm/docs</code> folder is created containing
-the <code>doxypress.json</code> and <code>doxyfile.cfg</code> for modm as well as all the <code>@defgroup</code>s
-mirroring the module structure.</p>
-<p>You must then call Doxygen manually, which can take several minutes, and
+the <code>doxypress.json</code> for modm as well as all the <code>@defgroup</code>s mirroring the
+module structure.</p>
+<p>You must then run Doxypress manually, which can take several minutes, and
 compiles the target-specific documentation into <code>modm/docs/html</code>:</p>
 <div class="highlight"><pre><span></span><code>lbuild build -m <span class="s2">&quot;modm:docs&quot;</span>
 
 <span class="c1"># With Doxypress</span>
 <span class="o">(</span><span class="nb">cd</span> modm/docs <span class="o">&amp;&amp;</span> doxypress doxypress.json<span class="o">)</span>
-<span class="c1"># Or Doxygen</span>
-<span class="o">(</span><span class="nb">cd</span> modm/docs <span class="o">&amp;&amp;</span> doxygen doxyfile.cfg<span class="o">)</span>
 
 <span class="c1"># then open: modm/docs/html/index.html</span>
 </code></pre></div>
-<p>The generated Doxypress/Doxygen documentation contains the original module documentation
-<em>including the option choices you made</em>. This makes it easier to map the
-lbuild options to changes in the generated source code.</p>
+<p>The generated Doxypress/Doxygen documentation contains the original module
+documentation <em>including the option choices you made</em>. This makes it easier to
+map the lbuild options to changes in the generated source code.</p>
 <h2 id="online-api-docs">Online API Docs<a class="headerlink" href="#online-api-docs" title="Permanent link">&para;</a></h2>
 <p>API documentation is available at <a href="https://docs.modm.io/">docs.modm.io</a> for a
 large and representative number of targets with all modules enabled.</p>
@@ -4104,7 +4114,7 @@ large and representative number of targets with all modules enabled.</p>
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../../guide/testing/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../../guide/custom-project/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -4113,7 +4123,7 @@ large and representative number of targets with all modules enabled.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Testing
+              Your Project
             </div>
           </div>
         </a>

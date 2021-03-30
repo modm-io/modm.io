@@ -16,11 +16,15 @@
      <lastmod>2021-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://modm.io/guide/getting-started/</loc>
+     <loc>http://modm.io/guide/examples/</loc>
      <lastmod>2021-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://modm.io/guide/testing/</loc>
+     <loc>http://modm.io/guide/discover/</loc>
+     <lastmod>2021-03-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>http://modm.io/guide/custom-project/</loc>
      <lastmod>2021-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -140,11 +144,19 @@
      <lastmod>2021-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://modm.io/reference/module/modm-board-black-pill/</loc>
+     <loc>http://modm.io/reference/module/modm-board-black-pill-f103/</loc>
      <lastmod>2021-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://modm.io/reference/module/modm-board-blue-pill/</loc>
+     <loc>http://modm.io/reference/module/modm-board-black-pill-f401/</loc>
+     <lastmod>2021-03-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>http://modm.io/reference/module/modm-board-black-pill-f411/</loc>
+     <lastmod>2021-03-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>http://modm.io/reference/module/modm-board-blue-pill-f103/</loc>
      <lastmod>2021-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -201,14 +213,6 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>http://modm.io/reference/module/modm-board-mega-2560-pro/</loc>
-     <lastmod>2021-03-30</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>http://modm.io/reference/module/modm-board-mini-f401/</loc>
-     <lastmod>2021-03-30</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>http://modm.io/reference/module/modm-board-mini-f411/</loc>
      <lastmod>2021-03-30</lastmod>
      <changefreq>daily</changefreq>
     </url><url>

@@ -308,8 +308,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guide/getting-started/" class="md-nav__link">
-        Getting Started
+      <a href="../../guide/examples/" class="md-nav__link">
+        Explore Examples
       </a>
     </li>
   
@@ -320,8 +320,20 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guide/testing/" class="md-nav__link">
-        Testing
+      <a href="../../guide/discover/" class="md-nav__link">
+        Discover modm
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guide/custom-project/" class="md-nav__link">
+        Your Project
       </a>
     </li>
   
@@ -792,8 +804,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/modm-board-black-pill/" class="md-nav__link">
-        :board:black-pill
+      <a href="../module/modm-board-black-pill-f103/" class="md-nav__link">
+        :board:black-pill-f103
       </a>
     </li>
   
@@ -804,8 +816,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../module/modm-board-blue-pill/" class="md-nav__link">
-        :board:blue-pill
+      <a href="../module/modm-board-black-pill-f401/" class="md-nav__link">
+        :board:black-pill-f401
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module/modm-board-black-pill-f411/" class="md-nav__link">
+        :board:black-pill-f411
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module/modm-board-blue-pill-f103/" class="md-nav__link">
+        :board:blue-pill-f103
       </a>
     </li>
   
@@ -974,30 +1010,6 @@
     <li class="md-nav__item">
       <a href="../module/modm-board-mega-2560-pro/" class="md-nav__link">
         :board:mega-2560-pro
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../module/modm-board-mini-f401/" class="md-nav__link">
-        :board:mini-f401
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../module/modm-board-mini-f411/" class="md-nav__link">
-        :board:mini-f411
       </a>
     </li>
   
@@ -4057,6 +4069,13 @@ firmware to your target with another.</p>
 another build system generator is a manageable feat. Feel free to open up
 an PR that adds support for your build system and we'll give you lots of
 tips during the review.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Enable parallel builds</p>
+<p>Remember to add the <code>-j8</code> flag to your <code>scons/make build</code> call to enable
+parallel builds, which are significantly faster than sequential builds. To
+make this a permanent setting you can add <code>export SCONSFLAGS="-j8"</code> or
+<code>export MAKEFLAGS="-j8"</code> to your <code>.bashrc</code>!</p>
 </div>
 <h3 id="scons">SCons<a class="headerlink" href="#scons" title="Permanent link">&para;</a></h3>
 <p>The <code>modm:build:scons</code> build system generator is our preferred and recommended
