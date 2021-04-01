@@ -288,6 +288,10 @@
      <lastmod>2021-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
+     <loc>http://modm.io/reference/module/modm-board-nucleo-l031k6/</loc>
+     <lastmod>2021-04-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>http://modm.io/reference/module/modm-board-nucleo-l152re/</loc>
      <lastmod>2021-04-01</lastmod>
      <changefreq>daily</changefreq>
@@ -972,7 +976,7 @@
      <lastmod>2021-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://modm.io/reference/module/modm-platform-i2c-stm32-f0-f3-f7-g0-g4-l4/</loc>
+     <loc>http://modm.io/reference/module/modm-platform-i2c-stm32-f0-f3-f7-g0-g4-l0-l4/</loc>
      <lastmod>2021-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -1044,7 +1048,7 @@
      <lastmod>2021-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://modm.io/reference/module/modm-platform-usb-stm32-f0-f1-f2-f3-f4-f7-g4-l1-l4/</loc>
+     <loc>http://modm.io/reference/module/modm-platform-usb-stm32-f0-f1-f2-f3-f4-f7-g4-l0-l1-l4/</loc>
      <lastmod>2021-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
