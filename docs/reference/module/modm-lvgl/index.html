@@ -13,14 +13,14 @@
         <meta name="author" content="Niklas Hauser">
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-architecture-can/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-lvgl/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
     
     
       
-        <title>:architecture:can - modm barebone embedded library</title>
+        <title>:lvgl - modm barebone embedded library</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#controller-area-network" class="md-skip">
+        <a href="#lvgl-graphics-library" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              :architecture:can
+              :lvgl
             
           </span>
         </div>
@@ -533,20 +533,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../modm-architecture-can/" class="md-nav__link">
         :architecture:can
       </a>
-      
     </li>
   
 
@@ -2762,11 +2753,56 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../modm-lvgl/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          :lvgl
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         :lvgl
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4013,6 +4049,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4024,14 +4082,91 @@
               
                 
                 
-                <h1 id="controller-area-network">Controller Area Network<a class="headerlink" href="#controller-area-network" title="Permanent link">&para;</a></h1>
-<p>lbuild module: <code>modm:architecture:can</code></p>
-<p>Controller–area network (CAN or CAN-bus) is a vehicle bus standard designed
-to allow microcontrollers and devices to communicate with each other within
-a vehicle without a host computer.</p>
-<p>CAN is a message based protocol, designed specifically for automotive
-applications but now also used in other areas such as industrial automation
-and medical equipment.</p>
+                <h1 id="lvgl-graphics-library">LVGL graphics library<a class="headerlink" href="#lvgl-graphics-library" title="Permanent link">&para;</a></h1>
+<p>lbuild module: <code>modm:lvgl</code></p>
+<p>LVGL is a free and open-source graphics library providing everything you need
+to create embedded GUI with easy-to-use graphical elements, beautiful visual effects
+and low memory footprint.</p>
+<ul>
+<li><a href="https://lvgl.io/">https://lvgl.io/</a></li>
+<li><a href="https://github.com/lvgl/lvgl">https://github.com/lvgl/lvgl</a></li>
+</ul>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<p>LVGL defines defaults for all it's configuration settings, which you can find in
+the <a href="https://github.com/lvgl/lvgl/blob/master/lv_conf_template.h">configuration template</a>.</p>
+<p>This module generates a <code>lv_conf.h</code> file to define the options necessary for
+integration with modm which are:</p>
+<ul>
+<li><code>LV_MEM_CUSTOM = 1</code>: Heap is provided by the <code>modm:platform:heap</code> module.</li>
+<li><code>LV_TICK_CUSTOM = 1</code>: Tick is implemented via the <code>modm:platform:clock</code> module.</li>
+<li><code>LV_LOG_PRINTF = 0</code>: logging is redirected to <code>MODM_LOG_*</code> if the
+                       <code>modm:debug</code> module is included and <code>LV_USE_LOG = 1</code>.</li>
+<li><code>typedef int16_t lv_coord_t;</code>: Hardcoded choice for now.</li>
+</ul>
+<p>To add your own configuration you can create a <code>&lt;lv_conf_local.h&gt;</code> file which
+will automatically be included at the <em>beginning</em> of our <code>lv_conf.h</code>.</p>
+<p>Example <code>&lt;lv_conf_local.h&gt;</code> configuration:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Maximal resolutions</span>
+<span class="cp">#define LV_HOR_RES_MAX  240</span>
+<span class="cp">#define LV_VER_RES_MAX  320</span>
+<span class="cp">#define LV_DPI          200</span>
+
+<span class="cm">/* Color depth:</span>
+<span class="cm"> * - 1:  1 byte per pixel</span>
+<span class="cm"> * - 8:  RGB332</span>
+<span class="cm"> * - 16: RGB565</span>
+<span class="cm"> * - 32: ARGB8888</span>
+<span class="cm"> */</span>
+<span class="cp">#define LV_COLOR_DEPTH  16</span>
+
+<span class="c1">// Enable logging at INFO level</span>
+<span class="cp">#define LV_USE_LOG    1</span>
+<span class="cp">#define LV_LOG_LEVEL  LV_LOG_LEVEL_INFO</span>
+
+<span class="c1">// Disable anti-aliasing</span>
+<span class="cp">#define LV_ANTIALIAS  0</span>
+</code></pre></div>
+<h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<p><svg class="deps" width="218pt" height="135pt"
+ viewBox="0.00 0.00 218.00 135.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph deps" transform="scale(1 1) rotate(0) translate(4 131)">
+<title>modm:lvgl</title>
+<g id="node1" class="node">
+<title>modm_lvgl</title>
+<polygon fill="lightgrey" stroke="black" stroke-width="2" points="144,-38 79,-38 79,0 144,0 144,-38"/>
+<text text-anchor="middle" x="111.5" y="-22.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="111.5" y="-7.8" font-family="Times,serif" font-size="14.00">lvgl</text>
+</g>
+<g id="node2" class="node">
+<title>modm_architecture_clock</title>
+<polygon fill="lightgrey" stroke="black" points="109,-127 0,-127 0,-74 109,-74 109,-127"/>
+<text text-anchor="middle" x="54.5" y="-111.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="54.5" y="-96.8" font-family="Times,serif" font-size="14.00">architecture:</text>
+<text text-anchor="middle" x="54.5" y="-81.8" font-family="Times,serif" font-size="14.00">clock</text>
+</g>
+<g id="edge1" class="edge">
+<title>modm_lvgl&#45;&gt;modm_architecture_clock</title>
+<path fill="none" stroke="black" d="M98.57,-38.04C92.67,-46.26 85.5,-56.27 78.66,-65.8"/>
+<polygon fill="black" stroke="black" points="75.77,-63.83 72.79,-74 81.46,-67.91 75.77,-63.83"/>
+</g>
+<g id="node3" class="node">
+<title>modm_platform_heap</title>
+<polygon fill="lightgrey" stroke="black" stroke-dasharray="5,2" points="210,-127 127,-127 127,-74 210,-74 210,-127"/>
+<text text-anchor="middle" x="168.5" y="-111.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="168.5" y="-96.8" font-family="Times,serif" font-size="14.00">platform:</text>
+<text text-anchor="middle" x="168.5" y="-81.8" font-family="Times,serif" font-size="14.00">heap</text>
+</g>
+<g id="edge2" class="edge">
+<title>modm_lvgl&#45;&gt;modm_platform_heap</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M124.43,-38.04C130.33,-46.26 137.5,-56.27 144.34,-65.8"/>
+<polygon fill="black" stroke="black" points="141.54,-67.91 150.21,-74 147.23,-63.83 141.54,-67.91"/>
+</g>
+</g>
+</svg></p>
+<style>@media(prefers-color-scheme:dark){svg.deps{filter:invert(100%);}}</style>
                 
               
               
@@ -4050,7 +4185,7 @@ and medical equipment.</p>
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../modm-architecture-build_id/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../modm-io/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -4059,19 +4194,19 @@ and medical equipment.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              :architecture:build_id
+              :io
             </div>
           </div>
         </a>
       
       
-        <a href="../modm-architecture-clock/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../modm-math/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              :architecture:clock
+              :math
             </div>
           </div>
           <div class="md-footer__button md-icon">
