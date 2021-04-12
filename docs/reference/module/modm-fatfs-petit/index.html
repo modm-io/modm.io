@@ -13,14 +13,14 @@
         <meta name="author" content="Niklas Hauser">
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-driver-siemens_s75/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-fatfs-petit/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
     
     
       
-        <title>:driver:siemens_s75 - modm barebone embedded library</title>
+        <title>:fatfs.petit - modm barebone embedded library</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#siemens-s75cx75c81m75-display" class="md-skip">
+        <a href="#petit-fatfs-tiny-fat-filesystem" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              :driver:siemens_s75
+              :fatfs.petit
             
           </span>
         </div>
@@ -2501,49 +2501,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          :driver:siemens_s75
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../modm-driver-siemens_s75/" class="md-nav__link">
         :driver:siemens_s75
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    Dependencies
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2743,11 +2705,49 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../modm-fatfs-petit/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          :fatfs.petit
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         :fatfs.petit
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4061,8 +4061,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    Dependencies
+  <a href="#configuration" class="md-nav__link">
+    Configuration
   </a>
   
 </li>
@@ -4080,95 +4080,29 @@
               
                 
                 
-                <h1 id="siemens-s75cx75c81m75-display">Siemens S75/CX75/C81/M75 Display<a class="headerlink" href="#siemens-s75cx75c81m75-display" title="Permanent link">&para;</a></h1>
-<p>lbuild module: <code>modm:driver:siemens_s75</code></p>
-<p>The controller in displays manufactured by Alps is a SOLOMON SYSTECH SSD1286
-which can drive color displays of up to 132 x 176 pixels in 18 bit color.</p>
-<p>The portrait mode is a bit more 'native' for this display because
-<code>modm::BufferedGraphicDisplay</code> requests that the vertical resolution is
-divisible by 8.</p>
-<p>In portrait mode the connector is at the top.
-In landscapeLeft  mode the connector is at the left border.
-In landscapeRight mode the connector is at the right border.</p>
-<p>Pinout at LCD:</p>
-<div class="highlight"><pre><span></span><code> 1  IN  CD         Command / Data                      Low = Command (Register) High = Data.
- 2  IN  RESET      Resets the display.  Active low.    Low = Reset,             High = No reset.
- 3  IN  CS         Chip select.         Active low.    Low = Chip is selected,  High = Chip is not selected.
- 4  OUT VD         Sync Output.         Unused.
- 5      GND        Supply
- 6  IN  D0         Bit 0 of parallel data
- 7      3V3 (2V9)  Supply
- 8      GND        Supply
- 9      VLED +     Supply Backlight
-10      VLED -     Supply Backlight
-11      GND        Supply
-12  IN  RD         Read Strobe.         Must be tied high.
-13  IN  WR         Write Strobe.        High-to-Low strobe write data to display memory.
-14  IN  D1         Bit 1 of parallel data.
-15  IN  D2         Bit 2 of parallel data.
-16  IN  D3         Bit 3 of parallel data.
-17  IN  D4         Bit 4 of parallel data.
-18  IN  D5         Bit 5 of parallel data.
-19  IN  D6         Bit 6 of parallel data.
-20  IN  D7         Bit 7 of parallel data.
+                <h1 id="petit-fatfs-tiny-fat-filesystem">Petit FatFs: Tiny FAT Filesystem<a class="headerlink" href="#petit-fatfs-tiny-fat-filesystem" title="Permanent link">&para;</a></h1>
+<p>lbuild module: <code>modm:fatfs.petit</code></p>
+<p>Petit FatFs is a sub-set of FatFs module for tiny 8-bit microcontrollers. It can
+be incorporated into the tiny microcontrollers with limited memory even if the
+RAM size is less than sector size.</p>
+<p>See <a href="http://elm-chan.org/fsw/ff/00index_p.html">http://elm-chan.org/fsw/ff/00index_p.html</a>.</p>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<p>To configure Petit FatFs for your project, create a <code>&lt;pffconf_local.h&gt;</code> file,
+which is included at the <em>beginning</em> of the config, thus overwriting the default
+settings. Please see the <code>modm/ext/fatfs-petit/pffconf.h</code> file for the available
+configuration options and their default values.</p>
+<p>Example <code>&lt;pffconf_local.h&gt;</code> configuration:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Enable directories: pf_opendir(), pf_readdir()</span>
+<span class="cp">#define PF_USE_DIR 1</span>
+
+<span class="c1">// Enabling writing: pf_write()</span>
+<span class="cp">#define PF_USE_WRITE 1</span>
+
+<span class="c1">// Use FAT12 file system</span>
+<span class="cp">#define PF_FS_FAT12 1</span>
+<span class="cp">#define PF_FS_FAT16 0</span>
+<span class="cp">#define PF_FS_FAT32 0</span>
 </code></pre></div>
-<p>Pin 1 is unmarked. Pin 5 can be recognized by a thicker trace which is GND.</p>
-<p>The backlight (VLED +, VLED -) consists of four white LEDs in series.
-The forward voltage is about 12 volts.</p>
-<h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<p><svg class="deps" width="329pt" height="150pt"
- viewBox="0.00 0.00 328.50 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph deps" transform="scale(1 1) rotate(0) translate(4 146)">
-<title>modm:driver:siemens_s75</title>
-<g id="node1" class="node">
-<title>modm_driver_siemens_s75</title>
-<polygon fill="lightgrey" stroke="black" stroke-width="2" points="234,-53 127,-53 127,0 234,0 234,-53"/>
-<text text-anchor="middle" x="180.5" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="180.5" y="-22.8" font-family="Times,serif" font-size="14.00">driver:</text>
-<text text-anchor="middle" x="180.5" y="-7.8" font-family="Times,serif" font-size="14.00">siemens_s75</text>
-</g>
-<g id="node2" class="node">
-<title>modm_architecture_delay</title>
-<polygon fill="lightgrey" stroke="black" points="109,-142 0,-142 0,-89 109,-89 109,-142"/>
-<text text-anchor="middle" x="54.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="54.5" y="-111.8" font-family="Times,serif" font-size="14.00">architecture:</text>
-<text text-anchor="middle" x="54.5" y="-96.8" font-family="Times,serif" font-size="14.00">delay</text>
-</g>
-<g id="edge1" class="edge">
-<title>modm_driver_siemens_s75&#45;&gt;modm_architecture_delay</title>
-<path fill="none" stroke="black" d="M143.38,-53.13C129.91,-62.43 114.54,-73.05 100.4,-82.8"/>
-<polygon fill="black" stroke="black" points="98.03,-80.19 91.79,-88.75 102.01,-85.95 98.03,-80.19"/>
-</g>
-<g id="node3" class="node">
-<title>modm_driver_memory_bus</title>
-<polygon fill="lightgrey" stroke="black" points="234,-142 127,-142 127,-89 234,-89 234,-142"/>
-<text text-anchor="middle" x="180.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="180.5" y="-111.8" font-family="Times,serif" font-size="14.00">driver:</text>
-<text text-anchor="middle" x="180.5" y="-96.8" font-family="Times,serif" font-size="14.00">memory_bus</text>
-</g>
-<g id="edge2" class="edge">
-<title>modm_driver_siemens_s75&#45;&gt;modm_driver_memory_bus</title>
-<path fill="none" stroke="black" d="M180.5,-53.13C180.5,-61.11 180.5,-70.07 180.5,-78.62"/>
-<polygon fill="black" stroke="black" points="177,-78.75 180.5,-88.75 184,-78.75 177,-78.75"/>
-</g>
-<g id="node4" class="node">
-<title>modm_ui_display</title>
-<polygon fill="lightgrey" stroke="black" points="320.5,-142 252.5,-142 252.5,-89 320.5,-89 320.5,-142"/>
-<text text-anchor="middle" x="286.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="286.5" y="-111.8" font-family="Times,serif" font-size="14.00">ui:</text>
-<text text-anchor="middle" x="286.5" y="-96.8" font-family="Times,serif" font-size="14.00">display</text>
-</g>
-<g id="edge3" class="edge">
-<title>modm_driver_siemens_s75&#45;&gt;modm_ui_display</title>
-<path fill="none" stroke="black" d="M211.73,-53.13C222.84,-62.25 235.51,-72.65 247.21,-82.25"/>
-<polygon fill="black" stroke="black" points="245.18,-85.11 255.13,-88.75 249.62,-79.7 245.18,-85.11"/>
-</g>
-</g>
-</svg></p>
-<style>@media(prefers-color-scheme:dark){svg.deps{filter:invert(100%);}}</style>
                 
               
               
@@ -4187,7 +4121,7 @@ The forward voltage is about 12 volts.</p>
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../modm-driver-siemens_s65/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../modm-fatfs/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -4196,19 +4130,19 @@ The forward voltage is about 12 volts.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              :driver:siemens_s65
+              :fatfs
             </div>
           </div>
         </a>
       
       
-        <a href="../modm-driver-sk6812/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../modm-freertos/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              :driver:sk6812
+              :freertos
             </div>
           </div>
           <div class="md-footer__button md-icon">

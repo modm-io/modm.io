@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#afreertos-plus-tcp" class="md-skip">
+        <a href="#freertostcp" class="md-skip">
           Skip to content
         </a>
       
@@ -2707,6 +2707,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../modm-fatfs-petit/" class="md-nav__link">
+        :fatfs.petit
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../modm-freertos/" class="md-nav__link">
         :freertos
       </a>
@@ -2750,8 +2762,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    Dependencies
+  <a href="#configuration" class="md-nav__link">
+    Configuration
   </a>
   
 </li>
@@ -4049,8 +4061,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    Dependencies
+  <a href="#configuration" class="md-nav__link">
+    Configuration
   </a>
   
 </li>
@@ -4068,45 +4080,38 @@
               
                 
                 
-                <h1 id="afreertos-plus-tcp">a:FreeRTOS-Plus-TCP<a class="headerlink" href="#afreertos-plus-tcp" title="Permanent link">&para;</a></h1>
+                <h1 id="freertostcp">FreeRTOS+TCP<a class="headerlink" href="#freertostcp" title="Permanent link">&para;</a></h1>
 <p>lbuild module: <code>modm:freertos:tcp</code></p>
-<p>This module defines a default FreeRTOS IP config. If you need to change a
-configuration setting, then you can define a <code>FreeRTOSConfigIPLocal.h</code> file, which
-is included <em>after</em> at the end of the config. You must therefore first <code>#undef</code>
-the config macros, then redefine them with your options, for example:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#undef ipconfigUSE_DNS</span>
-<span class="cp">#define ipconfigUSE_DNS 1</span>
+<p>Amazon FreeRTOS+TCP is a scalable, open source and thread safe TCP/IP stack for
+FreeRTOS. FreeRTOS+TCP's features and RAM footprint are fully scalable, making
+it equally applicable to smaller lower throughput microcontrollers as larger
+higher throughput microprocessors.</p>
+<p>This module provides the latest FreeRTOS+TCP LTS release integrated with modm:</p>
+<ul>
+<li><code>FreeRTOS_printf()</code> and <code>FreeRTOS_debug_printf()</code> forwarded to <code>modm:debug</code>.</li>
+</ul>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<p>This module generates a <code>FreeRTOSIPConfig.h</code> config file for modm integration
+with these overwritable settings:</p>
+<ul>
+<li><code>ipconfigIP_TASK_STACK_SIZE_WORDS</code> = <code>(configMINIMAL_STACK_SIZE * 4)</code></li>
+<li><code>ipconfigIP_TASK_PRIORITY</code> = <code>(configMAX_PRIORITIES - 2)</code></li>
+<li><code>FreeRTOS_printf(x)</code> = <code>MODM_LOG_INFO.printf(x)</code></li>
+<li><code>FreeRTOS_debug_printf(x)</code> = <code>MODM_LOG_DEBUG.printf(x)</code></li>
+</ul>
+<p>All other config settings are unchanged by modm and are defaulted by FreeRTOS
+itself, please refer to the <a href="https://www.freertos.org/FreeRTOS-Plus/FreeRTOS_Plus_TCP/TCP_IP_Configuration.html">FreeRTOS+TCP Config documentation</a> to
+understand what each of these do.</p>
+<p>To change a configuration setting, define a <code>&lt;FreeRTOSIPConfigLocal.h&gt;</code> file,
+which is included <em>before</em> the optional settings, so you can overwrite them
+easily.</p>
+<p>An example <code>&lt;FreeRTOSIPConfigLocal.h&gt;</code> file:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Change IP task stack size</span>
+<span class="cp">#define ipconfigIP_TASK_STACK_SIZE_WORDS  1024</span>
+<span class="c1">// Enable printing</span>
+<span class="cp">#define ipconfigHAS_PRINTF  1</span>
+<span class="cp">#define ipconfigHAS_DEBUG_PRINTF  1</span>
 </code></pre></div>
-<h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<p><svg class="deps" width="91pt" height="150pt"
- viewBox="0.00 0.00 91.00 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph deps" transform="scale(1 1) rotate(0) translate(4 146)">
-<title>modm:freertos:tcp</title>
-<g id="node1" class="node">
-<title>modm_freertos_tcp</title>
-<polygon fill="lightgrey" stroke="black" stroke-width="2" points="80.5,-53 2.5,-53 2.5,0 80.5,0 80.5,-53"/>
-<text text-anchor="middle" x="41.5" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="41.5" y="-22.8" font-family="Times,serif" font-size="14.00">freertos:</text>
-<text text-anchor="middle" x="41.5" y="-7.8" font-family="Times,serif" font-size="14.00">tcp</text>
-</g>
-<g id="node2" class="node">
-<title>modm_platform_heap</title>
-<polygon fill="lightgrey" stroke="black" points="83,-142 0,-142 0,-89 83,-89 83,-142"/>
-<text text-anchor="middle" x="41.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="41.5" y="-111.8" font-family="Times,serif" font-size="14.00">platform:</text>
-<text text-anchor="middle" x="41.5" y="-96.8" font-family="Times,serif" font-size="14.00">heap</text>
-</g>
-<g id="edge1" class="edge">
-<title>modm_freertos_tcp&#45;&gt;modm_platform_heap</title>
-<path fill="none" stroke="black" d="M41.5,-53.13C41.5,-61.11 41.5,-70.07 41.5,-78.62"/>
-<polygon fill="black" stroke="black" points="38,-78.75 41.5,-88.75 45,-78.75 38,-78.75"/>
-</g>
-</g>
-</svg></p>
-<style>@media(prefers-color-scheme:dark){svg.deps{filter:invert(100%);}}</style>
 <div class="admonition warning">
 <p class="admonition-title">Limited availability: Check with 'lbuild discover' if this module is available for your target!</p>
 </div>

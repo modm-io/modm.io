@@ -2707,6 +2707,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../modm-fatfs-petit/" class="md-nav__link">
+        :fatfs.petit
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../modm-freertos/" class="md-nav__link">
         :freertos
       </a>
@@ -4070,6 +4082,28 @@
                 
                 <h1 id="device-class-audio">Device class AUDIO<a class="headerlink" href="#device-class-audio" title="Permanent link">&para;</a></h1>
 <p>lbuild module: <code>modm:tinyusb:device:audio</code></p>
+<p>Configuration options:</p>
+<ul>
+<li><code>CFG_TUD_AUDIO_CTRL_BUF_SIZE</code> = [undef]</li>
+<li><code>CFG_TUD_AUDIO_ENABLE_FEEDBACK_EP</code> = 0</li>
+<li><code>CFG_TUD_AUDIO_EPSIZE_IN</code> = 0</li>
+<li><code>CFG_TUD_AUDIO_EPSIZE_OUT</code> = 0</li>
+<li><code>CFG_TUD_AUDIO_FORMAT_TYPE_I_RX</code> = <code>AUDIO_DATA_FORMAT_TYPE_I_PCM</code></li>
+<li><code>CFG_TUD_AUDIO_FORMAT_TYPE_I_TX</code> = <code>AUDIO_DATA_FORMAT_TYPE_I_PCM</code></li>
+<li><code>CFG_TUD_AUDIO_FORMAT_TYPE_RX</code> = <code>AUDIO_FORMAT_TYPE_UNDEFINED</code></li>
+<li><code>CFG_TUD_AUDIO_FORMAT_TYPE_TX</code> = <code>AUDIO_FORMAT_TYPE_UNDEFINED</code></li>
+<li><code>CFG_TUD_AUDIO_INT_CTR_BUFSIZE</code> = 6</li>
+<li><code>CFG_TUD_AUDIO_INT_CTR_EPSIZE_IN</code> = 0</li>
+<li><code>CFG_TUD_AUDIO_N_AS_INT</code> = 0</li>
+<li><code>CFG_TUD_AUDIO_N_BYTES_PER_SAMPLE_RX</code> = 1</li>
+<li><code>CFG_TUD_AUDIO_N_BYTES_PER_SAMPLE_TX</code> = 1</li>
+<li><code>CFG_TUD_AUDIO_N_CHANNELS_RX</code> = 1</li>
+<li><code>CFG_TUD_AUDIO_N_CHANNELS_TX</code> = 1</li>
+<li><code>CFG_TUD_AUDIO_RX_FIFO_COUNT</code> = <code>CFG_TUD_AUDIO_N_CHANNELS_RX</code></li>
+<li><code>CFG_TUD_AUDIO_RX_FIFO_SIZE</code> = 0</li>
+<li><code>CFG_TUD_AUDIO_TX_FIFO_COUNT</code> = <code>CFG_TUD_AUDIO_N_CHANNELS_TX</code></li>
+<li><code>CFG_TUD_AUDIO_TX_FIFO_SIZE</code> = 0</li>
+</ul>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"

@@ -3015,6 +3015,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../modm-fatfs-petit/" class="md-nav__link">
+        :fatfs.petit
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../modm-freertos/" class="md-nav__link">
         :freertos
       </a>
@@ -4739,11 +4751,13 @@ shutdown command invoked
 <code>modm:platform:core</code> module for how to define the fuse values.
 (* <em>only AVR targets</em>)</p>
 <h4 id="scons-program-dfu">scons program-dfu<a class="headerlink" href="#scons-program-dfu" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>scons program-dfu profile={debug|release} [firmware={hash or file}]
+<div class="highlight"><pre><span></span><code>scons program-dfu profile={debug|release} [firmware={hash or file}] [delay={seconds}]
 </code></pre></div>
 <p>Writes the executable onto your target via Device Firmware Update (DFU) over USB.
 A DFU bootloader is available on many STM32 microcontrollers
-and can be accessed by pressing the BOOT0-Button during startup.
+and can be accessed by pressing the BOOT0-Button during startup.</p>
+<p>Some DFU devices require additional delay to re-enumerate, which you can specify
+with the <code>delay</code> parameter (default is 5 seconds).
 (* <em>only ARM Cortex-M targets</em>)</p>
 <div class="highlight"><pre><span></span><code>$ scons program-dfu
 Binary File···· /build/{debug|release}/blink.bin

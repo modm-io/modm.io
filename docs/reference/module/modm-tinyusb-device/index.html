@@ -2707,6 +2707,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../modm-fatfs-petit/" class="md-nav__link">
+        :fatfs.petit
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../modm-freertos/" class="md-nav__link">
         :freertos
       </a>
@@ -4026,6 +4038,11 @@
                 
                 <h1 id="tinyusb-in-device-mode">TinyUSB in Device Mode<a class="headerlink" href="#tinyusb-in-device-mode" title="Permanent link">&para;</a></h1>
 <p>lbuild module: <code>modm:tinyusb:device</code></p>
+<p>Configuration options:</p>
+<ul>
+<li><code>CFG_TUD_ENDPOINT0_SIZE</code> = 64</li>
+<li><code>CFG_TUD_TASK_QUEUE_SZ</code> = 16</li>
+</ul>
 <div class="admonition warning">
 <p class="admonition-title">Limited availability: Check with 'lbuild discover' if this module is available for your target!</p>
 </div>

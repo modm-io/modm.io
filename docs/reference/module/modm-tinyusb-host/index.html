@@ -2707,6 +2707,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../modm-fatfs-petit/" class="md-nav__link">
+        :fatfs.petit
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../modm-freertos/" class="md-nav__link">
         :freertos
       </a>
@@ -4026,6 +4038,11 @@
                 
                 <h1 id="tinyusb-in-host-mode">TinyUSB in Host Mode<a class="headerlink" href="#tinyusb-in-host-mode" title="Permanent link">&para;</a></h1>
 <p>lbuild module: <code>modm:tinyusb:host</code></p>
+<p>Configuration options:</p>
+<ul>
+<li><code>CFG_TUH_EP_MAX</code> = 9</li>
+<li><code>CFG_TUH_TASK_QUEUE_SZ</code> = 16</li>
+</ul>
 <p><em>This module is only available for stm32{f1,f2,f4,f7,l4}.</em></p>
 <div class="admonition warning">
 <p class="admonition-title">Limited availability: Check with 'lbuild discover' if this module is available for your target!</p>

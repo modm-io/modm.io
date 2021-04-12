@@ -1464,6 +1464,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#headers" class="md-nav__link">
+    headers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#rcc-map" class="md-nav__link">
     rcc-map
   </a>
@@ -2769,6 +2776,18 @@
     <li class="md-nav__item">
       <a href="../modm-fatfs/" class="md-nav__link">
         :fatfs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modm-fatfs-petit/" class="md-nav__link">
+        :fatfs.petit
       </a>
     </li>
   
@@ -4105,6 +4124,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#headers" class="md-nav__link">
+    headers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#rcc-map" class="md-nav__link">
     rcc-map
   </a>
@@ -4201,6 +4227,17 @@ a hardware FIFO buffer may pop the queue if your read the top of it.</p>
 </div>
 <p><em>This module is only available for stm32.</em></p>
 <h2 id="queries">Queries<a class="headerlink" href="#queries" title="Permanent link">&para;</a></h2>
+<h4 id="headers">headers<a class="headerlink" href="#headers" title="Permanent link">&para;</a></h4>
+<p>Gives information about the STM32 header files. For example the STM32F469:</p>
+<ul>
+<li>family_define: <code>STM32F4</code></li>
+<li>define: <code>STM32F469xx</code></li>
+<li>core_header: <code>core_cm4.h</code></li>
+<li>system_header: <code>system_stm32f4xx.h</code></li>
+<li>family_header: <code>stm32f4xx.h</code></li>
+<li>device_header: <code>stm32f469xx.h</code></li>
+</ul>
+<p>:returns: a dictionary with the above keys</p>
 <h4 id="rcc-map">rcc-map<a class="headerlink" href="#rcc-map" title="Permanent link">&para;</a></h4>
 <p>Finds all CMSIS bit fields related to enabling and resetting peripherals
 in the RCC of the format <code>RCC_(REGISTER)_(PERIPHERAL)_(TYPE)</code> where:</p>

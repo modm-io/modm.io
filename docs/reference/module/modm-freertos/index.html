@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#afreertos" class="md-skip">
+        <a href="#freertos" class="md-skip">
           Skip to content
         </a>
       
@@ -2705,6 +2705,18 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../modm-fatfs-petit/" class="md-nav__link">
+        :fatfs.petit
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -2738,8 +2750,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#custom-configuration" class="md-nav__link">
-    Custom Configuration
+  <a href="#configuration" class="md-nav__link">
+    Configuration
   </a>
   
 </li>
@@ -4076,8 +4088,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#custom-configuration" class="md-nav__link">
-    Custom Configuration
+  <a href="#configuration" class="md-nav__link">
+    Configuration
   </a>
   
 </li>
@@ -4122,36 +4134,94 @@
               
                 
                 
-                <h1 id="afreertos">a:FreeRTOS<a class="headerlink" href="#afreertos" title="Permanent link">&para;</a></h1>
+                <h1 id="freertos">FreeRTOS<a class="headerlink" href="#freertos" title="Permanent link">&para;</a></h1>
 <p>lbuild module: <code>modm:freertos</code></p>
-<p>Amazon FreeRTOS port for modm to be used with via the <code>modm:processing:rtos</code> module.</p>
-<h2 id="custom-configuration">Custom Configuration<a class="headerlink" href="#custom-configuration" title="Permanent link">&para;</a></h2>
-<p>This module defines a default FreeRTOS config. If you need to change a
-configuration setting, then you can define a <code>FreeRTOSConfigLocal.h</code> file, which
-is included <em>after</em> at the end of the config. You must therefore first <code>#undef</code>
-the config macros, then redefine them with your options, for example:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#undef configCHECK_FOR_STACK_OVERFLOW</span>
-<span class="cp">#define configCHECK_FOR_STACK_OVERFLOW 0</span>
+<p>Amazon FreeRTOS is an open source, real-time operating system (RTOS) for
+microcontrollers in small, low-power devices.</p>
+<p>This module provides the latest FreeRTOS LTS release integrated with modm:</p>
+<ul>
+<li>Chooses the right Cortex-M port for the target.</li>
+<li>Variable tick rate integrated with <code>modm::Clock</code> via <code>modm:platform:clock</code>.</li>
+<li>Dynamic memory provided by the <code>modm:platform:heap</code> module with thread-safe
+  locking of Newlib's <code>malloc/free</code>.</li>
+<li>Assertions integrated into the <code>modm:architecture:assert</code> interface.</li>
+<li>Interrupt handling integrated with CMSIS NVIC functions.</li>
+</ul>
+<p>Note that we recommend using the FreeRTOS API directly and only if you write
+threaded code that also runs on other platforms (x86 simulators for example)
+should you consider using the API defined in <code>modm:processing:rtos</code> module.</p>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<p>This module generates a <code>FreeRTOSConfig.h</code> config file for modm integration with
+these settings:</p>
+<ul>
+<li><code>configASSERT(x)</code> implemented with <code>modm_assert(x, "freertos")</code>.</li>
+<li><code>configCPU_CLOCK_HZ</code> implemented with CMSIS <code>SystemCoreClock</code>.</li>
+<li><code>configTICK_RATE_HZ</code> set to <code>modm:freertos:frequency</code> or 1kHz on Cortex-M0.</li>
+<li><code>configSUPPORT_DYNAMIC_ALLOCATION = 1</code> as implemented by <code>modm:platform:heap</code>.</li>
+<li><code>configUSE_TICK_HOOK = 1</code> used by <code>modm:platform:clock</code> to provide <code>modm::Clock</code>.</li>
+</ul>
+<p>In addition we define these overwritable default settings:</p>
+<ul>
+<li>
+<p><code>configMAX_SYSCALL_INTERRUPT_PRIORITY</code> = <code>(__NVIC_PRIO_BITS &lt;&lt; (8u - __NVIC_PRIO_BITS))</code></p>
+</li>
+<li>
+<p><code>configMINIMAL_STACK_SIZE</code> = 128</p>
+</li>
+<li><code>configMAX_PRIORITIES</code> = 5</li>
+<li><code>configUSE_PREEMPTION</code> = 1</li>
+<li><code>configUSE_IDLE_HOOK</code> = 0</li>
+<li>
+<p><code>configUSE_16_BIT_TICKS</code> = 0</p>
+</li>
+<li>
+<p><code>configUSE_MUTEXES</code> = 1</p>
+</li>
+<li><code>configUSE_RECURSIVE_MUTEXES</code> = 1</li>
+<li><code>configUSE_COUNTING_SEMAPHORES</code> = 1</li>
+<li><code>configQUEUE_REGISTRY_SIZE</code> = 10</li>
+<li><code>configNUM_THREAD_LOCAL_STORAGE_POINTERS</code> = 5</li>
+<li>
+<p><code>configCHECK_FOR_STACK_OVERFLOW</code> = 1</p>
+</li>
+<li>
+<p><code>configUSE_TIMERS</code> = 1</p>
+</li>
+<li><code>configTIMER_TASK_PRIORITY</code> = 3</li>
+<li><code>configTIMER_QUEUE_LENGTH</code> = 10</li>
+<li><code>configTIMER_TASK_STACK_DEPTH</code> = <code>configMINIMAL_STACK_SIZE</code></li>
+</ul>
+<p>All other config settings are unchanged by modm and are defaulted by FreeRTOS
+itself, please refer to the <a href="https://www.freertos.org/a00110.html">FreeRTOS Config documentation</a> to
+understand what each of these do.</p>
+<p>To change a configuration setting, define a <code>&lt;FreeRTOSConfigLocal.h&gt;</code> file,
+which is included <em>before</em> the optional settings, so you can overwrite them
+easily.</p>
+<p>An example <code>&lt;FreeRTOSConfigLocal.h&gt;</code> file:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Use a bigger minimal stack size</span>
+<span class="cp">#define configMINIMAL_STACK_SIZE  256</span>
+<span class="c1">// Longer timer queue</span>
+<span class="cp">#define configTIMER_QUEUE_LENGTH  20</span>
 </code></pre></div>
 <p><em>This module is only available for sam, stm32.</em></p>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <h4 id="frequency">frequency<a class="headerlink" href="#frequency" title="Permanent link">&para;</a></h4>
 <p>Context switch frequency in Hz</p>
 <p>Default: <code>1000</code><br />
-Inputs: <code>[1 ... 1000]</code>  </p>
+Inputs: <code>[4 ... 1000]</code>  </p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<p><svg class="deps" width="301pt" height="135pt"
- viewBox="0.00 0.00 301.00 135.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<p><svg class="deps" width="402pt" height="135pt"
+ viewBox="0.00 0.00 402.00 135.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph deps" transform="scale(1 1) rotate(0) translate(4 131)">
 <title>modm:freertos</title>
 <g id="node1" class="node">
 <title>modm_freertos</title>
-<polygon fill="lightgrey" stroke="black" stroke-width="2" points="196.5,-38 122.5,-38 122.5,0 196.5,0 196.5,-38"/>
-<text text-anchor="middle" x="159.5" y="-22.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="159.5" y="-7.8" font-family="Times,serif" font-size="14.00">freertos</text>
+<polygon fill="lightgrey" stroke="black" stroke-width="2" points="242.5,-38 168.5,-38 168.5,0 242.5,0 242.5,-38"/>
+<text text-anchor="middle" x="205.5" y="-22.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="205.5" y="-7.8" font-family="Times,serif" font-size="14.00">freertos</text>
 </g>
 <g id="node2" class="node">
 <title>modm_architecture_assert</title>
@@ -4162,8 +4232,8 @@ Inputs: <code>[1 ... 1000]</code>  </p>
 </g>
 <g id="edge1" class="edge">
 <title>modm_freertos&#45;&gt;modm_architecture_assert</title>
-<path fill="none" stroke="black" d="M135.67,-38.04C124.05,-46.84 109.72,-57.69 96.35,-67.81"/>
-<polygon fill="black" stroke="black" points="94.04,-65.17 88.18,-74 98.27,-70.75 94.04,-65.17"/>
+<path fill="none" stroke="black" d="M171.24,-38.04C153.73,-47.26 131.96,-58.72 111.97,-69.24"/>
+<polygon fill="black" stroke="black" points="110.16,-66.24 102.94,-74 113.42,-72.44 110.16,-66.24"/>
 </g>
 <g id="node3" class="node">
 <title>modm_cmsis_device</title>
@@ -4174,8 +4244,8 @@ Inputs: <code>[1 ... 1000]</code>  </p>
 </g>
 <g id="edge2" class="edge">
 <title>modm_freertos&#45;&gt;modm_cmsis_device</title>
-<path fill="none" stroke="black" d="M159.5,-38.04C159.5,-45.68 159.5,-54.86 159.5,-63.77"/>
-<polygon fill="black" stroke="black" points="156,-64 159.5,-74 163,-64 156,-64"/>
+<path fill="none" stroke="black" d="M195.06,-38.04C190.4,-46.09 184.75,-55.86 179.33,-65.22"/>
+<polygon fill="black" stroke="black" points="176.24,-63.59 174.26,-74 182.29,-67.09 176.24,-63.59"/>
 </g>
 <g id="node4" class="node">
 <title>modm_platform_clock</title>
@@ -4186,8 +4256,20 @@ Inputs: <code>[1 ... 1000]</code>  </p>
 </g>
 <g id="edge3" class="edge">
 <title>modm_freertos&#45;&gt;modm_platform_clock</title>
-<path fill="none" stroke="black" d="M180.38,-38.04C190.37,-46.68 202.65,-57.28 214.17,-67.24"/>
-<polygon fill="black" stroke="black" points="212.13,-70.11 221.99,-74 216.71,-64.81 212.13,-70.11"/>
+<path fill="none" stroke="black" d="M215.94,-38.04C220.6,-46.09 226.25,-55.86 231.67,-65.22"/>
+<polygon fill="black" stroke="black" points="228.71,-67.09 236.74,-74 234.76,-63.59 228.71,-67.09"/>
+</g>
+<g id="node5" class="node">
+<title>modm_platform_heap</title>
+<polygon fill="lightgrey" stroke="black" points="394,-127 311,-127 311,-74 394,-74 394,-127"/>
+<text text-anchor="middle" x="352.5" y="-111.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="352.5" y="-96.8" font-family="Times,serif" font-size="14.00">platform:</text>
+<text text-anchor="middle" x="352.5" y="-81.8" font-family="Times,serif" font-size="14.00">heap</text>
+</g>
+<g id="edge4" class="edge">
+<title>modm_freertos&#45;&gt;modm_platform_heap</title>
+<path fill="none" stroke="black" d="M238.86,-38.04C257.45,-48.1 280.99,-60.83 301.82,-72.09"/>
+<polygon fill="black" stroke="black" points="300.4,-75.3 310.86,-76.98 303.73,-69.15 300.4,-75.3"/>
 </g>
 </g>
 </svg></p>
@@ -4213,7 +4295,7 @@ Inputs: <code>[1 ... 1000]</code>  </p>
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../modm-fatfs/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../modm-fatfs-petit/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -4222,7 +4304,7 @@ Inputs: <code>[1 ... 1000]</code>  </p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              :fatfs
+              :fatfs.petit
             </div>
           </div>
         </a>
