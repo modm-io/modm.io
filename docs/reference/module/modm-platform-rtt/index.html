@@ -13,14 +13,14 @@
         <meta name="author" content="Niklas Hauser">
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-board-disco-f100rb/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-platform-rtt/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
     
     
       
-        <title>:board:disco-f100rb - modm barebone embedded library</title>
+        <title>:platform:rtt - modm barebone embedded library</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#stm32vldiscovery" class="md-skip">
+        <a href="#real-time-transfer-rtt" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              :board:disco-f100rb
+              :platform:rtt
             
           </span>
         </div>
@@ -845,49 +845,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          :board:disco-f100rb
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../modm-board-disco-f100rb/" class="md-nav__link">
         :board:disco-f100rb
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    Dependencies
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3403,11 +3365,83 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../modm-platform-rtt/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          :platform:rtt
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         :platform:rtt
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#accessing-data" class="md-nav__link">
+    Accessing Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bufferrx" class="md-nav__link">
+    buffer.rx
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffertx" class="md-nav__link">
+    buffer.tx
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4073,6 +4107,40 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#accessing-data" class="md-nav__link">
+    Accessing Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bufferrx" class="md-nav__link">
+    buffer.rx
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffertx" class="md-nav__link">
+    buffer.tx
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dependencies" class="md-nav__link">
     Dependencies
   </a>
@@ -4092,72 +4160,113 @@
               
                 
                 
-                <h1 id="stm32vldiscovery">STM32VLDISCOVERY<a class="headerlink" href="#stm32vldiscovery" title="Permanent link">&para;</a></h1>
-<p>lbuild module: <code>modm:board:disco-f100rb</code></p>
-<p><a href="https://www.st.com/en/evaluation-tools/stm32vldiscovery.html">Discovery kit for STM32F100</a></p>
-<p><em>This module is only available for stm32f100rbt6.</em></p>
+                <h1 id="real-time-transfer-rtt">Real Time Transfer (RTT)<a class="headerlink" href="#real-time-transfer-rtt" title="Permanent link">&para;</a></h1>
+<p>lbuild module: <code>modm:platform:rtt</code></p>
+<p>This module implements the RTT protocol compatible with OpenOCD. RTT works by
+placing multiple ring-buffers in RAM which the debugger read and writes using
+background memory accesses via SWD. It therefore works on any Cortex-M devices
+without extra pins except for the SWDCLK and SWDIO.</p>
+<p>See <a href="https://www.segger.com/jlink-rtt.html">https://www.segger.com/jlink-rtt.html</a></p>
+<p>The RTT channels are exposed as a UART interface which you can use like so:</p>
+<div class="highlight"><pre><span></span><code><span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">Rtt</span> <span class="n">rtt</span><span class="p">(</span><span class="cm">/* channel= */</span><span class="mi">0</span><span class="p">);</span>
+<span class="c1">// Access data directly via UART interface: eg. loop back</span>
+<span class="k">if</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">data</span><span class="p">;</span> <span class="n">rtt</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="n">data</span><span class="p">))</span> <span class="p">{</span> <span class="n">rtt</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">);</span> <span class="p">}</span>
+<span class="c1">// Or wrap into an IOStream for printing</span>
+<span class="n">modm</span><span class="o">::</span><span class="n">IODeviceObjectWrapper</span><span class="o">&lt;</span><span class="n">modm</span><span class="o">::</span><span class="n">platform</span><span class="o">::</span><span class="n">Rtt</span><span class="p">,</span>
+                            <span class="n">modm</span><span class="o">::</span><span class="n">IOBuffer</span><span class="o">::</span><span class="n">DiscardIfFull</span><span class="o">&gt;</span> <span class="n">rtt_device</span><span class="p">(</span><span class="n">rtt</span><span class="p">);</span>
+<span class="n">modm</span><span class="o">::</span><span class="n">IOStream</span> <span class="n">stream</span><span class="p">(</span><span class="n">rtt_device</span><span class="p">);</span>
+<span class="n">stream</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello World&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">modm</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="c1">// Reading is more annoying</span>
+<span class="kt">char</span> <span class="n">data</span><span class="p">;</span>
+<span class="n">stream</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">data</span> <span class="o">!=</span> <span class="n">modm</span><span class="o">::</span><span class="n">IOStream</span><span class="o">::</span><span class="n">eof</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* process new data */</span> <span class="p">}</span>
+</code></pre></div>
+<p>You can define the number of channels and their buffer size by setting the
+<code>buffer.tx</code> and <code>buffer.rx</code> set options. Note that you can define <em>multiple</em>
+buffer sizes indexed by channel. Here is an example of three channels:</p>
+<div class="highlight"><pre><span></span><code><span class="c">&lt;!-- Channel0: TX only with 256B buffer --&gt;</span>
+<span class="c">&lt;!-- Channel1: RX only with 128B buffer --&gt;</span>
+<span class="c">&lt;!-- Channel2: TX with 512B and RX with 64B buffer --&gt;</span>
+<span class="nt">&lt;option</span> <span class="na">name=</span><span class="s">&quot;modm:platform:rtt:buffer.tx&quot;</span><span class="nt">&gt;</span>256, 0, 512<span class="nt">&lt;/option&gt;</span>
+<span class="nt">&lt;option</span> <span class="na">name=</span><span class="s">&quot;modm:platform:rtt:buffer.rx&quot;</span><span class="nt">&gt;</span>0, 128, 64<span class="nt">&lt;/option&gt;</span>
+</code></pre></div>
+<p>You can set the buffer size to <code>0</code> if you don't want to use this channel
+direction. This won't allocate a buffer and save a little RAM.</p>
+<h2 id="accessing-data">Accessing Data<a class="headerlink" href="#accessing-data" title="Permanent link">&para;</a></h2>
+<p><a href="http://openocd.org/doc/html/General-Commands.html#Real-Time-Transfer-_0028RTT_0029">OpenOCD has built-in support for RTT</a> and modm generates a config that
+opens each RTT channel as a TCP port starting at 9090 (ie. 9090=channel 0,
+9091=channel 1, etc).</p>
+<div class="highlight"><pre><span></span><code>openocd -f modm/openocd.cfg -c modm_rtt
+</code></pre></div>
+<p>You can also call this from inside GDB via the <code>monitor</code> command:</p>
+<div class="highlight"><pre><span></span><code>(gdb) monitor modm_rtt
+rtt: Searching for control block &#39;modm.rtt.modm&#39;
+rtt: Control block found at 0x20001024
+Listening on port 9090 for rtt connections
+(gdb)
+</code></pre></div>
+<p>You can then use for example <code>telnet 127.0.0.1 9090</code> to connect to the stream.</p>
+<p>Note that this connection does not halt the target, you should therefore be able
+to use this at any point during program execution.</p>
+<p>A simple telnet client is integrated into the build system generator, however,
+it can only connect to one stream at a time (disconnect with Ctrl+D).</p>
+<div class="highlight"><pre><span></span><code> $ scons log-rtt
+╭───OpenOCD───&gt; Real Time Transfer
+╰─────RTT────── stm32f103rbt
+Info : rtt: Searching for control block &#39;modm.rtt.modm&#39;
+Info : rtt: Control block found at 0x20000008
+Listening on port 9090 for rtt connections
+loop 51
+loop 52
+loop 53
+^D
+
+ $ make log-rtt channel=0
+Info : rtt: Searching for control block &#39;modm.rtt.modm&#39;
+Info : rtt: Control block found at 0x20000008
+Listening on port 9090 for rtt connections
+loop 58
+loop 60
+loop 61
+</code></pre></div>
+<p>If you want to use this as a proper communication channel with a custom protocol
+you should implement the OpenOCD config yourself (with different ports).</p>
+<p><em>This module is only available for sam, stm32.</em></p>
+<h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
+<h4 id="bufferrx">buffer.rx<a class="headerlink" href="#bufferrx" title="Permanent link">&para;</a></h4>
+<p>Receive buffer sizes</p>
+<p>Default: <code>{0}</code><br />
+Inputs: <code>[0 ... 65536]</code>  </p>
+<h4 id="buffertx">buffer.tx<a class="headerlink" href="#buffertx" title="Permanent link">&para;</a></h4>
+<p>Transmit buffer sizes</p>
+<p>Default: <code>{512}</code><br />
+Inputs: <code>[0 ... 65536]</code>  </p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<p><svg class="deps" width="420pt" height="150pt"
- viewBox="0.00 0.00 420.00 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<p><svg class="deps" width="117pt" height="150pt"
+ viewBox="0.00 0.00 117.00 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph deps" transform="scale(1 1) rotate(0) translate(4 146)">
-<title>modm:board:disco&#45;f100rb</title>
+<title>modm:platform:rtt</title>
 <g id="node1" class="node">
-<title>modm_board_disco_f100rb</title>
-<polygon fill="lightgrey" stroke="black" stroke-width="2" points="271.5,-53 165.5,-53 165.5,0 271.5,0 271.5,-53"/>
-<text text-anchor="middle" x="218.5" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="218.5" y="-22.8" font-family="Times,serif" font-size="14.00">board:</text>
-<text text-anchor="middle" x="218.5" y="-7.8" font-family="Times,serif" font-size="14.00">disco&#45;f100rb</text>
+<title>modm_platform_rtt</title>
+<polygon fill="lightgrey" stroke="black" stroke-width="2" points="96,-53 13,-53 13,0 96,0 96,-53"/>
+<text text-anchor="middle" x="54.5" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="54.5" y="-22.8" font-family="Times,serif" font-size="14.00">platform:</text>
+<text text-anchor="middle" x="54.5" y="-7.8" font-family="Times,serif" font-size="14.00">rtt</text>
 </g>
 <g id="node2" class="node">
-<title>modm_architecture_clock</title>
+<title>modm_architecture_uart</title>
 <polygon fill="lightgrey" stroke="black" points="109,-142 0,-142 0,-89 109,-89 109,-142"/>
 <text text-anchor="middle" x="54.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
 <text text-anchor="middle" x="54.5" y="-111.8" font-family="Times,serif" font-size="14.00">architecture:</text>
-<text text-anchor="middle" x="54.5" y="-96.8" font-family="Times,serif" font-size="14.00">clock</text>
+<text text-anchor="middle" x="54.5" y="-96.8" font-family="Times,serif" font-size="14.00">uart</text>
 </g>
 <g id="edge1" class="edge">
-<title>modm_board_disco_f100rb&#45;&gt;modm_architecture_clock</title>
-<path fill="none" stroke="black" d="M170.18,-53.13C151.83,-62.87 130.75,-74.05 111.66,-84.18"/>
-<polygon fill="black" stroke="black" points="109.95,-81.12 102.76,-88.9 113.23,-87.31 109.95,-81.12"/>
-</g>
-<g id="node3" class="node">
-<title>modm_platform_clock</title>
-<polygon fill="lightgrey" stroke="black" points="210,-142 127,-142 127,-89 210,-89 210,-142"/>
-<text text-anchor="middle" x="168.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="168.5" y="-111.8" font-family="Times,serif" font-size="14.00">platform:</text>
-<text text-anchor="middle" x="168.5" y="-96.8" font-family="Times,serif" font-size="14.00">clock</text>
-</g>
-<g id="edge2" class="edge">
-<title>modm_board_disco_f100rb&#45;&gt;modm_platform_clock</title>
-<path fill="none" stroke="black" d="M203.77,-53.13C198.93,-61.55 193.47,-71.05 188.32,-80.02"/>
-<polygon fill="black" stroke="black" points="185.25,-78.34 183.3,-88.75 191.32,-81.82 185.25,-78.34"/>
-</g>
-<g id="node4" class="node">
-<title>modm_platform_core</title>
-<polygon fill="lightgrey" stroke="black" points="311,-142 228,-142 228,-89 311,-89 311,-142"/>
-<text text-anchor="middle" x="269.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="269.5" y="-111.8" font-family="Times,serif" font-size="14.00">platform:</text>
-<text text-anchor="middle" x="269.5" y="-96.8" font-family="Times,serif" font-size="14.00">core</text>
-</g>
-<g id="edge3" class="edge">
-<title>modm_board_disco_f100rb&#45;&gt;modm_platform_core</title>
-<path fill="none" stroke="black" d="M233.53,-53.13C238.46,-61.55 244.03,-71.05 249.29,-80.02"/>
-<polygon fill="black" stroke="black" points="246.33,-81.89 254.41,-88.75 252.37,-78.35 246.33,-81.89"/>
-</g>
-<g id="node5" class="node">
-<title>modm_platform_gpio</title>
-<polygon fill="lightgrey" stroke="black" points="412,-142 329,-142 329,-89 412,-89 412,-142"/>
-<text text-anchor="middle" x="370.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="370.5" y="-111.8" font-family="Times,serif" font-size="14.00">platform:</text>
-<text text-anchor="middle" x="370.5" y="-96.8" font-family="Times,serif" font-size="14.00">gpio</text>
-</g>
-<g id="edge4" class="edge">
-<title>modm_board_disco_f100rb&#45;&gt;modm_platform_gpio</title>
-<path fill="none" stroke="black" d="M263.28,-53.13C281.12,-63.34 301.73,-75.14 320.09,-85.65"/>
-<polygon fill="black" stroke="black" points="318.48,-88.76 328.9,-90.69 321.96,-82.68 318.48,-88.76"/>
+<title>modm_platform_rtt&#45;&gt;modm_architecture_uart</title>
+<path fill="none" stroke="black" d="M54.5,-53.13C54.5,-61.11 54.5,-70.07 54.5,-78.62"/>
+<polygon fill="black" stroke="black" points="51,-78.75 54.5,-88.75 58,-78.75 51,-78.75"/>
 </g>
 </g>
 </svg></p>
@@ -4183,7 +4292,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../modm-board-disco-f072rb/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../modm-platform-rcc/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -4192,19 +4301,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              :board:disco-f072rb
+              :platform:rcc
             </div>
           </div>
         </a>
       
       
-        <a href="../modm-board-disco-f303vc/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../modm-platform-socketcan/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              :board:disco-f303vc
+              :platform:socketcan
             </div>
           </div>
           <div class="md-footer__button md-icon">

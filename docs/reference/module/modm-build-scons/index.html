@@ -1528,6 +1528,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#scons-log-rtt" class="md-nav__link">
+    scons log-rtt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#scons-library" class="md-nav__link">
     scons library
   </a>
@@ -3675,6 +3682,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../modm-platform-rtt/" class="md-nav__link">
+        :platform:rtt
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../modm-platform-socketcan/" class="md-nav__link">
         :platform:socketcan
       </a>
@@ -4465,6 +4484,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#scons-log-rtt" class="md-nav__link">
+    scons log-rtt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#scons-library" class="md-nav__link">
     scons library
   </a>
@@ -4911,8 +4937,26 @@ loop: 59
 loop: 60
 loop: 61
 </code></pre></div>
-<p>See the <code>:platform:itm</code> module for details how to use the ITM as a logging
+<p>See the <code>modm:platform:itm</code> module for details how to use the ITM as a logging
 output.</p>
+<h4 id="scons-log-rtt">scons log-rtt<a class="headerlink" href="#scons-log-rtt" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>scons log-rtt [channel={int}]
+</code></pre></div>
+<p>Configures OpenOCD in RTT mode to output the chosen channel (default 0) via a
+simple telnet client. Disconnect with Ctrl+D.
+(* <em>only ARM Cortex-M targets</em>)</p>
+<div class="highlight"><pre><span></span><code> $ scons log-rtt
+╭───OpenOCD───&gt; Real Time Transfer
+╰─────RTT────── stm32f103rbt6
+Info : rtt: Searching for control block &#39;modm.rtt.modm&#39;
+Info : rtt: Control block found at 0x20000008
+loop: 57
+loop: 58
+loop: 59
+loop: 60
+loop: 61
+</code></pre></div>
+<p>See the <code>modm:platform:rtt</code> module for details how to use RTT for data transfer.</p>
 <h4 id="scons-library">scons library<a class="headerlink" href="#scons-library" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>scons library profile={debug|release}
 </code></pre></div>

@@ -1532,6 +1532,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#rtt" class="md-nav__link">
+    RTT
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3991,6 +3998,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../modm-platform-rtt/" class="md-nav__link">
+        :platform:rtt
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../modm-platform-socketcan/" class="md-nav__link">
         :platform:socketcan
       </a>
@@ -4833,6 +4852,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#rtt" class="md-nav__link">
+    RTT
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5387,7 +5413,7 @@ python3 modm/modm_tools/bmp.py path/to/project.elf -p /dev/tty.usbserial-123
 background or remotely.</p>
 <p>The tool can be called from the command line. Here is a typical use-case using
 the openocd backend with the common configuration files:</p>
-<div class="highlight"><pre><span></span><code>python3 modm/modm_tools/gdb.py path/to/project.elf -ui<span class="o">=</span>tui <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>python3 modm/modm_tools/gdb.py path/to/project.elf --ui<span class="o">=</span>tui <span class="se">\</span>
         -x modm/gdbinit -x modm/openocd_gdbinit <span class="se">\</span>
         openocd -f modm/openocd.cfg
 </code></pre></div>
@@ -5405,23 +5431,23 @@ the openocd backend with the common configuration files:</p>
 however, if you want to connect to an already running process, you can use the
 remote backend with the <code>--host={ip or hostname}</code> via the command line:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Extended-Remote running remotely</span>
-python3 modm/modm_tools/gdb.py path/to/project.elf -x modm/gdbinit -ui<span class="o">=</span>tui <span class="se">\</span>
+python3 modm/modm_tools/gdb.py path/to/project.elf -x modm/gdbinit --ui<span class="o">=</span>tui <span class="se">\</span>
         remote --host <span class="m">123</span>.45.67.89
 </code></pre></div>
 <p>Note that you can use different programmer backends to GDB:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Black Magic Probe</span>
-python3 modm/modm_tools/gdb.py path/to/project.elf -x modm/gdbinit -ui<span class="o">=</span>tui <span class="se">\</span>
+python3 modm/modm_tools/gdb.py path/to/project.elf -x modm/gdbinit --ui<span class="o">=</span>tui <span class="se">\</span>
         bmp --port /dev/tty.usbserial-123
 
 <span class="c1"># CrashDebug for Post-Mortem debugging</span>
-python3 modm/modm_tools/gdb.py path/to/project.elf -x modm/gdbinit -ui<span class="o">=</span>tui <span class="se">\</span>
+python3 modm/modm_tools/gdb.py path/to/project.elf -x modm/gdbinit --ui<span class="o">=</span>tui <span class="se">\</span>
         crashdebug --binary-path modm/ext/crashcatcher/bins --dump coredump.txt
 </code></pre></div>
 <p>(* <em>only ARM Cortex-M targets</em>)</p>
 <p>Currently two UIs are implemented for debugging:</p>
 <ul>
-<li><code>-ui=tui</code>: Text-based UI in your shell.</li>
-<li><code>-ui=web</code>: Web-based UI in your browser, based on <a href="https://www.gdbgui.com">gdbgui</a>.</li>
+<li><code>--ui=tui</code>: Text-based UI in your shell.</li>
+<li><code>--ui=web</code>: Web-based UI in your browser, based on <a href="https://www.gdbgui.com">gdbgui</a>.</li>
 </ul>
 <h4 id="text-ui">Text UI<a class="headerlink" href="#text-ui" title="Permanent link">&para;</a></h4>
 <p>This UI is builtin to GDB and is therefore always available.</p>
@@ -5587,7 +5613,12 @@ host support or additional processing steps.</p>
 <h4 id="itm">ITM<a class="headerlink" href="#itm" title="Permanent link">&para;</a></h4>
 <p>Logging via the SWO trace pin is supported via OpenOCD and the
 <code>modm:platform:itm</code> module:</p>
-<div class="highlight"><pre><span></span><code>python3 modm/modm_tools/log.py itm openocd -f modm/openocd.cfg -fcpu <span class="m">64000000</span>
+<div class="highlight"><pre><span></span><code>python3 modm/modm_tools/log.py itm openocd -f modm/openocd.cfg --fcpu <span class="m">64000000</span>
+</code></pre></div>
+<h4 id="rtt">RTT<a class="headerlink" href="#rtt" title="Permanent link">&para;</a></h4>
+<p>Logging via the RTT protocol is supported via OpenOCD and the
+<code>modm:platform:rtt</code> module:</p>
+<div class="highlight"><pre><span></span><code>python3 modm/modm_tools/log.py rtt openocd -f modm/openocd.cfg --channel <span class="m">0</span>
 </code></pre></div>
 <p>(* <em>only ARM Cortex-M targets</em>)</p>
 <h3 id="gnu-build-id">GNU Build-ID<a class="headerlink" href="#gnu-build-id" title="Permanent link">&para;</a></h3>

@@ -1495,6 +1495,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#make-log-rtt" class="md-nav__link">
+    make log-rtt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#make-library" class="md-nav__link">
     make library
   </a>
@@ -3605,6 +3612,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../modm-platform-rtt/" class="md-nav__link">
+        :platform:rtt
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../modm-platform-socketcan/" class="md-nav__link">
         :platform:socketcan
       </a>
@@ -4374,6 +4393,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#make-log-rtt" class="md-nav__link">
+    make log-rtt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#make-library" class="md-nav__link">
     make library
   </a>
@@ -4732,8 +4758,24 @@ loop: 59
 loop: 60
 loop: 61
 </code></pre></div>
-<p>See the <code>:platform:itm</code> module for details how to use the ITM as a logging
+<p>See the <code>modm:platform:itm</code> module for details how to use the ITM as a logging
 output.</p>
+<h4 id="make-log-rtt">make log-rtt<a class="headerlink" href="#make-log-rtt" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>make log-rtt [channel={int}]
+</code></pre></div>
+<p>Configures OpenOCD in RTT mode to output the chosen channel (default 0) via a
+simple telnet client. Disconnect with Ctrl+D.
+(* <em>only ARM Cortex-M targets</em>)</p>
+<div class="highlight"><pre><span></span><code> $ make log-rtt
+Info : rtt: Searching for control block &#39;modm.rtt.modm&#39;
+Info : rtt: Control block found at 0x20000008
+loop: 57
+loop: 58
+loop: 59
+loop: 60
+loop: 61
+</code></pre></div>
+<p>See the <code>modm:platform:rtt</code> module for details how to use RTT for data transfer.</p>
 <h4 id="make-library">make library<a class="headerlink" href="#make-library" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>make library profile={debug|release}
 </code></pre></div>
