@@ -13,14 +13,14 @@
         <meta name="author" content="Niklas Hauser">
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-board-disco-l152rc/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-platform-can-stm32-f0-f1-f2-f3-f4-f7-l4/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
     
     
       
-        <title>:board:disco-l152rc - modm barebone embedded library</title>
+        <title>:platform:can (stm32{f0,f1,f2,f3,f4,f7,l4}) - modm barebone embedded library</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#disco-l152rc" class="md-skip">
+        <a href="#controller-area-network-can" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              :board:disco-l152rc
+              :platform:can (stm32{f0,f1,f2,f3,f4,f7,l4})
             
           </span>
         </div>
@@ -929,49 +929,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          :board:disco-l152rc
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../modm-board-disco-l152rc/" class="md-nav__link">
         :board:disco-l152rc
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    Dependencies
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3007,11 +2969,76 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../modm-platform-can-stm32-f0-f1-f2-f3-f4-f7-l4/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          :platform:can (stm32{f0,f1,f2,f3,f4,f7,l4})
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         :platform:can (stm32{f0,f1,f2,f3,f4,f7,l4})
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bufferrx" class="md-nav__link">
+    buffer.rx
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffertx" class="md-nav__link">
+    buffer.tx
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4085,6 +4112,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bufferrx" class="md-nav__link">
+    buffer.rx
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffertx" class="md-nav__link">
+    buffer.tx
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dependencies" class="md-nav__link">
     Dependencies
   </a>
@@ -4104,72 +4158,174 @@
               
                 
                 
-                <h1 id="disco-l152rc">DISCO-L152RC<a class="headerlink" href="#disco-l152rc" title="Permanent link">&para;</a></h1>
-<p>lbuild module: <code>modm:board:disco-l152rc</code></p>
-<p><a href="https://www.st.com/en/evaluation-tools/32l152cdiscovery.html">Discovery kit for STM32L152RC</a></p>
-<p><em>This module is only available for stm32l152rct6.</em></p>
+                <h1 id="controller-area-network-can">Controller Area Network (CAN)<a class="headerlink" href="#controller-area-network-can" title="Permanent link">&para;</a></h1>
+<p>lbuild module: <code>modm:platform:can</code></p>
+<p><em>This module is only available for stm32{f0,f1,f2,f3,f4,f7,l4}.</em></p>
+<h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
+<h4 id="bufferrx">buffer.rx<a class="headerlink" href="#bufferrx" title="Permanent link">&para;</a></h4>
+<p><em>This option is only available for stm32{f0,f1,f3}.</em></p>
+<p>Default: <code>32</code><br />
+Inputs: <code>[1 .. 32 .. 65534]</code>  </p>
+<h4 id="buffertx">buffer.tx<a class="headerlink" href="#buffertx" title="Permanent link">&para;</a></h4>
+<p><em>This option is only available for stm32{f0,f1,f3}.</em></p>
+<p>Default: <code>32</code><br />
+Inputs: <code>[1 .. 32 .. 65534]</code>  </p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<p><svg class="deps" width="420pt" height="150pt"
- viewBox="0.00 0.00 420.00 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<p><svg class="deps" width="1328pt" height="150pt"
+ viewBox="0.00 0.00 1328.00 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph deps" transform="scale(1 1) rotate(0) translate(4 146)">
-<title>modm:board:disco&#45;l152rc</title>
+<title>modm:platform:can</title>
 <g id="node1" class="node">
-<title>modm_board_disco_l152rc</title>
-<polygon fill="lightgrey" stroke="black" stroke-width="2" points="270.5,-53 166.5,-53 166.5,0 270.5,0 270.5,-53"/>
-<text text-anchor="middle" x="218.5" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="218.5" y="-22.8" font-family="Times,serif" font-size="14.00">board:</text>
-<text text-anchor="middle" x="218.5" y="-7.8" font-family="Times,serif" font-size="14.00">disco&#45;l152rc</text>
+<title>modm_platform_can</title>
+<polygon fill="lightgrey" stroke="black" stroke-width="2" points="783,-53 700,-53 700,0 783,0 783,-53"/>
+<text text-anchor="middle" x="741.5" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="741.5" y="-22.8" font-family="Times,serif" font-size="14.00">platform:</text>
+<text text-anchor="middle" x="741.5" y="-7.8" font-family="Times,serif" font-size="14.00">can</text>
 </g>
 <g id="node2" class="node">
-<title>modm_architecture_clock</title>
+<title>modm_architecture_assert</title>
 <polygon fill="lightgrey" stroke="black" points="109,-142 0,-142 0,-89 109,-89 109,-142"/>
 <text text-anchor="middle" x="54.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
 <text text-anchor="middle" x="54.5" y="-111.8" font-family="Times,serif" font-size="14.00">architecture:</text>
-<text text-anchor="middle" x="54.5" y="-96.8" font-family="Times,serif" font-size="14.00">clock</text>
+<text text-anchor="middle" x="54.5" y="-96.8" font-family="Times,serif" font-size="14.00">assert</text>
 </g>
 <g id="edge1" class="edge">
-<title>modm_board_disco_l152rc&#45;&gt;modm_architecture_clock</title>
-<path fill="none" stroke="black" d="M170.18,-53.13C151.83,-62.87 130.75,-74.05 111.66,-84.18"/>
-<polygon fill="black" stroke="black" points="109.95,-81.12 102.76,-88.9 113.23,-87.31 109.95,-81.12"/>
+<title>modm_platform_can&#45;&gt;modm_architecture_assert</title>
+<path fill="none" stroke="black" d="M699.93,-27.52C600.2,-28.44 339.85,-35.94 118.99,-88.91"/>
+<polygon fill="black" stroke="black" points="118.06,-85.53 109.17,-91.3 119.71,-92.33 118.06,-85.53"/>
 </g>
 <g id="node3" class="node">
-<title>modm_platform_clock</title>
-<polygon fill="lightgrey" stroke="black" points="210,-142 127,-142 127,-89 210,-89 210,-142"/>
-<text text-anchor="middle" x="168.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="168.5" y="-111.8" font-family="Times,serif" font-size="14.00">platform:</text>
-<text text-anchor="middle" x="168.5" y="-96.8" font-family="Times,serif" font-size="14.00">clock</text>
+<title>modm_architecture_atomic</title>
+<polygon fill="lightgrey" stroke="black" points="236,-142 127,-142 127,-89 236,-89 236,-142"/>
+<text text-anchor="middle" x="181.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="181.5" y="-111.8" font-family="Times,serif" font-size="14.00">architecture:</text>
+<text text-anchor="middle" x="181.5" y="-96.8" font-family="Times,serif" font-size="14.00">atomic</text>
 </g>
 <g id="edge2" class="edge">
-<title>modm_board_disco_l152rc&#45;&gt;modm_platform_clock</title>
-<path fill="none" stroke="black" d="M203.77,-53.13C198.93,-61.55 193.47,-71.05 188.32,-80.02"/>
-<polygon fill="black" stroke="black" points="185.25,-78.34 183.3,-88.75 191.32,-81.82 185.25,-78.34"/>
+<title>modm_platform_can&#45;&gt;modm_architecture_atomic</title>
+<path fill="none" stroke="black" d="M699.91,-28.98C615.27,-32.78 417.19,-45.66 245.88,-88.9"/>
+<polygon fill="black" stroke="black" points="245.01,-85.51 236.19,-91.38 246.75,-92.29 245.01,-85.51"/>
 </g>
 <g id="node4" class="node">
-<title>modm_platform_core</title>
-<polygon fill="lightgrey" stroke="black" points="311,-142 228,-142 228,-89 311,-89 311,-142"/>
-<text text-anchor="middle" x="269.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="269.5" y="-111.8" font-family="Times,serif" font-size="14.00">platform:</text>
-<text text-anchor="middle" x="269.5" y="-96.8" font-family="Times,serif" font-size="14.00">core</text>
+<title>modm_architecture_can</title>
+<polygon fill="lightgrey" stroke="black" points="363,-142 254,-142 254,-89 363,-89 363,-142"/>
+<text text-anchor="middle" x="308.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="308.5" y="-111.8" font-family="Times,serif" font-size="14.00">architecture:</text>
+<text text-anchor="middle" x="308.5" y="-96.8" font-family="Times,serif" font-size="14.00">can</text>
 </g>
 <g id="edge3" class="edge">
-<title>modm_board_disco_l152rc&#45;&gt;modm_platform_core</title>
-<path fill="none" stroke="black" d="M233.53,-53.13C238.46,-61.55 244.03,-71.05 249.29,-80.02"/>
-<polygon fill="black" stroke="black" points="246.33,-81.89 254.41,-88.75 252.37,-78.35 246.33,-81.89"/>
+<title>modm_platform_can&#45;&gt;modm_architecture_can</title>
+<path fill="none" stroke="black" d="M699.79,-31.41C632.4,-38.38 495.54,-55.23 373.14,-88.76"/>
+<polygon fill="black" stroke="black" points="371.92,-85.47 363.23,-91.52 373.8,-92.21 371.92,-85.47"/>
 </g>
 <g id="node5" class="node">
-<title>modm_platform_gpio</title>
-<polygon fill="lightgrey" stroke="black" points="412,-142 329,-142 329,-89 412,-89 412,-142"/>
-<text text-anchor="middle" x="370.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="370.5" y="-111.8" font-family="Times,serif" font-size="14.00">platform:</text>
-<text text-anchor="middle" x="370.5" y="-96.8" font-family="Times,serif" font-size="14.00">gpio</text>
+<title>modm_architecture_clock</title>
+<polygon fill="lightgrey" stroke="black" points="490,-142 381,-142 381,-89 490,-89 490,-142"/>
+<text text-anchor="middle" x="435.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="435.5" y="-111.8" font-family="Times,serif" font-size="14.00">architecture:</text>
+<text text-anchor="middle" x="435.5" y="-96.8" font-family="Times,serif" font-size="14.00">clock</text>
 </g>
 <g id="edge4" class="edge">
-<title>modm_board_disco_l152rc&#45;&gt;modm_platform_gpio</title>
-<path fill="none" stroke="black" d="M263.28,-53.13C281.12,-63.34 301.73,-75.14 320.09,-85.65"/>
-<polygon fill="black" stroke="black" points="318.48,-88.76 328.9,-90.69 321.96,-82.68 318.48,-88.76"/>
+<title>modm_platform_can&#45;&gt;modm_architecture_clock</title>
+<path fill="none" stroke="black" d="M699.73,-36.25C652.92,-46.45 574.73,-64.69 499.89,-88.69"/>
+<polygon fill="black" stroke="black" points="498.74,-85.38 490.31,-91.8 500.9,-92.04 498.74,-85.38"/>
+</g>
+<g id="node6" class="node">
+<title>modm_architecture_delay</title>
+<polygon fill="lightgrey" stroke="black" points="617,-142 508,-142 508,-89 617,-89 617,-142"/>
+<text text-anchor="middle" x="562.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="562.5" y="-111.8" font-family="Times,serif" font-size="14.00">architecture:</text>
+<text text-anchor="middle" x="562.5" y="-96.8" font-family="Times,serif" font-size="14.00">delay</text>
+</g>
+<g id="edge5" class="edge">
+<title>modm_platform_can&#45;&gt;modm_architecture_delay</title>
+<path fill="none" stroke="black" d="M699.98,-47.68C677.45,-58.63 649.15,-72.39 624.09,-84.56"/>
+<polygon fill="black" stroke="black" points="622.49,-81.45 615.03,-88.97 625.55,-87.75 622.49,-81.45"/>
+</g>
+<g id="node7" class="node">
+<title>modm_architecture_interrupt</title>
+<polygon fill="lightgrey" stroke="black" points="744,-142 635,-142 635,-89 744,-89 744,-142"/>
+<text text-anchor="middle" x="689.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="689.5" y="-111.8" font-family="Times,serif" font-size="14.00">architecture:</text>
+<text text-anchor="middle" x="689.5" y="-96.8" font-family="Times,serif" font-size="14.00">interrupt</text>
+</g>
+<g id="edge6" class="edge">
+<title>modm_platform_can&#45;&gt;modm_architecture_interrupt</title>
+<path fill="none" stroke="black" d="M726.18,-53.13C721.15,-61.55 715.47,-71.05 710.11,-80.02"/>
+<polygon fill="black" stroke="black" points="707.02,-78.37 704.89,-88.75 713.03,-81.96 707.02,-78.37"/>
+</g>
+<g id="node8" class="node">
+<title>modm_cmsis_device</title>
+<polygon fill="lightgrey" stroke="black" points="827,-142 762,-142 762,-89 827,-89 827,-142"/>
+<text text-anchor="middle" x="794.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="794.5" y="-111.8" font-family="Times,serif" font-size="14.00">cmsis:</text>
+<text text-anchor="middle" x="794.5" y="-96.8" font-family="Times,serif" font-size="14.00">device</text>
+</g>
+<g id="edge7" class="edge">
+<title>modm_platform_can&#45;&gt;modm_cmsis_device</title>
+<path fill="none" stroke="black" d="M757.12,-53.13C762.24,-61.55 768.03,-71.05 773.5,-80.02"/>
+<polygon fill="black" stroke="black" points="770.62,-82.03 778.81,-88.75 776.6,-78.39 770.62,-82.03"/>
+</g>
+<g id="node9" class="node">
+<title>modm_debug</title>
+<polygon fill="lightgrey" stroke="black" points="910,-134.5 845,-134.5 845,-96.5 910,-96.5 910,-134.5"/>
+<text text-anchor="middle" x="877.5" y="-119.3" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="877.5" y="-104.3" font-family="Times,serif" font-size="14.00">debug</text>
+</g>
+<g id="edge8" class="edge">
+<title>modm_platform_can&#45;&gt;modm_debug</title>
+<path fill="none" stroke="black" d="M781.57,-53.13C800.29,-65.11 822.42,-79.27 840.71,-90.97"/>
+<polygon fill="black" stroke="black" points="839.04,-94.05 849.35,-96.49 842.81,-88.16 839.04,-94.05"/>
+</g>
+<g id="node10" class="node">
+<title>modm_platform_can_common</title>
+<polygon fill="lightgrey" stroke="black" points="1034.5,-142 928.5,-142 928.5,-89 1034.5,-89 1034.5,-142"/>
+<text text-anchor="middle" x="981.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="981.5" y="-111.8" font-family="Times,serif" font-size="14.00">platform:</text>
+<text text-anchor="middle" x="981.5" y="-96.8" font-family="Times,serif" font-size="14.00">can.common</text>
+</g>
+<g id="edge9" class="edge">
+<title>modm_platform_can&#45;&gt;modm_platform_can_common</title>
+<path fill="none" stroke="black" d="M783.1,-41.12C817.28,-52.48 867.13,-69.43 919.1,-88.92"/>
+<polygon fill="black" stroke="black" points="917.89,-92.21 928.48,-92.46 920.36,-85.66 917.89,-92.21"/>
+</g>
+<g id="node11" class="node">
+<title>modm_platform_gpio</title>
+<polygon fill="lightgrey" stroke="black" points="1136,-142 1053,-142 1053,-89 1136,-89 1136,-142"/>
+<text text-anchor="middle" x="1094.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="1094.5" y="-111.8" font-family="Times,serif" font-size="14.00">platform:</text>
+<text text-anchor="middle" x="1094.5" y="-96.8" font-family="Times,serif" font-size="14.00">gpio</text>
+</g>
+<g id="edge10" class="edge">
+<title>modm_platform_can&#45;&gt;modm_platform_gpio</title>
+<path fill="none" stroke="black" d="M783.45,-32.5C842.63,-40.34 953.47,-57.93 1043.5,-89 1043.6,-89.03 1043.69,-89.07 1043.79,-89.1"/>
+<polygon fill="black" stroke="black" points="1042.26,-92.26 1052.85,-92.59 1044.78,-85.73 1042.26,-92.26"/>
+</g>
+<g id="node12" class="node">
+<title>modm_platform_rcc</title>
+<polygon fill="lightgrey" stroke="black" points="1237,-142 1154,-142 1154,-89 1237,-89 1237,-142"/>
+<text text-anchor="middle" x="1195.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="1195.5" y="-111.8" font-family="Times,serif" font-size="14.00">platform:</text>
+<text text-anchor="middle" x="1195.5" y="-96.8" font-family="Times,serif" font-size="14.00">rcc</text>
+</g>
+<g id="edge11" class="edge">
+<title>modm_platform_can&#45;&gt;modm_platform_rcc</title>
+<path fill="none" stroke="black" d="M783.21,-29.46C855.9,-33.8 1010.07,-47.17 1144.28,-89"/>
+<polygon fill="black" stroke="black" points="1143.31,-92.37 1153.91,-92.06 1145.44,-85.7 1143.31,-92.37"/>
+</g>
+<g id="node13" class="node">
+<title>modm_utils</title>
+<polygon fill="lightgrey" stroke="black" points="1320,-134.5 1255,-134.5 1255,-96.5 1320,-96.5 1320,-134.5"/>
+<text text-anchor="middle" x="1287.5" y="-119.3" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="1287.5" y="-104.3" font-family="Times,serif" font-size="14.00">utils</text>
+</g>
+<g id="edge12" class="edge">
+<title>modm_platform_can&#45;&gt;modm_utils</title>
+<path fill="none" stroke="black" d="M783.12,-26.58C871.27,-25.91 1082.19,-31.1 1246.5,-89 1248.62,-89.75 1250.75,-90.62 1252.85,-91.58"/>
+<polygon fill="black" stroke="black" points="1251.4,-94.77 1261.89,-96.25 1254.62,-88.55 1251.4,-94.77"/>
 </g>
 </g>
 </svg></p>
@@ -4195,7 +4351,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../modm-board-disco-f769ni/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../modm-platform-can-stm32g4/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -4204,19 +4360,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              :board:disco-f769ni
+              :platform:can (stm32g4)
             </div>
           </div>
         </a>
       
       
-        <a href="../modm-board-disco-l476vg/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../modm-platform-can-common/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              :board:disco-l476vg
+              :platform:can.common
             </div>
           </div>
           <div class="md-footer__button md-icon">
