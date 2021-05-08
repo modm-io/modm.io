@@ -4552,13 +4552,14 @@ applications:</p>
 <li>a <code>modm/config.mk</code> file: configures the toolchain, device-specific information
   and sets up generic and special build rules based on the <code>modm:build</code> options.</li>
 <li>a <code>modm/repo.mk</code> file: contains all build rules to build the modm library.</li>
-<li>a top-level <code>Makefile</code> file: globs the application sources and provides all
-  the Makefile targets for the device-specific embedded tools.</li>
+<li>a top-level BSD-licensed <code>Makefile</code> file: globs the application sources and
+  provides all the Makefile targets for the device-specific embedded tools.</li>
 </ul>
 <p>We do not intend to serve every possible use-case with this module.
 <strong>If you need something special, write your own Makefile, maybe starting by
-modifying ours.</strong>
-Remember to set <code>modm:build:make:include_makefile</code> to <code>False</code>, so that your
+modifying ours.</strong> It is intentionally BSD-licensed so that you do not have to
+publish your changes to it.</p>
+<p>Remember to set <code>modm:build:make:include_makefile</code> to <code>False</code>, so that your
 custom <code>Makefile</code> does not get overwritten by <code>lbuild build</code>.</p>
 <div class="admonition bug">
 <p class="admonition-title">No Windows Support</p>

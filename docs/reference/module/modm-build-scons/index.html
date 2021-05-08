@@ -4692,8 +4692,8 @@ tools.</p>
 <li>a <code>modm/SConscript</code> file: configures all required SCons tools with
   the right settings (also using information from the <code>modm:build</code> module) to
   compile the modm library.</li>
-<li>a top-level <code>SConstruct</code> file: configures additional, optional tools and sets
-  up all the relevant SCons functions for your target.</li>
+<li>a top-level BSD-licensed <code>SConstruct</code> file: configures additional, optional
+  tools and sets up all the relevant SCons functions for your target.</li>
 </ul>
 <p>The <code>SConscript</code> file is self contained and does not depend on anything outside of
 the <code>modm/</code> directory. This allows it to be combined with <code>SConscript</code> of other
@@ -4701,12 +4701,13 @@ projects without clashing.</p>
 <p>In fact, if you look at your generated <code>SConstruct</code> file, you'll notice that
 it doesn't contain a lot of logic or specific data, it is only meant for calling
 the right SCons tool with the right arguments.</p>
-<p>We do not intend to serve every possible use-case with this module.
-<strong>If you need something special, write your own SConstruct file, maybe
-starting by modifying ours.</strong>
-Remember to set <code>modm:build:scons:include_sconstruct</code> to <code>False</code>, so that your
+<p>We do not intend to serve every possible use-case with this module. <strong>If you
+need something special, write your own SConstruct file, maybe starting by
+modifying ours.</strong> It is intentionally BSD-licensed so that you do not have to
+publish your changes to it.</p>
+<p>Remember to set <code>modm:build:scons:include_sconstruct</code> to <code>False</code>, so that your
 custom <code>SConstruct</code> does not get overwritten by <code>lbuild build</code>.
-See the instructions inside our generated default <code>SConstruct</code>.</p>
+See the instructions inside our generated default <code>SConstruct</code> file.</p>
 <h2 id="scons-methods">SCons Methods<a class="headerlink" href="#scons-methods" title="Permanent link">&para;</a></h2>
 <p>This module generates these SCons methods depending on the target.</p>
 <h4 id="scons">scons<a class="headerlink" href="#scons" title="Permanent link">&para;</a></h4>
