@@ -1015,6 +1015,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../modm-board-nucleo-f091rc/" class="md-nav__link">
+        :board:nucleo-f091rc
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../modm-board-nucleo-f103rb/" class="md-nav__link">
         :board:nucleo-f103rb
       </a>
@@ -4846,14 +4858,15 @@ the GNU LD documentation first.</p>
 </div>
 <h2 id="blocking-delay">Blocking Delay<a class="headerlink" href="#blocking-delay" title="Permanent link">&para;</a></h2>
 <p>The delay functions as defined by <code>modm:architecture:delay</code> are implemented via
-software loop or hardware cycle counter (via DWT-&gt;CYCCNT, not available on
-ARMv6-M devices) and have the following limitations:</p>
+software loop (ARMv6-M devices) or hardware cycle counter (via <code>DWT-&gt;CYCCNT</code> on
+ARMv7-M device) and have the following limitations expressed in cycles, which
+depends on the configured CPU frequency:</p>
 <ul>
-<li>nanosecond delay is implemented as a tight loop with better than 100ns
-  resolution and accuracy at any CPU frequency.</li>
-<li>microsecond delay has a maximum delay of 10 seconds.</li>
+<li>nanosecond delay is implemented as a tight loop with a minimum delay of &lt;20
+  cycles, a resolution of 1-4 cycles and a maximum delay of 32-bit cycles.</li>
+<li>microsecond delay has a maximum delay of 32-bit cycles.</li>
 <li>millisecond delay is implemented via <code>modm::delay_us(ms * 1000)</code>, thus also
-  has a maximum delay of 10 seconds.</li>
+  has a maximum delay of 32-bit cycles.</li>
 </ul>
 <h2 id="compiler-options">Compiler Options<a class="headerlink" href="#compiler-options" title="Permanent link">&para;</a></h2>
 <p>This module adds these architecture specific <a href="https://gcc.gnu.org/onlinedocs/gcc/Option-Summary.html">compiler options</a>:</p>

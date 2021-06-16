@@ -1053,6 +1053,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../modm-board-nucleo-f091rc/" class="md-nav__link">
+        :board:nucleo-f091rc
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../modm-board-nucleo-f103rb/" class="md-nav__link">
         :board:nucleo-f103rb
       </a>
@@ -4199,6 +4211,16 @@ hardware-init time.</p>
 to you is to delay for <em>at least</em> the specified time. Note that invocation of
 interrupts during spinning may add delay too. For additional limitations also
 check the description of the <code>modm:platform:core</code> modules.</p>
+<p>Please note that the delay these functions provide is defined as the time from
+invocation to the time of execution return. Obviously no delay beyond that is
+considered, which may require you to use shorter delays to compensate for the
+overhead of your code:</p>
+<div class="highlight"><pre><span></span><code><span class="k">do</span> <span class="c1">// GpioA4 toggling takes longer than 500ns because:</span>
+<span class="p">{</span>
+    <span class="n">modm</span><span class="o">::</span><span class="n">delay_ns</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span> <span class="c1">// takes ~500ns</span>
+    <span class="n">GpioA4</span><span class="o">::</span><span class="n">toggle</span><span class="p">();</span>    <span class="c1">// takes a few cycles</span>
+<span class="p">}</span> <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>              <span class="c1">// jump back to loop also takes a few cycles</span>
+</code></pre></div>
 <p>You should always prefer Software Timers (see <code>modm:processing:timer</code>) over
 these <em>blocking</em> delay functions. However, when <code>modm::Clock</code> is not set up yet,
 or when you need very small delays (for example to bit-bang a protocol), you
