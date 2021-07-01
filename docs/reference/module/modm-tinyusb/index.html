@@ -4370,8 +4370,8 @@ manually depend on the device classes you want to implement:</p>
 <span class="nt">&lt;module&gt;</span>modm:tinyusb:device:usbtmc<span class="nt">&lt;/module&gt;</span>
 </code></pre></div>
 <p>Some of these classes require a lot of configuration that you must provide via
-the <code>&lt;tusb_config_local.h&gt;</code> file. See the class module descriptions for these
-configurations and consult the TinyUSB documentation for their purpose.</p>
+the <code>&lt;tusb_config_local.h&gt;</code> file. Please consult the TinyUSB documentation and
+examples for their purpose.</p>
 <h2 id="initializing-usb">Initializing USB<a class="headerlink" href="#initializing-usb" title="Permanent link">&para;</a></h2>
 <p>The <code>modm:platform:usb</code> module provides the correct way of initializing the USB
 peripheral, however, you must connect the right signals too:</p>
@@ -4387,7 +4387,8 @@ peripheral, however, you must connect the right signals too:</p>
 <span class="n">USB_OTG_FS</span><span class="o">-&gt;</span><span class="n">GCCFG</span> <span class="o">|=</span> <span class="n">USB_OTG_GCCFG_VBDEN</span><span class="p">;</span>
 </code></pre></div>
 <p>Note that depending on your specific hardware setup, you may need to fiddle
-around to find the right VBus sensing mechanism.</p>
+around to find the right VBus sensing mechanism. Please look at the TinyUSB
+board definitions and examples for inspiration.</p>
 <div class="admonition warning">
 <p class="admonition-title">USB shares resources with CAN</p>
 <p>Note that on STM32F1 and STM32F3 the USB interrupts and RAM are shared with CAN,
