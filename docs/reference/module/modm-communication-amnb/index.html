@@ -36,8 +36,8 @@
       
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700%7CUbuntu+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Ubuntu";--md-code-font-family:"Ubuntu Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Ubuntu";--md-code-font-family:"Roboto Mono"}</style>
       
     
     
@@ -1670,22 +1670,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#protocol-structure" class="md-nav__link">
-    Protocol Structure
+  <a href="#electrical-configuration" class="md-nav__link">
+    Electrical Configuration
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#message-types" class="md-nav__link">
-    Message Types
+  <a href="#subscription-and-response-handlers" class="md-nav__link">
+    Subscription and Response Handlers
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#electrical-characteristics" class="md-nav__link">
-    Electrical characteristics
+  <a href="#publish-and-request-node" class="md-nav__link">
+    Publish and Request Node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wire-format" class="md-nav__link">
+    Wire Format
   </a>
   
 </li>
@@ -4198,22 +4205,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#protocol-structure" class="md-nav__link">
-    Protocol Structure
+  <a href="#electrical-configuration" class="md-nav__link">
+    Electrical Configuration
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#message-types" class="md-nav__link">
-    Message Types
+  <a href="#subscription-and-response-handlers" class="md-nav__link">
+    Subscription and Response Handlers
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#electrical-characteristics" class="md-nav__link">
-    Electrical characteristics
+  <a href="#publish-and-request-node" class="md-nav__link">
+    Publish and Request Node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wire-format" class="md-nav__link">
+    Wire Format
   </a>
   
 </li>
@@ -4260,53 +4274,236 @@
                 
                 <h1 id="asynchronous-multi-node-bus-amnb">Asynchronous Multi-Node Bus (AMNB)<a class="headerlink" href="#asynchronous-multi-node-bus-amnb" title="Permanent link">&para;</a></h1>
 <p>lbuild module: <code>modm:communication:amnb</code></p>
-<p>The AMNB (**A**synchronous **M**ulti-**N**ode **B**us) is a multi-master bus
-system, using p-persistent CSMA/CD to send messages.</p>
-<p>One bus can be populated with up to 256 (logical) nodes. The nodes can be
-queried for data and they will respond like an SAB Slave, and can query data
-from other nodes like an SAB Master, or they can just broadcast a message. Each
-node can listen to all the responses and broadcasts and store that information
-for its purpose.</p>
-<p>Action callbacks to query requests can be defined as well as universal callbacks
-to any transmitted messaged (Listener callbacks). As an optional advanced
-feature, error handling callbacks can also be defined, which fire if messages
-have not been able to be sent, or requests timed out or misbehaved in other
-manners, or other nodes query unavailable information.</p>
-<h2 id="protocol-structure">Protocol Structure<a class="headerlink" href="#protocol-structure" title="Permanent link">&para;</a></h2>
-<p>Message without data:</p>
+<p>The AMNB (Asynchronous Multi-Node Bus) is a RPC communication system over a
+shared half-duplex UART bus. It is intended as a low-cost replacement for higher
+level protocols like CAN or Ethernet, which are not available in every device
+unlike UART.</p>
+<p>A node can provide two communication services, each with an 8-bit ID:</p>
 <ul>
-<li><code>SYNC</code>: Synchronization sequence.</li>
+<li>publish/subscribe: sent to everyone and received by anyone.</li>
+<li>request/response: sent to one node which then sends a response.</li>
+</ul>
+<p>Messages support up to 28 bytes of in-place data, and up to 8kB of heap data and
+are protected with 8-bit and 16-bit CCIT CRC sums. The receiving node can refuse
+to allocate any data, which will discard messages with &gt;28B payload, or define a
+dynamic allocation threshold (for example &lt;=1kB) above which the message will
+also be refused. This allows devices with very little RAM resources to share the
+same bus and same protocol as larger devices.</p>
+<p>Nodes are identified with a unique 8-bit address. The protocol does not define a
+central node, so any node can initiate communication as arbitration is provided
+via a CSMA/CD mechanism, with the retransmission count and backoff time
+controlled by the service ID, with higher IDs having higher priority.</p>
+<p>Data serialization is done by copying their memory representation and are
+described as C/C++ types which must be available for both the sender and
+receiver, for example, in the form of shared header files. The types must be
+trivially constructable, since no constructor (or destructor) is called.</p>
+<h2 id="electrical-configuration">Electrical Configuration<a class="headerlink" href="#electrical-configuration" title="Permanent link">&para;</a></h2>
+<p>The protocol requires an open-drain + pullup config on the UART TX pin and an
+input + pullup config on the RX pin. Additionally, a loopback from TX to RX is
+required so that collisions can be detected.</p>
+<p>There are three bus configurations:</p>
+<ol>
+<li>Some UART peripherals have a built-in half-duplex mode, where the TX/RX pins
+   are connected internally. The bus is just one pin now with an external pullup
+   or if you use internal pullups with a slow baudrate, zero external
+   components.</li>
+</ol>
+<div class="highlight"><pre><span></span><code> ┌────────┐  ┌────────┐  ┌────────┐
+ │  Node  │  │  Node  │  │  Node  │
+ │  TxRx  │  │  TxRx  │  │  TxRx  │
+ └───┬────┘  └───┬────┘  └───┬────┘
+     └───────────┴───────────┘
+</code></pre></div>
+<ol>
+<li>Alternately you can connect all TX pins and RX pins together in two separate
+   lines and <a href="https://www.mikrocontroller.net/attachment/28831/siemens_AP2921.pdf">use a diode from RX -&gt;- TX to create the loopback</a> with
+   internal or external pullups:</li>
+</ol>
+<div class="highlight"><pre><span></span><code> ┌────────┐  ┌────────┐  ┌────────┐
+ │  Node  │  │  Node  │  │  Node  │
+ │ Tx  Rx │  │ Tx  Rx │  │ Tx  Rx │
+ └─┬───┬──┘  └─┬───┬──┘  └─┬───┬──┘
+   │   └───────┼───┴───────┼───┘
+   └───────────┴───────────┘─◄─┘  &lt;- diode
+</code></pre></div>
+<ol>
+<li>And lastly you can use a differential transceiver with automatic direction
+   control (like a CAN transceiver) to connect nodes that are further away.
+   Note that you can still connect local nodes before the transceiver (but
+   without the diode now):</li>
+</ol>
+<div class="highlight"><pre><span></span><code> ┌────────┐  ┌────────┐                               ┌────────┐
+ │  Node  │  │  Node  │                               │  Node  │
+ │ Tx  Rx │  │ Tx  Rx │                               │ Tx  Rx │
+ └─┬───┬──┘  └─┬───┬──┘  ┌────────┐       ┌────────┐  └─┬───┬──┘
+   │   └───────┼───┴─────┤ Trans- ╞═╦═╦═╦═╡ Trans- ├────┼───┘
+   └───────────┴─────────┤ ceiver ╞═╩═╩═╩═╡ ceiver ├────┘
+                         └────────┘       └────────┘
+</code></pre></div>
+<p>Note that small glitches on the bus can be interpreted as a UART start condition
+and will trigger a byte reception. In order to recognize this, the UART must be
+configured as 8 data bits and 1 <strong>even</strong> parity bit (9E1)!</p>
+<div class="highlight"><pre><span></span><code><span class="n">Uart</span><span class="o">::</span><span class="n">initialize</span><span class="o">&lt;</span><span class="n">SystemClock</span><span class="p">,</span> <span class="n">Baudrate</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Uart</span><span class="o">::</span><span class="n">Parity</span><span class="o">::</span><span class="n">Even</span><span class="p">,</span> <span class="n">Uart</span><span class="o">::</span><span class="n">WordLength</span><span class="o">::</span><span class="n">Bit9</span><span class="p">);</span>
+<span class="n">Uart</span><span class="o">::</span><span class="n">connect</span><span class="o">&lt;</span><span class="n">GpioRx</span><span class="o">::</span><span class="n">Rx</span><span class="p">,</span> <span class="n">GpioTx</span><span class="o">::</span><span class="n">Tx</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Gpio</span><span class="o">::</span><span class="n">InputType</span><span class="o">::</span><span class="n">PullUp</span><span class="p">,</span> <span class="n">Gpio</span><span class="o">::</span><span class="n">OutputType</span><span class="o">::</span><span class="n">OpenDrain</span><span class="p">);</span>
+<span class="n">GpioTx</span><span class="o">::</span><span class="n">configure</span><span class="p">(</span><span class="n">Gpio</span><span class="o">::</span><span class="n">InputType</span><span class="o">::</span><span class="n">PullUp</span><span class="p">);</span> <span class="c1">// if using internal pullups</span>
+</code></pre></div>
+<h2 id="subscription-and-response-handlers">Subscription and Response Handlers<a class="headerlink" href="#subscription-and-response-handlers" title="Permanent link">&para;</a></h2>
+<p>A list of the types <code>modm::amnb::Listener</code> and <code>modm::amnb::Action</code> store the
+callbacks for the IDs you want to subscribe to. The callbacks store a closure up
+to size <code>MODM_AMNB_HANDLER_STORAGE</code>, which can be overwritten to increase
+storage. The argument type is deduced from the callback's signature and it must
+match the message size otherwise the message is discarded.</p>
+<div class="admonition warning">
+<p class="admonition-title">Data lifetime ends after callback</p>
+<p>The received message is deallocated immediately after all callback have been
+executed. You must therefore copy any data you want to keep inside the
+callback.</p>
+</div>
+<p>All listeners are given the sender ID as first argument and return nothing.
+The second argument is optional and may be a type passed as const reference or
+a const data buffer:</p>
+<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="k">namespace</span> <span class="n">modm</span><span class="o">::</span><span class="n">amnb</span><span class="p">;</span>
+
+<span class="n">Listener</span> <span class="n">listeners</span><span class="p">[]</span> <span class="o">=</span>
+<span class="p">{</span>
+    <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="p">[](</span><span class="kt">uint8_t</span> <span class="n">sender</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// a broadcast without payload</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="p">[](</span><span class="kt">uint8_t</span> <span class="n">sender</span><span class="p">,</span> <span class="k">const</span> <span class="n">ArgumentType</span><span class="o">&amp;</span> <span class="n">arg</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// a broadcast with an argument</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="n">obj_ptr</span><span class="p">](</span><span class="kt">uint8_t</span> <span class="n">sender</span><span class="p">,</span> <span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">length</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// a broadcast with a variable length memory buffer</span>
+            <span class="c1">// forward to member function of a specific object</span>
+            <span class="n">obj_ptr</span><span class="o">-&gt;</span><span class="n">member_function</span><span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">length</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="c1">// You can have multiple listeners on the same ID *with a closure*</span>
+    <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="n">count</span> <span class="o">=</span> <span class="kt">uint32_t</span><span class="p">(</span><span class="mi">0</span><span class="p">)](</span><span class="kt">uint8_t</span> <span class="n">sender</span><span class="p">)</span> <span class="k">mutable</span>
+        <span class="p">{</span>
+            <span class="c1">// keeps track how many times it has been published</span>
+            <span class="n">MODM_LOG_DEBUG</span> <span class="s">&quot;ID0 count=&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">count</span><span class="o">++</span> <span class="o">&lt;&lt;</span> <span class="n">modm</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Actions don't know the sender, and are passed either nothing, a const argument
+reference or a const data buffer. They can return a <code>modm::amnb::Response</code> with
+an optional return type, or a <code>modm::amnb::ErrorResponse</code> with an optional user
+error type. Not returning anything still sends an implicit (good) Response.</p>
+<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="k">namespace</span> <span class="n">modm</span><span class="o">::</span><span class="n">amnb</span><span class="p">;</span>
+
+<span class="n">Action</span> <span class="n">actions</span><span class="p">[]</span> <span class="o">=</span>
+<span class="p">{</span>
+    <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="p">[]()</span>
+        <span class="p">{</span>
+            <span class="c1">// request without payload, automatic good reponse</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="p">[]()</span> <span class="o">-&gt;</span> <span class="n">Response</span>
+        <span class="p">{</span>
+            <span class="c1">// return user error or response without payloads</span>
+            <span class="k">return</span> <span class="n">failure</span> <span class="o">?</span> <span class="n">ErrorReponse</span><span class="p">()</span> <span class="o">:</span> <span class="n">Response</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="p">[](</span><span class="k">const</span> <span class="n">ArgumentType</span><span class="o">&amp;</span> <span class="n">arg</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Response</span>
+        <span class="p">{</span>
+            <span class="c1">// return user return type</span>
+            <span class="n">ReturnType</span> <span class="n">return_arg</span> <span class="o">=</span> <span class="p">...;</span>
+            <span class="k">return</span> <span class="n">return_arg</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="p">[](</span><span class="k">const</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">length</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Response</span>
+        <span class="p">{</span>
+            <span class="c1">// return user error code</span>
+            <span class="k">return</span> <span class="nf">ErrorResponse</span><span class="p">(</span><span class="n">UserErrorType</span><span class="p">());</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div>
+<h2 id="publish-and-request-node">Publish and Request Node<a class="headerlink" href="#publish-and-request-node" title="Permanent link">&para;</a></h2>
+<p>The node class manages the whole stack via its <code>update()</code> function which must
+be called in the main loop continuously.</p>
+<p>To broadcast, the <code>node.broadcast(id, args)</code> function places the message in the
+transmit queue, the size of which you can control. It returns false if the queue
+is full.</p>
+<p>Requests <code>node.request&lt;ReturnType=void&gt;(id, args)</code> must be made from within a
+protothread, since they can take some time. The response is a
+<code>modm::amnb::Result</code> object, which contains the result, system error and user
+error.</p>
+<p>Note that if a request returns a user error type, you must define it as
+<code>node.request&lt;ReturnType, UserErrorType&gt;(id, args)</code> and then explicitly check
+for it via <code>response.hasUserError()</code>. Note that the request itself may fail at a
+system level, for example sending a request with a payload too large for the
+receiver will return with a <code>modm::amnb::Error::RequestAllocationFailed</code> error.</p>
+<div class="admonition warning">
+<p class="admonition-title">Result lifetime only valid until node.update()</p>
+<p>The result is only valid until the next call to <code>node.update()</code>, therefore
+you must copy the result into your own storage!</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Do not use <code>RF_CALL_BLOCKING</code> for requests!</p>
+<p><code>node.update()</code> must be called during requests to service the protocol and
+<code>RF_CALL_BLOCKING(node.request(...))</code> won't call it, creating a deadlock!</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="k">namespace</span> <span class="n">modm</span><span class="o">::</span><span class="n">amnb</span><span class="p">;</span>
+
+<span class="n">DeviceWrapper</span><span class="o">&lt;</span><span class="n">Usart1</span><span class="o">&gt;</span> <span class="n">device</span><span class="p">;</span>
+<span class="n">Node</span><span class="o">&lt;</span><span class="cm">/* TX msg queue size =*/</span><span class="mi">10</span><span class="p">,</span> <span class="cm">/* max heap allocation = */</span><span class="mi">1024</span><span class="o">&gt;</span>
+    <span class="n">node</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="cm">/*address=*/</span><span class="mh">0x10</span><span class="p">,</span> <span class="n">actions</span><span class="p">,</span> <span class="n">listeners</span><span class="p">);</span>
+
+
+<span class="c1">// Broadcasts are buffered in a transmit queue</span>
+<span class="n">node</span><span class="p">.</span><span class="n">broadcast</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>                     <span class="c1">// no payload</span>
+<span class="n">node</span><span class="p">.</span><span class="n">broadcast</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">ArgumentType</span><span class="p">());</span>     <span class="c1">// with argument</span>
+<span class="n">node</span><span class="p">.</span><span class="n">broadcast</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">data</span><span class="p">));</span> <span class="c1">// with memory buffer</span>
+
+
+<span class="c1">// Responses must be called from within a protothread</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">PT_CALL</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">request</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<span class="c1">// The request may fail, in that case check the error</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">not</span> <span class="n">response</span><span class="p">)</span> <span class="n">Error</span> <span class="n">error</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">error</span><span class="p">();</span>
+
+<span class="c1">// Responses can also be called from within a resumable function</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">RF_CALL</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">request</span><span class="o">&lt;</span><span class="n">ReturnType</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">ArgumentType</span><span class="p">()));</span>
+<span class="c1">// The response is temporary, copy it before the next call to node.update()</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="n">ReturnType</span> <span class="n">result</span> <span class="o">=</span> <span class="o">*</span><span class="n">response</span><span class="p">;</span>
+
+<span class="c1">// User Error types must be declared</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">RF_CALL</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="n">request</span><span class="o">&lt;</span><span class="n">ReturnType</span><span class="p">,</span> <span class="n">UserErrorType</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">data</span><span class="p">)));</span>
+<span class="c1">// The user error must be checked for explicitly now</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="n">ReturnType</span> <span class="n">result</span> <span class="o">=</span> <span class="o">*</span><span class="n">response</span><span class="p">;</span>
+<span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">hasUserError</span><span class="p">())</span>
+    <span class="n">UserErrorType</span> <span class="n">error</span> <span class="o">=</span> <span class="o">*</span><span class="n">response</span><span class="p">.</span><span class="n">userError</span><span class="p">();</span>
+<span class="k">else</span> <span class="n">Error</span> <span class="n">error</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="n">error</span><span class="p">();</span>
+
+
+<span class="c1">/// node.update() must be called as often as possible!</span>
+<span class="k">while</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">node</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="wire-format">Wire Format<a class="headerlink" href="#wire-format" title="Permanent link">&para;</a></h2>
+<p>There are three message formats:</p>
+<ol>
+<li>Messages without payload</li>
+<li>Messages with payloads up to 28B</li>
+<li>Messages with payloads up to 8kB</li>
+</ol>
+<p>The header contains these common fields:</p>
+<ul>
+<li><code>SYNC</code>: Synchronization sequence</li>
 <li><code>CRC8</code>: checksum for the header</li>
-<li><code>ADDR</code>: Node address.</li>
-<li><code>TYPE</code>: Message type .</li>
-<li><code>COMMAND</code>: Command code.</li>
+<li><code>ADDR</code>: Node address (sender or receiver)</li>
+<li><code>COMMAND</code>: Command code (listener/action ID)</li>
+<li><code>TYPE</code>: Message type (upper 3 bits)</li>
 </ul>
-<div class="highlight"><pre><span></span><code>  1  2    3      4        5       6
-+------+------+------+---------+------+
-| SYNC | CRC8 | ADDR | COMMAND | TYPE |
-+------+------+------+---------+------+
-</code></pre></div>
-<p>Message with &lt;=28B data:</p>
-<ul>
-<li><code>CRC8</code>: checksum for the header and data.</li>
-<li><code>TYPE/LENGTH</code>: Message type and length.</li>
-</ul>
-<div class="highlight"><pre><span></span><code>  1  2    3      4        5           6         7      ...
-+------+------+------+---------+-------------+--------------------+
-| SYNC | CRC8 | ADDR | COMMAND | TYPE/LENGTH | ... &lt;=28B DATA ... |
-+------+------+------+---------+-------------+--------------------+
-</code></pre></div>
-<p>Message with &lt;8kB data:</p>
-<ul>
-<li><code>CRC16</code>: checksum for the data.</li>
-<li><code>DATA</code>: Up to 8kB payload (nodes may support <em>much</em> less though!)</li>
-</ul>
-<div class="highlight"><pre><span></span><code>  1  2    3      4        5       6      7   8   9  10    11    ...
-+------+------+------+---------+------+--------+-------+-------------------+
-| SYNC | CRC8 | ADDR | COMMAND | TYPE | LENGTH | CRC16 | ... &lt;8kB DATA ... |
-+------+------+------+---------+------+--------+-------+-------------------+
-</code></pre></div>
-<h2 id="message-types">Message Types<a class="headerlink" href="#message-types" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -4317,38 +4514,58 @@ manners, or other nodes query unavailable information.</p>
 <tbody>
 <tr>
 <td align="center">000</td>
-<td align="left">Data broadcast by a node</td>
+<td align="left">Broadcast</td>
 </tr>
 <tr>
 <td align="center">010</td>
-<td align="left">Data request by a node</td>
+<td align="left">Request</td>
+</tr>
+<tr>
+<td align="center">011</td>
+<td align="left">Response</td>
 </tr>
 <tr>
 <td align="center">100</td>
-<td align="left">Negative response from the node (NACK)</td>
+<td align="left">System Error</td>
 </tr>
 <tr>
 <td align="center">101</td>
-<td align="left">Positive response from the node (ACK)</td>
+<td align="left">User Error</td>
 </tr>
 </tbody>
 </table>
-<p>When transmitting, the <em>second bit</em> determines, whether or not to expect an
-answer from the addressed node. To just send information without any need for
-acknowledgment, use a broadcast.</p>
-<p>When a node is responding, the <em>second bit</em> has the following meaning:</p>
+<p>Note that there are two sync bytes prefixed to every messages, since the UART
+hardware in most devices does not signal when it is receiving, therefore
+collision avoidance it not possible for the first byte, only collision detection
+and only <em>after</em> the first byte has been sent. The second byte acts as a
+"detection buffer" in case another node starts sending during the first byte.</p>
+<div class="highlight"><pre><span></span><code>  1  2    3      4        5       6
+┌──────┬──────┬──────┬─────────┬──────┐
+│ SYNC │ CRC8 │ ADDR │ COMMAND │ TYPE │
+└──────┴──────┴──────┴─────────┴──────┘
+</code></pre></div>
+<p>Messages with &lt;=28B data:</p>
 <ul>
-<li><code>true</code>: Message is an positive response and may contain a payload</li>
-<li><code>false</code>: Message signals an error condition and carries only one byte of
-           payload. This byte is an error code.</li>
+<li><code>CRC8</code>: checksum for the header <em>and</em> data</li>
+<li><code>TYPE/LENGTH</code>: Message type (upper 3 bits) and length (lower 5 bits) &lt;= 28</li>
 </ul>
-<h2 id="electrical-characteristics">Electrical characteristics<a class="headerlink" href="#electrical-characteristics" title="Permanent link">&para;</a></h2>
-<p>Between different boards CAN transceivers are used. Compared to RS485 the CAN
-transceivers have the advantage to work without a separate direction input. You
-can just connected the transceiver directly to the UART of your microcontroller.
-These are identical to the SAB CAN electrical characteristics. You have to use
-the CAN transceivers, otherwise it cannot be determined, if the bus is busy or
-available for transmission.</p>
+<div class="highlight"><pre><span></span><code>  1  2    3      4        5           6         7      ...
+┌──────┬──────┬──────┬─────────┬─────────────┬────────────────────┐
+│ SYNC │ CRC8 │ ADDR │ COMMAND │ TYPE/LENGTH │ ... &lt;=28B DATA ... │
+└──────┴──────┴──────┴─────────┴─────────────┴────────────────────┘
+</code></pre></div>
+<p>Messages with &lt;8kB data:</p>
+<ul>
+<li><code>TYPE</code>: lower 5 bits &gt;28</li>
+<li><code>LENGTH</code>: &gt;28 and &lt;8k</li>
+<li><code>CRC16</code>: checksum for the data</li>
+<li><code>DATA</code>: Up to 8kB payload (nodes may support <em>much</em> less though!)</li>
+</ul>
+<div class="highlight"><pre><span></span><code>  1  2    3      4        5       6      7   8   9  10    11    ...
+┌──────┬──────┬──────┬─────────┬──────┬────────┬───────┬───────────────────┐
+│ SYNC │ CRC8 │ ADDR │ COMMAND │ TYPE │ LENGTH │ CRC16 │ ... &lt;8kB DATA ... │
+└──────┴──────┴──────┴─────────┴──────┴────────┴───────┴───────────────────┘
+</code></pre></div>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <h4 id="with_heap">with_heap<a class="headerlink" href="#with_heap" title="Permanent link">&para;</a></h4>
 <p>Allow large messages to allocate on the heap.</p>
@@ -4358,16 +4575,16 @@ Inputs: <code>[True, False]</code>  </p>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<p><svg class="deps" width="408pt" height="150pt"
- viewBox="0.00 0.00 408.00 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<p><svg class="deps" width="492pt" height="150pt"
+ viewBox="0.00 0.00 491.50 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph deps" transform="scale(1 1) rotate(0) translate(4 146)">
 <title>modm:communication:amnb</title>
 <g id="node1" class="node">
 <title>modm_communication_amnb</title>
-<polygon fill="lightgrey" stroke="black" stroke-width="2" points="250,-53 120,-53 120,0 250,0 250,-53"/>
-<text text-anchor="middle" x="185" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="185" y="-22.8" font-family="Times,serif" font-size="14.00">communication:</text>
-<text text-anchor="middle" x="185" y="-7.8" font-family="Times,serif" font-size="14.00">amnb</text>
+<polygon fill="lightgrey" stroke="black" stroke-width="2" points="300,-53 170,-53 170,0 300,0 300,-53"/>
+<text text-anchor="middle" x="235" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="235" y="-22.8" font-family="Times,serif" font-size="14.00">communication:</text>
+<text text-anchor="middle" x="235" y="-7.8" font-family="Times,serif" font-size="14.00">amnb</text>
 </g>
 <g id="node2" class="node">
 <title>modm_container</title>
@@ -4377,8 +4594,8 @@ Inputs: <code>[True, False]</code>  </p>
 </g>
 <g id="edge1" class="edge">
 <title>modm_communication_amnb&#45;&gt;modm_container</title>
-<path fill="none" stroke="black" d="M142.87,-53.13C123.01,-65.22 99.49,-79.53 80.16,-91.29"/>
-<polygon fill="black" stroke="black" points="78.32,-88.31 71.6,-96.49 81.96,-94.29 78.32,-88.31"/>
+<path fill="none" stroke="black" d="M173.86,-53.11C148.68,-63.88 119.3,-76.74 93,-89 90.96,-89.95 88.88,-90.94 86.78,-91.94"/>
+<polygon fill="black" stroke="black" points="85.02,-88.9 77.55,-96.42 88.07,-95.2 85.02,-88.9"/>
 </g>
 <g id="node3" class="node">
 <title>modm_math_utils</title>
@@ -4389,8 +4606,8 @@ Inputs: <code>[True, False]</code>  </p>
 </g>
 <g id="edge2" class="edge">
 <title>modm_communication_amnb&#45;&gt;modm_math_utils</title>
-<path fill="none" stroke="black" d="M170.27,-53.13C165.43,-61.55 159.97,-71.05 154.82,-80.02"/>
-<polygon fill="black" stroke="black" points="151.75,-78.34 149.8,-88.75 157.82,-81.82 151.75,-78.34"/>
+<path fill="none" stroke="black" d="M205.54,-53.13C195.15,-62.17 183.34,-72.45 172.39,-81.97"/>
+<polygon fill="black" stroke="black" points="169.84,-79.55 164.6,-88.75 174.44,-84.83 169.84,-79.55"/>
 </g>
 <g id="node4" class="node">
 <title>modm_processing_resumable</title>
@@ -4401,8 +4618,8 @@ Inputs: <code>[True, False]</code>  </p>
 </g>
 <g id="edge3" class="edge">
 <title>modm_communication_amnb&#45;&gt;modm_processing_resumable</title>
-<path fill="none" stroke="black" d="M199.73,-53.13C204.57,-61.55 210.03,-71.05 215.18,-80.02"/>
-<polygon fill="black" stroke="black" points="212.18,-81.82 220.2,-88.75 218.25,-78.34 212.18,-81.82"/>
+<path fill="none" stroke="black" d="M235,-53.13C235,-61.11 235,-70.07 235,-78.62"/>
+<polygon fill="black" stroke="black" points="231.5,-78.75 235,-88.75 238.5,-78.75 231.5,-78.75"/>
 </g>
 <g id="node5" class="node">
 <title>modm_processing_timer</title>
@@ -4413,8 +4630,19 @@ Inputs: <code>[True, False]</code>  </p>
 </g>
 <g id="edge4" class="edge">
 <title>modm_communication_amnb&#45;&gt;modm_processing_timer</title>
-<path fill="none" stroke="black" d="M233.91,-53.13C252.48,-62.87 273.82,-74.05 293.14,-84.18"/>
-<polygon fill="black" stroke="black" points="291.67,-87.36 302.16,-88.9 294.92,-81.16 291.67,-87.36"/>
+<path fill="none" stroke="black" d="M269.18,-53.13C281.46,-62.34 295.46,-72.85 308.37,-82.53"/>
+<polygon fill="black" stroke="black" points="306.57,-85.55 316.67,-88.75 310.77,-79.95 306.57,-85.55"/>
+</g>
+<g id="node6" class="node">
+<title>modm_utils</title>
+<polygon fill="lightgrey" stroke="black" points="483.5,-134.5 418.5,-134.5 418.5,-96.5 483.5,-96.5 483.5,-134.5"/>
+<text text-anchor="middle" x="451" y="-119.3" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="451" y="-104.3" font-family="Times,serif" font-size="14.00">utils</text>
+</g>
+<g id="edge5" class="edge">
+<title>modm_communication_amnb&#45;&gt;modm_utils</title>
+<path fill="none" stroke="black" d="M300.32,-47.05C333.52,-57.87 374.11,-72.46 409,-89 410.59,-89.75 412.2,-90.55 413.81,-91.38"/>
+<polygon fill="black" stroke="black" points="412.52,-94.67 422.97,-96.4 415.88,-88.53 412.52,-94.67"/>
 </g>
 </g>
 </svg></p>
