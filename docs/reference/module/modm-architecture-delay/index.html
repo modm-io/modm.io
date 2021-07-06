@@ -4195,6 +4195,7 @@ the compiler to choose the optimal implementation for you:</p>
 <span class="n">modm</span><span class="o">::</span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="n">ns</span><span class="p">);</span>
 <span class="n">modm</span><span class="o">::</span><span class="n">delay</span><span class="p">(</span><span class="mi">200u</span><span class="n">s</span><span class="p">);</span>
 <span class="n">modm</span><span class="o">::</span><span class="n">delay</span><span class="p">(</span><span class="mi">300</span><span class="n">ms</span><span class="p">);</span>
+<span class="n">modm</span><span class="o">::</span><span class="n">delay</span><span class="p">(</span><span class="mi">400</span><span class="n">s</span><span class="p">);</span>
 </code></pre></div>
 <p>In order to not require wild casting around of values, there are also three
 overloads for (unsigned) integer values. These are particularly useful for when
@@ -4209,8 +4210,12 @@ hardware-init time.</p>
 <h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
 <p>The main limitations are accuracy and length of delay. The only guarantee given
 to you is to delay for <em>at least</em> the specified time. Note that invocation of
-interrupts during spinning may add delay too. For additional limitations also
-check the description of the <code>modm:platform:core</code> modules.</p>
+interrupts during spinning may add delay too.</p>
+<ul>
+<li><code>modm::delay(ns)</code> guarantees at most 1'000'000ns = 1ms delay.</li>
+<li><code>modm::delay(us)</code> guarantees at most 1'000'000µs = 1s delay.</li>
+<li><code>modm::delay(ms)</code> is limited to 49 days.</li>
+</ul>
 <p>Please note that the delay these functions provide is defined as the time from
 invocation to the time of execution return. Obviously no delay beyond that is
 considered, which may require you to use shorter delays to compensate for the
@@ -4225,6 +4230,8 @@ overhead of your code:</p>
 these <em>blocking</em> delay functions. However, when <code>modm::Clock</code> is not set up yet,
 or when you need very small delays (for example to bit-bang a protocol), you
 need to use these delay functions.</p>
+<p>For the technical details on the delay implementations you can <a href="https://blog.salkinium.com/modm-delay">read "Accurate
+Micro- and Nanosecond Delay in modm"</a>.</p>
                 
               
               
