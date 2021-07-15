@@ -1219,6 +1219,30 @@
   
   
     <li class="md-nav__item">
+      <a href="../modm-board-nucleo-h723zg/" class="md-nav__link">
+        :board:nucleo-h723zg
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modm-board-nucleo-h743zi/" class="md-nav__link">
+        :board:nucleo-h743zi
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../modm-board-nucleo-l031k6/" class="md-nav__link">
         :board:nucleo-l031k6
       </a>
@@ -3355,8 +3379,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../modm-platform-i2c-stm32-f0-f3-f7-g0-g4-l0-l4/" class="md-nav__link">
-        :platform:i2c (stm32{f0,f3,f7,g0,g4,l0,l4})
+      <a href="../modm-platform-i2c-stm32-f0-f3-f7-g0-g4-h7-l0-l4/" class="md-nav__link">
+        :platform:i2c (stm32{f0,f3,f7,g0,g4,h7,l0,l4})
       </a>
     </li>
   
@@ -3475,8 +3499,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../modm-platform-spi-stm32/" class="md-nav__link">
-        :platform:spi (stm32)
+      <a href="../modm-platform-spi-stm32-f0-f1-f2-f3-f4-f7-g0-g4-l0-l1-l4/" class="md-nav__link">
+        :platform:spi (stm32{f0,f1,f2,f3,f4,f7,g0,g4,l0,l1,l4})
       </a>
     </li>
   
@@ -3595,8 +3619,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../modm-platform-usb-stm32-f0-f1-f2-f3-f4-f7-g4-l0-l1-l4/" class="md-nav__link">
-        :platform:usb (stm32{f0,f1,f2,f3,f4,f7,g4,l0,l1,l4})
+      <a href="../modm-platform-usb-stm32-f0-f1-f2-f3-f4-f7-g4-h7-l0-l1-l4/" class="md-nav__link">
+        :platform:usb (stm32{f0,f1,f2,f3,f4,f7,g4,h7,l0,l1,l4})
       </a>
     </li>
   
@@ -4415,7 +4439,7 @@ Abandoning...
 the output will be forwarded to <code>MODM_LOG_DEBUG</code>.</p>
 <div class="highlight"><pre><span></span><code>&lt;collect name=&quot;modm:build:cppdefines&quot;&gt;CFG_TUSB_DEBUG=2&lt;/collect&gt;
 </code></pre></div>
-<p><em>This module is only available for sam, stm32{f0,f1,f2,f3,f4,f7,g4,l0,l1,l4}.</em></p>
+<p><em>This module is only available for sam, stm32{f0,f1,f2,f3,f4,f7,g4,h7,l0,l1,l4}.</em></p>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <h4 id="config">config<a class="headerlink" href="#config" title="Permanent link">&para;</a></h4>
 <p>Endpoint Configuration</p>
@@ -4428,7 +4452,7 @@ Input Dependency: <code>device.msc -&gt; modm:tinyusb:device:msc</code><br />
 Input Dependency: <code>device.vendor -&gt; modm:tinyusb:device:vendor</code>  </p>
 <h4 id="speed">speed<a class="headerlink" href="#speed" title="Permanent link">&para;</a></h4>
 <p>USB Port Speed</p>
-<p><em>This option is only available for stm32{f2,f4,f7}.</em></p>
+<p><em>This option is only available for stm32{f2,f4,f7,h7}.</em></p>
 <p>Default: <code>full</code><br />
 Inputs: <code>[full, high]</code><br />
 Input Dependency: <code>full -&gt; modm:platform:usb:fs</code><br />

@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#microchip-sam-core-module" class="md-skip">
+        <a href="#sam-core-module" class="md-skip">
           Skip to content
         </a>
       
@@ -1209,6 +1209,30 @@
     <li class="md-nav__item">
       <a href="../modm-board-nucleo-g474re/" class="md-nav__link">
         :board:nucleo-g474re
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modm-board-nucleo-h723zg/" class="md-nav__link">
+        :board:nucleo-h723zg
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modm-board-nucleo-h743zi/" class="md-nav__link">
+        :board:nucleo-h743zi
       </a>
     </li>
   
@@ -3158,6 +3182,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#startup" class="md-nav__link">
+    Startup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linkerscript" class="md-nav__link">
+    Linkerscript
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dependencies" class="md-nav__link">
     Dependencies
   </a>
@@ -3393,8 +3431,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../modm-platform-i2c-stm32-f0-f3-f7-g0-g4-l0-l4/" class="md-nav__link">
-        :platform:i2c (stm32{f0,f3,f7,g0,g4,l0,l4})
+      <a href="../modm-platform-i2c-stm32-f0-f3-f7-g0-g4-h7-l0-l4/" class="md-nav__link">
+        :platform:i2c (stm32{f0,f3,f7,g0,g4,h7,l0,l4})
       </a>
     </li>
   
@@ -3513,8 +3551,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../modm-platform-spi-stm32/" class="md-nav__link">
-        :platform:spi (stm32)
+      <a href="../modm-platform-spi-stm32-f0-f1-f2-f3-f4-f7-g0-g4-l0-l1-l4/" class="md-nav__link">
+        :platform:spi (stm32{f0,f1,f2,f3,f4,f7,g0,g4,l0,l1,l4})
       </a>
     </li>
   
@@ -3633,8 +3671,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../modm-platform-usb-stm32-f0-f1-f2-f3-f4-f7-g4-l0-l1-l4/" class="md-nav__link">
-        :platform:usb (stm32{f0,f1,f2,f3,f4,f7,g4,l0,l1,l4})
+      <a href="../modm-platform-usb-stm32-f0-f1-f2-f3-f4-f7-g4-h7-l0-l1-l4/" class="md-nav__link">
+        :platform:usb (stm32{f0,f1,f2,f3,f4,f7,g4,h7,l0,l1,l4})
       </a>
     </li>
   
@@ -4157,6 +4195,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#startup" class="md-nav__link">
+    Startup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linkerscript" class="md-nav__link">
+    Linkerscript
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dependencies" class="md-nav__link">
     Dependencies
   </a>
@@ -4176,9 +4228,56 @@
               
                 
                 
-                <h1 id="microchip-sam-core-module">Microchip SAM core module<a class="headerlink" href="#microchip-sam-core-module" title="Permanent link">&para;</a></h1>
+                <h1 id="sam-core-module">SAM core module<a class="headerlink" href="#sam-core-module" title="Permanent link">&para;</a></h1>
 <p>lbuild module: <code>modm:platform:core</code></p>
-<p>Provides SAM specific linkerscripts and startup code.</p>
+<p>This module specializes the generic <code>modm:platform:cortex-m</code> module with
+SAM-specific startup code and linkerscripts.</p>
+<h2 id="startup">Startup<a class="headerlink" href="#startup" title="Permanent link">&para;</a></h2>
+<p>The <code>__modm_initialize_platform()</code> callback is implemented here to change the
+default QOS values to have the best performance and correct USB behaviour.</p>
+<h2 id="linkerscript">Linkerscript<a class="headerlink" href="#linkerscript" title="Permanent link">&para;</a></h2>
+<p>Currently only one basic linkerscript is supported.</p>
+<div class="highlight"><pre><span></span><code>            ┌────────────────────────┐◄ __ram_end
+            │  +HEAP_RAM             │
+            │  .noinit_ram           │
+            │  .noinit               │
+            │  .bss_ram              │
+            │  .bss                  │
+            │  .data_ram             │
+            │  .data                 │
+            │  .fastdata             │
+            │  .fastcode             │
+            │  +PROCESS_STACK_SIZE   │◄ __process_stack_top
+    RAM     │  +MAIN_STACK_SIZE      │◄ __main_stack_top
+0x2000 0000 └────────────────────────┘◄ __ram_start
+
+            ┌────────────────────────┐◄ __flash_end
+            │        (unused)        │
+            ├────────────────────────┤◄ __rom_end
+            │  .table.heap           │
+            │  .table.copy.extern    │
+   tables   │  .table.zero.extern    │
+            │  .table.copy.intern    │
+            │  .table.zero.intern    │
+            │                        │
+            │  .data_ram             │
+    copy    │  .data                 │
+    only    │  .fastcode             │
+            │  .fastdata             │
+            │                        │
+            │  .note.gnu.build-id    │
+            │  .assertion            │
+            │  .hardware_init        │
+            │ (.eh_frame)            │
+    read    │ (.ARM.exidx)           │  only with C++ exceptions enabled
+    only    │ (.ARM.extab)           │
+            │  .init_array           │
+            │  .init                 │
+            │  .rodata               │
+            │  .text                 │
+   FLASH    │  .vector_rom           │
+0x0800 0000 └────────────────────────┘◄ __rom_start, __flash_start
+</code></pre></div>
 <p><em>This module is only available for sam.</em></p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>

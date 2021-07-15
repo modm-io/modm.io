@@ -1289,6 +1289,30 @@
   
   
     <li class="md-nav__item">
+      <a href="reference/module/modm-board-nucleo-h723zg/" class="md-nav__link">
+        :board:nucleo-h723zg
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reference/module/modm-board-nucleo-h743zi/" class="md-nav__link">
+        :board:nucleo-h743zi
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="reference/module/modm-board-nucleo-l031k6/" class="md-nav__link">
         :board:nucleo-l031k6
       </a>
@@ -3425,8 +3449,8 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/module/modm-platform-i2c-stm32-f0-f3-f7-g0-g4-l0-l4/" class="md-nav__link">
-        :platform:i2c (stm32{f0,f3,f7,g0,g4,l0,l4})
+      <a href="reference/module/modm-platform-i2c-stm32-f0-f3-f7-g0-g4-h7-l0-l4/" class="md-nav__link">
+        :platform:i2c (stm32{f0,f3,f7,g0,g4,h7,l0,l4})
       </a>
     </li>
   
@@ -3545,8 +3569,8 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/module/modm-platform-spi-stm32/" class="md-nav__link">
-        :platform:spi (stm32)
+      <a href="reference/module/modm-platform-spi-stm32-f0-f1-f2-f3-f4-f7-g0-g4-l0-l1-l4/" class="md-nav__link">
+        :platform:spi (stm32{f0,f1,f2,f3,f4,f7,g0,g4,l0,l1,l4})
       </a>
     </li>
   
@@ -3665,8 +3689,8 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/module/modm-platform-usb-stm32-f0-f1-f2-f3-f4-f7-g4-l0-l1-l4/" class="md-nav__link">
-        :platform:usb (stm32{f0,f1,f2,f3,f4,f7,g4,l0,l1,l4})
+      <a href="reference/module/modm-platform-usb-stm32-f0-f1-f2-f3-f4-f7-g4-h7-l0-l1-l4/" class="md-nav__link">
+        :platform:usb (stm32{f0,f1,f2,f3,f4,f7,g4,h7,l0,l1,l4})
       </a>
     </li>
   
@@ -4311,11 +4335,11 @@ back so everyone can benefit.</p>
 </li>
 </ul>
 <h2 id="microcontrollers">Microcontrollers<a class="headerlink" href="#microcontrollers" title="Permanent link">&para;</a></h2>
-<p>modm can create a HAL for <!--allcount-->3107<!--/allcount--> devices of these vendors:</p>
+<p>modm can create a HAL for <!--allcount-->3138<!--/allcount--> devices of these vendors:</p>
 <ul>
-<li>STMicroelectronics STM32: <!--stmcount-->2438<!--/stmcount--> devices.</li>
+<li>STMicroelectronics STM32: <!--stmcount-->2593<!--/stmcount--> devices.</li>
 <li>Microchip SAM: <!--samcount-->163<!--/samcount--> devices.</li>
-<li>Microchip AVR: <!--avrcount-->506<!--/avrcount--> devices.</li>
+<li>Microchip AVR: <!--avrcount-->382<!--/avrcount--> devices.</li>
 </ul>
 <p>Here is a table with all device families and the peripheral drivers they support:</p>
 <ul>
@@ -4331,7 +4355,7 @@ Please <a href="https://modm.io/guide/discover">discover modm's peripheral drive
 <table>
 <tr>
 <th align="center"></th>
-<th align="center" colspan="11">STM32</th>
+<th align="center" colspan="12">STM32</th>
 <th align="center" colspan="1">SAM</th>
 <th align="center" colspan="3">AT</th>
 </tr><tr>
@@ -4344,6 +4368,7 @@ Please <a href="https://modm.io/guide/discover">discover modm's peripheral drive
 <th align="center">F7</th>
 <th align="center">G0</th>
 <th align="center">G4</th>
+<th align="center">H7</th>
 <th align="center">L0</th>
 <th align="center">L1</th>
 <th align="center">L4</th>
@@ -4362,6 +4387,7 @@ Please <a href="https://modm.io/guide/discover">discover modm's peripheral drive
 <td align="center">✅</td>
 <td align="center">✅</td>
 <td align="center">○</td>
+<td align="center">○</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
 <td align="center">○</td>
@@ -4378,6 +4404,7 @@ Please <a href="https://modm.io/guide/discover">discover modm's peripheral drive
 <td align="center">✅</td>
 <td align="center">✗</td>
 <td align="center">✅</td>
+<td align="center">○</td>
 <td align="center">✗</td>
 <td align="center">✗</td>
 <td align="center">✅</td>
@@ -4397,6 +4424,7 @@ Please <a href="https://modm.io/guide/discover">discover modm's peripheral drive
 <td align="center">✅</td>
 <td align="center">○</td>
 <td align="center">○</td>
+<td align="center">○</td>
 <td align="center">✅</td>
 <td align="center">○</td>
 <td align="center">○</td>
@@ -4404,6 +4432,7 @@ Please <a href="https://modm.io/guide/discover">discover modm's peripheral drive
 <td align="center">○</td>
 </tr><tr>
 <td align="left">DAC</td>
+<td align="center">✅</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
@@ -4429,6 +4458,7 @@ Please <a href="https://modm.io/guide/discover">discover modm's peripheral drive
 <td align="center">○</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
+<td align="center">○</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
@@ -4446,6 +4476,7 @@ Please <a href="https://modm.io/guide/discover">discover modm's peripheral drive
 <td align="center">✅</td>
 <td align="center">✗</td>
 <td align="center">✗</td>
+<td align="center">○</td>
 <td align="center">✗</td>
 <td align="center">✗</td>
 <td align="center">✗</td>
@@ -4455,6 +4486,7 @@ Please <a href="https://modm.io/guide/discover">discover modm's peripheral drive
 <td align="center">✗</td>
 </tr><tr>
 <td align="left">External Interrupt</td>
+<td align="center">✅</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
@@ -4480,6 +4512,7 @@ Please <a href="https://modm.io/guide/discover">discover modm's peripheral drive
 <td align="center">○</td>
 <td align="center">✗</td>
 <td align="center">○</td>
+<td align="center">○</td>
 <td align="center">✗</td>
 <td align="center">✗</td>
 <td align="center">○</td>
@@ -4504,8 +4537,10 @@ Please <a href="https://modm.io/guide/discover">discover modm's peripheral drive
 <td align="center">✅</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
+<td align="center">✅</td>
 </tr><tr>
 <td align="left">I<sup>2</sup>C</td>
+<td align="center">✅</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
@@ -4535,6 +4570,7 @@ Please <a href="https://modm.io/guide/discover">discover modm's peripheral drive
 <td align="center">○</td>
 <td align="center">○</td>
 <td align="center">○</td>
+<td align="center">○</td>
 <td align="center">✗</td>
 <td align="center">✗</td>
 <td align="center">✗</td>
@@ -4544,6 +4580,7 @@ Please <a href="https://modm.io/guide/discover">discover modm's peripheral drive
 <td align="center">✗</td>
 <td align="center">✅</td>
 <td align="center">✗</td>
+<td align="center">✅</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
@@ -4565,6 +4602,7 @@ Please <a href="https://modm.io/guide/discover">discover modm's peripheral drive
 <td align="center">✅</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
+<td align="center">○</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
@@ -4586,11 +4624,13 @@ Please <a href="https://modm.io/guide/discover">discover modm's peripheral drive
 <td align="center">✅</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
+<td align="center">✅</td>
 <td align="center">✗</td>
 <td align="center">✗</td>
 <td align="center">✗</td>
 </tr><tr>
 <td align="left">Timer</td>
+<td align="center">✅</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
@@ -4622,9 +4662,11 @@ Please <a href="https://modm.io/guide/discover">discover modm's peripheral drive
 <td align="center">✅</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
+<td align="center">✅</td>
 <td align="center">○</td>
 </tr><tr>
 <td align="left">Unique ID</td>
+<td align="center">✅</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
@@ -4649,6 +4691,7 @@ Please <a href="https://modm.io/guide/discover">discover modm's peripheral drive
 <td align="center">✅</td>
 <td align="center">✅</td>
 <td align="center">✗</td>
+<td align="center">✅</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
 <td align="center">✅</td>
@@ -4720,20 +4763,22 @@ specific device is supported out-of-the-box and what you can do if it is not.</p
 <td align="center"><a href="https://modm.io/reference/module/modm-board-nucleo-g431rb">NUCLEO-G431RB</a></td>
 </tr><tr>
 <td align="center"><a href="https://modm.io/reference/module/modm-board-nucleo-g474re">NUCLEO-G474RE</a></td>
+<td align="center"><a href="https://modm.io/reference/module/modm-board-nucleo-h723zg">NUCLEO-H723ZG</a></td>
+<td align="center"><a href="https://modm.io/reference/module/modm-board-nucleo-h743zi">NUCLEO-H743ZI</a></td>
 <td align="center"><a href="https://modm.io/reference/module/modm-board-nucleo-l031k6">NUCLEO-L031K6</a></td>
+</tr><tr>
 <td align="center"><a href="https://modm.io/reference/module/modm-board-nucleo-l152re">NUCLEO-L152RE</a></td>
 <td align="center"><a href="https://modm.io/reference/module/modm-board-nucleo-l432kc">NUCLEO-L432KC</a></td>
-</tr><tr>
 <td align="center"><a href="https://modm.io/reference/module/modm-board-nucleo-l452re">NUCLEO-L452RE</a></td>
 <td align="center"><a href="https://modm.io/reference/module/modm-board-nucleo-l476rg">NUCLEO-L476RG</a></td>
+</tr><tr>
 <td align="center"><a href="https://modm.io/reference/module/modm-board-nucleo-l496zg-p">NUCLEO-L496ZG-P</a></td>
 <td align="center"><a href="https://modm.io/reference/module/modm-board-olimexino-stm32">OLIMEXINO-STM32</a></td>
-</tr><tr>
 <td align="center"><a href="https://modm.io/reference/module/modm-board-raspberrypi">Raspberry Pi</a></td>
 <td align="center"><a href="https://modm.io/reference/module/modm-board-samd21-mini">SAMD21-MINI</a></td>
+</tr><tr>
 <td align="center"><a href="https://modm.io/reference/module/modm-board-stm32_f4ve">STM32-F4VE</a></td>
 <td align="center"><a href="https://modm.io/reference/module/modm-board-stm32f030_demo">STM32F030-DEMO</a></td>
-</tr><tr>
 </tr>
 </table>
 <p></center></p>
@@ -5064,6 +5109,9 @@ compilable as enforced by our CI.</p>
 </tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_g474re/dac_basic/main.cpp">NUCLEO-G474RE: dac_basic</a></td>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_g474re/dac_dma/main.cpp">NUCLEO-G474RE: dac_dma</a></td>
+</tr><tr>
+<td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_h723zg/blink/main.cpp">NUCLEO-H723ZG: blink</a></td>
+<td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_h743zi/blink/main.cpp">NUCLEO-H743ZI: blink</a></td>
 </tr><tr>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_l031k6/blink/main.cpp">NUCLEO-L031K6: blink</a></td>
 <td align="left"><a href="https://github.com/modm-io/modm/tree/develop/examples/nucleo_l152re/blink/main.cpp">NUCLEO-L152RE: blink</a></td>

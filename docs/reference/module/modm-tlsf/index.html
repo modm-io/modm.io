@@ -1219,6 +1219,30 @@
   
   
     <li class="md-nav__item">
+      <a href="../modm-board-nucleo-h723zg/" class="md-nav__link">
+        :board:nucleo-h723zg
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modm-board-nucleo-h743zi/" class="md-nav__link">
+        :board:nucleo-h743zi
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../modm-board-nucleo-l031k6/" class="md-nav__link">
         :board:nucleo-l031k6
       </a>
@@ -3355,8 +3379,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../modm-platform-i2c-stm32-f0-f3-f7-g0-g4-l0-l4/" class="md-nav__link">
-        :platform:i2c (stm32{f0,f3,f7,g0,g4,l0,l4})
+      <a href="../modm-platform-i2c-stm32-f0-f3-f7-g0-g4-h7-l0-l4/" class="md-nav__link">
+        :platform:i2c (stm32{f0,f3,f7,g0,g4,h7,l0,l4})
       </a>
     </li>
   
@@ -3475,8 +3499,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../modm-platform-spi-stm32/" class="md-nav__link">
-        :platform:spi (stm32)
+      <a href="../modm-platform-spi-stm32-f0-f1-f2-f3-f4-f7-g0-g4-l0-l1-l4/" class="md-nav__link">
+        :platform:spi (stm32{f0,f1,f2,f3,f4,f7,g0,g4,l0,l1,l4})
       </a>
     </li>
   
@@ -3595,8 +3619,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../modm-platform-usb-stm32-f0-f1-f2-f3-f4-f7-g4-l0-l1-l4/" class="md-nav__link">
-        :platform:usb (stm32{f0,f1,f2,f3,f4,f7,g4,l0,l1,l4})
+      <a href="../modm-platform-usb-stm32-f0-f1-f2-f3-f4-f7-g4-h7-l0-l1-l4/" class="md-nav__link">
+        :platform:usb (stm32{f0,f1,f2,f3,f4,f7,g4,h7,l0,l1,l4})
       </a>
     </li>
   
@@ -4355,6 +4379,7 @@ Released under the BSD license.
 <h4 id="minimum_pool_size">minimum_pool_size<a class="headerlink" href="#minimum_pool_size" title="Permanent link">&para;</a></h4>
 <p>Minimum pool size in byte</p>
 <p>Default: <code>10240</code> <em>stm32{f1,l1}</em><br />
+Default: <code>1048576</code> <em>stm32h7</em><br />
 Default: <code>12288</code> <em>stm32f3</em><br />
 Default: <code>131072</code> <em>stm32{f2,f4,g4,l4}</em><br />
 Default: <code>16384</code> <em>sam, stm32{f0,f3,l1}</em><br />
@@ -4366,13 +4391,13 @@ Default: <code>20480</code> <em>stm32{f1,l0}</em><br />
 Default: <code>24576</code> <em>stm32f100zct6</em><br />
 Default: <code>262144</code> <em>stm32{f4,f7}</em><br />
 Default: <code>32768</code> <em>sam, stm32{f0,f1,f3,f4,g4,l1}</em><br />
-Default: <code>327680</code> <em>stm32{f4,l4}</em><br />
+Default: <code>327680</code> <em>stm32{f4,h7,l4}</em><br />
 Default: <code>36864</code> <em>stm32g0</em><br />
-Default: <code>393216</code> <em>stm32f7</em><br />
+Default: <code>393216</code> <em>stm32{f7,h7}</em><br />
 Default: <code>4096</code> <em>sam, stm32{f0,f1,l1}</em><br />
 Default: <code>40960</code> <em>stm32{f3,l4}</em><br />
 Default: <code>49152</code> <em>stm32{f1,l1}</em><br />
-Default: <code>524288</code> <em>stm32f7</em><br />
+Default: <code>524288</code> <em>stm32{f7,h7}</em><br />
 Default: <code>6144</code> <em>stm32{f0,f1}</em><br />
 Default: <code>65536</code> <em>stm32{f1,f2,f3,f4,l4}</em><br />
 Default: <code>655360</code> <em>stm32l4</em><br />
@@ -4380,6 +4405,7 @@ Default: <code>8192</code> <em>sam, stm32{f0,f1,g0,l0,l1}</em><br />
 Default: <code>81920</code> <em>stm32l1</em><br />
 Default: <code>98304</code> <em>stm32{f2,f4}</em><br />
 Inputs: <code>[4096 .. 10240 .. 536870912]</code> <em>stm32{f1,l1}</em><br />
+Inputs: <code>[4096 .. 1048576 .. 536870912]</code> <em>stm32h7</em><br />
 Inputs: <code>[4096 .. 12288 .. 536870912]</code> <em>stm32f3</em><br />
 Inputs: <code>[4096 .. 131072 .. 536870912]</code> <em>stm32{f2,f4,g4,l4}</em><br />
 Inputs: <code>[4096 .. 16384 .. 536870912]</code> <em>sam, stm32{f0,f3,l1}</em><br />
@@ -4391,12 +4417,12 @@ Inputs: <code>[4096 .. 20480 .. 536870912]</code> <em>stm32{f1,l0}</em><br />
 Inputs: <code>[4096 .. 24576 .. 536870912]</code> <em>stm32f100zct6</em><br />
 Inputs: <code>[4096 .. 262144 .. 536870912]</code> <em>stm32{f4,f7}</em><br />
 Inputs: <code>[4096 .. 32768 .. 536870912]</code> <em>sam, stm32{f0,f1,f3,f4,g4,l1}</em><br />
-Inputs: <code>[4096 .. 327680 .. 536870912]</code> <em>stm32{f4,l4}</em><br />
+Inputs: <code>[4096 .. 327680 .. 536870912]</code> <em>stm32{f4,h7,l4}</em><br />
 Inputs: <code>[4096 .. 36864 .. 536870912]</code> <em>stm32g0</em><br />
-Inputs: <code>[4096 .. 393216 .. 536870912]</code> <em>stm32f7</em><br />
+Inputs: <code>[4096 .. 393216 .. 536870912]</code> <em>stm32{f7,h7}</em><br />
 Inputs: <code>[4096 .. 40960 .. 536870912]</code> <em>stm32{f3,l4}</em><br />
 Inputs: <code>[4096 .. 49152 .. 536870912]</code> <em>stm32{f1,l1}</em><br />
-Inputs: <code>[4096 .. 524288 .. 536870912]</code> <em>stm32f7</em><br />
+Inputs: <code>[4096 .. 524288 .. 536870912]</code> <em>stm32{f7,h7}</em><br />
 Inputs: <code>[4096 .. 6144 .. 536870912]</code> <em>stm32{f0,f1}</em><br />
 Inputs: <code>[4096 .. 65536 .. 536870912]</code> <em>stm32{f1,f2,f3,f4,l4}</em><br />
 Inputs: <code>[4096 .. 655360 .. 536870912]</code> <em>stm32l4</em><br />

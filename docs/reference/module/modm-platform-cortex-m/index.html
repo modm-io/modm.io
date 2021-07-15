@@ -1219,6 +1219,30 @@
   
   
     <li class="md-nav__item">
+      <a href="../modm-board-nucleo-h723zg/" class="md-nav__link">
+        :board:nucleo-h723zg
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modm-board-nucleo-h743zi/" class="md-nav__link">
+        :board:nucleo-h743zi
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../modm-board-nucleo-l031k6/" class="md-nav__link">
         :board:nucleo-l031k6
       </a>
@@ -3605,8 +3629,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../modm-platform-i2c-stm32-f0-f3-f7-g0-g4-l0-l4/" class="md-nav__link">
-        :platform:i2c (stm32{f0,f3,f7,g0,g4,l0,l4})
+      <a href="../modm-platform-i2c-stm32-f0-f3-f7-g0-g4-h7-l0-l4/" class="md-nav__link">
+        :platform:i2c (stm32{f0,f3,f7,g0,g4,h7,l0,l4})
       </a>
     </li>
   
@@ -3725,8 +3749,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../modm-platform-spi-stm32/" class="md-nav__link">
-        :platform:spi (stm32)
+      <a href="../modm-platform-spi-stm32-f0-f1-f2-f3-f4-f7-g0-g4-l0-l1-l4/" class="md-nav__link">
+        :platform:spi (stm32{f0,f1,f2,f3,f4,f7,g0,g4,l0,l1,l4})
       </a>
     </li>
   
@@ -3845,8 +3869,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../modm-platform-usb-stm32-f0-f1-f2-f3-f4-f7-g4-l0-l1-l4/" class="md-nav__link">
-        :platform:usb (stm32{f0,f1,f2,f3,f4,f7,g4,l0,l1,l4})
+      <a href="../modm-platform-usb-stm32-f0-f1-f2-f3-f4-f7-g4-h7-l0-l1-l4/" class="md-nav__link">
+        :platform:usb (stm32{f0,f1,f2,f3,f4,f7,g4,h7,l0,l1,l4})
       </a>
     </li>
   
@@ -4612,16 +4636,17 @@ on that module directly instead of this one.</p>
 <p>After reset, the ARM Cortex-M hardware jumps to the <code>Reset_Handler()</code>, which is
 implemented as follows:</p>
 <ol>
-<li>The main stack pointer (MSP) is initialized by hardware.</li>
-<li>Call <code>__modm_initialize_platform()</code> to initialize the device  hardware.</li>
-<li>Copy data from internal flash to internal RAM.</li>
+<li>The main stack pointer (MSP) is initialized by software.</li>
+<li>Call <code>__modm_initialize_platform()</code> to initialize the device hardware.</li>
+<li>Call <code>modm_initialize_platform()</code> to initialize the custom device hardware.</li>
+<li>Copy data to internal RAM.</li>
 <li>Zero sections in internal RAM.</li>
 <li>Initialize ARM Cortex-M core: enable FPU and relocate vector table.</li>
 <li>Execute shared hardware initialization functions.</li>
-<li>Copy data from internal flash to <em>external</em> RAM.</li>
+<li>Copy data to <em>external</em> RAM.</li>
 <li>Zero sections in <em>external</em> RAM.</li>
 <li>Initialize heap via <code>__modm_initialize_memory()</code> (implemented by the
-   <code>modm:platform:heap</code> module).</li>
+    <code>modm:platform:heap</code> module).</li>
 <li>Call static constructors.</li>
 <li>Call <code>main()</code> application entry point.</li>
 <li>If <code>main()</code> returns, assert on <code>main.exit</code> (only in debug profile).</li>
@@ -4630,7 +4655,14 @@ implemented as follows:</p>
 <h3 id="device-initialization">Device Initialization<a class="headerlink" href="#device-initialization" title="Permanent link">&para;</a></h3>
 <p>The <code>__modm_initialize_platform()</code> function is called <em>directly</em> after reset,
 and its purpose is to initialize the device specific hardware, such as enable
-internal memories or disable the hardware watchdog timer.</p>
+internal memories or disable the hardware watchdog timer. You can provide
+additional application-specific initialization by overwriting the weakly linked
+<code>modm_initialize_platform()</code> function:</p>
+<div class="highlight"><pre><span></span><code><span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="kt">void</span> <span class="n">modm_initialize_platform</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Configure power settings before accessing SRAM</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>It's important to understand that because the <code>.data</code> section has not yet been
 copied and the <code>.bss</code> section has not yet been zeroed, <strong>there exists no valid C
 environment yet in this function context</strong>! This means you cannot use any global
@@ -4641,8 +4673,7 @@ pointer into a memory that is disabled on reset, you cannot even access the
 stack until you've enabled its backing memory. The <code>Reset_Handler</code> therefore
 calls this function in Assembly without accessing the stack.</p>
 <p>It is strongly recommended to only read/write registers in this function, and
-perhaps even write this function in Assembly if deemed necessary. <em>Do not
-initialize the device clock, leave the default clock undisturbed</em>!</p>
+perhaps even write this function in Assembly if deemed necessary.</p>
 <h3 id="additional-initialization">Additional Initialization<a class="headerlink" href="#additional-initialization" title="Permanent link">&para;</a></h3>
 <p>A few modules need to initialize additional hardware during booting. For
 example: your device has external memories connected that you want to use for
@@ -4697,75 +4728,77 @@ Jinja macros that the <code>modm:platform:core</code> module <em>assembles</em> 
 linkerscript, depending on the memory architecture of the target chosen.</p>
 <p>The following macros are available:</p>
 <ul>
-<li><code>copyright()</code>: Copyright notice.</li>
+<li>
+<p><code>copyright()</code>: Copyright notice.</p>
+</li>
 <li>
 <p><code>prefix()</code>: Contains <code>MEMORY</code> sections, output format and entry symbol and
-              stack size definitions</p>
+  stack size definitions.</p>
 </li>
 <li>
-<p><code>section_vector_rom(memory)</code>: place the read-only vector table at the
-                                beginning of ROM <code>memory</code>.</p>
+<p><code>section_vector_rom(memory)</code>: places the read-only vector table into ROM
+  <code>memory</code>.</p>
 </li>
 <li>
-<p><code>section_vector_ram(memory)</code>: place the volatile vector table into RAM
-                                <code>memory</code>. You must satisfy alignment
-                                requirements externally.</p>
+<p><code>section_vector_ram(memory)</code>: places the volatile vector table into RAM
+  <code>memory</code>. You must satisfy alignment requirements externally.</p>
 </li>
 <li>
-<p><code>section(memory, name)</code>: place section <code>.{name}</code> into <code>memory</code>.</p>
+<p><code>section(memory, name, sections=[])</code>: place section <code>.{name}</code> into <code>memory</code>
+  and include <code>sections</code> into the <code>.{name}</code> section.</p>
 </li>
 <li>
 <p><code>section_stack(memory, start=None)</code>: place the main stack into <code>memory</code> after
-                                       moving the location counter to <code>start</code>.</p>
+  moving the location counter to <code>start</code>.</p>
 </li>
 <li>
-<p><code>section_heap(memory, name, section=None)</code>: Fill up remaining space in
-                                              <code>memory</code> with heap section
-                                              <code>.{name}</code> and add to <code>section</code>.</p>
+<p><code>section_heap(memory, name, placement=None, sections=[])</code>: Add the noload
+  <code>sections</code> to <code>memory</code> and fill up remaining space in <code>memory</code> with heap
+  section <code>.{name}</code>. Argument <code>placement</code> can be used to place the section into
+  a larger continuous section of which <code>memory</code> is just a subsection. The
+  <code>__{name}_end</code> will be the maximum of the location counter and the <code>memory</code>
+  section end address, so that previous sections will push this section back.</p>
+</li>
+<li>
+<p><code>all_heap_sections(table_copy, table_heap)</code>: places the heap sections as
+  described by <code>cont_ram_regions</code> of the <code>linkerscript</code> query.</p>
 </li>
 <li>
 <p><code>section_rom(memory)</code>: place all read-only sections (<code>.text</code>, <code>.rodata</code> etc)
-                         into <code>memory</code>.</p>
-</li>
-<li><code>section_ram(memory, rom)</code>: place all volatile sections (<code>.data</code>, <code>.bss</code> etc)</li>
-<li>
-<p>into <code>memory</code> and load from <code>rom</code>.</p>
+  into <code>memory</code>.</p>
 </li>
 <li>
-<p><code>section_table_zero(memory, sections=[])</code>: place the zeroing table (<code>.bss</code>
-                                             plus <code>sections</code>) into <code>memory</code>.</p>
+<p><code>section_ram(memory, rom, sections=[])</code>: place all volatile sections (<code>.data</code>,
+  <code>.bss</code> etc) into <code>memory</code> and load from <code>rom</code>. Adds <code>sections</code> into the
+  <code>.data</code> section.</p>
 </li>
-<li><code>section_table_copy(memory, sections=[])</code>: place the copying table (<code>.data</code>,
-                                             <code>.fastdata</code>, <code>.vector_ram</code> plus
-                                             <code>sections</code>) into <code>memory</code>.</li>
-<li><code>section_table_extern(memory)</code>: place the zeroing and copying tables for
-                                  external memories into <code>memory</code>.</li>
 <li>
-<p><code>section_table_heap(memory, sections)</code>: place heap tables containing
-                                          <code>sections</code> into <code>memory</code>.</p>
+<p><code>section_tables(memory, copy, zero, heap)</code>: place the zero, copy and heap
+  table into <code>memory</code>.</p>
 </li>
 <li>
 <p><code>section_rom_start(memory)</code>: place at ROM start.</p>
 </li>
-<li><code>section_rom_end(memory)</code>: place at ROM end.</li>
-<li><code>section_debug()</code>: place debug sections at the very end.</li>
+<li>
+<p><code>section_rom_end(memory)</code>: place at ROM end.</p>
+</li>
+<li>
+<p><code>section_debug()</code>: place debug sections at the very end.</p>
+</li>
 </ul>
 <p>Please consult the <code>modm:platform:core</code> documentation for the target-specific
 arrangement of these section macros and for potential limitations that the
 target's memory architecture poses.</p>
 <h3 id="section-fastdata">Section <code>.fastdata</code><a class="headerlink" href="#section-fastdata" title="Permanent link">&para;</a></h3>
-<p>For devices without data cache place the <code>.fastdata</code> section into the fastest
-RAM. Please note that the <code>.fastdata</code> section may need to be placed into RAM
-that is only accessable to the Cortex-M core, which can cause issues with DMA
-access. However, the <code>.fastdata</code> sections is not required to be DMA-able, and in
-such a case the developer needs to place the data into the generic <code>.data</code>
-section or choose a device with a DMA-able fast RAM.</p>
+<p>The <code>.fastdata</code> section is placed into a device specific data cache or into the
+fastest RAM. Please note that the <code>.fastdata</code> section may be placed into RAM
+that is only accessable to the Cortex-M core (via the Data-Bus), which can cause
+issues with DMA access. However, the <code>.fastdata</code> section is not required to be
+DMA-able and in such a case the developer needs to place the data into the
+generic <code>.data</code> section or choose a device with a DMA-able fast RAM.</p>
 <h3 id="section-fastcode">Section <code>.fastcode</code><a class="headerlink" href="#section-fastcode" title="Permanent link">&para;</a></h3>
-<p>For devices without an instruction cache or without a fast RAM connected to the
-I-bus, place <code>.fastcode</code> into ROM, which usually has a device-specific ROM
-cache. Please note that using a device with a dedicated instruction cache RAM
-yields much more predictable performance than executing from ROM, even with a
-ROM cache.</p>
+<p>The <code>.fastcode</code> section is placed into a device specific instruction cache (via
+I-Code bus) or into the fastest executable RAM (via S-Bus).</p>
 <p>From the Cortex-M3 Technical Reference Manual:</p>
 <blockquote>
 <p>14.5 System Interface:</p>
@@ -4809,33 +4842,33 @@ that depend on this order in <em>one value</em>. Here the previous value of the 
 location counter is required to "fill up" the remaining memory with the external
 heap section:</p>
 <div class="highlight"><pre><span></span><code><span class="n">linkerscript_sections</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">.sdramdata :</span>
+<span class="s2">.data_sdram :</span>
 <span class="s2">{</span>
-<span class="s2">    __sdramdata_load = LOADADDR (.sdramdata);   /* address in FLASH */</span>
-<span class="s2">    __sdramdata_start = .;                      /* address in RAM */</span>
+<span class="s2">    __data_sdram_load = LOADADDR(.data_sdram);</span>
+<span class="s2">    __data_sdram_start = .;</span>
 
-<span class="s2">    KEEP(*(.sdramdata))</span>
+<span class="s2">    *(.data_sdram)</span>
 
 <span class="s2">    . = ALIGN(4);</span>
-<span class="s2">    __sdramdata_end = .;</span>
+<span class="s2">    __data_sdram_end = .;</span>
 <span class="s2">} &gt;SDRAM AT &gt;FLASH</span>
 
-<span class="s2">.heap_extern (NOLOAD) : ALIGN(4)</span>
+<span class="s2">.heap_sdram (NOLOAD) :</span>
 <span class="s2">{</span>
-<span class="s2">    __heap_extern_start = .;</span>
+<span class="s2">    __heap_sdram_start = .;</span>
 <span class="s2">    . = ORIGIN(SDRAM) + LENGTH(SDRAM);</span>
-<span class="s2">    __heap_extern_end = .;</span>
+<span class="s2">    __heap_sdram_end = .;</span>
 <span class="s2">} &gt;SDRAM</span>
 <span class="s2">&quot;&quot;&quot;</span>
 <span class="n">env</span><span class="o">.</span><span class="n">collect</span><span class="p">(</span><span class="s2">&quot;:platform:cortex-m:linkerscript.sections&quot;</span><span class="p">,</span> <span class="n">linkerscript_sections</span><span class="p">)</span>
 </code></pre></div>
 <p>Next, add the sections that need to be copied from ROM to RAM, here the contents
-of the <code>.sdramdata</code> section is stored in the internal <code>FLASH</code> memory and needs
+of the <code>.data_sdram</code> section is stored in the internal <code>FLASH</code> memory and needs
 to be copied into SDRAM during the startup:</p>
 <div class="highlight"><pre><span></span><code><span class="n">linkerscript_copy</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">LONG(__sdramdata_load)</span>
-<span class="s2">LONG(__sdramdata_start)</span>
-<span class="s2">LONG(__sdramdata_end)</span>
+<span class="s2">LONG(__data_sdram_load)</span>
+<span class="s2">LONG(__data_sdram_start)</span>
+<span class="s2">LONG(__data_sdram_end)</span>
 <span class="s2">&quot;&quot;&quot;</span>
 <span class="n">env</span><span class="o">.</span><span class="n">collect</span><span class="p">(</span><span class="s2">&quot;:platform:cortex-m:linkerscript.table_extern.copy&quot;</span><span class="p">,</span> <span class="n">linkerscript_copy</span><span class="p">)</span>
 </code></pre></div>
@@ -4844,8 +4877,8 @@ the memory range to the heap table. Remember to use the correct memory traits
 for this memory, see <code>modm:architecture:memory</code> for the trait definitions:</p>
 <div class="highlight"><pre><span></span><code><span class="n">linkerscript_heap</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">LONG(0x801f)</span>
-<span class="s2">LONG(__heap_extern_start)</span>
-<span class="s2">LONG(__heap_extern_end)</span>
+<span class="s2">LONG(__heap_sdram_start)</span>
+<span class="s2">LONG(__heap_sdram_end)</span>
 <span class="s2">&quot;&quot;&quot;</span>
 <span class="n">env</span><span class="o">.</span><span class="n">collect</span><span class="p">(</span><span class="s2">&quot;:platform:cortex-m:linkerscript.table_extern.heap&quot;</span><span class="p">,</span> <span class="n">linkerscript_heap</span><span class="p">)</span>
 </code></pre></div>
@@ -4865,8 +4898,6 @@ depends on the configured CPU frequency:</p>
 <li>nanosecond delay is implemented as a tight loop with a minimum delay of &lt;20
   cycles, a resolution of 1-4 cycles and a maximum delay of 32-bit cycles.</li>
 <li>microsecond delay has a maximum delay of 32-bit cycles.</li>
-<li>millisecond delay is implemented via <code>modm::delay_us(ms * 1000)</code>, thus also
-  has a maximum delay of 32-bit cycles.</li>
 </ul>
 <h2 id="compiler-options">Compiler Options<a class="headerlink" href="#compiler-options" title="Permanent link">&para;</a></h2>
 <p>This module adds these architecture specific <a href="https://gcc.gnu.org/onlinedocs/gcc/Option-Summary.html">compiler options</a>:</p>
@@ -4887,7 +4918,7 @@ depends on the configured CPU frequency:</p>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <h4 id="float-abi">float-abi<a class="headerlink" href="#float-abi" title="Permanent link">&para;</a></h4>
 <p>Floating point ABI</p>
-<p><em>This option is only available for stm32{f3,f4,f7,g4,l4}.</em></p>
+<p><em>This option is only available for stm32{f3,f4,f7,g4,h7,l4}.</em></p>
 <p>Default: <code>hard</code><br />
 Inputs: <code>[hard, soft, softfp]</code>  </p>
 <h4 id="linkerscriptflash_offset">linkerscript.flash_offset<a class="headerlink" href="#linkerscriptflash_offset" title="Permanent link">&para;</a></h4>
@@ -4900,17 +4931,17 @@ required for bootloaders located there.</p>
 </div>
 <p>Default: <code>0</code><br />
 Inputs: <code>[0 ... 0x10000]</code> <em>sam, stm32{f0,f1,f3,f4,f7,g0,l0,l1,l4}</em><br />
-Inputs: <code>[0 ... 0x100000]</code> <em>stm32{f4,f7,l4}</em><br />
+Inputs: <code>[0 ... 0x100000]</code> <em>stm32{f4,f7,h7,l4}</em><br />
 Inputs: <code>[0 ... 0x180000]</code> <em>stm32f4</em><br />
 Inputs: <code>[0 ... 0x2000]</code> <em>stm32l0</em><br />
-Inputs: <code>[0 ... 0x20000]</code> <em>sam, stm32{f0,f1,f2,f3,f4,g0,g4,l0,l4}</em><br />
-Inputs: <code>[0 ... 0x200000]</code> <em>stm32{f4,f7,l4}</em><br />
+Inputs: <code>[0 ... 0x20000]</code> <em>sam, stm32{f0,f1,f2,f3,f4,g0,g4,h7,l0,l4}</em><br />
+Inputs: <code>[0 ... 0x200000]</code> <em>stm32{f4,f7,h7,l4}</em><br />
 Inputs: <code>[0 ... 0x30000]</code> <em>stm32l0</em><br />
 Inputs: <code>[0 ... 0x4000]</code> <em>stm32{f0,f1,f3,g0,l0}</em><br />
 Inputs: <code>[0 ... 0x40000]</code> <em>sam, stm32{f0,f1,f2,f3,f4,f7,g4,l1,l4}</em><br />
 Inputs: <code>[0 ... 0x60000]</code> <em>stm32{f3,l1}</em><br />
 Inputs: <code>[0 ... 0x8000]</code> <em>sam, stm32{f0,f3,g0,g4,l0,l1}</em><br />
-Inputs: <code>[0 ... 0x80000]</code> <em>stm32{f2,f3,f4,f7,g4,l1,l4}</em>  </p>
+Inputs: <code>[0 ... 0x80000]</code> <em>stm32{f2,f3,f4,f7,g4,h7,l1,l4}</em>  </p>
 <h4 id="linkerscriptoverride">linkerscript.override<a class="headerlink" href="#linkerscriptoverride" title="Permanent link">&para;</a></h4>
 <p>Path to project provided linkerscript</p>
 <p>Default: <code>[]</code><br />
@@ -4971,8 +5002,8 @@ therefore may not be modifiable with this option!</p>
 slow down interrupt latency, since both I-Code and D-Code memory interface
 need to fetch from the same access port.</p>
 </div>
-<p><em>This option is only available for stm32{f1,f2,f3,f4,f7,g4,l1,l4}.</em></p>
-<p>Default: <code>ram</code> <em>stm32{f3,f7,g4,l4}</em><br />
+<p><em>This option is only available for stm32{f1,f2,f3,f4,f7,g4,h7,l1,l4}.</em></p>
+<p>Default: <code>ram</code> <em>stm32{f3,f7,g4,h7,l4}</em><br />
 Default: <code>rom</code> <em>stm32{f1,f2,f3,f4,l1,l4}</em><br />
 Inputs: <code>[ram, rom]</code>  </p>
 <h2 id="collectors">Collectors<a class="headerlink" href="#collectors" title="Permanent link">&para;</a></h2>
@@ -5016,6 +5047,7 @@ Inputs: <code>[ram, rom]</code>  </p>
 <li><code>regions</code>: memory region names</li>
 <li><code>ram_origin</code>: Lowest SRAM origin address</li>
 <li><code>ram_origin</code>: Total size of all SRAM regions</li>
+<li><code>cont_ram_regions</code>: all continuous internal SRAM sections</li>
 <li><code>cont_ram</code>: largest continuous internal SRAM section</li>
 </ul>
 <p>:returns: dictionary of linkerscript properties</p>

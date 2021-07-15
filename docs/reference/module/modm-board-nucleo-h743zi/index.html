@@ -13,14 +13,14 @@
         <meta name="author" content="Niklas Hauser">
       
       
-        <link rel="canonical" href="http://modm.io/reference/module/modm-platform-spi-stm32/">
+        <link rel="canonical" href="http://modm.io/reference/module/modm-board-nucleo-h743zi/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
     
     
       
-        <title>:platform:spi (stm32) - modm barebone embedded library</title>
+        <title>:board:nucleo-h743zi - modm barebone embedded library</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#serial-peripheral-interface-spi" class="md-skip">
+        <a href="#nucleo-h743zi" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              :platform:spi (stm32)
+              :board:nucleo-h743zi
             
           </span>
         </div>
@@ -1210,6 +1210,68 @@
       <a href="../modm-board-nucleo-g474re/" class="md-nav__link">
         :board:nucleo-g474re
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modm-board-nucleo-h723zg/" class="md-nav__link">
+        :board:nucleo-h723zg
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          :board:nucleo-h743zi
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        :board:nucleo-h743zi
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3355,8 +3417,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../modm-platform-i2c-stm32-f0-f3-f7-g0-g4-l0-l4/" class="md-nav__link">
-        :platform:i2c (stm32{f0,f3,f7,g0,g4,l0,l4})
+      <a href="../modm-platform-i2c-stm32-f0-f3-f7-g0-g4-h7-l0-l4/" class="md-nav__link">
+        :platform:i2c (stm32{f0,f3,f7,g0,g4,h7,l0,l4})
       </a>
     </li>
   
@@ -3473,49 +3535,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          :platform:spi (stm32)
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        :platform:spi (stm32)
+    <li class="md-nav__item">
+      <a href="../modm-platform-spi-stm32-f0-f1-f2-f3-f4-f7-g0-g4-l0-l1-l4/" class="md-nav__link">
+        :platform:spi (stm32{f0,f1,f2,f3,f4,f7,g0,g4,l0,l1,l4})
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    Dependencies
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3633,8 +3657,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../modm-platform-usb-stm32-f0-f1-f2-f3-f4-f7-g4-l0-l1-l4/" class="md-nav__link">
-        :platform:usb (stm32{f0,f1,f2,f3,f4,f7,g4,l0,l1,l4})
+      <a href="../modm-platform-usb-stm32-f0-f1-f2-f3-f4-f7-g4-h7-l0-l1-l4/" class="md-nav__link">
+        :platform:usb (stm32{f0,f1,f2,f3,f4,f7,g4,h7,l0,l1,l4})
       </a>
     </li>
   
@@ -4176,95 +4200,109 @@
               
                 
                 
-                <h1 id="serial-peripheral-interface-spi">Serial Peripheral Interface (SPI)<a class="headerlink" href="#serial-peripheral-interface-spi" title="Permanent link">&para;</a></h1>
-<p>lbuild module: <code>modm:platform:spi</code></p>
-<p><em>This module is only available for stm32.</em></p>
+                <h1 id="nucleo-h743zi">NUCLEO-H743ZI<a class="headerlink" href="#nucleo-h743zi" title="Permanent link">&para;</a></h1>
+<p>lbuild module: <code>modm:board:nucleo-h743zi</code></p>
+<p><a href="https://www.st.com/en/evaluation-tools/nucleo-h743zi.html">Nucleo kit for STM32H743ZI</a></p>
+<p><em>This module is only available for stm32h743zit6.</em></p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<p><svg class="deps" width="634pt" height="150pt"
- viewBox="0.00 0.00 634.00 150.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph deps" transform="scale(1 1) rotate(0) translate(4 146)">
-<title>modm:platform:spi</title>
+<p><svg class="deps" width="705pt" height="165pt"
+ viewBox="0.00 0.00 705.00 165.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph deps" transform="scale(1 1) rotate(0) translate(4 161)">
+<title>modm:board:nucleo&#45;h743zi</title>
 <g id="node1" class="node">
-<title>modm_platform_spi</title>
-<polygon fill="lightgrey" stroke="black" stroke-width="2" points="375,-53 292,-53 292,0 375,0 375,-53"/>
-<text text-anchor="middle" x="333.5" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="333.5" y="-22.8" font-family="Times,serif" font-size="14.00">platform:</text>
-<text text-anchor="middle" x="333.5" y="-7.8" font-family="Times,serif" font-size="14.00">spi</text>
+<title>modm_board_nucleo_h743zi</title>
+<polygon fill="lightgrey" stroke="black" stroke-width="2" points="410.5,-53 294.5,-53 294.5,0 410.5,0 410.5,-53"/>
+<text text-anchor="middle" x="352.5" y="-37.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="352.5" y="-22.8" font-family="Times,serif" font-size="14.00">board:</text>
+<text text-anchor="middle" x="352.5" y="-7.8" font-family="Times,serif" font-size="14.00">nucleo&#45;h743zi</text>
 </g>
 <g id="node2" class="node">
-<title>modm_architecture_register</title>
-<polygon fill="lightgrey" stroke="black" points="109,-142 0,-142 0,-89 109,-89 109,-142"/>
-<text text-anchor="middle" x="54.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="54.5" y="-111.8" font-family="Times,serif" font-size="14.00">architecture:</text>
-<text text-anchor="middle" x="54.5" y="-96.8" font-family="Times,serif" font-size="14.00">register</text>
+<title>modm_architecture_clock</title>
+<polygon fill="lightgrey" stroke="black" points="109,-149.5 0,-149.5 0,-96.5 109,-96.5 109,-149.5"/>
+<text text-anchor="middle" x="54.5" y="-134.3" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="54.5" y="-119.3" font-family="Times,serif" font-size="14.00">architecture:</text>
+<text text-anchor="middle" x="54.5" y="-104.3" font-family="Times,serif" font-size="14.00">clock</text>
 </g>
 <g id="edge1" class="edge">
-<title>modm_platform_spi&#45;&gt;modm_architecture_register</title>
-<path fill="none" stroke="black" d="M291.68,-37.98C249.92,-48.77 183.8,-66.69 118.61,-88.74"/>
-<polygon fill="black" stroke="black" points="117.33,-85.48 109,-92.02 119.59,-92.1 117.33,-85.48"/>
+<title>modm_board_nucleo_h743zi&#45;&gt;modm_architecture_clock</title>
+<path fill="none" stroke="black" d="M294.37,-38.87C246.1,-49.21 176.1,-66.32 117.5,-89 114.86,-90.02 112.18,-91.13 109.49,-92.29"/>
+<polygon fill="black" stroke="black" points="108.04,-89.11 100.39,-96.45 110.94,-95.48 108.04,-89.11"/>
 </g>
 <g id="node3" class="node">
-<title>modm_architecture_spi</title>
-<polygon fill="lightgrey" stroke="black" points="236,-142 127,-142 127,-89 236,-89 236,-142"/>
-<text text-anchor="middle" x="181.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="181.5" y="-111.8" font-family="Times,serif" font-size="14.00">architecture:</text>
-<text text-anchor="middle" x="181.5" y="-96.8" font-family="Times,serif" font-size="14.00">spi</text>
+<title>modm_debug</title>
+<polygon fill="lightgrey" stroke="black" points="192,-142 127,-142 127,-104 192,-104 192,-142"/>
+<text text-anchor="middle" x="159.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="159.5" y="-111.8" font-family="Times,serif" font-size="14.00">debug</text>
 </g>
 <g id="edge2" class="edge">
-<title>modm_platform_spi&#45;&gt;modm_architecture_spi</title>
-<path fill="none" stroke="black" d="M291.97,-51.27C274.36,-61.35 253.63,-73.22 234.9,-83.93"/>
-<polygon fill="black" stroke="black" points="233.12,-80.92 226.18,-88.93 236.6,-87 233.12,-80.92"/>
+<title>modm_board_nucleo_h743zi&#45;&gt;modm_debug</title>
+<path fill="none" stroke="black" d="M294.32,-46.48C265.19,-57.1 229.96,-71.7 200.5,-89 196.08,-91.59 191.63,-94.64 187.38,-97.8"/>
+<polygon fill="black" stroke="black" points="185.22,-95.05 179.5,-103.96 189.53,-100.56 185.22,-95.05"/>
 </g>
 <g id="node4" class="node">
-<title>modm_cmsis_device</title>
-<polygon fill="lightgrey" stroke="black" points="319,-142 254,-142 254,-89 319,-89 319,-142"/>
-<text text-anchor="middle" x="286.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="286.5" y="-111.8" font-family="Times,serif" font-size="14.00">cmsis:</text>
-<text text-anchor="middle" x="286.5" y="-96.8" font-family="Times,serif" font-size="14.00">device</text>
+<title>modm_platform_clock</title>
+<polygon fill="lightgrey" stroke="black" points="293,-149.5 210,-149.5 210,-96.5 293,-96.5 293,-149.5"/>
+<text text-anchor="middle" x="251.5" y="-134.3" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="251.5" y="-119.3" font-family="Times,serif" font-size="14.00">platform:</text>
+<text text-anchor="middle" x="251.5" y="-104.3" font-family="Times,serif" font-size="14.00">clock</text>
 </g>
 <g id="edge3" class="edge">
-<title>modm_platform_spi&#45;&gt;modm_cmsis_device</title>
-<path fill="none" stroke="black" d="M319.65,-53.13C315.15,-61.47 310.08,-70.86 305.28,-79.74"/>
-<polygon fill="black" stroke="black" points="302.08,-78.29 300.41,-88.75 308.24,-81.62 302.08,-78.29"/>
+<title>modm_board_nucleo_h743zi&#45;&gt;modm_platform_clock</title>
+<path fill="none" stroke="black" d="M325.17,-53.07C313.15,-64.31 298.91,-77.64 286.16,-89.57"/>
+<polygon fill="black" stroke="black" points="283.76,-87.02 278.85,-96.41 288.55,-92.13 283.76,-87.02"/>
 </g>
 <g id="node5" class="node">
-<title>modm_math_algorithm</title>
-<polygon fill="lightgrey" stroke="black" points="423.5,-142 337.5,-142 337.5,-89 423.5,-89 423.5,-142"/>
-<text text-anchor="middle" x="380.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="380.5" y="-111.8" font-family="Times,serif" font-size="14.00">math:</text>
-<text text-anchor="middle" x="380.5" y="-96.8" font-family="Times,serif" font-size="14.00">algorithm</text>
+<title>modm_platform_core</title>
+<polygon fill="lightgrey" stroke="black" points="394,-149.5 311,-149.5 311,-96.5 394,-96.5 394,-149.5"/>
+<text text-anchor="middle" x="352.5" y="-134.3" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="352.5" y="-119.3" font-family="Times,serif" font-size="14.00">platform:</text>
+<text text-anchor="middle" x="352.5" y="-104.3" font-family="Times,serif" font-size="14.00">core</text>
 </g>
 <g id="edge4" class="edge">
-<title>modm_platform_spi&#45;&gt;modm_math_algorithm</title>
-<path fill="none" stroke="black" d="M347.35,-53.13C351.85,-61.47 356.92,-70.86 361.72,-79.74"/>
-<polygon fill="black" stroke="black" points="358.76,-81.62 366.59,-88.75 364.92,-78.29 358.76,-81.62"/>
+<title>modm_board_nucleo_h743zi&#45;&gt;modm_platform_core</title>
+<path fill="none" stroke="black" d="M352.5,-53.32C352.5,-63.43 352.5,-75.19 352.5,-86.1"/>
+<polygon fill="black" stroke="black" points="349,-86.21 352.5,-96.21 356,-86.21 349,-86.21"/>
 </g>
 <g id="node6" class="node">
 <title>modm_platform_gpio</title>
-<polygon fill="lightgrey" stroke="black" points="525,-142 442,-142 442,-89 525,-89 525,-142"/>
-<text text-anchor="middle" x="483.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="483.5" y="-111.8" font-family="Times,serif" font-size="14.00">platform:</text>
-<text text-anchor="middle" x="483.5" y="-96.8" font-family="Times,serif" font-size="14.00">gpio</text>
+<polygon fill="lightgrey" stroke="black" points="495,-149.5 412,-149.5 412,-96.5 495,-96.5 495,-149.5"/>
+<text text-anchor="middle" x="453.5" y="-134.3" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="453.5" y="-119.3" font-family="Times,serif" font-size="14.00">platform:</text>
+<text text-anchor="middle" x="453.5" y="-104.3" font-family="Times,serif" font-size="14.00">gpio</text>
 </g>
 <g id="edge5" class="edge">
-<title>modm_platform_spi&#45;&gt;modm_platform_gpio</title>
-<path fill="none" stroke="black" d="M375.28,-51.73C393.24,-62.15 414.39,-74.42 433.2,-85.33"/>
-<polygon fill="black" stroke="black" points="431.53,-88.41 441.94,-90.4 435.05,-82.35 431.53,-88.41"/>
+<title>modm_board_nucleo_h743zi&#45;&gt;modm_platform_gpio</title>
+<path fill="none" stroke="black" d="M379.83,-53.07C391.85,-64.31 406.09,-77.64 418.84,-89.57"/>
+<polygon fill="black" stroke="black" points="416.45,-92.13 426.15,-96.41 421.24,-87.02 416.45,-92.13"/>
 </g>
 <g id="node7" class="node">
-<title>modm_platform_rcc</title>
-<polygon fill="lightgrey" stroke="black" points="626,-142 543,-142 543,-89 626,-89 626,-142"/>
-<text text-anchor="middle" x="584.5" y="-126.8" font-family="Times,serif" font-size="14.00">modm:</text>
-<text text-anchor="middle" x="584.5" y="-111.8" font-family="Times,serif" font-size="14.00">platform:</text>
-<text text-anchor="middle" x="584.5" y="-96.8" font-family="Times,serif" font-size="14.00">rcc</text>
+<title>modm_platform_uart_3</title>
+<polygon fill="lightgrey" stroke="black" points="596,-157 513,-157 513,-89 596,-89 596,-157"/>
+<text text-anchor="middle" x="554.5" y="-141.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="554.5" y="-126.8" font-family="Times,serif" font-size="14.00">platform:</text>
+<text text-anchor="middle" x="554.5" y="-111.8" font-family="Times,serif" font-size="14.00">uart:</text>
+<text text-anchor="middle" x="554.5" y="-96.8" font-family="Times,serif" font-size="14.00">3</text>
 </g>
 <g id="edge6" class="edge">
-<title>modm_platform_spi&#45;&gt;modm_platform_rcc</title>
-<path fill="none" stroke="black" d="M375.04,-37.93C414.11,-48.24 474.22,-65.39 533.27,-88.73"/>
-<polygon fill="black" stroke="black" points="532.15,-92.05 542.74,-92.53 534.76,-85.56 532.15,-92.05"/>
+<title>modm_board_nucleo_h743zi&#45;&gt;modm_platform_uart_3</title>
+<path fill="none" stroke="black" d="M410.74,-47.95C437.31,-57.99 469.09,-71.01 503.93,-88.97"/>
+<polygon fill="black" stroke="black" points="502.37,-92.11 512.86,-93.65 505.62,-85.91 502.37,-92.11"/>
+</g>
+<g id="node8" class="node">
+<title>modm_platform_usb_fs</title>
+<polygon fill="lightgrey" stroke="black" points="697,-157 614,-157 614,-89 697,-89 697,-157"/>
+<text text-anchor="middle" x="655.5" y="-141.8" font-family="Times,serif" font-size="14.00">modm:</text>
+<text text-anchor="middle" x="655.5" y="-126.8" font-family="Times,serif" font-size="14.00">platform:</text>
+<text text-anchor="middle" x="655.5" y="-111.8" font-family="Times,serif" font-size="14.00">usb:</text>
+<text text-anchor="middle" x="655.5" y="-96.8" font-family="Times,serif" font-size="14.00">fs</text>
+</g>
+<g id="edge7" class="edge">
+<title>modm_board_nucleo_h743zi&#45;&gt;modm_platform_usb_fs</title>
+<path fill="none" stroke="black" d="M410.59,-35.77C460.83,-44.21 534.98,-59.78 604.47,-89"/>
+<polygon fill="black" stroke="black" points="603.23,-92.28 613.8,-93.02 606,-85.85 603.23,-92.28"/>
 </g>
 </g>
 </svg></p>
@@ -4290,7 +4328,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../modm-platform-spi-avr/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../modm-board-nucleo-h723zg/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -4299,19 +4337,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              :platform:spi (avr)
+              :board:nucleo-h723zg
             </div>
           </div>
         </a>
       
       
-        <a href="../modm-platform-spi-bitbang/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../modm-board-nucleo-l031k6/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              :platform:spi.bitbang
+              :board:nucleo-l031k6
             </div>
           </div>
           <div class="md-footer__button md-icon">
